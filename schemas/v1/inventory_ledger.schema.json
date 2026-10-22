@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/inventory_ledger.schema.json",
+  "title": "Inventory Ledger registry v1",
+  "$comment": "Editorial extension fields are permitted. Known operational fields are validated; cross-record references and approval semantics are checked separately.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "scene_id",
+          "owner_id",
+          "item_id",
+          "operation",
+          "quantity",
+          "status",
+          "notes"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "scene_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "owner_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "item_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "operation": {
+            "type": "string",
+            "enum": [
+              "GAIN",
+              "SPEND",
+              "CRAFT",
+              "FIND",
+              "LOOT",
+              "LOSE",
+              "TRANSFER"
+            ]
+          },
+          "quantity": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PLANNED",
+              "APPROVED"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

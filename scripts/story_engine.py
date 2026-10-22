@@ -22,9 +22,11 @@ SHA40 = re.compile(r"^[0-9a-fA-F]{40}$")
 APPROVED = {"APPROVED", "CANON"}
 
 
-def load_index(root: Path) -> dict:
+def load_index(root: Path, validate_schema: bool = True) -> dict:
     root = novelctl.story_config.resolve_root(root)
-    result = json.loads(novelctl.story_config.story_path(root, "ledger/index.json").read_text(encoding="utf-8"))
+    result = novelctl.registry_schema.read_json(novelctl.story_config.story_path(root, "ledger/index.json"))
+    if validate_schema:
+        novelctl.registry_schema.ensure_valid('ledger', result)
     return result
 
 
@@ -59,7 +61,8 @@ def validate(root: Path) -> tuple[list[str], list[str]]:
         return ["Base registry invalid: " + error for error in errors], warnings
     try:
         root = novelctl.story_config.resolve_root(root)
-        idx, db = load_index(root), novelctl.load(root)
+        idx, db = load_index(root, validate_schema=False), novelctl.load(root)
+        errors.extend(novelctl.registry_schema.validate('ledger', idx))
     except (OSError, ValueError, KeyError) as exc:
         return [f"Unable to load story engine index or registry: {exc}"], warnings
     if not isinstance(idx, dict):

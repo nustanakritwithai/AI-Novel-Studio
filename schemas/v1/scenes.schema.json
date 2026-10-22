@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/scenes.schema.json",
+  "title": "Scenes registry v1",
+  "$comment": "Editorial extension fields are permitted. Known operational fields are validated; cross-record references and approval semantics are checked separately.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "scenes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "episode_id",
+          "order",
+          "title",
+          "status",
+          "pov",
+          "location_id",
+          "character_ids",
+          "item_ids",
+          "canon_refs",
+          "goal",
+          "conflict",
+          "outcome",
+          "beats",
+          "requires_flags",
+          "effects_flags",
+          "draft_path"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "episode_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "title": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PLANNED",
+              "DRAFT",
+              "REVIEW",
+              "APPROVED",
+              "CANON"
+            ]
+          },
+          "pov": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "realm": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "location_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "character_ids": {
+            "$ref": "common.schema.json#/$defs/ids"
+          },
+          "item_ids": {
+            "$ref": "common.schema.json#/$defs/ids"
+          },
+          "canon_refs": {
+            "$ref": "common.schema.json#/$defs/ids"
+          },
+          "mechanic_refs": {
+            "$ref": "common.schema.json#/$defs/ids"
+          },
+          "source_refs": {
+            "$ref": "common.schema.json#/$defs/ids"
+          },
+          "requires_flags": {
+            "$ref": "common.schema.json#/$defs/ids"
+          },
+          "goal": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "conflict": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "outcome": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "beats": {
+            "$ref": "common.schema.json#/$defs/strings"
+          },
+          "effects_flags": {
+            "$ref": "common.schema.json#/$defs/flags"
+          },
+          "open_questions": {
+            "$ref": "common.schema.json#/$defs/strings"
+          },
+          "draft_path": {
+            "$ref": "common.schema.json#/$defs/text"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

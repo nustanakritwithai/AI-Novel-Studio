@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/mechanics.schema.json",
+  "title": "Mechanics registry v1",
+  "$comment": "Editorial extension fields are permitted. Known operational fields are validated; cross-record references and approval semantics are checked separately.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "mechanics"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "mechanics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "game_verification",
+          "story_requirement",
+          "source_ids",
+          "notes"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "title": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "game_verification": {
+            "type": "string",
+            "enum": [
+              "TRANSCRIPT_SUPPORTED",
+              "VISUALLY_VERIFIED",
+              "UNVERIFIED",
+              "TITLE_ONLY",
+              "FICTIONAL_TOURNAMENT"
+            ]
+          },
+          "story_requirement": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "source_ids": {
+            "$ref": "common.schema.json#/$defs/ids"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

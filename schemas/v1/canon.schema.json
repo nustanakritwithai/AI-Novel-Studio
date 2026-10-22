@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/canon.schema.json",
+  "title": "Canon registry v1",
+  "$comment": "Editorial extension fields are permitted. Known operational fields are validated; cross-record references and approval semantics are checked separately.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "facts",
+    "project"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "statement",
+          "status",
+          "origin",
+          "scope"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "statement": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "LOCKED",
+              "PROPOSED",
+              "UNKNOWN",
+              "DISPUTED"
+            ]
+          },
+          "origin": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "scope": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "source_id": {
+            "$ref": "common.schema.json#/$defs/nullable_id"
+          },
+          "category": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "project": {
+      "$ref": "common.schema.json#/$defs/text"
+    },
+    "status_legend": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

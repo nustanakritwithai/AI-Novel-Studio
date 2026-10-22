@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install pinned schema validation dependencies from PyPI
+        run: python -m pip install --index-url https://pypi.org/simple --only-binary=:all: -r requirements.txt
       - name: Build scoped context
         env:
           STORY: ${{ inputs.story }}

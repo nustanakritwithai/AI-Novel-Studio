@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/relationships.schema.json",
+  "title": "Relationships registry v1",
+  "$comment": "Editorial extension fields are permitted. Known operational fields are validated; cross-record references and approval semantics are checked separately.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "relationships"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "from_id",
+          "to_id"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "from_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "to_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "after_scene": {
+            "$ref": "common.schema.json#/$defs/nullable_id"
+          },
+          "status": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "canon_refs": {
+            "$ref": "common.schema.json#/$defs/ids"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

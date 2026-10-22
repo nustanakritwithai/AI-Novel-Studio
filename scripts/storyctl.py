@@ -93,7 +93,7 @@ def new_story(workspace: Path, slug: str, title: str | None = None) -> Path:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Generic story engine workspace (stdlib only)")
+    parser = argparse.ArgumentParser(description="Generic story engine workspace (JSON Schema validation)")
     parser.add_argument("--workspace", type=Path, default=story_config.WORKSPACE_ROOT)
     parser.add_argument("--story", help="Explicit story slug; otherwise use studio.json default_story")
     commands = parser.add_subparsers(dest="command", required=True)
@@ -102,6 +102,9 @@ def main(argv: list[str] | None = None) -> int:
     new.add_argument("--title")
     commands.add_parser("check")
     commands.add_parser("status")
+    replay = commands.add_parser("replay", help="State before target from local evidence; no GitHub approval authentication")
+    replay.add_argument("target")
+    replay.add_argument("--out", type=Path)
     pack = commands.add_parser("pack")
     pack.add_argument("target")
     pack.add_argument("--recent", type=int, default=7)
@@ -138,6 +141,8 @@ def main(argv: list[str] | None = None) -> int:
             output = story_engine.pack(root, args.target, args.recent, args.max_chars)
         elif args.command == "brief":
             output = novelctl.build_brief(root, args.target)
+        elif args.command == "replay":
+            output = json.dumps(novelctl.state_before_target(root, args.target), ensure_ascii=False, indent=2) + "\n"
         else:
             output = story_engine.proposal(root, args.episode)
         if args.out:

@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main, feat/story-engine-v0.2-github-only]
+    branches: [main, feat/story-engine-v0.2-github-only, feat/e1-story-roots]
 permissions:
   contents: read
 jobs:
@@ -14,6 +14,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install pinned schema validation dependencies from PyPI
+        run: python -m pip install --index-url https://pypi.org/simple --only-binary=:all: -r requirements.txt
       - name: Validate base story registry and causal order
         run: python scripts/novelctl.py check
       - name: Validate approved-only Story Engine ledger

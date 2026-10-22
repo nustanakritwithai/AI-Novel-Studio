@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/characters.schema.json",
+  "title": "Characters registry v1",
+  "$comment": "Editorial extension fields are permitted. Known operational fields are validated; cross-record references and approval semantics are checked separately.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "characters"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "role",
+          "known_traits",
+          "unknowns",
+          "knowledge"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "name": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "role": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "aliases": {
+            "$ref": "common.schema.json#/$defs/strings"
+          },
+          "goals": {
+            "$ref": "common.schema.json#/$defs/strings"
+          },
+          "known_traits": {
+            "$ref": "common.schema.json#/$defs/strings"
+          },
+          "unknowns": {
+            "$ref": "common.schema.json#/$defs/strings"
+          },
+          "first_scene": {
+            "$ref": "common.schema.json#/$defs/nullable_id"
+          },
+          "knowledge": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "after_scene",
+                "knows"
+              ],
+              "properties": {
+                "after_scene": {
+                  "$ref": "common.schema.json#/$defs/id"
+                },
+                "knows": {
+                  "$ref": "common.schema.json#/$defs/text"
+                }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
