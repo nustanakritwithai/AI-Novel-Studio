@@ -1,0 +1,37 @@
+name: Import AI Novel Studio starter kit
+on:
+  push:
+    paths:
+      - "bootstrap/source.tar.xz.b64"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    if: github.repository == 'nustanakritwithai/AI-Novel-Studio'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and extract starter release
+        shell: bash
+        run: |
+          set -euo pipefail
+          base64 --decode bootstrap/source.tar.xz.b64 > /tmp/novel-studio.tar.xz
+          echo '24ef9dbb8850d2ff220193f1ec893e36f05c73a5aba5703642841f215a83c5f1  /tmp/novel-studio.tar.xz' | sha256sum -c -
+          tar -tJf /tmp/novel-studio.tar.xz | grep -vE '^\./$|^\./[a-zA-Z0-9_.-]+(/|$)' && exit 1 || true
+          tar -xJf /tmp/novel-studio.tar.xz -C .
+          python scripts/novelctl.py check
+          python -m unittest discover -s tests -v
+      - name: Commit imported project and remove bootstrap files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf bootstrap
+          rm .github/workflows/bootstrap.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Import AI Novel Studio v0.1 with Last Island story registry'
+          git push origin HEAD:main
