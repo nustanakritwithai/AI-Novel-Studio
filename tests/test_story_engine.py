@@ -10,7 +10,7 @@ from pathlib import Path
 from unittest.mock import patch
 from scripts import story_engine
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent / 'stories/last-island'
 
 
 class StoryEngineTests(unittest.TestCase):
@@ -19,6 +19,7 @@ class StoryEngineTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         for name in ("data", "ledger", "bible", "scenes", "drafts"):
             shutil.copytree(ROOT / name, self.root / name)
+        shutil.copyfile(ROOT / 'story.json', self.root / 'story.json')
         # Git does not retain empty directories, even though local fixtures may.
         for layer in ("episodes", "chapters", "books"):
             (self.root / "ledger" / layer).mkdir(parents=True, exist_ok=True)

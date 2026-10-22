@@ -2,6 +2,11 @@ name: Build Story Engine context pack
 on:
   workflow_dispatch:
     inputs:
+      story:
+        description: 'Story slug under stories/ (blank uses studio.json default)'
+        required: false
+        default: ''
+        type: string
       target:
         description: 'Scene or episode ID (example SC-001)'
         required: true
@@ -24,11 +29,17 @@ jobs:
           python-version: '3.11'
       - name: Build scoped context
         env:
+          STORY: ${{ inputs.story }}
           TARGET: ${{ inputs.target }}
           RECENT: ${{ inputs.recent }}
         run: |
-          python scripts/story_engine.py check
-          python scripts/story_engine.py pack "$TARGET" --recent "$RECENT" --out context-pack.md
+          if [ -n "$STORY" ]; then
+            python scripts/story_engine.py --story "$STORY" check
+            python scripts/story_engine.py --story "$STORY" pack "$TARGET" --recent "$RECENT" --out context-pack.md
+          else
+            python scripts/story_engine.py check
+            python scripts/story_engine.py pack "$TARGET" --recent "$RECENT" --out context-pack.md
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: story-context-pack

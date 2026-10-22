@@ -1,0 +1,156 @@
+#!/usr/bin/env python3
+"""Generic story workspace commands; creates metadata, never narrative prose."""
+from __future__ import annotations
+
+import argparse
+import json
+import shutil
+import sys
+import tempfile
+from pathlib import Path
+
+try:
+    from scripts import novelctl, story_config, story_engine
+except ImportError:  # called as `python scripts/storyctl.py`
+    import novelctl
+    import story_config
+    import story_engine
+
+
+def new_story(workspace: Path, slug: str, title: str | None = None) -> Path:
+    """Build an empty scaffold, reserving the destination without overwriting it."""
+    slug = story_config.validate_slug(slug)
+    title = slug if title is None else title
+    if not isinstance(title, str) or not title.strip():
+        raise ValueError("Story title must be a nonempty string")
+    workspace = Path(workspace).resolve()
+    if not workspace.is_dir():
+        raise ValueError("Workspace must be an existing directory")
+    stories = (workspace / "stories").resolve()
+    if stories == workspace or not stories.is_relative_to(workspace):
+        raise ValueError("Story directory escapes workspace")
+    target = stories / slug
+    if target.exists() or target.is_symlink():
+        raise ValueError(f"Story already exists: {target}")
+    config = {
+        "schema_version": 1, "slug": slug, "title": title.strip(),
+        "extensions": {"gameplay": False}, "rules": [],
+    }
+    data = {kind: {"schema_version": 1, kind: []} for kind in novelctl.CORE_DATA}
+    data["canon"] = {"schema_version": 1, "project": title.strip(), "facts": []}
+    data["inventory_ledger"] = {"schema_version": 1, "entries": []}
+    data["story_state"] = {
+        "schema_version": 1, "approved_through_scene": None, "active_episode": None,
+        "phase": "OUTLINE_NOT_CANON_PROSE", "flags": {}, "pending_review": [],
+    }
+    stories.mkdir(exist_ok=True)
+    staging = Path(tempfile.mkdtemp(prefix=f".{slug}-", dir=stories))
+    reserved = False
+    try:
+        def write_json(path, value):
+            path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+        (staging / "data").mkdir()
+        for kind, value in data.items():
+            write_json(staging / "data" / f"{kind}.json", value)
+        write_json(staging / "story.json", config)
+        for directory in ("scenes", "drafts", "ledger/episodes", "ledger/chapters", "ledger/books"):
+            path = staging / directory
+            path.mkdir(parents=True)
+            (path / ".gitkeep").write_text("", encoding="utf-8")
+        write_json(staging / "ledger/index.json", {
+            "schema_version": 1, "episodes": [], "chapters": [], "books": [],
+        })
+        (staging / "bible").mkdir()
+        (staging / "bible/STYLE_GUIDE.md").write_text(
+            "# Writing style contract\n\nHuman style decisions: UNKNOWN.\n"
+            "Record approved style requirements here before narrative work.\n"
+            "Do not infer story facts from this scaffold.\n", encoding="utf-8")
+        (staging / "AGENTS.md").write_text(
+            "# Story operating contract\n\n"
+            "This scaffold contains no narrative, scene plan, approved facts, or approval provenance.\n"
+            "Read story.json and this story's registries before working. Keep all reads and writes in this story root.\n"
+            "LOCKED human decisions outrank proposals. UNKNOWN is not verified.\n"
+            "Drafts and planned effects do not become approved state without human review.\n"
+            "Use the workspace storyctl check and pack commands with this story selected.\n"
+            "Never invent review provenance, approve canon, or merge automatically.\n", encoding="utf-8")
+        # Validate before exposing the destination. No default story is changed.
+        story_config.load_config(staging)
+        target.mkdir()  # Exclusive reservation also protects an existing empty directory.
+        reserved = True
+        for child in staging.iterdir():
+            child.rename(target / child.name)
+        return target
+    except Exception:
+        if reserved:
+            # Only the newly reserved destination belongs to this operation.
+            if target.parent.resolve() == stories and target.resolve().is_relative_to(stories):
+                shutil.rmtree(target)
+        raise
+    finally:
+        if staging.parent.resolve() == stories and staging.name.startswith(f".{slug}-"):
+            shutil.rmtree(staging)
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Generic story engine workspace (stdlib only)")
+    parser.add_argument("--workspace", type=Path, default=story_config.WORKSPACE_ROOT)
+    parser.add_argument("--story", help="Explicit story slug; otherwise use studio.json default_story")
+    commands = parser.add_subparsers(dest="command", required=True)
+    new = commands.add_parser("new", help="Create empty metadata; never write a story")
+    new.add_argument("slug")
+    new.add_argument("--title")
+    commands.add_parser("check")
+    commands.add_parser("status")
+    pack = commands.add_parser("pack")
+    pack.add_argument("target")
+    pack.add_argument("--recent", type=int, default=7)
+    pack.add_argument("--max-chars", type=int, default=25000)
+    pack.add_argument("--out", type=Path)
+    brief = commands.add_parser("brief")
+    brief.add_argument("target")
+    brief.add_argument("--out", type=Path)
+    proposal = commands.add_parser("proposal")
+    proposal.add_argument("episode")
+    proposal.add_argument("--out", type=Path)
+    args = parser.parse_args(argv)
+    try:
+        if args.command == "new":
+            if args.story is not None:
+                raise ValueError("Use new SLUG without --story")
+            print("Created empty story scaffold:", new_story(args.workspace, args.slug, args.title))
+            return 0
+        root = story_config.resolve_root(args.workspace, args.story)
+        if args.command == "check":
+            errors, warnings = story_engine.validate(root)
+            for warning in warnings:
+                print("WARN:", warning)
+            for error in errors:
+                print("ERROR:", error)
+            print(f"{'PASS' if not errors else 'FAIL'} | {len(errors)} errors; {len(warnings)} warnings")
+            return 1 if errors else 0
+        if args.command == "status":
+            print(novelctl.status(root))
+            return 0
+        if args.command == "pack":
+            if not 0 <= args.recent <= 20 or args.max_chars < 1000:
+                raise ValueError("--recent must be 0..20 and --max-chars >=1000")
+            output = story_engine.pack(root, args.target, args.recent, args.max_chars)
+        elif args.command == "brief":
+            output = novelctl.build_brief(root, args.target)
+        else:
+            output = story_engine.proposal(root, args.episode)
+        if args.out:
+            args.out.parent.mkdir(parents=True, exist_ok=True)
+            args.out.write_text(output, encoding="utf-8")
+            print("Wrote:", args.out)
+        else:
+            print(output)
+        return 0
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        print("ERROR:", exc, file=sys.stderr)
+        return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

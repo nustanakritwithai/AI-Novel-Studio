@@ -1,0 +1,275 @@
+{
+  "source_commit": "e2f82d2971526bd77ac82999f37f24fe5b7a8816",
+  "files": [
+    {
+      "source": "data/canon.json",
+      "path": "stories/last-island/data/canon.json",
+      "sha256": "7cfb75c46c999c5619c48380efcb3ae02ebd21311db5542ea4de67e7f449fdcf"
+    },
+    {
+      "source": "data/characters.json",
+      "path": "stories/last-island/data/characters.json",
+      "sha256": "010089aec3c88b483604b5cd5f34edcaae37202dc5a1bb2355a8b2ca60d9ffcd"
+    },
+    {
+      "source": "data/decisions.json",
+      "path": "stories/last-island/data/decisions.json",
+      "sha256": "2227abc12b6f3af755f87e7553dc0c181eb72e03970496d0cc50a729b5738887"
+    },
+    {
+      "source": "data/episodes.json",
+      "path": "stories/last-island/data/episodes.json",
+      "sha256": "e694e4763ca8dfe2cc26792367d524d20cb0f4dd215198353ceaaf19107d2835"
+    },
+    {
+      "source": "data/events.json",
+      "path": "stories/last-island/data/events.json",
+      "sha256": "61b4cbd5aafe516fd658b1b1578279b9db4f83cc21851932820063e90c0f2722"
+    },
+    {
+      "source": "data/inventory_ledger.json",
+      "path": "stories/last-island/data/inventory_ledger.json",
+      "sha256": "e4b93b122f8a92ab71d6ae675123827f96f252e3f3368b55c2b7a40e6fbfe1bd"
+    },
+    {
+      "source": "data/items.json",
+      "path": "stories/last-island/data/items.json",
+      "sha256": "d10822eb8f4294438d8fb229e3a89ededd129f60b27420b8864c73017244bf0c"
+    },
+    {
+      "source": "data/locations.json",
+      "path": "stories/last-island/data/locations.json",
+      "sha256": "a47de38a8d6d25b0ddf3aa5a27fdd6e952a8d13872569626959a314503211f78"
+    },
+    {
+      "source": "data/mechanics.json",
+      "path": "stories/last-island/data/mechanics.json",
+      "sha256": "37e093a042d165af82be2ac555929fb2bcb22146f24ddd70a578609c283652c3"
+    },
+    {
+      "source": "data/relationships.json",
+      "path": "stories/last-island/data/relationships.json",
+      "sha256": "92823fa5821b60ec07e5328099cb026650d2655a036a9cace2b07bc07abfb496"
+    },
+    {
+      "source": "data/scenes.json",
+      "path": "stories/last-island/data/scenes.json",
+      "sha256": "5fef48174cfe21341a6cb852513d923b8531e99345f5cfd990f909c6c884b477"
+    },
+    {
+      "source": "data/sources.json",
+      "path": "stories/last-island/data/sources.json",
+      "sha256": "92bba729def5b5db1bf3cd93c04747cf4a1ee11d0cc9eb596bdb2cbbc3139a4f"
+    },
+    {
+      "source": "data/story_state.json",
+      "path": "stories/last-island/data/story_state.json",
+      "sha256": "2f38bc59bf3c0554f0b5ac153e9967b43bd5e08c4e866e459f1c9253ea404375"
+    },
+    {
+      "source": "data/threads.json",
+      "path": "stories/last-island/data/threads.json",
+      "sha256": "d230e8ef687a8a7c80ba3c233cd1e9b3faf9d958e2195a5985f09e5c4f5a5534"
+    },
+    {
+      "source": "bible/CHARACTERS.md",
+      "path": "stories/last-island/bible/CHARACTERS.md",
+      "sha256": "ca388ec5cb8397374ff944f2ac19dc37df0d252e63b09caf5d3dc090257012af"
+    },
+    {
+      "source": "bible/GAMEPLAY_RULES.md",
+      "path": "stories/last-island/bible/GAMEPLAY_RULES.md",
+      "sha256": "e81d2e63854002b89583b4e9968d0381b3c8888eff5e27fd30a8d035ac25e0e3"
+    },
+    {
+      "source": "bible/LOCATIONS.md",
+      "path": "stories/last-island/bible/LOCATIONS.md",
+      "sha256": "2631695208ac6220a656396e5cbb8c0b7684e3608c79897fe906951da5d0da4d"
+    },
+    {
+      "source": "bible/RETCON_LOG.md",
+      "path": "stories/last-island/bible/RETCON_LOG.md",
+      "sha256": "9fb388b68c59765a6e4d1e027390ab77c3bdf7db0586c3cc17e6f923f64f65f5"
+    },
+    {
+      "source": "bible/STYLE_GUIDE.md",
+      "path": "stories/last-island/bible/STYLE_GUIDE.md",
+      "sha256": "9ee3cf52e38f9e3dc7ad138a312dbb4b348fe7a15a7e6fe845545e57af281ffd"
+    },
+    {
+      "source": "bible/WORLD.md",
+      "path": "stories/last-island/bible/WORLD.md",
+      "sha256": "78a44096ee243d28e23eb879687deea32c5b7f6c9467a6b107e537e404b232f5"
+    },
+    {
+      "source": "scenes/SC-001.md",
+      "path": "stories/last-island/scenes/SC-001.md",
+      "sha256": "1fceb6da4dd255431d2fc96c75e15d1bbe1a90972a90096ef26e6ea844268cae"
+    },
+    {
+      "source": "scenes/SC-002.md",
+      "path": "stories/last-island/scenes/SC-002.md",
+      "sha256": "84f9fac64de83eeea4005843fb17f5c5debd68c234a0d7310f5da27ec6c690cf"
+    },
+    {
+      "source": "scenes/SC-003.md",
+      "path": "stories/last-island/scenes/SC-003.md",
+      "sha256": "ed47a9f33ea92c813c85fe6a1b9865cd83a2a96de75433fa061346f5a71db91d"
+    },
+    {
+      "source": "scenes/SC-004.md",
+      "path": "stories/last-island/scenes/SC-004.md",
+      "sha256": "00b9a700b626d90369eedda870517730893ad6386f6901ff61fa3ddeac18367a"
+    },
+    {
+      "source": "scenes/SC-005.md",
+      "path": "stories/last-island/scenes/SC-005.md",
+      "sha256": "aced7e310aefa9aea13ecb122bb3ad020678e06d9d9b2e0ba03b1751022bbf52"
+    },
+    {
+      "source": "scenes/SC-006.md",
+      "path": "stories/last-island/scenes/SC-006.md",
+      "sha256": "6e5b5edf9feef62c7ccece8652b32dab4d8cc925a984391b96900d2937787fa1"
+    },
+    {
+      "source": "scenes/SC-007.md",
+      "path": "stories/last-island/scenes/SC-007.md",
+      "sha256": "dd3b153068bd1578b6c8df868a42d44c5c7f30ce546a2c148dccc3b31972dceb"
+    },
+    {
+      "source": "scenes/SC-008.md",
+      "path": "stories/last-island/scenes/SC-008.md",
+      "sha256": "fd6d138bbbdb47c526bc7940367cac44fb9e505f8ac4c59da51d906317d185d3"
+    },
+    {
+      "source": "drafts/EP-001/README.md",
+      "path": "stories/last-island/drafts/EP-001/README.md",
+      "sha256": "ef521e499066f7632045a25a7b7075a31f85fb0470679460876198b328a07fe5"
+    },
+    {
+      "source": "plot/SEASON_01.md",
+      "path": "stories/last-island/plot/SEASON_01.md",
+      "sha256": "ac978d36da5c05bf506b9dfd1a1a8766be929015aa2591ef6cfe6ee067e40e51"
+    },
+    {
+      "source": "plot/SERIES_ARC.md",
+      "path": "stories/last-island/plot/SERIES_ARC.md",
+      "sha256": "0520ffedd4aba1421937ae602c1d179a0f4387e867d354911dd6e3cbf8a55f47"
+    },
+    {
+      "source": "plot/episodes/EP-001.md",
+      "path": "stories/last-island/plot/episodes/EP-001.md",
+      "sha256": "490838c3613f070b4429d032debff0f313ad8c28d728f19132189487a6994b19"
+    },
+    {
+      "source": "research/EP001_GAMEPLAY_GAPS.md",
+      "path": "stories/last-island/research/EP001_GAMEPLAY_GAPS.md",
+      "sha256": "b1c9cf7ae57d57ee3894db1a2ef1bfcbe0283e954dd07a6df1ef7c33fce8c6c2"
+    },
+    {
+      "source": "research/EXAMPLE_TRANSCRIPT.md",
+      "path": "stories/last-island/research/EXAMPLE_TRANSCRIPT.md",
+      "sha256": "7253880e828f9f7be355ae038b8eef0b607c60929d2418714a8f1681b478f8c4"
+    },
+    {
+      "source": "research/SOURCE_LEDGER.md",
+      "path": "stories/last-island/research/SOURCE_LEDGER.md",
+      "sha256": "8b4e6bc24ac97c938f1a93f0cd94b068489eeacd0a09a3ee29fee92f29fe8810"
+    },
+    {
+      "source": "ledger/README.md",
+      "path": "stories/last-island/ledger/README.md",
+      "sha256": "96d065c1ede31ccd1c4bfaf39cfc6cacc1a078989cb1a0af9de51fc78586c3ea"
+    },
+    {
+      "source": "ledger/books/.gitkeep",
+      "path": "stories/last-island/ledger/books/.gitkeep",
+      "sha256": "c60a05803b15fe5e17bfad5f4f17f0353e435026dc3a6174a8217d8c241bf97f"
+    },
+    {
+      "source": "ledger/chapters/.gitkeep",
+      "path": "stories/last-island/ledger/chapters/.gitkeep",
+      "sha256": "c60a05803b15fe5e17bfad5f4f17f0353e435026dc3a6174a8217d8c241bf97f"
+    },
+    {
+      "source": "ledger/episodes/.gitkeep",
+      "path": "stories/last-island/ledger/episodes/.gitkeep",
+      "sha256": "c60a05803b15fe5e17bfad5f4f17f0353e435026dc3a6174a8217d8c241bf97f"
+    },
+    {
+      "source": "ledger/index.json",
+      "path": "stories/last-island/ledger/index.json",
+      "sha256": "796c32fc68e432283a238479c64aa3875d1d03c5d57e18cd8e2bbfc30def29d3"
+    },
+    {
+      "source": "prompts/story-engine/CHECKER_CLAUDE.md",
+      "path": "stories/last-island/prompts/story-engine/CHECKER_CLAUDE.md",
+      "sha256": "3567ca6cf0ebc45191bdf1836ebbc80292480a80186051c53e6fcda396a14f56"
+    },
+    {
+      "source": "prompts/story-engine/DRAFTER_KIMI.md",
+      "path": "stories/last-island/prompts/story-engine/DRAFTER_KIMI.md",
+      "sha256": "3be81b85fea6dd6967d48acbeb09b28e751efb536a4550c1c6581a8b1ed40ad5"
+    },
+    {
+      "source": "prompts/story-engine/PLANNER.md",
+      "path": "stories/last-island/prompts/story-engine/PLANNER.md",
+      "sha256": "f7c81c5894448df5492bf7ac8cdede14a0969cc67cc684d066e972726323fa26"
+    },
+    {
+      "source": "prompts/story-engine/UPDATER.md",
+      "path": "stories/last-island/prompts/story-engine/UPDATER.md",
+      "sha256": "944c1f0fefca0c950e9f0a2ba1ce2a0f1851f3b3e15eeeca21735632abdc1c13"
+    },
+    {
+      "source": "AGENTS.md",
+      "path": "stories/last-island/AGENTS.md",
+      "sha256": "60d2ad8605be08b05ac90046c0b2d26c9e2f2405b9b080a03a09646f8f1212fd"
+    },
+    {
+      "source": "README.md",
+      "path": "stories/last-island/README.md",
+      "sha256": "e6b5830e8249e02194b18baa12d5a61da25f35ec078747d73ca13853746ef5f7"
+    },
+    {
+      "source": "CONTRIBUTING.md",
+      "path": "stories/last-island/CONTRIBUTING.md",
+      "sha256": "971ee1610c4532252051ebdebe51eefddce29d8050c90efbd785e7debc128b27"
+    },
+    {
+      "source": "HANDOFF.md",
+      "path": "stories/last-island/HANDOFF.md",
+      "sha256": "6864beb46ff3ccb1158fc7429499f5e31b24766361f595e81bc12c455a840b97"
+    },
+    {
+      "source": "HANDOFF-AUTO.md",
+      "path": "stories/last-island/HANDOFF-AUTO.md",
+      "sha256": "2aa8e586380491cfb8c908b585d277fde7f9e722859711b19cd41db4f125e77a"
+    },
+    {
+      "source": "PROJECT.md",
+      "path": "stories/last-island/PROJECT.md",
+      "sha256": "9ba2b7f2cd67a080c55d73c3f424eace39148161d6118b1b64ab17de572ed66b"
+    },
+    {
+      "source": "STATE.md",
+      "path": "stories/last-island/STATE.md",
+      "sha256": "abfa1a36fba29488e07d1bcf5260be4fe9afce1b4c237eb8241d07d3c12dc5d2"
+    },
+    {
+      "source": "EXAMPLE_CONTEXT_PACK.md",
+      "path": "stories/last-island/EXAMPLE_CONTEXT_PACK.md",
+      "sha256": "71e3464893fcd2e208e0cec190fe8be182c22d1c712f32f1bf6400530281e32f"
+    },
+    {
+      "source": "SC-001-WRITER-BRIEF.md",
+      "path": "stories/last-island/SC-001-WRITER-BRIEF.md",
+      "sha256": "efff12d8aeb011b1ad00713a3abd97eff0976447e919d58c784568eddbae6a8e"
+    },
+    {
+      "source": "index.html",
+      "path": "stories/last-island/index.html",
+      "sha256": "10fb2575e23695bff449a266987d89b2cb79bfbe9a1add14f74057720597d49f"
+    }
+  ]
+}

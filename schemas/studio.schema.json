@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story workspace configuration v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "default_story"],
+  "properties": {
+    "schema_version": {"const": 1, "type": "integer"},
+    "default_story": {"$ref": "story.schema.json#/properties/slug"}
+  }
+}
