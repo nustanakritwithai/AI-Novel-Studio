@@ -93,6 +93,8 @@ delta ที่มี ID/scene ซ้ำ อ้างฉากที่ไม่
 
 ## ใช้ร่วมกับคำสั่งเดิม
 
+เมื่อมี `state_history.json` การตรวจ `requires_flags` ของแต่ละฉากใช้เฉพาะ flags จาก replay ก่อนฉากนั้น ค่าใน latest snapshot และ `effects_flags` ของแผนไม่ใช่หลักฐานย้อนหลัง ถ้า replay เป็น UNKNOWN หรือ flag ไม่ได้เป็น boolean `true` ต้องไม่ผ่าน prerequisite; ข้อมูล flags ที่ผิดรูปแบบต้องรายงานข้อผิดพลาดโดยไม่ fallback ไป snapshot เมื่อไม่มีไฟล์ history ยังคงใช้ causal plan simulation แบบ legacy เดิม การตรวจผ่านยังไม่ใช่ human editorial approval
+
 การเลือกเรื่องและ direct root ของ E1 ยังคงใช้ได้:
 
 ```bash

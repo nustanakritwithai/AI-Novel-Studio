@@ -187,12 +187,36 @@ class DoctorTests(unittest.TestCase):
         history = self.add_history(self.alpha)
         history['deltas'][1]['status'] = 'PROPOSED'
         self.write(self.alpha / 'data/state_history.json', history)
+        # UNKNOWN context is permissible only without a causal prerequisite
+        # that needs the unavailable preceding segment's approved state.
+        scenes = self.read(self.alpha / 'data/scenes.json')
+        scenes['scenes'][2]['requires_flags'] = []
+        self.write(self.alpha / 'data/scenes.json', scenes)
         result = self.diagnose(target='SC-003')
         self.assertEqual(result['errors'], [])
         self.assertEqual(result['local_validation_status'], 'PASS')
         self.assertEqual(result['state']['availability'], 'UNKNOWN')
         self.assertNotIn('state', result['state'])
         self.assertNotIn('applied_delta_ids', result['state'])
+        self.assert_online_unchecked(result)
+
+    def test_missing_history_required_by_a_prerequisite_reports_error_without_false_pass(self):
+        history = self.add_history(self.alpha)
+        history['deltas'][1]['status'] = 'PROPOSED'
+        self.write(self.alpha / 'data/state_history.json', history)
+        scenes = self.read(self.alpha / 'data/scenes.json')
+        self.assertIn('stage_2', scenes['scenes'][2]['requires_flags'])
+        before = self.snapshot(self.workspace)
+        result = self.diagnose(target='SC-003')
+        self.assertEqual(result['local_validation_status'], 'FAIL')
+        self.assertEqual(result['state']['history'], 'PRESENT')
+        self.assertEqual(result['state']['availability'], 'ERROR')
+        self.assertTrue(any("SC-003: needs flag 'stage_2'" in error
+                            for error in result['errors']), result['errors'])
+        self.assertTrue(any('UNKNOWN' in error for error in result['errors']), result['errors'])
+        self.assertNotIn('state', result['state'])
+        self.assertNotIn('applied_delta_ids', result['state'])
+        self.assertEqual(self.snapshot(self.workspace), before)
         self.assert_online_unchecked(result)
 
     def test_contradictory_history_and_unknown_target_report_errors(self):

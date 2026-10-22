@@ -150,8 +150,29 @@ def validate(root: Path):
         for scene in actual:
             if scene['id'] not in episode_scenes:
                 errors.append(f"{scene['id']}: orphan scene")
+            prerequisite_flags = flags
+            if scene.get('requires_flags'):
+                # Explicit history is authoritative at this scene's start.
+                # Current snapshots and planned effects cannot fill its gaps.
+                # With no history, preserve the legacy causal plan simulation.
+                try:
+                    prior = state_replay.replay_before(root, scene['id'], db)
+                except (OSError, ValueError, KeyError, TypeError) as exc:
+                    errors.append(f"{scene['id']}: cannot establish causal prerequisites from state history ({exc})")
+                    prerequisite_flags = {}
+                else:
+                    if prior is not None:
+                        state = prior.get('state') if prior.get('availability') == 'KNOWN' else None
+                        historical_flags = state.get('flags') if isinstance(state, dict) else None
+                        if (isinstance(historical_flags, dict)
+                                and all(isinstance(value, bool) for value in historical_flags.values())):
+                            prerequisite_flags = historical_flags
+                        else:
+                            errors.append(f"{scene['id']}: causal prerequisites need known historical flags as an object of booleans; "
+                                          "missing, UNKNOWN or malformed flags cannot establish them")
+                            prerequisite_flags = {}
             for req in scene.get('requires_flags', []):
-                if flags.get(req) is not True:
+                if prerequisite_flags.get(req) is not True:
                     errors.append(f"{scene['id']}: needs flag '{req}' before this scene, but it is not established")
             for flag, value in scene.get('effects_flags', {}).items():
                 if not isinstance(value, bool):
