@@ -1,6 +1,6 @@
 # Engine E1 — แยกแกนระบบออกจากข้อมูลรายเรื่อง
 
-> สถานะเอกสาร: E1 อธิบายการแยก story roots และ compatibility เดิม สำหรับ dependency, schema/replay และลำดับงานที่อัปเดตให้ใช้ [ENGINE_E2.md](ENGINE_E2.md) เป็นคู่มือปัจจุบัน E2 นำรากฐาน replay มารวมกับ schema แล้ว; roadmap เดิมท้ายเอกสารนี้เก็บเป็นบริบทของ E1 ไม่ใช่เลข milestone ปัจจุบัน โดยการตรวจ approval provenance จาก GitHub จริงอยู่ใน E5
+> สถานะเอกสาร: E1 อธิบายการแยก story roots และ compatibility เดิม; schema/replay ดู [ENGINE_E2.md](ENGINE_E2.md), local review ดู [ENGINE_E3_E4.md](ENGINE_E3_E4.md), และ bounded provenance/ledger proposals กับ roadmap ปัจจุบันดู [ENGINE_E5.md](ENGINE_E5.md) เลขที่แก้ให้ตรงแผนผู้ใช้คือ E5 ledger/provenance, E6 synthetic evaluation, E7 คู่มือไทย เอกสาร E1 ไม่ได้อ้างว่าความสามารถภายหลังมีอยู่แล้วตอนทำ E1
 
 E1 เป็น milestone แรกสำหรับ engine ที่ใช้ซ้ำได้หลายเรื่อง งานนี้ไม่เขียนนิยาย ไม่สร้าง canon ใหม่ และไม่ถือว่า engine ทั้งแผนเสร็จแล้ว ผลตรวจจริงและ CI ของ commit สุดท้ายต้องบันทึกใน Draft PR; รายการตรวจด้านล่างเป็นเกณฑ์รับงาน ไม่ใช่คำกล่าวว่าผ่านแล้ว
 
@@ -104,17 +104,17 @@ python scripts/story_engine.py proposal EP-001
 
 ผล `PASS` ของ validator หมายถึงผ่านเงื่อนไขที่โค้ดตรวจได้เท่านั้น ไม่ยืนยันคุณภาพวรรณกรรมหรือพิสูจน์ว่า reviewer เป็นมนุษย์จริง ห้ามนำค่า approval ใน fixture ไปอ้างเป็น GitHub approval จริง ห้ามกรอกคะแนน reviewer, จำนวน friction หรือสถิติความสำเร็จที่ไม่ได้วัด
 
-## งานที่ยังเหลือหลัง E1
+## งานต่อจาก E1 และเลข roadmap ปัจจุบัน
 
-E2–E7 ต่อไปนี้เป็น backlog พร้อมเกณฑ์รับงาน ต้องแบ่งเป็นงานที่ตรวจได้ก่อนเริ่มแต่ละ milestone ไม่รวมเข้า E1 โดยปริยาย
+ตารางนี้แก้เลข milestone ให้ตรงแผนผู้ใช้แล้ว ดูสถานะและข้อจำกัดปัจจุบันใน [ENGINE_E5.md](ENGINE_E5.md) ไม่ใช่คำกล่าวว่า E2–E7 เสร็จทั้งหมดจาก E1:
 
 | Milestone | งาน | เกณฑ์รับงาน |
 | --- | --- | --- |
-| E2 — schema และ migration | schema ครบทุก registry, version policy และข้อมูลผิดรูปแบบ | ตรวจ required fields, type, enum, reference และ version ครบ; ข้อมูลเสีย fail พร้อมตำแหน่งที่แก้ได้; migration ต้องย้อนกลับและตรวจ bytes/ความหมายได้ |
-| E3 — state ตามฉาก | per-scene state deltas และการอ่านสถานะย้อนหลัง | replay ตามลำดับฉากให้ผล deterministic; ทดสอบย้อนฉากและข้าม episode; ห้ามข้อมูลอนาคตหรือ planned effects กลายเป็น approved state; ขาดประวัติต้องเป็น `UNKNOWN` |
-| E4 — provenance จริง | ตรวจ source PR, review และ merge commit จาก GitHub | อ้าง PR ที่ merge จริงและตรงเนื้อหา/SHA; ปฏิเสธ unmerged, ผิด repo, ผิด commit และหลักฐานไม่ครบ; offline fixture ต้องระบุว่าเป็นการจำลอง ไม่อ้างเป็นการอนุมัติจริง |
-| E5 — prompt/template ทั่วไป | สัญญา input/output ที่ไม่ผูกเรื่อง รวม `brief-review` และข้อเสนอเปลี่ยนแปลง | ใช้กฎ/style ของเรื่องที่เลือก; ส่งออก Proposed Facts และข้อขัดแย้งโดยไม่ promote canon; ไม่มีชื่อโลกหรือข้อบังคับเกมของตัวอย่างหลุดไปเรื่องอื่น |
-| E6 — เครื่องมือดูแล ledger | `rollup`, `doctor` และ status ที่อธิบายปัญหาครบ | rollup ใช้เฉพาะอดีตที่ approved และมี source; doctor รายงาน reference/provenance/state gaps โดยไม่แก้เงียบ; ไม่ทิ้ง LOCKED facts เพื่อให้ pack ผ่านขนาด |
-| E7 — evaluation workflow | synthetic workflow 3 ฉากและชุด planted violations | ทดสอบเส้นทางตั้งแต่ metadata ถึง proposal/approved ledger ด้วย fixture ที่ประกาศชัด; **critical canon, knowledge และ approval violations ที่วางไว้ต้องถูกจับทุกข้อ**; รายงานผลจาก assertions จริง รวมสิ่งที่ยังจับไม่ได้ และ block การประกาศพร้อมใช้เมื่อข้อวิกฤตหลุด |
+| E2 — schema และ replay พื้นฐาน | versioned registries และ per-scene state deltas | ตรวจ required/type/enum/version และ replay ตามลำดับฉาก; future/planned/unapproved evidence ไม่กลายเป็นอดีต; gaps เป็น UNKNOWN |
+| E3 — migration และ diagnostics ขั้นสูง | นโยบายย้าย schema ที่ย้อนกลับได้และวิเคราะห์ state edge cases | ไม่แก้ canon เงียบ ๆ; ตรวจ bytes/ความหมายก่อนและหลัง; migration ขั้นสูงยังไม่เสร็จ |
+| E4 — generic workflow/templates | สัญญา input/output และ local brief-review/proposal ที่ไม่ผูกเรื่อง | ใช้กฎ/style ของ root ที่เลือก; แยก Proposed Facts/ข้อขัดแย้ง; ไม่ promote canon จากผลเครื่องมือ |
+| E5 — ledger/provenance | ตรวจ merged metadata/source hash และสร้าง rollup proposals | ปฏิเสธ unmerged, ผิด repo/SHA/hash หรือหลักฐานไม่ครบ; offline เป็น UNVERIFIED; การต่อ recap ไม่ apply ledger และไม่พิสูจน์ human editorial approval |
+| E6 — synthetic evaluation | workflow สามฉากและ planted violations ครบขั้น | **critical canon, knowledge และ approval violations ต้องถูกจับทุกข้อ**; รายงาน assertions จริงและข้อจำกัด ห้ามประกาศผ่านเมื่อข้อวิกฤตยังหลุด |
+| E7 — คู่มือไทย | onboarding/runbook ตามเครื่องมือที่ตรวจรับจริง | ตัวอย่างทดสอบได้ แยก UNKNOWN/UNVERIFIED/proposal/human decision ชัดเจน คู่มือราย milestone ยังไม่ใช่คู่มือครบทั้งแผน |
 
-E1 ยังไม่มี historical snapshots, authenticated GitHub approval verification, full registry schemas หรือการประเมิน semantic prose ครบวงจร ไม่มี paid API, agent automation หรือการเปลี่ยน privacy/settings/ruleset ใน milestone นี้ การอนุมัติเนื้อหาและการ merge ยังคงต้องมีคำสั่งจากมนุษย์ตามขอบเขตงานนั้น
+E1 ในขณะส่งมอบยังไม่มี historical snapshots, authenticated GitHub approval verification, full registry schemas หรือการประเมิน semantic prose ครบวงจร ขอบเขตภายหลังดูคู่มือ milestone ที่เกี่ยวข้อง ไม่มี paid API, agent automation หรือการเปลี่ยน privacy/settings/ruleset ใน E1 การอนุมัติเนื้อหาและการ merge ยังคงต้องมีคำสั่งจากมนุษย์ตามขอบเขตงานนั้น

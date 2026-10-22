@@ -36,6 +36,9 @@
           },
           "approval": {
             "$ref": "common.schema.json#/$defs/approval"
+          },
+          "provenance": {
+            "$ref": "common.schema.json#/$defs/provenance"
           }
         },
         "additionalProperties": true
@@ -63,6 +66,9 @@
           },
           "approval": {
             "$ref": "common.schema.json#/$defs/approval"
+          },
+          "provenance": {
+            "$ref": "common.schema.json#/$defs/provenance"
           }
         },
         "additionalProperties": true
@@ -90,6 +96,9 @@
           },
           "approval": {
             "$ref": "common.schema.json#/$defs/approval"
+          },
+          "provenance": {
+            "$ref": "common.schema.json#/$defs/provenance"
           }
         },
         "additionalProperties": true

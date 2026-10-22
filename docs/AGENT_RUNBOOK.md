@@ -1,6 +1,6 @@
 # Agent runbook — ส่งต่องานภายใน story เดียว
 
-ใช้ร่วมกับ [AGENTS.md](../AGENTS.md), [ENGINE_E3_E4.md](../ENGINE_E3_E4.md) และสัญญา schema/replay ใน [ENGINE_E2.md](../ENGINE_E2.md) Runbook นี้กำหนด human workflow; CLI ไม่เรียกโมเดล ไม่ส่งงานภายนอก และไม่อนุมัติ canon เอง งาน engine-only ใช้ synthetic metadata เท่านั้น ไม่อนุญาตให้เขียน prose
+ใช้ร่วมกับ [AGENTS.md](../AGENTS.md), [ENGINE_E5.md](../ENGINE_E5.md), [ENGINE_E3_E4.md](../ENGINE_E3_E4.md) และสัญญา schema/replay ใน [ENGINE_E2.md](../ENGINE_E2.md) Runbook นี้กำหนด human workflow; CLI ไม่เรียกโมเดล ไม่ส่งงานภายนอก และไม่อนุมัติ canon เอง งาน engine-only ใช้ synthetic metadata เท่านั้น ไม่อนุญาตให้เขียน prose
 
 ## ข้อมูลร่วมของทุก handoff
 
@@ -38,13 +38,21 @@ python scripts/storyctl.py --story my-story doctor --target SC-001 --out .local/
 
 ก่อนเปลี่ยน approved history ต้องมีคำตัดสินจากมนุษย์ที่อนุญาตการเปลี่ยนนั้นโดยชัดเจน ตรวจว่าคำตัดสินตรงกับ story, target และเนื้อหาชุดที่ตรวจ แล้วเสนอ patch ที่เล็กและตรวจย้อนกลับได้ บันทึกแหล่งหลักฐานที่มีจริง หากยังขาดคำอนุมัติหรือ provenance ให้รายงาน UNKNOWN และคงเป็น proposal
 
-E5 ยังไม่ยืนยัน GitHub approval อัตโนมัติ จึงห้ามอ้าง local APPROVED fields หรือ test fixtures ว่าเป็น authenticated human approval ไม่ใช้ชื่อ reviewer/PR ที่คาดเดา การเรียก `propose`/`proposal` ไม่ apply patch และยังไม่มี rollup command ใน milestone นี้
+E5 ตรวจ merged metadata และ source hash ผ่านคำสั่ง live ที่ระบุชัดได้ แต่ human editorial approval ยังเป็น UNVERIFIED ห้ามอ้าง merged_by, ชนิดบัญชี, local APPROVED fields หรือ test fixtures ว่าเป็น authenticated human approval ไม่ใช้ชื่อ reviewer/PR ที่คาดเดา การเรียก `propose`/`proposal` หรือ `rollup` ไม่ apply patch; rollup เป็นข้อเสนอจาก recaps เดิมเท่านั้น
 
 หลังแก้ข้อมูลที่ได้รับอนุญาต ให้ตรวจ story, replay boundary และ regression ที่เกี่ยวข้องอีกครั้ง รายงานผลจริงพร้อม exact commit และ CI เมื่อมีการ push ตามสิทธิ์ของงาน
 
+## Provenance และ rollup proposal
+
+เมื่อได้รับงานให้ตรวจ remote provenance ใช้ `verify-provenance` กับ repo/PR/head/merge ที่ตั้งใจจริง และ source path/hash เมื่อจำเป็น โดยใช้ `gh` authentication ที่มีอยู่แล้วเท่านั้น หากเข้าไม่ได้หรือข้อมูลไม่ตรงให้รายงาน error ไม่ login ใหม่ ไม่สร้าง credentials หรือเปลี่ยนสิทธิ์ Report live ยืนยันได้เฉพาะ merged metadata/source bytes ตามที่สังเกต ไม่ยืนยัน human editorial decision
+
+หากใช้ `--evidence` ให้อ่าน cached/fixture JSON แบบ offline เท่านั้น ผลที่ตรงกันยังเป็น `OFFLINE_UNVERIFIED` (exit 2) ไม่ได้กลายเป็น live proof ส่วนผล live `OBSERVED_MERGED_METADATA` ใช้ exit 0 และ failures ใช้ exit 1 อย่าแก้ label ให้ดูผ่าน หรือใช้ software PR เป็นการอนุมัติเนื้อเรื่อง
+
+`rollup EP-001 EP-002` สร้าง `PROPOSED` output ด้วยการต่อ recaps ที่มีอยู่จริงจาก eligible local approved ledger ไม่สรุปใหม่ด้วยโมเดล Default เป็น `UNVERIFIED_LOCAL_DECLARATIONS`; `--repo OWNER/REPO --verify-remote` จึงตรวจ repo/PR/head/merge/source hash ของแต่ละ record แบบ online ข้อมูลหายหรือ unapproved ต้องไม่ถูกนำมาสร้างข้อเสนอที่ดูครบ ห้าม apply proposal หรือเปลี่ยน canon/ledger/state โดยอัตโนมัติ และไม่มี post-merge automation ใน E5 ชุดนี้
+
 ## การเก็บหลักฐานและเกณฑ์หยุด
 
-`brief-review` และ `doctor` ส่งไฟล์ได้เฉพาะ workspace `.local/` ซึ่งถูก ignore หรือส่ง stdout Bundle อาจมี draft/context/diff ที่ไม่เปิดเผย; stdout อาจไปอยู่ใน log ได้เช่นกัน ห้ามแนบ public PR/issue หรือส่งให้บุคคล/บริการภายนอกโดยไม่มีคำอนุญาตจากผู้ใช้ ใช้สรุป metadata/ผลตรวจเท่าที่อนุญาตใน template
+`brief-review`, `doctor`, `verify-provenance` และ `rollup` ส่งไฟล์ได้เฉพาะ workspace `.local/` ซึ่งถูก ignore หรือส่ง stdout Bundle อาจมี draft/context/diff ที่ไม่เปิดเผย; stdout อาจไปอยู่ใน log ได้เช่นกัน ห้ามแนบ public PR/issue หรือส่งให้บุคคล/บริการภายนอกโดยไม่มีคำอนุญาตจากผู้ใช้ ใช้สรุป metadata/ผลตรวจเท่าที่อนุญาตใน template
 
 หยุดส่วนที่ต้องพึ่งข้อมูลเมื่อ story/target/commit scope ไม่ตรง, draft digest เปลี่ยน, หลักฐานขาด/ขัดกัน หรือมนุษย์ยังไม่อนุญาต canon change ระบุ action, target, เหตุผล และงานที่ทำแล้วให้ชัด ทำงานส่วนที่ไม่พึ่งข้อมูลนั้นต่อได้ ห้ามแก้ UNKNOWN ด้วยการแต่งข้อมูลหรือข้าม approval boundary
 

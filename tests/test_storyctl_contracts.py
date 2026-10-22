@@ -188,11 +188,11 @@ class StoryctlContractTests(unittest.TestCase):
         self.assertEqual(self.read(self.alpha / 'ledger/index.json')['episodes'], [])
         self.assertEqual(self.source_snapshot(), before)
 
-    def test_deferred_rollup_has_no_success_stub(self):
+    def test_rollup_requires_eligible_sources_instead_of_stub_success(self):
         before = self.source_snapshot()
         result = self.cli('rollup', 'EP-001')
         self.assert_failure(result)
-        self.assertIn('invalid choice', result.stderr)
+        self.assertIn('approved', result.stderr.lower())
         self.assertEqual(self.source_snapshot(), before)
 
     def test_invalid_review_target_or_git_base_fails_before_artifact_creation(self):

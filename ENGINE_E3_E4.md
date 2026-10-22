@@ -1,5 +1,7 @@
 # Engine E3/E4 — หลักฐาน review และ workflow ที่แยกต่อเรื่อง
 
+> เอกสารนี้อธิบายขอบเขต E3/E4 ก่อนเพิ่มคำสั่ง provenance/rollup ดู [ENGINE_E5.md](ENGINE_E5.md) สำหรับความสามารถปัจจุบันและเลข roadmap ที่แก้ให้ตรงแผนผู้ใช้: E5 ledger/provenance, E6 synthetic evaluation, E7 คู่มือไทย ตาราง/ข้อความที่ระบุว่า rollup ยังไม่มีเป็นสถานะเมื่อทำ E3/E4; authenticated human editorial approval ยังไม่ถูกพิสูจน์ด้วยเครื่องมือ E5
+
 milestone นี้เพิ่มเครื่องมือเตรียมหลักฐาน review และวินิจฉัยข้อมูลในเครื่อง พร้อมสัญญาการส่งต่องาน writer/reviewer/updater ที่ใช้ได้กับทุก story root ไม่เขียนเนื้อเรื่อง ไม่เรียกโมเดล และไม่อนุมัติ canon เอกสารนี้ระบุความสามารถและวิธีใช้; ผล tests, commit, Draft PR และ CI ต้องอ้างผลจริงของ commit สุดท้ายใน PR
 
 อ่าน [AGENTS.md](AGENTS.md) และ [runbook บทบาท agent](docs/AGENT_RUNBOOK.md) ก่อนทำงาน ส่วน [ENGINE_E2.md](ENGINE_E2.md) กำหนด schema/replay และ [ENGINE_E1.md](ENGINE_E1.md) กำหนด story roots กับ compatibility ข้อมูลตัวอย่าง Last Island คงอยู่ใน root ของตัวเองโดยไม่แก้เนื้อหา
@@ -12,9 +14,9 @@ milestone นี้เพิ่มเครื่องมือเตรีย�
 | E2 | JSON Schema จริง, semantic checks, replay ก่อน target จากหลักฐานในเครื่องที่ครบ | ไม่สร้างประวัติย้อนหลังจากแผนหรือ snapshot ปัจจุบัน |
 | E3 บางส่วน | รายงานปัญหา schema/อ้างอิง/ประวัติจากข้อมูลในเครื่องผ่าน `doctor` | schema migration และ diagnostics ขั้นสูงยังรอ milestone ถัดไป |
 | E4 | `brief-review`, alias `propose`, templates และบทบาท human workflow แบบ generic | ไม่รัน writer/reviewer/updater อัตโนมัติหรือให้คะแนนแทนผู้ตรวจ |
-| E5 | แสดงข้อจำกัดของ local approval ให้ชัด | ยังไม่ตรวจผู้อนุมัติ, merged PR และ provenance จาก GitHub จริง |
-| E6 บางส่วน | `doctor` เป็นการวินิจฉัย local ขั้นต้น | rollup ยังไม่ทำ และไม่มีคำสั่งจำลองที่ทำเสมือนสำเร็จ |
-| E7 | ใช้ synthetic metadata กับ regression tests ตามขอบเขตของแต่ละ PR | ยังไม่อ้างว่า workflow ประเมินครบทุกขั้นหรือจับ semantic prose ได้ทั้งหมด |
+| E5 ledger/provenance (เพิ่มภายหลัง E3/E4) | E3/E4 แสดงข้อจำกัดของ local approval และมี `doctor` ขั้นต้น | bounded merged metadata/source checks และ rollup proposal ดู E5; human editorial approval ยัง UNVERIFIED |
+| E6 synthetic evaluation (เลขแก้ไข) | ใช้ synthetic metadata กับ regression tests ตามขอบเขตของแต่ละ PR | ยังไม่อ้างว่า workflow ประเมินครบทุกขั้นหรือจับ semantic prose ได้ทั้งหมด |
+| E7 คู่มือไทย (เลขแก้ไข) | คู่มือเพิ่มตาม milestone | ยังไม่อ้างว่า onboarding/engine เสร็จครบทั้งแผน |
 
 คำว่า APPROVED ในไฟล์หรือ fixture เป็นข้อมูลที่ผู้ใช้ประกาศในเครื่อง ไม่ใช่หลักฐานว่าบุคคลใน GitHub อนุมัติจริง การผ่าน `check` หรือ `doctor` ไม่ยืนยันคุณภาพ prose, สิทธิ์ repository, branch settings หรือการบังคับ CODEOWNERS
 
@@ -89,4 +91,4 @@ python -m unittest discover -s tests -v
 
 ต้องตรวจ compatibility ของคำสั่งเก่า, สอง story datasets ที่แยกกัน, CLI ใหม่กับ synthetic metadata, target/time/approval boundaries, working draft ที่ต่างจาก HEAD, output ภายนอก `.local/` ที่ต้องถูกปฏิเสธ และ byte preservation ของข้อมูลตัวอย่าง ไม่ใช้เอกสารนี้แทนผลทดสอบ ไม่สร้าง reviewer scores หรือ friction entries ที่ไม่มีเหตุการณ์จริง หลัง push ต้องตรวจ CI ของ exact head ก่อนรายงานว่าเสร็จ
 
-งานถัดไปยังต้องมี acceptance criteria แยก PR: E3 ที่เหลือทดสอบ migration แบบ reversible และ diagnostics ของ edge cases; E5 ตรวจ provenance จากผู้อนุมัติและ merged PR จริงโดยไม่เชื่อ local labels; E6 ออกแบบ rollup/status/doctor ขั้นสมบูรณ์ที่ไม่เปลี่ยน canon เกินสิทธิ์; E7 ทดสอบ synthetic workflow สามฉากครบขั้น โดย critical planted canon, knowledge และ approval violations ต้องถูกจับทั้งหมดก่อนอ้างว่าผ่านการประเมิน ไม่สร้างเนื้อเรื่องจริงเพื่อทดสอบ งานเหล่านี้ยังไม่ใช่ความสามารถที่เสร็จแล้วใน E3/E4
+งานที่ยังเหลือต้องมี acceptance criteria แยก PR ตามเลขที่แก้ไขใน [ENGINE_E5.md](ENGINE_E5.md): E3 migration แบบ reversible/diagnostics ขั้นสูง; E5 ledger/provenance และนโยบาย human approval ที่ตรวจได้จริง; E6 synthetic workflow สามฉาก โดย critical planted canon, knowledge และ approval violations ต้องถูกจับทั้งหมด; E7 คู่มือไทยที่ตรงกับผลทดสอบจริง ไม่สร้างเนื้อเรื่องเพื่อประเมิน และไม่อ้างว่า engine ครบทั้งแผนแล้ว
