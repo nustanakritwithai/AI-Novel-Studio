@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "approved_through_scene": null,
+  "active_episode": "EP-001",
+  "phase": "DRAFT_UNAPPROVED",
+  "real_world": {
+    "player_at_home": true,
+    "world_championship_started": false
+  },
+  "avatar": {
+    "location": "NOT_LOGGED_IN_IN_APPROVED_PROSE",
+    "health": "UNKNOWN",
+    "inventory_quantities": "UNKNOWN",
+    "base_status": "PROPOSED_2X2_STONE_WITH_FIRING_PLATFORM",
+    "name": "UNCONFIRMED"
+  },
+  "flags": {},
+  "pending_review": [
+    "Two full manuscripts and scene drafts are DRAFT; no prose approved",
+    "Review CH-01 wood-shell handoff into CH-02",
+    "Actual game mechanics and quantities UNVERIFIED",
+    "PR 11 and 12 are old alternative scene drafts"
+  ],
+  "last_commit_handoff": "HANDOFF.md"
+}

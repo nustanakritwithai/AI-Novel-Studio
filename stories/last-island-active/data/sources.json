@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "SRC-001",
+      "type": "STREAMER_TRANSCRIPT",
+      "title": "สไปเซอร์ — Last island survival | สอนผู้เล่นใหม่เล่นและฟามหาของใช้ ปี2025!!",
+      "url": "https://www.youtube.com/watch?v=OKkffsSGOnw",
+      "published_at": "2025-07-23",
+      "reviewed_at": "2026-10-22",
+      "access_level": "TRANSCRIPT_ONLY",
+      "scope": "ตัวอย่างเซิร์ฟเวอร์มือใหม่ในคลิป ไม่ยืนยันว่าทุกเซิร์ฟเวอร์ใช้กฎเดียวกัน",
+      "excerpts": [
+        {
+          "time": "00:52–02:30",
+          "summary": "ช่วงเกิดเกม เก็บไม้ เลือกที่ตั้งฐานใกล้แหล่งฟาร์ม"
+        },
+        {
+          "time": "03:00–06:00",
+          "summary": "ฐาน ภารกิจ และการคราฟต์"
+        },
+        {
+          "time": "08:30–10:40",
+          "summary": "จุดเก็บของที่ถูกคนอื่นเปิดและไปหาของอีกพื้นที่"
+        },
+        {
+          "time": "14:00–16:00",
+          "summary": "ค้นหาของในสนามบิน"
+        },
+        {
+          "time": "22:30–24:30",
+          "summary": "แย่ง Airdrop ขณะมีการปะทะ"
+        }
+      ],
+      "note": "คำบรรยายอัตโนมัติอาจผิด; ใช้เป็น leads แล้วตรวจภาพเกมก่อนล็อก mechanic"
+    },
+    {
+      "id": "SRC-002",
+      "type": "STREAMER_METADATA",
+      "title": "DARK STAR — I Raided There Cave Base With 2 Oil Boom | Solo Gameplay | Part-1",
+      "url": "https://www.youtube.com/watch?v=vItvD5NMJPQ",
+      "published_at": "2024-12-17",
+      "reviewed_at": "2026-10-22",
+      "access_level": "TITLE_AND_METADATA",
+      "scope": "บุกฐานด้วยผู้เล่นเดี่ยว",
+      "excerpts": [],
+      "note": "ยังไม่ตรวจวิดีโอเต็ม/รายละเอียดการบุก"
+    },
+    {
+      "id": "SRC-003",
+      "type": "STREAMER_METADATA",
+      "title": "BaVinci — Last Island of Survival เกมแนวรอดชีวิต สร้างบ้าน ล่าสัตว์ ยิงซอมบี้ (สอนพื้นฐาน)",
+      "url": "https://www.youtube.com/watch?v=Qjf9lJSAJkk",
+      "published_at": "2023-10-28",
+      "reviewed_at": "2026-10-22",
+      "access_level": "TITLE_AND_DESCRIPTION",
+      "scope": "การเอาชีวิตรอดและพื้นฐานเกม",
+      "excerpts": [],
+      "note": "ยังไม่ตรวจวิดีโอเต็ม"
+    }
+  ]
+}

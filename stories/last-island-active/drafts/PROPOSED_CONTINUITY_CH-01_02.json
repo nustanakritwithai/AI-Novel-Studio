@@ -1,0 +1,389 @@
+{
+  "schema_version": 1,
+  "artifact_type": "proposed_draft_continuity",
+  "status": "PROPOSED_NOT_APPROVED",
+  "story_slug": "last-island",
+  "source_of_truth": "GitHub versioned draft manuscripts; approved Canon remains unchanged",
+  "created_at": "2026-10-23",
+  "approved_prose_through_scene": null,
+  "sources": [
+    {
+      "kind": "human_plot_directive",
+      "chapter": "CH-01",
+      "description": "User-authored EP-001 story sequence of private VR login, 2x2 house and first bat fight"
+    },
+    {
+      "kind": "human_plot_directive",
+      "chapter": "CH-02",
+      "description": "User-authored EP-002 story sequence of crafting, bed, bow defeat and retaliation, stone base, offline"
+    },
+    {
+      "kind": "candidate_prose",
+      "chapter": "CH-01",
+      "path": "drafts/EP-001/CH-01-FULL-DRAFT.md",
+      "approval": "UNREVIEWED"
+    },
+    {
+      "kind": "candidate_prose",
+      "chapter": "CH-02",
+      "path": "drafts/EP-002/CH-02-FULL-DRAFT.md",
+      "approval": "UNREVIEWED"
+    },
+    {
+      "kind": "candidate_prose",
+      "chapter": "SC-001",
+      "url": "https://github.com/nustanakritwithai/AI-Novel-Studio/pull/11",
+      "status": "unmerged alternate draft"
+    },
+    {
+      "kind": "candidate_prose",
+      "chapter": "SC-002",
+      "url": "https://github.com/nustanakritwithai/AI-Novel-Studio/pull/12",
+      "status": "unmerged alternate draft"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "CH-01",
+      "episode_id": "EP-001",
+      "title": "บ้านหลังแรก",
+      "draft_path": "drafts/EP-001/CH-01-FULL-DRAFT.md",
+      "status": "DRAFT",
+      "summary": "พระเอกชายไทยเริ่มเล่น Last Island ผ่าน Full-Dive VR จากห้องส่วนตัว ระบบแนะนำให้เก็บไม้ สร้างที่พัก และทำเตียง เขาวางแผนบ้าน 2×2 ชั้นเดียว แต่เห็นบ้านมือใหม่จำนวนมาก จึงเปิดแผนที่ย้ายทำเล ก่อนออกเดินทางคราฟต์ไม้เบสบอล ระหว่างผ่านถนนพบกล่องเศษวัสดุหนึ่งกล่อง แล้วถูกผู้เล่นอื่นใช้ไม้เบสบอลลอบโจมตี เขาต่อสู้จนชนะเฉียดฉิว เก็บหินกับเศษวัสดุของผู้แพ้ และกลับไปสร้างฐานไม้สองคูณสอง",
+      "scene_beat_ids": [
+        "SC-001",
+        "SC-002",
+        "SC-003",
+        "SC-004",
+        "SC-005",
+        "SC-006",
+        "SC-007",
+        "SC-008"
+      ],
+      "initial_state": {
+        "realm": "REAL",
+        "player_room": "LOC-001",
+        "approved_items": "UNKNOWN"
+      },
+      "end_state_proposed": {
+        "realm": "VR",
+        "character_id": "CHAR-001",
+        "location_id": "LOC-005",
+        "house": {
+          "footprint": "2x2",
+          "floors": 1,
+          "primary_material": "wood",
+          "state": "constructed_basic_shell_PROPOSED_BRIDGE"
+        },
+        "bed": "NOT_BUILT",
+        "crafting_table": "NOT_BUILT",
+        "bat": "crafted_first_weapon",
+        "alive": true,
+        "health": "UNKNOWN",
+        "items": {
+          "wood": "UNKNOWN",
+          "stone": "UNKNOWN",
+          "scrap": "UNKNOWN"
+        }
+      },
+      "counts": {
+        "road_scrap_crates_found": 1,
+        "melee_opponents_defeated": 1,
+        "deaths_in_chapter": 0
+      }
+    },
+    {
+      "id": "CH-02",
+      "episode_id": "EP-002",
+      "title": "ธนูแรกและกำแพงหิน",
+      "draft_path": "drafts/EP-002/CH-02-FULL-DRAFT.md",
+      "status": "DRAFT",
+      "summary": "หลังกลับเข้าบ้านไม้สองคูณสอง พระเอกนำวัสดุที่ได้จากถนนและคู่ต่อสู้มาสร้างโต๊ะคราฟต์ พบสูตรที่นอน กล่องเล็ก ยา โต๊ะเรียนรู้ และสูตรที่ยังไม่ได้เรียนรู้ เขาวางแผนอัปบ้านเป็นหิน จึงสร้างกล่องเก็บของ ที่นอน และเครื่องมือขุดหิน จากนั้นออกไปเก็บหิน แต่ถูกซุ่มยิงธนู อาศัยโขดหินเป็นที่กำบัง ทว่าอีกฝ่ายเดินอ้อมเข้ามายิงจนตาย ของที่พกตกหมด เขากลับมาเกิดบนที่นอน รีบตัดไม้ทำธนูและกลับไปหา แต่ไม่พบผู้ยิง ณ จุดเดิม จึงสำรวจบ้านสี่คูณสี่ที่อยู่ไกลออกไปและพบผู้เล่นสองคน คนหนึ่งถือธนู อีกคนถือไม้เบสบอล เขาซุ่มยิงคนถือธนูจนล้ม แล้วยิงผู้เล่นอีกคนที่พยายามหนี เก็บของและกลับบ้านอย่างปลอดภัย ก่อนอัปเกรดบ้านเป็นหิน เพิ่มบันได ชั้นยิงพร้อมกำแพงเตี้ย แล้วออกจากเกมไปพักผ่อน",
+      "draft_scene_ids": [
+        "D2-S01",
+        "D2-S02",
+        "D2-S03",
+        "D2-S04",
+        "D2-S05",
+        "D2-S06",
+        "D2-S07",
+        "D2-S08",
+        "D2-S09",
+        "D2-S10"
+      ],
+      "initial_state_dependency": "CH-01 DRAFT end-state, not approved history",
+      "end_state_proposed": {
+        "realm": "REAL_AFTER_LOGOUT",
+        "character_id": "CHAR-001",
+        "house": {
+          "footprint": "2x2",
+          "primary_structure": "stone",
+          "added_defensive_level": true,
+          "stairs": true,
+          "low_cover_walls": true
+        },
+        "storage_box": "CRAFTED",
+        "crafting_table": "CRAFTED",
+        "bed": "CRAFTED_AND_USED_FOR_RESPAWN_IN_FICTION",
+        "bow": "CRAFTED",
+        "bow_remaining": "UNKNOWN",
+        "health": "UNKNOWN_AFTER_RESPAWN_AND_COMBAT",
+        "alive": true,
+        "offline": true,
+        "items": {
+          "wood": "UNKNOWN",
+          "stone": "UNKNOWN",
+          "scrap": "UNKNOWN",
+          "arrows": "UNKNOWN"
+        },
+        "party_membership": "NONE_CONFIRMED"
+      },
+      "counts": {
+        "deaths_in_chapter": 1,
+        "bow_opponents_defeated": 1,
+        "bat_opponents_defeated": 1,
+        "enemy_base_footprint": "4x4"
+      }
+    }
+  ],
+  "event_sequence": [
+    {
+      "order": 1,
+      "chapter": "CH-01",
+      "event": "Enter private VR game session",
+      "origin": "USER_DIRECTIVE",
+      "scene": "SC-001"
+    },
+    {
+      "order": 2,
+      "chapter": "CH-01",
+      "event": "Tutorial wood collection; plan 2x2 one-floor house",
+      "origin": "USER_DIRECTIVE",
+      "scene": "SC-002"
+    },
+    {
+      "order": 3,
+      "chapter": "CH-01",
+      "event": "See many novice houses and choose to relocate",
+      "origin": "USER_DIRECTIVE",
+      "scene": "SC-003"
+    },
+    {
+      "order": 4,
+      "chapter": "CH-01",
+      "event": "Open map and craft first baseball bat",
+      "origin": "USER_DIRECTIVE",
+      "scene": "SC-004"
+    },
+    {
+      "order": 5,
+      "chapter": "CH-01",
+      "event": "Collect scrap materials from exactly one roadside crate",
+      "origin": "USER_DIRECTIVE",
+      "scene": "SC-005"
+    },
+    {
+      "order": 6,
+      "chapter": "CH-01",
+      "event": "Ambushed by bat player; win narrowly",
+      "origin": "USER_DIRECTIVE",
+      "scene": "SC-006"
+    },
+    {
+      "order": 7,
+      "chapter": "CH-01",
+      "event": "Loot stones and scrap from defeated player",
+      "origin": "USER_DIRECTIVE",
+      "scene": "SC-007"
+    },
+    {
+      "order": 8,
+      "chapter": "CH-01",
+      "event": "Return to 2x2 house site and begin construction",
+      "origin": "USER_DIRECTIVE",
+      "scene": "SC-008"
+    },
+    {
+      "order": 9,
+      "chapter": "CH-01",
+      "event": "Wooden house shell finished enough to be indoors in CH-02",
+      "origin": "PROPOSED_BRIDGE",
+      "scene": "SC-008"
+    },
+    {
+      "order": 10,
+      "chapter": "CH-02",
+      "event": "Create crafting table and inspect basic/unlearned recipes",
+      "origin": "USER_DIRECTIVE",
+      "scene": "D2-S01"
+    },
+    {
+      "order": 11,
+      "chapter": "CH-02",
+      "event": "Craft small storage box, bed, stone mining tool; set stone-upgrade goal",
+      "origin": "USER_DIRECTIVE",
+      "scene": "D2-S02"
+    },
+    {
+      "order": 12,
+      "chapter": "CH-02",
+      "event": "Mine stone; ambushed by archer; bow wielder flanks and kills hero",
+      "origin": "USER_DIRECTIVE",
+      "scene": "D2-S03"
+    },
+    {
+      "order": 13,
+      "chapter": "CH-02",
+      "event": "Held inventory drops; respawn at in-house bed",
+      "origin": "USER_DIRECTIVE",
+      "scene": "D2-S04"
+    },
+    {
+      "order": 14,
+      "chapter": "CH-02",
+      "event": "Gather wood, craft bow and arrows and revisit death site",
+      "origin": "USER_DIRECTIVE",
+      "scene": "D2-S05"
+    },
+    {
+      "order": 15,
+      "chapter": "CH-02",
+      "event": "See distant 4x4 party base; locate bow player and bat player",
+      "origin": "USER_DIRECTIVE",
+      "scene": "D2-S06"
+    },
+    {
+      "order": 16,
+      "chapter": "CH-02",
+      "event": "Ambush bow wielder first, then shoot fleeing bat wielder",
+      "origin": "USER_DIRECTIVE",
+      "scene": "D2-S07"
+    },
+    {
+      "order": 17,
+      "chapter": "CH-02",
+      "event": "Recover loot and return home",
+      "origin": "USER_DIRECTIVE",
+      "scene": "D2-S08"
+    },
+    {
+      "order": 18,
+      "chapter": "CH-02",
+      "event": "Upgrade house to stone; build stairs, firing level and low cover wall",
+      "origin": "USER_DIRECTIVE",
+      "scene": "D2-S09"
+    },
+    {
+      "order": 19,
+      "chapter": "CH-02",
+      "event": "Offline to rest; game continues",
+      "origin": "USER_DIRECTIVE",
+      "scene": "D2-S10"
+    }
+  ],
+  "character_state_proposals": [
+    {
+      "id": "CHAR-001",
+      "description": "Thai male protagonist, full name/age unknown",
+      "knowledge_after_ch01": [
+        "Many other novice player bases exist near starter area",
+        "Roadside looting creates PvP exposure",
+        "Can win a close melee fight, though barely"
+      ],
+      "knowledge_after_ch02": [
+        "Crafting table displays fundamental recipes and locked recipes",
+        "Stone walls and cover may improve survival odds but are not invulnerable",
+        "Bow grants ranged tactical advantage",
+        "Respawn from home bed occurred in this fictional server"
+      ],
+      "relationships": "NONE_CONFIRMED",
+      "uncertainty": [
+        "Permanent name/age/appearance",
+        "Exact quantities and gameplay recipes"
+      ]
+    },
+    {
+      "id": "CHAR-002",
+      "description": "Unknown baseball bat ambusher in chapter 1, defeated; NOT identified with chapter 2 opponents"
+    },
+    {
+      "id": "PROPOSED-CH02-BOW",
+      "description": "Bow-wielding opponent near 4x4 base, defeated; identity relative to original archer NOT VERIFIED"
+    },
+    {
+      "id": "PROPOSED-CH02-BAT",
+      "description": "Bat-wielding companion near 4x4 base, defeated"
+    }
+  ],
+  "research_gaps": [
+    {
+      "claim": "Crafting baseball bat specifically from wood",
+      "status": "UNVERIFIED_GAMEPLAY",
+      "relevant": "CH-01"
+    },
+    {
+      "claim": "Roadside scrap container and exact loot",
+      "status": "UNVERIFIED_GAMEPLAY",
+      "relevant": "CH-01"
+    },
+    {
+      "claim": "Crafting table recipe list and item requirements",
+      "status": "UNVERIFIED_GAMEPLAY",
+      "relevant": "CH-02"
+    },
+    {
+      "claim": "Bed as respawn point in selected mode",
+      "status": "UNVERIFIED_GAMEPLAY",
+      "relevant": "CH-02"
+    },
+    {
+      "claim": "Stone-house upgrade/upper firing floor mechanics",
+      "status": "UNVERIFIED_GAMEPLAY",
+      "relevant": "CH-02"
+    },
+    {
+      "claim": "Specific death-loot behavior in selected server",
+      "status": "UNVERIFIED_GAMEPLAY",
+      "relevant": "CH-01/CH-02"
+    }
+  ],
+  "editorial_conflicts": [
+    {
+      "issue": "Existing EP-001 state records only starting house construction and does not guarantee completion at end",
+      "resolution_proposed": "Candidate manuscript finishes basic 2x2 wooden shell to enable human-directed CH-02 opening inside the home. Human editorial review needed before canon migration."
+    },
+    {
+      "issue": "SC-001 and SC-002 already have separate Draft PR #11 and #12",
+      "resolution_proposed": "Treat these as alternate early-scene prose; human chooses or reconciles. They have not been merged."
+    },
+    {
+      "issue": "EP-002 does not exist in frozen data/episodes.json",
+      "resolution_proposed": "Keep chapter 2 metadata in draft proposal area until authorized story-registry migration; do not pretend that storyctl pack EP-002 works today."
+    },
+    {
+      "issue": "4x4 archer assumed to be same attacker as earlier archer",
+      "resolution_proposed": "Use POV suspicion only; do not lock as proven identity absent evidence."
+    }
+  ],
+  "next_agent": {
+    "goal": "Editorial review CH-01 and CH-02, reconcile SC-001/002 alternate draft PRs, only then prepare chapter 3 beat sheet from approved decisions.",
+    "read_order": [
+      "AGENTS.md",
+      "story.json",
+      "data/canon.json",
+      "data/story_state.json",
+      "drafts/READING_ORDER_CH-01_02.md",
+      "drafts/EP-001/CH-01-FULL-DRAFT.md",
+      "drafts/EP-002/CH-02-FULL-DRAFT.md",
+      "drafts/PROPOSED_CONTINUITY_CH-01_02.json"
+    ],
+    "rules": [
+      "Do not promote these draft statements to LOCKED or APPROVED automatically",
+      "Never fill inventory quantities from imagination",
+      "Separate confirmed gameplay and fictional VR mechanics",
+      "Remember the protagonist is Thai; do not assign unapproved proper name",
+      "No global esports tournament at the beginning"
+    ],
+    "review_status": "HUMAN_EDITORIAL_APPROVAL_PENDING"
+  }
+}
