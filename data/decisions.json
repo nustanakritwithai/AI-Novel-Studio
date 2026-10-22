@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "decisions": [
+    {
+      "id": "DEC-001",
+      "summary": "เปิดเรื่องจากการเล่นเกมส่วนตัวในห้องพระเอก ไม่ใช่สนามอีสปอร์ต",
+      "status": "APPROVED_BY_USER",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-002"
+      ],
+      "date": "2026-10-22",
+      "notes": "แก้จากร่าง AI ที่เปิดด้วย World Championship"
+    },
+    {
+      "id": "DEC-002",
+      "summary": "ตอนแรกยึดลำดับเก็บไม้–บ้าน 2×2–ย้ายทำเล–ไม้เบสบอล–กล่องริมถนน 1 กล่อง–ไฟต์แรก–เก็บของ–กลับสร้างบ้าน",
+      "status": "APPROVED_BY_USER",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-004",
+        "FACT-005",
+        "FACT-006",
+        "FACT-007",
+        "FACT-008",
+        "FACT-009",
+        "FACT-010",
+        "FACT-011"
+      ],
+      "date": "2026-10-22",
+      "notes": "ยังไม่อนุมัติชื่อ/อายุ/ปี/สคริปต์ฉบับเต็ม"
+    }
+  ]
+}

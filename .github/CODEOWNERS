@@ -1,0 +1,5 @@
+# Editor review guidance. Enforce via repository branch rules before relying on it.
+/data/canon.json @nustanakritwithai
+/data/story_state.json @nustanakritwithai
+/data/mechanics.json @nustanakritwithai
+/plot/ @nustanakritwithai

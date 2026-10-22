@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "scenes": [
+    {
+      "id": "SC-001",
+      "episode_id": "EP-001",
+      "order": 1,
+      "title": "เล่นเกมส่วนตัว",
+      "status": "PLANNED",
+      "pov": "CHAR-001",
+      "realm": "REAL_TO_VR",
+      "location_id": "LOC-001",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [],
+      "canon_refs": [
+        "FACT-001",
+        "FACT-002"
+      ],
+      "mechanic_refs": [],
+      "source_refs": [],
+      "goal": "เล่นเกมส่วนตัว",
+      "conflict": "ความไม่รู้ระบบ",
+      "beats": [
+        "เปิดตัวพระเอกในห้องส่วนตัวแล้วเข้าสู่ Last Island ผ่าน Full-Dive VR; ยังไม่แข่งขันใหญ่"
+      ],
+      "outcome": "คนดูรู้ว่านี่เป็นผู้เล่นธรรมดากำลังเริ่มเซสชันส่วนตัว",
+      "requires_flags": [],
+      "effects_flags": {
+        "logged_in": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-001/SC-001.md"
+    },
+    {
+      "id": "SC-002",
+      "episode_id": "EP-001",
+      "order": 2,
+      "title": "บทเรียนแรก",
+      "status": "PLANNED",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-002",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-001"
+      ],
+      "canon_refs": [
+        "FACT-004",
+        "FACT-005"
+      ],
+      "mechanic_refs": [
+        "MECH-001",
+        "MECH-005"
+      ],
+      "source_refs": [
+        "SRC-001"
+      ],
+      "goal": "บทเรียนแรก",
+      "conflict": "ทรัพยากรน้อย",
+      "beats": [
+        "ระบบนำทางชวนตัดไม้ สร้างบ้าน และทำเตียง; พระเอกวางแผนบ้าน 2×2 ชั้นเดียว"
+      ],
+      "outcome": "เริ่มตัดไม้และตั้งเป้าบ้านหลังแรก",
+      "requires_flags": [
+        "logged_in"
+      ],
+      "effects_flags": {
+        "tutorial_received": true,
+        "wood_gathered": true,
+        "base_plan_2x2": true
+      },
+      "open_questions": [
+        "จำนวนวัสดุที่เก็บยังไม่ระบุ"
+      ],
+      "draft_path": "drafts/EP-001/SC-002.md"
+    },
+    {
+      "id": "SC-003",
+      "episode_id": "EP-001",
+      "order": 3,
+      "title": "ทำเลที่แออัด",
+      "status": "PLANNED",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-003",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [],
+      "canon_refs": [
+        "FACT-006"
+      ],
+      "mechanic_refs": [],
+      "source_refs": [],
+      "goal": "ทำเลที่แออัด",
+      "conflict": "ผู้เล่นเยอะจนพื้นที่ไม่น่าอยู่",
+      "beats": [
+        "ระหว่างเก็บทรัพยากรพบบ้านใหม่คล้ายกันจำนวนมาก; พระเอกตัดสินใจไม่ตั้งบ้านตรงนั้น"
+      ],
+      "outcome": "ยอมเปลี่ยนแผนทำเลแทนยึดติดความสะดวก",
+      "requires_flags": [
+        "wood_gathered"
+      ],
+      "effects_flags": {
+        "crowded_area_seen": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-001/SC-003.md"
+    },
+    {
+      "id": "SC-004",
+      "episode_id": "EP-001",
+      "order": 4,
+      "title": "แผนที่และไม้เบสบอล",
+      "status": "PLANNED",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-003",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-002"
+      ],
+      "canon_refs": [
+        "FACT-006",
+        "FACT-007"
+      ],
+      "mechanic_refs": [
+        "MECH-002"
+      ],
+      "source_refs": [],
+      "goal": "แผนที่และไม้เบสบอล",
+      "conflict": "ความเสี่ยงการเดินทาง",
+      "beats": [
+        "เปิดแผนที่ศึกษาเส้นทางไปพื้นที่ใหม่ ก่อนคราฟต์อาวุธชิ้นแรกจากไม้เป็นไม้เบสบอล"
+      ],
+      "outcome": "ออกเดินทางพร้อมอาวุธประชิด",
+      "requires_flags": [
+        "crowded_area_seen"
+      ],
+      "effects_flags": {
+        "map_checked": true,
+        "bat_crafted": true,
+        "journey_started": true
+      },
+      "open_questions": [
+        "สูตรการคราฟต์ไม้เบสบอลต้องตรวจคลิปจริง"
+      ],
+      "draft_path": "drafts/EP-001/SC-004.md"
+    },
+    {
+      "id": "SC-005",
+      "episode_id": "EP-001",
+      "order": 5,
+      "title": "กล่องเศษวัสดุ",
+      "status": "PLANNED",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-004",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-003",
+        "ITEM-004"
+      ],
+      "canon_refs": [
+        "FACT-008"
+      ],
+      "mechanic_refs": [
+        "MECH-003"
+      ],
+      "source_refs": [],
+      "goal": "กล่องเศษวัสดุ",
+      "conflict": "โลภเก็บของบนถนนอันตราย",
+      "beats": [
+        "เดินตามถนนพบกล่องเศษวัสดุหนึ่งกล่อง หยุดเก็บใส่กระเป๋าโดยไม่มีใครป้องกัน"
+      ],
+      "outcome": "ได้เศษวัสดุจากกล่อง; ยังไม่มีข้อมูลจำนวนชิ้น",
+      "requires_flags": [
+        "journey_started",
+        "bat_crafted"
+      ],
+      "effects_flags": {
+        "road_crate_collected": true
+      },
+      "open_questions": [
+        "จำนวนวัสดุที่เก็บยังไม่ระบุ"
+      ],
+      "draft_path": "drafts/EP-001/SC-005.md"
+    },
+    {
+      "id": "SC-006",
+      "episode_id": "EP-001",
+      "order": 6,
+      "title": "การปะทะแรก",
+      "status": "PLANNED",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-004",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-002"
+      ],
+      "item_ids": [
+        "ITEM-002"
+      ],
+      "canon_refs": [
+        "FACT-009",
+        "FACT-010"
+      ],
+      "mechanic_refs": [
+        "MECH-002"
+      ],
+      "source_refs": [],
+      "goal": "การปะทะแรก",
+      "conflict": "ซุ่มโจมตีจากผู้เล่นอื่น",
+      "beats": [
+        "ถูกผู้เล่นอื่นซุ่มโจมตีด้วยไม้เบสบอล; ต่อสู้ดุเดือดด้วยอาวุธเท่ากันและชนะเฉียดฉิว"
+      ],
+      "outcome": "พระเอกรอด แต่สุขภาพ/ความเสียหายที่แน่นอนยังไม่กำหนด",
+      "requires_flags": [
+        "road_crate_collected",
+        "bat_crafted"
+      ],
+      "effects_flags": {
+        "first_pvp_won": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-001/SC-006.md"
+    },
+    {
+      "id": "SC-007",
+      "episode_id": "EP-001",
+      "order": 7,
+      "title": "ของจากผู้แพ้",
+      "status": "PLANNED",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-004",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-002"
+      ],
+      "item_ids": [
+        "ITEM-004",
+        "ITEM-005"
+      ],
+      "canon_refs": [
+        "FACT-010",
+        "FACT-011"
+      ],
+      "mechanic_refs": [
+        "MECH-004"
+      ],
+      "source_refs": [],
+      "goal": "ของจากผู้แพ้",
+      "conflict": "ทรัพยากรสำคัญกับความเสี่ยง",
+      "beats": [
+        "เก็บหินและเศษวัสดุที่ผู้แพ้ทำตก และตัดสินใจกลับไปทำบ้านก่อนเสี่ยงต่อ"
+      ],
+      "outcome": "เพิ่มทรัพยากรที่ไม่มีการระบุตัวเลขแล้วมุ่งกลับจุดสร้างบ้าน",
+      "requires_flags": [
+        "first_pvp_won"
+      ],
+      "effects_flags": {
+        "defeated_player_loot_collected": true,
+        "heading_to_base_site": true
+      },
+      "open_questions": [
+        "จำนวนวัสดุที่เก็บยังไม่ระบุ"
+      ],
+      "draft_path": "drafts/EP-001/SC-007.md"
+    },
+    {
+      "id": "SC-008",
+      "episode_id": "EP-001",
+      "order": 8,
+      "title": "เริ่มสร้างบ้าน 2×2",
+      "status": "PLANNED",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-005",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-006"
+      ],
+      "canon_refs": [
+        "FACT-005",
+        "FACT-011"
+      ],
+      "mechanic_refs": [
+        "MECH-001",
+        "MECH-005"
+      ],
+      "source_refs": [
+        "SRC-001"
+      ],
+      "goal": "เริ่มสร้างบ้าน 2×2",
+      "conflict": "ต้องตั้งหลักด้วยทรัพยากรจำกัด",
+      "beats": [
+        "มาถึงพื้นที่ที่เลือกไว้และลงมือสร้างบ้านขนาด 2×2 ชั้นเดียวหลังการปะทะ; เตียงและความสมบูรณ์ของบ้านยังไม่ล็อก"
+      ],
+      "outcome": "ปิดตอนด้วยการตั้งหลักครั้งแรก ไม่อ้างว่ามีบ้านสมบูรณ์โดยไม่มีบทอนุมัติ",
+      "requires_flags": [
+        "heading_to_base_site",
+        "base_plan_2x2"
+      ],
+      "effects_flags": {
+        "base_construction_started": true
+      },
+      "open_questions": [
+        "สถานะเตียงและบ้านเมื่อจบตอนยังไม่ล็อก"
+      ],
+      "draft_path": "drafts/EP-001/SC-008.md"
+    }
+  ]
+}

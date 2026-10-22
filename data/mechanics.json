@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "mechanics": [
+    {
+      "id": "MECH-001",
+      "title": "เก็บไม้และคราฟต์อุปกรณ์",
+      "game_verification": "TRANSCRIPT_SUPPORTED",
+      "story_requirement": "LOCKED",
+      "source_ids": [
+        "SRC-001"
+      ],
+      "notes": "แหล่งยืนยันเป็นคำบรรยายสตรีมเมอร์เท่านั้น ยังไม่ใช่การพิสูจน์ทุกโหมด"
+    },
+    {
+      "id": "MECH-002",
+      "title": "คราฟต์ไม้เบสบอลจากไม้เป็นอาวุธชิ้นแรก",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "ผู้ใช้กำหนดฉากแล้ว แต่ต้องยืนยันสูตร/อาวุธจากคลิปเกมจริง ห้ามกล่าวว่า verified gameplay"
+    },
+    {
+      "id": "MECH-003",
+      "title": "กล่องเศษวัสดุริมถนน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "ต้องตรวจชนิดกล่อง ของในกล่อง และการเกิดของตามเซิร์ฟเวอร์"
+    },
+    {
+      "id": "MECH-004",
+      "title": "ผู้แพ้ทำไอเทมตกและถูกเก็บได้",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "รายละเอียดไอเทมที่ตก ข้อยกเว้นเซิร์ฟเวอร์ ยังไม่ตรวจจากภาพจริง"
+    },
+    {
+      "id": "MECH-005",
+      "title": "สร้างเตียงสำหรับภารกิจเริ่มต้น",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "แยกการสร้างเตียงจากข้อสรุปว่าเกิดใหม่ที่เตียงโดยอัตโนมัติ ยังไม่ยืนยัน"
+    },
+    {
+      "id": "MECH-006",
+      "title": "ห้องการ์ดเขียว/ฟ้า/ม่วง",
+      "game_verification": "TRANSCRIPT_SUPPORTED",
+      "story_requirement": "OPTIONAL",
+      "source_ids": [
+        "SRC-001"
+      ],
+      "notes": "ไม่จำเป็นต้องนำมาใช้ตอนแรก; สำรวจเฉพาะโหมดที่ใช้อ้างอิง"
+    },
+    {
+      "id": "MECH-007",
+      "title": "สนามชิงแชมป์โลกผู้เข้าแข่งขัน 100 คน",
+      "game_verification": "FICTIONAL_TOURNAMENT",
+      "story_requirement": "FUTURE_LOCKED",
+      "source_ids": [],
+      "notes": "เป็นกฎการแข่งขันในนิยาย ไม่ใช่ข้อเท็จจริงว่าเกมพื้นฐานรองรับ 100 คนต่อเซิร์ฟเวอร์จริง"
+    }
+  ]
+}

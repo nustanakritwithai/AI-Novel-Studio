@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "approved_through_scene": null,
+  "active_episode": "EP-001",
+  "phase": "OUTLINE_NOT_CANON_PROSE",
+  "real_world": {
+    "player_at_home": true,
+    "world_championship_started": false
+  },
+  "avatar": {
+    "location": "NOT_LOGGED_IN_IN_APPROVED_PROSE",
+    "health": "UNKNOWN",
+    "inventory_quantities": "UNKNOWN",
+    "base_status": "NOT_CONFIRMED_BUILT",
+    "name": "UNCONFIRMED"
+  },
+  "flags": {},
+  "pending_review": [
+    "EP-001 outline has user-approved beats but no full scene prose approved",
+    "Baseball bat crafting details await gameplay verification",
+    "End-of-episode bed placement and final house state not yet locked"
+  ],
+  "last_commit_handoff": "HANDOFF.md"
+}

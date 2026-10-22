@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "ITEM-001",
+      "name": "ไม้",
+      "detail": "เก็บเพื่อนำไปสร้างบ้านและอาวุธ",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-001"
+    },
+    {
+      "id": "ITEM-002",
+      "name": "ไม้เบสบอล",
+      "detail": "อาวุธชิ้นแรกของพระเอก ใช้ป้องกันตัวและสู้กับอีกผู้เล่น",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-002"
+    },
+    {
+      "id": "ITEM-003",
+      "name": "กล่องเศษวัสดุริมถนน",
+      "detail": "พบหนึ่งกล่อง จำนวนเศษวัสดุด้านในไม่ทราบ",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-003"
+    },
+    {
+      "id": "ITEM-004",
+      "name": "เศษวัสดุ",
+      "detail": "ได้จากกล่องริมถนนและจากการเก็บของผู้แพ้",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-003"
+    },
+    {
+      "id": "ITEM-005",
+      "name": "หิน",
+      "detail": "เก็บได้จากของที่ผู้แพ้ตกไว้",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-004"
+    },
+    {
+      "id": "ITEM-006",
+      "name": "เตียง",
+      "detail": "ระบบแนะนำให้สร้าง แต่สถานะสร้างเสร็จตอนจบยังไม่ล็อก",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-005"
+    }
+  ]
+}

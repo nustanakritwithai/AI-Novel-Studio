@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "threads": [
+    {
+      "id": "THREAD-001",
+      "title": "จากผู้เล่นส่วนตัวสู่อีสปอร์ตโลก",
+      "status": "OPEN",
+      "priority": "SERIES",
+      "setup_scene_id": null,
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-002",
+        "FACT-003"
+      ],
+      "notes": "เป้าหมายใหญ่จากผู้ใช้; ห้ามยัดเฉลย/ฉากการแข่งขันเข้ามาตอนแรก"
+    },
+    {
+      "id": "THREAD-002",
+      "title": "บทบาทสตรีมเมอร์จะเกิดขึ้นเมื่อใด",
+      "status": "OPEN",
+      "priority": "SERIES",
+      "setup_scene_id": null,
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-003"
+      ],
+      "notes": "ยังไม่กำหนดว่าจะเริ่มไลฟ์เมื่อไรหรือมีผู้ติดตามเท่าใด"
+    },
+    {
+      "id": "THREAD-003",
+      "title": "ผู้เล่นซุ่มโจมตีมีโอกาสกลับมาหรือไม่",
+      "status": "IDEA",
+      "priority": "OPTIONAL",
+      "setup_scene_id": "SC-006",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-002",
+      "canon_refs": [
+        "FACT-009"
+      ],
+      "notes": "ยังเป็นไอเดีย ไม่ใช่ข้อผูกมัดของบท"
+    }
+  ]
+}

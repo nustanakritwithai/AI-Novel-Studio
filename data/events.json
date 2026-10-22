@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "EV-001",
+      "scene_id": "SC-001",
+      "episode_id": "EP-001",
+      "order": 1,
+      "status": "PLANNED",
+      "what_changed": "คนดูรู้ว่านี่เป็นผู้เล่นธรรมดากำลังเริ่มเซสชันส่วนตัว",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-001",
+      "effects_flags": {
+        "logged_in": true
+      }
+    },
+    {
+      "id": "EV-002",
+      "scene_id": "SC-002",
+      "episode_id": "EP-001",
+      "order": 2,
+      "status": "PLANNED",
+      "what_changed": "เริ่มตัดไม้และตั้งเป้าบ้านหลังแรก",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-002",
+      "effects_flags": {
+        "tutorial_received": true,
+        "wood_gathered": true,
+        "base_plan_2x2": true
+      }
+    },
+    {
+      "id": "EV-003",
+      "scene_id": "SC-003",
+      "episode_id": "EP-001",
+      "order": 3,
+      "status": "PLANNED",
+      "what_changed": "ยอมเปลี่ยนแผนทำเลแทนยึดติดความสะดวก",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-003",
+      "effects_flags": {
+        "crowded_area_seen": true
+      }
+    },
+    {
+      "id": "EV-004",
+      "scene_id": "SC-004",
+      "episode_id": "EP-001",
+      "order": 4,
+      "status": "PLANNED",
+      "what_changed": "ออกเดินทางพร้อมอาวุธประชิด",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-003",
+      "effects_flags": {
+        "map_checked": true,
+        "bat_crafted": true,
+        "journey_started": true
+      }
+    },
+    {
+      "id": "EV-005",
+      "scene_id": "SC-005",
+      "episode_id": "EP-001",
+      "order": 5,
+      "status": "PLANNED",
+      "what_changed": "ได้เศษวัสดุจากกล่อง; ยังไม่มีข้อมูลจำนวนชิ้น",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-004",
+      "effects_flags": {
+        "road_crate_collected": true
+      }
+    },
+    {
+      "id": "EV-006",
+      "scene_id": "SC-006",
+      "episode_id": "EP-001",
+      "order": 6,
+      "status": "PLANNED",
+      "what_changed": "พระเอกรอด แต่สุขภาพ/ความเสียหายที่แน่นอนยังไม่กำหนด",
+      "actors": [
+        "CHAR-001",
+        "CHAR-002"
+      ],
+      "location_id": "LOC-004",
+      "effects_flags": {
+        "first_pvp_won": true
+      }
+    },
+    {
+      "id": "EV-007",
+      "scene_id": "SC-007",
+      "episode_id": "EP-001",
+      "order": 7,
+      "status": "PLANNED",
+      "what_changed": "เพิ่มทรัพยากรที่ไม่มีการระบุตัวเลขแล้วมุ่งกลับจุดสร้างบ้าน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-002"
+      ],
+      "location_id": "LOC-004",
+      "effects_flags": {
+        "defeated_player_loot_collected": true,
+        "heading_to_base_site": true
+      }
+    },
+    {
+      "id": "EV-008",
+      "scene_id": "SC-008",
+      "episode_id": "EP-001",
+      "order": 8,
+      "status": "PLANNED",
+      "what_changed": "ปิดตอนด้วยการตั้งหลักครั้งแรก ไม่อ้างว่ามีบ้านสมบูรณ์โดยไม่มีบทอนุมัติ",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-005",
+      "effects_flags": {
+        "base_construction_started": true
+      }
+    }
+  ]
+}

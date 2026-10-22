@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "project": "LAST ISLAND — AI NOVEL STUDIO",
+  "status_legend": {
+    "LOCKED": "ยืนยันโดยผู้ใช้ แก้เฉพาะเมื่ออนุมัติเปลี่ยน",
+    "PROPOSED": "ไอเดีย/ชื่อชั่วคราว ไม่ใช่ข้อเท็จจริงถาวร",
+    "UNKNOWN": "ต้องหาคำตอบ ไม่ถือว่าผ่าน",
+    "DISPUTED": "มีข้อมูลขัดกัน ต้องแก้ก่อนเขียน"
+  },
+  "facts": [
+    {
+      "id": "FACT-001",
+      "category": "setting",
+      "statement": "โลกของนิยายเป็นยุค Full-Dive VR ผู้เล่นเข้าไปสัมผัสและใช้ชีวิตในเกมเสมือนจริง",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "GLOBAL",
+      "source_id": null,
+      "notes": ""
+    },
+    {
+      "id": "FACT-002",
+      "category": "timeline",
+      "statement": "เรื่องเปิดด้วยพระเอกเล่นเกมเป็นการส่วนตัวในห้องของตน ยังไม่เริ่มการแข่งขันอีสปอร์ตระดับโลก",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-001",
+      "source_id": null,
+      "notes": ""
+    },
+    {
+      "id": "FACT-003",
+      "category": "series",
+      "statement": "ในอนาคตจะมีการแข่งขันอีสปอร์ตชิงรางวัลระดับโลกที่มีผู้เข้าแข่งขัน 100 คน และผู้ชมออนไลน์ทั่วโลก",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "FUTURE",
+      "source_id": null,
+      "notes": ""
+    },
+    {
+      "id": "FACT-004",
+      "category": "episode",
+      "statement": "เมื่อพระเอกเข้าเล่นเกม ระบบแนะนำให้ตัดไม้ สร้างบ้านพื้นฐาน และทำเตียง",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-001",
+      "source_id": null,
+      "notes": "ข้อกำหนดโลกนิยาย ไม่ใช่คำยืนยันว่ากลไกนี้ใช้ได้ในเกมทุกโหมด"
+    },
+    {
+      "id": "FACT-005",
+      "category": "episode",
+      "statement": "พระเอกวางแผนบ้านหลังแรกขนาด 2×2 ช่อง ชั้นเดียว",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-001",
+      "source_id": null,
+      "notes": ""
+    },
+    {
+      "id": "FACT-006",
+      "category": "episode",
+      "statement": "ระหว่างเก็บทรัพยากร พระเอกเห็นบ้านมือใหม่จำนวนมากในบริเวณนั้น จึงเปิดแผนที่และเลือกเดินทางหาที่สร้างบ้านใหม่",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-001",
+      "source_id": null,
+      "notes": ""
+    },
+    {
+      "id": "FACT-007",
+      "category": "episode",
+      "statement": "ก่อนเดินทาง พระเอกใช้ไม้คราฟต์อาวุธชิ้นแรกเป็นไม้เบสบอล",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-001",
+      "source_id": null,
+      "notes": "ข้อกำหนดโลกนิยาย ไม่ใช่คำยืนยันว่ากลไกนี้ใช้ได้ในเกมทุกโหมด"
+    },
+    {
+      "id": "FACT-008",
+      "category": "episode",
+      "statement": "ระหว่างเดินบนถนน พระเอกพบกล่องเศษวัสดุจำนวนหนึ่งกล่องและเก็บของติดกระเป๋า",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-001",
+      "source_id": null,
+      "notes": ""
+    },
+    {
+      "id": "FACT-009",
+      "category": "episode",
+      "statement": "พระเอกถูกผู้เล่นอื่นซุ่มโจมตีด้วยไม้เบสบอล และเกิดการต่อสู้ด้วยไม้เบสบอลทั้งสองฝ่าย",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-001",
+      "source_id": null,
+      "notes": ""
+    },
+    {
+      "id": "FACT-010",
+      "category": "episode",
+      "statement": "พระเอกชนะอย่างเฉียดฉิว และเก็บหินกับเศษวัสดุที่ผู้แพ้ทำตกไว้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-001",
+      "source_id": null,
+      "notes": ""
+    },
+    {
+      "id": "FACT-011",
+      "category": "episode",
+      "statement": "หลังการปะทะ พระเอกกลับไปสร้างบ้านตามแผน",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-001",
+      "source_id": null,
+      "notes": ""
+    },
+    {
+      "id": "FACT-012",
+      "category": "editorial",
+      "statement": "ใช้เกมเพลย์จริงของสตรีมเมอร์เป็นหลักฐานกฎและพฤติกรรม แต่ต้องแยกจากกฎการแข่งขันและการแต่งเติมเพื่อความบันเทิง",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "GLOBAL",
+      "source_id": null,
+      "notes": ""
+    },
+    {
+      "id": "FACT-013",
+      "category": "editorial",
+      "statement": "พระเอกไม่ถูกกำหนดให้ชนะเพราะเป็นตัวละครหลัก; การแพ้ชนะและของที่มีต้องสอดคล้องกับเหตุการณ์และกฎในเรื่อง",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "GLOBAL",
+      "source_id": null,
+      "notes": ""
+    },
+    {
+      "id": "FACT-014",
+      "category": "character",
+      "statement": "อาจใช้ชื่อเล่นพระเอกว่า บอส (ปรากฏในร่างบทที่ AI เสนอ แต่ผู้ใช้ยังไม่รับรองเป็นชื่อถาวร)",
+      "status": "PROPOSED",
+      "origin": "ASSISTANT_PROPOSAL",
+      "scope": "GLOBAL",
+      "source_id": null,
+      "notes": "ห้ามล็อกชื่อถาวร"
+    },
+    {
+      "id": "FACT-015",
+      "category": "setting",
+      "statement": "ปี ค.ศ. 2045 เป็นช่วงเวลาที่เคยถูกเสนอ ยังไม่ได้รับการยืนยัน",
+      "status": "PROPOSED",
+      "origin": "ASSISTANT_PROPOSAL",
+      "scope": "GLOBAL",
+      "source_id": null,
+      "notes": "ใช้คำว่าอนาคตยุค Full-Dive VR แทนจนกว่าจะอนุมัติ"
+    },
+    {
+      "id": "FACT-016",
+      "category": "tournament",
+      "statement": "เงินรางวัล 100 ล้านดอลลาร์เป็นตัวเลขที่ AI เคยเสนอ ไม่ใช่ข้อมูลที่ล็อกแล้ว",
+      "status": "PROPOSED",
+      "origin": "ASSISTANT_PROPOSAL",
+      "scope": "FUTURE",
+      "source_id": null,
+      "notes": "ห้ามอ้างว่าเป็น canon"
+    }
+  ]
+}

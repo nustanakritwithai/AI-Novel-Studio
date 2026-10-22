@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "INV-001",
+      "scene_id": "SC-002",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-001",
+      "operation": "GAIN",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เก็บไม้ช่วงเริ่มเกม"
+    },
+    {
+      "id": "INV-002",
+      "scene_id": "SC-004",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-001",
+      "operation": "SPEND",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ใช้ไม้คราฟต์ไม้เบสบอล; สูตรต้องตรวจเกม"
+    },
+    {
+      "id": "INV-003",
+      "scene_id": "SC-004",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-002",
+      "operation": "CRAFT",
+      "quantity": 1,
+      "status": "PLANNED",
+      "notes": "ไม้เบสบอลด้ามแรก"
+    },
+    {
+      "id": "INV-004",
+      "scene_id": "SC-005",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-003",
+      "operation": "FIND",
+      "quantity": 1,
+      "status": "PLANNED",
+      "notes": "พบกล่องริมถนนหนึ่งกล่อง"
+    },
+    {
+      "id": "INV-005",
+      "scene_id": "SC-005",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-004",
+      "operation": "GAIN",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เก็บเศษวัสดุจากกล่อง ไม่เดาจำนวน"
+    },
+    {
+      "id": "INV-006",
+      "scene_id": "SC-007",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-004",
+      "operation": "LOOT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เก็บเศษวัสดุจากผู้แพ้"
+    },
+    {
+      "id": "INV-007",
+      "scene_id": "SC-007",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-005",
+      "operation": "LOOT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เก็บหินจากผู้แพ้"
+    },
+    {
+      "id": "INV-008",
+      "scene_id": "SC-008",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-001",
+      "operation": "SPEND",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "วัสดุสร้างบ้าน; จำนวนรอยืนยันจากฉากที่เขียนจริง"
+    }
+  ]
+}
