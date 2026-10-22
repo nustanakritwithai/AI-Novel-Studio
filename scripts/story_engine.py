@@ -23,17 +23,19 @@ APPROVED = {"APPROVED", "CANON"}
 
 
 def load_index(root: Path) -> dict:
-    result = json.loads((root / "ledger/index.json").read_text(encoding="utf-8"))
+    root = novelctl.story_config.resolve_root(root)
+    result = json.loads(novelctl.story_config.story_path(root, "ledger/index.json").read_text(encoding="utf-8"))
     return result
 
 
 def within(root: Path, relpath: str, prefix: str) -> Path:
     """Require a relative path inside a specific repository directory."""
+    root = novelctl.story_config.resolve_root(root)
     if not isinstance(relpath, str) or not relpath or Path(relpath).is_absolute():
         raise ValueError("invalid ledger path")
     base = (root / prefix).resolve()
     target = (root / relpath).resolve()
-    if not target.is_relative_to(base) or target.suffix != ".md":
+    if not base.is_relative_to(root) or not target.is_relative_to(base) or target.suffix != ".md":
         raise ValueError(f"ledger path outside {prefix}: {relpath}")
     return target
 
@@ -56,12 +58,13 @@ def validate(root: Path) -> tuple[list[str], list[str]]:
     if errors:
         return ["Base registry invalid: " + error for error in errors], warnings
     try:
+        root = novelctl.story_config.resolve_root(root)
         idx, db = load_index(root), novelctl.load(root)
     except (OSError, ValueError, KeyError) as exc:
         return [f"Unable to load story engine index or registry: {exc}"], warnings
     if not isinstance(idx, dict):
         return ["ledger/index.json: index must be an object"], warnings
-    if idx.get("schema_version") != 1:
+    if type(idx.get("schema_version")) is not int or idx.get("schema_version") != 1:
         errors.append("ledger/index.json: unsupported schema_version")
     eps = novelctl.rows(db, "episodes")
     episode_ids = [e["id"] for e in eps]
@@ -131,7 +134,7 @@ def validate(root: Path) -> tuple[list[str], list[str]]:
                 if not content or "TODO" in content or "PLACEHOLDER" in content:
                     errors.append(f"{rid}: approved summary is blank or has placeholder")
                 if content and len(content) < 100:
-                    warnings.append(f"{rid}: summary may be too short (editorial target ~150–300 Thai words)")
+                    warnings.append(f"{rid}: summary may be too short; human editorial review required")
             except (OSError, ValueError, TypeError) as exc:
                 errors.append(f"{rid}: cannot read approved summary ({exc})")
     if not all(isinstance(idx.get(k), list) for k in ("episodes", "chapters", "books")):
@@ -206,8 +209,9 @@ def pack(root: Path, target: str, keep: int = 7, max_chars: int = 25000) -> str:
     errors, _ = validate(root)
     if errors:
         raise ValueError("Story Engine validation failed: " + "; ".join(errors[:5]))
+    root = novelctl.story_config.resolve_root(root)
     base = novelctl.build_brief(root, target)
-    style = (root / "bible/STYLE_GUIDE.md").read_text(encoding="utf-8")
+    style = novelctl.story_config.story_path(root, "bible/STYLE_GUIDE.md").read_text(encoding="utf-8")
     recent = render_approved_history(root, target, keep)
     content = (
         "# STORY ENGINE v0.2 / GITHUB-ONLY CONTEXT PACK\n"
@@ -235,7 +239,7 @@ def proposal(root: Path, ep_id: str) -> str:
         "Status: PROPOSED — human approval required; never merge automatically.",
         f"Title: {ep['title']}",
         f"Scene IDs: {', '.join(ep['scene_ids'])}",
-        "", "## Episode summary (editorial target 150–300 Thai words)",
+        "", "## Episode summary (human editorial review required)",
         "[เขียนหลังอ่านฉบับร่างทั้งหมด ห้ามคาดเดาจาก outline]", "",
         "## Character knowledge & relationships changed", "[source scene IDs, before → after]", "",
         "## Inventory and physical state deltas", "[scene ID, amount or UNKNOWN]", "",
@@ -250,6 +254,7 @@ def proposal(root: Path, ep_id: str) -> str:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Story Engine v0.2 — GitHub only, no external database")
     parser.add_argument("--root", type=Path, default=ROOT)
+    parser.add_argument("--story", help="Story slug under --root/stories (otherwise use workspace default)")
     subs = parser.add_subparsers(dest="command", required=True)
     subs.add_parser("check")
     context = subs.add_parser("pack")
@@ -261,8 +266,8 @@ def main(argv: list[str] | None = None) -> int:
     draft.add_argument("episode")
     draft.add_argument("--out", type=Path)
     args = parser.parse_args(argv)
-    root = args.root.resolve()
     try:
+        root = novelctl.story_config.resolve_root(args.root, args.story)
         if args.command == "check":
             errors, warnings = validate(root)
             for w in warnings:

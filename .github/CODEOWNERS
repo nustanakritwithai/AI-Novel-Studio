@@ -1,5 +1,5 @@
 # Editor review guidance. Enforce via repository branch rules before relying on it.
-/data/canon.json @nustanakritwithai
-/data/story_state.json @nustanakritwithai
-/data/mechanics.json @nustanakritwithai
-/plot/ @nustanakritwithai
+/stories/last-island/data/canon.json @nustanakritwithai
+/stories/last-island/data/story_state.json @nustanakritwithai
+/stories/last-island/data/mechanics.json @nustanakritwithai
+/stories/last-island/plot/ @nustanakritwithai

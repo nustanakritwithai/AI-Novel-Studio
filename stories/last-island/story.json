@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "slug": "last-island",
+  "title": "Last Island",
+  "extensions": {"gameplay": true},
+  "rules": [
+    "The world-championship of 100 contestants is FUTURE, never in the private-game opening.",
+    "Distinguish STORY directive from GAMEPLAY verification; UNVERIFIED ≠ PASS.",
+    "Preserve POV knowledge, known inventory, injury ambiguity, 2×2 single story and single scrap crate."
+  ]
+}

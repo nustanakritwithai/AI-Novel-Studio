@@ -8,13 +8,30 @@ import json
 import sys
 from pathlib import Path
 from collections import Counter
+try:
+    from scripts import story_config
+except ImportError:
+    import story_config
 
 DEFAULT_ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_DATA = ("canon", "characters", "locations", "items", "sources", "mechanics", "scenes", "episodes", "events", "inventory_ledger", "threads", "relationships", "decisions", "story_state")
+CORE_DATA = tuple(kind for kind in REQUIRED_DATA if kind not in ('sources', 'mechanics'))
 
 
 def load(root: Path) -> dict:
-    return {kind: json.loads((root / 'data' / f'{kind}.json').read_text(encoding='utf-8')) for kind in REQUIRED_DATA}
+    root = story_config.resolve_root(root)
+    config = story_config.load_config(root)
+    kinds = REQUIRED_DATA if config['extensions']['gameplay'] else CORE_DATA
+    db = {}
+    for kind in kinds:
+        path = story_config.story_path(root, f'data/{kind}.json')
+        value = json.loads(path.read_text(encoding='utf-8'))
+        if not isinstance(value, dict) or type(value.get('schema_version')) is not int or value['schema_version'] != 1:
+            raise ValueError(f'data/{kind}.json: expected schema_version 1 object')
+        db[kind] = value
+    for kind in ('sources', 'mechanics'):
+        db.setdefault(kind, {'schema_version': 1, kind: []})
+    return db
 
 
 def rows(db: dict, kind: str):
@@ -29,6 +46,8 @@ def ids(db: dict, kind: str) -> set[str]:
 def validate(root: Path):
     errors, warnings = [], []
     try:
+        root = story_config.resolve_root(root)
+        config = story_config.load_config(root)
         db = load(root)
     except (OSError, ValueError, KeyError) as exc:
         return [f'Cannot read data JSON: {exc}'], []
@@ -69,7 +88,8 @@ def validate(root: Path):
         for k in char.get('knowledge', []):
             require('scenes', k.get('after_scene'), char['id'] + ' knowledge')
     for item in rows(db, 'items'):
-        require('mechanics', item.get('gameplay_mechanic_id'), item['id'])
+        if config['extensions']['gameplay'] or item.get('gameplay_mechanic_id'):
+            require('mechanics', item.get('gameplay_mechanic_id'), item['id'])
     for mechanic in rows(db, 'mechanics'):
         if mechanic.get('game_verification') not in ('TRANSCRIPT_SUPPORTED', 'VISUALLY_VERIFIED', 'UNVERIFIED', 'TITLE_ONLY', 'FICTIONAL_TOURNAMENT'):
             errors.append(f"{mechanic['id']}: unknown verification status")
@@ -132,11 +152,14 @@ def validate(root: Path):
                     errors.append(f"{scene['id']}: empty {field}")
             if scene.get('status') not in ('PLANNED','DRAFT','REVIEW','APPROVED','CANON'):
                 errors.append(f"{scene['id']}: invalid scene status")
-            path = root / scene.get('draft_path', 'INVALID_PATH')
-            if scene.get('status') in ('DRAFT','REVIEW','APPROVED','CANON') and not path.is_file():
-                errors.append(f"{scene['id']}: status {scene['status']} but no draft at {scene.get('draft_path')}")
-            card = root / 'scenes' / f"{scene['id']}.md"
-            if not card.is_file(): errors.append(f'{scene["id"]}: missing scene card {card.relative_to(root)}')
+            try:
+                path = story_config.story_path(root, scene.get('draft_path', 'INVALID_PATH'))
+                if scene.get('status') in ('DRAFT','REVIEW','APPROVED','CANON') and not path.is_file():
+                    errors.append(f"{scene['id']}: status {scene['status']} but no draft at {scene.get('draft_path')}")
+                card = story_config.story_path(root, f"scenes/{scene['id']}.md")
+                if not card.is_file(): errors.append(f'{scene["id"]}: missing scene card {card.relative_to(root)}')
+            except ValueError as exc:
+                errors.append(f"{scene['id']}: {exc}")
     for scene in rows(db, 'scenes'):
         if scene['id'] not in episode_scenes:
             errors.append(f"{scene['id']}: missing from episode scene_ids")
@@ -225,7 +248,9 @@ def approved_state_before(db: dict, cutoff: tuple, positions: dict) -> dict:
 
 
 def status(root: Path) -> str:
+    root = story_config.resolve_root(root)
     db=load(root)
+    config = story_config.load_config(root)
     allsc=rows(db,'scenes')
     counts=Counter(s['status'] for s in allsc)
     unknown=[m for m in rows(db,'mechanics') if m['game_verification']=='UNVERIFIED']
@@ -237,17 +262,20 @@ def status(root: Path) -> str:
       f"ตอนที่วางโครงแล้ว: {len(e)} | ฉากทั้งหมด: {len(allsc)}",
       f"ฉาก: PLANNED={counts['PLANNED']} DRAFT={counts['DRAFT']} REVIEW={counts['REVIEW']} APPROVED={counts['APPROVED']} CANON={counts['CANON']}",
       f"ข้อมูล Canon ล็อกแล้ว: {sum(f['status']=='LOCKED' for f in rows(db,'canon'))}",
-      f"รายละเอียดกลไกเกมที่ยังไม่ยืนยัน: {len(unknown)} (UNKNOWN ≠ PASS)",
+      *([f"รายละเอียดกลไกเกมที่ยังไม่ยืนยัน: {len(unknown)} (UNKNOWN ≠ PASS)"]
+        if config['extensions']['gameplay'] else []),
       f"Plot Threads ยังเปิดอยู่: {sum(t['status'] == 'OPEN' for t in rows(db,'threads'))}",
       f"สถานะหลังฉากที่อนุมัติ: {db['story_state'].get('approved_through_scene') or 'ยังไม่มีฉาก prose ที่อนุมัติ'}",
-      'คำสั่งถัดไป: python scripts/novelctl.py brief SC-001',
+      'Next: request a brief for an assigned scene ID in this story.',
     ])
 
 
 def build_brief(root: Path, target: str) -> str:
+    root = story_config.resolve_root(root)
+    config = story_config.load_config(root)
     db=load(root)
     scene=get(db,'scenes',target)
-    ep=get(db,'episodes', target if target.startswith('EP-') else (scene['episode_id'] if scene else ''))
+    ep=get(db,'episodes', scene['episode_id'] if scene else target)
     if not ep: raise ValueError(f'Unknown scene/episode: {target}')
     if scene:
         allsc = sorted([s for s in rows(db,'scenes') if s['episode_id']==ep['id']],key=lambda s:s['order'])
@@ -256,23 +284,32 @@ def build_brief(root: Path, target: str) -> str:
     else:
         chosen=sorted([get(db,'scenes',s) for s in ep['scene_ids']],key=lambda s:s['order'])
         focus=chosen
+    if not focus:
+        raise ValueError(f'{target}: no scene metadata available for a context pack')
     positions = scene_positions(db)
     cutoff = min(positions[s['id']] for s in focus)
     canon_ids=set(c for s in focus for c in s.get('canon_refs',[]))
     # Core global facts are always required; avoid entire series lore for every scene.
     relevant=[f for f in rows(db,'canon') if f['status']=='LOCKED' and (f['scope']=='GLOBAL' or f['id'] in canon_ids)]
     characters=[get(db,'characters',cid) for cid in sorted({a for s in chosen for a in s['character_ids']})]
-    mechanisms=[get(db,'mechanics',mid) for mid in sorted({m for s in focus for m in s['mechanic_refs']})]
+    mechanic_ids = sorted({m for s in focus for m in s.get('mechanic_refs',[])})
+    if mechanic_ids and not config['extensions']['gameplay']:
+        raise ValueError('Mechanic references require the gameplay extension')
+    mechanisms=[get(db,'mechanics',mid) for mid in mechanic_ids]
+    if any(m is None for m in mechanisms):
+        raise ValueError('Unknown mechanic reference in selected scene')
     parts=[f'# CONTEXT PACK: {target}',
            '> Generated from repository data. Do not treat this file as a replacement for approved prose.',
            f'## PROJECT STATUS\n{status(root)}',
            '## NON-NEGOTIABLE AGENT RULES',
            '1. LOCKED user directives override AI proposals. No retroactive changes without approval.',
-           '2. The world-championship of 100 contestants is FUTURE, never in the private-game opening.',
-           '3. Distinguish STORY directive from GAMEPLAY verification; UNVERIFIED ≠ PASS.',
-           '4. Write only draft prose. Do not update canon or approved story_state before editor review.',
-           '5. Preserve POV knowledge, known inventory, injury ambiguity, 2×2 single story and single scrap crate.',
-           '## APPROVED CANON IN SCOPE']
+           '2. Proposed material and planned beats are not approved history.',
+           '3. Do not update canon or approved story_state before human review.',
+           '4. Preserve scene-start knowledge, inventory and state boundaries; UNKNOWN is not verified.']
+    if config['rules']:
+        parts.append('## STORY-SPECIFIC RULES')
+        parts.extend(f'- {rule}' for rule in config['rules'])
+    parts.append('## APPROVED CANON IN SCOPE')
     parts += [f"- **{f['id']}** {f['statement']}" for f in relevant]
     if scene: parts+= [f'## SELECTED SCENE: {scene["id"]}']
     else: parts+= [f'## EPISODE: {ep["id"]} — {ep["title"]}']
@@ -293,7 +330,8 @@ def build_brief(root: Path, target: str) -> str:
             parts.append(f"  - After {k['after_scene']} ({label}): {k['knows']}")
         if not known:
             parts.append('  - Knowledge at scene start: UNKNOWN (no earlier scene-linked entries).')
-    parts.append('## MECHANIC RESEARCH STATUS (DO NOT OVERSTATE)')
+    if config['extensions']['gameplay']:
+        parts.append('## MECHANIC RESEARCH STATUS (DO NOT OVERSTATE)')
     for m in mechanisms:
         parts.append(f"- {m['id']} {m['title']}: GAMEPLAY={m['game_verification']}; STORY={m['story_requirement']}; sources={','.join(m['source_ids']) or 'NONE'}; {m['notes']}")
     parts.append('## INVENTORY EVENTS IN RELEVANT SCENES (PLANNED ≠ APPROVED)')
@@ -310,17 +348,18 @@ def build_brief(root: Path, target: str) -> str:
     parts.append(json.dumps(approved_state_before(db, cutoff, positions),ensure_ascii=False,indent=2))
     parts.append('## OPEN ISSUES')
     parts.extend('- '+str(x) for x in ep.get('questions',[]))
-    parts.append('## REQUIRED OUTPUT FROM WRITER\n1. Draft for the requested scene(s) only.\n2. List of newly proposed facts, not silently promoted to CANON.\n3. Change log for character state/items/locations and knowledge.\n4. Continuity & game-mechanics uncertainty report.')
+    parts.append('## REQUIRED OUTPUT CONTRACT\n1. Work within the requested scene scope only.\n2. List newly proposed facts, never silently promoted to CANON.\n3. Record proposed state/items/locations and knowledge changes.\n4. Report continuity and evidence uncertainty; human approval remains required.')
     return '\n\n'.join(parts)+'\n'
 
 
 def handoff(root):
+    root = story_config.resolve_root(root)
     db=load(root)
     return '\n'.join(['# AUTO HANDOFF — AI NOVEL STUDIO',status(root),
-        f"Canon registry: data/canon.json; source registry: data/sources.json; events: data/events.json",
-        'Read AGENTS.md, STATE.md, PROJECT.md, and a generated scene brief before any writing.',
+        f"Story root: {root}; canon registry: data/canon.json; events: data/events.json",
+        'Read the selected story configuration, AGENTS.md, approved state, and assigned scene brief before work.',
         f"Active episode: {db['story_state']['active_episode']}",
-        'Next: run `python scripts/novelctl.py brief SC-001 --out /tmp/scene-brief.md`, read it, draft only scene SC-001.',
+        'Next: request a brief for the assigned scene in this story; do not assume another story or scene.',
         'Never write to main or claim approval without an explicit editorial decision.',
         'Run `python scripts/novelctl.py check` before PR.'])+'\n'
 
@@ -328,13 +367,14 @@ def handoff(root):
 def main(argv=None):
     parser=argparse.ArgumentParser(description='AI Novel Studio continuity manager (stdlib only)')
     parser.add_argument('--root',type=Path,default=DEFAULT_ROOT)
+    parser.add_argument('--story', help='Story slug under --root/stories (otherwise use workspace default)')
     sub=parser.add_subparsers(dest='command',required=True)
     sub.add_parser('check'); sub.add_parser('status'); sub.add_parser('research')
     brief=sub.add_parser('brief'); brief.add_argument('target'); brief.add_argument('--out',type=Path)
     hand=sub.add_parser('handoff'); hand.add_argument('--out',type=Path)
     args=parser.parse_args(argv)
-    root=args.root.resolve()
     try:
+        root=story_config.resolve_root(args.root, args.story)
         if args.command=='check':
             errors,warnings=validate(root)
             for w in warnings: print('WARN:',w)

@@ -1,5 +1,5 @@
 ---
-applyTo: "drafts/**/*.md,scenes/**/*.md"
+applyTo: "stories/last-island/drafts/**/*.md,stories/last-island/scenes/**/*.md"
 ---
 
 # Narrative file rules

@@ -8,7 +8,7 @@ from pathlib import Path
 
 from scripts import novelctl
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent / 'stories/last-island'
 
 
 class ContextTimeTests(unittest.TestCase):

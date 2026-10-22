@@ -5,8 +5,9 @@ import json
 import shutil
 from pathlib import Path
 
-ROOT=Path(__file__).resolve().parents[1]
-spec=importlib.util.spec_from_file_location('novelctl', ROOT/'scripts/novelctl.py')
+ENGINE_ROOT=Path(__file__).resolve().parents[1]
+ROOT=ENGINE_ROOT/'stories'/'last-island'
+spec=importlib.util.spec_from_file_location('novelctl', ENGINE_ROOT/'scripts/novelctl.py')
 novelctl=importlib.util.module_from_spec(spec);spec.loader.exec_module(novelctl)
 
 class NovelctlTest(unittest.TestCase):

@@ -1,0 +1,2 @@
+# Preserve the migrated example's exact Git bytes on every platform.
+stories/last-island/** -text
