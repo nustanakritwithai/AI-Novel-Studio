@@ -52,6 +52,14 @@ Approved-only episode ledger and hierarchy updated with source PR provenance
 
 When context exceeds the explicit character budget the command fails instead of silently discarding protected facts. Use narrower target or fewer approved episodes.
 
+### v0.2.1 reliability boundaries
+
+- Causal prerequisites require literal `true`. A `false` effect clears the flag; initial and effect flag values must be booleans.
+- Character knowledge is scoped to the **start** of the requested scene, or the first scene of an episode pack, using episode registry order and scene order. Knowledge acquired during the target scene is excluded. Earlier planned knowledge is labelled as planned, not approved. Untimed `known_traits` are withheld because the registry does not record when they became true.
+- The single `story_state` snapshot is included only when its approved scene marker precedes the target. It remains evidence as of that marker, not a reconstruction of later progress. Revisiting a scene at or before that marker returns `UNKNOWN`; no historical state is invented from planned effects. The outline's initial baseline remains available while no prose is approved. Historical snapshots are outside this bounded release.
+- `story_engine.py check` composes the base registry/causal checks with the approved ledger checks, so `pack` and the manual context workflow reject invalid base data too. Every approved scene must have readable, nonblank source prose inside `drafts/`. Missing evidence fails the command before writing a new pack; it is never inserted as a warning into a valid pack.
+- These checks validate local evidence and structure. Human review and canon approval remain required; the scripts do not authenticate GitHub reviews or judge prose quality. Existing `UNVERIFIED` gameplay warnings remain unresolved evidence gaps.
+
 ## Onboarding next AI
 
 1. Read `AGENTS.md`, `STATE.md`, `STORY_ENGINE_V02.md` and scene card.
