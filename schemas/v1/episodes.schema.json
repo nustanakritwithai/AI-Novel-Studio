@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/episodes.schema.json",
+  "title": "Episodes registry v1",
+  "$comment": "Editorial extension fields are permitted. Known operational fields are validated; cross-record references and approval semantics are checked separately.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "episodes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "episodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "status",
+          "scene_ids"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "title": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "OUTLINE",
+              "DRAFT",
+              "REVIEW",
+              "APPROVED",
+              "CANON"
+            ]
+          },
+          "scene_ids": {
+            "$ref": "common.schema.json#/$defs/ids"
+          },
+          "questions": {
+            "$ref": "common.schema.json#/$defs/strings"
+          },
+          "approved_final_draft": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/text"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "position": {
+            "type": "string"
+          },
+          "logline": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

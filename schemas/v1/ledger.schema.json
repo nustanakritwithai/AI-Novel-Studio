@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/ledger.schema.json",
+  "title": "Ledger registry v1",
+  "$comment": "Editorial extension fields are permitted. Known operational fields are validated; cross-record references and approval semantics are checked separately.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "episodes",
+    "chapters",
+    "books"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "episodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "scene_ids",
+          "summary_path"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "scene_ids": {
+            "$ref": "common.schema.json#/$defs/ids"
+          },
+          "summary_path": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "approval": {
+            "$ref": "common.schema.json#/$defs/approval"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "episode_ids",
+          "summary_path"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "episode_ids": {
+            "$ref": "common.schema.json#/$defs/ids",
+            "minItems": 1
+          },
+          "summary_path": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "approval": {
+            "$ref": "common.schema.json#/$defs/approval"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "books": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "episode_ids",
+          "summary_path"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "episode_ids": {
+            "$ref": "common.schema.json#/$defs/ids",
+            "minItems": 1
+          },
+          "summary_path": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "approval": {
+            "$ref": "common.schema.json#/$defs/approval"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

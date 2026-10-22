@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """AI Novel Studio v0.1: deterministic continuity checks and scoped context packs.
-No external packages and no AI API needed. This tool does not write narrative prose.
+Uses versioned JSON Schemas; no AI API needed. This tool does not write narrative prose.
 """
 from __future__ import annotations
 import argparse
@@ -9,25 +9,27 @@ import sys
 from pathlib import Path
 from collections import Counter
 try:
-    from scripts import story_config
+    from scripts import story_config, registry_schema, state_replay
 except ImportError:
     import story_config
+    import registry_schema
+    import state_replay
 
 DEFAULT_ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_DATA = ("canon", "characters", "locations", "items", "sources", "mechanics", "scenes", "episodes", "events", "inventory_ledger", "threads", "relationships", "decisions", "story_state")
 CORE_DATA = tuple(kind for kind in REQUIRED_DATA if kind not in ('sources', 'mechanics'))
 
 
-def load(root: Path) -> dict:
+def load(root: Path, validate_schema: bool = True) -> dict:
     root = story_config.resolve_root(root)
     config = story_config.load_config(root)
     kinds = REQUIRED_DATA if config['extensions']['gameplay'] else CORE_DATA
     db = {}
     for kind in kinds:
         path = story_config.story_path(root, f'data/{kind}.json')
-        value = json.loads(path.read_text(encoding='utf-8'))
-        if not isinstance(value, dict) or type(value.get('schema_version')) is not int or value['schema_version'] != 1:
-            raise ValueError(f'data/{kind}.json: expected schema_version 1 object')
+        value = registry_schema.read_json(path)
+        if validate_schema:
+            registry_schema.ensure_valid(kind, value)
         db[kind] = value
     for kind in ('sources', 'mechanics'):
         db.setdefault(kind, {'schema_version': 1, kind: []})
@@ -48,7 +50,22 @@ def validate(root: Path):
     try:
         root = story_config.resolve_root(root)
         config = story_config.load_config(root)
-        db = load(root)
+        db = load(root, validate_schema=False)
+        shape_errors = [(kind, error) for kind in REQUIRED_DATA
+                        for error in registry_schema.validation_errors(kind, db[kind])]
+        if shape_errors:
+            for kind in REQUIRED_DATA:
+                errors.extend(registry_schema.validate(kind, db[kind]))
+            # Existing causal diagnostics can still run when only flag values have
+            # wrong types: their explicit boolean guards handle those cases safely.
+            def safe_flag_error(kind, error):
+                path = list(error.absolute_path)
+                return (kind == 'story_state' and path and path[0] == 'flags'
+                        and len(path) <= 2) or (
+                            kind in ('scenes', 'events') and len(path) == 4
+                            and path[0] == kind and path[2] == 'effects_flags')
+            if not all(safe_flag_error(kind, error) for kind, error in shape_errors):
+                return errors, warnings
     except (OSError, ValueError, KeyError) as exc:
         return [f'Cannot read data JSON: {exc}'], []
     kinds = ('canon', 'characters', 'locations', 'items', 'sources', 'mechanics', 'scenes', 'episodes', 'events', 'inventory_ledger', 'threads', 'relationships', 'decisions')
@@ -214,6 +231,7 @@ def validate(root: Path):
     for src in rows(db,'sources'):
         if src.get('access_level') not in ('TRANSCRIPT_ONLY','VIDEO_REVIEWED','TITLE_AND_METADATA','TITLE_AND_DESCRIPTION'):
             errors.append(f"{src['id']}: invalid source access_level")
+    errors.extend(state_replay.validate(root, db))
     return errors, warnings
 
 
@@ -245,6 +263,26 @@ def approved_state_before(db: dict, cutoff: tuple, positions: dict) -> dict:
         'reason': 'No approved state snapshot is available before the requested scene. '
                   'The latest snapshot cannot reconstruct earlier state; do not infer it from planned effects.',
     }
+
+
+def state_before_target(root: Path, target: str, db: dict | None = None) -> dict:
+    """Replay explicit local history, or retain the legacy snapshot/UNKNOWN path."""
+    root = story_config.resolve_root(root)
+    if db is None:
+        errors, _ = validate(root)
+        if errors:
+            raise ValueError('Cannot replay invalid registry: ' + '; '.join(errors))
+        db = load(root)
+    replay = state_replay.replay_before(root, target, db)
+    if replay is not None:
+        return replay
+    scene = get(db, 'scenes', target)
+    episode = get(db, 'episodes', scene['episode_id'] if scene else target)
+    if not episode or not episode.get('scene_ids'):
+        raise ValueError(f'Unknown or empty scene/episode: {target}')
+    positions = scene_positions(db)
+    cutoff = positions[scene['id']] if scene else min(positions[sid] for sid in episode['scene_ids'])
+    return approved_state_before(db, cutoff, positions)
 
 
 def status(root: Path) -> str:
@@ -344,8 +382,8 @@ def build_brief(root: Path, target: str) -> str:
         if thread['status'] == 'OPEN':
             parts.append(f"- {thread['id']} {thread['title']} (do not resolve unless assigned)")
     parts.append('## APPROVED WORLD STATE BEFORE TARGET (INITIAL BASELINE IF NO PROSE APPROVED)')
-    parts.append('Snapshot evidence is only current as of its approved_through_scene marker; later progress is not inferred.')
-    parts.append(json.dumps(approved_state_before(db, cutoff, positions),ensure_ascii=False,indent=2))
+    parts.append('Only explicit prior local evidence is used. Local approval labels are not authenticated GitHub approval; later progress is not inferred.')
+    parts.append(json.dumps(state_before_target(root, target, db),ensure_ascii=False,indent=2))
     parts.append('## OPEN ISSUES')
     parts.extend('- '+str(x) for x in ep.get('questions',[]))
     parts.append('## REQUIRED OUTPUT CONTRACT\n1. Work within the requested scene scope only.\n2. List newly proposed facts, never silently promoted to CANON.\n3. Record proposed state/items/locations and knowledge changes.\n4. Report continuity and evidence uncertainty; human approval remains required.')
@@ -365,7 +403,7 @@ def handoff(root):
 
 
 def main(argv=None):
-    parser=argparse.ArgumentParser(description='AI Novel Studio continuity manager (stdlib only)')
+    parser=argparse.ArgumentParser(description='AI Novel Studio continuity manager (JSON Schema validation)')
     parser.add_argument('--root',type=Path,default=DEFAULT_ROOT)
     parser.add_argument('--story', help='Story slug under --root/stories (otherwise use workspace default)')
     sub=parser.add_subparsers(dest='command',required=True)

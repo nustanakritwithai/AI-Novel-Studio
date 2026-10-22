@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/story_state.schema.json",
+  "title": "Story State registry v1",
+  "$comment": "Editorial extension fields are permitted. Known operational fields are validated; cross-record references and approval semantics are checked separately.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "approved_through_scene",
+    "active_episode",
+    "phase",
+    "flags"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "approved_through_scene": {
+      "$ref": "common.schema.json#/$defs/nullable_id"
+    },
+    "active_episode": {
+      "$ref": "common.schema.json#/$defs/nullable_id"
+    },
+    "phase": {
+      "$ref": "common.schema.json#/$defs/text"
+    },
+    "flags": {
+      "$ref": "common.schema.json#/$defs/flags"
+    },
+    "pending_review": {
+      "$ref": "common.schema.json#/$defs/strings"
+    },
+    "real_world": {
+      "type": "object"
+    },
+    "avatar": {
+      "type": "object"
+    },
+    "last_commit_handoff": {
+      "$ref": "common.schema.json#/$defs/text"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/sources.schema.json",
+  "title": "Sources registry v1",
+  "$comment": "Editorial extension fields are permitted. Known operational fields are validated; cross-record references and approval semantics are checked separately.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "sources"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "access_level"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "title": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "type": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "url": {
+            "$ref": "common.schema.json#/$defs/text"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "reviewed_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "access_level": {
+            "type": "string",
+            "enum": [
+              "TRANSCRIPT_ONLY",
+              "VIDEO_REVIEWED",
+              "TITLE_AND_METADATA",
+              "TITLE_AND_DESCRIPTION"
+            ]
+          },
+          "scope": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "excerpts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "time",
+                "summary"
+              ],
+              "properties": {
+                "time": {
+                  "$ref": "common.schema.json#/$defs/text"
+                },
+                "summary": {
+                  "$ref": "common.schema.json#/$defs/text"
+                }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
