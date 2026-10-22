@@ -15,7 +15,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install pinned schema validation dependencies from PyPI
-        run: python -m pip install --index-url https://pypi.org/simple --only-binary=:all: -r requirements.txt
+        run: >-
+          python -m pip install --index-url https://pypi.org/simple --only-binary=:all: -r requirements.txt
       - name: Validate base story registry and causal order
         run: python scripts/novelctl.py check
       - name: Validate approved-only Story Engine ledger
