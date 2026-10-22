@@ -1,0 +1,750 @@
+{
+  "schema_version": 1,
+  "scenes": [
+    {
+      "id": "SC-001",
+      "episode_id": "EP-001",
+      "order": 1,
+      "title": "เล่นเกมส่วนตัว",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "REAL_TO_VR",
+      "location_id": "LOC-001",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [],
+      "canon_refs": [
+        "FACT-001",
+        "FACT-002"
+      ],
+      "mechanic_refs": [],
+      "source_refs": [],
+      "goal": "เล่นเกมส่วนตัว",
+      "conflict": "ความไม่รู้ระบบ",
+      "beats": [
+        "เปิดตัวพระเอกในห้องส่วนตัวแล้วเข้าสู่ Last Island ผ่าน Full-Dive VR; ยังไม่แข่งขันใหญ่"
+      ],
+      "outcome": "คนดูรู้ว่านี่เป็นผู้เล่นธรรมดากำลังเริ่มเซสชันส่วนตัว",
+      "requires_flags": [],
+      "effects_flags": {
+        "logged_in": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-001/SC-001.md",
+      "prose_source": "Full chapter 1 candidate prose; human approval pending"
+    },
+    {
+      "id": "SC-002",
+      "episode_id": "EP-001",
+      "order": 2,
+      "title": "บทเรียนแรก",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-002",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-001"
+      ],
+      "canon_refs": [
+        "FACT-004",
+        "FACT-005"
+      ],
+      "mechanic_refs": [
+        "MECH-001",
+        "MECH-005"
+      ],
+      "source_refs": [
+        "SRC-001"
+      ],
+      "goal": "บทเรียนแรก",
+      "conflict": "ทรัพยากรน้อย",
+      "beats": [
+        "ระบบนำทางชวนตัดไม้ สร้างบ้าน และทำเตียง; พระเอกวางแผนบ้าน 2×2 ชั้นเดียว"
+      ],
+      "outcome": "เริ่มตัดไม้และตั้งเป้าบ้านหลังแรก",
+      "requires_flags": [
+        "logged_in"
+      ],
+      "effects_flags": {
+        "tutorial_received": true,
+        "wood_gathered": true,
+        "base_plan_2x2": true
+      },
+      "open_questions": [
+        "จำนวนวัสดุที่เก็บยังไม่ระบุ"
+      ],
+      "draft_path": "drafts/EP-001/SC-002.md",
+      "prose_source": "Full chapter 1 candidate prose; human approval pending"
+    },
+    {
+      "id": "SC-003",
+      "episode_id": "EP-001",
+      "order": 3,
+      "title": "ทำเลที่แออัด",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-003",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [],
+      "canon_refs": [
+        "FACT-006"
+      ],
+      "mechanic_refs": [],
+      "source_refs": [],
+      "goal": "ทำเลที่แออัด",
+      "conflict": "ผู้เล่นเยอะจนพื้นที่ไม่น่าอยู่",
+      "beats": [
+        "ระหว่างเก็บทรัพยากรพบบ้านใหม่คล้ายกันจำนวนมาก; พระเอกตัดสินใจไม่ตั้งบ้านตรงนั้น"
+      ],
+      "outcome": "ยอมเปลี่ยนแผนทำเลแทนยึดติดความสะดวก",
+      "requires_flags": [
+        "wood_gathered"
+      ],
+      "effects_flags": {
+        "crowded_area_seen": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-001/SC-003.md",
+      "prose_source": "Full chapter 1 candidate prose; human approval pending"
+    },
+    {
+      "id": "SC-004",
+      "episode_id": "EP-001",
+      "order": 4,
+      "title": "แผนที่และไม้เบสบอล",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-003",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-002"
+      ],
+      "canon_refs": [
+        "FACT-006",
+        "FACT-007"
+      ],
+      "mechanic_refs": [
+        "MECH-002"
+      ],
+      "source_refs": [],
+      "goal": "แผนที่และไม้เบสบอล",
+      "conflict": "ความเสี่ยงการเดินทาง",
+      "beats": [
+        "เปิดแผนที่ศึกษาเส้นทางไปพื้นที่ใหม่ ก่อนคราฟต์อาวุธชิ้นแรกจากไม้เป็นไม้เบสบอล"
+      ],
+      "outcome": "ออกเดินทางพร้อมอาวุธประชิด",
+      "requires_flags": [
+        "crowded_area_seen"
+      ],
+      "effects_flags": {
+        "map_checked": true,
+        "bat_crafted": true,
+        "journey_started": true
+      },
+      "open_questions": [
+        "สูตรการคราฟต์ไม้เบสบอลต้องตรวจคลิปจริง"
+      ],
+      "draft_path": "drafts/EP-001/SC-004.md",
+      "prose_source": "Full chapter 1 candidate prose; human approval pending"
+    },
+    {
+      "id": "SC-005",
+      "episode_id": "EP-001",
+      "order": 5,
+      "title": "กล่องเศษวัสดุ",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-004",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-003",
+        "ITEM-004"
+      ],
+      "canon_refs": [
+        "FACT-008"
+      ],
+      "mechanic_refs": [
+        "MECH-003"
+      ],
+      "source_refs": [],
+      "goal": "กล่องเศษวัสดุ",
+      "conflict": "โลภเก็บของบนถนนอันตราย",
+      "beats": [
+        "เดินตามถนนพบกล่องเศษวัสดุหนึ่งกล่อง หยุดเก็บใส่กระเป๋าโดยไม่มีใครป้องกัน"
+      ],
+      "outcome": "ได้เศษวัสดุจากกล่อง; ยังไม่มีข้อมูลจำนวนชิ้น",
+      "requires_flags": [
+        "journey_started",
+        "bat_crafted"
+      ],
+      "effects_flags": {
+        "road_crate_collected": true
+      },
+      "open_questions": [
+        "จำนวนวัสดุที่เก็บยังไม่ระบุ"
+      ],
+      "draft_path": "drafts/EP-001/SC-005.md",
+      "prose_source": "Full chapter 1 candidate prose; human approval pending"
+    },
+    {
+      "id": "SC-006",
+      "episode_id": "EP-001",
+      "order": 6,
+      "title": "การปะทะแรก",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-004",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-002"
+      ],
+      "item_ids": [
+        "ITEM-002"
+      ],
+      "canon_refs": [
+        "FACT-009",
+        "FACT-010"
+      ],
+      "mechanic_refs": [
+        "MECH-002"
+      ],
+      "source_refs": [],
+      "goal": "การปะทะแรก",
+      "conflict": "ซุ่มโจมตีจากผู้เล่นอื่น",
+      "beats": [
+        "ถูกผู้เล่นอื่นซุ่มโจมตีด้วยไม้เบสบอล; ต่อสู้ดุเดือดด้วยอาวุธเท่ากันและชนะเฉียดฉิว"
+      ],
+      "outcome": "พระเอกรอด แต่สุขภาพ/ความเสียหายที่แน่นอนยังไม่กำหนด",
+      "requires_flags": [
+        "road_crate_collected",
+        "bat_crafted"
+      ],
+      "effects_flags": {
+        "first_pvp_won": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-001/SC-006.md",
+      "prose_source": "Full chapter 1 candidate prose; human approval pending"
+    },
+    {
+      "id": "SC-007",
+      "episode_id": "EP-001",
+      "order": 7,
+      "title": "ของจากผู้แพ้",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-004",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-002"
+      ],
+      "item_ids": [
+        "ITEM-004",
+        "ITEM-005"
+      ],
+      "canon_refs": [
+        "FACT-010",
+        "FACT-011"
+      ],
+      "mechanic_refs": [
+        "MECH-004"
+      ],
+      "source_refs": [],
+      "goal": "ของจากผู้แพ้",
+      "conflict": "ทรัพยากรสำคัญกับความเสี่ยง",
+      "beats": [
+        "เก็บหินและเศษวัสดุที่ผู้แพ้ทำตก และตัดสินใจกลับไปทำบ้านก่อนเสี่ยงต่อ"
+      ],
+      "outcome": "เพิ่มทรัพยากรที่ไม่มีการระบุตัวเลขแล้วมุ่งกลับจุดสร้างบ้าน",
+      "requires_flags": [
+        "first_pvp_won"
+      ],
+      "effects_flags": {
+        "defeated_player_loot_collected": true,
+        "heading_to_base_site": true
+      },
+      "open_questions": [
+        "จำนวนวัสดุที่เก็บยังไม่ระบุ"
+      ],
+      "draft_path": "drafts/EP-001/SC-007.md",
+      "prose_source": "Full chapter 1 candidate prose; human approval pending"
+    },
+    {
+      "id": "SC-008",
+      "episode_id": "EP-001",
+      "order": 8,
+      "title": "เริ่มสร้างบ้าน 2×2",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-005",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-006"
+      ],
+      "canon_refs": [
+        "FACT-005",
+        "FACT-011"
+      ],
+      "mechanic_refs": [
+        "MECH-001",
+        "MECH-005"
+      ],
+      "source_refs": [
+        "SRC-001"
+      ],
+      "goal": "เริ่มสร้างบ้าน 2×2",
+      "conflict": "ต้องตั้งหลักด้วยทรัพยากรจำกัด",
+      "beats": [
+        "ลงมือสร้างพื้น ผนัง ประตู และหลังคาบ้านไม้ 2×2 ขั้นพื้นฐานเพื่อให้เริ่มบทถัดไปจากภายในบ้านได้"
+      ],
+      "outcome": "สร้างบ้านไม้ 2×2 ขั้นพื้นฐานให้เข้าอยู่ได้ แต่ยังไม่มีเตียงหรือโต๊ะคราฟต์; การอนุมัติบทประพันธ์ยังค้าง",
+      "requires_flags": [
+        "heading_to_base_site",
+        "base_plan_2x2"
+      ],
+      "effects_flags": {
+        "base_construction_started": true,
+        "base_wood_shell_ready": true
+      },
+      "open_questions": [
+        "ความสมบูรณ์บ้านจบบท 1 เป็นจุดเชื่อมที่ต้องตรวจสำนวนก่อนอนุมัติ"
+      ],
+      "draft_path": "drafts/EP-001/SC-008.md",
+      "prose_source": "Full chapter 1 candidate prose; human approval pending"
+    },
+    {
+      "id": "SC-009",
+      "episode_id": "EP-002",
+      "order": 1,
+      "title": "โต๊ะคราฟต์และสูตรพื้นฐาน",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-006",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-007",
+        "ITEM-012",
+        "ITEM-013"
+      ],
+      "canon_refs": [
+        "FACT-018"
+      ],
+      "mechanic_refs": [
+        "MECH-008"
+      ],
+      "source_refs": [],
+      "goal": "สร้างโต๊ะคราฟต์",
+      "conflict": "วัสดุจำกัดและหลายสูตรยังไม่เรียนรู้",
+      "beats": [
+        "สร้างโต๊ะคราฟต์จากวัสดุเก็บมาและเปิดดูที่นอน กล่องเล็ก ยา โต๊ะเรียนรู้"
+      ],
+      "outcome": "เห็นสูตรพื้นฐานและสูตรที่ล็อกไว้",
+      "requires_flags": [],
+      "effects_flags": {
+        "crafting_table_built": true,
+        "recipes_viewed": true
+      },
+      "open_questions": [
+        "รายละเอียดสูตร/จำนวนยังไม่ยืนยัน"
+      ],
+      "draft_path": "drafts/EP-002/SC-009.md"
+    },
+    {
+      "id": "SC-010",
+      "episode_id": "EP-002",
+      "order": 2,
+      "title": "กล่อง ที่นอน และเครื่องมือขุดหิน",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-006",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-006",
+        "ITEM-008",
+        "ITEM-009"
+      ],
+      "canon_refs": [
+        "FACT-019"
+      ],
+      "mechanic_refs": [
+        "MECH-008",
+        "MECH-009"
+      ],
+      "source_refs": [],
+      "goal": "เตรียมอัปเกรดบ้านหิน",
+      "conflict": "ทรัพยากรน้อย",
+      "beats": [
+        "คราฟต์กล่องเก็บของ ที่นอน เครื่องมือขุดหิน และออกขุดหิน"
+      ],
+      "outcome": "เตรียมเก็บของและขุดหิน",
+      "requires_flags": [
+        "crafting_table_built"
+      ],
+      "effects_flags": {
+        "storage_box_built": true,
+        "bed_built": true,
+        "mining_tool_built": true,
+        "stone_mining_started": true
+      },
+      "open_questions": [
+        "รายละเอียดสูตร/จำนวนยังไม่ยืนยัน"
+      ],
+      "draft_path": "drafts/EP-002/SC-010.md"
+    },
+    {
+      "id": "SC-011",
+      "episode_id": "EP-002",
+      "order": 3,
+      "title": "ผู้ซุ่มโจมตีด้วยธนู",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-007",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-004"
+      ],
+      "item_ids": [
+        "ITEM-005"
+      ],
+      "canon_refs": [
+        "FACT-019"
+      ],
+      "mechanic_refs": [
+        "MECH-010"
+      ],
+      "source_refs": [],
+      "goal": "ขุดหินกลับบ้าน",
+      "conflict": "ธนูยิงได้จากไกลและศัตรูอ้อมหิน",
+      "beats": [
+        "ยิงธนูจากแนวต้นไม้ พระเอกหลบหลังหิน แต่โดนเดินอ้อมยิงจนตาย"
+      ],
+      "outcome": "พระเอกตายครั้งแรกในบทนี้พร้อมของตก",
+      "requires_flags": [
+        "stone_mining_started"
+      ],
+      "effects_flags": {
+        "archer_ambushed": true,
+        "hero_killed": true
+      },
+      "open_questions": [
+        "รายละเอียดสูตร/จำนวนยังไม่ยืนยัน"
+      ],
+      "draft_path": "drafts/EP-002/SC-011.md"
+    },
+    {
+      "id": "SC-012",
+      "episode_id": "EP-002",
+      "order": 4,
+      "title": "กลับมาเกิดที่เตียง",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-006",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-006"
+      ],
+      "canon_refs": [
+        "FACT-020"
+      ],
+      "mechanic_refs": [
+        "MECH-009",
+        "MECH-012"
+      ],
+      "source_refs": [],
+      "goal": "ตั้งหลักหลังเสียของ",
+      "conflict": "ไม่มีอุปกรณ์ที่พกไป",
+      "beats": [
+        "เกิดใหม่ที่เตียงในบ้าน ตรวจพบสิ่งของที่พกไปหายไป"
+      ],
+      "outcome": "ตัดสินใจกลับไปด้วยธนู",
+      "requires_flags": [
+        "hero_killed"
+      ],
+      "effects_flags": {
+        "hero_respawned": true,
+        "held_items_dropped": true
+      },
+      "open_questions": [
+        "รายละเอียดสูตร/จำนวนยังไม่ยืนยัน"
+      ],
+      "draft_path": "drafts/EP-002/SC-012.md"
+    },
+    {
+      "id": "SC-013",
+      "episode_id": "EP-002",
+      "order": 5,
+      "title": "คราฟต์ธนูเดินทางกลับ",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-006",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-001",
+        "ITEM-010",
+        "ITEM-011"
+      ],
+      "canon_refs": [
+        "FACT-020"
+      ],
+      "mechanic_refs": [
+        "MECH-010"
+      ],
+      "source_refs": [],
+      "goal": "สร้างอาวุธระยะไกล",
+      "conflict": "ศัตรูอาจย้ายจุด",
+      "beats": [
+        "ตัดไม้ คราฟต์ธนูและลูกธนู แล้วกลับไปหาตำแหน่งเดิม"
+      ],
+      "outcome": "มีธนูและย้อนกลับจุดถูกยิง",
+      "requires_flags": [
+        "hero_respawned"
+      ],
+      "effects_flags": {
+        "bow_crafted": true,
+        "back_at_death_site": true
+      },
+      "open_questions": [
+        "รายละเอียดสูตร/จำนวนยังไม่ยืนยัน"
+      ],
+      "draft_path": "drafts/EP-002/SC-013.md"
+    },
+    {
+      "id": "SC-014",
+      "episode_id": "EP-002",
+      "order": 6,
+      "title": "บ้านปาร์ตี้สี่คูณสี่",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-008",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "item_ids": [
+        "ITEM-010",
+        "ITEM-002"
+      ],
+      "canon_refs": [
+        "FACT-020"
+      ],
+      "mechanic_refs": [
+        "MECH-010"
+      ],
+      "source_refs": [],
+      "goal": "ตามรอยศัตรู",
+      "conflict": "ไม่พบผู้ยิงที่จุดเดิม",
+      "beats": [
+        "เห็นบ้านใหญ่และคนสองคนหน้าบ้าน จึงหามุมซ่อน"
+      ],
+      "outcome": "พบฐาน 4×4 ของสองคนที่ถือธนูและไม้เบสบอล",
+      "requires_flags": [
+        "back_at_death_site"
+      ],
+      "effects_flags": {
+        "party_base_found": true,
+        "two_enemies_spotted": true
+      },
+      "open_questions": [
+        "รายละเอียดสูตร/จำนวนยังไม่ยืนยัน"
+      ],
+      "draft_path": "drafts/EP-002/SC-014.md"
+    },
+    {
+      "id": "SC-015",
+      "episode_id": "EP-002",
+      "order": 7,
+      "title": "ยิงสวนกลับ",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-008",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "item_ids": [
+        "ITEM-010",
+        "ITEM-011"
+      ],
+      "canon_refs": [
+        "FACT-021"
+      ],
+      "mechanic_refs": [
+        "MECH-010"
+      ],
+      "source_refs": [],
+      "goal": "เอาชนะผู้เล่นที่ฐาน",
+      "conflict": "ฝ่ายตรงข้ามมีสองคน",
+      "beats": [
+        "ซุ่มยิงมือธนูแล้วยิงซ้ำจนตาย จากนั้นยิงผู้เล่นถือไม้เบสบอลที่หนี"
+      ],
+      "outcome": "กำจัดคนถือธนูก่อนและคนถือไม้เบสบอลที่พยายามหนี",
+      "requires_flags": [
+        "two_enemies_spotted"
+      ],
+      "effects_flags": {
+        "archer_defeated": true,
+        "second_enemy_defeated": true
+      },
+      "open_questions": [
+        "รายละเอียดสูตร/จำนวนยังไม่ยืนยัน"
+      ],
+      "draft_path": "drafts/EP-002/SC-015.md"
+    },
+    {
+      "id": "SC-016",
+      "episode_id": "EP-002",
+      "order": 8,
+      "title": "เก็บของคืน",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-008",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-004",
+        "ITEM-005"
+      ],
+      "canon_refs": [
+        "FACT-021"
+      ],
+      "mechanic_refs": [
+        "MECH-012"
+      ],
+      "source_refs": [],
+      "goal": "พาทรัพยากรกลับบ้าน",
+      "conflict": "กลัวคนในบ้านอีกคน",
+      "beats": [
+        "เก็บหินเศษวัสดุบางส่วนแล้วออกจากพื้นที่ก่อนคนอื่นมา"
+      ],
+      "outcome": "เก็บของได้และกลับฐาน",
+      "requires_flags": [
+        "archer_defeated",
+        "second_enemy_defeated"
+      ],
+      "effects_flags": {
+        "loot_recovered": true,
+        "back_home_safely": true
+      },
+      "open_questions": [
+        "รายละเอียดสูตร/จำนวนยังไม่ยืนยัน"
+      ],
+      "draft_path": "drafts/EP-002/SC-016.md"
+    },
+    {
+      "id": "SC-017",
+      "episode_id": "EP-002",
+      "order": 9,
+      "title": "บ้านหิน",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-005"
+      ],
+      "canon_refs": [
+        "FACT-022"
+      ],
+      "mechanic_refs": [
+        "MECH-011"
+      ],
+      "source_refs": [],
+      "goal": "เพิ่มการป้องกัน",
+      "conflict": "บ้านไม้เปราะบาง",
+      "beats": [
+        "ใช้ทรัพยากรที่เก็บมาปรับบ้านไม้ให้เป็นหิน"
+      ],
+      "outcome": "บ้านฐาน 2×2 อัปเกรดโครงสร้างเป็นหิน",
+      "requires_flags": [
+        "back_home_safely"
+      ],
+      "effects_flags": {
+        "stone_base_ready": true
+      },
+      "open_questions": [
+        "รายละเอียดสูตร/จำนวนยังไม่ยืนยัน"
+      ],
+      "draft_path": "drafts/EP-002/SC-017.md"
+    },
+    {
+      "id": "SC-018",
+      "episode_id": "EP-002",
+      "order": 10,
+      "title": "ชั้นยิงและออฟไลน์",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-010"
+      ],
+      "canon_refs": [
+        "FACT-022"
+      ],
+      "mechanic_refs": [
+        "MECH-011"
+      ],
+      "source_refs": [],
+      "goal": "ทำจุดยิงแล้วไปพัก",
+      "conflict": "ไม่มีเวลาหรือพลังเหลือเฝ้าต่อ",
+      "beats": [
+        "เพิ่มบันได ชั้นยิงพร้อมที่กำบัง เตรียมบ้านให้ดีขึ้นแล้วออฟไลน์"
+      ],
+      "outcome": "สร้างบันได ชั้นยิง กำแพงเตี้ยและออกจากเกม",
+      "requires_flags": [
+        "stone_base_ready"
+      ],
+      "effects_flags": {
+        "upper_firing_platform_ready": true,
+        "logged_out": true
+      },
+      "open_questions": [
+        "รายละเอียดสูตร/จำนวนยังไม่ยืนยัน"
+      ],
+      "draft_path": "drafts/EP-002/SC-018.md"
+    }
+  ]
+}

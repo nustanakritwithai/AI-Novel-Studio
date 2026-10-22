@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "INV-001",
+      "scene_id": "SC-002",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-001",
+      "operation": "GAIN",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เก็บไม้ช่วงเริ่มเกม"
+    },
+    {
+      "id": "INV-002",
+      "scene_id": "SC-004",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-001",
+      "operation": "SPEND",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ใช้ไม้คราฟต์ไม้เบสบอล; สูตรต้องตรวจเกม"
+    },
+    {
+      "id": "INV-003",
+      "scene_id": "SC-004",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-002",
+      "operation": "CRAFT",
+      "quantity": 1,
+      "status": "PLANNED",
+      "notes": "ไม้เบสบอลด้ามแรก"
+    },
+    {
+      "id": "INV-004",
+      "scene_id": "SC-005",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-003",
+      "operation": "FIND",
+      "quantity": 1,
+      "status": "PLANNED",
+      "notes": "พบกล่องริมถนนหนึ่งกล่อง"
+    },
+    {
+      "id": "INV-005",
+      "scene_id": "SC-005",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-004",
+      "operation": "GAIN",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เก็บเศษวัสดุจากกล่อง ไม่เดาจำนวน"
+    },
+    {
+      "id": "INV-006",
+      "scene_id": "SC-007",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-004",
+      "operation": "LOOT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เก็บเศษวัสดุจากผู้แพ้"
+    },
+    {
+      "id": "INV-007",
+      "scene_id": "SC-007",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-005",
+      "operation": "LOOT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เก็บหินจากผู้แพ้"
+    },
+    {
+      "id": "INV-008",
+      "scene_id": "SC-008",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-001",
+      "operation": "SPEND",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "วัสดุสร้างบ้าน; จำนวนรอยืนยันจากฉากที่เขียนจริง"
+    },
+    {
+      "id": "INV-009",
+      "scene_id": "SC-009",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-007",
+      "operation": "CRAFT",
+      "quantity": 1,
+      "status": "PLANNED",
+      "notes": "โต๊ะคราฟต์ชิ้นแรก"
+    },
+    {
+      "id": "INV-010",
+      "scene_id": "SC-010",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-008",
+      "operation": "CRAFT",
+      "quantity": 1,
+      "status": "PLANNED",
+      "notes": "กล่องเก็บของเล็ก"
+    },
+    {
+      "id": "INV-011",
+      "scene_id": "SC-010",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-006",
+      "operation": "CRAFT",
+      "quantity": 1,
+      "status": "PLANNED",
+      "notes": "ที่นอน"
+    },
+    {
+      "id": "INV-012",
+      "scene_id": "SC-010",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-009",
+      "operation": "CRAFT",
+      "quantity": 1,
+      "status": "PLANNED",
+      "notes": "เครื่องมือขุดหิน"
+    },
+    {
+      "id": "INV-013",
+      "scene_id": "SC-011",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-005",
+      "operation": "GAIN",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ขุดหินก่อนตาย"
+    },
+    {
+      "id": "INV-014",
+      "scene_id": "SC-012",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-005",
+      "operation": "LOSE",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ของที่ถือหล่นหลังเสียชีวิต; จำนวนหินไม่ทราบ"
+    },
+    {
+      "id": "INV-015",
+      "scene_id": "SC-013",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-001",
+      "operation": "GAIN",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ตัดไม้ทำธนู"
+    },
+    {
+      "id": "INV-016",
+      "scene_id": "SC-013",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-010",
+      "operation": "CRAFT",
+      "quantity": 1,
+      "status": "PLANNED",
+      "notes": "ธนู"
+    },
+    {
+      "id": "INV-017",
+      "scene_id": "SC-013",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-011",
+      "operation": "CRAFT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ลูกธนูจำนวน UNKNOWN"
+    },
+    {
+      "id": "INV-018",
+      "scene_id": "SC-015",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-011",
+      "operation": "SPEND",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ใช้ลูกธนูยิงคู่ต่อสู้"
+    },
+    {
+      "id": "INV-019",
+      "scene_id": "SC-016",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-005",
+      "operation": "LOOT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เก็บหินคืนบางส่วน"
+    },
+    {
+      "id": "INV-020",
+      "scene_id": "SC-016",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-004",
+      "operation": "LOOT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เก็บเศษวัสดุจากคู่ต่อสู้"
+    },
+    {
+      "id": "INV-021",
+      "scene_id": "SC-017",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-005",
+      "operation": "SPEND",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "อัปเกรดกำแพงบ้านเป็นหิน"
+    }
+  ]
+}

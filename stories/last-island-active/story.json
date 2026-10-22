@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "slug": "last-island-active",
+  "title": "LAST ISLAND: WORLD CHAMPIONSHIP — Active Story Draft",
+  "extensions": {
+    "gameplay": true
+  },
+  "rules": [
+    "The private Full-Dive VR gameplay is the opening; the esports tournament with 100 contestants occurs much later.",
+    "User-locked episode beats must be preserved; prose remains DRAFT until explicitly reviewed and approved.",
+    "Game mechanics marked UNVERIFIED are worldbuilding, not game-wide confirmed facts.",
+    "The protagonist is Thai. Do not assign an unapproved age, real name, city, or precise year.",
+    "Use approved history only as Canon, never infer approval from GitHub CI or draft status."
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "EV-001",
+      "scene_id": "SC-001",
+      "episode_id": "EP-001",
+      "order": 1,
+      "status": "DRAFT",
+      "what_changed": "คนดูรู้ว่านี่เป็นผู้เล่นธรรมดากำลังเริ่มเซสชันส่วนตัว",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-001",
+      "effects_flags": {
+        "logged_in": true
+      }
+    },
+    {
+      "id": "EV-002",
+      "scene_id": "SC-002",
+      "episode_id": "EP-001",
+      "order": 2,
+      "status": "DRAFT",
+      "what_changed": "เริ่มตัดไม้และตั้งเป้าบ้านหลังแรก",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-002",
+      "effects_flags": {
+        "tutorial_received": true,
+        "wood_gathered": true,
+        "base_plan_2x2": true
+      }
+    },
+    {
+      "id": "EV-003",
+      "scene_id": "SC-003",
+      "episode_id": "EP-001",
+      "order": 3,
+      "status": "DRAFT",
+      "what_changed": "ยอมเปลี่ยนแผนทำเลแทนยึดติดความสะดวก",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-003",
+      "effects_flags": {
+        "crowded_area_seen": true
+      }
+    },
+    {
+      "id": "EV-004",
+      "scene_id": "SC-004",
+      "episode_id": "EP-001",
+      "order": 4,
+      "status": "DRAFT",
+      "what_changed": "ออกเดินทางพร้อมอาวุธประชิด",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-003",
+      "effects_flags": {
+        "map_checked": true,
+        "bat_crafted": true,
+        "journey_started": true
+      }
+    },
+    {
+      "id": "EV-005",
+      "scene_id": "SC-005",
+      "episode_id": "EP-001",
+      "order": 5,
+      "status": "DRAFT",
+      "what_changed": "ได้เศษวัสดุจากกล่อง; ยังไม่มีข้อมูลจำนวนชิ้น",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-004",
+      "effects_flags": {
+        "road_crate_collected": true
+      }
+    },
+    {
+      "id": "EV-006",
+      "scene_id": "SC-006",
+      "episode_id": "EP-001",
+      "order": 6,
+      "status": "DRAFT",
+      "what_changed": "พระเอกรอด แต่สุขภาพ/ความเสียหายที่แน่นอนยังไม่กำหนด",
+      "actors": [
+        "CHAR-001",
+        "CHAR-002"
+      ],
+      "location_id": "LOC-004",
+      "effects_flags": {
+        "first_pvp_won": true
+      }
+    },
+    {
+      "id": "EV-007",
+      "scene_id": "SC-007",
+      "episode_id": "EP-001",
+      "order": 7,
+      "status": "DRAFT",
+      "what_changed": "เพิ่มทรัพยากรที่ไม่มีการระบุตัวเลขแล้วมุ่งกลับจุดสร้างบ้าน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-002"
+      ],
+      "location_id": "LOC-004",
+      "effects_flags": {
+        "defeated_player_loot_collected": true,
+        "heading_to_base_site": true
+      }
+    },
+    {
+      "id": "EV-008",
+      "scene_id": "SC-008",
+      "episode_id": "EP-001",
+      "order": 8,
+      "status": "DRAFT",
+      "what_changed": "สร้างบ้านไม้ 2×2 ขั้นพื้นฐานให้เข้าอยู่ได้ แต่ยังไม่มีเตียงหรือโต๊ะคราฟต์; การอนุมัติบทประพันธ์ยังค้าง",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-005",
+      "effects_flags": {
+        "base_construction_started": true,
+        "base_wood_shell_ready": true
+      }
+    },
+    {
+      "id": "EV-009",
+      "scene_id": "SC-009",
+      "episode_id": "EP-002",
+      "order": 1,
+      "status": "DRAFT",
+      "what_changed": "เห็นสูตรพื้นฐานและสูตรที่ล็อกไว้",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-006",
+      "effects_flags": {
+        "crafting_table_built": true,
+        "recipes_viewed": true
+      }
+    },
+    {
+      "id": "EV-010",
+      "scene_id": "SC-010",
+      "episode_id": "EP-002",
+      "order": 2,
+      "status": "DRAFT",
+      "what_changed": "เตรียมเก็บของและขุดหิน",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-006",
+      "effects_flags": {
+        "storage_box_built": true,
+        "bed_built": true,
+        "mining_tool_built": true,
+        "stone_mining_started": true
+      }
+    },
+    {
+      "id": "EV-011",
+      "scene_id": "SC-011",
+      "episode_id": "EP-002",
+      "order": 3,
+      "status": "DRAFT",
+      "what_changed": "พระเอกตายครั้งแรกในบทนี้พร้อมของตก",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004"
+      ],
+      "location_id": "LOC-007",
+      "effects_flags": {
+        "archer_ambushed": true,
+        "hero_killed": true
+      }
+    },
+    {
+      "id": "EV-012",
+      "scene_id": "SC-012",
+      "episode_id": "EP-002",
+      "order": 4,
+      "status": "DRAFT",
+      "what_changed": "ตัดสินใจกลับไปด้วยธนู",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-006",
+      "effects_flags": {
+        "hero_respawned": true,
+        "held_items_dropped": true
+      }
+    },
+    {
+      "id": "EV-013",
+      "scene_id": "SC-013",
+      "episode_id": "EP-002",
+      "order": 5,
+      "status": "DRAFT",
+      "what_changed": "มีธนูและย้อนกลับจุดถูกยิง",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-006",
+      "effects_flags": {
+        "bow_crafted": true,
+        "back_at_death_site": true
+      }
+    },
+    {
+      "id": "EV-014",
+      "scene_id": "SC-014",
+      "episode_id": "EP-002",
+      "order": 6,
+      "status": "DRAFT",
+      "what_changed": "พบฐาน 4×4 ของสองคนที่ถือธนูและไม้เบสบอล",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-008",
+      "effects_flags": {
+        "party_base_found": true,
+        "two_enemies_spotted": true
+      }
+    },
+    {
+      "id": "EV-015",
+      "scene_id": "SC-015",
+      "episode_id": "EP-002",
+      "order": 7,
+      "status": "DRAFT",
+      "what_changed": "กำจัดคนถือธนูก่อนและคนถือไม้เบสบอลที่พยายามหนี",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-008",
+      "effects_flags": {
+        "archer_defeated": true,
+        "second_enemy_defeated": true
+      }
+    },
+    {
+      "id": "EV-016",
+      "scene_id": "SC-016",
+      "episode_id": "EP-002",
+      "order": 8,
+      "status": "DRAFT",
+      "what_changed": "เก็บของได้และกลับฐาน",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-008",
+      "effects_flags": {
+        "loot_recovered": true,
+        "back_home_safely": true
+      }
+    },
+    {
+      "id": "EV-017",
+      "scene_id": "SC-017",
+      "episode_id": "EP-002",
+      "order": 9,
+      "status": "DRAFT",
+      "what_changed": "บ้านฐาน 2×2 อัปเกรดโครงสร้างเป็นหิน",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "stone_base_ready": true
+      }
+    },
+    {
+      "id": "EV-018",
+      "scene_id": "SC-018",
+      "episode_id": "EP-002",
+      "order": 10,
+      "status": "DRAFT",
+      "what_changed": "สร้างบันได ชั้นยิง กำแพงเตี้ยและออกจากเกม",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "upper_firing_platform_ready": true,
+        "logged_out": true
+      }
+    }
+  ]
+}
