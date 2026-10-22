@@ -16,6 +16,9 @@ class StoryEngineTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         for name in ("data", "ledger", "bible", "scenes", "drafts"):
             shutil.copytree(ROOT / name, self.root / name)
+        # Git does not retain empty directories, even though local fixtures may.
+        for layer in ("episodes", "chapters", "books"):
+            (self.root / "ledger" / layer).mkdir(parents=True, exist_ok=True)
 
     def tearDown(self):
         self.temp.cleanup()
