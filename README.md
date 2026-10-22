@@ -14,6 +14,8 @@ python scripts/storyctl.py --story my-story doctor --out .local/doctor.json
 
 `new` creates empty metadata registries, an empty approved ledger, and generic guidance. It writes no novel content and never overwrites an existing story. An empty scaffold has no target scenes: humans must supply the required story/scene metadata before target-specific commands can succeed. `story.json` uses versioned JSON. Gameplay mechanics/sources are an optional extension.
 
+The optional [S1 world model](docs/WORLD_STATE_S1_TH.md) adds source-bound declarations of character positions, item holders, room containment and explicit world-time coordinates. Enable `world_state: {"schema_version": 1, "enabled": true}` in `story.json` and supply `data/world_model.json`; the existing `check` command validates it. This model does not replay events, answer world-state queries, change v1 knowledge/context, or establish human approval. Existing stories remain unchanged when the option is absent or disabled.
+
 After the selected story has valid human-authored metadata and a readable target draft:
 
 ```bash

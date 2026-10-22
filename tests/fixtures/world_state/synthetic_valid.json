@@ -1,0 +1,167 @@
+{
+  "cases": [
+    {
+      "slug": "alpha",
+      "catalogs": {
+        "characters": [
+          {"id": "CHAR-A", "name": "อรุณ", "aliases": ["อรุณ"]},
+          {"id": "CHAR-B", "name": "มะลิ", "aliases": ["มะลิ"]}
+        ],
+        "locations": [
+          {"id": "LOC-SITE", "name": "บ้านริมคลอง"},
+          {"id": "LOC-BUILDING", "name": "เรือนหลัก"},
+          {"id": "LOC-ROOM", "name": "ห้องเก็บของ"}
+        ],
+        "items": [
+          {"id": "ITEM-KEY", "name": "กุญแจทอง"},
+          {"id": "ITEM-STOCK", "name": "ลูกปัด"},
+          {"id": "ITEM-MYSTERY", "name": "ห่อปริศนา"}
+        ],
+        "scenes": [
+          {"id": "SC-001", "order": 1},
+          {"id": "SC-002", "order": 2}
+        ]
+      },
+      "model": {
+        "schema_version": 1,
+        "story_slug": "alpha",
+        "baseline": {
+          "id": "REC-BASELINE",
+          "anchor": {
+            "scene_id": "SC-001",
+            "narration_suborder": 0,
+            "boundary": "BEFORE",
+            "world_time": {"status": "KNOWN", "clock_id": "CLOCK-A", "tick": 20, "suborder": 0}
+          },
+          "source": {
+            "path": "evidence/baseline.txt",
+            "sha256": "4eaedff2beb076d23dd2b8068f6902190de2a09dc2afde4c1e3f35782391a244"
+          },
+          "local_status": "PROPOSED",
+          "positions": [
+            {"character_id": "CHAR-A", "location": {"status": "KNOWN", "location_id": "LOC-ROOM"}},
+            {"character_id": "CHAR-B", "location": {"status": "UNKNOWN"}}
+          ],
+          "holdings": [
+            {"item_id": "ITEM-KEY", "holder": {"kind": "CHARACTER", "character_id": "CHAR-A"}, "quantity": 1},
+            {"item_id": "ITEM-STOCK", "holder": {"kind": "LOCATION", "location_id": "LOC-ROOM"}, "quantity": 0},
+            {"item_id": "ITEM-MYSTERY", "holder": {"kind": "UNKNOWN"}, "quantity": null}
+          ]
+        },
+        "observations": [
+          {
+            "id": "REC-FLASHBACK",
+            "anchor": {
+              "scene_id": "SC-002",
+              "narration_suborder": 1,
+              "boundary": "AFTER",
+              "world_time": {"status": "KNOWN", "clock_id": "CLOCK-A", "tick": 10, "suborder": 2}
+            },
+            "source": {
+              "path": "evidence/baseline.txt",
+              "sha256": "4eaedff2beb076d23dd2b8068f6902190de2a09dc2afde4c1e3f35782391a244"
+            },
+            "local_status": "PROPOSED",
+            "positions": [
+              {"character_id": "CHAR-A", "location": {"status": "KNOWN", "location_id": "LOC-SITE"}}
+            ],
+            "holdings": [
+              {"item_id": "ITEM-KEY", "holder": {"kind": "CHARACTER", "character_id": "CHAR-A"}, "quantity": 1},
+              {"item_id": "ITEM-STOCK", "holder": {"kind": "LOCATION", "location_id": "LOC-ROOM"}, "quantity": 0},
+              {"item_id": "ITEM-MYSTERY", "holder": {"kind": "UNKNOWN"}, "quantity": null}
+            ]
+          }
+        ],
+        "item_policies": [
+          {"item_id": "ITEM-KEY", "tracking": "UNIQUE", "important": true},
+          {"item_id": "ITEM-STOCK", "tracking": "STACK", "important": true},
+          {"item_id": "ITEM-MYSTERY", "tracking": "STACK", "important": false}
+        ],
+        "hierarchy": [
+          {"location_id": "LOC-SITE", "parent": {"kind": "ROOT"}, "level": "SITE"},
+          {"location_id": "LOC-BUILDING", "parent": {"kind": "LOCATION", "location_id": "LOC-SITE"}, "level": "BUILDING"},
+          {"location_id": "LOC-ROOM", "parent": {"kind": "LOCATION", "location_id": "LOC-BUILDING"}, "level": "ROOM"}
+        ]
+      }
+    },
+    {
+      "slug": "beta",
+      "catalogs": {
+        "characters": [
+          {"id": "CHAR-A", "name": "ดาว", "aliases": ["ดาว"]},
+          {"id": "CHAR-B", "name": "ภาคิน", "aliases": ["ภาคิน"]}
+        ],
+        "locations": [
+          {"id": "LOC-SITE", "name": "สวนริมฝั่ง"},
+          {"id": "LOC-BUILDING", "name": "ศาลาไม้"},
+          {"id": "LOC-ROOM", "name": "ห้องด้านใน"}
+        ],
+        "items": [
+          {"id": "ITEM-KEY", "name": "กุญแจเงิน"},
+          {"id": "ITEM-STOCK", "name": "เมล็ดข้าว"},
+          {"id": "ITEM-MYSTERY", "name": "กล่องลึกลับ"}
+        ],
+        "scenes": [
+          {"id": "SC-001", "order": 1},
+          {"id": "SC-002", "order": 2}
+        ]
+      },
+      "model": {
+        "schema_version": 1,
+        "story_slug": "beta",
+        "baseline": {
+          "id": "REC-BASELINE",
+          "anchor": {
+            "scene_id": "SC-001",
+            "narration_suborder": 0,
+            "boundary": "BEFORE",
+            "world_time": {"status": "KNOWN", "clock_id": "CLOCK-B", "tick": 20, "suborder": 0}
+          },
+          "source": {
+            "path": "evidence/baseline.txt",
+            "sha256": "4eaedff2beb076d23dd2b8068f6902190de2a09dc2afde4c1e3f35782391a244"
+          },
+          "local_status": "PROPOSED",
+          "positions": [
+            {"character_id": "CHAR-A", "location": {"status": "KNOWN", "location_id": "LOC-ROOM"}},
+            {"character_id": "CHAR-B", "location": {"status": "UNKNOWN"}}
+          ],
+          "holdings": [
+            {"item_id": "ITEM-KEY", "holder": {"kind": "CHARACTER", "character_id": "CHAR-A"}, "quantity": 1},
+            {"item_id": "ITEM-STOCK", "holder": {"kind": "LOCATION", "location_id": "LOC-ROOM"}, "quantity": 0},
+            {"item_id": "ITEM-MYSTERY", "holder": {"kind": "UNKNOWN"}, "quantity": null}
+          ]
+        },
+        "observations": [
+          {
+            "id": "REC-FLASHBACK",
+            "anchor": {
+              "scene_id": "SC-002",
+              "narration_suborder": 1,
+              "boundary": "AFTER",
+              "world_time": {"status": "KNOWN", "clock_id": "CLOCK-B", "tick": 10, "suborder": 2}
+            },
+            "source": {
+              "path": "evidence/baseline.txt",
+              "sha256": "4eaedff2beb076d23dd2b8068f6902190de2a09dc2afde4c1e3f35782391a244"
+            },
+            "local_status": "PROPOSED",
+            "positions": [
+              {"character_id": "CHAR-A", "location": {"status": "KNOWN", "location_id": "LOC-SITE"}}
+            ],
+            "holdings": [
+              {"item_id": "ITEM-KEY", "holder": {"kind": "CHARACTER", "character_id": "CHAR-A"}, "quantity": 1},
+              {"item_id": "ITEM-STOCK", "holder": {"kind": "LOCATION", "location_id": "LOC-ROOM"}, "quantity": 0},
+              {"item_id": "ITEM-MYSTERY", "holder": {"kind": "UNKNOWN"}, "quantity": null}
+            ]
+          }
+        ],
+        "item_policies": [
+          {"item_id": "ITEM-KEY", "tracking": "UNIQUE", "important": true},
+          {"item_id": "ITEM-STOCK", "tracking": "STACK", "important": true},
+          {"item_id": "ITEM-MYSTERY", "tracking": "STACK", "important": false}
+        ]
+      }
+    }
+  ]
+}

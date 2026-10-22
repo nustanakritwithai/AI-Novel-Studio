@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/world_state/common.schema.json",
+  "$defs": {
+    "id": {"type": "string", "maxLength": 128, "pattern": "^[A-Za-z][A-Za-z0-9]*(?:[-_][A-Za-z0-9]+)*$", "not": {"pattern": "[^A-Za-z0-9_-]"}},
+    "quantity": {"type": ["integer", "null"], "minimum": 0},
+    "world_time": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["status"],
+         "properties": {"status": {"const": "UNKNOWN"}}},
+        {"type": "object", "additionalProperties": false, "required": ["status", "clock_id", "tick", "suborder"],
+         "properties": {"status": {"const": "KNOWN"}, "clock_id": {"$ref": "#/$defs/id"},
+                        "tick": {"type": "integer"}, "suborder": {"type": "integer", "minimum": 0}}}
+      ]
+    },
+    "anchor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scene_id", "narration_suborder", "boundary", "world_time"],
+      "properties": {"scene_id": {"$ref": "#/$defs/id"}, "narration_suborder": {"type": "integer", "minimum": 0},
+                     "boundary": {"enum": ["BEFORE", "AFTER"]}, "world_time": {"$ref": "#/$defs/world_time"}}
+    },
+    "source": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "pattern": "\\S"},
+                     "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$", "not": {"pattern": "[^0-9a-f]"}}}
+    }
+  }
+}

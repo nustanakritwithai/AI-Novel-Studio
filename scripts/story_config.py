@@ -48,8 +48,8 @@ def load_config(root: Path) -> dict:
         }
     result = _object(path, root)
     required = {"schema_version", "slug", "title", "extensions", "rules"}
-    if set(result) != required:
-        raise ValueError("story.json: expected schema_version, slug, title, extensions, and rules only")
+    if not required <= set(result) or set(result) - required - {"world_state"}:
+        raise ValueError("story.json: expected schema_version, slug, title, extensions, rules and optional world_state only")
     if type(result["schema_version"]) is not int or result["schema_version"] != 1:
         raise ValueError("story.json: unsupported schema_version (expected 1)")
     validate_slug(result["slug"])
@@ -58,6 +58,12 @@ def load_config(root: Path) -> dict:
     extension = result["extensions"]
     if not isinstance(extension, dict) or set(extension) != {"gameplay"} or type(extension["gameplay"]) is not bool:
         raise ValueError("story.json: extensions.gameplay must be boolean")
+    if "world_state" in result:
+        model = result["world_state"]
+        if (not isinstance(model, dict) or set(model) != {"schema_version", "enabled"}
+                or type(model["schema_version"]) is not int or model["schema_version"] != 1
+                or type(model["enabled"]) is not bool):
+            raise ValueError("story.json: world_state requires schema_version 1 and boolean enabled")
     rules = result["rules"]
     if not isinstance(rules, list) or any(not isinstance(rule, str) or not rule.strip() for rule in rules):
         raise ValueError("story.json: rules must be a list of nonempty strings")
