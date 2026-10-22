@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "method": "Manual evidence comparison by the implementation agent after two independent raw reports; not human editorial approval or automated semantic scoring",
+  "sealed_key_sha256": "d71842f3fe3a3a2679f8eb45df65561d97ce45fe2b9d781802f4f3b94593322f",
+  "reviewers": [
+    {"task": "/root/review_a94", "fork_turns": "none", "allowed_input": "packets/A94.json", "raw_report": "raw/A94.json", "raw_sha256": "05e49bda1680907bc9b2facbbc743d8192b85e674a9461f2cbc931ddf0d05e94"},
+    {"task": "/root/review_b17", "fork_turns": "none", "allowed_input": "packets/B17.json", "raw_report": "raw/B17.json", "raw_sha256": "c94e1839ce8e085ea2a4c224875b93edbfc6a02dc12dac74ac4b850320d7c0c3"}
+  ],
+  "matches": [
+    {"fault_id": "F1", "claim_id": "C-01", "finding_id": "F-01", "result": "CAUGHT", "reason": "Reviewer cites physical-token requirement and absence of remote override against remote-only opening."},
+    {"fault_id": "F2", "claim_id": "C-02", "finding_id": "F-02", "result": "CAUGHT", "reason": "Reviewer cites FACT-KNOWLEDGE and false scene-start token_code_known; UNKNOWN does not establish positive knowledge."},
+    {"fault_id": "F3", "claim_id": "C-03", "finding_id": "F-03", "result": "CAUGHT", "reason": "Reviewer compares claimed two tokens with explicit zero balance before SC-002 and no intervening acquisition."},
+    {"fault_id": "F4", "claim_id": "C-04", "finding_id": "F-04", "result": "CAUGHT", "reason": "Reviewer rejects local labels/claimed commit as editorial approval, marks actual commit and human approval unknown, and refuses canon promotion."},
+    {"fault_id": "F5", "claim_id": "C-05", "finding_id": "F-05", "result": "CAUGHT", "reason": "Reviewer cites fixed red FACT-COLOR and replay against blue assertion; raw reviewer severity is medium, preserved unchanged."}
+  ],
+  "misses": [],
+  "extra_seeded_candidate_findings": [],
+  "clean_control": {"candidate_id": "B17", "reported_findings": 0, "false_positives": [], "uncertainty": "Actual human review history remains unknown; this caution is not counted as a contradiction or false positive."},
+  "bounded_semantic_gate": "PASS_FOR_RECORDED_SYNTHETIC_ASSERTIONS_ONLY",
+  "human_editorial_signoff": "BLOCKED_NOT_SUPPLIED",
+  "limitations": ["One candidate and one clean control, separate fresh native agents", "Procedural input restriction with shared filesystem; no cryptographic access isolation", "No narrative prose, literary style assessment, repeated trials or model-comparison score", "CI verifies artifact integrity and command behavior, not a fresh semantic review"]
+}

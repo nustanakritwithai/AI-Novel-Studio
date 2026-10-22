@@ -1,0 +1,29 @@
+{
+  "candidate_id": "B17",
+  "input_sha256": "afd75113bb8fefb890cc249aeb0ebc2fb5ae7628faea8df7cdf401fe3083fa60",
+  "findings": [],
+  "uncertainties": [
+    {
+      "claim_ids": ["C-04"],
+      "category": "UNKNOWN",
+      "description": "The packet does not authenticate actual human review history. The draft's statement that it remains unreviewed cannot independently establish that history; human editorial approval remains unknown. This supplies no evidence of a continuity contradiction.",
+      "evidence": [
+        "Packet scope: 'No narrative or real editorial approval is supplied.'",
+        "Context INPUT BASIS: 'Approval labels are local declarations; GitHub main and human approval have not been authenticated.'",
+        "C-04: 'This draft remains unreviewed. Local fixture labels and Git commits do not establish human editorial approval or authorize canon changes.'"
+      ]
+    }
+  ],
+  "approval_status": {
+    "human_editorial_approval": "UNKNOWN_NOT_AUTHENTICATED",
+    "local_approval_labels": "SYNTHETIC_DECLARATIONS_ONLY",
+    "canon_change_authorization": "NOT_ESTABLISHED",
+    "review_result": "No continuity contradictions or unsupported story-state assertions identified in C-01 through C-05 against the supplied context. This metadata review is not editorial approval."
+  },
+  "scope_limitations": [
+    "Reviewed only the UTF-8 B17.json packet, using its draft and selected-story context pack; no other files, repository history, engine code, network sources, or other reviewers were consulted.",
+    "C-01 is supported by FACT-GATE; C-02 by FACT-KNOWLEDGE and the prior-state token_code_known=false; C-03 by the prior-state CHAR-001 ITEM-TOKEN=0; C-05 by FACT-COLOR and the prior-state gate color red, count 1.",
+    "The generic character knowledge entry UNKNOWN does not establish code knowledge and does not override the explicit negative FACT-KNOWLEDGE and prior-state value.",
+    "Later project progress and local APPROVED labels were not treated as scene-start knowledge, authenticated human approval, or authority to change canon. No narrative prose or future-episode evidence was supplied."
+  ]
+}

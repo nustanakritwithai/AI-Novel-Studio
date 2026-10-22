@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic metadata assertions; no narrative or real editorial approval",
+  "prepared_before_review": true,
+  "candidates": {
+    "A94": {
+      "role": "SEEDED_FAULTS",
+      "faults": [
+        {
+          "id": "F1",
+          "claim_id": "C-01",
+          "category": "CANON",
+          "critical": true,
+          "expected": "Reject remote-only gate opening: FACT-GATE requires a physical token and forbids remote override."
+        },
+        {
+          "id": "F2",
+          "claim_id": "C-02",
+          "category": "KNOWLEDGE",
+          "critical": true,
+          "expected": "Reject already knowing the code at SC-002: FACT-KNOWLEDGE and scene-start replay say it is not yet known."
+        },
+        {
+          "id": "F3",
+          "claim_id": "C-03",
+          "category": "INVENTORY",
+          "critical": true,
+          "expected": "Reject two tokens at SC-002 opening: DELTA-001 consumes initial one, leaving zero; no eligible gain exists."
+        },
+        {
+          "id": "F4",
+          "claim_id": "C-04",
+          "category": "APPROVAL",
+          "critical": true,
+          "expected": "Reject human-approved canon claim: local APPROVED fixture labels or local Git commits do not establish a human editorial decision."
+        },
+        {
+          "id": "F5",
+          "claim_id": "C-05",
+          "category": "CANON",
+          "critical": true,
+          "expected": "Reject blue gate: FACT-COLOR fixes the only gate red and replay agrees."
+        }
+      ]
+    },
+    "B17": {
+      "role": "CLEAN_CONTROL",
+      "expected_contradictions": [],
+      "expected": "No planted canon/knowledge/inventory/approval contradiction; human editorial approval still unverified."
+    }
+  },
+  "grading": "After independent reports, map actual evidence-based findings to claim IDs manually; record every miss and unsupported control finding. No invented quality score."
+}

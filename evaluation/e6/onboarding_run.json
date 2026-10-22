@@ -1,0 +1,89 @@
+{
+  "kind": "E7_DOCUMENTED_EMPTY_STORY_SMOKE",
+  "status": "PASS",
+  "source_changes": false,
+  "commands": [
+    {
+      "arguments": [
+        "new",
+        "my-story",
+        "--title",
+        "My story"
+      ],
+      "exit_code": 0,
+      "stdout": "Created empty story scaffold: <ENGINE_ROOT>\\.local\\e7-guide-empty-smoke\\stories\\my-story\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "--story",
+        "my-story",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS | 0 errors; 0 warnings\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "--story",
+        "my-story",
+        "status"
+      ],
+      "exit_code": 0,
+      "stdout": "# AI Novel Studio — สถานะ\nโครงการ: My story\nเฟส: OUTLINE_NOT_CANON_PROSE\nตอนที่วางโครงแล้ว: 0 | ฉากทั้งหมด: 0\nฉาก: PLANNED=0 DRAFT=0 REVIEW=0 APPROVED=0 CANON=0\nข้อมูล Canon ล็อกแล้ว: 0\nPlot Threads ยังเปิดอยู่: 0\nสถานะหลังฉากที่อนุมัติ: ยังไม่มีฉาก prose ที่อนุมัติ\nNext: request a brief for an assigned scene ID in this story.\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "--story",
+        "my-story",
+        "doctor",
+        "--out",
+        "<ENGINE_ROOT>\\.local\\e7-guide-empty-smoke\\.local\\doctor.json"
+      ],
+      "exit_code": 0,
+      "stdout": "Wrote private local artifact: <ENGINE_ROOT>\\.local\\e7-guide-empty-smoke\\.local\\doctor.json\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "--story",
+        "my-story",
+        "pack",
+        "SC-001",
+        "--out",
+        "<ENGINE_ROOT>\\.local\\e7-guide-empty-smoke\\.local\\pack.md"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "ERROR: Unknown scene/episode: SC-001\n"
+    },
+    {
+      "arguments": [
+        "new",
+        "my-story",
+        "--title",
+        "My story"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "ERROR: Story already exists: <ENGINE_ROOT>\\.local\\e7-guide-empty-smoke\\stories\\my-story\n"
+    },
+    {
+      "arguments": [
+        "--story",
+        "missing-story",
+        "check"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "ERROR: No configured story 'missing-story' under <ENGINE_ROOT>\\.local\\e7-guide-empty-smoke\\stories\n"
+    }
+  ],
+  "approval": "NOT_REQUESTED_OR_GRANTED",
+  "network": "NOT_USED",
+  "source_file_count": 21,
+  "python_version": "3.12.14",
+  "normalization": "Only local machine paths are replaced by <ENGINE_ROOT>; actual command arguments, exit codes and stdout/stderr content are otherwise retained."
+}

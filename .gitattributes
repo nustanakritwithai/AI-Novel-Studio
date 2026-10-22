@@ -1,2 +1,6 @@
 # Preserve the migrated example's exact Git bytes on every platform.
 stories/last-island/** -text
+# Evaluation input/key/raw-output digests bind exact bytes across checkouts.
+# Disable line-ending conversion only for these sealed synthetic artifacts.
+# Recognize sealed CRLF endings while retaining the usual whitespace checks.
+evaluation/e6/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
