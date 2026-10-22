@@ -4,17 +4,20 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shutil
 import sys
 import tempfile
 from pathlib import Path
 
 try:
-    from scripts import novelctl, story_config, story_engine
+    from scripts import novelctl, story_config, story_engine, doctor, review_bundle
 except ImportError:  # called as `python scripts/storyctl.py`
     import novelctl
     import story_config
     import story_engine
+    import doctor
+    import review_bundle
 
 
 def new_story(workspace: Path, slug: str, title: str | None = None) -> Path:
@@ -73,6 +76,8 @@ def new_story(workspace: Path, slug: str, title: str | None = None) -> Path:
             "LOCKED human decisions outrank proposals. UNKNOWN is not verified.\n"
             "Drafts and planned effects do not become approved state without human review.\n"
             "Use the workspace storyctl check and pack commands with this story selected.\n"
+            "Read the repository docs/AGENT_RUNBOOK.md for writer, reviewer, and updater contracts.\n"
+            "Review bundles are private local artifacts; never publish them without explicit authorization.\n"
             "Never invent review provenance, approve canon, or merge automatically.\n", encoding="utf-8")
         # Validate before exposing the destination. No default story is changed.
         story_config.load_config(staging)
@@ -92,6 +97,33 @@ def new_story(workspace: Path, slug: str, title: str | None = None) -> Path:
             shutil.rmtree(staging)
 
 
+def _emit_private_artifact(workspace: Path, out: Path | None, output: str) -> None:
+    """Keep new review/diagnostic artifacts separate from all story sources."""
+    if out is None:
+        print(output)
+        return
+    workspace = Path(workspace).resolve()
+    local = workspace / '.local'
+    if local.resolve() != local:
+        raise ValueError('Private artifact directory .local must not be a symlink')
+    destination = out.resolve()
+    if destination == local or not destination.is_relative_to(local):
+        raise ValueError('Review/doctor --out must be inside --workspace/.local/; source files are read-only')
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(dir=destination.parent, prefix='.artifact-', delete=False) as handle:
+            temporary = Path(handle.name)
+            handle.write(output.encode('utf-8'))
+        # Replacing the directory entry also preserves any source file that an
+        # existing artifact happened to hardlink, unlike truncating that inode.
+        os.replace(temporary, destination)
+    finally:
+        if temporary is not None and temporary.exists():
+            temporary.unlink()
+    print('Wrote private local artifact:', out)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Generic story engine workspace (JSON Schema validation)")
     parser.add_argument("--workspace", type=Path, default=story_config.WORKSPACE_ROOT)
@@ -102,6 +134,13 @@ def main(argv: list[str] | None = None) -> int:
     new.add_argument("--title")
     commands.add_parser("check")
     commands.add_parser("status")
+    diagnose = commands.add_parser('doctor', help='Read-only local diagnostics; GitHub settings remain UNKNOWN')
+    diagnose.add_argument('--target', help='Optional scene/episode for state availability')
+    diagnose.add_argument('--out', type=Path)
+    review = commands.add_parser('brief-review', help='Local exact draft/diff/context bundle; never approves or publishes')
+    review.add_argument('target', help='Scene ID to review')
+    review.add_argument('--base', default='HEAD', help='Local Git commit/ref for the draft comparison (default HEAD)')
+    review.add_argument('--out', type=Path)
     replay = commands.add_parser("replay", help="State before target from local evidence; no GitHub approval authentication")
     replay.add_argument("target")
     replay.add_argument("--out", type=Path)
@@ -113,7 +152,7 @@ def main(argv: list[str] | None = None) -> int:
     brief = commands.add_parser("brief")
     brief.add_argument("target")
     brief.add_argument("--out", type=Path)
-    proposal = commands.add_parser("proposal")
+    proposal = commands.add_parser("proposal", aliases=['propose'])
     proposal.add_argument("episode")
     proposal.add_argument("--out", type=Path)
     args = parser.parse_args(argv)
@@ -123,7 +162,16 @@ def main(argv: list[str] | None = None) -> int:
                 raise ValueError("Use new SLUG without --story")
             print("Created empty story scaffold:", new_story(args.workspace, args.slug, args.title))
             return 0
+        if args.command == 'doctor':
+            report = doctor.diagnose(args.workspace, args.target, story=args.story)
+            output = json.dumps(report, ensure_ascii=False, indent=2) + '\n'
+            _emit_private_artifact(args.workspace, args.out, output)
+            return 1 if report['errors'] else 0
         root = story_config.resolve_root(args.workspace, args.story)
+        if args.command == 'brief-review':
+            output = json.dumps(review_bundle.build(root, args.target, args.base), ensure_ascii=False, indent=2) + '\n'
+            _emit_private_artifact(args.workspace, args.out, output)
+            return 0
         if args.command == "check":
             errors, warnings = story_engine.validate(root)
             for warning in warnings:

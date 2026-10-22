@@ -6,3 +6,4 @@ __pycache__/
 .tmp/
 context.md
 my-brief.md
+.local/

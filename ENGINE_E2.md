@@ -1,5 +1,7 @@
 # Engine E2 — schema แบบมีเวอร์ชันและ replay สถานะตามฉาก
 
+> คู่มือปัจจุบันสำหรับ local review, diagnostics และบทบาท agent อยู่ที่ [ENGINE_E3_E4.md](ENGINE_E3_E4.md) และ [docs/AGENT_RUNBOOK.md](docs/AGENT_RUNBOOK.md) เอกสาร E2 นี้ยังเป็นสัญญา schema/replay; การย้าย schema รุ่นเก่า, การยืนยัน approval จาก GitHub และ rollup ยังไม่เสร็จ ดูสถานะ roadmap ปัจจุบันในคู่มือ E3/E4
+
 E2 ต่อจาก E1 โดยเพิ่มการตรวจรูปแบบ registry ด้วย JSON Schema จริง และการอ่านประวัติสถานะก่อนฉากที่ขอ งานนี้เป็น engine เท่านั้น ไม่เขียนนิยาย ไม่สร้างข้อเท็จจริง ไม่อนุมัติ canon และไม่ merge PR
 
 เอกสารนี้ระบุสัญญาและเกณฑ์รับงาน ผล tests, commit, Draft PR และ CI ของ tree สุดท้ายต้องบันทึกตามผลจริงใน PR ไม่ถือว่ารายการข้างล่างเป็นหลักฐานว่าผ่านแล้ว
