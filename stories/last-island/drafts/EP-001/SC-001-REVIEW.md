@@ -50,5 +50,8 @@ No particular crafting recipe, loot drop, item count, server mode or HP mechanic
 
 - drafts/EP-001/SC-001.md — narrative prose DRAFT
 - drafts/EP-001/SC-001-REVIEW.md — state delta, proposed facts and uncertainty register
-- data/scenes.json — SC-001 status PLANNED -> DRAFT only
-- scenes/SC-001.md — scene card status points to draft, no new canon
+- data/scenes.json — intentionally unchanged (E1 byte-preservation tests pin this example source)
+- scenes/SC-001.md — intentionally unchanged (original example Scene Card is SHA-256 pinned)
+
+## E1 baseline preservation / actual draft state
+The added prose file is **DRAFT / UNREVIEWED** and exists on this PR branch, but the historical example scene registry continues to say `PLANNED` on purpose. E1 regression tests enforce the original 54 relocated example files as immutable. A separate author-approved migration of the example baseline/manifest would be needed to synchronize the registry field. Do not infer `APPROVED`, `CANON`, or actual playback from the presence of a proposed draft.
