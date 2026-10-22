@@ -1,6 +1,6 @@
 # Engine E2 — schema แบบมีเวอร์ชันและ replay สถานะตามฉาก
 
-> คู่มือปัจจุบันสำหรับ local review, diagnostics และบทบาท agent อยู่ที่ [ENGINE_E3_E4.md](ENGINE_E3_E4.md) และ [docs/AGENT_RUNBOOK.md](docs/AGENT_RUNBOOK.md) เอกสาร E2 นี้ยังเป็นสัญญา schema/replay; การย้าย schema รุ่นเก่า, การยืนยัน approval จาก GitHub และ rollup ยังไม่เสร็จ ดูสถานะ roadmap ปัจจุบันในคู่มือ E3/E4
+> คู่มือปัจจุบันสำหรับ bounded provenance/rollup proposal อยู่ที่ [ENGINE_E5.md](ENGINE_E5.md); local review และบทบาท agent อยู่ที่ [ENGINE_E3_E4.md](ENGINE_E3_E4.md) กับ [docs/AGENT_RUNBOOK.md](docs/AGENT_RUNBOOK.md) เอกสาร E2 นี้ยังเป็นสัญญา schema/replay เลข roadmap เดิมท้ายเอกสารเป็นประวัติที่แก้แล้ว: E5 ledger/provenance, E6 synthetic evaluation, E7 คู่มือไทย การยืนยัน human editorial approval ยังไม่เสร็จแม้ตรวจ live merged metadata ได้
 
 E2 ต่อจาก E1 โดยเพิ่มการตรวจรูปแบบ registry ด้วย JSON Schema จริง และการอ่านประวัติสถานะก่อนฉากที่ขอ งานนี้เป็น engine เท่านั้น ไม่เขียนนิยาย ไม่สร้างข้อเท็จจริง ไม่อนุมัติ canon และไม่ merge PR
 
@@ -89,7 +89,7 @@ delta ที่มี ID/scene ซ้ำ อ้างฉากที่ไม่
 | ค่า `before` ขัดกับสถานะก่อนหน้า, operation ไม่สอดคล้อง หรือประวัติผิดโครงสร้าง/ลำดับ | error ที่ต้องแก้ข้อมูล ไม่คาดเดาว่าค่าใดถูก |
 | ไม่มีไฟล์ `state_history.json` | ใช้ทาง compatibility เดิม: snapshot ที่อยู่ก่อน target หรือ `UNKNOWN`; ไม่สร้าง deltas ให้เอง |
 
-`KNOWN` หมายถึงคำนวณได้ครบภายใต้ข้อมูลท้องถิ่นที่ผ่านเงื่อนไข ไม่ได้หมายความว่า GitHub ยืนยันว่าเป็นการอนุมัติจากมนุษย์จริง ผลใหม่ต้องแสดงขอบเขตนี้ เช่น `approval_basis: LOCAL_RECORDS_NOT_GITHUB_AUTHENTICATED` งานตรวจ source PR/review/merge commit จริงอยู่ใน E5
+`KNOWN` หมายถึงคำนวณได้ครบภายใต้ข้อมูลท้องถิ่นที่ผ่านเงื่อนไข ไม่ได้หมายความว่า GitHub ยืนยันว่าเป็นการอนุมัติจากมนุษย์จริง ผลใหม่ต้องแสดงขอบเขตนี้ เช่น `approval_basis: LOCAL_RECORDS_NOT_GITHUB_AUTHENTICATED` การตรวจ merged metadata/source hash แบบจำกัดดู E5; human editorial approval ยัง UNVERIFIED แม้ live check ผ่าน
 
 ## ใช้ร่วมกับคำสั่งเดิม
 
@@ -119,21 +119,21 @@ python scripts/story_engine.py --root stories/last-island pack SC-001
 - ทดสอบ replay ย้อนฉาก, ข้าม episode, target ก่อน baseline, explicit no-op, `SET`/`REMOVE`, เงื่อนไขค่าเดิม และประวัติขาดช่วง
 - ทดสอบว่า future/unapproved delta ไม่รั่วเข้า state และไม่มีการใช้ planned effects แทนหลักฐาน
 - ทดสอบสองเรื่องและ temporary branch roots ที่มี IDs เหมือนกัน แต่ state ต่างกัน ต้องไม่ใช้ cache หรือข้อมูลข้าม root
-- ตรวจ legacy commands, optional gameplay, example-integrity manifest และ 54 source bytes เดิม
+- ตรวจ legacy commands, optional gameplay, example-integrity manifest และ bytes ของไฟล์ต้นฉบับเดิมทั้ง 54 ไฟล์
 - รัน complete suite และ validation บน tree สุดท้าย แล้วตรวจ published head และ CI ของ head นั้น ระบุ passed/failed/skipped/not-run ตามจริงใน Draft PR
 
 ยังไม่มีผลทดสอบของ E2 ถูกอ้างไว้ในเอกสารนี้โดยล่วงหน้า ไม่สร้าง reviewer scores, friction entries หรือสถิติที่ไม่ได้วัดจริง
 
 ## งาน E3–E7 ที่ยังเหลือ
 
-E2 นำรากฐาน state replay ที่เคยอยู่ในแผน E3 มาทำร่วมกับ schema แล้ว ตารางนี้เป็น backlog ที่ต้องตรวจรับแยก ไม่ได้สรุปว่า engine เสร็จครบแล้ว:
+E2 นำรากฐาน state replay ที่เคยอยู่ในแผน E3 มาทำร่วมกับ schema แล้ว ตารางนี้เป็น backlog ณ E2; ความคืบหน้าปัจจุบันดู E5 และใช้เลขแผนผู้ใช้ที่แก้ไขด้านล่าง ไม่ได้สรุปว่า engine เสร็จครบแล้ว:
 
 | Milestone | งานต่อ | เกณฑ์รับงาน |
 | --- | --- | --- |
 | E3 — migration และ state diagnostics | นโยบายอัปเกรด schema, เครื่องมือ migration ที่ย้อนกลับได้, การวินิจฉัย state edge cases | migration ไม่แก้ canon เงียบ ๆ; ตรวจ byte/history หลังย้ายได้; รายงานช่องว่าง/ความขัดแย้งตามฉากชัดเจน และไม่แทน unknown ด้วยค่าเดา |
 | E4 — generic review/templates | สัญญา input/output และเครื่องมือ `brief-review`/proposal ที่ไม่ผูกเรื่อง | ใช้ rules/style ของ root ที่เลือกเท่านั้น; แยก Proposed Facts และข้อขัดแย้ง; ไม่มีการ promote canon หรืออ้างว่าสถานะท้องถิ่นเป็นการอนุมัติจริง |
-| E5 — authenticated approval provenance | ตรวจ repository, source PR, review และ merged commit จาก GitHub จริง | ปฏิเสธ PR ที่ยังไม่ merge, ผิด repo/SHA หรือไม่มีหลักฐานตามนโยบาย; fixture ต้องระบุว่าเป็นการจำลอง; local labels ไม่กลายเป็น verified human approval |
-| E6 — ledger operations | `rollup`, `doctor` และ status diagnostics | rollup อ้างเฉพาะอดีตที่เข้าเกณฑ์พร้อม source; doctor รายงาน reference/provenance/state gaps โดยไม่แก้ข้อมูลเอง; ไม่ตัด LOCKED facts เพื่อให้ pack ผ่าน cap |
-| E7 — evaluation workflow | workflow synthetic สามฉากและชุด planted violations | **critical canon, knowledge และ approval violations ที่วางไว้ต้องถูกจับทุกกรณี**; รายงานจาก assertions จริง รวมข้อจำกัดที่ยังจับไม่ได้ และห้ามประกาศพร้อมใช้งานเมื่อข้อวิกฤตยังหลุด |
+| E5 — ledger/provenance | ตรวจ source PR/merged metadata และ source bytes; สร้าง ledger proposals | bounded implementation ดูคู่มือ E5; fixture/local labels ไม่กลายเป็น verified human editorial approval |
+| E6 — synthetic evaluation | workflow synthetic สามฉากและชุด planted violations | **critical canon, knowledge และ approval violations ที่วางไว้ต้องถูกจับทุกกรณี**; รายงานจาก assertions จริง รวมข้อจำกัดที่ยังจับไม่ได้ และห้ามประกาศพร้อมใช้งานเมื่อข้อวิกฤตยังหลุด |
+| E7 — คู่มือไทย | onboarding/runbook ที่ตรงกับ engine รุ่นปัจจุบัน | ตัวอย่างคำสั่งและข้อจำกัดต้องทดสอบได้จริง แยก proposal, provenance และ human approval ให้ชัด ไม่อ้างว่าเอกสารที่เพิ่มบางส่วนคือคู่มือครบทั้งแผน |
 
 E2 ไม่ใช้ paid APIs ไม่อ่าน secrets ไม่เปลี่ยน permissions/privacy/security/rulesets ไม่เขียน prose และไม่สื่อสารกับ reviewer ภายนอก การอนุมัติให้ merge PR #2/#3 ในอดีตไม่ใช่อำนาจ merge Draft PR ของ E1/E2

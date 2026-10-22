@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import shutil
@@ -11,13 +12,15 @@ import tempfile
 from pathlib import Path
 
 try:
-    from scripts import novelctl, story_config, story_engine, doctor, review_bundle
+    from scripts import novelctl, story_config, story_engine, doctor, review_bundle, provenance, rollup
 except ImportError:  # called as `python scripts/storyctl.py`
     import novelctl
     import story_config
     import story_engine
     import doctor
     import review_bundle
+    import provenance
+    import rollup
 
 
 def new_story(workspace: Path, slug: str, title: str | None = None) -> Path:
@@ -108,7 +111,7 @@ def _emit_private_artifact(workspace: Path, out: Path | None, output: str) -> No
         raise ValueError('Private artifact directory .local must not be a symlink')
     destination = out.resolve()
     if destination == local or not destination.is_relative_to(local):
-        raise ValueError('Review/doctor --out must be inside --workspace/.local/; source files are read-only')
+        raise ValueError('Private artifact --out must be inside --workspace/.local/; source files are read-only')
     destination.parent.mkdir(parents=True, exist_ok=True)
     temporary = None
     try:
@@ -122,6 +125,34 @@ def _emit_private_artifact(workspace: Path, out: Path | None, output: str) -> No
         if temporary is not None and temporary.exists():
             temporary.unlink()
     print('Wrote private local artifact:', out)
+
+
+def _offline_evidence(path: Path) -> tuple[dict, dict]:
+    """Load bounded untrusted evidence; its digest never authenticates it."""
+    with path.open('rb') as handle:
+        raw = handle.read(8 * 1024 * 1024 + 1)
+    if len(raw) > 8 * 1024 * 1024:
+        raise ValueError('Offline evidence exceeds the 8 MiB limit')
+
+    def object_pairs(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError('Duplicate evidence keys')
+            result[key] = value
+        return result
+
+    def nonfinite(value):
+        raise ValueError('Non-finite evidence value')
+
+    try:
+        evidence = json.loads(raw.decode('utf-8'), object_pairs_hook=object_pairs, parse_constant=nonfinite)
+        if not isinstance(evidence, dict):
+            raise ValueError('Evidence must be an object')
+    except (UnicodeError, ValueError, RecursionError) as exc:
+        raise ValueError('Offline evidence must be a UTF-8 JSON object with unique keys and finite values') from exc
+    return evidence, {'sha256': hashlib.sha256(raw).hexdigest(), 'byte_length': len(raw),
+                      'authenticity': 'UNVERIFIED_OFFLINE_INPUT'}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -141,6 +172,20 @@ def main(argv: list[str] | None = None) -> int:
     review.add_argument('target', help='Scene ID to review')
     review.add_argument('--base', default='HEAD', help='Local Git commit/ref for the draft comparison (default HEAD)')
     review.add_argument('--out', type=Path)
+    verify = commands.add_parser('verify-provenance', help='Read-only GitHub metadata/hash check using existing gh authentication; offline evidence stays unverified')
+    verify.add_argument('--repo', '--repository', dest='repository', required=True)
+    verify.add_argument('--pr', dest='pr_number', type=int, required=True)
+    verify.add_argument('--head', dest='head_commit', required=True)
+    verify.add_argument('--merge', dest='merge_commit', required=True)
+    verify.add_argument('--source', dest='source_path')
+    verify.add_argument('--sha256', dest='source_sha256')
+    verify.add_argument('--evidence', type=Path, help='Offline fixture/cache JSON; never live verification (exit 2 if consistent)')
+    verify.add_argument('--out', type=Path)
+    assembly = commands.add_parser('rollup', help='Deterministic recap assembly proposal; never approves or changes canon')
+    assembly.add_argument('episode_ids', nargs='+')
+    assembly.add_argument('--repo', '--repository', dest='repository')
+    assembly.add_argument('--verify-remote', action='store_true', help='Require fresh read-only GitHub metadata and immutable source-hash checks')
+    assembly.add_argument('--out', type=Path)
     replay = commands.add_parser("replay", help="State before target from local evidence; no GitHub approval authentication")
     replay.add_argument("target")
     replay.add_argument("--out", type=Path)
@@ -162,12 +207,33 @@ def main(argv: list[str] | None = None) -> int:
                 raise ValueError("Use new SLUG without --story")
             print("Created empty story scaffold:", new_story(args.workspace, args.slug, args.title))
             return 0
+        if args.command == 'verify-provenance':
+            if args.story is not None:
+                raise ValueError('verify-provenance uses explicit repository/PR/source identifiers without --story; use rollup for story-bound checks')
+            evidence, fingerprint = None, None
+            if args.evidence is not None:
+                if args.out is not None and args.out.resolve() == args.evidence.resolve():
+                    raise ValueError('Provenance output cannot replace its evidence input')
+                evidence, fingerprint = _offline_evidence(args.evidence)
+            report = provenance.verify(args.repository, args.pr_number, args.head_commit, args.merge_commit,
+                                       source_path=args.source_path, source_sha256=args.source_sha256,
+                                       offline_evidence=evidence)
+            if fingerprint is not None:
+                report['offline_input'] = fingerprint
+            _emit_private_artifact(args.workspace, args.out, json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+            if report['errors']:
+                return 1
+            return 0 if report['status'] == 'OBSERVED_MERGED_METADATA' else 2
         if args.command == 'doctor':
             report = doctor.diagnose(args.workspace, args.target, story=args.story)
             output = json.dumps(report, ensure_ascii=False, indent=2) + '\n'
             _emit_private_artifact(args.workspace, args.out, output)
             return 1 if report['errors'] else 0
         root = story_config.resolve_root(args.workspace, args.story)
+        if args.command == 'rollup':
+            report = rollup.build(root, args.episode_ids, args.repository, args.verify_remote)
+            _emit_private_artifact(args.workspace, args.out, json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+            return 0
         if args.command == 'brief-review':
             output = json.dumps(review_bundle.build(root, args.target, args.base), ensure_ascii=False, indent=2) + '\n'
             _emit_private_artifact(args.workspace, args.out, output)

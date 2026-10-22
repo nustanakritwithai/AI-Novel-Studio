@@ -1,6 +1,6 @@
 # AI Novel Studio — reusable continuity engine
 
-A local continuity engine with isolated story datasets. E1 separates story roots, E2 adds versioned registry schemas and optional state replay, and E3/E4 adds local review evidence, diagnostics, and generic human workflow contracts. Schema migration, authenticated GitHub approval, rollup, and full workflow evaluation remain deferred. The engine does not generate prose or approve canon.
+A continuity engine with isolated story datasets and explicit read-only GitHub provenance checks. E1 separates story roots, E2 adds versioned schemas/state replay, E3/E4 adds local review evidence and generic workflow contracts, and bounded E5 adds merged metadata/source verification plus deterministic rollup proposals. Human editorial approval, schema migration, full synthetic evaluation (E6), and a complete Thai guide (E7) remain unfinished. The engine does not generate prose or approve canon.
 
 Use Python 3.11+ and install the pinned validation dependencies from official PyPI:
 
@@ -31,7 +31,24 @@ Review bundles require readable local Git anchors and include hashes/byte length
 
 Local review/Git diagnostics require Git supporting the global [`--no-lazy-fetch` option](https://git-scm.com/docs/git). Older unsupported Git fails review or reports Git diagnostics UNKNOWN. These commands read local objects without fetching missing objects or changing persistent Git settings; they do not install Git.
 
-New review/doctor file output is restricted to the selected workspace's ignored `.local/` directory (stdout is also available). Bundles can contain unpublished draft and context text. Do not attach them to a public PR or send them externally without explicit user authorization.
+New review, doctor, provenance, and rollup file output is restricted to the selected workspace's ignored `.local/` directory (stdout is also available). Bundles can contain unpublished draft and context text. Do not attach them to a public PR or send them externally without explicit user authorization.
+
+## Provenance and rollup proposals
+
+`verify-provenance` reads live GitHub metadata through existing `gh` authentication unless `--evidence` supplies offline JSON. Replace the uppercase placeholders with the intended repository, PR number, immutable commit SHAs, path, and digest; these are not approval examples:
+
+```bash
+python scripts/storyctl.py verify-provenance --repo OWNER/REPO --pr PR_NUMBER --head HEAD_SHA --merge MERGE_SHA --source REPO_PATH --sha256 SHA256 --out .local/provenance.json
+python scripts/storyctl.py verify-provenance --repo OWNER/REPO --pr PR_NUMBER --head HEAD_SHA --merge MERGE_SHA --evidence .local/cached-pr.json --out .local/offline-provenance.json
+python scripts/storyctl.py --story my-story rollup EP-001 EP-002 --out .local/rollup.json
+python scripts/storyctl.py --story my-story rollup EP-001 EP-002 --repo OWNER/REPO --verify-remote --out .local/remote-rollup.json
+```
+
+Live verification checks observed merged metadata against the exact repository/PR/head/merge, and optionally an immutable Git tree/blob source hash. It never authenticates human editorial approval. Exit codes are 0 only for live `OBSERVED_MERGED_METADATA`, 2 for consistent `OFFLINE_UNVERIFIED` evidence, and 1 for failure. Cached JSON and fixtures never become live verification. No login, credential creation, permission change, or automatic post-merge workflow is provided.
+
+A matching path/hash at the merge commit proves presence and bytes there; it does not prove that the identified PR changed the file or that a human reviewed/approved its narrative content. File-change attribution and editorial authorization remain outside this bounded check.
+
+`rollup` concatenates existing eligible local ledger recaps into a `PROPOSED` output. Default provenance is `UNVERIFIED_LOCAL_DECLARATIONS`; `--verify-remote` explicitly checks each source record online. Missing/unapproved source records fail. The output is never applied to canon, state, or the ledger, and no novel prose is generated. An observed software PR merge is not novel approval.
 
 The legacy invocations still use the default story selected by `studio.json`:
 
@@ -42,7 +59,7 @@ python scripts/story_engine.py pack SC-001 --out context.md
 python -m unittest discover -s tests -v
 ```
 
-See the [Thai E3/E4 guide and capability coverage](ENGINE_E3_E4.md), [agent handoff runbook](docs/AGENT_RUNBOOK.md), [E2 schema/replay contract](ENGINE_E2.md), [E1 separation guide](ENGINE_E1.md), [engine instructions](AGENTS.md), and [preserved Last Island example](stories/last-island/README.md). All 54 relocated example files are checked against a SHA-256 manifest of their original Git bytes. The original 43 regressions retain their assertions and use the example root. Record actual final tests and exact-head CI in each PR; these commands are not a test result.
+See the [Thai E5 provenance/ledger guide](ENGINE_E5.md), [E3/E4 local workflow guide](ENGINE_E3_E4.md), [agent handoff runbook](docs/AGENT_RUNBOOK.md), [E2 schema/replay contract](ENGINE_E2.md), [E1 separation guide](ENGINE_E1.md), [engine instructions](AGENTS.md), and [preserved Last Island example](stories/last-island/README.md). All 54 relocated example files are checked against a SHA-256 manifest of their original Git bytes. The original 43 regressions retain their assertions and use the example root. Record actual final tests and exact-head CI in each PR; these commands are not a test result.
 
 The existing Last Island dashboard is at [stories/last-island/index.html](stories/last-island/index.html); root `index.html` redirects there for compatibility. Serve the repository with `python -m http.server 8000`. Historical example documents retain their original bytes and command snippets; use the current guides for engine paths.
 
