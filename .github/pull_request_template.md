@@ -20,3 +20,10 @@ Episode / Scene IDs:
 ## Human editor decision
 - [ ] Approved for canon
 - [ ] Needs revision
+
+### Story Engine v0.2 approval gate
+- [ ] Ran `python scripts/story_engine.py check` and existing `novelctl.py check`
+- [ ] Context pack includes only approved past episode history
+- [ ] Any new lore/items/knowledge are marked PROPOSED until human approval
+- [ ] This PR does not mark itself as human-approved and does not auto-merge
+- [ ] If updating approved ledger: referenced prose, scene IDs, approval reviewer and merged PR provenance have been verified

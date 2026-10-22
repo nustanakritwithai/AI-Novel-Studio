@@ -44,3 +44,12 @@
 ## No silent canon writes
 
 AI เปลี่ยน `data/story_state.json` และ promote facts to `LOCKED` ได้เฉพาะหลังบทผ่านการตรวจและมี human approval เท่านั้น. งานที่ยังไม่เผยแพร่เก็บเป็น DRAFT พร้อม branch/PR.
+
+## v0.2 GitHub-only Story Engine addendum
+
+- There is no external state database. All durable approved story data is versioned in this GitHub repository.
+- Read `STORY_ENGINE_V02.md` and `ledger/README.md` before managing recurring chapters or changing story memory.
+- `python scripts/story_engine.py pack SC-001 --recent 7` constructs the full scoped prompt; never copy future unapproved drafts into approved history.
+- New `ledger/index.json` is **approved-only**: summaries must be backed by approved prose and real human GitHub PR review provenance; an AI checker cannot authorize approval.
+- n8n, Claude and Kimi may be orchestrators/reviewers but are never the source of truth; LINE may notify the author only.
+- Running `story_engine.py check` proves format/coherence of ledger pointers only, not authenticity of GitHub review or quality of prose.

@@ -1,0 +1,36 @@
+name: Build Story Engine context pack
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Scene or episode ID (example SC-001)'
+        required: true
+        default: 'SC-001'
+        type: string
+      recent:
+        description: 'Number of preceding approved episode summaries (0-20)'
+        required: true
+        default: '7'
+        type: string
+permissions:
+  contents: read
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build scoped context
+        env:
+          TARGET: ${{ inputs.target }}
+          RECENT: ${{ inputs.recent }}
+        run: |
+          python scripts/story_engine.py check
+          python scripts/story_engine.py pack "$TARGET" --recent "$RECENT" --out context-pack.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: story-context-pack
+          path: context-pack.md
+          retention-days: 7
