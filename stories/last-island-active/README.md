@@ -1,24 +1,21 @@
-# LAST ISLAND — Active Writing Dataset
+# LAST ISLAND — Active Story Dataset
 
-This is the **working** Last Island story for AI Novel Studio. The original \`stories/last-island/\` is retained as an immutable sample for the E1 migration test; no original data was overwritten.
+Two Thai survival fiction manuscripts and their scene/continuity data, integrated from [PR #13](https://github.com/nustanakritwithai/AI-Novel-Studio/pull/13) into `main` after explicit author acceptance in ChatGPT on **2026-10-23**.
 
-## Current content
-| Episode | Title | Scenes | Status |
-| --- | --- | ---: | --- |
-| EP-001 | บ้านหลังแรก | 8 | DRAFT |
-| EP-002 | ธนูแรกและกำแพงหิน | 10 | DRAFT |
+| Episode | Thai title | Scenes | Literary decision | Operational engine status |
+| --- | --- | ---: | --- | --- |
+| EP-001 | บ้านหลังแรก | 8 | Author accepted | DRAFT pending distinct GitHub-review provenance |
+| EP-002 | ธนูแรกและกำแพงหิน | 10 | Author accepted | DRAFT pending distinct GitHub-review provenance |
 
-- Complete manuscripts are in \`drafts/EP-001/CH-01-FULL-DRAFT.md\` and \`drafts/EP-002/CH-02-FULL-DRAFT.md\`.
-- Per-scene drafts are \`drafts/EP-001/SC-001.md\`–\`SC-008.md\`, \`drafts/EP-002/SC-009.md\`–\`SC-018.md\`.
-- \`data/\` now registers both episodes, causal flags, POV, entities and item transitions.
-- \`drafts/PROPOSED_CONTINUITY_CH-01_02.json\` is a candidate recap, **never** approved ledger state.
+Read the source manuscripts at `drafts/EP-001/CH-01-FULL-DRAFT.md` and `drafts/EP-002/CH-02-FULL-DRAFT.md`. Exact editorial consent evidence is in `editorial/AUTHOR_APPROVAL_2026-10-23.json` and `data/decisions.json` (DEC-004).
 
-## Smoke test from repo root
-\`\`\`bash
+The approved ledger is intentionally empty because PR #13 has no independently submitted GitHub `APPROVE` review. It would be misleading to forge one. All 54 byte-pinned historical example files in `stories/last-island/` remain untouched.
+
+## Quick verification
+```bash
 python scripts/storyctl.py --story last-island-active check
 python scripts/storyctl.py --story last-island-active pack EP-002
 python -m unittest discover -s tests -v
-\`\`\`
+```
 
-## Important
-DRAFT metadata says a candidate script is available; it is not evidence of human editorial approval. \`data/story_state.json.approved_through_scene\` is null and \`ledger/index.json\` is empty until explicit review. Gameplay mechanics remain UNVERIFIED until independent mode-specific evidence.
+For continued writing follow `HANDOFF.md`. Game mechanics are fiction directives unless verified against actual selected-server gameplay; item counts remain UNKNOWN.
