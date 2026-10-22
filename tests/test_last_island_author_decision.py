@@ -23,7 +23,7 @@ class LastIslandAuthorDecisionTests(unittest.TestCase):
             self.assertTrue(item["path"].startswith("stories/last-island-active/drafts/"))
             path = ROOT.parents[1] / item["path"]
             blob = path.read_bytes()
-            actual = hashlib.sha1(f"blob {len(blob)}".encode("ascii") + b"\\x00" + blob).hexdigest()
+            actual = hashlib.sha1(f"blob {len(blob)}".encode("ascii") + b"\x00" + blob).hexdigest()
             # Use Git's object identity encoding for immutable manuscript tracking.
             self.assertEqual(actual, item["blob_sha"], item["path"])
             ep = next(e for e in episodes if e["id"] == item["episode_id"])
