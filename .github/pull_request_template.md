@@ -1,29 +1,38 @@
-## Scope and IDs
+## Scope and resulting behavior
 
-Episode / Scene IDs:
+Problem, change, and remaining limits:
 
-## Narrative work
-- [ ] Only requested scenes altered
-- [ ] No LOCKED fact silently overwritten
-- [ ] No POV knowledge leaks
-- [ ] Inventory, location, injury, base and relationships state delta included
-- [ ] Mechanics evidence level and source timestamps are truthful
-- [ ] `python scripts/novelctl.py check` PASS
-- [ ] Unit tests PASS
+Work type (engine / authorized story change):
+Story slug and root (or synthetic fixture scope):
+Target episode / scene IDs:
+Base commit and exact head commit:
 
-## New facts proposed (ID + reason)
+## Evidence and validation
 
-## Data files / state records updated
+Commands actually run, with PASS / FAIL / NOT RUN and reasons:
 
-## Unknowns and reviewer questions
+- Selected-story check:
+- Legacy validators:
+- Unit tests:
+- Exact-head CI URL and result:
+- Example-byte preservation / story isolation checks, when relevant:
 
-## Human editor decision
-- [ ] Approved for canon
-- [ ] Needs revision
+Local review evidence, when used: target, resolved base/HEAD, current draft digest, and whether the working draft differs from HEAD. Keep unpublished draft/context bundles local in ignored workspace `.local/`; do not attach them to this PR without explicit user authorization.
 
-### Story Engine v0.2 approval gate
-- [ ] Ran `python scripts/story_engine.py check` and existing `novelctl.py check`
-- [ ] Context pack includes only approved past episode history
-- [ ] Any new lore/items/knowledge are marked PROPOSED until human approval
-- [ ] This PR does not mark itself as human-approved and does not auto-merge
-- [ ] If updating approved ledger: referenced prose, scene IDs, approval reviewer and merged PR provenance have been verified
+## Continuity and proposed changes
+
+LOCKED facts and chronological/POV boundaries checked:
+Proposed facts, state/knowledge deltas, and supporting evidence:
+UNKNOWNs, missing evidence, and downstream targets affected:
+Optional mechanics/source extension checked (enabled / disabled / not applicable):
+
+## Human decision boundary
+
+- [ ] Scope is explicit and no other story's data or rules were imported.
+- [ ] New facts and changes remain proposals unless a real authorized human decision is cited.
+- [ ] Machine output is not represented as canon approval, reviewer judgment, or authenticated GitHub provenance.
+- [ ] No automatic approval, merge, or rollup is performed.
+
+Human decision/provenance actually observed, if applicable (otherwise UNKNOWN):
+
+Local `doctor` and structural validation do not verify GitHub permissions, branch settings, or CODEOWNERS enforcement. Report those as UNKNOWN unless separately checked through an authorized source. Do not invent approval records, reviewer scores, or friction entries.

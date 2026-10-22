@@ -217,9 +217,10 @@ def pack(root: Path, target: str, keep: int = 7, max_chars: int = 25000) -> str:
     style = novelctl.story_config.story_path(root, "bible/STYLE_GUIDE.md").read_text(encoding="utf-8")
     recent = render_approved_history(root, target, keep)
     content = (
-        "# STORY ENGINE v0.2 / GITHUB-ONLY CONTEXT PACK\n"
+        "# STORY ENGINE / SELECTED-STORY LOCAL CONTEXT PACK\n"
         f"Target: {target} | Max approved recent episodes: {keep}\n"
-        "SOURCE OF TRUTH: GitHub main approved content; draft and proposed are not truth.\n"
+        "INPUT BASIS: Selected-story local registries and source records. Approval labels are local declarations; "
+        "GitHub main and human approval have not been authenticated. Drafts and proposals do not establish canon.\n"
         "Do not use information from future episodes. Do not silently update canon.\n\n"
         + "## REQUIRED WRITING STYLE\n" + style + "\n\n"
         + recent + "\n\n" + approved_scene_tail(root, target) + "\n\n" + base
