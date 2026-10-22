@@ -45,6 +45,26 @@
       ],
       "date": "2026-10-23",
       "notes": "ยืนยันพล็อต ไม่ใช่ข้อความนิยายฉบับเต็มหรือกฎเกมจริง"
+    },
+    {
+      "id": "DEC-004",
+      "summary": "เจ้าของเรื่องพิมพ์ 'อนุมัติ' หลังตรวจสรุปบทที่ 1–2; ยอมรับต้นฉบับและอนุญาตให้ Merge PR #13 เข้าสู่ main",
+      "status": "APPROVED_BY_USER",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-017",
+        "FACT-018",
+        "FACT-019",
+        "FACT-020",
+        "FACT-021",
+        "FACT-022"
+      ],
+      "date": "2026-10-23",
+      "notes": "Direct ChatGPT author approval of exact PR head 3d0b3117b2a4a4029fe815899e5c7a28e69eb56f. Merged PR #13 as commit 5d32a9ff95b3b64953a792be3bd7fef078343a1f. No GitHub APPPROVE review observed; ledger provenance remains pending.",
+      "source_channel": "ChatGPT",
+      "source_artifact": "editorial/AUTHOR_APPROVAL_2026-10-23.json",
+      "approved_head_commit": "3d0b3117b2a4a4029fe815899e5c7a28e69eb56f",
+      "merge_commit": "5d32a9ff95b3b64953a792be3bd7fef078343a1f"
     }
   ]
 }

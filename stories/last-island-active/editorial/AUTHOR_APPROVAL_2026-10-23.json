@@ -1,0 +1,33 @@
+{
+  "decision_id": "DEC-004",
+  "status": "AUTHOR_APPROVED_IN_CHAT",
+  "author_instruction": "อนุมัติ",
+  "observed_date": "2026-10-23",
+  "authorization_channel": "ChatGPT conversation",
+  "repository": "nustanakritwithai/AI-Novel-Studio",
+  "pull_request": 13,
+  "approved_head_commit": "3d0b3117b2a4a4029fe815899e5c7a28e69eb56f",
+  "merged_commit": "5d32a9ff95b3b64953a792be3bd7fef078343a1f",
+  "scope": "Full prose manuscripts EP-001 and EP-002 plus active story dataset, including the 2×2 completed wooden shell as the chapter-one-to-two bridge",
+  "manuscript_sources": [
+    {
+      "episode_id": "EP-001",
+      "path": "stories/last-island-active/drafts/EP-001/CH-01-FULL-DRAFT.md",
+      "blob_sha": "6ea5c611d2224479a02fb491cb0503240e9387af"
+    },
+    {
+      "episode_id": "EP-002",
+      "path": "stories/last-island-active/drafts/EP-002/CH-02-FULL-DRAFT.md",
+      "blob_sha": "973c2385644832640e2cae213b12852942c20912"
+    }
+  ],
+  "github_review": {
+    "state": "NOT_OBSERVED",
+    "note": "No separate GitHub PR APPROVE review had been submitted at the time of author chat authorization; merging PR #13 does not substitute for that check"
+  },
+  "limitations": [
+    "User approval establishes editorial consent in chat but is not authenticated GitHub reviewer provenance",
+    "Actual mechanics, item quantities, and unresolved enemy identity remain unverified",
+    "Approved-only ledger and approved_through_scene remain unchanged pending the repository's provenance workflow"
+  ]
+}
