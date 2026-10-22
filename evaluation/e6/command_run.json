@@ -1,0 +1,611 @@
+{
+  "schema_version": 1,
+  "kind": "SYNTHETIC_COMMAND_ACCEPTANCE",
+  "status": "PASS",
+  "semantic_evaluation": "NOT_RUN",
+  "human_editorial_approval": "BLOCKED",
+  "approval_reason": "Local synthetic labels/commit are not actual GitHub human editorial approval.",
+  "commands": [
+    {
+      "label": "empty-new",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "new",
+        "empty-control",
+        "--title",
+        "Empty acceptance control"
+      ],
+      "returncode": 0,
+      "stdout": "Created empty story scaffold: <RUN_OUTPUT>\\workspace\\stories\\empty-control\n",
+      "stderr": ""
+    },
+    {
+      "label": "empty-check",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "--story",
+        "empty-control",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "PASS | 0 errors; 0 warnings\n",
+      "stderr": ""
+    },
+    {
+      "label": "fixture-new",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "new",
+        "synthetic-three",
+        "--title",
+        "Synthetic three-scene metadata"
+      ],
+      "returncode": 0,
+      "stdout": "Created empty story scaffold: <RUN_OUTPUT>\\workspace\\stories\\synthetic-three\n",
+      "stderr": ""
+    },
+    {
+      "label": "fixture-check",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "--story",
+        "synthetic-three",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "PASS | 0 errors; 0 warnings\n",
+      "stderr": ""
+    },
+    {
+      "label": "local-git-init",
+      "argv": [
+        "git",
+        "--no-lazy-fetch",
+        "--no-replace-objects",
+        "--literal-pathspecs",
+        "-c",
+        "core.fsmonitor=false",
+        "-c",
+        "core.hooksPath=<RUN_OUTPUT>\\workspace\\.local\\empty-hooks",
+        "-c",
+        "commit.gpgsign=false",
+        "-c",
+        "tag.gpgsign=false",
+        "-c",
+        "credential.helper=",
+        "-c",
+        "core.autocrlf=false",
+        "init",
+        "-b",
+        "synthetic-fixture"
+      ],
+      "returncode": 0,
+      "stdout": "Initialized empty Git repository in <RUN_OUTPUT>/workspace/.git/\n",
+      "stderr": ""
+    },
+    {
+      "label": "local-git-add",
+      "argv": [
+        "git",
+        "--no-lazy-fetch",
+        "--no-replace-objects",
+        "--literal-pathspecs",
+        "-c",
+        "core.fsmonitor=false",
+        "-c",
+        "core.hooksPath=<RUN_OUTPUT>\\workspace\\.local\\empty-hooks",
+        "-c",
+        "commit.gpgsign=false",
+        "-c",
+        "tag.gpgsign=false",
+        "-c",
+        "credential.helper=",
+        "-c",
+        "core.autocrlf=false",
+        "add",
+        "--",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "local-git-anchor",
+      "argv": [
+        "git",
+        "--no-lazy-fetch",
+        "--no-replace-objects",
+        "--literal-pathspecs",
+        "-c",
+        "core.fsmonitor=false",
+        "-c",
+        "core.hooksPath=<RUN_OUTPUT>\\workspace\\.local\\empty-hooks",
+        "-c",
+        "commit.gpgsign=false",
+        "-c",
+        "tag.gpgsign=false",
+        "-c",
+        "credential.helper=",
+        "-c",
+        "core.autocrlf=false",
+        "commit",
+        "-m",
+        "Synthetic metadata acceptance anchor; not editorial approval"
+      ],
+      "returncode": 0,
+      "stdout": "[synthetic-fixture (root-commit) f4957f2] Synthetic metadata acceptance anchor; not editorial approval\n 54 files changed, 501 insertions(+)\n create mode 100644 .gitignore\n create mode 100644 stories/empty-control/AGENTS.md\n create mode 100644 stories/empty-control/bible/STYLE_GUIDE.md\n create mode 100644 stories/empty-control/data/canon.json\n create mode 100644 stories/empty-control/data/characters.json\n create mode 100644 stories/empty-control/data/decisions.json\n create mode 100644 stories/empty-control/data/episodes.json\n create mode 100644 stories/empty-control/data/events.json\n create mode 100644 stories/empty-control/data/inventory_ledger.json\n create mode 100644 stories/empty-control/data/items.json\n create mode 100644 stories/empty-control/data/locations.json\n create mode 100644 stories/empty-control/data/relationships.json\n create mode 100644 stories/empty-control/data/scenes.json\n create mode 100644 stories/empty-control/data/story_state.json\n create mode 100644 stories/empty-control/data/threads.json\n create mode 100644 stories/empty-control/drafts/.gitkeep\n create mode 100644 stories/empty-control/ledger/books/.gitkeep\n create mode 100644 stories/empty-control/ledger/chapters/.gitkeep\n create mode 100644 stories/empty-control/ledger/episodes/.gitkeep\n create mode 100644 stories/empty-control/ledger/index.json\n create mode 100644 stories/empty-control/scenes/.gitkeep\n create mode 100644 stories/empty-control/story.json\n create mode 100644 stories/synthetic-three/AGENTS.md\n create mode 100644 stories/synthetic-three/bible/INITIAL_STATE.md\n create mode 100644 stories/synthetic-three/bible/STYLE_GUIDE.md\n create mode 100644 stories/synthetic-three/data/canon.json\n create mode 100644 stories/synthetic-three/data/characters.json\n create mode 100644 stories/synthetic-three/data/decisions.json\n create mode 100644 stories/synthetic-three/data/episodes.json\n create mode 100644 stories/synthetic-three/data/events.json\n create mode 100644 stories/synthetic-three/data/inventory_ledger.json\n create mode 100644 stories/synthetic-three/data/items.json\n create mode 100644 stories/synthetic-three/data/locations.json\n create mode 100644 stories/synthetic-three/data/relationships.json\n create mode 100644 stories/synthetic-three/data/scenes.json\n create mode 100644 stories/synthetic-three/data/state_history.json\n create mode 100644 stories/synthetic-three/data/story_state.json\n create mode 100644 stories/synthetic-three/data/threads.json\n create mode 100644 stories/synthetic-three/drafts/.gitkeep\n create mode 100644 stories/synthetic-three/drafts/SC-001.md\n create mode 100644 stories/synthetic-three/drafts/SC-002.md\n create mode 100644 stories/synthetic-three/drafts/SC-003.md\n create mode 100644 stories/synthetic-three/ledger/books/.gitkeep\n create mode 100644 stories/synthetic-three/ledger/chapters/.gitkeep\n create mode 100644 stories/synthetic-three/ledger/episodes/.gitkeep\n create mode 100644 stories/synthetic-three/ledger/episodes/EP-001.md\n create mode 100644 stories/synthetic-three/ledger/episodes/EP-002.md\n create mode 100644 stories/synthetic-three/ledger/episodes/EP-003.md\n create mode 100644 stories/synthetic-three/ledger/index.json\n create mode 100644 stories/synthetic-three/scenes/.gitkeep\n create mode 100644 stories/synthetic-three/scenes/SC-001.md\n create mode 100644 stories/synthetic-three/scenes/SC-002.md\n create mode 100644 stories/synthetic-three/scenes/SC-003.md\n create mode 100644 stories/synthetic-three/story.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "local-git-head",
+      "argv": [
+        "git",
+        "--no-lazy-fetch",
+        "--no-replace-objects",
+        "--literal-pathspecs",
+        "-c",
+        "core.fsmonitor=false",
+        "-c",
+        "core.hooksPath=<RUN_OUTPUT>\\workspace\\.local\\empty-hooks",
+        "-c",
+        "commit.gpgsign=false",
+        "-c",
+        "tag.gpgsign=false",
+        "-c",
+        "credential.helper=",
+        "-c",
+        "core.autocrlf=false",
+        "rev-parse",
+        "--verify",
+        "HEAD"
+      ],
+      "returncode": 0,
+      "stdout": "f4957f2985ca9201c6fb060118d88bf19ff5f0ac\n",
+      "stderr": ""
+    },
+    {
+      "label": "pack",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "--story",
+        "synthetic-three",
+        "pack",
+        "SC-002",
+        "--out",
+        "<RUN_OUTPUT>\\workspace\\.local\\pack.md"
+      ],
+      "returncode": 0,
+      "stdout": "Wrote: <RUN_OUTPUT>\\workspace\\.local\\pack.md\n",
+      "stderr": ""
+    },
+    {
+      "label": "brief-review",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "--story",
+        "synthetic-three",
+        "brief-review",
+        "SC-002",
+        "--base",
+        "f4957f2985ca9201c6fb060118d88bf19ff5f0ac",
+        "--out",
+        "<RUN_OUTPUT>\\workspace\\.local\\brief-review.json"
+      ],
+      "returncode": 0,
+      "stdout": "Wrote private local artifact: <RUN_OUTPUT>\\workspace\\.local\\brief-review.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "propose",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "--story",
+        "synthetic-three",
+        "propose",
+        "EP-003",
+        "--out",
+        "<RUN_OUTPUT>\\workspace\\.local\\propose.md"
+      ],
+      "returncode": 0,
+      "stdout": "Wrote: <RUN_OUTPUT>\\workspace\\.local\\propose.md\n",
+      "stderr": ""
+    },
+    {
+      "label": "replay-SC-001",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "--story",
+        "synthetic-three",
+        "replay",
+        "SC-001",
+        "--out",
+        "<RUN_OUTPUT>\\workspace\\.local\\replay-SC-001.json"
+      ],
+      "returncode": 0,
+      "stdout": "Wrote: <RUN_OUTPUT>\\workspace\\.local\\replay-SC-001.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "replay-SC-002",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "--story",
+        "synthetic-three",
+        "replay",
+        "SC-002",
+        "--out",
+        "<RUN_OUTPUT>\\workspace\\.local\\replay-SC-002.json"
+      ],
+      "returncode": 0,
+      "stdout": "Wrote: <RUN_OUTPUT>\\workspace\\.local\\replay-SC-002.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "replay-SC-003",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "--story",
+        "synthetic-three",
+        "replay",
+        "SC-003",
+        "--out",
+        "<RUN_OUTPUT>\\workspace\\.local\\replay-SC-003.json"
+      ],
+      "returncode": 0,
+      "stdout": "Wrote: <RUN_OUTPUT>\\workspace\\.local\\replay-SC-003.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "rollup",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "--story",
+        "synthetic-three",
+        "rollup",
+        "EP-001",
+        "EP-002",
+        "--out",
+        "<RUN_OUTPUT>\\workspace\\.local\\rollup.json"
+      ],
+      "returncode": 0,
+      "stdout": "Wrote private local artifact: <RUN_OUTPUT>\\workspace\\.local\\rollup.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "doctor",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "--story",
+        "synthetic-three",
+        "doctor",
+        "--target",
+        "SC-002",
+        "--out",
+        "<RUN_OUTPUT>\\workspace\\.local\\doctor.json"
+      ],
+      "returncode": 0,
+      "stdout": "Wrote private local artifact: <RUN_OUTPUT>\\workspace\\.local\\doctor.json\n",
+      "stderr": ""
+    },
+    {
+      "label": "final-check",
+      "argv": [
+        "<PYTHON>",
+        "<ENGINE_ROOT>\\scripts\\storyctl.py",
+        "--workspace",
+        "<RUN_OUTPUT>\\workspace",
+        "--story",
+        "synthetic-three",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "PASS | 0 errors; 0 warnings\n",
+      "stderr": ""
+    }
+  ],
+  "outputs": {
+    "pack": {
+      "path": "workspace/.local/pack.md",
+      "sha256": "26d512897072c75ecd48bd9acb58ddee2f4f4629aafc7c620f7567c7c43c8607",
+      "byte_length": 4272
+    },
+    "brief-review": {
+      "path": "workspace/.local/brief-review.json",
+      "sha256": "acbdd6adaf2ad2c0fd05abff3fb337c0475e0b9e009dfb618b32a49541a153a9",
+      "byte_length": 10218
+    },
+    "propose": {
+      "path": "workspace/.local/propose.md",
+      "sha256": "e25bacbf0203ebc7ff5e3dadc0ff4a51ba38e16a6056268806c8b84dfc6c8b61",
+      "byte_length": 870
+    },
+    "replay-SC-001": {
+      "path": "workspace/.local/replay-SC-001.json",
+      "sha256": "54109eeaf946c56b91175fe5ec2cd68f0b1d09b1ec5c5331177c2272bd6352de",
+      "byte_length": 492
+    },
+    "replay-SC-002": {
+      "path": "workspace/.local/replay-SC-002.json",
+      "sha256": "9e117a315ab0ebe2ccf9e13d107e9213ba91cad20c9950058c07731b306140c0",
+      "byte_length": 517
+    },
+    "replay-SC-003": {
+      "path": "workspace/.local/replay-SC-003.json",
+      "sha256": "2f4a42a49c339b5bca5793a2e7fd8e5f61cab0ade0ea30942448862156622028",
+      "byte_length": 535
+    },
+    "rollup": {
+      "path": "workspace/.local/rollup.json",
+      "sha256": "093522174ca5385a8891d6e9b45f99dfc5fc7e820ab7ff62b3a8155938a59c96",
+      "byte_length": 6389
+    },
+    "doctor": {
+      "path": "workspace/.local/doctor.json",
+      "sha256": "d05804e76348752d2dda83c11ac6f3e0bbc0f33ade5ffd44a7a53e4ad1068f10",
+      "byte_length": 1145
+    }
+  },
+  "source_preserved": true,
+  "source_manifest": {
+    "stories/empty-control/AGENTS.md": {
+      "sha256": "fe0f6e61ca29039cf4e3fc3873e7420e61a2a32e153e0b7d1cab4858ba165550",
+      "byte_length": 708
+    },
+    "stories/empty-control/bible/STYLE_GUIDE.md": {
+      "sha256": "686e436629988ac08e3d46ebe29fd76bd39ecdd8eb78647678258da950de9b25",
+      "byte_length": 171
+    },
+    "stories/empty-control/data/canon.json": {
+      "sha256": "3ae63bbe26bd2a8ae3c5c157d8b7e419c586009faa2d3d5191cc0fdbe8231e38",
+      "byte_length": 87
+    },
+    "stories/empty-control/data/characters.json": {
+      "sha256": "70afd1ec7f423b4e8673bde8a0ff99285529692a23d06e31a81b20642303748e",
+      "byte_length": 50
+    },
+    "stories/empty-control/data/decisions.json": {
+      "sha256": "5a262abc810bff7381fce290b0b236a9065dde0eee5233fed9c7f049276baf4a",
+      "byte_length": 49
+    },
+    "stories/empty-control/data/episodes.json": {
+      "sha256": "74ca83fb1358413c7ab563f86aec7eed126e90fbe5b92851a98e001676354b61",
+      "byte_length": 48
+    },
+    "stories/empty-control/data/events.json": {
+      "sha256": "7604b89bf638decd70001860bb8bbbd2efb0eed6823d25c901d3e4a36f0edf6d",
+      "byte_length": 46
+    },
+    "stories/empty-control/data/inventory_ledger.json": {
+      "sha256": "c7d4a74a82ba212c992a6df27292d33ec591043d68ba53a4c3b3c75d88c78fd6",
+      "byte_length": 47
+    },
+    "stories/empty-control/data/items.json": {
+      "sha256": "5b4befd1b9bf39bd44e8b2db88c8fdb9699ff620fd735457477188c7ee0de431",
+      "byte_length": 45
+    },
+    "stories/empty-control/data/locations.json": {
+      "sha256": "89b8b00b3f7ce3a901b5e017fd8267d107fbe07f3836495716d063383be2f0ef",
+      "byte_length": 49
+    },
+    "stories/empty-control/data/relationships.json": {
+      "sha256": "9a3cb56b187e45bff91040ae73a3cc60993a176ed3c20ffc64dcd33e0137e1f6",
+      "byte_length": 53
+    },
+    "stories/empty-control/data/scenes.json": {
+      "sha256": "6be06e08868de74647d6034f192f840b95c898d8c9bb1e8adc6c208c792e18d3",
+      "byte_length": 46
+    },
+    "stories/empty-control/data/story_state.json": {
+      "sha256": "08beef6b08bd0f0a111dc241fa805e5e64c244761c9ab1bf8bb66a7cb10268d7",
+      "byte_length": 171
+    },
+    "stories/empty-control/data/threads.json": {
+      "sha256": "5f72d7c47b3935921de6694f146e5927d61de3090e4bd3edf224af35c9f74819",
+      "byte_length": 47
+    },
+    "stories/empty-control/drafts/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    },
+    "stories/empty-control/ledger/books/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    },
+    "stories/empty-control/ledger/chapters/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    },
+    "stories/empty-control/ledger/episodes/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    },
+    "stories/empty-control/ledger/index.json": {
+      "sha256": "2384f5f5e83f5eb6b7ebaa663f5ad2874c11346ae87fbfac2a77a6a4267bb97e",
+      "byte_length": 83
+    },
+    "stories/empty-control/scenes/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    },
+    "stories/empty-control/story.json": {
+      "sha256": "041c5c3346eba556500ea25c5aff1ea535f3f97730a9dd4531bd10bddabee822",
+      "byte_length": 161
+    },
+    "stories/synthetic-three/AGENTS.md": {
+      "sha256": "fe0f6e61ca29039cf4e3fc3873e7420e61a2a32e153e0b7d1cab4858ba165550",
+      "byte_length": 708
+    },
+    "stories/synthetic-three/bible/INITIAL_STATE.md": {
+      "sha256": "bd67eef466541b8a9f80891b7bfaa43ec220c92af2418dcdbdb0ee442a6fea52",
+      "byte_length": 131
+    },
+    "stories/synthetic-three/bible/STYLE_GUIDE.md": {
+      "sha256": "c6ee346a0f82a89489d8799b2caf05619ddb8776617fc32645ec999f0f8b8df4",
+      "byte_length": 172
+    },
+    "stories/synthetic-three/data/canon.json": {
+      "sha256": "615d8e4967f8f635904a39ba2c12b2f118cb5a54b8e28efb2401cc1b1cbd099a",
+      "byte_length": 1104
+    },
+    "stories/synthetic-three/data/characters.json": {
+      "sha256": "2b15851d3e8a8ec017cc28d1c4557291ec11feb39bd2e86289266c05900ab139",
+      "byte_length": 406
+    },
+    "stories/synthetic-three/data/decisions.json": {
+      "sha256": "5a262abc810bff7381fce290b0b236a9065dde0eee5233fed9c7f049276baf4a",
+      "byte_length": 49
+    },
+    "stories/synthetic-three/data/episodes.json": {
+      "sha256": "952e9ce0928dd2c757ed7910eb3a5ad83d2caa1141b780de73b01e18c5df09ef",
+      "byte_length": 609
+    },
+    "stories/synthetic-three/data/events.json": {
+      "sha256": "55768cfa9b0a03f61f5727efe3a3b292e8471bae31f3fb1daa58032dbef10865",
+      "byte_length": 727
+    },
+    "stories/synthetic-three/data/inventory_ledger.json": {
+      "sha256": "1f7b6ea9c262fde1144a889aefd12a386c36cead3bff5d467b95df12577f8647",
+      "byte_length": 361
+    },
+    "stories/synthetic-three/data/items.json": {
+      "sha256": "655fd74d3208b508e80c3758b069d90bb63532a412d05c22006c2e8c44a9e1a3",
+      "byte_length": 225
+    },
+    "stories/synthetic-three/data/locations.json": {
+      "sha256": "a9fc1433829513c7037b30ca80e32bef03485a3a259e32dfcaeab26a2cc8062d",
+      "byte_length": 132
+    },
+    "stories/synthetic-three/data/relationships.json": {
+      "sha256": "9a3cb56b187e45bff91040ae73a3cc60993a176ed3c20ffc64dcd33e0137e1f6",
+      "byte_length": 53
+    },
+    "stories/synthetic-three/data/scenes.json": {
+      "sha256": "9c8b8c6f5bc26529b2b5527b5d6e6f20a9f4b288e91274dc6ca9e2f4050ffa6c",
+      "byte_length": 2317
+    },
+    "stories/synthetic-three/data/state_history.json": {
+      "sha256": "2281ec8f1fe5b688c1590ca448ce681ebb819e999d2c8513014dab139e219a1c",
+      "byte_length": 1367
+    },
+    "stories/synthetic-three/data/story_state.json": {
+      "sha256": "346cbc1758a703ca58bac4aceb38d3e0b27f3b356aaf5a934817a9ce39333bba",
+      "byte_length": 179
+    },
+    "stories/synthetic-three/data/threads.json": {
+      "sha256": "5f72d7c47b3935921de6694f146e5927d61de3090e4bd3edf224af35c9f74819",
+      "byte_length": 47
+    },
+    "stories/synthetic-three/drafts/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    },
+    "stories/synthetic-three/drafts/SC-001.md": {
+      "sha256": "a1ae4a9d05bf5f0a0d20ae4a2ab5c54e214fd62e030f6870631ba3414e8d4996",
+      "byte_length": 120
+    },
+    "stories/synthetic-three/drafts/SC-002.md": {
+      "sha256": "f243edb518be69c6d9a3d23525ac6eb8d45086a4a2f93bdb48985cd1e43dac84",
+      "byte_length": 199
+    },
+    "stories/synthetic-three/drafts/SC-003.md": {
+      "sha256": "96b7af54e05bac8340cfdacaf1208fc535c8f74475012422682aa8f06757078a",
+      "byte_length": 120
+    },
+    "stories/synthetic-three/ledger/books/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    },
+    "stories/synthetic-three/ledger/chapters/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    },
+    "stories/synthetic-three/ledger/episodes/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    },
+    "stories/synthetic-three/ledger/episodes/EP-001.md": {
+      "sha256": "d7cff3bc6f45d6416c662212d4d71d173d2dae1f4db858819847f20eba559034",
+      "byte_length": 206
+    },
+    "stories/synthetic-three/ledger/episodes/EP-002.md": {
+      "sha256": "0cc9ec940f835cec7976541088f4462ade619b4d6f9f4fb75ec370c521a5d078",
+      "byte_length": 206
+    },
+    "stories/synthetic-three/ledger/episodes/EP-003.md": {
+      "sha256": "f534b9847544285806bfedd3e633e6abb0dddb7f8cab8e2d0839d44fc98406bc",
+      "byte_length": 206
+    },
+    "stories/synthetic-three/ledger/index.json": {
+      "sha256": "db9707e4773479cf115b314d2c96acc7d5de49dc2fd80c652eb0c806bca09391",
+      "byte_length": 818
+    },
+    "stories/synthetic-three/scenes/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    },
+    "stories/synthetic-three/scenes/SC-001.md": {
+      "sha256": "f1f08b1274a953607ae6e62d02bb8642e93b38577adf3d902edb0b17933913a1",
+      "byte_length": 114
+    },
+    "stories/synthetic-three/scenes/SC-002.md": {
+      "sha256": "d153a7fdf54a09cc88b827613b9c4c0d99e36101f1d1aa7b3fa58f3c1e932990",
+      "byte_length": 114
+    },
+    "stories/synthetic-three/scenes/SC-003.md": {
+      "sha256": "b72f3e9439f2cf65b206ad796e754c59cc51999e42175cda50411938ed6e0362",
+      "byte_length": 114
+    },
+    "stories/synthetic-three/story.json": {
+      "sha256": "1f1e31dfe3a23b53d0708ab882fcb4a1e8ba8e24d88f3a54a1f5e92f156db329",
+      "byte_length": 347
+    }
+  },
+  "empty_story_check": "PASS",
+  "local_anchor": {
+    "commit": "f4957f2985ca9201c6fb060118d88bf19ff5f0ac",
+    "kind": "SYNTHETIC_LOCAL_GIT_ONLY",
+    "human_editorial_approval": "UNVERIFIED"
+  },
+  "engine_base_commit": "3d915241203aa762f2b3c8fc3d3c68170ba5189e",
+  "runner_sha256": "e60ed69610b58503955047c5e17a60d0df1276764072d7f5603017dad5b39668",
+  "python_version": "3.12.14",
+  "normalized_review_pack_sha256": "77c83c8db3f066bf4e29fb35550217551bb71fe8037fa076794593bcb232c23b",
+  "normalization": "Only local executable/engine/run absolute paths are replaced by explicit placeholders; command results, source and artifact digests are unchanged."
+}

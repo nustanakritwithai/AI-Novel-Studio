@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "sealed_key_sha256": "d71842f3fe3a3a2679f8eb45df65561d97ce45fe2b9d781802f4f3b94593322f",
+  "key_precedes_review_dispatch": true,
+  "isolation": "Fresh native agent histories with fork_turns=none; procedural input restriction, not filesystem access control.",
+  "pack_normalization": "Only the generated absolute fixture root is replaced by <SYNTHETIC_STORY_ROOT>; no semantic fields changed.",
+  "pack_sha256": "77c83c8db3f066bf4e29fb35550217551bb71fe8037fa076794593bcb232c23b",
+  "packets": [
+    {
+      "candidate_id": "A94",
+      "path": "evaluation/e6/packets/A94.json",
+      "sha256": "c343835f9370acf4fc22009fc98644a75e9a2d2d67c6b0463eac69c62aabaad9"
+    },
+    {
+      "candidate_id": "B17",
+      "path": "evaluation/e6/packets/B17.json",
+      "sha256": "afd75113bb8fefb890cc249aeb0ebc2fb5ae7628faea8df7cdf401fe3083fa60"
+    }
+  ]
+}

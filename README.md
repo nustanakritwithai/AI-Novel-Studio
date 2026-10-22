@@ -1,6 +1,6 @@
 # AI Novel Studio — reusable continuity engine
 
-A continuity engine with isolated story datasets and explicit read-only GitHub provenance checks. E1 separates story roots, E2 adds versioned schemas/state replay, E3/E4 adds local review evidence and generic workflow contracts, and bounded E5 adds merged metadata/source verification plus deterministic rollup proposals. Human editorial approval, schema migration, full synthetic evaluation (E6), and a complete Thai guide (E7) remain unfinished. The engine does not generate prose or approve canon.
+A continuity engine with isolated story datasets and explicit read-only GitHub provenance checks. E1 separates story roots, E2 adds versioned schemas/state replay, E3/E4 adds local review evidence and generic workflow contracts, and bounded E5 adds merged metadata/source verification plus deterministic rollup proposals. Start with the [Thai E7 onboarding guide](ENGINE_E7.md) and [fillable story input template](templates/STORY_INPUT_TH.md). The [E0–E7 readiness report](docs/ENGINE_READINESS.md) separates implemented capabilities from unmet gates, including authenticated human editorial approval and postmerge automation. The engine does not generate prose or approve canon.
 
 Use Python 3.11+ and install the pinned validation dependencies from official PyPI:
 
@@ -59,7 +59,7 @@ python scripts/story_engine.py pack SC-001 --out context.md
 python -m unittest discover -s tests -v
 ```
 
-See the [Thai E5 provenance/ledger guide](ENGINE_E5.md), [E3/E4 local workflow guide](ENGINE_E3_E4.md), [agent handoff runbook](docs/AGENT_RUNBOOK.md), [E2 schema/replay contract](ENGINE_E2.md), [E1 separation guide](ENGINE_E1.md), [engine instructions](AGENTS.md), and [preserved Last Island example](stories/last-island/README.md). All 54 relocated example files are checked against a SHA-256 manifest of their original Git bytes. The original 43 regressions retain their assertions and use the example root. Record actual final tests and exact-head CI in each PR; these commands are not a test result.
+See the [Thai E7 onboarding guide](ENGINE_E7.md), [E6 acceptance procedure](ENGINE_E6.md), [actual semantic-review results](evaluation/e6/RESULTS.md), [E0–E7 readiness report](docs/ENGINE_READINESS.md), [Thai E5 provenance/ledger guide](ENGINE_E5.md), [E3/E4 local workflow guide](ENGINE_E3_E4.md), [agent handoff runbook](docs/AGENT_RUNBOOK.md), [E2 schema/replay contract](ENGINE_E2.md), [E1 separation guide](ENGINE_E1.md), [engine instructions](AGENTS.md), and [preserved Last Island example](stories/last-island/README.md). All 54 relocated example files are checked against a SHA-256 manifest of their original Git bytes. The original 43 regressions retain their assertions and use the example root. Record actual final tests and exact-head CI in each PR; these commands are not a test result.
 
 The existing Last Island dashboard is at [stories/last-island/index.html](stories/last-island/index.html); root `index.html` redirects there for compatibility. Serve the repository with `python -m http.server 8000`. Historical example documents retain their original bytes and command snippets; use the current guides for engine paths.
 
