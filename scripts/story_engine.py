@@ -38,18 +38,41 @@ def within(root: Path, relpath: str, prefix: str) -> Path:
     return target
 
 
+def approved_prose(root: Path, scene: dict) -> str:
+    """Read the source evidence for an approved scene, or fail explicitly."""
+    try:
+        path = within(root, scene.get("draft_path"), "drafts")
+        content = path.read_text(encoding="utf-8")
+        if not content.strip():
+            raise ValueError("source prose is blank")
+        return content
+    except (OSError, ValueError, TypeError) as exc:
+        raise ValueError(f"{scene['id']}: cannot read approved source prose ({exc})") from exc
+
+
 def validate(root: Path) -> tuple[list[str], list[str]]:
-    errors, warnings = [], []
+    # The manual workflow and pack command must enforce the same base checks as CI.
+    errors, warnings = novelctl.validate(root)
+    if errors:
+        return ["Base registry invalid: " + error for error in errors], warnings
     try:
         idx, db = load_index(root), novelctl.load(root)
     except (OSError, ValueError, KeyError) as exc:
-        return [f"Unable to load story engine index or registry: {exc}"], []
+        return [f"Unable to load story engine index or registry: {exc}"], warnings
+    if not isinstance(idx, dict):
+        return ["ledger/index.json: index must be an object"], warnings
     if idx.get("schema_version") != 1:
         errors.append("ledger/index.json: unsupported schema_version")
     eps = novelctl.rows(db, "episodes")
     episode_ids = [e["id"] for e in eps]
     by_ep = {e["id"]: e for e in eps}
     by_scene = {s["id"]: s for s in novelctl.rows(db, "scenes")}
+    for scene in by_scene.values():
+        if scene.get("status") in APPROVED:
+            try:
+                approved_prose(root, scene)
+            except ValueError as exc:
+                errors.append(str(exc))
     approval_ids = set()
     for layer in ("episodes", "chapters", "books"):
         records = idx.get(layer)
@@ -72,6 +95,8 @@ def validate(root: Path) -> tuple[list[str], list[str]]:
             if layer == "episodes":
                 if rid not in by_ep:
                     errors.append(f"{rid}: unknown episode")
+                elif not by_ep[rid].get("scene_ids"):
+                    errors.append(f"{rid}: approved episode has no source scenes")
                 elif by_ep[rid].get("status") not in APPROVED:
                     errors.append(f"{rid}: ledger cannot include an unapproved episode")
                 elif any(by_scene[s].get("status") not in APPROVED for s in by_ep[rid].get("scene_ids", [])):
@@ -82,6 +107,8 @@ def validate(root: Path) -> tuple[list[str], list[str]]:
                 component = record.get("episode_ids")
                 if not isinstance(component, list) or not component:
                     errors.append(f"{rid}: episode_ids must be nonempty")
+                elif any(not isinstance(e, str) or not e for e in component):
+                    errors.append(f"{rid}: episode_ids must contain nonempty strings")
                 elif len(set(component)) != len(component):
                     errors.append(f"{rid}: duplicate episode_ids")
                 elif any(e not in by_ep for e in component):
@@ -109,12 +136,13 @@ def validate(root: Path) -> tuple[list[str], list[str]]:
                 errors.append(f"{rid}: cannot read approved summary ({exc})")
     if not all(isinstance(idx.get(k), list) for k in ("episodes", "chapters", "books")):
         return errors, warnings
-    approved_ids = [r.get("id") for r in idx.get("episodes", []) if isinstance(r, dict)]
+    approved_ids = [r["id"] for r in idx.get("episodes", []) if isinstance(r, dict)
+                    and isinstance(r.get("id"), str) and r["id"]]
     if approved_ids != sorted(approved_ids, key=lambda v: episode_ids.index(v) if v in episode_ids else len(episode_ids)):
         errors.append("approved episode ledger must follow series order")
     if approved_ids and approved_ids != episode_ids[:len(approved_ids)]:
         errors.append("approved episodes must be contiguous from the beginning")
-    if approved_ids:
+    if approved_ids and all(rid in by_ep and by_ep[rid].get("scene_ids") for rid in approved_ids):
         last_approved = by_ep[approved_ids[-1]]["scene_ids"][-1]
         marker = db["story_state"].get("approved_through_scene")
         if marker is None:
@@ -167,11 +195,8 @@ def approved_scene_tail(root: Path, target: str, max_scenes: int = 2, max_each: 
                       and s["status"] in APPROVED), key=lambda s: s["order"])
     parts = ["## PRIOR APPROVED SCENE EXCERPTS (SAME EPISODE)"]
     for s in earlier[-max_scenes:]:
-        try:
-            content = within(root, s["draft_path"], "drafts").read_text(encoding="utf-8")
-            parts.append(f"### {s['id']}\n" + content[-max_each:])
-        except (OSError, ValueError, TypeError):
-            parts.append(f"{s['id']}: approved excerpt unreadable; verify scene draft")
+        content = approved_prose(root, s)
+        parts.append(f"### {s['id']}\n" + content[-max_each:])
     if not earlier:
         parts.append("No previously approved scenes in this episode.")
     return "\n\n".join(parts)
@@ -180,7 +205,7 @@ def approved_scene_tail(root: Path, target: str, max_scenes: int = 2, max_each: 
 def pack(root: Path, target: str, keep: int = 7, max_chars: int = 25000) -> str:
     errors, _ = validate(root)
     if errors:
-        raise ValueError("Ledger invalid: " + "; ".join(errors[:5]))
+        raise ValueError("Story Engine validation failed: " + "; ".join(errors[:5]))
     base = novelctl.build_brief(root, target)
     style = (root / "bible/STYLE_GUIDE.md").read_text(encoding="utf-8")
     recent = render_approved_history(root, target, keep)

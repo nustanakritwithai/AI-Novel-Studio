@@ -85,6 +85,13 @@ def validate(root: Path):
                     errors.append(f"{mechanic['id']}: cannot claim transcript evidence from source {src} marked {confidence}")
         if mechanic.get('game_verification') == 'UNVERIFIED':
             warnings.append(f"{mechanic['id']} {mechanic.get('title')}: game mechanic unverified (NOT PASS)")
+    initial_flags = db['story_state'].get('flags', {})
+    if not isinstance(initial_flags, dict):
+        errors.append('story_state.flags must be an object of booleans')
+        initial_flags = {}
+    for flag, value in initial_flags.items():
+        if not isinstance(value, bool):
+            errors.append(f'story_state.flags.{flag} must be boolean')
     episode_scenes = set()
     for ep in rows(db, 'episodes'):
         scids = ep.get('scene_ids', [])
@@ -102,19 +109,20 @@ def validate(root: Path):
             errors.append(f"{ep['id']}: scene_ids mismatch chronological order")
         if sorted(s['order'] for s in actual) != list(range(1, len(actual) + 1)):
             errors.append(f"{ep['id']}: order must be consecutive 1..N")
-        flags = set(db['story_state'].get('flags', {}).keys()) if ep['id'] == db['story_state'].get('active_episode') else set()
+        flags = dict(initial_flags) if ep['id'] == db['story_state'].get('active_episode') else {}
         for scene in actual:
             if scene['id'] not in episode_scenes:
                 errors.append(f"{scene['id']}: orphan scene")
             for req in scene.get('requires_flags', []):
-                if req not in flags:
+                if flags.get(req) is not True:
                     errors.append(f"{scene['id']}: needs flag '{req}' before this scene, but it is not established")
             for flag, value in scene.get('effects_flags', {}).items():
                 if not isinstance(value, bool):
                     errors.append(f"{scene['id']}: effects_flags.{flag} must be boolean")
-                if flag in flags and value is False:
+                    continue
+                if flags.get(flag) is True and value is False:
                     warnings.append(f"{scene['id']}: a previous true flag is reset to false; check continuity")
-                flags.add(flag)
+                flags[flag] = value
             require('characters', scene.get('pov'), scene['id'] + ' POV')
             require('locations', scene.get('location_id'), scene['id'])
             for field, kind in [('character_ids','characters'), ('item_ids','items'),('canon_refs','canon'),('mechanic_refs','mechanics'),('source_refs','sources')]:
@@ -192,6 +200,30 @@ def get(db, kind, id_):
     return next((x for x in rows(db,kind) if x['id']==id_), None)
 
 
+def scene_positions(db: dict) -> dict:
+    """Series order comes from the episode registry, then scene order, never IDs."""
+    episodes = {ep['id']: n for n, ep in enumerate(rows(db, 'episodes'))}
+    return {s['id']: (episodes[s['episode_id']], s['order']) for s in rows(db, 'scenes')}
+
+
+def approved_state_before(db: dict, cutoff: tuple, positions: dict) -> dict:
+    """Use a past snapshot as evidence; the registry has no historical snapshots."""
+    state = db['story_state']
+    marker = state.get('approved_through_scene')
+    if marker is None:
+        if state.get('phase', '').startswith('OUTLINE') and not any(
+                s.get('status') in ('APPROVED', 'CANON') for s in rows(db, 'scenes')):
+            return state  # Explicit initial baseline, not progress inferred from plans.
+    elif marker in positions and positions[marker] < cutoff:
+        if get(db, 'scenes', marker).get('status') in ('APPROVED', 'CANON'):
+            return state
+    return {
+        'availability': 'UNKNOWN',
+        'reason': 'No approved state snapshot is available before the requested scene. '
+                  'The latest snapshot cannot reconstruct earlier state; do not infer it from planned effects.',
+    }
+
+
 def status(root: Path) -> str:
     db=load(root)
     allsc=rows(db,'scenes')
@@ -224,6 +256,8 @@ def build_brief(root: Path, target: str) -> str:
     else:
         chosen=sorted([get(db,'scenes',s) for s in ep['scene_ids']],key=lambda s:s['order'])
         focus=chosen
+    positions = scene_positions(db)
+    cutoff = min(positions[s['id']] for s in focus)
     canon_ids=set(c for s in focus for c in s.get('canon_refs',[]))
     # Core global facts are always required; avoid entire series lore for every scene.
     relevant=[f for f in rows(db,'canon') if f['status']=='LOCKED' and (f['scope']=='GLOBAL' or f['id'] in canon_ids)]
@@ -243,12 +277,22 @@ def build_brief(root: Path, target: str) -> str:
     if scene: parts+= [f'## SELECTED SCENE: {scene["id"]}']
     else: parts+= [f'## EPISODE: {ep["id"]} — {ep["title"]}']
     parts.append('## RELEVANT SCENES & CAUSAL ORDER')
+    parts.append('Beats and outcomes are scene plans, not knowledge available to the POV at scene start.')
     for s in chosen:
         parts.extend([f"### {s['id']} {s['title']} ({s['status']})",f"Goal: {s['goal']} / Conflict: {s['conflict']}",f"Beats: {'; '.join(s['beats'])}",f"Outcome: {s['outcome']}",f"Preconditions: {', '.join(s['requires_flags']) or 'none'}",f"Effects: {json.dumps(s['effects_flags'],ensure_ascii=False)}"])
     parts.append('## CHARACTERS IN SCOPE')
     for c in characters:
-        parts+= [f"- **{c['id']} {c['name']}** — {c['role']}; known: {'; '.join(c['known_traits']) or 'none'}; unknown: {'; '.join(c['unknowns']) or 'none'}"]
-        for k in c['knowledge']: parts += [f"  - After {k['after_scene']}: knows {k['knows']}"]
+        parts+= [f"- **{c['id']} {c['name']}** — {c['role']}; unknown: {'; '.join(c['unknowns']) or 'none'}"]
+        if c['known_traits']:
+            parts.append('  - Untimed registry traits withheld: acquisition time is UNKNOWN.')
+        known = [k for k in c['knowledge'] if k.get('after_scene') in positions
+                 and positions[k['after_scene']] < cutoff]
+        for k in known:
+            source = get(db, 'scenes', k['after_scene'])
+            label = 'approved knowledge' if source['status'] in ('APPROVED', 'CANON') else 'planned knowledge, not approved'
+            parts.append(f"  - After {k['after_scene']} ({label}): {k['knows']}")
+        if not known:
+            parts.append('  - Knowledge at scene start: UNKNOWN (no earlier scene-linked entries).')
     parts.append('## MECHANIC RESEARCH STATUS (DO NOT OVERSTATE)')
     for m in mechanisms:
         parts.append(f"- {m['id']} {m['title']}: GAMEPLAY={m['game_verification']}; STORY={m['story_requirement']}; sources={','.join(m['source_ids']) or 'NONE'}; {m['notes']}")
@@ -261,8 +305,9 @@ def build_brief(root: Path, target: str) -> str:
     for thread in rows(db,'threads'):
         if thread['status'] == 'OPEN':
             parts.append(f"- {thread['id']} {thread['title']} (do not resolve unless assigned)")
-    parts.append('## CURRENT APPROVED WORLD STATE')
-    parts.append(json.dumps(db['story_state'],ensure_ascii=False,indent=2))
+    parts.append('## APPROVED WORLD STATE BEFORE TARGET (INITIAL BASELINE IF NO PROSE APPROVED)')
+    parts.append('Snapshot evidence is only current as of its approved_through_scene marker; later progress is not inferred.')
+    parts.append(json.dumps(approved_state_before(db, cutoff, positions),ensure_ascii=False,indent=2))
     parts.append('## OPEN ISSUES')
     parts.extend('- '+str(x) for x in ep.get('questions',[]))
     parts.append('## REQUIRED OUTPUT FROM WRITER\n1. Draft for the requested scene(s) only.\n2. List of newly proposed facts, not silently promoted to CANON.\n3. Change log for character state/items/locations and knowledge.\n4. Continuity & game-mechanics uncertainty report.')

@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    branches: [main, feat/story-engine-v0.2-github-only]
 permissions:
   contents: read
 jobs:
