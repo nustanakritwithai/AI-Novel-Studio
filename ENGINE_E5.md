@@ -93,11 +93,13 @@ IDs ต้องไม่ซ้ำและต่อเนื่องตาม�
 
 output มีสถานะ `PROPOSED` แม้ remote checks ผ่าน การจบคำสั่งด้วย exit 0 ของ rollup จึงหมายถึงสร้าง proposal สำเร็จเท่านั้น ไม่ใช่อนุมัติหรือ apply proposal คำสั่งไม่เขียน recap กลับ, ไม่เพิ่ม chapter/book ledger, ไม่เปลี่ยน story_state และไม่เลื่อน canon
 
-## Human decision และ automation ที่ยังไม่ทำ
+## Human decision และ postmerge proposal automation
 
 writer/reviewer/updater ยังคงใช้ [runbook](docs/AGENT_RUNBOOK.md) ตาม story/target/commit/digest ที่ตรงกัน ก่อนแก้ approved history ต้องมีคำตัดสินจากมนุษย์ที่อนุญาตการเปลี่ยนนั้นจริง Hash และ merged metadata ช่วยผูก bytes กับ commit แต่ไม่แทนคำตัดสินนั้น `merged_by.type == User` หรือชื่อผู้ merge ไม่พิสูจน์ว่าเป็น human editor ผู้ได้รับอนุญาต
 
-E5 bounded PR นี้เป็น CLI เท่านั้น ไม่มี post-merge workflow อัตโนมัติ การเพิ่ม automation ภายหลังต้องทบทวนแหล่งข้อมูล, trusted revision, permissions และการรัน untrusted PR content แยกต่างหาก ไม่เพิ่ม workflow ที่เข้าถึง secrets หรือเปลี่ยน settings เพื่อทำให้ข้อจำกัดนี้หายไป `doctor` ยังคงเป็น local report และไม่แอบเรียก live verifier
+E5 bounded PR เดิมส่งมอบ CLI ก่อน ส่วน [postmerge proposal workflow](docs/POSTMERGE_PROPOSALS.md) ที่เพิ่มภายหลังสร้างเพียง metadata artifact จาก continuity push-to-main run และ merged PR ที่ตรวจตรงกัน ใช้ inline stdlib code ของ default-branch workflow โดยไม่ checkout หรือรัน source ของ PR/merge ไม่มี dependency/cache/upstream-artifact download และมีเพียง read permissions ไม่สร้าง branch หรือ apply canon/state/ledger
+
+การมี implementation และ simulated-event tests ไม่พิสูจน์ว่า live trigger เคยทำงาน: live postmerge trigger ยัง NOT_RUN จนกว่าเจ้าของจะอนุญาตติดตั้ง/merge จริง Workflow ไม่ทำให้ human editorial approval เปลี่ยนจาก UNVERIFIED และไม่ปิด approved-ledger lifecycle gate `doctor` ยังคงเป็น local report และไม่แอบเรียก live verifier ดู trust, failure/recovery และ deployment limits ในเอกสาร workflow ก่อนใช้ artifact
 
 ## Validation และหลักฐานที่ต้องรายงานจริง
 

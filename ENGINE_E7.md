@@ -160,4 +160,6 @@ proof run ของ E6 ใช้ `python scripts/acceptance.py --out .local/e6-w
 
 นี่เป็นหลักฐาน onboarding/command smoke ไม่ใช่ผล complete suite หรือ semantic evaluation ของ final commit ให้ใช้ [readiness report](docs/ENGINE_READINESS.md), [ผล E6](evaluation/e6/RESULTS.md) และ exact-head CI ที่บันทึกใน Draft PR ของ milestone สำหรับผลรับงานจริง
 
-สิ่งที่ต้องตัดสินใจหรือทำแยกยังรวมถึง E0 privacy/rulesets/permissions ที่ไม่ได้รับอนุญาตให้เปลี่ยน, authenticated human editorial approval, postmerge proposal workflow, การ apply ledger โดยมี human signoff และ migration/advanced diagnostics ที่อยู่นอกขอบเขตนี้ ทุก gate ที่ต้องมี human signoff แต่ยังไม่มีต้องเป็น BLOCKED/NOT_RUN ไม่ใช่ PASS การมีคู่มือนี้ไม่ประกาศว่า engine เสร็จครบทุก E0–E7 gate
+[Postmerge proposal workflow](docs/POSTMERGE_PROPOSALS.md) มี implementation สำหรับสร้าง metadata artifact เท่านั้น ไม่รัน source ของ PR/merge และไม่ apply ledger การมีไฟล์ workflow ใน Draft PR ยังไม่ติดตั้งบน `main`; live trigger จึงยัง NOT_RUN จนกว่าเจ้าของอนุญาต merge/ติดตั้งจริง อย่าใช้ passing simulated-event tests เป็นผล live deployment
+
+สิ่งที่ต้องตัดสินใจหรือทำแยกยังรวมถึง E0 privacy/rulesets/permissions ที่ไม่ได้รับอนุญาตให้เปลี่ยน, authenticated human editorial approval, live postmerge verification, การ apply ledger โดยมี human signoff และ migration/advanced diagnostics ที่ยังไม่ผ่าน ทุก gate ที่ต้องมี human signoff แต่ยังไม่มีต้องเป็น BLOCKED/NOT_RUN ไม่ใช่ PASS การมีคู่มือนี้ไม่ประกาศว่า engine เสร็จครบทุก E0–E7 gate
