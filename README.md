@@ -104,3 +104,16 @@ git push -u origin main
 - `data/threads.json` ติดตามปมเรื่องที่ยังเปิดอยู่และฉาก setup/payoff
 - `data/relationships.json` เก็บความสัมพันธ์ที่ตรวจสอบย้อนกลับถึงฉาก (ยังไม่ล็อกใครเป็นเพื่อน/ศัตรูถาวร)
 - `data/decisions.json` เป็นทะเบียนคำตัดสินของผู้เขียนที่มีอำนาจเหนือข้อเสนอของ AI
+
+## Story Engine v0.2 (GitHub-only)
+
+Continuing the original v0.1 system, `STORY_ENGINE_V02.md` documents the new approved-only hierarchical Continuity Ledger and optional n8n/Claude/Kimi pipeline **without an external database**.
+
+```bash
+python scripts/story_engine.py check
+python scripts/story_engine.py pack SC-001 --recent 7 --out /tmp/SC-001-context.md
+python scripts/story_engine.py proposal EP-001 --out /tmp/EP-001-proposal.md
+python -m unittest discover -s tests -v
+```
+
+The Last Island opening and all 8 scene cards remain unchanged; no prose or new canon was auto-approved. Approval is through a human GitHub PR review. See `ledger/README.md` for provenance requirements, `prompts/story-engine/` for model roles, and `integrations/n8n/README.md` for optional API workflow specification. GitHub main is the only authoritative store.
