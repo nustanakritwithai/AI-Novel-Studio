@@ -76,10 +76,14 @@ class E2IntegrationTests(unittest.TestCase):
                      'before': token + '_INITIAL', 'value': token + '_AFTER_FIRST'},
                     {'path': ['flags', 'gate'], 'operation': 'SET', 'before_exists': True,
                      'before': False, 'value': True},
+                    {'path': ['flags', 'stage_1'], 'operation': 'SET',
+                     'before_exists': False, 'value': True},
                 ]},
                 {'id': 'DELTA-002', 'scene_id': 'SC-002', 'status': 'APPROVED', 'changes': [
                     {'path': ['location'], 'operation': 'SET', 'before_exists': True,
                      'before': token + '_AFTER_FIRST', 'value': token + '_AFTER_SECOND'},
+                    {'path': ['flags', 'stage_2'], 'operation': 'SET',
+                     'before_exists': False, 'value': True},
                 ]},
                 {'id': 'DELTA-003', 'scene_id': 'SC-003', 'status': 'APPROVED', 'changes': [
                     {'path': ['location'], 'operation': 'SET', 'before_exists': True,
@@ -138,6 +142,9 @@ class E2IntegrationTests(unittest.TestCase):
 
     def test_unapproved_or_missing_prior_segment_yields_unknown_without_partial_state(self):
         original_scenes = self.read(self.alpha / 'data/scenes.json')
+        # This case exercises UNKNOWN context, without a prerequisite that
+        # would independently require known approved pre-scene state.
+        original_scenes['scenes'][2]['requires_flags'] = []
         for mode in ('proposed_delta', 'unapproved_source', 'missing_segment'):
             with self.subTest(mode=mode):
                 history = copy.deepcopy(self.history)
@@ -166,6 +173,137 @@ class E2IntegrationTests(unittest.TestCase):
                                       'SC-003', '--out', replay_out)
                 self.assert_success(result)
                 self.assertEqual(self.read(replay_out), state)
+
+    def causal_fixture(self, target='SC-001', snapshot_gate=True, baseline_gate=False):
+        """Isolate one gate prerequisite from generic stage-plan dependencies."""
+        scenes = self.read(self.alpha / 'data/scenes.json')
+        events = self.read(self.alpha / 'data/events.json')
+        for scene in scenes['scenes']:
+            scene['requires_flags'] = ['gate'] if scene['id'] == target else []
+            scene['effects_flags'] = {}
+        for event in events['events']:
+            event['effects_flags'] = {}
+        self.write(self.alpha / 'data/scenes.json', scenes)
+        self.write(self.alpha / 'data/events.json', events)
+        snapshot = self.read(self.alpha / 'data/story_state.json')
+        snapshot.update(active_episode='EP-001', flags={'gate': snapshot_gate})
+        self.write(self.alpha / 'data/story_state.json', snapshot)
+        history = copy.deepcopy(self.history)
+        history['baseline']['state']['flags']['gate'] = baseline_gate
+        history['deltas'][0]['changes'][1]['before'] = baseline_gate
+        self.write(self.alpha / 'data/state_history.json', history)
+        return history, scenes, events
+
+    def assert_gate_unestablished(self, scene_id):
+        errors, _ = novelctl.validate(self.alpha)
+        self.assertTrue(any(scene_id + ": needs flag 'gate'" in error for error in errors), errors)
+        return errors
+
+    def causal_state(self, target):
+        # Inspect eligible history itself even when its prerequisite correctly
+        # makes the full registry invalid; state_before_target fails closed.
+        return state_replay.replay_before(self.alpha, target, novelctl.load(self.alpha))
+
+    def test_active_latest_snapshot_cannot_satisfy_first_scene_before_baseline_gate(self):
+        self.causal_fixture(snapshot_gate=True, baseline_gate=False)
+        self.assertIs(self.causal_state('SC-001')['state']['flags']['gate'], False)
+        self.assert_gate_unestablished('SC-001')
+        self.assertTrue(any("SC-001: needs flag 'gate'" in error
+                            for error in story_engine.validate(self.alpha)[0]))
+        checked = self.run_cli('storyctl.py', '--workspace', self.alpha, 'check')
+        self.assertNotEqual(checked.returncode, 0, checked.stdout + checked.stderr)
+        self.assertIn("SC-001: needs flag 'gate'", checked.stdout + checked.stderr)
+        output = self.workspace / 'causal-invalid/must-not-exist.md'
+        packed = self.run_cli('storyctl.py', '--workspace', self.alpha,
+                              'pack', 'SC-001', '--out', output)
+        self.assert_failed_output(packed, output, "SC-001: needs flag 'gate'")
+        self.assertFalse(output.parent.exists())
+
+    def test_approved_baseline_can_satisfy_first_scene_despite_false_latest_snapshot(self):
+        self.causal_fixture(snapshot_gate=False, baseline_gate=True)
+        self.assertEqual(novelctl.validate(self.alpha)[0], [])
+        self.assertEqual(story_engine.validate(self.alpha)[0], [])
+        state = self.packed_state(story_engine.pack(self.alpha, 'SC-001'))
+        self.assertIs(state['state']['flags']['gate'], True)
+
+    def test_prior_eligible_delta_satisfies_later_scene_despite_false_snapshot(self):
+        self.causal_fixture('SC-002', snapshot_gate=False)
+        self.assertEqual(novelctl.validate(self.alpha)[0], [])
+        state = novelctl.state_before_target(self.alpha, 'SC-002')
+        self.assertIs(state['state']['flags']['gate'], True)
+        self.assertEqual(state['applied_delta_ids'], ['DELTA-001'])
+        self.assertEqual(story_engine.validate(self.alpha)[0], [])
+
+    def test_same_scene_or_future_approved_delta_cannot_establish_earlier_prerequisite(self):
+        history, _, _ = self.causal_fixture(snapshot_gate=False)
+        self.assert_gate_unestablished('SC-001')
+        gate_change = history['deltas'][0]['changes'].pop(1)
+        history['deltas'][1]['changes'].append(gate_change)
+        self.write(self.alpha / 'data/state_history.json', history)
+        self.assert_gate_unestablished('SC-001')
+
+    def test_unapproved_source_or_proposed_delta_cannot_satisfy_later_prerequisite(self):
+        original_history, original_scenes, _ = self.causal_fixture('SC-002', snapshot_gate=True)
+        for mode in ('proposed_delta', 'planned_source', 'draft_source'):
+            with self.subTest(mode=mode):
+                history, scenes = copy.deepcopy(original_history), copy.deepcopy(original_scenes)
+                if mode == 'proposed_delta':
+                    history['deltas'][0]['status'] = 'PROPOSED'
+                else:
+                    scenes['scenes'][0]['status'] = 'PLANNED' if mode == 'planned_source' else 'DRAFT'
+                self.write(self.alpha / 'data/state_history.json', history)
+                self.write(self.alpha / 'data/scenes.json', scenes)
+                self.assertEqual(self.causal_state('SC-002')['availability'], 'UNKNOWN')
+                errors = self.assert_gate_unestablished('SC-002')
+                self.assertTrue(any('state history' in error.lower() or 'unknown' in error.lower()
+                                    for error in errors), errors)
+
+    def test_planned_effect_cannot_replace_explicit_no_change_approved_delta(self):
+        history, scenes, events = self.causal_fixture('SC-002', snapshot_gate=True)
+        history['deltas'][0]['changes'].pop(1)
+        scenes['scenes'][0]['effects_flags'] = {'gate': True}
+        events['events'][0]['effects_flags'] = {'gate': True}
+        self.write(self.alpha / 'data/state_history.json', history)
+        self.write(self.alpha / 'data/scenes.json', scenes)
+        self.write(self.alpha / 'data/events.json', events)
+        self.assertIs(self.causal_state('SC-002')['state']['flags']['gate'], False)
+        self.assert_gate_unestablished('SC-002')
+
+    def test_unknown_history_or_absent_flags_never_fall_back_to_latest_true_snapshot(self):
+        original_history, _, _ = self.causal_fixture(snapshot_gate=True)
+        for mode in ('absent_baseline', 'proposed_baseline', 'missing_flags', 'missing_gate',
+                     'numeric_gate', 'text_gate', 'null_gate'):
+            with self.subTest(mode=mode):
+                history = copy.deepcopy(original_history)
+                if mode == 'absent_baseline':
+                    history['baseline'] = None
+                elif mode == 'proposed_baseline':
+                    history['baseline']['status'] = 'PROPOSED'
+                elif mode == 'missing_flags':
+                    del history['baseline']['state']['flags']
+                elif mode == 'missing_gate':
+                    del history['baseline']['state']['flags']['gate']
+                else:
+                    history['baseline']['state']['flags']['gate'] = {
+                        'numeric_gate': 1, 'text_gate': 'true', 'null_gate': None}[mode]
+                self.write(self.alpha / 'data/state_history.json', history)
+                self.assert_gate_unestablished('SC-001')
+
+    def test_no_history_retains_legacy_snapshot_and_planned_effect_semantics(self):
+        _, scenes, events = self.causal_fixture(snapshot_gate=True)
+        (self.alpha / 'data/state_history.json').unlink()
+        self.assertEqual(novelctl.validate(self.alpha)[0], [])
+        snapshot = self.read(self.alpha / 'data/story_state.json')
+        snapshot['flags']['gate'] = False
+        self.write(self.alpha / 'data/story_state.json', snapshot)
+        self.assert_gate_unestablished('SC-001')
+        scenes['scenes'][0]['requires_flags'] = []
+        scenes['scenes'][0]['effects_flags'] = {'gate': True}
+        scenes['scenes'][1]['requires_flags'] = ['gate']
+        events['events'][0]['effects_flags'] = {'gate': True}
+        self.write(self.alpha / 'data/scenes.json', scenes)
+        self.write(self.alpha / 'data/events.json', events)
+        self.assertEqual(novelctl.validate(self.alpha)[0], [])
 
     def test_conflicting_before_values_fail_without_output_artifacts(self):
         self.history['deltas'][1]['changes'][0]['before'] = 'CONFLICTING_PRIOR_VALUE'

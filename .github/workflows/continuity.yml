@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main, feat/story-engine-v0.2-github-only, feat/e1-story-roots, feat/e2-schema-state, feat/e3-e4-agent-contracts, feat/e5-provenance-rollup, feat/e6-e7-acceptance]
+    branches: [main, feat/story-engine-v0.2-github-only, feat/e1-story-roots, feat/e2-schema-state, feat/e3-e4-agent-contracts, feat/e5-provenance-rollup, feat/e6-e7-acceptance, feat/postmerge-proposal-artifact]
 permissions:
   contents: read
 jobs:
