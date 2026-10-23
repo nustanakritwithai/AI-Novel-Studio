@@ -1,0 +1,579 @@
+{
+  "schema_version": 1,
+  "status": "PROPOSED",
+  "history_policy": "IMMUTABLE_SNAPSHOTS_APPEND_NEW_REVISION_OR_SUPERSEDING_RECORD",
+  "document_kind": "NOVEL_WRITING_AID_DEFENSIVE_ENVELOPE",
+  "story_slug": "last-island-active",
+  "namespace": "SYNTHETIC-NOT-STORY",
+  "adoption": "NOT_ADOPTED",
+  "human_editorial_approval": "UNVERIFIED",
+  "canon_change_authorized": false,
+  "runtime_or_engine_promise": false,
+  "scope_note_th": "ตัวช่วยติดตามแบบเป้าหมาย สภาพที่สร้างแล้ว และความรู้ใน POV แยกจากกัน ไม่ใช่แบบก่อสร้างหรือการคำนวณกลไก",
+  "retrieval_shape": {
+    "house_ref": "UNKNOWN",
+    "target_blueprint_ref": "UNKNOWN",
+    "snapshot_id": "UNKNOWN",
+    "world_time_bounds": {
+      "start": null,
+      "end": null,
+      "unit": "UNKNOWN"
+    },
+    "narrative_reveal_bounds": "UNKNOWN",
+    "pov_knowledge": "UNKNOWN",
+    "owner_player_ref": null,
+    "owner_group_ref": null,
+    "parts": [
+      {
+        "part_id": "STABLE-ID",
+        "kind": "LAYER_OR_DOOR",
+        "side": "N|S|E|W|TOP|UNKNOWN",
+        "layer_index": null,
+        "construction": "UNKNOWN",
+        "usability": "UNKNOWN",
+        "damage_repair": "UNKNOWN",
+        "material_tier": "UNKNOWN",
+        "geometric_thickness": null,
+        "symbolic_strength_tier": null
+      }
+    ],
+    "links": [
+      {
+        "from_part": "UNKNOWN",
+        "door_id": "UNKNOWN",
+        "to_part": "UNKNOWN",
+        "claim_kind": "SYMBOLIC_ONLY"
+      }
+    ],
+    "source_refs": [],
+    "unknowns": []
+  },
+  "design_direction": {
+    "inner_house_ref": "SYN-ENV-INNER-001",
+    "inner_house_role": "INTENDED_INHABITED_CORE",
+    "protective_sides": [
+      "N",
+      "S",
+      "E",
+      "W",
+      "TOP"
+    ],
+    "bottom_or_foundation_direction": "UNKNOWN_NOT_SPECIFIED",
+    "possible_layer_counts": [
+      1,
+      2,
+      3
+    ],
+    "fixed_build_schedule": null,
+    "automatic_level_rule": null,
+    "geometry": "UNPLACED_SYMBOLIC_REFERENCE",
+    "game_mechanics_verified": false
+  },
+  "symbolic_buffer_refs": [
+    "SYN-ENV-BUFFER-OUTER",
+    "SYN-ENV-BUFFER-INNER",
+    "SYN-ENV-BUFFER-INNERMOST"
+  ],
+  "part_registry": [
+    {
+      "part_id": "SYN-ENV-INNER-001",
+      "kind": "INNER_HOUSE",
+      "side": "UNKNOWN",
+      "layer_index": null,
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L1-N",
+      "kind": "BARRIER_SEGMENT",
+      "side": "N",
+      "layer_index": 1,
+      "vertical_role": "SIDE",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L1-S",
+      "kind": "BARRIER_SEGMENT",
+      "side": "S",
+      "layer_index": 1,
+      "vertical_role": "SIDE",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L1-E",
+      "kind": "BARRIER_SEGMENT",
+      "side": "E",
+      "layer_index": 1,
+      "vertical_role": "SIDE",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L1-W",
+      "kind": "BARRIER_SEGMENT",
+      "side": "W",
+      "layer_index": 1,
+      "vertical_role": "SIDE",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L1-TOP",
+      "kind": "BARRIER_SEGMENT",
+      "side": "TOP",
+      "layer_index": 1,
+      "vertical_role": "OVERHEAD",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L2-N",
+      "kind": "BARRIER_SEGMENT",
+      "side": "N",
+      "layer_index": 2,
+      "vertical_role": "SIDE",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L2-S",
+      "kind": "BARRIER_SEGMENT",
+      "side": "S",
+      "layer_index": 2,
+      "vertical_role": "SIDE",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L2-E",
+      "kind": "BARRIER_SEGMENT",
+      "side": "E",
+      "layer_index": 2,
+      "vertical_role": "SIDE",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L2-W",
+      "kind": "BARRIER_SEGMENT",
+      "side": "W",
+      "layer_index": 2,
+      "vertical_role": "SIDE",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L2-TOP",
+      "kind": "BARRIER_SEGMENT",
+      "side": "TOP",
+      "layer_index": 2,
+      "vertical_role": "OVERHEAD",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L3-N",
+      "kind": "BARRIER_SEGMENT",
+      "side": "N",
+      "layer_index": 3,
+      "vertical_role": "SIDE",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L3-S",
+      "kind": "BARRIER_SEGMENT",
+      "side": "S",
+      "layer_index": 3,
+      "vertical_role": "SIDE",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L3-E",
+      "kind": "BARRIER_SEGMENT",
+      "side": "E",
+      "layer_index": 3,
+      "vertical_role": "SIDE",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L3-W",
+      "kind": "BARRIER_SEGMENT",
+      "side": "W",
+      "layer_index": 3,
+      "vertical_role": "SIDE",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-L3-TOP",
+      "kind": "BARRIER_SEGMENT",
+      "side": "TOP",
+      "layer_index": 3,
+      "vertical_role": "OVERHEAD",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-DOOR-OUTER-N",
+      "kind": "DOOR_SYMBOL",
+      "side": "N",
+      "layer_index": 1,
+      "from_ref": "EXTERIOR",
+      "to_ref": "SYN-ENV-BUFFER-OUTER",
+      "crosses_boundary_ref": "SYN-ENV-L1-N",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-DOOR-L1-L2-N",
+      "kind": "DOOR_SYMBOL",
+      "side": "N",
+      "layer_index": 2,
+      "from_ref": "SYN-ENV-BUFFER-OUTER",
+      "to_ref": "SYN-ENV-BUFFER-INNER",
+      "crosses_boundary_ref": "SYN-ENV-L2-N",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-DOOR-L2-L3-N",
+      "kind": "DOOR_SYMBOL",
+      "side": "N",
+      "layer_index": 3,
+      "from_ref": "SYN-ENV-BUFFER-INNER",
+      "to_ref": "SYN-ENV-BUFFER-INNERMOST",
+      "crosses_boundary_ref": "SYN-ENV-L3-N",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-DOOR-INNER-N",
+      "kind": "DOOR_SYMBOL",
+      "side": "N",
+      "layer_index": null,
+      "from_ref": "SYN-ENV-BUFFER-INNER",
+      "to_ref": "SYN-ENV-INNER-001",
+      "crosses_boundary_ref": "SYN-ENV-INNER-BOUNDARY-N",
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null
+    },
+    {
+      "part_id": "SYN-ENV-INNER-BOUNDARY-N",
+      "kind": "INNER_BOUNDARY",
+      "side": "N",
+      "layer_index": null,
+      "floor_index": null,
+      "symbolic_vertical_level": null,
+      "completion_world_time": null,
+      "material_tier": "UNKNOWN",
+      "geometric_thickness": null,
+      "symbolic_strength_tier": null
+    }
+  ],
+  "synthetic_snapshots": [
+    {
+      "snapshot_id": "SYN-ENV-A",
+      "story_scene_ref": null,
+      "world_time_bounds": {
+        "start": 10,
+        "end": 10,
+        "unit": "SYNTHETIC_WORLD_TICK"
+      },
+      "narrative_reveal_bounds": null,
+      "pov_knowledge": "UNKNOWN",
+      "target_blueprint_ref": "SYN-ENV-BLUEPRINT-001",
+      "as_built_inherits": null,
+      "default_state_for_unlisted_parts": {
+        "construction": "UNKNOWN",
+        "usability": "UNKNOWN",
+        "damage_repair": "UNKNOWN"
+      },
+      "as_built_overrides": [
+        {
+          "part_id": "SYN-ENV-L1-N",
+          "construction": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage_repair": "UNKNOWN"
+        },
+        {
+          "part_id": "SYN-ENV-L1-S",
+          "construction": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage_repair": "UNKNOWN"
+        },
+        {
+          "part_id": "SYN-ENV-L1-E",
+          "construction": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage_repair": "UNKNOWN"
+        },
+        {
+          "part_id": "SYN-ENV-L1-W",
+          "construction": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage_repair": "UNKNOWN"
+        },
+        {
+          "part_id": "SYN-ENV-L1-TOP",
+          "construction": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage_repair": "UNKNOWN"
+        }
+      ],
+      "source_note_th": "ตัวอย่างสังเคราะห์: ชั้น 1 ครบ N/S/E/W/TOP ที่ world tick 10; ไม่มีข้อยืนยันเรื่องประตูหรือ usability"
+    },
+    {
+      "snapshot_id": "SYN-ENV-B",
+      "story_scene_ref": null,
+      "world_time_bounds": {
+        "start": 20,
+        "end": 20,
+        "unit": "SYNTHETIC_WORLD_TICK"
+      },
+      "narrative_reveal_bounds": null,
+      "pov_knowledge": "UNKNOWN",
+      "target_blueprint_ref": "SYN-ENV-BLUEPRINT-001",
+      "as_built_inherits": "SYN-ENV-A",
+      "default_state_for_unlisted_parts": "INHERIT_FROM_PARENT_SNAPSHOT",
+      "as_built_overrides": [
+        {
+          "part_id": "SYN-ENV-L2-N",
+          "construction": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage_repair": "UNKNOWN"
+        },
+        {
+          "part_id": "SYN-ENV-L2-S",
+          "construction": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage_repair": "UNKNOWN"
+        },
+        {
+          "part_id": "SYN-ENV-L2-E",
+          "construction": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage_repair": "UNKNOWN"
+        },
+        {
+          "part_id": "SYN-ENV-L2-W",
+          "construction": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage_repair": "UNKNOWN"
+        },
+        {
+          "part_id": "SYN-ENV-L2-TOP",
+          "construction": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage_repair": "UNKNOWN"
+        }
+      ],
+      "source_note_th": "ตัวอย่างสังเคราะห์: ชั้น 2 ครบ N/S/E/W/TOP ที่ world tick 20; ชั้น 3 และประตูยังไม่มีเหตุการณ์ยืนยัน"
+    },
+    {
+      "snapshot_id": "SYN-ENV-C",
+      "story_scene_ref": null,
+      "world_time_bounds": {
+        "start": 30,
+        "end": 30,
+        "unit": "SYNTHETIC_WORLD_TICK"
+      },
+      "narrative_reveal_bounds": null,
+      "pov_knowledge": "UNKNOWN",
+      "target_blueprint_ref": "SYN-ENV-BLUEPRINT-001",
+      "as_built_inherits": "SYN-ENV-B",
+      "default_state_for_unlisted_parts": "UNCHANGED_FROM_PARENT_SNAPSHOT",
+      "as_built_overrides": [
+        {
+          "part_id": "SYN-ENV-L1-N",
+          "construction": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage_repair": "DAMAGED_BREACHED"
+        }
+      ],
+      "explicitly_unchanged_groups": [
+        "all other registered layer parts",
+        "all registered doors",
+        "inner house"
+      ],
+      "automatic_effects": "NONE_ASSERTED",
+      "source_note_th": "ตัวอย่างสังเคราะห์: breach เฉพาะชิ้นส่วนชั้นนอก L1-N; ชั้นด้านในและประตูคงเดิม ไม่มีการลบชั้นป้องกันอื่นโดยอัตโนมัติ"
+    }
+  ],
+  "symbolic_route_example": {
+    "side": "N",
+    "layer_count_for_this_blueprint_example": 2,
+    "sequence_of_symbolic_nodes": [
+      "EXTERIOR",
+      "SYN-ENV-BUFFER-OUTER",
+      "SYN-ENV-BUFFER-INNER",
+      "SYN-ENV-INNER-001"
+    ],
+    "door_crossings": [
+      {
+        "door_id": "SYN-ENV-DOOR-OUTER-N",
+        "crosses_boundary_ref": "SYN-ENV-L1-N"
+      },
+      {
+        "door_id": "SYN-ENV-DOOR-L1-L2-N",
+        "crosses_boundary_ref": "SYN-ENV-L2-N"
+      },
+      {
+        "door_id": "SYN-ENV-DOOR-INNER-N",
+        "crosses_boundary_ref": "SYN-ENV-INNER-BOUNDARY-N"
+      }
+    ],
+    "claim_kind": "SYMBOLIC_DOOR_SEQUENCE_ONLY_NOT_WALKABILITY",
+    "barrier_parts_are_nodes_or_rooms": false,
+    "buffer_labels_are_rooms": false,
+    "physical_geometry_or_adjacency": "UNKNOWN",
+    "door_construction_and_usability": "UNKNOWN",
+    "walkability": "UNKNOWN",
+    "scene_specific_route": false,
+    "route_optimization": "NOT_PERFORMED",
+    "inner_door_from_binding": "EXPLICIT_FOR_TWO_LAYER_BLUEPRINT_ONLY_NO_AUTOMATIC_REBINDING"
+  },
+  "user_reported_strength_claims": [
+    {
+      "claim_text_th_exact": "ประตูหินมีความหนาเท่ากับกำแพงไม้",
+      "claim_source": "USER_REPORTED",
+      "verification": "UNVERIFIED",
+      "intended_meaning_after_user_clarification": "SYMBOLIC_STRENGTH_LEVEL_IN_GAME",
+      "attribute_ref": "symbolic_strength_tier",
+      "comparison_as_written": "stone door compared with wooden wall",
+      "symbolic_strength_tier_value": null,
+      "geometric_thickness_value": null,
+      "material_tier_value": "UNKNOWN"
+    },
+    {
+      "claim_text_th_exact": "ประตูเหล็กมีความหนาเท่ากับประตูหิน",
+      "claim_source": "USER_REPORTED",
+      "verification": "UNVERIFIED",
+      "intended_meaning_after_user_clarification": "SYMBOLIC_STRENGTH_LEVEL_IN_GAME",
+      "attribute_ref": "symbolic_strength_tier",
+      "comparison_as_written": "iron door compared with stone door",
+      "clarification_status": "AMBIGUOUS_PENDING_CONFIRMATION",
+      "clarification_question_th": "ยังรอการยืนยันว่าตั้งใจเปรียบเทียบกับประตูหินตามข้อความ หรือหมายถึงกำแพงหิน",
+      "symbolic_strength_tier_value": null,
+      "geometric_thickness_value": null,
+      "material_tier_value": "UNKNOWN"
+    }
+  ],
+  "separate_unknown_dimensions": {
+    "geometric_thickness": null,
+    "layer_count_is_not_thickness": true,
+    "symbolic_strength_tier": null,
+    "protection_or_durability_value": null,
+    "numeric_strength_or_hp": null,
+    "cost_or_build_duration": null,
+    "explosive_or_raid_effects": null
+  },
+  "guardrails_th": [
+    "สถานะที่ไม่ได้ระบุคง UNKNOWN; แบบเป้าหมายไม่ใช่สภาพสร้างจริง และสภาพสร้างจริงไม่ใช่ความรู้ของ POV",
+    "ใช้ ID รายชั้นและรายประตูคงที่; สัญลักษณ์ route ไม่ยืนยันตำแหน่ง ช่องเปิด หรือ usability",
+    "เวลาสร้างในโลก เวลาเปิดเผยต่อผู้อ่าน และเวลาที่ POV รู้ต้องแยกกัน",
+    "ฉาก C เปลี่ยนเฉพาะ damage ของ SYN-ENV-L1-N; ห้ามอนุมานผลต่อประตู ชั้นอื่น หรือการใช้งาน",
+    "ไม่สร้างค่า HP อัตราส่วน สูตรระดับ ความเสียหายจากระเบิด จำนวนบุก ค่าใช้จ่าย หรือเส้นทางที่ดีที่สุด"
+  ],
+  "ledger_apply_authorized": false,
+  "user_direction_sources": [
+    {
+      "message_ref": "Sentinel_a4ef4fad335481919d3e03f1060518f2",
+      "timestamp_utc": "2026-10-23T10:18Z",
+      "role": "USER_REPORTED_FICTIONAL_GAME_DIRECTION",
+      "authenticated_editorial_approval": false
+    },
+    {
+      "message_ref": "Sentinel_effb8e25c21c819185b763bfd79ccc18",
+      "timestamp_utc": "2026-10-23T10:20Z",
+      "meaning": "EQUIVALENT_GAME_STRENGTH_LEVEL_NOT_PHYSICAL_THICKNESS",
+      "authenticated_editorial_approval": false
+    }
+  ],
+  "strength_layer_addition": "UNKNOWN_NO_ADDITION_RULE_ASSUMED",
+  "side_and_level_note": "N/S/E/W are synthetic side labels; TOP is an overhead role. Real orientation, floor index and vertical extent remain UNKNOWN. Layer index is not a floor or a game level."
+}
