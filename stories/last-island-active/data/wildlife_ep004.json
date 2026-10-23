@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "story_slug": "last-island-active",
+  "episode_id": "EP-004",
+  "status": "DRAFT_WILDLIFE_MODEL_NOT_GAMEPLAY_VERIFIED",
+  "source": {
+    "path": "drafts/EP-004/CH-04-FULL-DRAFT.md",
+    "git_blob_sha": "5851481c2b29bda87f52ee41fe0ce307b07d3169"
+  },
+  "rules": [
+    "Wild animals are scattered and located by travel and searching; no deterministic clusters.",
+    "No count of animals or exact loot quantity is established.",
+    "Observed in DRAFT does not prove real-game spawn behavior or drops.",
+    "The mount persists as CHAR-008, not an item duplicated in the inventory ledger."
+  ],
+  "species": [
+    {
+      "id": "SPEC-CHICKEN",
+      "name": "ไก่",
+      "role": "SMALL_PREY",
+      "scenes": [
+        "SC-028",
+        "SC-032"
+      ],
+      "draft_experience": "first missed, another encountered later and hunted",
+      "materials_possible": [
+        "ITEM-019",
+        "ITEM-018"
+      ],
+      "count_hunted": null,
+      "danger": "LOW_UNVERIFIED",
+      "actual_game_verification": "UNVERIFIED"
+    },
+    {
+      "id": "SPEC-RABBIT",
+      "name": "กระต่าย",
+      "role": "SMALL_PREY",
+      "scenes": [
+        "SC-029",
+        "SC-032"
+      ],
+      "draft_experience": "moves fast and hides; hero waits at a new location before success",
+      "materials_possible": [
+        "ITEM-019",
+        "ITEM-020",
+        "ITEM-018"
+      ],
+      "count_hunted": null,
+      "danger": "LOW_UNVERIFIED",
+      "actual_game_verification": "UNVERIFIED"
+    },
+    {
+      "id": "SPEC-DEER",
+      "name": "กวาง",
+      "role": "LARGE_PREY",
+      "scenes": [
+        "SC-030",
+        "SC-032"
+      ],
+      "draft_experience": "noticed near stream, first arrow does not finish hunt, follow and complete",
+      "materials_possible": [
+        "ITEM-019",
+        "ITEM-020",
+        "ITEM-018"
+      ],
+      "count_hunted": null,
+      "danger": "UNKNOWN",
+      "actual_game_verification": "UNVERIFIED"
+    },
+    {
+      "id": "SPEC-HORSE",
+      "name": "ม้า",
+      "role": "TAMABLE_MOUNT",
+      "scenes": [
+        "SC-033",
+        "SC-034",
+        "SC-035",
+        "SC-036",
+        "SC-038"
+      ],
+      "draft_experience": "one horse weakened according to fictional game and caught with gloves; ridden to return to base",
+      "character_id": "CHAR-008",
+      "count_tamed": 1,
+      "required_item": "ITEM-026",
+      "actual_game_verification": "UNVERIFIED"
+    },
+    {
+      "id": "SPEC-WOLF",
+      "name": "หมาป่า",
+      "role": "DANGEROUS_WILDLIFE",
+      "scenes": [
+        "SC-031"
+      ],
+      "draft_experience": "threatens hero, who withdraws and does not hunt it",
+      "count_killed": 0,
+      "actual_game_verification": "UNVERIFIED"
+    },
+    {
+      "id": "SPEC-BEAR",
+      "name": "หมี",
+      "role": "DANGEROUS_WILDLIFE",
+      "scenes": [
+        "SC-031"
+      ],
+      "draft_experience": "noticed near fallen tree and avoided",
+      "count_killed": 0,
+      "actual_game_verification": "UNVERIFIED"
+    }
+  ]
+}
