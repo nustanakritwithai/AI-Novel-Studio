@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "SCENE_WORKFLOW",
+  "story_slug": "scene-workflow-fixture",
+  "target": {
+    "scene_id": "SC-001",
+    "draft_path": "drafts/EP-001/SC-001.md"
+  },
+  "records": [
+    {
+      "stage": "PLANNER",
+      "packet_id": "83b96db1c23262b88e52d9b1cf10f858c0f709aecead605494900f68eda24fca",
+      "draft_sha256": "b4b5415f8806cd09be34816c6f14cb94dcb0883554fb1851e299916ac531f2e2",
+      "context_sha256": "be920c3a25fc49ba136c9d54ca521566d3675561e0f70894a885321e8372fbe7",
+      "artifact": {
+        "packet_id": "83b96db1c23262b88e52d9b1cf10f858c0f709aecead605494900f68eda24fca",
+        "draft_sha256": "b4b5415f8806cd09be34816c6f14cb94dcb0883554fb1851e299916ac531f2e2",
+        "notes": "{\"packet_id\": \"83b96db1c23262b88e52d9b1cf10f858c0f709aecead605494900f68eda24fca\", \"draft_sha256\": \"b4b5415f8806cd09be34816c6f14cb94dcb0883554fb1851e299916ac531f2e2\", \"notes\": \"Bounded to SC-001 preparation metadata. The source is working-tree metadata with explicit unknowns; human editorial approval is unverified, and canon and ledger changes are unauthorized.\", \"plan\": [{\"basis\": \"CONTEXT\", \"text\": \"At SC-001, only the ground floor is built; the stairs and upper gallery are unfinished and not usable.\"}, {\"basis\": \"CONTEXT\", \"text\": \"Exactly one physical token exists at SC-001. The gate is fixed red and opens only with the physical token.\"}, {\"basis\": \"CONTEXT\", \"text\": \"Unit A does not know the token code at SC-001; code knowledge may begin only after SC-003.\"}, {\"basis\": \"UNKNOWN\", \"text\": \"Scene-start inventory balance is unknown. The planned ITEM-TOKEN reference does not establish a holder, location, or inventory transfer.\"}, {\"basis\": \"UNKNOWN\", \"text\": \"Unit A's layout knowledge and scene-start knowledge entries are unknown; do not present the world preview or context facts as Unit A's perceptions.\"}, {\"basis\": \"PROPOSED\", \"text\": \"The SC-001 planning metadata gives the goal of exercising source-bound scene-start context, the conflict of keeping fixture facts and unknowns separate, a metadata-only beat, and an outcome declaring no world-state change. These are plan labels, not new events or approved history.\"}, {\"basis\": \"DIRECTIVE\", \"text\": \"Use labeled metadata assertions only and add no narrative prose. Preserve scene-start knowledge, inventory, and state boundaries; do not promote proposed material to canon or apply ledger changes before human review.\"}]}"
+      },
+      "previous_record_sha256": null,
+      "record_sha256": "a522bde305b3d622e1508c9b2b2ac04d2aa49c54d5a1f46ca6e5e141ed004264"
+    },
+    {
+      "stage": "WRITER",
+      "packet_id": "0b9b622268ad7e7b84412c885a6fe18713d7e81f041407b97471af01ad35b457",
+      "draft_sha256": "6acd66e22af2e5217b852832e3f9aa1eba5a315904b1448badd6a0f0ef5c413b",
+      "context_sha256": "a0022eb327f24225a6b68ec72af4ccbfb4a588554c75cc26e3135deb79543c0a",
+      "artifact": {
+        "packet_id": "0b9b622268ad7e7b84412c885a6fe18713d7e81f041407b97471af01ad35b457",
+        "draft_sha256": "6acd66e22af2e5217b852832e3f9aa1eba5a315904b1448badd6a0f0ef5c413b",
+        "notes": "Native writer input packet 83b96db1c23262b88e52d9b1cf10f858c0f709aecead605494900f68eda24fca; exact output SHA 6acd66e22af2e5217b852832e3f9aa1eba5a315904b1448badd6a0f0ef5c413b. Requested synthetic fault injection only; no actual story approval."
+      },
+      "previous_record_sha256": "a522bde305b3d622e1508c9b2b2ac04d2aa49c54d5a1f46ca6e5e141ed004264",
+      "record_sha256": "1118556d19401f6f590b6b4b9190e7daf64bf080b87c51187bd1e8300bf9d343"
+    }
+  ],
+  "status": "PROPOSED",
+  "owner_gate": "BLOCKED_AUTHENTICATED_SIGNOFF_NOT_ESTABLISHED",
+  "human_editorial_approval": "UNVERIFIED",
+  "canon_change_authorized": false,
+  "ledger_apply_authorized": false,
+  "chain_sha256": "37d28cd8319131648d7376780ab36b3e84f8cad4c80ce4d121e75681b07a209d"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "CONSISTENT_LOCAL_CHAIN_NOT_APPROVAL",
+  "last_stage": "OWNER_CHECKPOINT",
+  "human_editorial_approval": "UNVERIFIED",
+  "historical_source_verification": "NOT_RUN",
+  "canon_change_authorized": false,
+  "ledger_apply_authorized": false
+}

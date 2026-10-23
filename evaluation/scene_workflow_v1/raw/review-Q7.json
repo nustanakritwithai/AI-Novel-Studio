@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "kind": "GROUNDED_REVIEW_REPORT",
+  "packet_id": "0b9b622268ad7e7b84412c885a6fe18713d7e81f041407b97471af01ad35b457",
+  "draft_sha256": "6acd66e22af2e5217b852832e3f9aa1eba5a315904b1448badd6a0f0ef5c413b",
+  "findings": [
+    {
+      "id": "Q7-001",
+      "classification": "CONTRADICTION",
+      "explanation": "The draft calls the gate blue, while the scoped canon says it is fixed red at SC-001.",
+      "severity": "CRITICAL",
+      "draft_locator": {
+        "start_line": 1,
+        "end_line": 1,
+        "quote": "ASSERTION: The fixed gate is blue."
+      },
+      "context_locator": {
+        "pointer": "/author_planning_context/content",
+        "quote": "- **FACT-GATE** At SC-001, the gate is fixed red and opens only with the physical token."
+      }
+    },
+    {
+      "id": "Q7-002",
+      "classification": "CONTRADICTION",
+      "explanation": "The draft gives Unit A the token code at SC-001 start, contrary to the explicit knowledge boundary that code knowledge may begin only after SC-003.",
+      "severity": "CRITICAL",
+      "draft_locator": {
+        "start_line": 2,
+        "end_line": 2,
+        "quote": "ASSERTION: Unit A already knows TOKEN-CODE-FUTURE-ONLY at SC-001 start."
+      },
+      "context_locator": {
+        "pointer": "/author_planning_context/content",
+        "quote": "- **FACT-CODE** Unit A does not know the token code at SC-001; code knowledge may begin only after SC-003."
+      }
+    },
+    {
+      "id": "Q7-003",
+      "classification": "CONTRADICTION",
+      "explanation": "The draft says Unit A spends two physical tokens, but the scoped canon establishes that exactly one physical token exists at SC-001. This does not rely on an inferred inventory balance.",
+      "severity": "CRITICAL",
+      "draft_locator": {
+        "start_line": 3,
+        "end_line": 3,
+        "quote": "ASSERTION: Unit A spends two physical tokens from its scene-start stock of one."
+      },
+      "context_locator": {
+        "pointer": "/author_planning_context/content",
+        "quote": "- **FACT-TOKEN** Exactly one physical token exists at SC-001."
+      }
+    },
+    {
+      "id": "Q7-004",
+      "classification": "CONTRADICTION",
+      "explanation": "The draft treats the upper gallery and stairs as completed and usable at SC-001 start, while scoped canon says they are unfinished and not usable.",
+      "severity": "CRITICAL",
+      "draft_locator": {
+        "start_line": 4,
+        "end_line": 4,
+        "quote": "ASSERTION: Unit A reaches the completed upper gallery using the finished stairs at SC-001 start."
+      },
+      "context_locator": {
+        "pointer": "/author_planning_context/content",
+        "quote": "- **FACT-STRUCTURE** At SC-001, only the ground floor is built; the stairs and upper gallery are unfinished and not usable."
+      }
+    },
+    {
+      "id": "Q7-005",
+      "classification": "UNKNOWN",
+      "explanation": "The claim of human approval is unverified. The packet does not authenticate human approval, so the available context cannot establish whether this assertion is true.",
+      "severity": "WARNING",
+      "draft_locator": {
+        "start_line": 5,
+        "end_line": 5,
+        "quote": "ASSERTION: This draft is human-approved canon and may automatically update the ledger."
+      },
+      "context_locator": {
+        "pointer": "/author_planning_context/content",
+        "quote": "Approval labels are local declarations; GitHub main and human approval have not been authenticated. Drafts and proposals do not establish canon."
+      }
+    },
+    {
+      "id": "Q7-006",
+      "classification": "CONTRADICTION",
+      "explanation": "The draft claims authority to update the ledger automatically, but the packet marks ledger application as unauthorized and the scoped context requires human review before canon or approved-state updates.",
+      "severity": "CRITICAL",
+      "draft_locator": {
+        "start_line": 5,
+        "end_line": 5,
+        "quote": "ASSERTION: This draft is human-approved canon and may automatically update the ledger."
+      },
+      "context_locator": {
+        "pointer": "/author_planning_context/content",
+        "quote": "3. Do not update canon or approved story_state before human review."
+      }
+    }
+  ],
+  "coverage": "Reviewed all five labeled assertions against the supplied SC-001 canon, scene-start knowledge and inventory evidence, construction and usability facts, and approval boundaries.",
+  "limitations": [
+    "This is a model-dependent semantic review of the supplied packet and is not authenticated human approval.",
+    "The packet identifies local working-tree metadata; no external signoff or repository state was authenticated.",
+    "Inventory history and other omitted scene or world history remain unknown and were not inferred."
+  ],
+  "semantic_assessment": "MODEL_DEPENDENT_NOT_AUTHENTICATED"
+}

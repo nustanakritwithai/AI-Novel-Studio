@@ -4,3 +4,4 @@ stories/last-island/** -text
 # Disable line-ending conversion only for these sealed synthetic artifacts.
 # Recognize sealed CRLF endings while retaining the usual whitespace checks.
 evaluation/e6/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+evaluation/scene_workflow_v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

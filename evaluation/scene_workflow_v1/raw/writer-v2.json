@@ -1,0 +1,7 @@
+{
+  "input_packet_id": "83b96db1c23262b88e52d9b1cf10f858c0f709aecead605494900f68eda24fca",
+  "input_plan_sha256": "eba1bd7ae1b6ec62d8550efb4862608f2cd35d3589dec3f16239bdf7413331e9",
+  "output_text": "ASSERTION: The fixed gate is blue.\nASSERTION: Unit A already knows TOKEN-CODE-FUTURE-ONLY at SC-001 start.\nASSERTION: Unit A spends two physical tokens from its scene-start stock of one.\nASSERTION: Unit A reaches the completed upper gallery using the finished stairs at SC-001 start.\nASSERTION: This draft is human-approved canon and may automatically update the ledger.\n",
+  "output_sha256": "6acd66e22af2e5217b852832e3f9aa1eba5a315904b1448badd6a0f0ef5c413b",
+  "notes": "Synthetic fault injection for a negative test only; contains no actual story events and is not an approval."
+}

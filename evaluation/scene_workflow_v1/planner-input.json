@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "kind": "GROUNDED_REVIEW_PACKET",
+  "status": "PROPOSED",
+  "story_slug": "scene-workflow-fixture",
+  "target": {
+    "scene_id": "SC-001",
+    "draft_path": "drafts/EP-001/SC-001.md"
+  },
+  "context_source_mode": "working-tree",
+  "raw_draft": {
+    "origin": "WORKING_TREE",
+    "path": "drafts/EP-001/SC-001.md",
+    "content": "SYNTHETIC ASSERTION SOURCE; METADATA ONLY; NOT NARRATIVE PROSE.\nASSERTION FACT-STRUCTURE | At SC-001, only the ground floor is built; the stairs and upper gallery are unfinished and not usable.\nASSERTION FACT-CODE | Unit A does not know the token code at SC-001; code knowledge may begin only after SC-003.\nASSERTION FACT-TOKEN | Exactly one physical token exists at SC-001.\nASSERTION FACT-GATE | At SC-001, the gate is fixed red and opens only with the physical token.\n",
+    "sha256": "b4b5415f8806cd09be34816c6f14cb94dcb0883554fb1851e299916ac531f2e2",
+    "byte_length": 470,
+    "git_blob_id": "3f7786a6715143a35b15bd2f633a00a23636f57b",
+    "raw_status": "MATCH"
+  },
+  "scene_preparation": {
+    "content": {
+      "schema_version": 1,
+      "kind": "SCENE_PREPARATION",
+      "status": "PROPOSED",
+      "preparation": "PREPARED_WITH_EXPLICIT_UNKNOWNS",
+      "story": "scene-workflow-fixture",
+      "scene_cursor": {
+        "scene_id": "SC-001",
+        "boundary": "BEFORE"
+      },
+      "world_cursor": null,
+      "cursor_mapping": "UNKNOWN_NO_AUTOMATIC_MAPPING",
+      "pov": "CHAR-001",
+      "human_editorial_approval": "UNVERIFIED",
+      "canon_change_authorized": false,
+      "ledger_apply_authorized": false,
+      "author_planning_context": {
+        "content": "# STORY ENGINE / SELECTED-STORY LOCAL CONTEXT PACK\nTarget: SC-001 | Max approved recent episodes: 7\nINPUT BASIS: Selected-story local registries and source records. Approval labels are local declarations; GitHub main and human approval have not been authenticated. Drafts and proposals do not establish canon.\nDo not use information from future episodes. Do not silently update canon.\n\n## REQUIRED WRITING STYLE\n# Synthetic assertion style\r\nUse labeled metadata assertions only; add no narrative prose.\r\nSYNTHETIC FIXTURE LABEL ONLY; no record in this workspace is human editorial approval or authenticated signoff.\r\n\n\n## APPROVED EPISODE LEDGER (RECENT ONLY)\n\nNo earlier approved episodes. Planned beats are not canon prose.\n\n## PRIOR APPROVED SCENE EXCERPTS (SAME EPISODE)\n\nNo previously approved scenes in this episode.\n\n# CONTEXT PACK: SC-001\n\n> Generated from repository data. Do not treat this file as a replacement for approved prose.\n\n## CONTEXT SCOPE\nSelected scene only; current project progress is withheld.\n\n## NON-NEGOTIABLE AGENT RULES\n\n1. LOCKED user directives override AI proposals. No retroactive changes without approval.\n\n2. Proposed material and planned beats are not approved history.\n\n3. Do not update canon or approved story_state before human review.\n\n4. Preserve scene-start knowledge, inventory and state boundaries; UNKNOWN is not verified.\n\n## STORY-SPECIFIC RULES\n\n- SYNTHETIC FIXTURE LABEL ONLY; no record in this workspace is human editorial approval or authenticated signoff.\n\n- Metadata assertions are fixture inputs, not semantic-review results.\n\n## APPROVED CANON IN SCOPE\n\n- **FACT-STRUCTURE** At SC-001, only the ground floor is built; the stairs and upper gallery are unfinished and not usable.\n\n- **FACT-CODE** Unit A does not know the token code at SC-001; code knowledge may begin only after SC-003.\n\n- **FACT-TOKEN** Exactly one physical token exists at SC-001.\n\n- **FACT-GATE** At SC-001, the gate is fixed red and opens only with the physical token.\n\n## SELECTED SCENE: SC-001\n\n## RELEVANT SCENES & CAUSAL ORDER\n\nBeats and outcomes are scene plans, not knowledge available to the POV at scene start.\n\n### SC-001 Synthetic present-time scene (APPROVED)\n\nGoal: Exercise source-bound scene-start context. / Conflict: Keep fixture facts and unknowns separate.\n\nBeats: Metadata assertion only.\n\nOutcome: No world-state change is declared.\n\nPreconditions: none\n\nEffects: {}\n\n## CHARACTERS IN SCOPE\n\n- **CHAR-001 Unit A** — Synthetic metadata unit; unknown: Token code before the SC-003 boundary\n\n  - Knowledge at scene start: UNKNOWN (no earlier scene-linked entries).\n\n## INVENTORY EVENTS IN RELEVANT SCENES (PLANNED ≠ APPROVED)\n\n## OPEN PLOT THREADS\n\nUntimed/future/unapproved thread details are withheld. OPEN is a working registry label, not reconstructed historical state.\n\n## APPROVED WORLD STATE BEFORE TARGET (INITIAL BASELINE IF NO PROSE APPROVED)\n\nOnly explicit prior local evidence is used. Local approval labels are not authenticated GitHub approval; later progress is not inferred.\n\n{\n  \"availability\": \"UNKNOWN\",\n  \"reason\": \"No approved state snapshot is available before the requested scene. The latest snapshot cannot reconstruct earlier state; do not infer it from planned effects.\"\n}\n\n## OPEN ISSUES\n\nEpisode-level questions and target inventory operations are withheld: no scene-start disclosure boundary is recorded.\n\n## REQUIRED OUTPUT CONTRACT\n1. Work within the requested scene scope only.\n2. List newly proposed facts, never silently promoted to CANON.\n3. Record proposed state/items/locations and knowledge changes.\n4. Report continuity and evidence uncertainty; human approval remains required.\n\n## EXACT SOURCE EVIDENCE (metadata remains working-tree)\n{\"commit\": \"3c4590c5d3f2f03eebd08190a4902e522de52734\", \"metadata_basis\": \"WORKING_TREE_REGISTRIES\", \"mode\": \"working-tree\", \"scope\": \"CONTEXT_READS_NOT_VALIDATION_AUDIT\", \"sources\": {\"bible/STYLE_GUIDE.md\": {\"git_blob_id\": \"0111cde93222bcfc87eedf84287cdd5a3a1eb6ee\", \"raw_byte_length\": 205, \"raw_sha256\": \"558a32bcb779acad39269083130163e527c7760f71c12abcaeb4215fcfa85596\", \"raw_status\": \"MATCH\", \"selected_byte_length\": 205, \"selected_sha256\": \"558a32bcb779acad39269083130163e527c7760f71c12abcaeb4215fcfa85596\"}}}\n",
+        "basis": "WORKING_TREE_METADATA_WITH_EXPLICIT_SOURCE_MODE",
+        "warning": "Target beats and user directives are author inputs, not events or POV knowledge."
+      },
+      "scene_references": {
+        "characters": [
+          {
+            "id": "CHAR-001",
+            "name": "Unit A"
+          }
+        ],
+        "location": {
+          "id": "LOC-001",
+          "name": "Synthetic gatehouse",
+          "pov_layout_knowledge": "UNKNOWN"
+        },
+        "planned_item_ids": [
+          "ITEM-TOKEN"
+        ],
+        "inventory": {
+          "earlier_local_approved_events": [],
+          "current_balance": "UNKNOWN",
+          "note": "No inferred totals, initial stock, zero quantities or planned gains."
+        },
+        "open_threads": {
+          "eligible_registry_references": [],
+          "historical_open_state": "UNKNOWN",
+          "note": "Untimed, future and unapproved setups withheld; current OPEN is not historical proof."
+        }
+      },
+      "pov_knowledge": {
+        "availability": "UNKNOWN",
+        "entries": [],
+        "untimed_traits": "WITHHELD",
+        "note": "House disclosure is separately source-labelled; world preview is not POV knowledge."
+      },
+      "house_reference": {
+        "availability": "NOT_REQUESTED",
+        "reason": "No house ID supplied; no house or ownership inferred."
+      },
+      "world_preview": {
+        "audience": "AUTHOR_ONLY_NOT_POV_KNOWLEDGE",
+        "result": {
+          "availability": "NOT_REQUESTED",
+          "reason": "No world cursor supplied; scene order is not world time."
+        }
+      },
+      "source_evidence": {
+        "mode": "working-tree",
+        "commit": "3c4590c5d3f2f03eebd08190a4902e522de52734",
+        "metadata_basis": "WORKING_TREE_REGISTRIES",
+        "sources": {
+          "bible/STYLE_GUIDE.md": {
+            "selected_sha256": "558a32bcb779acad39269083130163e527c7760f71c12abcaeb4215fcfa85596",
+            "selected_byte_length": 205,
+            "git_blob_id": "0111cde93222bcfc87eedf84287cdd5a3a1eb6ee",
+            "raw_sha256": "558a32bcb779acad39269083130163e527c7760f71c12abcaeb4215fcfa85596",
+            "raw_byte_length": 205,
+            "raw_status": "MATCH"
+          },
+          "drafts/EP-001/SC-001.md": {
+            "selected_sha256": "b4b5415f8806cd09be34816c6f14cb94dcb0883554fb1851e299916ac531f2e2",
+            "selected_byte_length": 470,
+            "git_blob_id": "3f7786a6715143a35b15bd2f633a00a23636f57b",
+            "raw_sha256": "b4b5415f8806cd09be34816c6f14cb94dcb0883554fb1851e299916ac531f2e2",
+            "raw_byte_length": 470,
+            "raw_status": "MATCH"
+          },
+          "drafts/EP-002/SC-002.md": {
+            "selected_sha256": "12567a3ee8ac4b3a28ee0ad70ade98b0eec9eff947cde4d1c9d7635cc9a076c9",
+            "selected_byte_length": 134,
+            "git_blob_id": "a2f76a45a4e7d67223ba3c7519a4c8556287f454",
+            "raw_sha256": "12567a3ee8ac4b3a28ee0ad70ade98b0eec9eff947cde4d1c9d7635cc9a076c9",
+            "raw_byte_length": 134,
+            "raw_status": "MATCH"
+          },
+          "ledger/episodes/EP-001.md": {
+            "selected_sha256": "43df123868fb045c9b294d3d972c61a1059b35af50935d21c642210f35891e28",
+            "selected_byte_length": 163,
+            "git_blob_id": "9a12a0c03225bc4184e09425c7bb28ad8b79b815",
+            "raw_sha256": "43df123868fb045c9b294d3d972c61a1059b35af50935d21c642210f35891e28",
+            "raw_byte_length": 163,
+            "raw_status": "MATCH"
+          },
+          "ledger/episodes/EP-002.md": {
+            "selected_sha256": "1c17a9fba14783aef9eecc60fa50514147201a750486d1a294c830f1cff3a7b9",
+            "selected_byte_length": 163,
+            "git_blob_id": "8cce38ff99aff89c49e1e5f669e8eb6e94b172d5",
+            "raw_sha256": "1c17a9fba14783aef9eecc60fa50514147201a750486d1a294c830f1cff3a7b9",
+            "raw_byte_length": 163,
+            "raw_status": "MATCH"
+          }
+        }
+      },
+      "metadata_evidence": {
+        "basis": "WORKING_TREE_BYTES",
+        "files": {
+          "bible/STYLE_GUIDE.md": {
+            "sha256": "558a32bcb779acad39269083130163e527c7760f71c12abcaeb4215fcfa85596",
+            "byte_length": 205
+          },
+          "data/canon.json": {
+            "sha256": "b8e45af4a68952125236c5fd39f03da715d233c5dcd6076484d27715a28175c8",
+            "byte_length": 3287
+          },
+          "data/characters.json": {
+            "sha256": "88ffb05302a74963de7a2072ffa6a49d12de1b81036c8fa6b7dda83d85a7b14b",
+            "byte_length": 858
+          },
+          "data/decisions.json": {
+            "sha256": "5a262abc810bff7381fce290b0b236a9065dde0eee5233fed9c7f049276baf4a",
+            "byte_length": 49
+          },
+          "data/episodes.json": {
+            "sha256": "0b5abd518eee9d06d343979efb0ef47eba1cfbaea2ad96ea9e70a5437209dc54",
+            "byte_length": 1145
+          },
+          "data/events.json": {
+            "sha256": "b53cf84a5f75868814d9a8118cf79565922f9b0334442e26da6de6a10894a3e6",
+            "byte_length": 1587
+          },
+          "data/inventory_ledger.json": {
+            "sha256": "c7d4a74a82ba212c992a6df27292d33ec591043d68ba53a4c3b3c75d88c78fd6",
+            "byte_length": 47
+          },
+          "data/items.json": {
+            "sha256": "36fd3d9d298aa474e333916eb39563b1b55783dc11f5289f8cab8afb703c8cea",
+            "byte_length": 222
+          },
+          "data/locations.json": {
+            "sha256": "624bd24989edc83deaf3cec62258b5ab572bdc1158d6c84dabe3fd24826598c8",
+            "byte_length": 266
+          },
+          "data/mechanics.json": null,
+          "data/relationships.json": {
+            "sha256": "9a3cb56b187e45bff91040ae73a3cc60993a176ed3c20ffc64dcd33e0137e1f6",
+            "byte_length": 53
+          },
+          "data/scenes.json": {
+            "sha256": "3eb4df3a28d1d3d2f40f2accc8cd5101c098d16481db5b406ae81741722a5cfe",
+            "byte_length": 3512
+          },
+          "data/sources.json": null,
+          "data/state_history.json": null,
+          "data/story_state.json": {
+            "sha256": "e2b98b6a7184393d077d007dc9c9d58c2fc8a222cfe26b7a1ba7b24ddb9a381c",
+            "byte_length": 313
+          },
+          "data/threads.json": {
+            "sha256": "5f72d7c47b3935921de6694f146e5927d61de3090e4bd3edf224af35c9f74819",
+            "byte_length": 47
+          },
+          "ledger/index.json": {
+            "sha256": "cf7777d4ce5638c1011f9f287134934e9ed9f42abf468ff085750357405c47ca",
+            "byte_length": 1244
+          },
+          "story.json": {
+            "sha256": "dde56404acf9d66202f1934982146714d89681bed81fe7481a1f69b029fd8e83",
+            "byte_length": 378
+          },
+          "author_memory/index.json": null,
+          "data/house_references.json": null,
+          "data/world_history.json": null,
+          "data/world_model.json": null,
+          "data/world_rules.json": null
+        }
+      }
+    },
+    "sha256": "be920c3a25fc49ba136c9d54ca521566d3675561e0f70894a885321e8372fbe7"
+  },
+  "git": {
+    "head_commit": "3c4590c5d3f2f03eebd08190a4902e522de52734",
+    "base_commit": "3c4590c5d3f2f03eebd08190a4902e522de52734",
+    "base_draft": {
+      "availability": "AVAILABLE",
+      "sha256": "b4b5415f8806cd09be34816c6f14cb94dcb0883554fb1851e299916ac531f2e2",
+      "byte_length": 470,
+      "git_blob_id": "3f7786a6715143a35b15bd2f633a00a23636f57b"
+    },
+    "diff": {
+      "availability": "AVAILABLE",
+      "content": "",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    }
+  },
+  "metadata_evidence": {
+    "basis": "WORKING_TREE_REGISTRIES",
+    "sha256": "719f17850b27a873201efc96fff64c8b284cd3428c2043e8b84df283644cba53",
+    "files": {
+      "bible/STYLE_GUIDE.md": {
+        "sha256": "558a32bcb779acad39269083130163e527c7760f71c12abcaeb4215fcfa85596",
+        "byte_length": 205
+      },
+      "data/canon.json": {
+        "sha256": "b8e45af4a68952125236c5fd39f03da715d233c5dcd6076484d27715a28175c8",
+        "byte_length": 3287
+      },
+      "data/characters.json": {
+        "sha256": "88ffb05302a74963de7a2072ffa6a49d12de1b81036c8fa6b7dda83d85a7b14b",
+        "byte_length": 858
+      },
+      "data/decisions.json": {
+        "sha256": "5a262abc810bff7381fce290b0b236a9065dde0eee5233fed9c7f049276baf4a",
+        "byte_length": 49
+      },
+      "data/episodes.json": {
+        "sha256": "0b5abd518eee9d06d343979efb0ef47eba1cfbaea2ad96ea9e70a5437209dc54",
+        "byte_length": 1145
+      },
+      "data/events.json": {
+        "sha256": "b53cf84a5f75868814d9a8118cf79565922f9b0334442e26da6de6a10894a3e6",
+        "byte_length": 1587
+      },
+      "data/inventory_ledger.json": {
+        "sha256": "c7d4a74a82ba212c992a6df27292d33ec591043d68ba53a4c3b3c75d88c78fd6",
+        "byte_length": 47
+      },
+      "data/items.json": {
+        "sha256": "36fd3d9d298aa474e333916eb39563b1b55783dc11f5289f8cab8afb703c8cea",
+        "byte_length": 222
+      },
+      "data/locations.json": {
+        "sha256": "624bd24989edc83deaf3cec62258b5ab572bdc1158d6c84dabe3fd24826598c8",
+        "byte_length": 266
+      },
+      "data/mechanics.json": null,
+      "data/relationships.json": {
+        "sha256": "9a3cb56b187e45bff91040ae73a3cc60993a176ed3c20ffc64dcd33e0137e1f6",
+        "byte_length": 53
+      },
+      "data/scenes.json": {
+        "sha256": "3eb4df3a28d1d3d2f40f2accc8cd5101c098d16481db5b406ae81741722a5cfe",
+        "byte_length": 3512
+      },
+      "data/sources.json": null,
+      "data/state_history.json": null,
+      "data/story_state.json": {
+        "sha256": "e2b98b6a7184393d077d007dc9c9d58c2fc8a222cfe26b7a1ba7b24ddb9a381c",
+        "byte_length": 313
+      },
+      "data/threads.json": {
+        "sha256": "5f72d7c47b3935921de6694f146e5927d61de3090e4bd3edf224af35c9f74819",
+        "byte_length": 47
+      },
+      "ledger/index.json": {
+        "sha256": "cf7777d4ce5638c1011f9f287134934e9ed9f42abf468ff085750357405c47ca",
+        "byte_length": 1244
+      },
+      "story.json": {
+        "sha256": "dde56404acf9d66202f1934982146714d89681bed81fe7481a1f69b029fd8e83",
+        "byte_length": 378
+      },
+      "author_memory/index.json": null,
+      "data/house_references.json": null,
+      "data/world_history.json": null,
+      "data/world_model.json": null,
+      "data/world_rules.json": null
+    }
+  },
+  "human_editorial_approval": "UNVERIFIED",
+  "canon_change_authorized": false,
+  "ledger_apply_authorized": false,
+  "packet_id": "83b96db1c23262b88e52d9b1cf10f858c0f709aecead605494900f68eda24fca"
+}

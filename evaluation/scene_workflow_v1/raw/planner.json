@@ -1,0 +1,35 @@
+{
+  "packet_id": "83b96db1c23262b88e52d9b1cf10f858c0f709aecead605494900f68eda24fca",
+  "draft_sha256": "b4b5415f8806cd09be34816c6f14cb94dcb0883554fb1851e299916ac531f2e2",
+  "notes": "Bounded to SC-001 preparation metadata. The source is working-tree metadata with explicit unknowns; human editorial approval is unverified, and canon and ledger changes are unauthorized.",
+  "plan": [
+    {
+      "basis": "CONTEXT",
+      "text": "At SC-001, only the ground floor is built; the stairs and upper gallery are unfinished and not usable."
+    },
+    {
+      "basis": "CONTEXT",
+      "text": "Exactly one physical token exists at SC-001. The gate is fixed red and opens only with the physical token."
+    },
+    {
+      "basis": "CONTEXT",
+      "text": "Unit A does not know the token code at SC-001; code knowledge may begin only after SC-003."
+    },
+    {
+      "basis": "UNKNOWN",
+      "text": "Scene-start inventory balance is unknown. The planned ITEM-TOKEN reference does not establish a holder, location, or inventory transfer."
+    },
+    {
+      "basis": "UNKNOWN",
+      "text": "Unit A's layout knowledge and scene-start knowledge entries are unknown; do not present the world preview or context facts as Unit A's perceptions."
+    },
+    {
+      "basis": "PROPOSED",
+      "text": "The SC-001 planning metadata gives the goal of exercising source-bound scene-start context, the conflict of keeping fixture facts and unknowns separate, a metadata-only beat, and an outcome declaring no world-state change. These are plan labels, not new events or approved history."
+    },
+    {
+      "basis": "DIRECTIVE",
+      "text": "Use labeled metadata assertions only and add no narrative prose. Preserve scene-start knowledge, inventory, and state boundaries; do not promote proposed material to canon or apply ledger changes before human review."
+    }
+  ]
+}
