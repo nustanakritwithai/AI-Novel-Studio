@@ -1,0 +1,816 @@
+{
+  "cases": [
+    {
+      "slug": "alpha",
+      "catalogs": {
+        "characters": [
+          {
+            "id": "CHAR-A",
+            "name": "อริน",
+            "role": "ผู้เดินทาง",
+            "aliases": [],
+            "known_traits": [],
+            "unknowns": [],
+            "knowledge": []
+          },
+          {
+            "id": "CHAR-B",
+            "name": "เบญจา",
+            "role": "ผู้ดูแล",
+            "aliases": [],
+            "known_traits": [],
+            "unknowns": [],
+            "knowledge": []
+          }
+        ],
+        "locations": [
+          {
+            "id": "LOC-SITE",
+            "name": "สวนแสงดาว"
+          },
+          {
+            "id": "LOC-BUILDING",
+            "name": "เรือนไม้"
+          },
+          {
+            "id": "LOC-ROOM",
+            "name": "ห้องลับ"
+          }
+        ],
+        "items": [
+          {
+            "id": "ITEM-KEY",
+            "name": "กุญแจทอง"
+          },
+          {
+            "id": "ITEM-STOCK",
+            "name": "ถุงเมล็ด"
+          },
+          {
+            "id": "ITEM-MYSTERY",
+            "name": "กล่องปริศนา"
+          }
+        ],
+        "scenes": [
+          {
+            "id": "SC-001",
+            "episode_id": "EP-001",
+            "order": 1,
+            "title": "ห้องเก็บของ",
+            "status": "PLANNED",
+            "pov": "CHAR-A",
+            "location_id": "LOC-ROOM",
+            "character_ids": [
+              "CHAR-A",
+              "CHAR-B"
+            ],
+            "item_ids": [
+              "ITEM-KEY",
+              "ITEM-STOCK",
+              "ITEM-MYSTERY"
+            ],
+            "canon_refs": [],
+            "goal": "ทดสอบข้อมูลสถานะจำลอง",
+            "conflict": "ไม่มีการยืนยันข้อเท็จจริง",
+            "outcome": "ข้อมูลอยู่ในชุดทดสอบ",
+            "beats": [
+              "ข้อมูลสังเคราะห์"
+            ],
+            "requires_flags": [],
+            "effects_flags": {},
+            "draft_path": "drafts/SC-001.md"
+          },
+          {
+            "id": "SC-002",
+            "episode_id": "EP-001",
+            "order": 2,
+            "title": "ลานสวน",
+            "status": "PLANNED",
+            "pov": "CHAR-A",
+            "location_id": "LOC-ROOM",
+            "character_ids": [
+              "CHAR-A",
+              "CHAR-B"
+            ],
+            "item_ids": [
+              "ITEM-KEY",
+              "ITEM-STOCK",
+              "ITEM-MYSTERY"
+            ],
+            "canon_refs": [],
+            "goal": "ทดสอบข้อมูลสถานะจำลอง",
+            "conflict": "ไม่มีการยืนยันข้อเท็จจริง",
+            "outcome": "ข้อมูลอยู่ในชุดทดสอบ",
+            "beats": [
+              "ข้อมูลสังเคราะห์"
+            ],
+            "requires_flags": [],
+            "effects_flags": {},
+            "draft_path": "drafts/SC-002.md"
+          },
+          {
+            "id": "SC-003",
+            "episode_id": "EP-001",
+            "order": 3,
+            "title": "ทางเดินเก่า",
+            "status": "PLANNED",
+            "pov": "CHAR-A",
+            "location_id": "LOC-ROOM",
+            "character_ids": [
+              "CHAR-A",
+              "CHAR-B"
+            ],
+            "item_ids": [
+              "ITEM-KEY",
+              "ITEM-STOCK",
+              "ITEM-MYSTERY"
+            ],
+            "canon_refs": [],
+            "goal": "ทดสอบข้อมูลสถานะจำลอง",
+            "conflict": "ไม่มีการยืนยันข้อเท็จจริง",
+            "outcome": "ข้อมูลอยู่ในชุดทดสอบ",
+            "beats": [
+              "ข้อมูลสังเคราะห์"
+            ],
+            "requires_flags": [],
+            "effects_flags": {},
+            "draft_path": "drafts/SC-003.md"
+          }
+        ]
+      },
+      "model": {
+        "schema_version": 1,
+        "story_slug": "alpha",
+        "baseline": {
+          "id": "REC-BASELINE",
+          "anchor": {
+            "scene_id": "SC-001",
+            "narration_suborder": 0,
+            "boundary": "BEFORE",
+            "world_time": {
+              "status": "KNOWN",
+              "clock_id": "CLOCK-MAIN",
+              "tick": 0,
+              "suborder": 0
+            }
+          },
+          "source": {
+            "path": "evidence/baseline.txt",
+            "sha256": "e5b0b08c1bbb8843065a540e69d7cdcc6c629ac4eeef499e5cde8d1d349a018a"
+          },
+          "local_status": "APPROVED",
+          "positions": [
+            {
+              "character_id": "CHAR-A",
+              "location": {
+                "status": "KNOWN",
+                "location_id": "LOC-ROOM"
+              }
+            },
+            {
+              "character_id": "CHAR-B",
+              "location": {
+                "status": "UNKNOWN"
+              }
+            }
+          ],
+          "holdings": [
+            {
+              "item_id": "ITEM-KEY",
+              "holder": {
+                "kind": "CHARACTER",
+                "character_id": "CHAR-A"
+              },
+              "quantity": 1
+            },
+            {
+              "item_id": "ITEM-STOCK",
+              "holder": {
+                "kind": "LOCATION",
+                "location_id": "LOC-ROOM"
+              },
+              "quantity": 10
+            },
+            {
+              "item_id": "ITEM-STOCK",
+              "holder": {
+                "kind": "CHARACTER",
+                "character_id": "CHAR-B"
+              },
+              "quantity": 0
+            },
+            {
+              "item_id": "ITEM-MYSTERY",
+              "holder": {
+                "kind": "UNKNOWN"
+              },
+              "quantity": null
+            }
+          ]
+        },
+        "observations": [],
+        "item_policies": [
+          {
+            "item_id": "ITEM-KEY",
+            "tracking": "UNIQUE",
+            "important": true
+          },
+          {
+            "item_id": "ITEM-STOCK",
+            "tracking": "STACK",
+            "important": true
+          },
+          {
+            "item_id": "ITEM-MYSTERY",
+            "tracking": "STACK",
+            "important": false
+          }
+        ],
+        "metadata": {
+          "fixture_note": "Local APPROVED labels are synthetic fixture declarations, not authenticated human approval."
+        }
+      },
+      "history": {
+        "schema_version": 1,
+        "story_slug": "alpha",
+        "model_sha256": "a1007fb1c2d6294364398b963b4f04127155334e993f1657b9d349052d481860",
+        "baseline_id": "REC-BASELINE",
+        "baseline_boundary": "BEFORE",
+        "coverage": {
+          "through": {
+            "clock_id": "CLOCK-MAIN",
+            "tick": 10,
+            "suborder": 0,
+            "boundary": "AFTER"
+          },
+          "local_status": "APPROVED",
+          "source": {
+            "path": "evidence/coverage.txt",
+            "sha256": "e5b0b08c1bbb8843065a540e69d7cdcc6c629ac4eeef499e5cde8d1d349a018a"
+          }
+        },
+        "deltas": [
+          {
+            "id": "EV2",
+            "anchor": {
+              "scene_id": "SC-001",
+              "narration_suborder": 0,
+              "boundary": "BEFORE",
+              "world_time": {
+                "status": "KNOWN",
+                "clock_id": "CLOCK-MAIN",
+                "tick": 2,
+                "suborder": 0
+              }
+            },
+            "local_status": "APPROVED",
+            "source": {
+              "path": "evidence/event-EV2.txt",
+              "sha256": "e5b0b08c1bbb8843065a540e69d7cdcc6c629ac4eeef499e5cde8d1d349a018a"
+            },
+            "operations": [
+              {
+                "operation": "MOVE_CHARACTER",
+                "character_id": "CHAR-A",
+                "from_location_id": "LOC-SITE",
+                "to_location_id": "LOC-BUILDING"
+              },
+              {
+                "operation": "TRANSFER_ITEM",
+                "item_id": "ITEM-STOCK",
+                "from_holder": {
+                  "kind": "LOCATION",
+                  "location_id": "LOC-ROOM"
+                },
+                "to_holder": {
+                  "kind": "CHARACTER",
+                  "character_id": "CHAR-B"
+                },
+                "quantity": 2
+              }
+            ]
+          },
+          {
+            "id": "EV1",
+            "anchor": {
+              "scene_id": "SC-003",
+              "narration_suborder": 8,
+              "boundary": "AFTER",
+              "world_time": {
+                "status": "KNOWN",
+                "clock_id": "CLOCK-MAIN",
+                "tick": 1,
+                "suborder": 0
+              }
+            },
+            "local_status": "APPROVED",
+            "source": {
+              "path": "evidence/event-EV1.txt",
+              "sha256": "e5b0b08c1bbb8843065a540e69d7cdcc6c629ac4eeef499e5cde8d1d349a018a"
+            },
+            "operations": [
+              {
+                "operation": "MOVE_CHARACTER",
+                "character_id": "CHAR-A",
+                "from_location_id": "LOC-ROOM",
+                "to_location_id": "LOC-SITE"
+              },
+              {
+                "operation": "TRANSFER_ITEM",
+                "item_id": "ITEM-KEY",
+                "from_holder": {
+                  "kind": "CHARACTER",
+                  "character_id": "CHAR-A"
+                },
+                "to_holder": {
+                  "kind": "CHARACTER",
+                  "character_id": "CHAR-B"
+                },
+                "quantity": 1
+              },
+              {
+                "operation": "TRANSFER_ITEM",
+                "item_id": "ITEM-STOCK",
+                "from_holder": {
+                  "kind": "LOCATION",
+                  "location_id": "LOC-ROOM"
+                },
+                "to_holder": {
+                  "kind": "CHARACTER",
+                  "character_id": "CHAR-B"
+                },
+                "quantity": 3
+              }
+            ]
+          }
+        ],
+        "metadata": {
+          "fixture_note": "Local APPROVED labels are synthetic fixture declarations, not authenticated human approval."
+        }
+      },
+      "cutoff": {
+        "clock_id": "CLOCK-MAIN",
+        "tick": 3,
+        "suborder": 0,
+        "boundary": "BEFORE"
+      },
+      "expected_state": {
+        "positions": [
+          {
+            "character_id": "CHAR-A",
+            "location": {
+              "status": "KNOWN",
+              "location_id": "LOC-BUILDING"
+            }
+          },
+          {
+            "character_id": "CHAR-B",
+            "location": {
+              "status": "UNKNOWN"
+            }
+          }
+        ],
+        "holdings": [
+          {
+            "item_id": "ITEM-KEY",
+            "holder": {
+              "kind": "CHARACTER",
+              "character_id": "CHAR-B"
+            },
+            "quantity": 1
+          },
+          {
+            "item_id": "ITEM-STOCK",
+            "holder": {
+              "kind": "LOCATION",
+              "location_id": "LOC-ROOM"
+            },
+            "quantity": 5
+          },
+          {
+            "item_id": "ITEM-STOCK",
+            "holder": {
+              "kind": "CHARACTER",
+              "character_id": "CHAR-B"
+            },
+            "quantity": 5
+          },
+          {
+            "item_id": "ITEM-MYSTERY",
+            "holder": {
+              "kind": "UNKNOWN"
+            },
+            "quantity": null
+          }
+        ]
+      }
+    },
+    {
+      "slug": "beta",
+      "catalogs": {
+        "characters": [
+          {
+            "id": "CHAR-A",
+            "name": "อารี",
+            "role": "ผู้เดินทาง",
+            "aliases": [],
+            "known_traits": [],
+            "unknowns": [],
+            "knowledge": []
+          },
+          {
+            "id": "CHAR-B",
+            "name": "กานต์",
+            "role": "ผู้ดูแล",
+            "aliases": [],
+            "known_traits": [],
+            "unknowns": [],
+            "knowledge": []
+          }
+        ],
+        "locations": [
+          {
+            "id": "LOC-SITE",
+            "name": "สวนริมธาร"
+          },
+          {
+            "id": "LOC-BUILDING",
+            "name": "บ้านไม้"
+          },
+          {
+            "id": "LOC-ROOM",
+            "name": "ห้องเก็บของ"
+          }
+        ],
+        "items": [
+          {
+            "id": "ITEM-KEY",
+            "name": "กุญแจเงิน"
+          },
+          {
+            "id": "ITEM-STOCK",
+            "name": "เมล็ดพันธุ์"
+          },
+          {
+            "id": "ITEM-MYSTERY",
+            "name": "วัตถุปริศนา"
+          }
+        ],
+        "scenes": [
+          {
+            "id": "SC-001",
+            "episode_id": "EP-001",
+            "order": 1,
+            "title": "ห้องเก็บของใหม่",
+            "status": "PLANNED",
+            "pov": "CHAR-A",
+            "location_id": "LOC-ROOM",
+            "character_ids": [
+              "CHAR-A",
+              "CHAR-B"
+            ],
+            "item_ids": [
+              "ITEM-KEY",
+              "ITEM-STOCK",
+              "ITEM-MYSTERY"
+            ],
+            "canon_refs": [],
+            "goal": "ทดสอบข้อมูลสถานะจำลอง",
+            "conflict": "ไม่มีการยืนยันข้อเท็จจริง",
+            "outcome": "ข้อมูลอยู่ในชุดทดสอบ",
+            "beats": [
+              "ข้อมูลสังเคราะห์"
+            ],
+            "requires_flags": [],
+            "effects_flags": {},
+            "draft_path": "drafts/SC-001.md"
+          },
+          {
+            "id": "SC-002",
+            "episode_id": "EP-001",
+            "order": 2,
+            "title": "ลานสวนใหม่",
+            "status": "PLANNED",
+            "pov": "CHAR-A",
+            "location_id": "LOC-ROOM",
+            "character_ids": [
+              "CHAR-A",
+              "CHAR-B"
+            ],
+            "item_ids": [
+              "ITEM-KEY",
+              "ITEM-STOCK",
+              "ITEM-MYSTERY"
+            ],
+            "canon_refs": [],
+            "goal": "ทดสอบข้อมูลสถานะจำลอง",
+            "conflict": "ไม่มีการยืนยันข้อเท็จจริง",
+            "outcome": "ข้อมูลอยู่ในชุดทดสอบ",
+            "beats": [
+              "ข้อมูลสังเคราะห์"
+            ],
+            "requires_flags": [],
+            "effects_flags": {},
+            "draft_path": "drafts/SC-002.md"
+          },
+          {
+            "id": "SC-003",
+            "episode_id": "EP-001",
+            "order": 3,
+            "title": "ทางเดินเก่าใหม่",
+            "status": "PLANNED",
+            "pov": "CHAR-A",
+            "location_id": "LOC-ROOM",
+            "character_ids": [
+              "CHAR-A",
+              "CHAR-B"
+            ],
+            "item_ids": [
+              "ITEM-KEY",
+              "ITEM-STOCK",
+              "ITEM-MYSTERY"
+            ],
+            "canon_refs": [],
+            "goal": "ทดสอบข้อมูลสถานะจำลอง",
+            "conflict": "ไม่มีการยืนยันข้อเท็จจริง",
+            "outcome": "ข้อมูลอยู่ในชุดทดสอบ",
+            "beats": [
+              "ข้อมูลสังเคราะห์"
+            ],
+            "requires_flags": [],
+            "effects_flags": {},
+            "draft_path": "drafts/SC-003.md"
+          }
+        ]
+      },
+      "model": {
+        "schema_version": 1,
+        "story_slug": "beta",
+        "baseline": {
+          "id": "REC-BASELINE",
+          "anchor": {
+            "scene_id": "SC-001",
+            "narration_suborder": 0,
+            "boundary": "BEFORE",
+            "world_time": {
+              "status": "KNOWN",
+              "clock_id": "CLOCK-MAIN",
+              "tick": 0,
+              "suborder": 0
+            }
+          },
+          "source": {
+            "path": "evidence/baseline.txt",
+            "sha256": "e5b0b08c1bbb8843065a540e69d7cdcc6c629ac4eeef499e5cde8d1d349a018a"
+          },
+          "local_status": "APPROVED",
+          "positions": [
+            {
+              "character_id": "CHAR-A",
+              "location": {
+                "status": "KNOWN",
+                "location_id": "LOC-SITE"
+              }
+            },
+            {
+              "character_id": "CHAR-B",
+              "location": {
+                "status": "KNOWN",
+                "location_id": "LOC-ROOM"
+              }
+            }
+          ],
+          "holdings": [
+            {
+              "item_id": "ITEM-KEY",
+              "holder": {
+                "kind": "CHARACTER",
+                "character_id": "CHAR-B"
+              },
+              "quantity": 1
+            },
+            {
+              "item_id": "ITEM-STOCK",
+              "holder": {
+                "kind": "LOCATION",
+                "location_id": "LOC-ROOM"
+              },
+              "quantity": 20
+            },
+            {
+              "item_id": "ITEM-STOCK",
+              "holder": {
+                "kind": "CHARACTER",
+                "character_id": "CHAR-A"
+              },
+              "quantity": 0
+            },
+            {
+              "item_id": "ITEM-MYSTERY",
+              "holder": {
+                "kind": "UNKNOWN"
+              },
+              "quantity": null
+            }
+          ]
+        },
+        "observations": [],
+        "item_policies": [
+          {
+            "item_id": "ITEM-KEY",
+            "tracking": "UNIQUE",
+            "important": true
+          },
+          {
+            "item_id": "ITEM-STOCK",
+            "tracking": "STACK",
+            "important": true
+          },
+          {
+            "item_id": "ITEM-MYSTERY",
+            "tracking": "STACK",
+            "important": false
+          }
+        ],
+        "metadata": {
+          "fixture_note": "Local APPROVED labels are synthetic fixture declarations, not authenticated human approval."
+        }
+      },
+      "history": {
+        "schema_version": 1,
+        "story_slug": "beta",
+        "model_sha256": "3e78bfd650eb69fda9ff9a35e2ea3c479014670b6c81b9a037a8182b0f4dba8b",
+        "baseline_id": "REC-BASELINE",
+        "baseline_boundary": "BEFORE",
+        "coverage": {
+          "through": {
+            "clock_id": "CLOCK-MAIN",
+            "tick": 10,
+            "suborder": 0,
+            "boundary": "AFTER"
+          },
+          "local_status": "APPROVED",
+          "source": {
+            "path": "evidence/coverage.txt",
+            "sha256": "e5b0b08c1bbb8843065a540e69d7cdcc6c629ac4eeef499e5cde8d1d349a018a"
+          }
+        },
+        "deltas": [
+          {
+            "id": "EV2",
+            "anchor": {
+              "scene_id": "SC-001",
+              "narration_suborder": 0,
+              "boundary": "BEFORE",
+              "world_time": {
+                "status": "KNOWN",
+                "clock_id": "CLOCK-MAIN",
+                "tick": 2,
+                "suborder": 0
+              }
+            },
+            "local_status": "APPROVED",
+            "source": {
+              "path": "evidence/event-EV2.txt",
+              "sha256": "e5b0b08c1bbb8843065a540e69d7cdcc6c629ac4eeef499e5cde8d1d349a018a"
+            },
+            "operations": [
+              {
+                "operation": "MOVE_CHARACTER",
+                "character_id": "CHAR-A",
+                "from_location_id": "LOC-ROOM",
+                "to_location_id": "LOC-SITE"
+              },
+              {
+                "operation": "TRANSFER_ITEM",
+                "item_id": "ITEM-STOCK",
+                "from_holder": {
+                  "kind": "LOCATION",
+                  "location_id": "LOC-ROOM"
+                },
+                "to_holder": {
+                  "kind": "CHARACTER",
+                  "character_id": "CHAR-A"
+                },
+                "quantity": 6
+              }
+            ]
+          },
+          {
+            "id": "EV1",
+            "anchor": {
+              "scene_id": "SC-003",
+              "narration_suborder": 8,
+              "boundary": "AFTER",
+              "world_time": {
+                "status": "KNOWN",
+                "clock_id": "CLOCK-MAIN",
+                "tick": 1,
+                "suborder": 0
+              }
+            },
+            "local_status": "APPROVED",
+            "source": {
+              "path": "evidence/event-EV1.txt",
+              "sha256": "e5b0b08c1bbb8843065a540e69d7cdcc6c629ac4eeef499e5cde8d1d349a018a"
+            },
+            "operations": [
+              {
+                "operation": "MOVE_CHARACTER",
+                "character_id": "CHAR-A",
+                "from_location_id": "LOC-SITE",
+                "to_location_id": "LOC-ROOM"
+              },
+              {
+                "operation": "TRANSFER_ITEM",
+                "item_id": "ITEM-KEY",
+                "from_holder": {
+                  "kind": "CHARACTER",
+                  "character_id": "CHAR-B"
+                },
+                "to_holder": {
+                  "kind": "CHARACTER",
+                  "character_id": "CHAR-A"
+                },
+                "quantity": 1
+              },
+              {
+                "operation": "TRANSFER_ITEM",
+                "item_id": "ITEM-STOCK",
+                "from_holder": {
+                  "kind": "LOCATION",
+                  "location_id": "LOC-ROOM"
+                },
+                "to_holder": {
+                  "kind": "CHARACTER",
+                  "character_id": "CHAR-A"
+                },
+                "quantity": 4
+              }
+            ]
+          }
+        ],
+        "metadata": {
+          "fixture_note": "Local APPROVED labels are synthetic fixture declarations, not authenticated human approval."
+        }
+      },
+      "cutoff": {
+        "clock_id": "CLOCK-MAIN",
+        "tick": 3,
+        "suborder": 0,
+        "boundary": "BEFORE"
+      },
+      "expected_state": {
+        "positions": [
+          {
+            "character_id": "CHAR-A",
+            "location": {
+              "status": "KNOWN",
+              "location_id": "LOC-SITE"
+            }
+          },
+          {
+            "character_id": "CHAR-B",
+            "location": {
+              "status": "KNOWN",
+              "location_id": "LOC-ROOM"
+            }
+          }
+        ],
+        "holdings": [
+          {
+            "item_id": "ITEM-KEY",
+            "holder": {
+              "kind": "CHARACTER",
+              "character_id": "CHAR-A"
+            },
+            "quantity": 1
+          },
+          {
+            "item_id": "ITEM-STOCK",
+            "holder": {
+              "kind": "LOCATION",
+              "location_id": "LOC-ROOM"
+            },
+            "quantity": 10
+          },
+          {
+            "item_id": "ITEM-STOCK",
+            "holder": {
+              "kind": "CHARACTER",
+              "character_id": "CHAR-A"
+            },
+            "quantity": 10
+          },
+          {
+            "item_id": "ITEM-MYSTERY",
+            "holder": {
+              "kind": "UNKNOWN"
+            },
+            "quantity": null
+          }
+        ]
+      }
+    }
+  ]
+}

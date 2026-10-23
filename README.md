@@ -16,6 +16,8 @@ python scripts/storyctl.py --story my-story doctor --out .local/doctor.json
 
 The optional [S1 world model](docs/WORLD_STATE_S1_TH.md) adds source-bound declarations of character positions, item holders, room containment and explicit world-time coordinates. Enable `world_state: {"schema_version": 1, "enabled": true}` in `story.json` and supply `data/world_model.json`; the existing `check` command validates it. This model does not replay events, answer world-state queries, change v1 knowledge/context, or establish human approval. Existing stories remain unchanged when the option is absent or disabled.
 
+The [S2 world preview](docs/WORLD_STATE_S2_TH.md) optionally adds `data/world_history.json` with explicit baseline binding, coverage and movement/custody deltas. `storyctl --story my-story world-preview --clock CLOCK-MAIN --tick 2 --boundary AFTER` produces a read-only PROPOSED result at an explicit world cursor. UNKNOWN facts and failed preconditions remain unresolved; no partial result or canon update is emitted. Local APPROVED declarations and matching evidence hashes do not authenticate human approval. The preview is separate from v1 replay and context packs; broad queries/maps, genre invariants and extraction remain deferred.
+
 After the selected story has valid human-authored metadata and a readable target draft:
 
 ```bash
