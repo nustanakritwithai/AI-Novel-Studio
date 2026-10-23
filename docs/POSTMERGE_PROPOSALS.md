@@ -33,7 +33,7 @@ GitHub ใช้ workflow definition จาก default branch สำหรับ
 - Event ต้องอยู่ใน repository, branch, workflow และสถานะที่คาดไว้ พร้อม full commit SHA และ run/attempt identity ที่ถูกต้อง
 - Remote workflow/run ต้องตรงกับ event จริง รวมถึง workflow path/ID และ run attempt; ชื่อ workflow อย่างเดียวไม่เพียงพอ
 - Current `main` ต้องตรงกับ merge head ที่กำลังตรวจทั้งก่อนและหลังการอ่าน หาก `main` เดินหน้าแล้ว จะไม่สร้างข้อเสนอจาก event เก่า
-- Git commit identity และ tree ต้องตรง มี parent หนึ่งหรือสองรายการ และ PR base ต้องเป็น first parent; ถ้ามีสอง parents ต้องมี PR head เป็น second parent ผูกกับ PR ที่ merge จริงเพียงรายการเดียวใน repository/base branch ที่คาดไว้ ตรวจ workflow/run/association/PR/ref ซ้ำเพื่อปฏิเสธข้อมูลที่เปลี่ยนระหว่างขั้นตอน
+- Git commit identity และ tree ต้องตรง มี parent หนึ่งหรือสองรายการ โดย `source.base_commit` มาจาก first parent ของ merge Git object ที่ตรวจแล้ว ส่วน PR API `base.sha` เก็บแยกเป็น `source.observed_pr_base_sha`: ค่านี้อาจค้างเมื่อ main เดินหน้าก่อน merge จึงไม่ใช่หลักฐาน premerge parent สำหรับ merge ที่มีสอง parents ต้องมี PR head เป็น second parent และต้องผูกกับ PR ที่ merge จริงเพียงรายการเดียวใน repository/main ที่คาดไว้ ประวัติแบบ parent เดียวยังคงเงื่อนไขอนุรักษนิยมว่า observed PR base ต้องตรง first parent; ถ้าไม่ตรงให้ปฏิเสธ ไม่เดา ancestry ตรวจ workflow/run/association/PR/ref ซ้ำ รวมทั้ง observed base เพื่อปฏิเสธข้อมูลที่เปลี่ยนระหว่างขั้นตอน
 - ไม่มี token, evidence ขาด, PR ยังไม่ merge, wrong repository, ambiguity, stale event, API/network error หรือข้อมูลขัดกัน ต้องหยุดโดยไม่สร้าง valid proposal ห้ามลดเป็น warning แล้ว upload ผลว่าใช้ได้
 
 การตรวจ metadata ไม่พิสูจน์ว่า PR เปลี่ยนเนื้อเรื่องใดหรือมีผู้มีอำนาจอนุมัติการตัดสินใจเชิงบรรณาธิการ แม้ merged metadata จะตรงทั้งหมดก็ยังนำไป apply ledger ไม่ได้
@@ -42,7 +42,7 @@ GitHub ใช้ workflow definition จาก default branch สำหรับ
 
 Workflow upload เฉพาะ `proposal.json` ที่สร้างใหม่ใน runner temp directory เท่านั้น ใช้ official `actions/upload-artifact` ที่ pin commit `ea165f8d65b6e75b540449e92b4886f43607fa02`, เก็บเจ็ดวัน, ปฏิเสธกรณีไม่มีไฟล์, ไม่ overwrite และไม่รวม hidden files ไม่ upload workspace, event payload, source prose หรือ raw API logs
 
-ข้อเสนอชนิด `POSTMERGE_METADATA_PROPOSAL` ผูก repository/PR/head/merge/base/tree, upstream run/attempt, workflow definition ref/revision, canonical event digest และ raw event digest เข้าด้วยกัน ไม่บันทึก raw event มี `source_scope: MERGED_METADATA_ONLY_NO_RECAP_ASSEMBLY`, `canon_change_authorized: false` และ `ledger_apply_authorized: false` ข้อมูลเป็น metadata เพื่อให้ตามตรวจแหล่งที่มาได้ ไม่ใช่ recap assembly และไม่ใช่ approval record ของเรื่อง
+ข้อเสนอชนิด `POSTMERGE_METADATA_PROPOSAL` ผูก repository/PR/head/merge/base/tree และแยก observed PR base SHA, upstream run/attempt, workflow definition ref/revision, canonical event digest และ raw event digest เข้าด้วยกัน ไม่บันทึก raw event มี `source_scope: MERGED_METADATA_ONLY_NO_RECAP_ASSEMBLY`, `canon_change_authorized: false` และ `ledger_apply_authorized: false` ข้อมูลเป็น metadata เพื่อให้ตามตรวจแหล่งที่มาได้ ไม่ใช่ recap assembly และไม่ใช่ approval record ของเรื่อง
 
 หลังติดตั้งและมี run จริงที่เข้าเกณฑ์ ให้เปิด run ของ postmerge workflow ใน GitHub Actions แล้วตรวจ artifact ให้ตรงกับ PR, SHA และ upstream run ที่ต้องการก่อนส่งต่อให้คนพิจารณา story/target/draft digest ตาม [agent runbook](AGENT_RUNBOOK.md) ห้ามแก้สถานะเป็น CANON/APPROVED จากการพบ artifact หรือคำว่า success ของ workflow
 
@@ -52,7 +52,7 @@ Workflow upload เฉพาะ `proposal.json` ที่สร้างให�
 | --- | --- |
 | ไม่ใช่ completed successful push-to-main หรือข้อมูล event ขาด | job ที่ไม่เข้าเงื่อนไขอาจไม่เริ่ม; verifier ปฏิเสธ input ที่ไม่ถูกต้อง ไม่มีข้อเสนอที่ใช้ได้ |
 | `main` เดินหน้า หรือ run attempt/head เปลี่ยน | event เก่าถูกปฏิเสธโดยตั้งใจ ใช้หลักฐานของ run ล่าสุดที่เข้าเกณฑ์ ไม่ reset branch เพื่อทำให้ event เก่าผ่าน |
-| ไม่มี/มีหลาย merged PR ที่ผูกได้แน่นอน หรือ parent/base ไม่ตรง | หยุดให้เจ้าของตรวจประวัติ ไม่เดา PR หรือยกเว้น identity checks เพื่อสร้าง artifact |
+| ไม่มี/มีหลาย merged PR ที่ผูกได้แน่นอน, second parent ไม่ตรง PR head หรือ single-parent base ไม่ตรง | หยุดให้เจ้าของตรวจประวัติ ไม่เดา PR หรือยกเว้น identity checks เพื่อสร้าง artifact |
 | Token/API/network ใช้ไม่ได้ | ตรวจ read access และสถานะบริการที่มีอยู่; ไม่สร้าง PAT, ไม่ login หรือขยาย repository permissions อัตโนมัติ Retry ได้เฉพาะเมื่อหลักฐาน/SHAs ยังตรงและเจ้าของสั่งดำเนินการ |
 | ขั้นตรวจล้มเหลวหรือไม่มีไฟล์ | ไม่ upload valid proposal; `if-no-files-found: error` ป้องกันการอ้างสำเร็จโดยไม่มี artifact |
 | ประวัติ rebase/merge ที่ไม่ผ่าน parent/base contract | ปฏิเสธอย่างปลอดภัย ไม่อ้างว่ารองรับ merge history ทุกแบบ |
@@ -78,3 +78,11 @@ Technical proposal-artifact workflow มี implementation แยกจาก ap
 - [GitHub: secure use และ least privilege](https://docs.github.com/en/actions/reference/security/secure-use)
 - [GitHub: workflow identity contexts](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context)
 - [Pinned official upload action](https://github.com/actions/upload-artifact/blob/ea165f8d65b6e75b540449e92b4886f43607fa02/action.yml)
+
+## กรณี PR base snapshot ค้าง
+
+PR API อาจเก็บ base SHA ก่อนที่ PR อื่นจะเข้า main แม้ merge Git object จะมี first parent เป็น main รุ่นใหม่ กรณี PR #26 มี observed base `905d7c3` แต่ merge `6e1d8bda` มี first parent `8a3addec` และ second parent ตรง PR head จึงเป็นรูปร่างข้อมูลที่ verifier เดิมปฏิเสธ Tests จำลองรูปร่างนี้กับ runtime ใน workflow โดยตรง และเก็บทั้ง first parent ที่ยืนยันแล้วกับค่า API ที่สังเกตได้ โดยไม่ทำให้ค่า API กลายเป็นหลักฐาน ancestry
+
+[Run เดิม](https://github.com/nustanakritwithai/AI-Novel-Studio/actions/runs/39954851241) มีเพียง error รวมที่ปิดรายละเอียด จึงยังพิสูจน์ตำแหน่ง exception ในเหตุการณ์เดิมไม่ได้ การแก้นี้อ้างอิงข้อขัดแย้งที่ตรวจซ้ำจาก metadata และ regression จำลอง ไม่อ้างว่าดึง event เดิมมาทดสอบหรือว่า run เดิมถูกซ่อมย้อนหลัง
+
+ยังคง read-only permissions, trusted inline stdlib runtime, current-main equality, merged PR/repository/ref/head identity, repeated-read race checks, fixed artifact path และ PROPOSED/UNVERIFIED ไม่มีการข้าม gate, เปลี่ยน settings, เพิ่ม credentials หรืออนุมัติ canon การทดสอบ live ของ runtime ใหม่นี้ต้องรอ owner อนุญาต merge PR แก้ไข; CI ของ Draft PR เป็นการทดสอบจำลองเท่านั้น

@@ -49,7 +49,8 @@ def _source_key(root: Path, relative: str) -> str:
 
 
 def _assert_exclusive_draft(root: Path, reader: SourceReader, scene_id: str,
-                            draft_path: str, scene_rows: list[dict]) -> None:
+                            draft_path: str, scene_rows: list[dict],
+                            episode_rows: list[dict]) -> None:
     """Reject scene drafts that are also registered as another scene/source."""
     target = _source_key(root, draft_path)
     normalized = []
@@ -76,6 +77,20 @@ def _assert_exclusive_draft(root: Path, reader: SourceReader, scene_id: str,
                     raise ValueError("story index contains an unsafe source path") from exc
                 if _source_key(root, candidate) == target:
                     raise ValueError("scene draft aliases a shared story source")
+
+    for row in episode_rows:
+        decision = row.get("author_decision")
+        if not isinstance(decision, dict):
+            continue
+        value = decision.get("source_path")
+        if value is None:
+            continue
+        try:
+            candidate = reader._normalize(value)
+        except (TypeError, ValueError) as exc:
+            raise ValueError("episode author decision contains an unsafe source path") from exc
+        if _source_key(root, candidate) == target:
+            raise ValueError("scene draft aliases an episode manuscript source")
 
 
 def _git_evidence(reader: SourceReader, draft_path: str, draft_text: str) -> dict:
@@ -142,7 +157,8 @@ def build_packet(root: Path | str, scene_id: str, *, source_mode: str = "working
         raise ValueError("selected scene draft path is invalid") from exc
     if not draft_path.startswith("drafts/") or PurePosixPath(draft_path).suffix.lower() != ".md":
         raise ValueError("selected draft must be Markdown inside the selected story's drafts/ directory")
-    _assert_exclusive_draft(selected_root, reader, scene_id, draft_path, scene_rows)
+    _assert_exclusive_draft(selected_root, reader, scene_id, draft_path, scene_rows,
+                            novelctl.rows(db, "episodes"))
 
     draft_bytes = reader.read(draft_path, max_bytes=MAX_DRAFT_BYTES)
     draft_text = review_bundle._text(draft_bytes, "Working-tree draft")
