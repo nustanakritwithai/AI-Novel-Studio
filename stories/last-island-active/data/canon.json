@@ -527,6 +527,146 @@
       "scope": "EP-005",
       "source_id": null,
       "notes": "Keep first/second raider specific account mapping UNKNOWN. Exact pistol duel ammo expend unknown."
+    },
+    {
+      "id": "FACT-053",
+      "category": "episode",
+      "statement": "พระเอกใช้ชุดหนังพื้นฐานและปืนพกจากบท 5 ขี่ม้าตัวแรกที่ยังมีชีวิตอยู่ไปฟาร์มกล่องตามถนน เหมือนคาวบอยถือปืนสั้น โดยไม่ยืนยันยอดกระสุนคงเหลือ",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-054",
+      "category": "episode",
+      "statement": "พระเอกจอดหรือลงจากม้าเป็นช่วง ๆ แล้วตีกล่องตามแนวถนน เก็บเศษวัสดุและของทั่วไป ไม่มีจำนวนล็อก",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-055",
+      "category": "episode",
+      "statement": "มีผู้เล่นถือไม้เบสบอลหนึ่งคนซุ่มโจมตีริมถนน พระเอกใช้ปืนพกยิงสวนจนเอาชนะได้ง่ายขึ้นกว่าเมื่อเริ่มเกม ตัวตนสัมพันธ์กับศัตรูเก่า UNKNOWN",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-056",
+      "category": "episode",
+      "statement": "พระเอกพบโรงกลั่นน้ำมันเก่าซึ่งมีซอมบี้โจมตีระยะใกล้กระจายตัว จึงเห็นว่าปืนพกสามารถยิงก่อนถูกเข้าประชิดได้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-057",
+      "category": "episode",
+      "statement": "พระเอกใช้ปืนพกกำจัดซอมบี้ในเขตโรงกลั่นที่สำรวจจนเงียบ แล้วเก็บไอเทมต่อ ไม่ยืนยันจำนวนซอมบี้หรือจำนวนกระสุนที่ใช้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-058",
+      "category": "episode",
+      "statement": "พระเอกพบบัตรผ่านสีเขียวหนึ่งใบสำหรับเปิดห้องพิเศษ น้ำมันพร้อมใช้จำนวนหนึ่ง และถังน้ำมันดิบหนึ่งใบ; ยังไม่ได้ใช้บัตรเปิดห้องพิเศษ",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-059",
+      "category": "episode",
+      "statement": "พระเอกใส่น้ำมันดิบเข้าที่เครื่องกลั่นซึ่งต้องใช้เวลานาน แล้วซ่อนรอ; ยังไม่ได้เก็บน้ำมันที่กลั่นสำเร็จก่อนถอนตัว",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-060",
+      "category": "episode",
+      "statement": "ผู้เล่นติดอาวุธปืนกลเบาจำนวนสามคนขี่มอเตอร์ไซค์สามคันมาถึงโรงกลั่น แล้วลงจากรถค้นพื้นที่",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-061",
+      "category": "episode",
+      "statement": "หนึ่งในผู้เล่นใหม่สามคนยิงม้าตัวแรกของพระเอกด้วยปืนกลเบาจนตายที่บริเวณทางเข้าโรงกลั่น โดยยังไม่ยืนยันว่าผู้เล่นคนไหนเป็นผู้ยิง",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-062",
+      "category": "episode",
+      "statement": "พระเอกได้ยินผู้เล่นใหม่พูดว่าจะรอเก็บน้ำมันที่มีคนเริ่มกลั่นไว้ แต่ไม่รู้ว่าพวกเขาเก็บผลผลิตสำเร็จจริงหรือไม่",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-063",
+      "category": "episode",
+      "statement": "พระเอกเลือกไม่สู้กับคนถือปืนกลเบาสามคน ถอยจากเขตโรงกลั่นแล้วเดินและวิ่งกลับบ้านอย่างระมัดระวัง กลับถึงฐานหิน 2×2 เดิมโดยไม่มีม้า",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-064",
+      "category": "episode",
+      "statement": "ระหว่างกลับบ้านพระเอกคาดเดาว่ากลุ่มขี่มอเตอร์ไซค์มีเชื้อเพลิงและอาวุธพร้อม และอาจควบคุมโรงกลั่น แต่สถานะความเป็นเจ้าของและฐานของกลุ่มยัง UNKNOWN",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-065",
+      "category": "episode",
+      "statement": "ท้าย EP006 พระเอกเก็บบัตรผ่านสีเขียวและน้ำมันพร้อมใช้บางส่วนกลับถึงบ้าน ส่วนถังน้ำมันดิบยังอยู่ในเครื่องกลั่นและไม่มีการรับผลผลิตกลั่นสำเร็จในฉากนี้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "User-directed plot only; generated prose remains unapproved DRAFT, actual selected-game mechanics unverified."
+    },
+    {
+      "id": "FACT-066",
+      "category": "editorial",
+      "statement": "รายละเอียดตำแหน่งซ่อน ซากรถ ลำดับการยิงซอมบี้ ห้องควบคุม น้ำมันที่เก็บใส่กระเป๋าและอารมณ์หลังม้าตายเป็นการขยายความของฉบับร่างนิยาย",
+      "status": "PROPOSED",
+      "origin": "ASSISTANT_DRAFT",
+      "scope": "EP-006",
+      "source_id": null,
+      "notes": "Never claim user locked exact timings, zombie kills, oil quantities or motorcycle identities."
     }
   ]
 }

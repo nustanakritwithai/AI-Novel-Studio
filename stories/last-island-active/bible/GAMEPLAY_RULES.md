@@ -46,3 +46,14 @@ All new mechanics have `source_ids: []` because no selected-mode evidence was ve
 User-accepted story loot: **two pistols total and 100 rounds observed on looting**. A later one-round warning is separate; final ammunition stock remains UNKNOWN because earlier use and loaded magazines are unspecified.
 
 No new layered fortifications, completed furnace iron/gunpowder, or permanent horse stable appear in EP005. Story scene acceptance in chat is distinct from authenticated GitHub reviewer approval and independent gameplay verification.
+
+## EP-006 fictional oil refinery rules (all unverified in real game)
+
+| Rule in prose | Mechanic | Restriction |
+|---|---|---|
+| Zombie NPCs are melee attackers in refinery | MECH-027 | No universal zombie AI/HP/spawn conclusion |
+| Green card opens special locked room | MECH-028 | One card acquired but unused in EP006 |
+| Crude barrel enters time-gated refinery | MECH-029 | No output collected before hero escapes; no formula/timer specified |
+| Three motorcycles with armed riders; hero's horse killed | MECH-030 | Mount loss author-directed; unknown which individual fired |
+
+Possession of firearms cannot establish superiority over all players; group sizes, weapon levels and location matter to character decisions. Vehicle/fuel supply and 'territory control' are only the protagonist's inference. No physical-world petroleum processing instructions are implied by this fictional game mechanic.

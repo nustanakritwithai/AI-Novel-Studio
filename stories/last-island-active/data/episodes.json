@@ -172,6 +172,39 @@
         "note": "Author said OK and requested text to be put into engine. Source assembled from accepted fight and revised ending. Do not mark formal Canon or modify approved-only ledger."
       },
       "prose_approval": "AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST_NOT_GITHUB_REVIEWED"
+    },
+    {
+      "id": "EP-006",
+      "title": "ราคาของน้ำมัน",
+      "status": "DRAFT",
+      "position": "ต่อจาก SC-047; ม้าตัวแรกยังอยู่แต่เสียชีวิตที่โรงกลั่นในบทนี้",
+      "logline": "พระเอกขี่ม้าพกปืนฟาร์มถนน ชนะคนถือไม้ เข้าสำรวจโรงกลั่นที่มีซอมบี้ เก็บบัตรเขียวกับน้ำมัน เริ่มคิวกลั่นน้ำมันดิบ แต่ถูกสามคนขี่มอเตอร์ไซค์ถือปืนกลเบาบุกและยิงม้าตาย จึงถอยเดินเท้ากลับบ้าน",
+      "scene_ids": [
+        "SC-048",
+        "SC-049",
+        "SC-050",
+        "SC-051",
+        "SC-052",
+        "SC-053",
+        "SC-054",
+        "SC-055",
+        "SC-056",
+        "SC-057",
+        "SC-058"
+      ],
+      "questions": [
+        "ผู้เล่นถือไม้ใน EP006 คือ CHAR-002 หรือไม่ UNKNOWN",
+        "จำนวนซอมบี้/กระสุน/น้ำมันที่ได้ไม่ระบุ",
+        "บัตรเขียวยังไม่ถูกใช้เปิดห้องพิเศษ",
+        "เครื่องกลั่นยังทำงานตอนถอนตัวและไม่รู้ว่าคนใหม่เก็บผลผลิตสำเร็จหรือไม่",
+        "คนใหม่มีฐานหรือคุมโรงกลั่นจริงไหม UNKNOWN",
+        "ม้าตัวแรกตายและไม่มีม้าทดแทน"
+      ],
+      "approved_final_draft": null,
+      "working_draft_path": "drafts/EP-006/CH-06-FULL-DRAFT.md",
+      "author_plot_directive": "DEC-010",
+      "prose_approval": "NOT_YET_APPROVED",
+      "preceding_episode": "EP-005"
     }
   ]
 }

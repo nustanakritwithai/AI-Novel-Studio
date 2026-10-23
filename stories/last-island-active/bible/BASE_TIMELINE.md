@@ -43,3 +43,10 @@
 | SC-044–047 | ชั้นยิงด้านบนมีที่กำบัง | พระเอกกลับขึ้นเฝ้าระวัง ยิงขู่นัดเดียว คู่ปรับถอย | บ้านยัง 2×2 หิน ชั้นยิงเป็นพื้นที่เปิด ยังไม่มีผนังหลายชั้นหรือคอกม้าใหม่; **คิด** ว่าควรป้องกันเพิ่ม |
 
 เตาเผาที่สร้างใน SC-038 ยังคงทำงานใน SC-047; ยังไม่บันทึกว่าเหล็ก/ดินปืน/กระสุนผลิตสำเร็จหรือถูกนำออกมาแล้ว. `data/draft_continuity_ep005.json` เป็น working-story DRAFT เท่านั้น ไม่ใช่ official approved-state replay.
+
+## EP-006 — No new building at the base
+
+- EP-006 starts at the same **2×2 stone base** with open upper firing platform. The hero takes his two pistols and first mount for road scavenging; no fortifications are built before leaving.
+- The hero later returns home on foot after his mount was killed at the oil refinery (SC-055). He has a green keycard and some ready oil but **no new motorcycle, LMG, finished refinery oil or replacement horse**.
+- No scene in EP-006 confirms whether the home furnace's pending earlier iron/gunpowder batch has become ready or was taken out; do not infer a new state merely because the hero was away for some time.
+- The refinery is a separate industrial location, not part of his house. The house footprint stays 2×2. Source-bound DRAFT: `data/draft_continuity_ep006.json`.

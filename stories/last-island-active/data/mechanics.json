@@ -212,6 +212,38 @@
       "story_requirement": "LOCKED",
       "source_ids": [],
       "notes": "Observed response is narrative choice, not a game-wide fear mechanic. One warning shot in scene."
+    },
+    {
+      "id": "MECH-027",
+      "title": "ซอมบี้โจมตีระยะใกล้และเคลื่อนตัวช้าเมื่อเทียบกับผู้เล่นมีปืน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Fictional game NPC behavior; AI speed, aggro, respawn, headshots and damage not verified"
+    },
+    {
+      "id": "MECH-028",
+      "title": "บัตรผ่านสีเขียวใช้กับห้องพิเศษประเภทที่ตรงกัน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "User-directed fictional card mechanic; room/access level/consumption rules unverified and not used in EP006"
+    },
+    {
+      "id": "MECH-029",
+      "title": "เครื่องกลั่นในโรงกลั่นเก่ารับน้ำมันดิบและต้องใช้เวลานานก่อนให้ผลิตผลน้ำมัน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Game-world time-gated refinery; no exact steps, real-world processing details, formula or duration verified"
+    },
+    {
+      "id": "MECH-030",
+      "title": "ผู้เล่นสามคนขี่มอเตอร์ไซค์พร้อมปืนกลเบา และม้าถูกโจมตีเสียชีวิต",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Vehicle, firearm and animal damage mechanics UNVERIFIED; owner/territory is only protagonist speculation"
     }
   ]
 }
