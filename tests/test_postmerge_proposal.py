@@ -155,6 +155,7 @@ class PostmergeProposalTests(unittest.TestCase):
         self.assertEqual(report['source'], {
             'repository': REPOSITORY, 'pr_number': PR_NUMBER,
             'head_commit': HEAD, 'merge_commit': MERGE, 'base_commit': BASE,
+            'observed_pr_base_sha': BASE,
             'merge_tree': TREE, 'merged_at': '2026-01-01T00:00:00Z'})
         self.assertEqual(report['upstream_run']['id'], RUN_ID)
         self.assertEqual(report['upstream_run']['run_attempt'], 1)
@@ -267,6 +268,31 @@ class PostmergeProposalTests(unittest.TestCase):
                 self.responses[PREFIX + 'pulls/' + str(PR_NUMBER)]['head']['sha'] = head
                 self.assert_rejected()
 
+    def test_stale_observed_base_preserves_verified_merge_first_parent(self):
+        self.responses[PREFIX + 'pulls/' + str(PR_NUMBER)]['base']['sha'] = 'f' * 40
+        report = self.build()
+        self.assertEqual(report['source']['base_commit'], BASE)
+        self.assertEqual(report['source']['observed_pr_base_sha'], 'f' * 40)
+        self.assertEqual(report['source']['head_commit'], HEAD)
+        self.assertEqual(report['human_editorial_approval'], 'UNVERIFIED')
+        self.assertFalse(report['canon_change_authorized'])
+        self.assertFalse(report['ledger_apply_authorized'])
+
+    def test_merge_second_parent_must_match_pr_head(self):
+        self.responses[PREFIX + 'git/commits/' + MERGE]['parents'][1]['sha'] = '9' * 40
+        self.assert_rejected()
+
+    def test_single_parent_with_exact_observed_base_remains_supported(self):
+        self.responses[PREFIX + 'git/commits/' + MERGE]['parents'] = [{'sha': BASE}]
+        report = self.build()
+        self.assertEqual(report['source']['base_commit'], BASE)
+        self.assertEqual(report['source']['observed_pr_base_sha'], BASE)
+
+    def test_single_parent_with_stale_observed_base_remains_rejected(self):
+        self.responses[PREFIX + 'git/commits/' + MERGE]['parents'] = [{'sha': BASE}]
+        self.responses[PREFIX + 'pulls/' + str(PR_NUMBER)]['base']['sha'] = 'f' * 40
+        self.assert_rejected()
+
     def test_missing_ambiguous_or_truncated_associations_do_not_produce_a_proposal(self):
         key = PREFIX + 'commits/' + MERGE + '/pulls?per_page=100'
         for mode in ('empty', 'multiple', 'limit', 'wrong_merge', 'wrong_base', 'wrong_repo'):
@@ -296,7 +322,7 @@ class PostmergeProposalTests(unittest.TestCase):
                 self.reset_fixture()
                 self.responses[PREFIX + 'pulls/' + str(PR_NUMBER)][field] = value
                 self.assert_rejected()
-        for field, value in (('sha', 'f' * 40), ('ref', 'feature'), ('repo', {'full_name': 'other/repo'})):
+        for field, value in (('sha', 'not-a-sha'), ('ref', 'feature'), ('repo', {'full_name': 'other/repo'})):
             with self.subTest(base_field=field):
                 self.reset_fixture()
                 self.responses[PREFIX + 'pulls/' + str(PR_NUMBER)]['base'][field] = value
@@ -307,6 +333,7 @@ class PostmergeProposalTests(unittest.TestCase):
             ('actions/runs/' + str(RUN_ID), lambda value: value.update(run_attempt=2)),
             ('actions/workflows/continuity.yml', lambda value: value.update(id=WORKFLOW_ID + 1)),
             ('pulls/' + str(PR_NUMBER), lambda value: value['head'].update(sha='f' * 40)),
+            ('pulls/' + str(PR_NUMBER), lambda value: value['base'].update(sha='9' * 40)),
             ('git/ref/heads/main', lambda value: value['object'].update(sha='f' * 40)),
             ('commits/' + MERGE + '/pulls?per_page=100', lambda value: value.clear()),
         )
