@@ -54,3 +54,12 @@ PR #11 and #12 were closed as superseded; main contains the selected two-chapter
 4. Read `research/EP003_GAMEPLAY_GAPS.md` before alleging any external game mechanic is verified.
 5. Start with `plot/episodes/EP-004-HANDOFF-PROPOSED.md`; there are **no** EP-004 scenes in registry yet.
 6. The enemy fired exactly six pistol rounds in this scene; all 6 are recorded as `INV-029` owned by CHAR-006. Do not transfer a pistol or ammo to protagonist or claim other ammo caches are known.
+
+## MUST READ — EP-004 to future continuation (DRAFT)
+
+- User plot directive DEC-007; complete but unapproved prose: `drafts/EP-004/CH-04-FULL-DRAFT.md`; 12 scene cards SC-027..038.
+- Read `data/draft_continuity_ep004.json`, `data/wildlife_ep004.json`, `plot/episodes/EP-004.md`, `bible/BASE_TIMELINE.md`, `research/EP004_GAMEPLAY_GAPS.md`.
+- Horse CHAR-008 was tamed using a hide glove after weakening, brought toward home. No stable yet. Hunting consumes extensive in-game travel time; exact counts/times UNKNOWN.
+- Blast at wall/entrance is during hunting while hero online, not proof of intrusion on a prior offline night. Two raiders are CHAR-004/005 from EP-002, **not** CHAR-002 or CHAR-006. Hero hides, does NOT kill them, and repairs after they depart. Exact stolen supplies UNKNOWN.
+- Fat→oil and **furnace built** by SC-038. Timed iron and game wood/sulfur gunpowder-material processing is only STARTED; no ready iron/gunpowder/bullets at EP-004 end.
+- The house footprint remains 2×2 stone plus upper firing platform. Approval of the new prose has not been received; never auto-apply `data/story_state.json` or the approved ledger.
