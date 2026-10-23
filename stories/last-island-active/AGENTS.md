@@ -1,23 +1,23 @@
 # AGENTS.md — Last Island Active Story / operational instructions
 
-Story root: \`stories/last-island-active\`. Canonical approved history is **EMPTY**. Source content in \`stories/last-island\` is an immutable, byte-pinned E1 historical example. Do not edit it to fix this story.
+Story root: `stories/last-island-active`. Canonical approved history is **EMPTY**. Source content in `stories/last-island` is an immutable, byte-pinned E1 historical example. Do not edit it to fix this story.
 
 ## Read order
-1. \`story.json\` and \`data/canon.json\` (LOCKED user-directed story beats override all generated prose).
-2. \`data/story_state.json\` (approved history marker is null; never mistake a DRAFT for approved).
-3. \`data/episodes.json\`, \`data/scenes.json\`, \`data/events.json\`, \`data/characters.json\`, \`data/inventory_ledger.json\`.
-4. \`bible/STYLE_GUIDE.md\`, \`bible/CHARACTER_CONTINUITY_ADDENDUM.md\`, \`HANDOFF.md\`.
-5. Target-specific \`scenes/SC-xxx.md\`, \`drafts/EP-xxx/SC-xxx.md\`, full chapter drafts.
-6. \`drafts/PROPOSED_CONTINUITY_CH-01_02.json\` is advisory/unapproved memory, not approved ledger.
+1. `story.json` and `data/canon.json` (LOCKED user-directed story beats override all generated prose).
+2. `data/story_state.json` (approved history marker is null; never mistake a DRAFT for approved).
+3. `data/episodes.json`, `data/scenes.json`, `data/events.json`, `data/characters.json`, `data/inventory_ledger.json`.
+4. `bible/STYLE_GUIDE.md`, `bible/CHARACTER_CONTINUITY_ADDENDUM.md`, `HANDOFF.md`.
+5. Target-specific `scenes/SC-xxx.md`, `drafts/EP-xxx/SC-xxx.md`, full chapter drafts.
+6. `drafts/PROPOSED_CONTINUITY_CH-01_02.json` is advisory/unapproved memory, not approved ledger.
 
 ## CLI (from repository root)
-\`\`\`bash
+```bash
 python scripts/storyctl.py --story last-island-active check
 python scripts/storyctl.py --story last-island-active status
 python scripts/storyctl.py --story last-island-active brief EP-002
 python scripts/storyctl.py --story last-island-active pack EP-002
 python scripts/storyctl.py --story last-island-active replay SC-018
-\`\`\`
+```
 
 ## Rules
 - Every drafted scene carries DRAFT status and cannot enter approved ledger without explicit human review/provenance.
@@ -29,4 +29,12 @@ python scripts/storyctl.py --story last-island-active replay SC-018
 - The bow-wielder discovered at 4×4 might be the original shooter: treat matching as POV suspicion until supported.
 - 100-player global tournament belongs in a later arc; no early competitive opening.
 - SC-001/SC-002 alternative prose remains in PR #11/#12; this dataset adopts the two full chapter drafts in PR #13 as the **candidate literary edition**, not approved.
-- No silent edits to \`data/story_state.json\`, \`ledger/index.json\` or human-approved canon. A CI pass is not editorial approval.
+- No silent edits to `data/story_state.json`, `ledger/index.json` or human-approved canon. A CI pass is not editorial approval.
+
+## Phase 1 author-accepted memory addendum
+
+- Always validate `author_memory/index.json` and bound source Git blob hashes before using locally attested accepted recaps.
+- `python scripts/storyctl.py --story last-island-active memory` includes EP-001/EP-002 recaps for *future* planning, each visibly labelled as **derived from author-accepted source**, not GitHub-approved ledger evidence.
+- `pack EP-002` includes only earlier EP-001 author-accepted memory; never leak future EP-002 recap into its own context.
+- `ledger/index.json` is still **GitHub-review-approved-only** and cannot be auto-populated from a ChatGPT assertion. GitHub review/account authentication is outside the scope of these local checks.
+- The old `stories/last-island/` sample and its 54 byte-pinned files remain immutable.

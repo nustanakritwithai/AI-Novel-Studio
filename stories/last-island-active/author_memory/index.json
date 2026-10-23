@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "story_slug": "last-island-active",
+  "basis": "AUTHOR_CHAT_LOCAL_ATTESTATION_NOT_GITHUB_REVIEW",
+  "approval_record": "editorial/AUTHOR_APPROVAL_2026-10-23.json",
+  "episodes": [
+    {
+      "episode_id": "EP-001",
+      "decision_id": "DEC-004",
+      "status": "AUTHOR_ACCEPTED_IN_CHAT",
+      "scene_ids": [
+        "SC-001",
+        "SC-002",
+        "SC-003",
+        "SC-004",
+        "SC-005",
+        "SC-006",
+        "SC-007",
+        "SC-008"
+      ],
+      "source_path": "drafts/EP-001/CH-01-FULL-DRAFT.md",
+      "source_blob_sha": "6ea5c611d2224479a02fb491cb0503240e9387af",
+      "summary_path": "author_memory/episodes/EP-001.md",
+      "summary_blob_sha": "e98aacbc65c89bd8b8acb6714da7c71bef65c975"
+    },
+    {
+      "episode_id": "EP-002",
+      "decision_id": "DEC-004",
+      "status": "AUTHOR_ACCEPTED_IN_CHAT",
+      "scene_ids": [
+        "SC-009",
+        "SC-010",
+        "SC-011",
+        "SC-012",
+        "SC-013",
+        "SC-014",
+        "SC-015",
+        "SC-016",
+        "SC-017",
+        "SC-018"
+      ],
+      "source_path": "drafts/EP-002/CH-02-FULL-DRAFT.md",
+      "source_blob_sha": "973c2385644832640e2cae213b12852942c20912",
+      "summary_path": "author_memory/episodes/EP-002.md",
+      "summary_blob_sha": "ac3c5ab8a36cfa46998f677818a2f23115ce89f6"
+    }
+  ]
+}

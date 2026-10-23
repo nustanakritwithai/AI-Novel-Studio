@@ -13,9 +13,10 @@ import sys
 from pathlib import Path
 
 try:
-    from scripts import novelctl
+    from scripts import novelctl, author_memory
 except ImportError:  # called as `python scripts/story_engine.py`
     import novelctl
+    import author_memory
 
 ROOT = Path(__file__).resolve().parent.parent
 SHA40 = re.compile(r"^[0-9a-fA-F]{40}$")
@@ -159,6 +160,7 @@ def validate(root: Path) -> tuple[list[str], list[str]]:
             errors.append("story_state phase cannot remain OUTLINE after full episode approval")
     if not approved_ids and db["story_state"].get("approved_through_scene"):
         warnings.append("An approved scene exists, but no fully approved episode ledger yet")
+    errors.extend(author_memory.validate(root, db))
     return errors, warnings
 
 
@@ -216,6 +218,7 @@ def pack(root: Path, target: str, keep: int = 7, max_chars: int = 25000) -> str:
     base = novelctl.build_brief(root, target)
     style = novelctl.story_config.story_path(root, "bible/STYLE_GUIDE.md").read_text(encoding="utf-8")
     recent = render_approved_history(root, target, keep)
+    author_recent = author_memory.render(root, before=target, recent=keep)
     content = (
         "# STORY ENGINE / SELECTED-STORY LOCAL CONTEXT PACK\n"
         f"Target: {target} | Max approved recent episodes: {keep}\n"
@@ -223,7 +226,7 @@ def pack(root: Path, target: str, keep: int = 7, max_chars: int = 25000) -> str:
         "GitHub main and human approval have not been authenticated. Drafts and proposals do not establish canon.\n"
         "Do not use information from future episodes. Do not silently update canon.\n\n"
         + "## REQUIRED WRITING STYLE\n" + style + "\n\n"
-        + recent + "\n\n" + approved_scene_tail(root, target) + "\n\n" + base
+        + recent + ("\n\n" + author_recent if author_recent else "") + "\n\n" + approved_scene_tail(root, target) + "\n\n" + base
     )
     if len(content) > max_chars:
         raise ValueError(f"Context size {len(content)} chars exceeds cap {max_chars}. Narrow target/keep; never silently truncate LOCKED canon.")

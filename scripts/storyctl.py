@@ -166,6 +166,10 @@ def main(argv: list[str] | None = None) -> int:
     new.add_argument("--title")
     commands.add_parser("check")
     commands.add_parser("status")
+    memory = commands.add_parser("memory", help="Read-only, source-pinned author-accepted recaps; not a GitHub PR approval")
+    memory.add_argument("--before", help="Show only accepted episodes strictly before this episode or scene")
+    memory.add_argument("--recent", type=int, default=7)
+    memory.add_argument("--out", type=Path)
     diagnose = commands.add_parser('doctor', help='Read-only local diagnostics; GitHub settings remain UNKNOWN')
     diagnose.add_argument('--target', help='Optional scene/episode for state availability')
     diagnose.add_argument('--out', type=Path)
@@ -261,6 +265,17 @@ def main(argv: list[str] | None = None) -> int:
             return 1 if errors else 0
         if args.command == "status":
             print(novelctl.status(root))
+            return 0
+        if args.command == "memory":
+            if not 0 <= args.recent <= 20:
+                raise ValueError("--recent must be 0..20")
+            errors, _ = story_engine.validate(root)
+            if errors:
+                raise ValueError("Story validation failed: " + "; ".join(errors[:5]))
+            output = story_engine.author_memory.render(root, before=args.before, recent=args.recent)
+            if not output:
+                output = "No author-accepted memory is configured for this story.\n"
+            _emit_private_artifact(args.workspace, args.out, output)
             return 0
         if args.command == "pack":
             if not 0 <= args.recent <= 20 or args.max_chars < 1000:
