@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/scene_delta_proposal.schema.json",
+  "title": "Private per-scene delta proposal v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "kind", "status", "proposal_scope", "story_slug", "target", "source",
+    "proposal_identity", "revision_id", "revision_sha256", "previous_revision_id",
+    "previous_revision_sha256", "previous_chain_sha256", "revision_history",
+    "revision_chain_sha256", "observations", "human_editorial_approval",
+    "canon_change_authorized", "ledger_apply_authorized", "world_state_application"
+  ],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "kind": {"type": "string", "const": "SCENE_DELTA_PROPOSAL"},
+    "status": {"type": "string", "const": "PROPOSED"},
+    "proposal_scope": {"type": "string", "const": "OBSERVATIONS_ONLY"},
+    "story_slug": {"type": "string", "minLength": 1, "maxLength": 63, "pattern": "\\S"},
+    "target": {
+      "type": "object", "additionalProperties": false, "required": ["scene_id", "draft_path"],
+      "properties": {
+        "scene_id": {"$ref": "common.schema.json#/$defs/id"},
+        "draft_path": {"type": "string", "minLength": 1, "maxLength": 1024, "pattern": "\\S"}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "mode", "commit", "metadata_basis", "selected_sha256",
+                   "selected_byte_length", "git_blob_id", "raw_sha256", "raw_byte_length", "raw_status"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1, "maxLength": 1024, "pattern": "\\S"},
+        "mode": {"enum": ["working-tree", "committed"]},
+        "commit": {"$ref": "#/$defs/commit"},
+        "metadata_basis": {"type": "string", "const": "WORKING_TREE_REGISTRIES"},
+        "selected_sha256": {"$ref": "#/$defs/sha256"},
+        "selected_byte_length": {"type": "integer", "minimum": 0},
+        "git_blob_id": {"type": "string", "pattern": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$"},
+        "raw_sha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+        "raw_byte_length": {"oneOf": [{"type": "integer", "minimum": 0}, {"type": "null"}]},
+        "raw_status": {"enum": ["MATCH", "DIFFERENT", "MISSING", "UNREADABLE"]}
+      }
+    },
+    "proposal_identity": {"type": "string", "pattern": "^SDP-[0-9a-f]{64}$"},
+    "revision_id": {"type": "string", "pattern": "^SDR-[0-9a-f]{64}$"},
+    "revision_sha256": {"$ref": "#/$defs/sha256"},
+    "previous_revision_id": {"oneOf": [{"type": "string", "pattern": "^SDR-[0-9a-f]{64}$"}, {"type": "null"}]},
+    "previous_revision_sha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+    "previous_chain_sha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+    "revision_history": {
+      "type": "array", "maxItems": 64,
+      "items": {"$ref": "#/$defs/revisionRecord"}
+    },
+    "revision_chain_sha256": {"$ref": "#/$defs/sha256"},
+    "observations": {
+      "type": "array", "maxItems": 200,
+      "items": {"$ref": "#/$defs/observation"}
+    },
+    "human_editorial_approval": {"type": "string", "const": "UNVERIFIED"},
+    "canon_change_authorized": {"type": "boolean", "const": false},
+    "ledger_apply_authorized": {"type": "boolean", "const": false},
+    "world_state_application": {"type": "string", "const": "NOT_RUN"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "minLength": 64, "maxLength": 64,
+                "pattern": "^[0-9a-f]{64}$", "not": {"pattern": "[^0-9a-f]"}},
+    "commit": {"oneOf": [
+      {"type": "string", "const": "UNKNOWN"},
+      {"type": "string", "pattern": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$"}
+    ]},
+    "idOrUnknown": {"anyOf": [
+      {"$ref": "common.schema.json#/$defs/id"},
+      {"type": "string", "const": "UNKNOWN"}
+    ]},
+    "worldTime": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["status"],
+         "properties": {"status": {"const": "UNKNOWN"}}},
+        {"type": "object", "additionalProperties": false,
+         "required": ["status", "clock_id", "tick", "suborder", "boundary"],
+         "properties": {"status": {"const": "KNOWN"},
+                        "clock_id": {"$ref": "common.schema.json#/$defs/id"},
+                        "tick": {"type": "integer"}, "suborder": {"type": "integer", "minimum": 0},
+                        "boundary": {"enum": ["BEFORE", "AFTER"]}}}
+      ]
+    },
+    "holder": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["kind", "id"],
+         "properties": {"kind": {"const": "CHARACTER"}, "id": {"$ref": "common.schema.json#/$defs/id"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "id"],
+         "properties": {"kind": {"const": "LOCATION"}, "id": {"$ref": "common.schema.json#/$defs/id"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "id"],
+         "properties": {"kind": {"const": "UNKNOWN"}, "id": {"const": "UNKNOWN"}}}
+      ]
+    },
+    "subject": {"$ref": "scene_delta_claims.schema.json#/$defs/subject"},
+    "moveCandidate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["character_id", "from_location_id", "to_location_id", "world_time"],
+      "properties": {
+        "character_id": {"$ref": "#/$defs/idOrUnknown"},
+        "from_location_id": {"$ref": "#/$defs/idOrUnknown"},
+        "to_location_id": {"$ref": "#/$defs/idOrUnknown"},
+        "world_time": {"$ref": "#/$defs/worldTime"}
+      }
+    },
+    "transferCandidate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["item_id", "from_holder", "to_holder", "quantity", "world_time"],
+      "properties": {
+        "item_id": {"$ref": "#/$defs/idOrUnknown"},
+        "from_holder": {"$ref": "#/$defs/holder"},
+        "to_holder": {"$ref": "#/$defs/holder"},
+        "quantity": {"oneOf": [{"type": "integer", "minimum": 1}, {"type": "string", "const": "UNKNOWN"}]},
+        "world_time": {"$ref": "#/$defs/worldTime"}
+      }
+    },
+    "physicalCandidate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_kind", "target_id", "component_id", "aspect", "world_time"],
+      "properties": {
+        "target_kind": {"enum": ["CHARACTER", "LOCATION", "ITEM", "UNKNOWN"]},
+        "target_id": {"$ref": "#/$defs/idOrUnknown"},
+        "component_id": {"type": "string", "const": "UNKNOWN"},
+        "aspect": {"type": "string", "minLength": 1, "maxLength": 160, "pattern": "\\S"},
+        "world_time": {"$ref": "#/$defs/worldTime"}
+      },
+      "allOf": [
+        {"if": {"properties": {"target_kind": {"const": "UNKNOWN"}}, "required": ["target_kind"]},
+         "then": {"properties": {"target_id": {"const": "UNKNOWN"}}}},
+        {"if": {"properties": {"target_kind": {"enum": ["CHARACTER", "LOCATION", "ITEM"]}}, "required": ["target_kind"]},
+         "then": {"properties": {"target_id": {"$ref": "common.schema.json#/$defs/id"}}}}
+      ]
+    },
+    "revisionRecord": {
+      "type": "object", "additionalProperties": false,
+      "required": ["revision_id", "revision_sha256", "previous_revision_id",
+                   "previous_revision_sha256", "previous_chain_sha256", "revision_chain_sha256"],
+      "properties": {
+        "revision_id": {"type": "string", "pattern": "^SDR-[0-9a-f]{64}$"},
+        "revision_sha256": {"$ref": "#/$defs/sha256"},
+        "previous_revision_id": {"oneOf": [{"type": "string", "pattern": "^SDR-[0-9a-f]{64}$"}, {"type": "null"}]},
+        "previous_revision_sha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+        "previous_chain_sha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+        "revision_chain_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "observation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "category", "claim", "subject", "candidate", "evidence"],
+      "properties": {
+        "id": {"$ref": "common.schema.json#/$defs/id"},
+        "category": {"enum": ["MOVE", "TRANSFER", "CONSTRUCTION", "DAMAGE", "REPAIR"]},
+        "claim": {"type": "string", "minLength": 1, "maxLength": 2000, "pattern": "\\S"},
+        "subject": {"$ref": "#/$defs/subject"},
+        "candidate": {"oneOf": [
+          {"$ref": "#/$defs/moveCandidate"},
+          {"$ref": "#/$defs/transferCandidate"},
+          {"$ref": "#/$defs/physicalCandidate"}
+        ]},
+        "evidence": {
+          "type": "object", "additionalProperties": false,
+          "required": ["path", "draft_sha256", "quote", "start_line", "end_line", "locator_status", "semantic_assessment"],
+          "properties": {
+            "path": {"type": "string", "minLength": 1, "maxLength": 1024, "pattern": "\\S"},
+            "draft_sha256": {"$ref": "#/$defs/sha256"},
+            "quote": {"type": "string", "minLength": 1, "maxLength": 2000, "pattern": "\\S"},
+            "start_line": {"type": "integer", "minimum": 1},
+            "end_line": {"type": "integer", "minimum": 1},
+            "locator_status": {"type": "string", "const": "EXACT_QUOTE_AT_LINES"},
+            "semantic_assessment": {"type": "string", "const": "NOT_EVALUATED"}
+          }
+        }
+      },
+      "allOf": [
+        {"if": {"properties": {"category": {"const": "MOVE"}}, "required": ["category"]},
+         "then": {"properties": {"candidate": {"$ref": "#/$defs/moveCandidate"}}}},
+        {"if": {"properties": {"category": {"const": "TRANSFER"}}, "required": ["category"]},
+         "then": {"properties": {"candidate": {"$ref": "#/$defs/transferCandidate"}}}},
+        {"if": {"properties": {"category": {"enum": ["CONSTRUCTION", "DAMAGE", "REPAIR"]}}, "required": ["category"]},
+         "then": {"properties": {"candidate": {"$ref": "#/$defs/physicalCandidate"}}}},
+        {"if": {"properties": {"category": {"const": "MOVE"}}, "required": ["category"]},
+         "then": {"properties": {"subject": {"properties": {"kind": {"enum": ["CHARACTER", "UNKNOWN"]}}}}}},
+        {"if": {"properties": {"category": {"const": "TRANSFER"}}, "required": ["category"]},
+         "then": {"properties": {"subject": {"properties": {"kind": {"enum": ["ITEM", "UNKNOWN"]}}}}}}
+      ]
+    }
+  }
+}
