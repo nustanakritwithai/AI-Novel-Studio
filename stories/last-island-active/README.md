@@ -19,3 +19,10 @@ python -m unittest discover -s tests -v
 ```
 
 For continued writing follow `HANDOFF.md`. Game mechanics are fiction directives unless verified against actual selected-server gameplay; item counts remain UNKNOWN.
+
+## Integrated into current Story Engine
+
+Studio defaults to this story. S1 world model is enabled with 18 source-pinned observations and UNKNOWN times and quantities.
+Prior author-chat-accepted chapter recaps are now visible in packs with explicit trust labeling. The approved-only GitHub-review ledger remains empty.
+Character portrait preview and proposed visual lock: assets/CHAR-001_PORTRAIT_THUMB.webp and bible/CHAR-001_VISUAL_REFERENCE.md.
+See docs/LAST_ISLAND_S1_MEMORY_TH.md at repository root.

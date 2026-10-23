@@ -30,3 +30,12 @@ python -m unittest discover -s tests -v
 ```
 
 PR #11 and #12 were closed as superseded; main contains the selected two-chapter manuscripts.
+
+## Writer handoff — current engine
+
+1. Default route: python scripts/storyctl.py check ; python scripts/storyctl.py pack EP-002.
+2. The pack includes EP-001 chat-accepted recap only (no future spoilers); see editorial/accepted for EP-002 after completion.
+3. Read data/world_model.json for S1 observations of positions and item holders. This model is not an inventory calculation or world-time simulation.
+4. Read bible/CHAR-001_VISUAL_REFERENCE.md for the low-resolution visual proposal. Never set age, height, occupation or other unknown biographical facts as canonical without user approval.
+5. Formal approved-only ledger is still empty because PR #13 lacked a native GitHub APPROVE reviewer; never invent a reviewer or approved_by.
+6. For the full method and limitations see docs/LAST_ISLAND_S1_MEMORY_TH.md.

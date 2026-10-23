@@ -99,5 +99,18 @@ class ActiveStoryLatestEngineTests(unittest.TestCase):
             self.assertNotIn("AUTHOR-ACCEPTED EPISODE MEMORY", pack)
 
 
+    def test_visual_reference_image_is_pinned_and_proposal_only(self):
+        import hashlib
+        thumbnail = ACTIVE / "assets/CHAR-001_PORTRAIT_THUMB.webp"
+        data = thumbnail.read_bytes()
+        self.assertGreater(len(data), 1000)
+        self.assertEqual(hashlib.sha256(data).hexdigest(), "80f13a614e0891a5346d5f146a7b8a8b7e51228a50cb0cab75524f980bbbcc97")
+        design = json.loads((ACTIVE / "bible/CHAR-001_VISUAL_LOCK_PROPOSED.json").read_text(encoding="utf-8"))
+        self.assertEqual(design["design_approval"], "PROPOSED")
+        self.assertEqual(design["nationality"]["value"], "Thai")
+        self.assertIsNone(design["permanent_identity"]["exact_age"])
+        self.assertFalse(design["images"]["full_reference_committed"])
+
+
 if __name__ == "__main__":
     unittest.main()
