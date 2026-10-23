@@ -32,3 +32,12 @@ This is **direct author consent in ChatGPT**, not an independently submitted Git
 - `storyctl.py --story last-island-active memory` can show both recaps for continuing the story; `pack EP-002` includes only the older EP-001 recap.
 - The source manuscripts are accepted in ChatGPT, but each summary is **DERIVED / NOT_SEPARATELY_REVIEWED** and does not represent a GitHub `APPROVE` review.
 - Separate verified `ledger/index.json` remains empty, and `approved_through_scene` remains null. S1 World State and default-story changes belong to later phases.
+
+## EP-003 candidate update (2026-10-23)
+
+- **User plot directive DEC-005:** chapter 3 begins in real life after chapter 2's logout, then road-oil quest, two-way skilled bow duel, an opposing pistol with six shots, protagonist death/bed respawn, and a plan to hunt animals for fat-to-oil instead.
+- **Source:** `drafts/EP-003/CH-03-FULL-DRAFT.md`, scene prose SC-019–SC-026, cards and draft event/inventory records.
+- **State:** **DRAFT / NOT AUTHOR ACCEPTED PROSE / NOT ENGINE APPROVED**. Only author-directed beats are locked; other details remain proposed.
+- **Candidate continuity after SC-026:** stone 2×2 base and firing platform visually intact; some stored resources remain; carried bow/arrows/tool/road scrap dropped on death; fresh hunting gear prepared; no oil, no furnace, no iron, no animal-fat, no animal hunting yet. Exact item/HP quantities UNKNOWN.
+- **Next:** EP-004 first animal hunt, not yet authored/approved.
+- **Provenance boundary:** accepted EP-001/EP-002 source and their author_memory retained; GitHub reviewer-approved ledger and approved_through_scene unchanged.
