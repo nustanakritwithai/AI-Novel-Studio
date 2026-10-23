@@ -58,3 +58,9 @@ For direct chapter reading use [reading order chapters 1–6](drafts/READING_ORD
 - Starts time-gated oil refining and waits; **three** motorcycle riders with light machine guns arrive, kill first horse, and discover active refinery process. Hero evades them and returns **on foot** to the original stone 2×2 base with card and some oil/road scrap.
 - The crew's ownership of the refinery, and actual completion/collection of refined oil, are UNKNOWN. Green card not used; no new heavy weapons, vehicles or replacement horse acquired.
 - EP-006 wording is DRAFT. Do not update approved-only ledger, official story_state or earlier accepted prose.
+
+## แบบฐาน 4×4 ในอนาคต (ยังไม่ได้ก่อสร้าง)
+
+ผู้เขียนกำหนดว่า **ชั้นล่าง 12 ช่องที่ล้อมแกนบ้าน 2×2 เป็นทางเดินโล่งกว้างหนึ่งช่องพื้น เชื่อมต่อกันครบทุกด้านและเดินวนได้ตลอดวง** ภายใต้กรอบเป้าหมาย 4×4 มีผนังป้องกันแนวด้านข้างสองแนว ชั้นยิงรอบนอกชั้นสองพร้อมกำแพงเตี้ย และเสาหลักกลางบ้านหนึ่งต้นเท่านั้น รายละเอียดทางเข้า/ประตู/บันได/หลังคายัง TBD.
+
+ดู [เอกสารเป้าหมายฐาน 4×4](bible/BASE_EXPANSION_4X4_TARGET.md) และ [ผังชั้นล่างแบบอ่านด้วยโปรแกรม](data/base_expansion_4x4_target.json) (DEC-011, FACT-067). **ปลายบทที่ 6 บ้านยังเป็น 2×2 หิน ไม่มีวงทางเดินหรือกำแพงใหม่สร้างเสร็จ**; ต้องเห็นเหตุการณ์ก่อสร้างก่อนบันทึกว่าสำเร็จใน Engine.
