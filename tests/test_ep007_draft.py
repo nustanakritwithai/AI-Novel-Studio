@@ -143,7 +143,7 @@ class EpSevenContinuity(unittest.TestCase):
             self.assertEqual(source["git_blob_sha"], expected_sha)
             self.assertEqual(source["status"], "LOCAL_REFERENCE")
             binary = (ROOT / path).read_bytes()
-            actual_sha = hashlib.sha1(f"blob {len(binary)}".encode("ascii") + b"\\x00" + binary).hexdigest()
+            actual_sha = hashlib.sha1(f"blob {len(binary)}".encode("ascii") + b"\x00" + binary).hexdigest()
             self.assertEqual(actual_sha, expected_sha)
         self.assertTrue((ROOT/"bible/HOUSE_CARD_EVIDENCE_FREEZE_EP007.md").exists())
 
