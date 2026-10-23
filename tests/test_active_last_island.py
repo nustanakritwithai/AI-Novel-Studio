@@ -18,9 +18,9 @@ class ActiveLastIslandAcceptance(unittest.TestCase):
     def test_drafts_do_not_promote_approved_history(self):
         db=novelctl.load(ROOT)
         self.assertIsNone(db["story_state"]["approved_through_scene"])
-        self.assertEqual([e["id"] for e in db["episodes"]["episodes"]], ["EP-001", "EP-002", "EP-003"])
-        self.assertEqual([len([s for s in db["scenes"]["scenes"] if s["episode_id"]==e]) for e in ["EP-001", "EP-002", "EP-003"]],[8,10,8])
-        self.assertEqual(len(db["events"]["events"]),26)
+        self.assertEqual([e["id"] for e in db["episodes"]["episodes"]], ["EP-001", "EP-002", "EP-003", "EP-004"])
+        self.assertEqual([len([s for s in db["scenes"]["scenes"] if s["episode_id"]==e]) for e in ["EP-001", "EP-002", "EP-003", "EP-004"]],[8,10,8,12])
+        self.assertEqual(len(db["events"]["events"]),38)
         self.assertTrue(all(s["status"]=="DRAFT" for s in db["scenes"]["scenes"]))
         for s in db["scenes"]["scenes"]:
             self.assertTrue((ROOT/s["draft_path"]).is_file(),s["id"])
