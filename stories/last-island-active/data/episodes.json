@@ -134,6 +134,44 @@
       "author_plot_directive": "DEC-007",
       "prose_approval": "NOT_YET_APPROVED",
       "preceding_episode": "EP-003"
+    },
+    {
+      "id": "EP-005",
+      "title": "ค้อนที่หน้าประตู",
+      "status": "DRAFT",
+      "position": "ต่อทันทีหลัง SC-038 ที่เตาเผาเพิ่งเริ่มทำงาน",
+      "logline": "คู่ปรับสองคนกลับมาทุบประตู พระเอกใช้ธนูสังหารคนแรก สลับปืนของศพหลอกยิงพลิกชนะคนที่สอง ได้ปืนพกสองกระบอกและกระสุน 100 นัด แต่พอคู่ปรับกลับมาอีกครั้งจึงเฝ้าชั้นสองยิงเตือนและตระหนักว่าต้องเพิ่มการป้องกันฐาน",
+      "scene_ids": [
+        "SC-039",
+        "SC-040",
+        "SC-041",
+        "SC-042",
+        "SC-043",
+        "SC-044",
+        "SC-045",
+        "SC-046",
+        "SC-047"
+      ],
+      "questions": [
+        "ยังไม่ระบุว่า CHAR-004/005 รายใดถือค้อนหรือปืน",
+        "จำนวนลูกธนู/กระสุนใช้ในไฟต์แรกและกระสุนเหลือท้ายบท UNKNOWN",
+        "ไม่มีฉากที่ยืนยันว่าเตาเผาผลิตเหล็ก/ดินปืนเสร็จ",
+        "ม้าตัวแรกนอกฐานระหว่างเกิดเหตุมีสถานะ UNKNOWN"
+      ],
+      "approved_final_draft": null,
+      "working_draft_path": "drafts/EP-005/CH-05-FULL-DRAFT.md",
+      "author_plot_directive": "DEC-008",
+      "author_decision": {
+        "status": "AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST",
+        "decision_id": "DEC-009",
+        "source_path": "drafts/EP-005/CH-05-FULL-DRAFT.md",
+        "source_blob_sha": "5dce7134bc2a4982f301d7d0a71635d1631f7d3a",
+        "source_channel": "ChatGPT",
+        "github_pr_reviewer_provenance": "NOT_OBSERVED",
+        "engine_approval_state": "PENDING_GITHUB_REVIEW",
+        "note": "Author said OK and requested text to be put into engine. Source assembled from accepted fight and revised ending. Do not mark formal Canon or modify approved-only ledger."
+      },
+      "prose_approval": "AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST_NOT_GITHUB_REVIEWED"
     }
   ]
 }
