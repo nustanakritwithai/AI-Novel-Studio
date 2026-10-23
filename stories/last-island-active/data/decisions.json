@@ -119,6 +119,39 @@
       ],
       "date": "2026-10-23",
       "notes": "ล็อกเฉพาะเหตุการณ์หลักตามคำสั่งผู้เขียน ถ้อยคำฉบับเต็มและรายละเอียดสูตรเกม/จำนวนยัง DRAFT/UNVERIFIED"
+    },
+    {
+      "id": "DEC-008",
+      "summary": "ผู้เขียนกำหนด EP005 ว่าคู่ปรับ 2 คนจาก EP002/004 กลับมาทุบประตูและยิงขู่ พระเอกย่องขึ้นชั้นยิง ยิงธนูสังหารคนแรก รออีกคนเปลี่ยนกระสุนจึงยิงสวนและลงมาเก็บปืนจากศพ หลอกด้วยธนูก่อนยิงปืนพกชนะคนที่สอง ได้ชุดหนัง ปืน 2 กระบอก กระสุน 100 นัด",
+      "status": "USER_PLOT_DIRECTIVE",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-042",
+        "FACT-043",
+        "FACT-044",
+        "FACT-045",
+        "FACT-046",
+        "FACT-047"
+      ],
+      "date": "2026-10-23",
+      "notes": "User-directed combat, loot and resource quantities; no game-mechanic verification."
+    },
+    {
+      "id": "DEC-009",
+      "summary": "ผู้เขียนแก้ฉากจบให้ขึ้นเฝ้าชั้นยิง คู่ปรับสองคนกลับมาอีก จึงยิงปืนขู่หนึ่งนัดจนอีกฝ่ายหยุดดูและถอย สรุปความเสี่ยงว่าหากอีกฝ่ายเก่งขึ้นคงไม่รอด แล้วกล่าว 'ok ครับเอาเนื้อเรื่องขึ้น engine เลย' ให้เก็บข้อความนี้",
+      "status": "AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-048",
+        "FACT-049",
+        "FACT-050",
+        "FACT-051"
+      ],
+      "date": "2026-10-23",
+      "notes": "Source manuscript Git blob 5dce7134bc2a4982f301d7d0a71635d1631f7d3a. Chat consent for integration and revised ending; no independently authenticated GitHub PR APPROVE review.",
+      "source_channel": "ChatGPT",
+      "source_path": "drafts/EP-005/CH-05-FULL-DRAFT.md",
+      "source_blob_sha": "5dce7134bc2a4982f301d7d0a71635d1631f7d3a"
     }
   ]
 }
