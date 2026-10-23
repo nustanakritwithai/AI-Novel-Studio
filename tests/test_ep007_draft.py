@@ -129,6 +129,24 @@ class EpSevenContinuity(unittest.TestCase):
         self.assertEqual(sha, "6ad780ff895556e0352fc53bf80dfae58078e9b7")
         self.assertTrue((ROOT/"bible/BASE_CONSTRUCTION_EP007_DRAFT.md").is_file())
 
+    def test_house_card_pinned_original_registry_blobs_still_resolve(self):
+        refs = read("data/house_references.json")
+        old_paths = {
+            "SRC-CHARACTERS": ("data/house_evidence/characters_pre_ep007.json",
+                               "9d321f7898e59db31b819e69fa1cd87e4f7b755e"),
+            "SRC-SCENES": ("data/house_evidence/scenes_pre_ep007.json",
+                           "63fcb7e21d69824f4235e8f042608a4b6e6cc486"),
+        }
+        for source_id, (path, expected_sha) in old_paths.items():
+            source = next(x for x in refs["sources"] if x["id"] == source_id)
+            self.assertEqual(source["path"], path)
+            self.assertEqual(source["git_blob_sha"], expected_sha)
+            self.assertEqual(source["status"], "LOCAL_REFERENCE")
+            binary = (ROOT / path).read_bytes()
+            actual_sha = hashlib.sha1(f"blob {len(binary)}".encode("ascii") + b"\\x00" + binary).hexdigest()
+            self.assertEqual(actual_sha, expected_sha)
+        self.assertTrue((ROOT/"bible/HOUSE_CARD_EVIDENCE_FREEZE_EP007.md").exists())
+
     def test_inventory_represents_segments_not_twenty_four_extra_tiles(self):
         all_entries=read("data/inventory_ledger.json")["entries"]
         ep7=[e for e in all_entries if e["scene_id"] in {f"SC-{i:03d}" for i in range(59,69)}]
