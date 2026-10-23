@@ -21,6 +21,7 @@ MODEL_PATH = 'data/world_model.json'
 SCHEMA_ROOT = Path(__file__).resolve().parents[1] / 'schemas' / 'world_state'
 SCHEMA_BASE = 'https://ai-novel-studio.local/schemas/world_state/'
 HUMAN_APPROVAL = 'UNVERIFIED'
+MAX_EVIDENCE_BYTES = 1024 * 1024
 
 
 @lru_cache(maxsize=1)
@@ -157,7 +158,7 @@ def validation_errors(model: object, db: dict, story_slug: str) -> list[str]:
     return errors
 
 
-def load(root: Path, db: dict | None = None) -> dict | None:
+def load(root: Path, db: dict | None = None, *, source_reader=None) -> dict | None:
     """Read an enabled model and verify each source's immutable bytes.
 
     Disabled/missing opt-in never reads a stray model. The returned declarations
@@ -181,10 +182,17 @@ def load(root: Path, db: dict | None = None) -> dict | None:
             raise ValueError('; '.join(errors))
         records = ([] if model['baseline'] is None else [model['baseline']]) + model['observations']
         for record in records:
-            source = story_config.story_path(root, record['source']['path'])
+            relative = record['source']['path']
+            source = story_config.story_path(root, relative)
             if source == model_path:
                 raise ValueError(f"{record['id']}: world model cannot be its own source")
-            content = source.read_bytes()
+            if source_reader is None:
+                content = source.read_bytes()
+            else:
+                reader_root = getattr(source_reader, 'root', None)
+                if reader_root is not None and Path(reader_root).resolve() != root.resolve():
+                    raise ValueError('source reader does not match the selected story')
+                content = source_reader.read(relative, max_bytes=MAX_EVIDENCE_BYTES)
             if not content.strip():
                 raise ValueError(f"{record['id']}: source evidence is blank")
             if hashlib.sha256(content).hexdigest() != record['source']['sha256']:
@@ -194,9 +202,9 @@ def load(root: Path, db: dict | None = None) -> dict | None:
         raise ValueError(f'{MODEL_PATH}: cannot validate enabled model ({exc})') from exc
 
 
-def validate(root: Path, db: dict | None = None) -> list[str]:
+def validate(root: Path, db: dict | None = None, *, source_reader=None) -> list[str]:
     try:
-        load(root, db)
+        load(root, db, source_reader=source_reader)
         return []
     except (OSError, ValueError) as exc:
         return [str(exc)]

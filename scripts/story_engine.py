@@ -41,14 +41,23 @@ def within(root: Path, relpath: str, prefix: str) -> Path:
     target = (root / relpath).resolve()
     if not base.is_relative_to(root) or not target.is_relative_to(base) or target.suffix != ".md":
         raise ValueError(f"ledger path outside {prefix}: {relpath}")
-    return target
+    return root / relpath  # Keep the declared path so the reader can reject links before resolution.
 
 
-def approved_prose(root: Path, scene: dict) -> str:
+def _source_text(root: Path, path: Path, source_reader=None) -> str:
+    root = novelctl.story_config.resolve_root(root)
+    if source_reader is None:
+        return path.read_text(encoding='utf-8')
+    if Path(source_reader.root).resolve() != Path(root).resolve():
+        raise ValueError('Source reader belongs to another story')
+    return source_reader.text(path.relative_to(root).as_posix())
+
+
+def approved_prose(root: Path, scene: dict, source_reader=None) -> str:
     """Read the source evidence for an approved scene, or fail explicitly."""
     try:
         path = within(root, scene.get("draft_path"), "drafts")
-        content = path.read_text(encoding="utf-8")
+        content = _source_text(root, path, source_reader)
         if not content.strip():
             raise ValueError("source prose is blank")
         return content
@@ -56,9 +65,12 @@ def approved_prose(root: Path, scene: dict) -> str:
         raise ValueError(f"{scene['id']}: cannot read approved source prose ({exc})") from exc
 
 
-def validate(root: Path) -> tuple[list[str], list[str]]:
+def validate(root: Path, source_reader=None) -> tuple[list[str], list[str]]:
     # The manual workflow and pack command must enforce the same base checks as CI.
-    errors, warnings = novelctl.validate(root)
+    root = novelctl.story_config.resolve_root(root)
+    if source_reader is not None and Path(source_reader.root).resolve() != root:
+        raise ValueError('Source reader belongs to another story')
+    errors, warnings = novelctl.validate(root, source_reader=source_reader)
     if errors:
         return ["Base registry invalid: " + error for error in errors], warnings
     try:
@@ -78,7 +90,7 @@ def validate(root: Path) -> tuple[list[str], list[str]]:
     for scene in by_scene.values():
         if scene.get("status") in APPROVED:
             try:
-                approved_prose(root, scene)
+                approved_prose(root, scene, source_reader=source_reader)
             except ValueError as exc:
                 errors.append(str(exc))
     approval_ids = set()
@@ -135,7 +147,7 @@ def validate(root: Path) -> tuple[list[str], list[str]]:
             path = record.get("summary_path")
             try:
                 file_path = within(root, path, f"ledger/{layer}")
-                content = file_path.read_text(encoding="utf-8").strip()
+                content = _source_text(root, file_path, source_reader).strip()
                 if not content or "TODO" in content or "PLACEHOLDER" in content:
                     errors.append(f"{rid}: approved summary is blank or has placeholder")
                 if content and len(content) < 100:
@@ -161,12 +173,12 @@ def validate(root: Path) -> tuple[list[str], list[str]]:
             errors.append("story_state phase cannot remain OUTLINE after full episode approval")
     if not approved_ids and db["story_state"].get("approved_through_scene"):
         warnings.append("An approved scene exists, but no fully approved episode ledger yet")
-    errors.extend(author_memory.validate(root, db))
-    errors.extend(house_cards.validate(root, db))
+    errors.extend(author_memory.validate(root, db, source_reader=source_reader))
+    errors.extend(house_cards.validate(root, db, source_reader=source_reader))
     return errors, warnings
 
 
-def render_approved_history(root: Path, target: str, keep: int = 7) -> str:
+def render_approved_history(root: Path, target: str, keep: int = 7, source_reader=None) -> str:
     """Only summaries approved before the target, never future spoilers or drafts."""
     idx, db = load_index(root), novelctl.load(root)
     sequence = [e["id"] for e in novelctl.rows(db, "episodes")]
@@ -180,7 +192,7 @@ def render_approved_history(root: Path, target: str, keep: int = 7) -> str:
     output = ["## APPROVED EPISODE LEDGER (RECENT ONLY)"]
     for item in entries:
         src = within(root, item["summary_path"], "ledger/episodes")
-        output.extend([f"### {item['id']} — {src.name}", src.read_text(encoding="utf-8")])
+        output.extend([f"### {item['id']} — {src.name}", _source_text(root, src, source_reader)])
     if not entries:
         output.append("No earlier approved episodes. Planned beats are not canon prose.")
     for layer in ("books", "chapters"):
@@ -189,11 +201,11 @@ def render_approved_history(root: Path, target: str, keep: int = 7) -> str:
             output.append(f"## APPROVED {layer.upper()} ROLLUPS")
             for r in records:
                 src = within(root, r["summary_path"], f"ledger/{layer}")
-                output.extend([f"### {r['id']}", src.read_text(encoding="utf-8")])
+                output.extend([f"### {r['id']}", _source_text(root, src, source_reader)])
     return "\n\n".join(output)
 
 
-def approved_scene_tail(root: Path, target: str, max_scenes: int = 2, max_each: int = 2400) -> str:
+def approved_scene_tail(root: Path, target: str, max_scenes: int = 2, max_each: int = 2400, source_reader=None) -> str:
     """Attach approved immediately preceding prose, not future scene text."""
     db = novelctl.load(root)
     scene = novelctl.get(db, "scenes", target)
@@ -205,22 +217,24 @@ def approved_scene_tail(root: Path, target: str, max_scenes: int = 2, max_each: 
                       and s["status"] in APPROVED), key=lambda s: s["order"])
     parts = ["## PRIOR APPROVED SCENE EXCERPTS (SAME EPISODE)"]
     for s in earlier[-max_scenes:]:
-        content = approved_prose(root, s)
+        content = approved_prose(root, s, source_reader=source_reader)
         parts.append(f"### {s['id']}\n" + content[-max_each:])
     if not earlier:
         parts.append("No previously approved scenes in this episode.")
     return "\n\n".join(parts)
 
 
-def pack(root: Path, target: str, keep: int = 7, max_chars: int = 25000) -> str:
-    errors, _ = validate(root)
+def pack(root: Path, target: str, keep: int = 7, max_chars: int = 25000, *,
+         scene_only: bool = False, source_reader=None, pov_id: str | None = None) -> str:
+    errors, _ = validate(root, source_reader=source_reader)
     if errors:
         raise ValueError("Story Engine validation failed: " + "; ".join(errors[:5]))
+    context_checkpoint = source_reader.checkpoint() if source_reader is not None else None
     root = novelctl.story_config.resolve_root(root)
-    base = novelctl.build_brief(root, target)
-    style = novelctl.story_config.story_path(root, "bible/STYLE_GUIDE.md").read_text(encoding="utf-8")
-    recent = render_approved_history(root, target, keep)
-    author_recent = author_memory.render(root, before=target, recent=keep)
+    base = novelctl.build_brief(root, target, scene_only=scene_only, source_reader=source_reader, pov_id=pov_id)
+    style = _source_text(root, root / "bible/STYLE_GUIDE.md", source_reader)
+    recent = render_approved_history(root, target, keep, source_reader=source_reader)
+    author_recent = author_memory.render(root, before=target, recent=keep, source_reader=source_reader)
     content = (
         "# STORY ENGINE / SELECTED-STORY LOCAL CONTEXT PACK\n"
         f"Target: {target} | Max approved recent episodes: {keep}\n"
@@ -228,8 +242,11 @@ def pack(root: Path, target: str, keep: int = 7, max_chars: int = 25000) -> str:
         "GitHub main and human approval have not been authenticated. Drafts and proposals do not establish canon.\n"
         "Do not use information from future episodes. Do not silently update canon.\n\n"
         + "## REQUIRED WRITING STYLE\n" + style + "\n\n"
-        + recent + ("\n\n" + author_recent if author_recent else "") + "\n\n" + approved_scene_tail(root, target) + "\n\n" + base
+        + recent + ("\n\n" + author_recent if author_recent else "") + "\n\n" + approved_scene_tail(root, target, source_reader=source_reader) + "\n\n" + base
     )
+    if source_reader is not None:
+        content += '\n## EXACT SOURCE EVIDENCE (metadata remains working-tree)\n' + json.dumps(
+            source_reader.evidence_since(context_checkpoint), ensure_ascii=False, sort_keys=True) + '\n'
     if len(content) > max_chars:
         raise ValueError(f"Context size {len(content)} chars exceeds cap {max_chars}. Narrow target/keep; never silently truncate LOCKED canon.")
     return content
@@ -265,30 +282,41 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--story", help="Story slug under --root/stories (otherwise use workspace default)")
     subs = parser.add_subparsers(dest="command", required=True)
-    subs.add_parser("check")
+    check = subs.add_parser("check")
+    check.add_argument('--source-mode', choices=('working-tree', 'committed'), default='working-tree')
     context = subs.add_parser("pack")
     context.add_argument("target")
     context.add_argument("--recent", type=int, default=7)
     context.add_argument("--max-chars", type=int, default=25000)
     context.add_argument("--out", type=Path)
+    context.add_argument('--source-mode', choices=('working-tree', 'committed'), default='working-tree')
     draft = subs.add_parser("proposal")
     draft.add_argument("episode")
     draft.add_argument("--out", type=Path)
     args = parser.parse_args(argv)
     try:
         root = novelctl.story_config.resolve_root(args.root, args.story)
+        source_reader = None
+        if args.command in ('check', 'pack'):
+            try:
+                from scripts.source_evidence import SourceReader
+            except ImportError:
+                from source_evidence import SourceReader
+            source_reader = SourceReader(root, args.source_mode)
         if args.command == "check":
-            errors, warnings = validate(root)
+            errors, warnings = validate(root, source_reader=source_reader)
             for w in warnings:
                 print("WARN:", w)
             for e in errors:
                 print("ERROR:", e)
+            if source_reader is not None:
+                print('SOURCE EVIDENCE:', json.dumps(source_reader.evidence(), ensure_ascii=False, sort_keys=True))
             print(f"{'PASS' if not errors else 'FAIL'} | {len(errors)} errors; {len(warnings)} warnings")
             return 1 if errors else 0
         if args.command == "pack":
             if args.recent < 0 or args.recent > 20 or args.max_chars < 1000:
                 raise ValueError("--recent must be 0..20 and --max-chars >=1000")
-            output = pack(root, args.target, args.recent, args.max_chars)
+            output = pack(root, args.target, args.recent, args.max_chars, source_reader=source_reader)
         else:
             output = proposal(root, args.episode)
         if args.out:

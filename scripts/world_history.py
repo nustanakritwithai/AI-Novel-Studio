@@ -144,7 +144,7 @@ def _same_file(left: Path, right: Path) -> bool:
         return False
 
 
-def _evidence_checker(root: Path):
+def _evidence_checker(root: Path, source_reader=None):
     """Return a checker for bounded exact source bytes, with no content output."""
     model_path = story_config.story_path(root, MODEL_PATH)
     history_path = _history_path(root)
@@ -160,10 +160,16 @@ def _evidence_checker(root: Path):
         if (_same_path(path, model_path) or _same_path(path, history_path)
                 or _same_file(path, model_path) or _same_file(path, history_path)):
             raise ValueError("model/history cannot be used as source evidence")
-        if not path.is_file():
-            raise ValueError("source evidence is not a regular file")
-        with path.open("rb") as stream:
-            content = stream.read(MAX_EVIDENCE_BYTES + 1)
+        if source_reader is None:
+            if not path.is_file():
+                raise ValueError("source evidence is not a regular file")
+            with path.open("rb") as stream:
+                content = stream.read(MAX_EVIDENCE_BYTES + 1)
+        else:
+            reader_root = getattr(source_reader, "root", None)
+            if reader_root is not None and Path(reader_root).resolve() != Path(root).resolve():
+                raise ValueError("source reader does not match the selected story")
+            content = source_reader.read(relative, max_bytes=MAX_EVIDENCE_BYTES)
         if len(content) > MAX_EVIDENCE_BYTES:
             raise ValueError("source evidence exceeds the byte limit")
         if not content.strip():
@@ -174,7 +180,7 @@ def _evidence_checker(root: Path):
     return check
 
 
-def _load(root: Path, db: dict | None = None) -> tuple[dict, dict, dict] | None:
+def _load(root: Path, db: dict | None = None, *, source_reader=None) -> tuple[dict, dict, dict] | None:
     """Load one enabled S1 model and its optional S2 history.
 
     Disabled S1 or an absent optional history returns ``None``. Once both
@@ -205,15 +211,15 @@ def _load(root: Path, db: dict | None = None) -> tuple[dict, dict, dict] | None:
     return model, history, selected_db
 
 
-def load(root: Path, db: dict | None = None) -> tuple[dict, dict, dict] | None:
+def load(root: Path, db: dict | None = None, *, source_reader=None) -> tuple[dict, dict, dict] | None:
     """Load declarations, normalizing filesystem failures to ``ValueError``."""
     try:
-        return _load(Path(root), db)
+        return _load(Path(root), db, source_reader=source_reader)
     except (OSError, RuntimeError, RecursionError) as exc:
         raise ValueError(f"Unable to read selected world-state inputs ({type(exc).__name__}).") from exc
 
 
-def validate(root: Path, db: dict | None = None) -> list[str]:
+def validate(root: Path, db: dict | None = None, *, source_reader=None) -> list[str]:
     """Check enabled history structure and all locally APPROVED source bytes."""
     try:
         selected_root, config = _selected(Path(root))
@@ -235,7 +241,7 @@ def validate(root: Path, db: dict | None = None) -> list[str]:
         model_schema_errors = world_state_model.validator().iter_errors(model)
         history_schema_errors = world_history_schema.validate(history)
         if not list(model_schema_errors) and not history_schema_errors:
-            evidence_check = _evidence_checker(selected_root)
+            evidence_check = _evidence_checker(selected_root, source_reader=source_reader)
             sources: list[tuple[str, object]] = []
             if isinstance(model, dict):
                 baseline = model.get("baseline")
@@ -264,7 +270,7 @@ def validate(root: Path, db: dict | None = None) -> list[str]:
         return [str(exc)[:1000]]
 
 
-def preview(root: Path, cutoff: object, db: dict | None = None) -> dict:
+def preview(root: Path, cutoff: object, db: dict | None = None, *, source_reader=None) -> dict:
     """Run the pure S2 reducer with a real, selected-story evidence checker."""
     try:
         selected_root, config = _selected(Path(root))
@@ -277,13 +283,13 @@ def preview(root: Path, cutoff: object, db: dict | None = None) -> dict:
             return world_state_reducer.unavailable(slug, cutoff,
                                                    "S1 world state is disabled for the selected story.")
 
-        loaded = load(selected_root, db)
+        loaded = load(selected_root, db, source_reader=source_reader)
         if loaded is None:
             return world_state_reducer.unavailable(slug, cutoff,
                                                    "No enabled S1 world model or optional S2 history is available.")
         model, history, selected_db = loaded
         return world_state_reducer.preview(model, history, selected_db, cutoff,
-                                           evidence_check=_evidence_checker(selected_root))
+                                           evidence_check=_evidence_checker(selected_root, source_reader=source_reader))
     except (OSError, ValueError, KeyError, TypeError, RuntimeError, RecursionError) as exc:
         try:
             slug = story_config.load_config(story_config.resolve_root(Path(root))).get("slug")

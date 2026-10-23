@@ -5,18 +5,18 @@ promote canon, or infer missing facts from neighboring views.
 """
 from __future__ import annotations
 
-import hashlib
 import json
 import math
 import re
-from pathlib import Path, PurePosixPath
+from pathlib import Path
 
 try:
-    from scripts import novelctl, registry_schema, review_bundle, story_config
+    from scripts import novelctl, registry_schema, review_bundle, source_evidence, story_config
 except ImportError:  # direct CLI import
     import novelctl
     import registry_schema
     import review_bundle
+    import source_evidence
     import story_config
 
 MANIFEST = 'data/house_references.json'
@@ -300,39 +300,17 @@ def _check_locator(text: str, locator: str) -> None:
         raise ValueError(f'evidence locator must be L<number>[-L<number>] or a JSON Pointer: {locator!r}')
 
 
-def _commit_context(root: Path) -> tuple[Path, str]:
-    repo = Path(review_bundle._git(root, 'rev-parse', '--show-toplevel').decode('utf-8', errors='strict').strip()).resolve()
-    commit = review_bundle._commit(repo, 'HEAD')
-    return repo, commit
-
-
-def _read_source(root: Path, source: dict, source_mode: str,
-                 commit_context: tuple[Path, str] | None,
+def _read_source(source: dict, source_reader,
                  cache: dict[str, tuple[bytes, str]]) -> tuple[bytes, str]:
     source_id = source['id']
     if source_id in cache:
         return cache[source_id]
-    path = review_bundle._story_source(root, source['path'])
-    if source_mode == 'working-tree':
-        raw = review_bundle._bytes(path)
-        git_sha = hashlib.sha1(b'blob ' + str(len(raw)).encode('ascii') + b'\0' + raw).hexdigest()
-    else:
-        if commit_context is None:
-            raise ValueError('Committed source context is unavailable')
-        repo, commit = commit_context
-        try:
-            relative = path.relative_to(repo).as_posix()
-        except ValueError as exc:
-            raise ValueError(f"{source_id}: source path is outside the selected repository") from exc
-        if PurePosixPath(relative).is_absolute() or '..' in PurePosixPath(relative).parts:
-            raise ValueError(f'{source_id}: source path escapes the repository')
-        raw, object_id = review_bundle._base_blob(repo, commit, relative)
-        if object_id is None:
-            raise ValueError(f"{source_id}: source path is absent from committed HEAD")
-        git_sha = object_id
-    if not _SHA1.fullmatch(git_sha) or git_sha != source['git_blob_sha']:
+    text = source_reader.text(source['path'], max_bytes=MAX_DOCUMENT_BYTES)
+    # UTF-8 decoding and re-encoding preserves the exact selected bytes.
+    raw = text.encode('utf-8')
+    git_sha = source_reader.identity(source['path']).get('git_blob_id')
+    if not isinstance(git_sha, str) or not _SHA1.fullmatch(git_sha) or git_sha != source['git_blob_sha']:
         raise ValueError(f"{source_id}: Git blob hash does not match pinned source at {source['path']}")
-    text = review_bundle._text(raw, source['path'])
     cache[source_id] = (raw, text)
     return raw, text
 
@@ -354,15 +332,14 @@ def _selected_source_chain(source_id: str, indexes: dict) -> list[str]:
     return result
 
 
-def _verify_claim_evidence(root: Path, claim: dict, indexes: dict,
-                           source_mode: str, commit_context,
+def _verify_claim_evidence(claim: dict, indexes: dict, source_reader,
                            source_cache: dict) -> list[dict]:
     output = []
     for evidence in claim['evidence']:
         chain = _selected_source_chain(evidence['source_id'], indexes)
         for source_id in chain:
             source = indexes['sources'][source_id]
-            _, text = _read_source(root, source, source_mode, commit_context, source_cache)
+            _, text = _read_source(source, source_reader, source_cache)
             if source_id == evidence['source_id']:
                 _check_locator(text, evidence['locator'])
         direct = indexes['sources'][evidence['source_id']]
@@ -379,7 +356,7 @@ def _verify_claim_evidence(root: Path, claim: dict, indexes: dict,
 
 def _unknown_card(root: Path, house_id: str, scene_id: str, boundary: str,
                   source_mode: str, fields: list[str], pov: str | None,
-                  source_commit: str | None = None) -> dict:
+                  source_reader) -> dict:
     card = {
         'status': 'REFERENCE_ONLY_NOT_CANON',
         'availability': 'UNKNOWN',
@@ -393,9 +370,10 @@ def _unknown_card(root: Path, house_id: str, scene_id: str, boundary: str,
         'world_time': 'UNKNOWN',
         'facts': {}, 'unknown_fields': list(fields),
         'pov_knowledge': {'status': 'UNKNOWN', 'character_ref': pov, 'facts': {}},
+        'source_evidence': source_reader.evidence(),
     }
-    if source_commit is not None:
-        card['source_commit'] = source_commit
+    if source_reader.mode == 'committed':
+        card['source_commit'] = source_reader.commit
     return card
 
 
@@ -404,7 +382,8 @@ def _db_for_build(root: Path) -> dict:
 
 
 def build(root: Path, house_id: str, scene_id: str, boundary: str = 'BEFORE',
-          pov: str | None = None, source_mode: str = 'working-tree') -> dict:
+          pov: str | None = None, source_mode: str = 'working-tree',
+          source_reader=None) -> dict:
     """Build a card only from one exact declared scene/boundary view."""
     if boundary not in ('BEFORE', 'AFTER'):
         raise ValueError("boundary must be 'BEFORE' or 'AFTER'")
@@ -416,6 +395,11 @@ def build(root: Path, house_id: str, scene_id: str, boundary: str = 'BEFORE',
         raise ValueError('scene_id must be a stable ASCII identifier')
 
     root = story_config.resolve_root(Path(root))
+    if source_reader is None:
+        source_reader = source_evidence.SourceReader(root, mode=source_mode)
+    elif Path(source_reader.root) != root:
+        raise ValueError('Source reader belongs to a different selected story')
+    source_mode = source_reader.mode
     manifest = _read_manifest(root)
     db = _db_for_build(root)
     indexes = _indexes(db)
@@ -427,34 +411,27 @@ def build(root: Path, house_id: str, scene_id: str, boundary: str = 'BEFORE',
     if selected_pov is not None and selected_pov not in indexes['characters']:
         raise ValueError(f'Unknown POV character {selected_pov}')
 
-    if source_mode == 'committed':
-        commit_context = _commit_context(root)
-        source_commit = commit_context[1]
-    else:
-        commit_context = None
-        source_commit = None
-
     if manifest is None:
-        return _unknown_card(root, house_id, scene_id, boundary, source_mode, [], selected_pov, source_commit)
+        return _unknown_card(root, house_id, scene_id, boundary, source_mode, [], selected_pov, source_reader)
     semantic, indexes, positions = _semantic_errors(root, manifest, db)
     if semantic:
         raise ValueError('; '.join(semantic))
     if not manifest['enabled']:
-        return _unknown_card(root, house_id, scene_id, boundary, source_mode, manifest['fields'], selected_pov, source_commit)
+        return _unknown_card(root, house_id, scene_id, boundary, source_mode, manifest['fields'], selected_pov, source_reader)
     if house_id not in indexes['houses']:
         raise ValueError(f'Unknown house {house_id}')
 
     view = next((row for row in manifest['views'] if
                  row['house_id'] == house_id and row['scene_id'] == scene_id and row['boundary'] == boundary), None)
     if view is None:
-        return _unknown_card(root, house_id, scene_id, boundary, source_mode, manifest['fields'], selected_pov, source_commit)
+        return _unknown_card(root, house_id, scene_id, boundary, source_mode, manifest['fields'], selected_pov, source_reader)
 
     source_cache: dict[str, tuple[bytes, str]] = {}
     cards = {}
     unknown = []
     for claim_id in view['fact_ids']:
         claim = indexes['facts'][claim_id]
-        evidence = _verify_claim_evidence(root, claim, indexes, source_mode, commit_context, source_cache)
+        evidence = _verify_claim_evidence(claim, indexes, source_reader, source_cache)
         card = {'id': claim['id'], 'value': claim['value'],
                 'observed_after_scene': claim['observed_after_scene'], 'evidence': evidence}
         if 'qualification' in claim:
@@ -468,7 +445,7 @@ def build(root: Path, house_id: str, scene_id: str, boundary: str = 'BEFORE',
                 if indexes['knowledge'][claim_id]['character_ref'] == selected_pov]
     pov_facts = {}
     for claim in pov_rows:
-        evidence = _verify_claim_evidence(root, claim, indexes, source_mode, commit_context, source_cache)
+        evidence = _verify_claim_evidence(claim, indexes, source_reader, source_cache)
         card = {'id': claim['id'], 'value': claim['value'],
                 'observed_after_scene': claim['observed_after_scene'], 'evidence': evidence}
         if 'qualification' in claim:
@@ -491,21 +468,24 @@ def build(root: Path, house_id: str, scene_id: str, boundary: str = 'BEFORE',
             'status': 'AVAILABLE' if pov_facts else 'UNKNOWN',
             'character_ref': selected_pov, 'facts': pov_facts,
         },
+        'source_evidence': source_reader.evidence(),
     }
-    if source_commit is not None:
-        result['source_commit'] = source_commit
+    if source_reader.mode == 'committed':
+        result['source_commit'] = source_reader.commit
     return result
 
 
-def validate(root: Path, db: dict | None = None) -> list[str]:
+def validate(root: Path, db: dict | None = None, source_reader=None) -> list[str]:
     """Validate an enabled manifest and all explicitly selected views.
 
-    Source reads and Git checks are cached per invocation, so shared evidence
-    used by multiple views is checked once. This routine intentionally verifies
-    exact raw working-tree bytes; committed mode is available only via build.
+    Source reads are cached per invocation, so shared evidence used by multiple
+    views is checked once. By default the source reader uses exact raw working-
+    tree bytes; callers may supply a pinned committed reader explicitly.
     """
     try:
         root = story_config.resolve_root(Path(root))
+        if source_reader is not None and Path(source_reader.root) != root:
+            raise ValueError('Source reader belongs to a different selected story')
         manifest = _read_manifest(root)
         if manifest is None:
             return []
@@ -515,6 +495,10 @@ def validate(root: Path, db: dict | None = None) -> list[str]:
             if story_config.load_config(root)['slug'] != manifest['story_slug']:
                 return [f'{MANIFEST}: story_slug does not match the selected story']
             return []
+        if source_reader is None:
+            source_reader = source_evidence.SourceReader(root, mode='working-tree')
+        elif Path(source_reader.root) != root:
+            raise ValueError('Source reader belongs to a different selected story')
         errors, indexes, _ = _semantic_errors(root, manifest, db)
         if errors:
             return errors
@@ -524,7 +508,7 @@ def validate(root: Path, db: dict | None = None) -> list[str]:
                 for claim_id in view[key]:
                     claim = indexes[kind][claim_id]
                     try:
-                        _verify_claim_evidence(root, claim, indexes, 'working-tree', None, source_cache)
+                        _verify_claim_evidence(claim, indexes, source_reader, source_cache)
                     except (OSError, ValueError) as exc:
                         errors.append(f"view {view['house_id']}/{view['scene_id']}/{view['boundary']} claim {claim_id}: {exc}")
         return errors

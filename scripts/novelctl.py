@@ -47,10 +47,12 @@ def ids(db: dict, kind: str) -> set[str]:
     return {record['id'] for record in rows(db, kind)}
 
 
-def validate(root: Path):
+def validate(root: Path, source_reader=None):
     errors, warnings = [], []
     try:
         root = story_config.resolve_root(root)
+        if source_reader is not None and Path(source_reader.root).resolve() != root:
+            raise ValueError('Source reader belongs to another story')
         config = story_config.load_config(root)
         db = load(root, validate_schema=False)
         shape_errors = [(kind, error) for kind in REQUIRED_DATA
@@ -158,7 +160,7 @@ def validate(root: Path):
                 # Current snapshots and planned effects cannot fill its gaps.
                 # With no history, preserve the legacy causal plan simulation.
                 try:
-                    prior = state_replay.replay_before(root, scene['id'], db)
+                    prior = state_replay.replay_before(root, scene['id'], db, source_reader=source_reader)
                 except (OSError, ValueError, KeyError, TypeError) as exc:
                     errors.append(f"{scene['id']}: cannot establish causal prerequisites from state history ({exc})")
                     prerequisite_flags = {}
@@ -254,9 +256,9 @@ def validate(root: Path):
     for src in rows(db,'sources'):
         if src.get('access_level') not in ('TRANSCRIPT_ONLY','VIDEO_REVIEWED','TITLE_AND_METADATA','TITLE_AND_DESCRIPTION'):
             errors.append(f"{src['id']}: invalid source access_level")
-    errors.extend(state_replay.validate(root, db))
-    errors.extend(world_state_model.validate(root, db))
-    errors.extend(world_history.validate(root, db))
+    errors.extend(state_replay.validate(root, db, source_reader=source_reader))
+    errors.extend(world_state_model.validate(root, db, source_reader=source_reader))
+    errors.extend(world_history.validate(root, db, source_reader=source_reader))
     return errors, warnings
 
 
@@ -290,15 +292,15 @@ def approved_state_before(db: dict, cutoff: tuple, positions: dict) -> dict:
     }
 
 
-def state_before_target(root: Path, target: str, db: dict | None = None) -> dict:
+def state_before_target(root: Path, target: str, db: dict | None = None, source_reader=None) -> dict:
     """Replay explicit local history, or retain the legacy snapshot/UNKNOWN path."""
     root = story_config.resolve_root(root)
     if db is None:
-        errors, _ = validate(root)
+        errors, _ = validate(root, source_reader=source_reader)
         if errors:
             raise ValueError('Cannot replay invalid registry: ' + '; '.join(errors))
         db = load(root)
-    replay = state_replay.replay_before(root, target, db)
+    replay = state_replay.replay_before(root, target, db, source_reader=source_reader)
     if replay is not None:
         return replay
     scene = get(db, 'scenes', target)
@@ -333,7 +335,8 @@ def status(root: Path) -> str:
     ])
 
 
-def build_brief(root: Path, target: str) -> str:
+def build_brief(root: Path, target: str, *, scene_only: bool = False, source_reader=None,
+                pov_id: str | None = None) -> str:
     root = story_config.resolve_root(root)
     config = story_config.load_config(root)
     db=load(root)
@@ -342,13 +345,19 @@ def build_brief(root: Path, target: str) -> str:
     if not ep: raise ValueError(f'Unknown scene/episode: {target}')
     if scene:
         allsc = sorted([s for s in rows(db,'scenes') if s['episode_id']==ep['id']],key=lambda s:s['order'])
-        chosen=[s for s in allsc if abs(s['order']-scene['order'])<=1]
+        chosen=[scene] if scene_only else [s for s in allsc if abs(s['order']-scene['order'])<=1]
         focus=[scene]
     else:
+        if scene_only:
+            raise ValueError('Scene-isolated context requires an explicit scene ID')
         chosen=sorted([get(db,'scenes',s) for s in ep['scene_ids']],key=lambda s:s['order'])
         focus=chosen
     if not focus:
         raise ValueError(f'{target}: no scene metadata available for a context pack')
+    if scene_only:
+        pov_id = pov_id or scene['pov']
+        if pov_id not in scene['character_ids']:
+            raise ValueError('POV must be a character in the selected scene')
     positions = scene_positions(db)
     cutoff = min(positions[s['id']] for s in focus)
     canon_ids=set(c for s in focus for c in s.get('canon_refs',[]))
@@ -363,7 +372,8 @@ def build_brief(root: Path, target: str) -> str:
         raise ValueError('Unknown mechanic reference in selected scene')
     parts=[f'# CONTEXT PACK: {target}',
            '> Generated from repository data. Do not treat this file as a replacement for approved prose.',
-           f'## PROJECT STATUS\n{status(root)}',
+           ('## CONTEXT SCOPE\nSelected scene only; current project progress is withheld.' if scene_only
+            else f'## PROJECT STATUS\n{status(root)}'),
            '## NON-NEGOTIABLE AGENT RULES',
            '1. LOCKED user directives override AI proposals. No retroactive changes without approval.',
            '2. Proposed material and planned beats are not approved history.',
@@ -387,6 +397,9 @@ def build_brief(root: Path, target: str) -> str:
             parts.append('  - Untimed registry traits withheld: acquisition time is UNKNOWN.')
         known = [k for k in c['knowledge'] if k.get('after_scene') in positions
                  and positions[k['after_scene']] < cutoff]
+        if scene_only:
+            known = [k for k in known if c['id'] == pov_id and
+                     get(db, 'scenes', k['after_scene'])['status'] in ('APPROVED', 'CANON')]
         for k in known:
             source = get(db, 'scenes', k['after_scene'])
             label = 'approved knowledge' if source['status'] in ('APPROVED', 'CANON') else 'planned knowledge, not approved'
@@ -400,17 +413,27 @@ def build_brief(root: Path, target: str) -> str:
     parts.append('## INVENTORY EVENTS IN RELEVANT SCENES (PLANNED ≠ APPROVED)')
     chosen_ids={s['id'] for s in chosen}
     for entry in rows(db,'inventory_ledger'):
-        if entry['scene_id'] in chosen_ids:
+        if entry['scene_id'] in chosen_ids and not scene_only:
             parts.append(f"- {entry['scene_id']} {entry['owner_id']} {entry['operation']} {entry['item_id']} x{entry['quantity'] if entry['quantity'] is not None else 'UNKNOWN'} — {entry['notes']}")
     parts.append('## OPEN PLOT THREADS')
     for thread in rows(db,'threads'):
         if thread['status'] == 'OPEN':
+            if scene_only:
+                setup = thread.get('setup_scene_id')
+                if (setup not in positions or positions[setup] >= cutoff
+                        or get(db, 'scenes', setup)['status'] not in ('APPROVED', 'CANON')):
+                    continue  # Untimed/future thread content is not scene-start evidence.
             parts.append(f"- {thread['id']} {thread['title']} (do not resolve unless assigned)")
+    if scene_only:
+        parts.append('Untimed/future/unapproved thread details are withheld. OPEN is a working registry label, not reconstructed historical state.')
     parts.append('## APPROVED WORLD STATE BEFORE TARGET (INITIAL BASELINE IF NO PROSE APPROVED)')
     parts.append('Only explicit prior local evidence is used. Local approval labels are not authenticated GitHub approval; later progress is not inferred.')
-    parts.append(json.dumps(state_before_target(root, target, db),ensure_ascii=False,indent=2))
+    parts.append(json.dumps(state_before_target(root, target, db, source_reader=source_reader),ensure_ascii=False,indent=2))
     parts.append('## OPEN ISSUES')
-    parts.extend('- '+str(x) for x in ep.get('questions',[]))
+    if scene_only:
+        parts.append('Episode-level questions and target inventory operations are withheld: no scene-start disclosure boundary is recorded.')
+    else:
+        parts.extend('- '+str(x) for x in ep.get('questions',[]))
     parts.append('## REQUIRED OUTPUT CONTRACT\n1. Work within the requested scene scope only.\n2. List newly proposed facts, never silently promoted to CANON.\n3. Record proposed state/items/locations and knowledge changes.\n4. Report continuity and evidence uncertainty; human approval remains required.')
     return '\n\n'.join(parts)+'\n'
 
