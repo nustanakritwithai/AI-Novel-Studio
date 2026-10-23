@@ -15,7 +15,7 @@ Story root: `stories/last-island-active`. Canonical approved history is **EMPTY*
 python scripts/storyctl.py --story last-island-active check
 python scripts/storyctl.py --story last-island-active status
 python scripts/storyctl.py --story last-island-active brief EP-002
-python scripts/storyctl.py --story last-island-active pack EP-002
+python scripts/storyctl.py --story last-island-active pack EP-003
 python scripts/storyctl.py --story last-island-active replay SC-018
 ```
 
@@ -28,7 +28,7 @@ python scripts/storyctl.py --story last-island-active replay SC-018
 - Game mechanics are fictional story directives until verified by separate evidence from the selected game mode. UNKNOWN ≠ PASS.
 - The bow-wielder discovered at 4×4 might be the original shooter: treat matching as POV suspicion until supported.
 - 100-player global tournament belongs in a later arc; no early competitive opening.
-- SC-001/SC-002 alternative prose remains in PR #11/#12; this dataset adopts the two full chapter drafts in PR #13 as the **candidate literary edition**, not approved.
+- SC-001/SC-002 alternative prose remains in PR #11/#12; EP-001/002 exact full chapters in PR #13 were author-accepted in chat under DEC-004 but the separate GitHub reviewer-approved ledger is still pending.
 - No silent edits to `data/story_state.json`, `ledger/index.json` or human-approved canon. A CI pass is not editorial approval.
 
 ## Phase 1 author-accepted memory addendum
@@ -45,3 +45,10 @@ python scripts/storyctl.py --story last-island-active replay SC-018
 - The hero did NOT obtain oil, craft a furnace or iron, make ammunition, or hunt any animals in EP-003; amounts of resources carried/used/lost remain UNKNOWN.
 - CHAR-006 is the road pistol/bow rival with UNKNOWN identity; CHAR-007 is a PROPOSED chat friend, not a locked permanent character.
 - DEC-005 locks plot beats only; DEC-006 authorizes draft ingest only. EP-001/EP-002 accepted prose, author_memory and all approved-only ledgers must remain unchanged without fresh editorial direction.
+
+## Draft snapshot / base time history
+
+- Before writing EP-004 load `data/draft_continuity_ep003.json` and verify its `source.git_blob_sha` against the actual EP-003 manuscript; this is DRAFT memory, never official `data/story_state.json`.
+- `bible/BASE_TIMELINE.md` records stage-by-stage house evolution: wooden 2×2 → workbench/bed/storage → same 2×2 in stone → upper open firing platform → no new EP-003 construction.
+- Read `research/EP003_GAMEPLAY_GAPS.md` for UNVERIFIED real-game crate/furnace/fat/ammo mechanics; `plot/episodes/EP-004-HANDOFF-PROPOSED.md` is an EP-004 opening objective only, not written scenes.
+- Inventory register has exact **6** pistol shots expended by CHAR-006 in SC-024 (INV-029); all other unspecified amounts must remain UNKNOWN. If a writer changes the EP-003 manuscript, the draft snapshot source hash must be reviewed/rebound, not silently trusted.
