@@ -107,7 +107,7 @@ class EpisodeSixDraftTests(unittest.TestCase):
         self.assertFalse(group["hero_killed_any"])
         self.assertEqual(group["controls_refinery"], "UNVERIFIED_PROTAGONIST_INFERENCE")
         self.assertEqual(group["which_player_killed_horse"], "UNKNOWN")
-        self.assertEqual(end["road"]["ambusher_id"], "CHAR-009")
+        self.assertEqual(end["road"]["bat_ambusher_id"], "CHAR-009")
         self.assertTrue(end["road"]["ambusher_defeated"])
         self.assertEqual(end["road"]["ambusher_identity_related_to_ep001"], "UNKNOWN")
 
