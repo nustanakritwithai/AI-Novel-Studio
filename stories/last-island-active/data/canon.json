@@ -227,6 +227,86 @@
       "category": "episode",
       "source_id": null,
       "notes": "Author-directed story beat, not approval of generated prose or actual game-mechanics verification"
+    },
+    {
+      "id": "FACT-023",
+      "category": "episode",
+      "statement": "บทที่ 3 เปิดในโลกจริงหลังออฟไลน์จบบท 2; พระเอกพักกินข้าว พักสมองในฐานะ Gamer ก่อนกลับเข้าเกมในวันถัดมา",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-003",
+      "source_id": null,
+      "notes": "Author-directed plot beat; generated prose still DRAFT. Game mechanics not independently verified."
+    },
+    {
+      "id": "FACT-024",
+      "category": "episode",
+      "statement": "หลังกลับเข้าเกม พระเอกสำรวจถนน ตีกล่องเก็บเศษวัสดุและของทั่วไป หวังพบกล่องน้ำมันสุ่มเกิด แต่ไม่ได้รับน้ำมันจากการสำรวจครั้งนี้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-003",
+      "source_id": null,
+      "notes": "Author-directed plot beat; generated prose still DRAFT. Game mechanics not independently verified."
+    },
+    {
+      "id": "FACT-025",
+      "category": "episode",
+      "statement": "ระหว่างสำรวจถนน พระเอกต่อสู้กับผู้เล่นถือธนูด้วยทักษะการใช้จังหวะและที่กำบัง จนเกือบชนะ ก่อนถูกเปลี่ยนเกมด้วยปืนพก",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-003",
+      "source_id": null,
+      "notes": "Author-directed plot beat; generated prose still DRAFT. Game mechanics not independently verified."
+    },
+    {
+      "id": "FACT-026",
+      "category": "episode",
+      "statement": "คู่ต่อสู้ชักปืนพกที่มีกระสุนใช้ต่อสู้ครั้งนี้เพียง 6 นัด ยิงครบหกนัดและทำให้พระเอกเสียชีวิต ผู้เล่นอื่นไม่ได้ถูกกำจัดในบทนี้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-003",
+      "source_id": null,
+      "notes": "Author-directed plot beat; generated prose still DRAFT. Game mechanics not independently verified."
+    },
+    {
+      "id": "FACT-027",
+      "category": "episode",
+      "statement": "พระเอกเกิดใหม่ในบ้านหินที่มีที่นอนและชั้นยิง เสียของที่พกไปบนถนน ไม่กลับไปทวงของในบทนี้; ของเก็บสำรองที่บ้านไม่เสีย",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-003",
+      "source_id": null,
+      "notes": "Author-directed plot beat; generated prose still DRAFT. Game mechanics not independently verified."
+    },
+    {
+      "id": "FACT-028",
+      "category": "episode",
+      "statement": "เป้าหมายของพระเอกคือหาน้ำมันสร้างเตาเผาเพื่อแปรรูปเหล็กและพัฒนาไปสู่การผลิตกระสุน; ยังไม่ได้สร้างเตาเผาและยังไม่ได้ทำน้ำมันหรือกระสุนในบทนี้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-003",
+      "source_id": null,
+      "notes": "Author-directed plot beat; generated prose still DRAFT. Game mechanics not independently verified."
+    },
+    {
+      "id": "FACT-029",
+      "category": "episode",
+      "statement": "พระเอกเปลี่ยนแผนจากถนนเป็นป่าหวังล่าสัตว์เพื่อเนื้อ หนัง และไขมันสัตว์ซึ่งใช้ทำน้ำมันในโลกนิยาย ต้องล่าสัตว์จำนวนมาก แต่การล่าจริงจะเริ่มในบทถัดไป",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-003",
+      "source_id": null,
+      "notes": "Author-directed plot beat; generated prose still DRAFT. Game mechanics not independently verified."
+    },
+    {
+      "id": "FACT-030",
+      "category": "episode",
+      "statement": "รายละเอียดบทสนทนากับเพื่อน Gamer คลิปสตรีมเมอร์ ซากรถตู้และรถบรรทุก ร่องระบายน้ำ และลำดับยิงในฉากเป็นการขยายความของร่างนิยาย",
+      "status": "PROPOSED",
+      "origin": "ASSISTANT_DRAFT",
+      "scope": "EP-003",
+      "source_id": null,
+      "notes": "Never promote as author-locked history solely because it is in draft."
     }
   ]
 }
