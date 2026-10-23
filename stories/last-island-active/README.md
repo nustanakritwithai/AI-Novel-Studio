@@ -21,8 +21,10 @@ The approved ledger is intentionally empty because PR #13 has no independently s
 ## Quick verification
 ```bash
 python scripts/storyctl.py --story last-island-active check
-python scripts/storyctl.py --story last-island-active pack EP-002
+python scripts/storyctl.py --story last-island-active pack EP-003
 python -m unittest discover -s tests -v
 ```
 
-For continued writing follow `HANDOFF.md`. Game mechanics are fiction directives unless verified against actual selected-server gameplay; item counts remain UNKNOWN.
+For continued writing follow `HANDOFF.md`, `data/draft_continuity_ep003.json` and `bible/BASE_TIMELINE.md`. The active dashboard at `index.html` now lists all three episode manuscripts instead of showing only the opening.
+
+For direct chapter reading use [reading order chapters 1–3](drafts/READING_ORDER_CH-01_03.md) and [EP-003 continuity audit](drafts/EP-003/EP-003-CONTINUITY-AUDIT.md). Game mechanics are fiction directives unless verified against actual selected-server gameplay; item counts remain UNKNOWN.
