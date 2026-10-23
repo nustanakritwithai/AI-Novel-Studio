@@ -4,7 +4,7 @@
 
 | ลำดับ | งาน/ผลส่งมอบ | เกณฑ์ตรวจรับ | สถานะของชุดนี้ |
 | --- | --- | --- | --- |
-| 1a | แยก observed PR base SHA ออกจาก merge first parent ใน postmerge proposal | stale-base two-parent control ผ่าน; wrong repo/head/association/race ยังปฏิเสธ; สิทธิ์ read-only เดิม | Draft #29, exact-head CI 483 tests ผ่าน; runtime ใหม่ live NOT_RUN |
+| 1a | แยก observed PR base SHA ออกจาก merge first parent ใน postmerge proposal | stale-base two-parent control ผ่าน; wrong repo/head/association/race ยังปฏิเสธ; สิทธิ์ read-only เดิม | Draft #29; หลักฐาน test/CI ของ head ล่าสุดอยู่ใน PR; runtime ใหม่ live NOT_RUN |
 | 1b | exact source reader ร่วม, explicit committed mode พร้อม raw differences | CRLF ไม่ถูก normalize; raw mismatch ยัง fail; ไม่มี fallback; อ่าน source ตาม story/commit ที่ระบุ | implementation/test ใน Draft ชุด source + scene preparation |
 | 2 | prepare-scene ก่อนฉากหนึ่งฉาก รวม context/style/บ้าน/POV/inventory/thread และ optional world preview | ไม่เผยฉากข้างเคียง/อนาคต; cursor ไม่เดา; UNKNOWN แยก; private output; generic story ใช้ได้ | implementation/test ใน Draft ชุดเดียวกับ 1b |
 | 3 | เสนอ delta ต่อฉากจากข้อความ/ตำแหน่งหลักฐานจริง รวม construction/damage/repair เมื่อมีหลักฐาน | source hash/locator ผูกแต่ละข้อ; proposed เท่านั้น; time/history/idempotency; ไม่มี event ที่เดาขึ้น | ยังไม่ส่งมอบ |

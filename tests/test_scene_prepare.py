@@ -12,6 +12,7 @@ from unittest import mock
 import test_story_roots as story_roots
 import test_house_cards as house_fixtures
 from scripts import scene_prepare, story_engine
+from scripts.source_evidence import SourceReader
 
 ENGINE = Path(__file__).resolve().parents[1]
 
@@ -160,6 +161,49 @@ class ScenePreparationTests(unittest.TestCase):
             self.assertNotIn('Traceback', bad.stderr)
         self.assertFalse((self.workspace / 'public.json').exists())
         self.assertEqual(self.snapshot(), before)
+
+    def test_existing_cli_raw_mode_uses_and_reports_the_exact_source_reader(self):
+        for command, args in (('check', []), ('memory', []), ('pack', ['SC-001'])):
+            result = subprocess.run([sys.executable, str(ENGINE / 'scripts/storyctl.py'),
+                '--workspace', str(self.workspace), '--story', 'alpha', command, *args,
+                '--source-mode', 'working-tree'], capture_output=True, text=True, encoding='utf-8',
+                timeout=60, env=dict(os.environ, PYTHONIOENCODING='utf-8'))
+            with self.subTest(command=command):
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn('SOURCE EVIDENCE', result.stdout)
+                self.assertIn('working-tree', result.stdout)
+
+    def test_declared_approved_source_link_is_rejected_before_resolution(self):
+        scene = self.read(self.alpha / 'data/scenes.json')['scenes'][0]
+        declared = self.alpha / scene['draft_path']
+        declared.parent.mkdir(parents=True, exist_ok=True)
+        other = declared.parent / 'unrelated.md'
+        other.write_bytes(b'UNRELATED_SOURCE_MUST_NOT_BE_PINNED_AS_DECLARED_PATH\n')
+        try:
+            declared.symlink_to(other)
+        except OSError as exc:
+            self.skipTest(f'Platform cannot create symlinks: {exc}')
+        for arguments in (('init', '-q'), ('add', '--all'), ('commit', '-q', '-m', 'Synthetic link fixture')):
+            subprocess.run(['git', '-C', str(self.workspace), '-c', 'core.autocrlf=false',
+                '-c', 'user.name=Synthetic fixture', '-c', 'user.email=fixture@example.invalid',
+                '-c', 'commit.gpgsign=false', *arguments], check=True, capture_output=True, timeout=30)
+        for mode in ('working-tree', 'committed'):
+            with self.subTest(mode=mode), self.assertRaisesRegex(ValueError, 'link|source'):
+                story_engine.approved_prose(self.alpha, scene, source_reader=SourceReader(self.alpha, mode))
+
+    def test_style_source_link_is_rejected_by_raw_pack_reader(self):
+        style = self.alpha / 'bible/STYLE_GUIDE.md'
+        other = style.parent / 'unrelated-style.md'
+        other.write_bytes(b'UNRELATED_STYLE_SOURCE\n')
+        original = style.read_bytes()
+        style.unlink()
+        try:
+            style.symlink_to(other)
+        except OSError as exc:
+            style.write_bytes(original)
+            self.skipTest(f'Platform cannot create symlinks: {exc}')
+        with self.assertRaisesRegex(ValueError, 'link|source'):
+            story_engine.pack(self.alpha, 'SC-001', source_reader=SourceReader(self.alpha))
 
     def test_pov_inventory_and_threads_require_prior_local_approved_evidence(self):
         scenes = self.read(self.alpha / 'data/scenes.json')

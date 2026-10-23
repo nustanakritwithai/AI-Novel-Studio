@@ -287,12 +287,12 @@ def main(argv: list[str] | None = None) -> int:
             _emit_private_artifact(args.workspace, args.out, json.dumps(report, ensure_ascii=False, indent=2) + '\n')
             return 0
         source_reader = None
-        if args.command in ('check', 'memory', 'pack') and args.source_mode == 'committed':
+        if args.command in ('check', 'memory', 'pack'):
             try:
                 from scripts.source_evidence import SourceReader
             except ImportError:
                 from source_evidence import SourceReader
-            source_reader = SourceReader(root, 'committed')
+            source_reader = SourceReader(root, args.source_mode)
         if args.command == 'lintstate':
             cutoff = {'clock_id': args.clock, 'tick': args.tick,
                       'suborder': args.suborder, 'boundary': args.boundary}

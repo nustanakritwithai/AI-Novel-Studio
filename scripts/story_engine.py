@@ -41,7 +41,7 @@ def within(root: Path, relpath: str, prefix: str) -> Path:
     target = (root / relpath).resolve()
     if not base.is_relative_to(root) or not target.is_relative_to(base) or target.suffix != ".md":
         raise ValueError(f"ledger path outside {prefix}: {relpath}")
-    return target
+    return root / relpath  # Keep the declared path so the reader can reject links before resolution.
 
 
 def _source_text(root: Path, path: Path, source_reader=None) -> str:
@@ -231,7 +231,7 @@ def pack(root: Path, target: str, keep: int = 7, max_chars: int = 25000, *,
         raise ValueError("Story Engine validation failed: " + "; ".join(errors[:5]))
     root = novelctl.story_config.resolve_root(root)
     base = novelctl.build_brief(root, target, scene_only=scene_only, source_reader=source_reader, pov_id=pov_id)
-    style = _source_text(root, novelctl.story_config.story_path(root, "bible/STYLE_GUIDE.md"), source_reader)
+    style = _source_text(root, root / "bible/STYLE_GUIDE.md", source_reader)
     recent = render_approved_history(root, target, keep, source_reader=source_reader)
     author_recent = author_memory.render(root, before=target, recent=keep, source_reader=source_reader)
     content = (
@@ -296,12 +296,12 @@ def main(argv: list[str] | None = None) -> int:
     try:
         root = novelctl.story_config.resolve_root(args.root, args.story)
         source_reader = None
-        if args.command in ('check', 'pack') and args.source_mode == 'committed':
+        if args.command in ('check', 'pack'):
             try:
                 from scripts.source_evidence import SourceReader
             except ImportError:
                 from source_evidence import SourceReader
-            source_reader = SourceReader(root, 'committed')
+            source_reader = SourceReader(root, args.source_mode)
         if args.command == "check":
             errors, warnings = validate(root, source_reader=source_reader)
             for w in warnings:
