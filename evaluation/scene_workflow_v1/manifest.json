@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "evaluation_id": "scene_workflow_v1",
+  "scope": "SYNTHETIC_METADATA_ONLY",
+  "sealed_key_sha256": "3e93a9854d86f436703d3196a45e4d98ed03330d84ba19f139afca217b0347d3",
+  "key_precedes_review_dispatch": true,
+  "model_run": {
+    "model": "gpt-6-luna",
+    "reasoning_effort": "xhigh",
+    "workflow_calls": ["native_planner", "synthetic_fault_writer", "native_revision"],
+    "reviewers": [
+      {
+        "case": "Q7",
+        "packet": "packet-Q7.json",
+        "report": "raw/review-Q7.json",
+        "fork_turns": "none",
+        "protocol": "fresh reviewer received one opaque packet and the report contract"
+      },
+      {
+        "case": "M2",
+        "packet": "packet-M2.json",
+        "report": "raw/review-M2.json",
+        "fork_turns": "none",
+        "protocol": "fresh reviewer received one opaque packet and the report contract"
+      },
+      {
+        "case": "R9",
+        "packet": "packet-R9.json",
+        "report": "raw/review-R9.json",
+        "fork_turns": "none",
+        "protocol": "fresh post-revision rereview"
+      }
+    ],
+    "blindness": "Procedural only; shared filesystem isolation is not enforced."
+  },
+  "adjudication": {
+    "seeded_case": "Q7",
+    "clean_control": "M2",
+    "post_revision_rereview": "R9",
+    "critical_fault_mapping": [
+      {
+        "fault_id": "K-CANON",
+        "finding_id": "Q7-001",
+        "result": "CAUGHT",
+        "basis": "Draft line 1 says the fixed gate is blue; the packet says it is fixed red at SC-001.",
+        "draft_line": 1
+      },
+      {
+        "fault_id": "K-KNOWLEDGE",
+        "finding_id": "Q7-002",
+        "result": "CAUGHT",
+        "basis": "Draft line 2 gives Unit A code knowledge at SC-001 start; the packet permits it only after SC-003.",
+        "draft_line": 2
+      },
+      {
+        "fault_id": "K-INVENTORY",
+        "finding_id": "Q7-003",
+        "result": "CAUGHT",
+        "basis": "Draft line 3 spends two physical tokens from a stated stock of one; the packet establishes exactly one physical token.",
+        "draft_line": 3
+      },
+      {
+        "fault_id": "K-CONSTRUCTION",
+        "finding_id": "Q7-004",
+        "result": "CAUGHT",
+        "basis": "Draft line 4 treats the upper gallery and stairs as finished and usable; the packet says they are unfinished and unusable at SC-001.",
+        "draft_line": 4
+      },
+      {
+        "fault_id": "K-APPROVAL",
+        "finding_id": "Q7-006",
+        "result": "CAUGHT",
+        "basis": "Draft line 5 claims automatic ledger authority; the packet requires human review before canon or approved-state updates.",
+        "draft_line": 5
+      }
+    ],
+    "critical_hits": 5,
+    "critical_misses": 0,
+    "additional_unknown_findings": [
+      {
+        "finding_id": "Q7-005",
+        "classification": "UNKNOWN",
+        "basis": "Human approval is not authenticated by the packet, so the claim is left unverified; this is not credited as a seeded critical contradiction."
+      }
+    ],
+    "clean_control_findings": 0,
+    "clean_control_contradictions": 0,
+    "rereview_findings": 0,
+    "bounded_result": "PASS_FOR_THIS_RECORDED_SYNTHETIC_CASE_AND_CONTROL_ONLY"
+  },
+  "pipeline": {
+    "native_workflow_last_stage": "OWNER_CHECKPOINT",
+    "native_workflow_status": "PROPOSED",
+    "owner_gate": "BLOCKED_AUTHENTICATED_SIGNOFF_NOT_ESTABLISHED",
+    "human_editorial_approval": "UNVERIFIED",
+    "historical_source_verification": "NOT_RUN",
+    "canon_change_authorized": false,
+    "ledger_apply_authorized": false,
+    "standalone_proposal_status": "PROPOSED",
+    "proposal_world_time": "UNKNOWN",
+    "proposal_gate": "BLOCKED",
+    "proposal_apply": false,
+    "human_approval_run": false,
+    "post_merge_changed_workflow_live_proof": false
+  },
+  "runtime_provenance": {
+    "evaluation_baseline_commit": "cd548bdd93ed5f25562049fe7b43bdd6cca4ac3a",
+    "runtime_code_state_during_capture": "UNCOMMITTED_WORKING_TREE",
+    "final_runtime_working_staged_tree": "b64694118ea272f54c4bff8f2855fd7d91c80574",
+    "claim": "The recorded models ran against the captured local working tree; this evidence does not establish execution against a committed runtime revision."
+  },
+  "method_notes": [
+    "An initial fixture initialization failed its state contract before sealed-key dispatch. Its failed material remained private and was excluded; the preserved evaluation uses the corrected v2 fixture.",
+    "The first native writer attempt used an incorrect planner path and produced invalid writer output that was removed before evidence preservation. It was not used or scored. raw/writer-v2.json is the corrected writer output used in this run.",
+    "The seeded Q7 report was compared against the exact quoted draft lines and context text in packet-Q7.json. The five mapped critical findings are CONTRADICTION findings with matching line and context locators; Q7-005 separately records UNKNOWN for unauthenticated human approval.",
+    "The control and rereview counts describe only these recorded model reports. They do not establish a general accuracy rate or broader safety result."
+  ],
+  "limitations": [
+    "Semantic findings are model-dependent. The deterministic tests validate artifact integrity, bindings, locators, and recorded counts; they do not rerun a model or independently establish semantic truth.",
+    "The shared filesystem was available to fresh fork-none reviewers; procedural blindness is recorded, but filesystem isolation was not enforced.",
+    "The native workflow stops at a blocked owner checkpoint. No human approval was run, and no changed post-merge workflow live proof exists.",
+    "The fixture Git anchor is local test data and is not evidence of authenticated approval.",
+    "The final standalone proposal remains PROPOSED with world time UNKNOWN and apply false."
+  ],
+  "fixed_json_artifacts": [
+    {"path": "case-packets.json", "byte_length": 377, "sha256": "fc4aa8126f7679b6cca80d16004e70e2704c65e5ce13faaa905710dccc5265f1"},
+    {"path": "final-claims.json", "byte_length": 908, "sha256": "ae82903966724cc04d786ca8fef133f2a646111920bdc66e08cc0a86dd0d879a"},
+    {"path": "final-proposal.json", "byte_length": 2454, "sha256": "59bb78e1003ce7984603edd3039681176e9d34a091f1db83591c47a2a725d059"},
+    {"path": "flow-verification.json", "byte_length": 253, "sha256": "0683f4473164e4c919f4554de4ce096ae54d1fb06e733becbbfcbda4a60ab053"},
+    {"path": "flows/01-planner.json", "byte_length": 2924, "sha256": "1cf6552548ab6fba3ddac1555e5ed82f8e5c5e7307b70f0fdaa442b1b43e9f1a"},
+    {"path": "flows/02-writer.json", "byte_length": 3894, "sha256": "459701ad9688b8ce069677a62e696bcfda3282457dac002f1dc605c44b77ed43"},
+    {"path": "flows/03-reviewer.json", "byte_length": 10462, "sha256": "e2aab3cfb66a4c468f0c1f0a3e401271fedb7c57e42f9f999359e3f45741a479"},
+    {"path": "flows/04-revision.json", "byte_length": 11365, "sha256": "5e8277fc0256aa0dbf46e12e5857fd991c2a8bd0e9c88056ed3d7cd53f46f077"},
+    {"path": "flows/05-rereview.json", "byte_length": 13291, "sha256": "2cebd63869dd92662724f7d45be63eec7b995c926e1ef9a472379d0617e79938"},
+    {"path": "flows/06-owner-blocked.json", "byte_length": 14137, "sha256": "e9211a6c78bef394f98ae3f4326a2be64846de0b816c168065c4d83642b97236"},
+    {"path": "negative-owner-gate.json", "byte_length": 133, "sha256": "11ade1500f8a6bec5b11a72a95a8019df929f47a12e6abfbf8b32228620bd066"},
+    {"path": "packet-M2.json", "byte_length": 17658, "sha256": "e568bfd54454e2c615a3878dbd28cb98ad2fd14af15378816c6d740e206de6d2"},
+    {"path": "packet-Q7.json", "byte_length": 17494, "sha256": "5539df74bad3d7cbb16273f986e1ecd447631e3e51cfa86b7e4ecabbe9300e51"},
+    {"path": "packet-R9.json", "byte_length": 17924, "sha256": "743073856810ed500e7414893de4924bb421d4a5997cff370a11a8d75b5f7244"},
+    {"path": "planner-input.json", "byte_length": 16574, "sha256": "78a5a3d63dda3850fc2e4548402cf676a4d8a0dbdd0882f66ec849e0f7ba47b5"},
+    {"path": "proposal-gate.json", "byte_length": 188, "sha256": "3421b06081aabcaac35ed346bcb4376b375e5c7294f5067043bad205304c43c4"},
+    {"path": "raw/planner.json", "byte_length": 1861, "sha256": "eba1bd7ae1b6ec62d8550efb4862608f2cd35d3589dec3f16239bdf7413331e9"},
+    {"path": "raw/review-M2.json", "byte_length": 1020, "sha256": "2cd661e4c94bbeb0d01fc65951de94e4a3162e460a4671c641aa4f7eb99c5268"},
+    {"path": "raw/review-Q7.json", "byte_length": 4991, "sha256": "2ab30c82c50e8e1146620df2bba2955919802ed662d8790d5be964029aa003cd"},
+    {"path": "raw/review-R9.json", "byte_length": 985, "sha256": "be8f7a6db347af7351cc3513bcd280b6732406a028f1d9763d67ddc352adba28"},
+    {"path": "raw/revision.json", "byte_length": 1292, "sha256": "3fa97eee196e0a91981bae100ab6cfdcc7f1f7ae541ef85cc7a07b01a0836b97"},
+    {"path": "raw/writer-v2.json", "byte_length": 794, "sha256": "69b92100b8ac4820ff49aaeb3d334bde2daca05f8f0d0e18797f9bc901693fcb"},
+    {"path": "sealed-key.json", "byte_length": 1233, "sha256": "3e93a9854d86f436703d3196a45e4d98ed03330d84ba19f139afca217b0347d3"},
+    {"path": "validation-M2.json", "byte_length": 1532, "sha256": "80a37ffbf2a235bb0430614fe9193ae3acdf19e5ff69d5bf8ecc1a209352096e"},
+    {"path": "validation-Q7.json", "byte_length": 5586, "sha256": "ce940a4d3b148f5cf5f694954fb30c7755d61e556e883de560aa7649ac2eedb5"},
+    {"path": "validation-R9.json", "byte_length": 1488, "sha256": "0d803a4ea41b6fa7c4dfd3ee75a651a35a06ce2bad2967979b0926b957bae5d0"}
+  ]
+}

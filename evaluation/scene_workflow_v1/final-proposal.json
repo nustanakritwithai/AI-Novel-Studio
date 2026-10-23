@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "kind": "SCENE_DELTA_PROPOSAL",
+  "status": "PROPOSED",
+  "proposal_scope": "OBSERVATIONS_ONLY",
+  "story_slug": "scene-workflow-fixture",
+  "target": {
+    "scene_id": "SC-001",
+    "draft_path": "drafts/EP-001/SC-001.md"
+  },
+  "source": {
+    "path": "drafts/EP-001/SC-001.md",
+    "mode": "working-tree",
+    "commit": "3c4590c5d3f2f03eebd08190a4902e522de52734",
+    "metadata_basis": "WORKING_TREE_REGISTRIES",
+    "selected_sha256": "6d8435c931d91da22cd7a56e74f1d03c79519caaedda6c096ec2085074bc1da3",
+    "selected_byte_length": 586,
+    "git_blob_id": "b870d99ab6e3acab6d2235a8ce778921e5e3df46",
+    "raw_sha256": "6d8435c931d91da22cd7a56e74f1d03c79519caaedda6c096ec2085074bc1da3",
+    "raw_byte_length": 586,
+    "raw_status": "MATCH"
+  },
+  "proposal_identity": "SDP-90de25d9de005432d40c869afc8a42b4dad3fff171971c66992e7675135ba285",
+  "observations": [
+    {
+      "id": "OBS-STRUCTURE",
+      "category": "CONSTRUCTION",
+      "claim": "ASSERTION: Unit A's access to the upper gallery at SC-001 is UNKNOWN; the stairs and upper gallery are unfinished and not usable.",
+      "subject": {
+        "kind": "LOCATION",
+        "id": "LOC-001"
+      },
+      "candidate": {
+        "target_kind": "LOCATION",
+        "target_id": "LOC-001",
+        "component_id": "UNKNOWN",
+        "aspect": "unfinished construction",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "evidence": {
+        "path": "drafts/EP-001/SC-001.md",
+        "draft_sha256": "6d8435c931d91da22cd7a56e74f1d03c79519caaedda6c096ec2085074bc1da3",
+        "quote": "ASSERTION: Unit A's access to the upper gallery at SC-001 is UNKNOWN; the stairs and upper gallery are unfinished and not usable.",
+        "start_line": 4,
+        "end_line": 4,
+        "locator_status": "EXACT_QUOTE_AT_LINES",
+        "semantic_assessment": "NOT_EVALUATED"
+      }
+    }
+  ],
+  "human_editorial_approval": "UNVERIFIED",
+  "canon_change_authorized": false,
+  "ledger_apply_authorized": false,
+  "world_state_application": "NOT_RUN",
+  "revision_id": "SDR-0048cef722e91d677fe44c7eb953e1692dd32d65fb22ec03d9df1045a5229b0f",
+  "revision_sha256": "838facf781b5fb1504e9d17e3483cc786ad8154209b78bda3cc5e90bb4401e4b",
+  "previous_revision_id": null,
+  "previous_revision_sha256": null,
+  "previous_chain_sha256": null,
+  "revision_history": [],
+  "revision_chain_sha256": "8fa7517b5efa5d00a71ad64f70d54d6899ec5ef0f8d9fae63ea7246e53d9a2cb"
+}

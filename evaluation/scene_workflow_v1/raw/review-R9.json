@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "GROUNDED_REVIEW_REPORT",
+  "packet_id": "8f2a6ac0af52bbb817b60056ec14cca3901254b78bb62116cde6d46d4dda2c6c",
+  "draft_sha256": "6d8435c931d91da22cd7a56e74f1d03c79519caaedda6c096ec2085074bc1da3",
+  "findings": [],
+  "coverage": "Reviewed all five draft assertions against the supplied scene preparation for canon, scene-start POV knowledge, inventory and ownership, construction and access, and approval, canon, and ledger boundaries. The assertions match supplied facts or explicitly preserve UNKNOWN values; no evidenced contradiction was found. This advisory assessment does not prove consistency.",
+  "limitations": [
+    "The packet is a selected working-tree source snapshot; omitted history and unrequested records were not reviewed or inferred.",
+    "Human approval and authenticated canon status remain unverified; this semantic assessment is model-dependent."
+  ],
+  "semantic_assessment": "MODEL_DEPENDENT_NOT_AUTHENTICATED"
+}

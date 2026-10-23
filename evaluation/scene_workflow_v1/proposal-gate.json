@@ -1,0 +1,6 @@
+{
+  "status": "BLOCKED",
+  "reason": "Human editorial signoff is not authenticated; workflow stops at the owner checkpoint",
+  "standalone_proposal_status": "PROPOSED",
+  "apply": false
+}

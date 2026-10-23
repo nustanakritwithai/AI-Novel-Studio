@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "GROUNDED_REVIEW_REPORT",
+  "packet_id": "b47cd930991e37ec273e858288ea4f90e27818fa3b250c5a4dafb48e59b93549",
+  "draft_sha256": "6ecdbcb46ec42982bab655beedc02d5e3f732af466e8ee9d519356267494fa15",
+  "findings": [],
+  "coverage": "Reviewed all five metadata assertions against the supplied scene context: gate and token canon, Unit A's token-code knowledge boundary, token count and inventory uncertainty, ground-floor construction and unusable upper routes, and proposed status and unverified approval. The assertions are consistent with the explicit context; no actual contradiction or important unsupported claim was identified.",
+  "limitations": [
+    "The draft is metadata-only, and its contents are identified in the packet as fixture inputs rather than semantic-review results. This review covers only the supplied assertions and context; it does not authenticate human approval or establish omitted history."
+  ],
+  "semantic_assessment": "MODEL_DEPENDENT_NOT_AUTHENTICATED"
+}

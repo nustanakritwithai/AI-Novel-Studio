@@ -68,7 +68,9 @@ python -m unittest discover -s tests -p test_postmerge_proposal.py -v
 python -m unittest discover -s tests -v
 ```
 
-อ่านผลจริง, exact head และ CI ใน Draft PR ของ milestone นี้ อย่าแปลง fixture/mock เป็นหลักฐานว่า live trigger หรือ artifact upload สำเร็จแล้ว **Live postmerge trigger: NOT_RUN** — ต้องรอเจ้าของอนุญาต merge/ติดตั้ง workflow บน `main` และมีเหตุการณ์จริงที่เข้าเกณฑ์ก่อน งานนี้ไม่ merge เพื่อทดสอบ
+ก่อน owner อนุญาตติดตั้ง สถานะ live เป็น NOT_RUN; fixture/mock ไม่ใช่หลักฐาน live หลัง owner อนุญาต merge #29 เมื่อ 2026-10-23 ตรวจ runtime รุ่นแก้ไขจริงแล้ว: merge `64fb4fed15d44ea37bb81825a288959d0a56dbf8`, [main CI 491 tests](https://github.com/nustanakritwithai/AI-Novel-Studio/actions/runs/40022859423) และ [postmerge run](https://github.com/nustanakritwithai/AI-Novel-Studio/actions/runs/40023031352) ผ่าน ดาวน์โหลด artifact `12531955840` มาตรวจจริงแล้ว ZIP มีเฉพาะ `proposal.json`, SHA-256 `ec598807d035c749c66daaa95fc043bb8e76fc6b96ec92b2cf647d90ae6a2b21` และ PR/head/merge/first-parent/tree/upstream run/workflow-definition identities ตรงกัน
+
+ผลนี้เป็น PASSED_LIVE สำหรับเหตุการณ์ที่บันทึกเท่านั้น observed PR base ของกรณี live นี้ตรง first parent; stale-base edge case ยังคงเป็น regression จำลอง ไม่อ้างว่ารัน event เก่าซ้ำหรือซ่อม failure เก่าย้อนหลัง ค่า event digests ตรวจรูปแบบได้ แต่ไม่ได้ดึง raw event มา recompute อย่างอิสระ Artifact เก็บเจ็ดวันตาม retention เดิม; ไม่มีการเปลี่ยน settings หรือสิทธิ์ token
 
 Technical proposal-artifact workflow มี implementation แยกจาก approved-ledger lifecycle: **human editorial approval ยัง BLOCKED/UNVERIFIED และไม่มี automatic ledger application** E0 privacy/rulesets, reversible migration และ advanced diagnostics ที่ยังไม่ผ่านยังคงตาม [readiness checklist](ENGINE_READINESS.md) ไม่เรียก engine ทั้ง E0–E7 ว่าเสร็จครบจาก workflow นี้
 
@@ -85,4 +87,4 @@ PR API อาจเก็บ base SHA ก่อนที่ PR อื่นจ�
 
 [Run เดิม](https://github.com/nustanakritwithai/AI-Novel-Studio/actions/runs/39954851241) มีเพียง error รวมที่ปิดรายละเอียด จึงยังพิสูจน์ตำแหน่ง exception ในเหตุการณ์เดิมไม่ได้ การแก้นี้อ้างอิงข้อขัดแย้งที่ตรวจซ้ำจาก metadata และ regression จำลอง ไม่อ้างว่าดึง event เดิมมาทดสอบหรือว่า run เดิมถูกซ่อมย้อนหลัง
 
-ยังคง read-only permissions, trusted inline stdlib runtime, current-main equality, merged PR/repository/ref/head identity, repeated-read race checks, fixed artifact path และ PROPOSED/UNVERIFIED ไม่มีการข้าม gate, เปลี่ยน settings, เพิ่ม credentials หรืออนุมัติ canon การทดสอบ live ของ runtime ใหม่นี้ต้องรอ owner อนุญาต merge PR แก้ไข; CI ของ Draft PR เป็นการทดสอบจำลองเท่านั้น
+ยังคง read-only permissions, trusted inline stdlib runtime, current-main equality, merged PR/repository/ref/head identity, repeated-read race checks, fixed artifact path และ PROPOSED/UNVERIFIED ไม่มีการข้าม gate, เปลี่ยน settings, เพิ่ม credentials หรืออนุมัติ canon CI ของ Draft PR เป็นการทดสอบจำลอง ส่วนหลักฐาน live หลัง owner อนุญาต merge บันทึกแยกข้างต้น

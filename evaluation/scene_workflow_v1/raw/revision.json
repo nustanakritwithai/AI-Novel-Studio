@@ -1,0 +1,19 @@
+{
+  "input_packet_id": "0b9b622268ad7e7b84412c885a6fe18713d7e81f041407b97471af01ad35b457",
+  "input_review_sha256": "2ab30c82c50e8e1146620df2bba2955919802ed662d8790d5be964029aa003cd",
+  "addressed_finding_ids": [
+    "Q7-001",
+    "Q7-002",
+    "Q7-003",
+    "Q7-004",
+    "Q7-005",
+    "Q7-006"
+  ],
+  "output_text": "ASSERTION: The fixed gate is red at SC-001 and opens only with the physical token.\nASSERTION: Unit A does not know the token code at SC-001; code knowledge may begin only after SC-003.\nASSERTION: Unit A's physical-token ownership, scene-start stock, and expenditure count at SC-001 are UNKNOWN; exactly one physical token exists.\nASSERTION: Unit A's access to the upper gallery at SC-001 is UNKNOWN; the stairs and upper gallery are unfinished and not usable.\nASSERTION: This draft's human approval is UNVERIFIED; canon status is not established and ledger application is unauthorized.\n",
+  "output_sha256": "6d8435c931d91da22cd7a56e74f1d03c79519caaedda6c096ec2085074bc1da3",
+  "notes": [
+    "Five metadata-only assertions, preserving each original subject.",
+    "Unsupported token ownership, scene-start stock, and expenditure count remain UNKNOWN.",
+    "Human approval remains UNVERIFIED; canon and ledger application are not authorized."
+  ]
+}

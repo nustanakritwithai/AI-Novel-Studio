@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "scope": "SYNTHETIC_METADATA_ONLY",
+  "human_editorial_approval": "BLOCKED_NOT_TESTED",
+  "seeded_case": "Q7",
+  "clean_case": "M2",
+  "critical_faults": [
+    {
+      "id": "K-CANON",
+      "line": 1,
+      "domain": "canon",
+      "expected": "fixed gate red, not blue"
+    },
+    {
+      "id": "K-KNOWLEDGE",
+      "line": 2,
+      "domain": "POV",
+      "expected": "code unknown before after SC003"
+    },
+    {
+      "id": "K-INVENTORY",
+      "line": 3,
+      "domain": "inventory",
+      "expected": "cannot spend two from one without evidence"
+    },
+    {
+      "id": "K-CONSTRUCTION",
+      "line": 4,
+      "domain": "construction",
+      "expected": "unfinished stairs/upper gallery not usable at SC001"
+    },
+    {
+      "id": "K-APPROVAL",
+      "line": 5,
+      "domain": "approval",
+      "expected": "draft is unverified proposal, no automatic ledger apply"
+    }
+  ],
+  "adjudication": "Every critical seeded fault must be caught as CONTRADICTION; clean contradiction count must be zero. UNKNOWN warnings are recorded separately.",
+  "blindness": "Fresh fork-none reviewer receives one opaque packet and report contract only; shared filesystem isolation is procedural, not enforced."
+}

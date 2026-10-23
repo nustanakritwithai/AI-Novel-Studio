@@ -55,4 +55,10 @@ python scripts/storyctl.py --story my-story scene-flow VERIFY --previous .local/
 
 `scene_workflow_acceptance.py` แยกจาก acceptance เดิม ใช้ scaffold ใหม่ สามฉากจำลองที่มี world order ต่างจาก narration และส่วนบ้านที่ยังไม่เสร็จ รัน CLI จริงและตรวจ source/approval boundaries การทดสอบ deterministic ไม่ใช่ semantic review ส่วนผล native blind reviewer และ clean control ต้องเก็บคำตอบดิบพร้อม hash และรายงาน hit/miss/false positive จริงแยกต่างหาก
 
+```bash
+python scripts/scene_workflow_acceptance.py --out .local/scene-workflow-run-01
+```
+
+ใช้ directory ใหม่ทุกครั้ง ถ้ารันไม่ผ่านให้เก็บ report/inputs ไว้แล้ววิเคราะห์ ห้ามล้าง directory อื่นเพื่อทำให้ผ่าน `PASS` ของ runner หมายถึงคำสั่ง/ขอบเขตข้อมูลเท่านั้น ผล semantic เป็น NOT_RUN และ owner เป็น BLOCKED เสมอ ผล native ที่รันแยกแล้วอยู่ใน [หลักฐานการทดลอง](../evaluation/scene_workflow_v1/README.md) และไม่ถูกรันโมเดลซ้ำโดย CI
+
 อ้างอิง [source modes](SCENE_PREPARATION_TH.md), [delta proposals](SCENE_DELTAS_TH.md), [agent runbook](AGENT_RUNBOOK.md) และ [roadmap](ENGINE_NEXT_BATCHES_TH.md) Windows raw pinned-source checks ยังคงเข้มตาม bytes จริง ไม่อ้าง full Windows pass จาก Linux CI และไม่เปลี่ยน CRLF/settings เพื่อซ่อนปัญหา

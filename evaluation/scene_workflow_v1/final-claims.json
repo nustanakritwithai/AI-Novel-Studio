@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "scene_id": "SC-001",
+  "draft_path": "drafts/EP-001/SC-001.md",
+  "source_sha256": "6d8435c931d91da22cd7a56e74f1d03c79519caaedda6c096ec2085074bc1da3",
+  "observations": [
+    {
+      "id": "OBS-STRUCTURE",
+      "category": "CONSTRUCTION",
+      "claim": "ASSERTION: Unit A's access to the upper gallery at SC-001 is UNKNOWN; the stairs and upper gallery are unfinished and not usable.",
+      "locator": {
+        "start_line": 4,
+        "end_line": 4,
+        "quote": "ASSERTION: Unit A's access to the upper gallery at SC-001 is UNKNOWN; the stairs and upper gallery are unfinished and not usable."
+      },
+      "subject": {
+        "kind": "LOCATION",
+        "id": "LOC-001"
+      },
+      "candidate": {
+        "target_kind": "LOCATION",
+        "target_id": "LOC-001",
+        "component_id": "UNKNOWN",
+        "aspect": "unfinished construction"
+      }
+    }
+  ]
+}
