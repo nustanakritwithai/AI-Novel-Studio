@@ -100,6 +100,38 @@
       "story_requirement": "LOCKED",
       "source_ids": [],
       "notes": "User-directed fiction beat; real Last Island gameplay version/mode not established"
+    },
+    {
+      "id": "MECH-013",
+      "title": "กล่องน้ำมันมีโอกาสสุ่มเกิดระหว่างเส้นทางถนน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "User-specified story mechanic; no oil crate identified or oil acquired in EP-003"
+    },
+    {
+      "id": "MECH-014",
+      "title": "น้ำมันใช้ในสายคราฟต์เตาเผา แปรรูปเหล็ก และต่อยอดสู่อุปกรณ์ทำกระสุน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Fictional server mechanics described by author; no formula quantities or universal applicability verified"
+    },
+    {
+      "id": "MECH-015",
+      "title": "ศัตรูมีปืนพกและยิงหกนัดในการเผชิญหน้าที่ถนน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Six-shots encounter is author-directed; do not generalize pistol ammunition capacity or infer all enemy reserve ammo"
+    },
+    {
+      "id": "MECH-016",
+      "title": "สัตว์ป่าดรอปเนื้อ หนัง และไขมันสัตว์; ไขมันใช้ทำน้ำมัน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "User-directed fictional world rule; hunting itself starts only after EP-003"
     }
   ]
 }
