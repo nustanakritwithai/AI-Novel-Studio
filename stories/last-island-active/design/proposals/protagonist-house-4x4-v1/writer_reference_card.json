@@ -1,0 +1,99 @@
+{
+  "namespace": "AUTHOR_DESIGN_TARGET_NOT_STORY_STATE",
+  "story_scene_ref": null,
+  "actual_scene_applicability": {
+    "exact_version_id": "UNKNOWN",
+    "world_construction_time": "UNKNOWN",
+    "narrative_reveal_order": "UNKNOWN"
+  },
+  "house_identity": {
+    "house_id": "LOC-009",
+    "house_status": "EXISTING_REFERENCE_ALIAS",
+    "adoption_status": "TARGET_ONLY_NOT_SCENE_ADOPTED",
+    "owner_player_ref": "CHAR-001",
+    "owner_group_ref": null,
+    "occupant_refs": [],
+    "location_ref": "LOC-009"
+  },
+  "target_blueprint": {
+    "version_id": "TARGET-4X4-V01",
+    "status": "PROPOSED",
+    "floor_room_uses": [
+      {
+        "floor_index": 0,
+        "room_use": "UNKNOWN"
+      },
+      {
+        "floor_index": 1,
+        "outer_edge_use": "FIRING_AREA_WITH_LOW_WALLS",
+        "inner_room_use": "UNKNOWN"
+      }
+    ],
+    "tile_refs": [],
+    "door_refs": [],
+    "route_refs": [],
+    "stair_refs": [],
+    "pillar_refs": [
+      "PILLAR-TARGET-LOC009"
+    ],
+    "source_ref": "./target_v01.json",
+    "side_wall_boundary_refs": [
+      "WALL-TARGET-OUTER-4X4",
+      "WALL-TARGET-RETAINED-2X2"
+    ]
+  },
+  "as_built_snapshot": {
+    "world_construction_time": "UNKNOWN",
+    "parts": [],
+    "available_room_refs": [],
+    "available_route_refs": [],
+    "roof_cover_refs": [],
+    "status": "NOT_RETRIEVED_SELECT_EXACT_SCENE"
+  },
+  "pov_knowledge": {
+    "character_ref": null,
+    "status": "UNKNOWN",
+    "known_room_refs": [],
+    "known_route_refs": [],
+    "evidence_refs": []
+  },
+  "change_history": [
+    {
+      "version_id": "TARGET-4X4-V01",
+      "kind": "AUTHOR_DESIGN_TARGET_RECORDED",
+      "construction_event": false,
+      "world_time": "UNKNOWN",
+      "story_scene_ref": null,
+      "supersedes_built_state": false
+    }
+  ],
+  "source_refs": [
+    "./target_v01.json#/author_directives",
+    "../../../data/house_references.json"
+  ],
+  "diagram_refs": [],
+  "unknowns": [
+    "World construction/reveal time and applicable scene",
+    "Stairs, doors, routes, door count and occupied-room plan",
+    "Metric dimensions, precise frame/core placement, floor/roof cross-section and support",
+    "Materials, strength tiers, damage, costs, durations and game feasibility",
+    "Actual pillar placement, centrality metric, extent and relocation",
+    "POV knowledge of the future target and any expansion completion"
+  ],
+  "document_kind": "FICTION_WRITER_REFERENCE_CARD",
+  "schema_version": 1,
+  "status": "PROPOSED",
+  "template_source": "../house-atlas-v1/writer_reference_card.json#/template",
+  "human_editorial_approval": "UNVERIFIED",
+  "canon_change_authorized": false,
+  "ledger_apply_authorized": false,
+  "runtime_loaded": false,
+  "writer_rules_th": [
+    "อ่าน target นี้เฉพาะเมื่อวางแผนการขยาย ไม่ใช้แทนการ์ดบ้านที่สร้างแล้วในฉาก",
+    "กำแพงรวมสองแนว: ขอบ 4×4 แล้วกำแพง 2×2 เดิม แล้วถึงห้องใน ไม่มีแนวที่สาม",
+    "ลำดับแนวกำแพงไม่ใช่เส้นทางประตูหรือจำนวนระเบิด/ครั้งโจมตี",
+    "ด้านบนมีเพียงถ้อยคำทำแบบเดียวกัน ยังไม่กำหนดภาพตัด",
+    "ขอบชั้น 2 เป็นพื้นที่ยิงมีกำแพงเตี้ย ไม่เพิ่มเป็นกำแพงป้องกันแนวที่สาม",
+    "เสาหลักหนึ่งต้นทั้งบ้าน ไม่เพิ่มเสาต่อชั้น ไม่แต่งตำแหน่งบันได ประตู วัสดุหรือเวลาสร้าง"
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "document_kind": "FICTIONAL_HOUSE_DESIGN_TARGET_PROPOSAL",
+  "template_revision": 1,
+  "template_notes": [
+    "Derived from the existing human-editable scaffold; not a registered engine schema, runtime input or CAD model.",
+    "Author-defined target only. No construction event, completed part, scene adoption or canon approval is recorded.",
+    "LOC-009 and CHAR-001 reuse the current reference-card association; no new group, ownership right or character is created.",
+    "Empty arrays mean not enumerated, not absence. The two side-wall IDs describe relative boundaries, not a door route.",
+    "Design version lineage is not world construction history. No automatic recentering, strength addition or tactical optimization."
+  ],
+  "status": "PROPOSED",
+  "profile": "last_island_story_extension",
+  "story_slug": "last-island-active",
+  "engine_schema_supported": false,
+  "engine_input_authorized": false,
+  "human_editorial_approval": "UNVERIFIED",
+  "canon_change_authorized": false,
+  "ledger_apply_authorized": false,
+  "canon_apply": false,
+  "profiles": {
+    "generic_optional_module": {
+      "selected": false,
+      "module_system_id": "",
+      "localized_name": {
+        "th": "",
+        "en": ""
+      },
+      "module_kinds": [],
+      "shape_rule": null,
+      "pillar_rule": null,
+      "units": null,
+      "metres_per_unit": null
+    },
+    "last_island_story_extension": {
+      "selected": true,
+      "story_slug": "last-island-active",
+      "module_vocabulary": [
+        "SQUARE",
+        "TRIANGLE"
+      ],
+      "main_pillar": {
+        "count_per_whole_house": 1,
+        "pillar_id": "PILLAR-TARGET-LOC009",
+        "applies_to_whole_house": true,
+        "design_direction": "CENTRAL_TO_WHOLE_HOUSE",
+        "centrality_metric": "UNKNOWN",
+        "center_xy": null,
+        "height_m": null,
+        "influence_extent": null,
+        "relocation_policy": "UNKNOWN",
+        "structural_effect": "UNKNOWN"
+      }
+    }
+  },
+  "house": {
+    "house_id": "LOC-009",
+    "version_id": "TARGET-4X4-V01",
+    "parent_version_id": null,
+    "localized_name": {
+      "th": "เป้าหมายขยายบ้านตัวเอก 4×4 สองชั้น",
+      "en": "Protagonist home expansion target"
+    },
+    "owner_player_ref": "CHAR-001",
+    "owner_group_ref": null,
+    "occupant_refs": [],
+    "location_ref": "LOC-009",
+    "canon_location_ref": null,
+    "chapter_refs": [],
+    "design_status": "PROPOSED",
+    "identity_binding_kind": "REFERENCE_ALIAS_ONLY_NOT_CANON_OR_LEGAL_OWNERSHIP",
+    "binding_source_ref": "../../../data/house_references.json#/houses/0"
+  },
+  "coordinate_convention": {
+    "placement_status": "UNPLACED",
+    "coordinate_system": null,
+    "length_unit": null,
+    "metres_per_unit": null,
+    "floor_index_semantics": "ORDINAL_IF_USED",
+    "symbolic_elevation_unit": null,
+    "metric_height_m": null
+  },
+  "tiles": [],
+  "rooms": [],
+  "connections": [],
+  "roof": {
+    "roof_id": null,
+    "kind": null,
+    "allowed_kinds": [
+      "COVERING_ROOF",
+      "OCCUPIED_TERRACE"
+    ],
+    "access_connection_ref": null
+  },
+  "evidence_refs": [
+    "#/author_directives/0",
+    "#/author_directives/1",
+    "#/author_directives/2",
+    "#/author_directives/3",
+    "#/author_directives/4"
+  ],
+  "diagram_refs": [],
+  "approval_evidence_ref": null,
+  "template_source": "../house-atlas-v1/house_template_proposed.json",
+  "design_basis": "AUTHOR_CHAT_DIRECTIVE_NOT_CONSTRUCTION_EVIDENCE",
+  "reference_baseline_commit": "6e1d8bdaff6747bce390a71c6640956380cf92e1",
+  "runtime_loaded": false,
+  "construction_event_created": false,
+  "target_blueprint": {
+    "overall_footprint_label": "4x4",
+    "retained_inner_core_label": "2x2",
+    "floor_count": 2,
+    "dimension_basis": "AUTHOR_GRID_LABELS_NOT_METRES_OR_TILE_INVENTORY",
+    "inner_core_offset_xy": null,
+    "frame_width": null,
+    "floor_slab_coverage": null,
+    "surrounding_frame_count": 1,
+    "side_wall_boundaries": [
+      {
+        "boundary_id": "WALL-TARGET-OUTER-4X4",
+        "role": "OUTER_4X4_PERIMETER",
+        "sequence_index": 1,
+        "material": null,
+        "height": null,
+        "strength_tier": null
+      },
+      {
+        "boundary_id": "WALL-TARGET-RETAINED-2X2",
+        "role": "RETAINED_INNER_CORE_WALL",
+        "sequence_index": 2,
+        "material": null,
+        "height": null,
+        "strength_tier": null
+      }
+    ],
+    "side_wall_boundary_count_total": 2,
+    "additional_wall_boundaries_beyond_existing_core": 1,
+    "conceptual_boundary_trace": [
+      "EXTERIOR",
+      "WALL-TARGET-OUTER-4X4",
+      "SURROUNDING_FRAME",
+      "WALL-TARGET-RETAINED-2X2",
+      "INNER_ROOM"
+    ],
+    "trace_kind": "RELATIVE_CONTAINMENT_AND_WALL_ORDER_NOT_A_DOOR_OR_NAVIGATION_ROUTE",
+    "third_wall_boundary_defined": false,
+    "explosive_item_count": null,
+    "attack_hit_count": null,
+    "overhead": {
+      "author_statement_th": "ด้านบนทำแบบเดียวกัน",
+      "relationship": "ANALOGOUS_ONLY_AS_STATED",
+      "cross_section": null,
+      "layer_count": null,
+      "slab_roof_ceiling_roles": null,
+      "structural_support": null
+    },
+    "floor_program": [
+      {
+        "floor_index": 0,
+        "label_th": "ชั้น 1",
+        "interior_room_layout": null,
+        "height": null
+      },
+      {
+        "floor_index": 1,
+        "label_th": "ชั้น 2",
+        "outer_edge_use": "FIRING_AREA",
+        "outer_edge_boundary": "LOW_WALLS",
+        "outer_edge_role": "DISTINCT_FROM_INNER_CORE_PROTECTIVE_LAYERS_NOT_A_THIRD_SIDE_WALL",
+        "interior_room_layout": null,
+        "low_wall_height": null,
+        "height": null
+      }
+    ],
+    "door_count": null,
+    "door_routes": null,
+    "stair_routes": null,
+    "construction_start": null,
+    "construction_completion": null,
+    "construction_scene_refs": [],
+    "actual_built_version": null,
+    "target_usability_in_story": "UNKNOWN"
+  },
+  "author_directives": [
+    {
+      "source_ref": "Sentinel_e7dd6fb2d76c8191990941fdc1290d06",
+      "quote_th": "จะขยายเป็น 4 * 4 2 ชั้น"
+    },
+    {
+      "source_ref": "Sentinel_ecb413c9aa048191806a197092dd4a1e",
+      "quote_th": "2 * 2 ด้านใน แล้วเป็นกรอบชั้นนอกอีกชั้นกันระเบิด  เท่ากับบ้านนี้ต้องเจาะกำแพง 2 ชั้น\n\nด้านบนทำแบบเดียวกัน แต่ขอบชั้นนอก ของชั้น 2 จะทำเป็นพื้นที่ชั้นยิงคือมีกำแพงเตี้ยรอบๆ"
+    },
+    {
+      "source_ref": "Sentinel_632816c208688191a79a9250256e543a",
+      "quote_th": "อัพเดทขึ้น engine ด้วยครับ"
+    },
+    {
+      "source_ref": "Sentinel_19662a5ca24c8191ab22b0c918b2c78b",
+      "quote_th": "ที่บอกว่ากำแพง 2 ชั้นคือกำแพงเดิมของ 2*2 กับกำแพงขอบนอกของ4*4นะ ถ้าเจาะ 2 ทีก็จะถึงห้องในเลย"
+    },
+    {
+      "source_ref": "Sentinel_22152ea061588191a4157f8b55834d72",
+      "quote_th": "มีเสาหลักต้นเดียวอยู่กลางบ้าน"
+    }
+  ],
+  "source_attestation": {
+    "channel": "AUTHOR_CHAT_TRANSCRIPT_PROVIDED_IN_TASK",
+    "identity_basis": "LOCAL_ATTESTATION_NOT_AUTHENTICATED_GITHUB_REVIEW",
+    "scope": "TARGET_DESIGN_AND_REPOSITORY_RECORD_ONLY_NOT_AS_BUILT_STATE",
+    "clarification_th": "เจาะสองทีในบันทึกนี้หมายถึงผ่านกำแพงสองแนว ไม่ใช่จำนวนวัตถุระเบิดหรือจำนวนการโจมตี"
+  },
+  "unknowns": [
+    "World construction/reveal time and applicable scene",
+    "Stairs, doors, routes, door count and occupied-room plan",
+    "Metric dimensions, precise frame/core placement, floor/roof cross-section and support",
+    "Materials, strength tiers, damage, costs, durations and game feasibility",
+    "Actual pillar placement, centrality metric, extent and relocation",
+    "POV knowledge of the future target and any expansion completion"
+  ]
+}
