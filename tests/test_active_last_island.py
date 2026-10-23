@@ -47,7 +47,7 @@ class ActiveLastIslandAcceptance(unittest.TestCase):
         self.assertFalse(post["effects_flags"]["ep003_hunting_started"])
         self.assertFalse(post["effects_flags"]["ep003_furnace_built"])
         self.assertFalse(post["effects_flags"]["ep003_oil_obtained"])
-        self.assertFalse(any(e["item_id"] in {"ITEM-014","ITEM-018","ITEM-019","ITEM-020","ITEM-021","ITEM-022"} and e["operation"] in {"GAIN","CRAFT","LOOT","FIND"} for e in db["inventory_ledger"]["entries"] if e["scene_id"].startswith("SC-02")))
+        self.assertFalse(any(e["item_id"] in {"ITEM-014","ITEM-018","ITEM-019","ITEM-020","ITEM-021","ITEM-022"} and e["operation"] in {"GAIN","CRAFT","LOOT","FIND"} for e in db["inventory_ledger"]["entries"] if e["scene_id"] in {f"SC-{n:03d}" for n in range(19, 27)}))
         self.assertEqual(json.loads((ROOT/"author_memory"/"index.json").read_text(encoding="utf-8"))["episodes"][-1]["episode_id"], "EP-002")
 
     def test_episode_three_pack_is_available_without_false_approval(self):
