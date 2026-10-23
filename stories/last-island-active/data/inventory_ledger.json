@@ -736,6 +736,46 @@
       "quantity": 1,
       "status": "PLANNED",
       "notes": "นำถังน้ำมันดิบใส่เครื่องกลั่นแล้วเริ่มคิวที่ต้องรอ ผลผลิตยังไม่พร้อม"
+    },
+    {
+      "id": "INV-072",
+      "scene_id": "SC-064",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-040",
+      "operation": "CRAFT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "สร้างพื้นวงนอกบางช่องก่อนเริ่มเดินวน; จำนวนช่องในฉากนี้ไม่ล็อก"
+    },
+    {
+      "id": "INV-073",
+      "scene_id": "SC-065",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-040",
+      "operation": "CRAFT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ต่อพื้นวงนอกเพิ่มเติมระหว่างขนวัสดุใกล้ฐาน ยังมีช่องขาด"
+    },
+    {
+      "id": "INV-074",
+      "scene_id": "SC-066",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-040",
+      "operation": "CRAFT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เติมพื้นส่วนสุดท้ายจนจำนวนพื้นทางเดินที่สร้างสะสมรวมครบ 12 ช่อง; ไม่ใช่การสร้างเพิ่มอีก 12 ช่องในฉากเดียว"
+    },
+    {
+      "id": "INV-075",
+      "scene_id": "SC-067",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-041",
+      "operation": "CRAFT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "สร้างกำแพงนอก 4×4 บางช่วงเท่านั้น วัสดุ/จำนวนช่วง UNKNOWN ยังคงเปิดไม่ครบรอบ"
     }
   ]
 }

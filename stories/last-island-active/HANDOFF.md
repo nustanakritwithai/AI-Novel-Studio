@@ -6,7 +6,7 @@
 
 ## Phase 1 memory workflow
 
-Run `python scripts/storyctl.py --story last-island-active memory` before planning future episodes. This reads the author-accepted **source-bound summaries** of EP-001 and EP-002. For EP-006 continuation context use `pack EP-006`, which includes only author-accepted source memory for EP-001 and EP-002; EP-003/004 remain DRAFT and are not in the accepted memory index; `memory --before EP-002` intentionally excludes EP-002.
+Run `python scripts/storyctl.py --story last-island-active memory` before planning future episodes. This reads the author-accepted **source-bound summaries** of EP-001 and EP-002. For EP-007 continuation context use `pack EP-007`, which includes only author-accepted source memory for EP-001 and EP-002; EP-003/004 remain DRAFT and are not in the accepted memory index; `memory --before EP-002` intentionally excludes EP-002.
 
 The trusted source is still the source manuscript pinned in `editorial/AUTHOR_APPROVAL_2026-10-23.json` and `author_memory/index.json`. These summaries are locally derived, not independently human-reviewed. They do **not** fill the GitHub-review-approved `ledger/index.json` and do not reconstruct approved `story_state`. Read `docs/AUTHOR_ACCEPTED_MEMORY_TH.md` for these two separate trust levels.
 
@@ -31,7 +31,7 @@ The trusted source is still the source manuscript pinned in `editorial/AUTHOR_AP
 
 ```bash
 python scripts/storyctl.py --story last-island-active check
-python scripts/storyctl.py --story last-island-active pack EP-006
+python scripts/storyctl.py --story last-island-active pack EP-007
 python -m unittest discover -s tests -v
 ```
 
@@ -100,3 +100,12 @@ PR #11 and #12 were closed as superseded; main contains the selected two-chapter
 - Upper perimeter of story 2 is intended as a firing walk with low parapet; one central support pillar; no triangle extensions; roof and internal stairs details remain unspecified.
 - The target **has not been constructed** anywhere up to SC-058. Future scenes must record precise construction steps and keep partial progress partial.
 - Source-of-truth plan: `bible/BASE_EXPANSION_4X4_TARGET.md`; machine-readable grid: `data/base_expansion_4x4_target.json`; author decision DEC-011 / design fact FACT-067. Story-approved state remains unchanged.
+
+## CURRENT — EP-007 author-accepted-in-chat manuscript and future handoff
+
+- Read `drafts/EP-007/CH-07-FULL-DRAFT.md`, `data/draft_continuity_ep007.json`, `bible/BASE_CONSTRUCTION_EP007_DRAFT.md`, `plot/episodes/EP-007.md` and the unchanged 4×4 target `data/base_expansion_4x4_target.json`. DEC-012 records user plan; DEC-013 records user's request to ingest the just-written source into Engine.
+- EP007 stage order: SC059 returned after refinery; SC060 learning-system upgrade and LMG recipe learned, **spring required=2 / already stored=1 / still missing=1**; SC061–063 plan the base, inspect/organize supplies; SC064–065 partial ring floors; **SC066 all 12 ground ring tiles BUILT and full walk verified**; SC067 exterior 4×4 wall **only partially built**; SC068 same partial outer wall while observing from **old inner upper firing platform**.
+- Ground walkway all four sides/corners is connected, 1 floor tile wide, no partitions. Outer 4×4 protective wall is NOT continuous/defensive-ready; new second-floor outer firing terrace is NOT built. Door and stair locations and pillar installation remain TBD, no roof invented. Do not conflate a completed floor ring with the fully fortified two-story base.
+- Material totals, wall segment count and coordinates UNKNOWN. The one stored spring must not be logged as newly found EP007 loot or spent on construction; no LMG owned. Older furnace iron/gunpowder never confirmed as obtained.
+- First horse CHAR-008 died SC055, no replacement. Other protagonists and NPC identities unchanged. All EP007 scenes still DRAFT despite chat acceptance for ingest; official `data/story_state.json`, `ledger/index.json` and `author_memory/index.json` not changed.
+- **DON'T EDIT `bible/BASE_TIMELINE.md` casually**: it is SHA-pinned evidence for the house-card/engine source trust system. Future addenda go in `bible/BASE_CONSTRUCTION_EP007_DRAFT.md`.

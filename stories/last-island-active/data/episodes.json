@@ -205,6 +205,47 @@
       "author_plot_directive": "DEC-010",
       "prose_approval": "NOT_YET_APPROVED",
       "preceding_episode": "EP-005"
+    },
+    {
+      "id": "EP-007",
+      "title": "กำแพงชั้นใหม่",
+      "status": "DRAFT",
+      "position": "ต่อจาก SC-058 ที่พระเอกกลับถึงฐานหิน 2×2 ด้วยการเดินเท้าหลังเสียม้าตัวแรก",
+      "logline": "ต้องการปืนกลเบาจึงอัปเกรดเรียนรู้สูตร พบสปริงเดิมในกล่อง 1 จาก 2 ชิ้น แต่ก่อนออกไปตามหาอีกชิ้นเขาเลือกขยายฐาน วางผัง 4×4 หุ้มแกนเดิม 2×2 สร้างทางเดินชั้นล่าง 12 ช่องให้ต่อเนื่องเดินวนได้จริง และเริ่มกำแพงนอกเพียงบางช่วงโดยยังไม่มีชั้นยิงนอก",
+      "scene_ids": [
+        "SC-059",
+        "SC-060",
+        "SC-061",
+        "SC-062",
+        "SC-063",
+        "SC-064",
+        "SC-065",
+        "SC-066",
+        "SC-067",
+        "SC-068"
+      ],
+      "questions": [
+        "วัสดุและจำนวนที่ใช้ก่อสร้างจริง UNKNOWN ยกเว้นพื้นวงทางเดิน 12 ช่อง",
+        "สปริงที่เก็บไว้เดิมได้มาจากการฟาร์มครั้งใดยัง UNKNOWN; ห้ามลงบัญชีเป็นของใหม่ที่ได้ใน EP007",
+        "รายละเอียดตำแหน่งประตู ทางขึ้นใหม่ หลังคา เสาหลัก และวัสดุกำแพงนอกยังไม่ถูกยืนยัน",
+        "แนวกำแพงนอกสร้างเพียงบางช่วง ไม่ใช่กำแพงปิดครบ 4×4",
+        "ไม่มีการเก็บเหล็ก/ดินปืนสำเร็จจากเตาในบทนี้"
+      ],
+      "approved_final_draft": null,
+      "working_draft_path": "drafts/EP-007/CH-07-FULL-DRAFT.md",
+      "author_plot_directive": "DEC-012",
+      "author_decision": {
+        "status": "AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST",
+        "decision_id": "DEC-013",
+        "source_channel": "ChatGPT",
+        "source_path": "drafts/EP-007/CH-07-FULL-DRAFT.md",
+        "source_blob_sha": "3b28e35531e7d239ee86966ef02af6b84a009e73",
+        "github_pr_reviewer_provenance": "NOT_OBSERVED",
+        "engine_approval_state": "PENDING_GITHUB_REVIEW",
+        "note": "User explicitly requested saving the just-written EP007 to engine. Exact source registered as working DRAFT without forging formal Canon approval."
+      },
+      "prose_approval": "AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST_NOT_GITHUB_REVIEWED",
+      "preceding_episode": "EP-006"
     }
   ]
 }

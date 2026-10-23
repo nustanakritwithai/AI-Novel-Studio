@@ -2560,6 +2560,451 @@
       ],
       "draft_path": "drafts/EP-006/SC-058.md",
       "prose_source": "CH-06-FULL-DRAFT.md — assistant-written draft based on user plot"
+    },
+    {
+      "id": "SC-059",
+      "episode_id": "EP-007",
+      "order": 1,
+      "title": "คนที่กลับมาโดยไม่มีม้า",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-017",
+        "ITEM-032",
+        "ITEM-034",
+        "ITEM-014",
+        "ITEM-008"
+      ],
+      "canon_refs": [
+        "FACT-068"
+      ],
+      "mechanic_refs": [],
+      "source_refs": [],
+      "goal": "จัดของที่เหลือจากโรงกลั่นและประเมินความเสี่ยง",
+      "conflict": "สูญเสียม้าและพบว่าปืนสั้นยังด้อยกว่าอาวุธหนัก",
+      "beats": [
+        "กลับถึงบ้านหิน 2×2 เดิมโดยไม่มีม้า",
+        "ตรวจปืนพก บัตรเขียว น้ำมัน และกล่องเก็บของ",
+        "รู้สึกว่าทั้งอาวุธและบ้านยังป้องกันไม่พอ"
+      ],
+      "outcome": "เริ่มมองหาทางยกระดับอาวุธและฐาน",
+      "requires_flags": [],
+      "effects_flags": {
+        "ep007_home_inventory_checked": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-007/SC-059.md",
+      "prose_source": "drafts/EP-007/CH-07-FULL-DRAFT.md — author accepted in chat for engine ingest"
+    },
+    {
+      "id": "SC-060",
+      "episode_id": "EP-007",
+      "order": 2,
+      "title": "สูตรปืนกลเบา",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-007",
+        "ITEM-038",
+        "ITEM-039",
+        "ITEM-008"
+      ],
+      "canon_refs": [
+        "FACT-069",
+        "FACT-070"
+      ],
+      "mechanic_refs": [
+        "MECH-031"
+      ],
+      "source_refs": [],
+      "goal": "ปลดล็อกเส้นทางปืนกลเบาจากทรัพยากรเดิม",
+      "conflict": "แม้เรียนรู้สูตรแล้ว ยังขาดสปริงหนึ่งชิ้น",
+      "beats": [
+        "อัปเกรดระบบเรียนรู้จากของที่สะสม",
+        "เรียนรู้สูตรปืนกลเบา",
+        "ตรวจกล่อง พบสปริงเก็บไว้แล้ว 1 จาก 2",
+        "ตัดสินใจยังไม่ออกไปฟาร์มเพิ่ม"
+      ],
+      "outcome": "มีสูตรปืนกลเบาแต่ยังคราฟต์ไม่ได้: ต้องใช้สปริง 2 มี 1 ขาด 1",
+      "requires_flags": [
+        "ep007_home_inventory_checked"
+      ],
+      "effects_flags": {
+        "ep007_lmg_recipe_learned": true,
+        "ep007_springs_needed_two": true,
+        "ep007_spring_one_existing": true,
+        "ep007_lmg_crafted": false
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-007/SC-060.md",
+      "prose_source": "drafts/EP-007/CH-07-FULL-DRAFT.md — author accepted in chat for engine ingest"
+    },
+    {
+      "id": "SC-061",
+      "episode_id": "EP-007",
+      "order": 3,
+      "title": "บ้านที่เล็กเกินไป",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-039"
+      ],
+      "canon_refs": [
+        "FACT-071"
+      ],
+      "mechanic_refs": [],
+      "source_refs": [],
+      "goal": "เลือกเพิ่มแนวป้องกันฐานก่อนออกตามหาสปริง",
+      "conflict": "ฐานหินเดิม 2×2 เคยถูกเจาะและมีจุดบอด",
+      "beats": [
+        "เดินรอบกำแพงบ้านเดิมและทบทวนการโจมตี",
+        "คิดสร้างกำแพงภายนอกและพื้นที่คั่นรอบแกนเดิม",
+        "ตัดสินใจวางแบบขยายก่อนหาอาวุธ"
+      ],
+      "outcome": "เป้าหมายการก่อสร้างถูกเลือก แต่ยังไม่ได้เริ่มลงมือ",
+      "requires_flags": [
+        "ep007_lmg_recipe_learned"
+      ],
+      "effects_flags": {
+        "ep007_expand_base_decided": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-007/SC-061.md",
+      "prose_source": "drafts/EP-007/CH-07-FULL-DRAFT.md — author accepted in chat for engine ingest"
+    },
+    {
+      "id": "SC-062",
+      "episode_id": "EP-007",
+      "order": 4,
+      "title": "สี่คูณสี่",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-040",
+        "ITEM-041"
+      ],
+      "canon_refs": [
+        "FACT-072",
+        "FACT-079"
+      ],
+      "mechanic_refs": [
+        "MECH-032",
+        "MECH-033"
+      ],
+      "source_refs": [],
+      "goal": "วางแบบบ้านหุ้มแกนเดิมและเส้นทางวงรอบที่เดินได้",
+      "conflict": "ต้องรักษา 2×2 เดิมและเลี่ยงทางตัน/กำแพงเกินสองแนว",
+      "beats": [
+        "ขยายเส้นกริดเป้าหมายเป็น 4×4 ทั้ง 16 ช่อง",
+        "แกนกลาง 2×2 = 4 ช่อง วงทางเดินชั้นล่าง = 12 ช่อง",
+        "วางแผนแนวกำแพงนอก ชั้นยิงรอบนอกกำแพงเตี้ย เสาหลักหนึ่งต้น",
+        "ยังไม่กำหนดประตู บันไดใหม่ หลังคา และช่องเชื่อม"
+      ],
+      "outcome": "บันทึกแบบเป้าหมาย 4×4 โดยยังไม่มีส่วนต่อเติมจริง",
+      "requires_flags": [
+        "ep007_expand_base_decided"
+      ],
+      "effects_flags": {
+        "ep007_4x4_blueprint_selected": true,
+        "ep007_expansion_built_yet": false
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-007/SC-062.md",
+      "prose_source": "drafts/EP-007/CH-07-FULL-DRAFT.md — author accepted in chat for engine ingest"
+    },
+    {
+      "id": "SC-063",
+      "episode_id": "EP-007",
+      "order": 5,
+      "title": "ของที่เก็บมา",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-039",
+        "ITEM-034",
+        "ITEM-001",
+        "ITEM-004",
+        "ITEM-005",
+        "ITEM-040"
+      ],
+      "canon_refs": [
+        "FACT-073"
+      ],
+      "mechanic_refs": [
+        "MECH-034"
+      ],
+      "source_refs": [],
+      "goal": "สำรวจทรัพยากรและจัดลำดับทำพื้นก่อนกำแพงและชั้นยิง",
+      "conflict": "ของไม่พอสร้าง 4×4 ครบในคราวเดียว",
+      "beats": [
+        "ตรวจทรัพยากรเก่าจากถนนและป่า",
+        "แยกสปริง 1 ชิ้นและบัตรเขียวไม่ให้ถูกใช้ผิด",
+        "เริ่มงานจากวงทางเดินชั้นล่างก่อนกำแพงนอก"
+      ],
+      "outcome": "วางลำดับลงมือและเลือกวัสดุสำหรับพื้นช่วงแรก",
+      "requires_flags": [
+        "ep007_4x4_blueprint_selected"
+      ],
+      "effects_flags": {
+        "ep007_material_shortfall_known": true,
+        "ep007_spring_reserved": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-007/SC-063.md",
+      "prose_source": "drafts/EP-007/CH-07-FULL-DRAFT.md — author accepted in chat for engine ingest"
+    },
+    {
+      "id": "SC-064",
+      "episode_id": "EP-007",
+      "order": 6,
+      "title": "พื้นช่องแรก",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-040"
+      ],
+      "canon_refs": [
+        "FACT-074"
+      ],
+      "mechanic_refs": [
+        "MECH-032"
+      ],
+      "source_refs": [],
+      "goal": "เริ่มก่อสร้างช่องทางเดินรอบแกนบ้านจริง",
+      "conflict": "สร้างบางช่องแล้วยังเดินวนไม่ครบและต้องระวังวางผิดช่อง",
+      "beats": [
+        "วางพื้นช่องแรกและช่องติดกันบนกริดวงนอก",
+        "ทดสอบเดินได้เฉพาะช่วงที่เสร็จ",
+        "เลี้ยวเข้ามุมแรก แต่แนววงรอบยังขาด"
+      ],
+      "outcome": "เริ่มสร้างพื้นวงนอกบางส่วน ทางเดินยังไม่ครบ",
+      "requires_flags": [
+        "ep007_material_shortfall_known"
+      ],
+      "effects_flags": {
+        "ep007_ground_ring_started": true,
+        "ep007_ground_ring_complete": false
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-007/SC-064.md",
+      "prose_source": "drafts/EP-007/CH-07-FULL-DRAFT.md — author accepted in chat for engine ingest"
+    },
+    {
+      "id": "SC-065",
+      "episode_id": "EP-007",
+      "order": 7,
+      "title": "ทางที่ยังวนไม่ได้",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-040",
+        "ITEM-001",
+        "ITEM-005"
+      ],
+      "canon_refs": [
+        "FACT-075"
+      ],
+      "mechanic_refs": [
+        "MECH-032",
+        "MECH-034"
+      ],
+      "source_refs": [],
+      "goal": "ต่อพื้นอีกด้านและแก้ช่องขาดของทางเดินวงรอบ",
+      "conflict": "วัสดุไม่พอและส่วนที่ต่อมายังมีช่องขาดจนเป็นทางตัน",
+      "beats": [
+        "เติมพื้นตามด้านข้างและหลังบ้าน",
+        "ออกหาและขนวัสดุก่อสร้างเพิ่มจากพื้นที่ใกล้ฐาน",
+        "เห็นช่องว่างสุดท้ายก่อนวงทางเดินจะเชื่อมครบ"
+      ],
+      "outcome": "พื้นมีความคืบหน้าแต่ยังไม่ครบวง",
+      "requires_flags": [
+        "ep007_ground_ring_started"
+      ],
+      "effects_flags": {
+        "ep007_materials_locally_gathered": true,
+        "ep007_ground_ring_gap_remaining": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-007/SC-065.md",
+      "prose_source": "drafts/EP-007/CH-07-FULL-DRAFT.md — author accepted in chat for engine ingest"
+    },
+    {
+      "id": "SC-066",
+      "episode_id": "EP-007",
+      "order": 8,
+      "title": "เดินครบรอบ",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-040"
+      ],
+      "canon_refs": [
+        "FACT-076"
+      ],
+      "mechanic_refs": [
+        "MECH-032"
+      ],
+      "source_refs": [],
+      "goal": "ปิดช่องสุดท้ายและทดสอบวงทางเดินทั้ง 12 ช่อง",
+      "conflict": "ต้องแน่ใจว่าทุกมุมเดินผ่านได้และไม่มีผนังขวาง",
+      "beats": [
+        "สร้างพื้นช่องสุดท้ายบนวงรอบ",
+        "ตรวจพบ 12 ช่องต่อเนื่องรอบบ้านเดิม 2×2",
+        "พระเอกเดินทดสอบจนครบวงโดยไม่ผ่านห้องกลาง"
+      ],
+      "outcome": "วงทางเดินพื้นชั้นล่าง 12 ช่องเสร็จสมบูรณ์ เดินวนได้ครบ",
+      "requires_flags": [
+        "ep007_ground_ring_gap_remaining"
+      ],
+      "effects_flags": {
+        "ep007_ground_ring_complete": true,
+        "ep007_walkable_ring_all12": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-007/SC-066.md",
+      "prose_source": "drafts/EP-007/CH-07-FULL-DRAFT.md — author accepted in chat for engine ingest"
+    },
+    {
+      "id": "SC-067",
+      "episode_id": "EP-007",
+      "order": 9,
+      "title": "แนวกำแพงที่สอง",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-041",
+        "ITEM-040"
+      ],
+      "canon_refs": [
+        "FACT-077",
+        "FACT-078"
+      ],
+      "mechanic_refs": [
+        "MECH-033"
+      ],
+      "source_refs": [],
+      "goal": "เริ่มกำแพงป้องกันขอบนอกตามกริด 4×4",
+      "conflict": "ตำแหน่งประตูและทางเชื่อมยังไม่กำหนด ทรัพยากรไม่พอปิดล้อมครบ",
+      "beats": [
+        "วางและตรวจแนวกำแพง 4×4 รอบวงทางเดินที่เสร็จ",
+        "สร้างกำแพงบางช่วงโดยไม่ขวางทางเดิน",
+        "หยุดก่อนปิดวง ปล่อยรายละเอียดทางเข้าและชั้นยิงนอกให้พิจารณาต่อ"
+      ],
+      "outcome": "กำแพงนอกบางส่วนสร้างแล้ว แต่ยังไม่ครบรอบ",
+      "requires_flags": [
+        "ep007_ground_ring_complete"
+      ],
+      "effects_flags": {
+        "ep007_outer_wall_partial": true,
+        "ep007_outer_wall_complete": false,
+        "ep007_upper_outer_firing_built": false
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-007/SC-067.md",
+      "prose_source": "drafts/EP-007/CH-07-FULL-DRAFT.md — author accepted in chat for engine ingest"
+    },
+    {
+      "id": "SC-068",
+      "episode_id": "EP-007",
+      "order": 10,
+      "title": "บ้านที่ยังสร้างไม่เสร็จ",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-039",
+        "ITEM-040",
+        "ITEM-041",
+        "ITEM-017",
+        "ITEM-007",
+        "ITEM-008",
+        "ITEM-016"
+      ],
+      "canon_refs": [
+        "FACT-078",
+        "FACT-079",
+        "FACT-080",
+        "FACT-081"
+      ],
+      "mechanic_refs": [
+        "MECH-031",
+        "MECH-032",
+        "MECH-033"
+      ],
+      "source_refs": [],
+      "goal": "สำรวจผลงานและทบทวนเป้าหมายที่ยังค้าง",
+      "conflict": "เหลืองานกำแพงนอก/ชั้นยิงและสปริงอีกหนึ่งชิ้น",
+      "beats": [
+        "ตรวจกล่องยังมีสปริงหนึ่งชิ้น",
+        "ขึ้นชั้นยิงเดิมเหนือแกน 2×2 เฝ้าระวัง",
+        "มองพื้นทางเดินรอบบ้าน 12 ช่องกับกำแพงนอกที่ยังขาดช่วง",
+        "เข้าใจว่าฐาน 4×4 สองชั้นยังไม่สำเร็จ"
+      ],
+      "outcome": "จบบทพร้อมพื้นวงรอบเสร็จ กำแพงนอกบางส่วน และความตั้งใจพัฒนาต่อ",
+      "requires_flags": [
+        "ep007_outer_wall_partial"
+      ],
+      "effects_flags": {
+        "ep007_final_ring_complete": true,
+        "ep007_final_outer_wall_partial": true,
+        "ep007_lmg_still_unbuilt": true,
+        "ep007_upper_outer_firing_still_unbuilt": true
+      },
+      "open_questions": [
+        "สปริงชิ้นที่ขาดจะหาได้จากไหน ยัง UNKNOWN",
+        "วัสดุและตำแหน่งกำแพงนอก/ทางเข้ายังไม่กำหนด"
+      ],
+      "draft_path": "drafts/EP-007/SC-068.md",
+      "prose_source": "drafts/EP-007/CH-07-FULL-DRAFT.md — author accepted in chat for engine ingest"
     }
   ]
 }
