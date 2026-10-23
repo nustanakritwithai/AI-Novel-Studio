@@ -91,6 +91,132 @@
       "detail": "บทที่ 2; ปริมาณ/สูตรไม่ระบุ หากเป็นยาและโต๊ะเรียนรู้แค่เห็นในเมนูยังไม่ได้คราฟต์",
       "quantity": "SEE_INVENTORY_LEDGER",
       "gameplay_mechanic_id": "MECH-008"
+    },
+    {
+      "id": "ITEM-014",
+      "name": "น้ำมัน",
+      "detail": "วัสดุเป้าหมายสำหรับเตาเผา; EP-003 ไม่ได้รับ",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-014"
+    },
+    {
+      "id": "ITEM-015",
+      "name": "กล่องน้ำมัน",
+      "detail": "สิ่งที่หวังจะพบจากการสุ่มตามถนน; กล่องสีเข้มที่เห็นยังไม่ยืนยันชนิด",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-013"
+    },
+    {
+      "id": "ITEM-016",
+      "name": "เตาเผา",
+      "detail": "สิ่งปลูกสร้างเป้าหมาย ยังไม่ได้คราฟต์",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-014"
+    },
+    {
+      "id": "ITEM-017",
+      "name": "ปืนพก",
+      "detail": "อาวุธของฝ่ายตรงข้าม ไม่เคยอยู่ในความครอบครองพระเอกใน EP-003",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-015"
+    },
+    {
+      "id": "ITEM-018",
+      "name": "ไขมันสัตว์",
+      "detail": "วัตถุดิบวางแผนจะเก็บจากการล่าสัตว์ในบทถัดไป; ยังไม่ได้รับ",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-016"
+    },
+    {
+      "id": "ITEM-019",
+      "name": "เนื้อสัตว์",
+      "detail": "ผลผลิตที่คาดว่าจะได้จากการล่าสัตว์; ยังไม่ได้รับ",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-016"
+    },
+    {
+      "id": "ITEM-020",
+      "name": "หนังสัตว์",
+      "detail": "ผลผลิตที่คาดว่าจะได้จากการล่าสัตว์; ยังไม่ได้รับ",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-016"
+    },
+    {
+      "id": "ITEM-021",
+      "name": "เหล็ก",
+      "detail": "วัตถุประสงค์การแปรรูปด้วยเตาเผา; ยังไม่ได้ผลิต",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-014"
+    },
+    {
+      "id": "ITEM-022",
+      "name": "กระสุน",
+      "detail": "กระสุนสำหรับอาวุธปืน: ศัตรู CHAR-006 ยิงปืนพก 6 นัดใน SC-024; พระเอกไม่มีปืนและไม่ได้คราฟต์กระสุนใน EP-003",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-014"
+    },
+    {
+      "id": "ITEM-023",
+      "name": "เครื่องมือทุบกล่อง",
+      "detail": "อุปกรณ์พกออกไปตีกล่องบนถนน; ไม่ระบุชนิดหรือจำนวนแน่นอน",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-003"
+    },
+    {
+      "id": "ITEM-024",
+      "name": "อุปกรณ์เตรียมล่าสัตว์",
+      "detail": "เตรียมอุปกรณ์เก็บเนื้อ หนัง และไขมันจากทรัพยากรสำรอง; ยังไม่ยืนยันเครื่องมือชิ้นใด",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-016"
+    },
+    {
+      "id": "ITEM-025",
+      "name": "เนื้อสัตว์ปรุงสุก",
+      "detail": "อาหารจากเนื้อที่เก็บระหว่างล่า แล้วปรุงในกองไฟแคมป์",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-019"
+    },
+    {
+      "id": "ITEM-026",
+      "name": "ถุงมือจับม้า",
+      "detail": "อุปกรณ์ทำจากหนังสัตว์เพื่อจับม้าหลังอ่อนแรง",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-018"
+    },
+    {
+      "id": "ITEM-027",
+      "name": "แร่เหล็ก",
+      "detail": "วัตถุดิบจากจุดแร่ในป่าระหว่างฟาร์ม แยกจากเหล็กสำเร็จรูป",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-021"
+    },
+    {
+      "id": "ITEM-028",
+      "name": "กำมะถัน",
+      "detail": "วัตถุดิบจากจุดแร่ที่พบระหว่างฟาร์ม สำหรับสายคราฟต์เกม",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-021"
+    },
+    {
+      "id": "ITEM-029",
+      "name": "ผลิตผลจากการแปรรูปไม้",
+      "detail": "สถานะยังอยู่ในคิวเตา ณ จบบท 4 ยังไม่ได้เก็บสำเร็จรูป",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-021"
+    },
+    {
+      "id": "ITEM-030",
+      "name": "ดินปืน",
+      "detail": "ผลผลิตสายคราฟต์จากวัสดุแปรรูปในเกม ณ จบบท 4 ยังไม่พร้อมเก็บ",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-021"
+    },
+    {
+      "id": "ITEM-031",
+      "name": "กองไฟแคมป์",
+      "detail": "จุดไฟทำอาหารระหว่างพักหลังจับม้าก่อนรับแจ้งเตือนบ้าน",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-019"
     }
   ]
 }

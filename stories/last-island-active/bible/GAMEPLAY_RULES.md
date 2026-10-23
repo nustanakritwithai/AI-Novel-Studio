@@ -21,3 +21,14 @@
 - `FICTIONAL_TOURNAMENT`: กติกานิยายล้วน
 
 อย่าเปลี่ยนเป็น `VISUALLY_VERIFIED` จากความทรงจำ/ชื่อคลิป. กฎเรื่องที่ผู้แต่งสั่งไว้เขียนตามได้ โดยติด research gap ไว้หากขัดหรือยังพิสูจน์ไม่ได้.
+
+## EP-003 additions — fictional rulebook, not real-game verification
+
+| Mechanic | Evidence | Story requirement | Restriction |
+| --- | --- | --- | --- |
+| Road oil crate random availability (`MECH-013`) | UNVERIFIED | USER_PLOT_DIRECTIVE | Unopened dark crate is NOT identified as an oil crate |
+| Furnace-oil-iron-ammunition upgrade chain (`MECH-014`) | UNVERIFIED | USER_PLOT_DIRECTIVE | No new furnace or metal or hero bullets obtained in EP-003 |
+| Enemy uses pistol during bow duel (`MECH-015`) | UNVERIFIED | USER_PLOT_DIRECTIVE | Exact 6 fired shots in this encounter; not a universal gun-capacity rule |
+| Meat, hide and fat from animals / fat→oil (`MECH-016`) | UNVERIFIED | USER_PLOT_DIRECTIVE | First actual hunt begins only after EP-003; yield and recipe quantity UNKNOWN |
+
+All new mechanics have `source_ids: []` because no selected-mode evidence was verified. The narrator may use author-specified fictional rules while claims about actual Last Island remain unverified.

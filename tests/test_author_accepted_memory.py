@@ -102,7 +102,7 @@ class AuthorAcceptedMemoryTests(unittest.TestCase):
 
     def test_forged_author_decision_rejected(self):
         root = self.fixture()
-        self.mutate_json(root, "data/decisions.json", lambda d: d["decisions"][-1].update(authority="ASSISTANT"))
+        self.mutate_json(root, "data/decisions.json", lambda d: next(x for x in d["decisions"] if x["id"] == "DEC-004").update(authority="ASSISTANT"))
         failures = author_memory.validate(root)
         self.assertTrue(failures)
         self.assertTrue(any("author decision" in f for f in failures), failures)

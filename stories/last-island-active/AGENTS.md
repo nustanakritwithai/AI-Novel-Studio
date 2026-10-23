@@ -15,7 +15,7 @@ Story root: `stories/last-island-active`. Canonical approved history is **EMPTY*
 python scripts/storyctl.py --story last-island-active check
 python scripts/storyctl.py --story last-island-active status
 python scripts/storyctl.py --story last-island-active brief EP-002
-python scripts/storyctl.py --story last-island-active pack EP-002
+python scripts/storyctl.py --story last-island-active pack EP-004
 python scripts/storyctl.py --story last-island-active replay SC-018
 ```
 
@@ -28,7 +28,7 @@ python scripts/storyctl.py --story last-island-active replay SC-018
 - Game mechanics are fictional story directives until verified by separate evidence from the selected game mode. UNKNOWN ≠ PASS.
 - The bow-wielder discovered at 4×4 might be the original shooter: treat matching as POV suspicion until supported.
 - 100-player global tournament belongs in a later arc; no early competitive opening.
-- SC-001/SC-002 alternative prose remains in PR #11/#12; this dataset adopts the two full chapter drafts in PR #13 as the **candidate literary edition**, not approved.
+- SC-001/SC-002 alternative prose remains in PR #11/#12; EP-001/002 exact full chapters in PR #13 were author-accepted in chat under DEC-004 but the separate GitHub reviewer-approved ledger is still pending.
 - No silent edits to `data/story_state.json`, `ledger/index.json` or human-approved canon. A CI pass is not editorial approval.
 
 ## Phase 1 author-accepted memory addendum
@@ -38,3 +38,26 @@ python scripts/storyctl.py --story last-island-active replay SC-018
 - `pack EP-002` includes only earlier EP-001 author-accepted memory; never leak future EP-002 recap into its own context.
 - `ledger/index.json` is still **GitHub-review-approved-only** and cannot be auto-populated from a ChatGPT assertion. GitHub review/account authentication is outside the scope of these local checks.
 - The old `stories/last-island/` sample and its 54 byte-pinned files remain immutable.
+
+## EP-003 draft addition — never confuse a plotted chapter with approved prose
+
+- EP-003 (SC-019–SC-026) is a stored DRAFT; author directed real-world gamer rest, an oil-crate search on the road, tactical bow duel nearly won, a six-shot pistol reversal and respawn, then planning animal-fat hunting for EP-004.
+- The hero did NOT obtain oil, craft a furnace or iron, make ammunition, or hunt any animals in EP-003; amounts of resources carried/used/lost remain UNKNOWN.
+- CHAR-006 is the road pistol/bow rival with UNKNOWN identity; CHAR-007 is a PROPOSED chat friend, not a locked permanent character.
+- DEC-005 locks plot beats only; DEC-006 authorizes draft ingest only. EP-001/EP-002 accepted prose, author_memory and all approved-only ledgers must remain unchanged without fresh editorial direction.
+
+## Draft snapshot / base time history
+
+- Before writing EP-004 load `data/draft_continuity_ep003.json` and verify its `source.git_blob_sha` against the actual EP-003 manuscript; this is DRAFT memory, never official `data/story_state.json`.
+- `bible/BASE_TIMELINE.md` records stage-by-stage house evolution: wooden 2×2 → workbench/bed/storage → same 2×2 in stone → upper open firing platform → no new EP-003 construction.
+- Read `research/EP003_GAMEPLAY_GAPS.md` for EP-003 rules and `research/EP004_GAMEPLAY_GAPS.md` for EP-004 wildlife, taming, raid and furnace rules. The prior EP-004 handoff was a pre-draft plan and is superseded by the 12 written scenes.
+- Inventory register has exact **6** pistol shots expended by CHAR-006 in SC-024 (INV-029); all other unspecified amounts must remain UNKNOWN. If a writer changes the EP-003 manuscript, the draft snapshot source hash must be reviewed/rebound, not silently trusted.
+
+## EP-004 (latest) locked plot / draft prose rules
+
+- Read `drafts/EP-004/CH-04-FULL-DRAFT.md`, `data/draft_continuity_ep004.json` and `data/wildlife_ep004.json` before planning further work.
+- The scattered wildlife farm took substantial travel/search/wait time. Prey: chicken, rabbit, deer; dangerous wolf/bear were avoided. Horse CHAR-008 captured with hide glove after weakening. No stable constructed.
+- At campfire hero cooks meat; wall-explosion notification makes him ride back, hide behind hill and watch CHAR-004/005 (from EP-002) raid his home. He opts not to fight, waits for their departure then repairs the entrance.
+- Oil from animal fat and furnace are obtained/built within **EP-004 DRAFT**; however iron/gunpowder/bullet outputs are NOT ready because processing requires time. Do not auto-complete these in later scenes without new instructions.
+- House footprint stays 2×2, no full second room; amount looted from house UNKNOWN. Exact counts/durations are not invented.
+- Treat EP-004 as DRAFT, not approved prose. No edits to `author_memory/index.json`, `ledger/index.json`, `data/story_state.json` without separately verified authorization.

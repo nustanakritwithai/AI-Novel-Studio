@@ -52,7 +52,75 @@
       "canon_refs": [
         "FACT-022"
       ],
-      "notes": "ผู้แต่งยังไม่สั่งให้ถูกบุกจริง ห้ามเล่าผลก่อนแต่งตอนต่อไป"
+      "notes": "บทที่ 4 มีการระเบิดประตู/ผนังขณะพระเอกกำลังล่าในป่าและยังออนไลน์ ไม่ใช่หลักฐานว่าใครบุกตอนออฟไลน์คืนแรก; ปมเหตุการณ์ตอนออฟไลน์ยังไม่ทราบ"
+    },
+    {
+      "id": "THREAD-005",
+      "title": "ภารกิจล่าสัตว์สะสมไขมันเพื่อทำน้ำมัน",
+      "status": "OPEN",
+      "priority": "EP-004",
+      "setup_scene_id": "SC-026",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-029"
+      ],
+      "notes": "EP-003 เพียงวางแผน; EP-004 เป็นร่างเหตุการณ์ฟาร์มสะสมไขมันพอทำน้ำมันและสร้างเตาเผา แต่ยังไม่ได้รับรองนิยายฉบับสุดท้ายหรือแปรรูปเหล็ก/ดินปืนสำเร็จ"
+    },
+    {
+      "id": "THREAD-006",
+      "title": "ผู้ใช้ปืนหกนัดบนถนนอาจกลับมาอีกหรือไม่",
+      "status": "IDEA",
+      "priority": "OPTIONAL",
+      "setup_scene_id": "SC-024",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-006",
+      "canon_refs": [
+        "FACT-026"
+      ],
+      "notes": "ศัตรูไม่ทราบชื่อ ความเกี่ยวข้องกับคู่อริในบท 1–2 และอนาคตทั้งหมด UNKNOWN"
+    },
+    {
+      "id": "THREAD-007",
+      "title": "คู่ปรับสองคนที่กลับมาระเบิดฐานจะทำอะไรต่อ",
+      "status": "OPEN",
+      "priority": "SERIES",
+      "setup_scene_id": "SC-036",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-036",
+        "FACT-037",
+        "FACT-038"
+      ],
+      "notes": "ผู้เขียนยืนยันสองคู่ปรับจากบท 2 กลับมาระเบิดทางเข้าบ้าน; พระเอกไม่สู้ในบท 4 การตามล่าและผลการปล้นยัง UNKNOWN"
+    },
+    {
+      "id": "THREAD-008",
+      "title": "ผลการเผาเหล็กกับวัตถุดิบสำหรับดินปืน",
+      "status": "OPEN",
+      "priority": "EP-005",
+      "setup_scene_id": "SC-038",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-039",
+        "FACT-040"
+      ],
+      "notes": "เตาเผาสร้างแล้ว เริ่มงานแปรรูป ต้องรอ ผลผลิตยังไม่พร้อม อัตราและเวลาจบ UNKNOWN"
+    },
+    {
+      "id": "THREAD-009",
+      "title": "ม้าตัวแรกอยู่ที่ไหนและจะดูแลอย่างไร",
+      "status": "OPEN",
+      "priority": "SERIES",
+      "setup_scene_id": "SC-033",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-034"
+      ],
+      "notes": "ม้าตัวแรก CHAR-008 ใช้ขี่กลับฐาน มีชีวิตที่สังเกตครั้งล่าสุด ไม่มีคอกถาวรหรือกฎเก็บสัตว์/ระยะหายไปที่ยืนยัน"
     }
   ]
 }

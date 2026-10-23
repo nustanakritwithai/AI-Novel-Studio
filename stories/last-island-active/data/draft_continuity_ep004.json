@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "story_slug": "last-island-active",
+  "episode_id": "EP-004",
+  "status": "DRAFT_PROPOSED_NOT_CANON",
+  "approval": {
+    "author_plot_directive_id": "DEC-007",
+    "prose_author_accepted": false,
+    "may_apply_to_approved_ledger": false,
+    "github_reviewer_approved": false
+  },
+  "source": {
+    "path": "drafts/EP-004/CH-04-FULL-DRAFT.md",
+    "git_blob_sha": "5851481c2b29bda87f52ee41fe0ce307b07d3169",
+    "predecessor": {
+      "episode_id": "EP-003",
+      "source_path": "drafts/EP-003/CH-03-FULL-DRAFT.md",
+      "source_git_blob_sha": "b2a7fce4e9113a74c6fe8a3d54ce9f2d624bb452"
+    }
+  },
+  "clock": {
+    "real_world_start": "UNKNOWN",
+    "game_world_start": "UNKNOWN",
+    "exact_duration": "UNKNOWN",
+    "duration_quality": "LONG_WALKING_TRAVEL_SEARCH_WAIT_HUNTING_CAMP_AND_RETURN_WITH_DAYLIGHT_SHIFT",
+    "realm": "VR",
+    "order": [
+      "SC-027",
+      "SC-028",
+      "SC-029",
+      "SC-030",
+      "SC-031",
+      "SC-032",
+      "SC-033",
+      "SC-034",
+      "SC-035",
+      "SC-036",
+      "SC-037",
+      "SC-038"
+    ]
+  },
+  "progress": [
+    {
+      "scene_id": "SC-027",
+      "stage": "FOOT_TRAVEL_START",
+      "time": ">0, unquantified",
+      "resources": "NONE_CONFIRMED_YET"
+    },
+    {
+      "scene_id": "SC-028",
+      "stage": "CHICKEN_PREY",
+      "time": "walk and another encounter",
+      "resources": "some meat and fat, exact counts UNKNOWN"
+    },
+    {
+      "scene_id": "SC-029",
+      "stage": "RABBIT_PREY",
+      "time": "more travel and waiting",
+      "resources": "meat/hide/fat, amounts UNKNOWN"
+    },
+    {
+      "scene_id": "SC-030",
+      "stage": "DEER_PREY",
+      "time": "move to stream/slope, pursue",
+      "resources": "meat/hide/fat, counts UNKNOWN"
+    },
+    {
+      "scene_id": "SC-031",
+      "stage": "PREDATOR_AVOIDANCE",
+      "time": "route change/wait",
+      "resources": "no predator kills; mineral site noticed"
+    },
+    {
+      "scene_id": "SC-032",
+      "stage": "REPEATED_FARM_AND_MINING",
+      "time": "many additional walks/hunts",
+      "resources": "fat threshold reached, hide threshold reached, iron ore/sulfur acquired"
+    },
+    {
+      "scene_id": "SC-033",
+      "stage": "HORSE_SEARCH_AND_CAPTURE",
+      "time": "search/weakening/capture required",
+      "resources": "hide spent on glove; one horse captured"
+    },
+    {
+      "scene_id": "SC-034",
+      "stage": "CAMPFOOD_AND_ALARM",
+      "time": "rest and cook then alert",
+      "resources": "some cooked meat consumed"
+    },
+    {
+      "scene_id": "SC-035",
+      "stage": "HORSE_RETURN",
+      "time": "nonzero riding time, pathfinding around forest obstacles",
+      "resources": "carried farm loot retained"
+    },
+    {
+      "scene_id": "SC-036",
+      "stage": "HILL_OBSERVATION",
+      "time": "scouting and risk assessment",
+      "resources": "no PvP battle initiated"
+    },
+    {
+      "scene_id": "SC-037",
+      "stage": "WAIT_AND_REPAIR",
+      "time": "wait for two raiders to leave then repair",
+      "resources": "repair materials spent; precise raid loot loss UNKNOWN"
+    },
+    {
+      "scene_id": "SC-038",
+      "stage": "FURNACE_STARTED_QUEUE_UNREADY",
+      "time": "processing visibly ongoing",
+      "resources": "animal fat converted to oil, furnace built, iron and game gunpowder materials processing; finished metal/gunpowder/bullets not collected"
+    }
+  ],
+  "end_after_sc038": {
+    "protagonist": {
+      "character_id": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "alive": true,
+      "respawn_this_episode": false,
+      "pvp_opponents_defeated_this_episode": 0,
+      "inventory_quantities": "UNKNOWN",
+      "fat_target_met_during_episode": true,
+      "hide_target_met_during_episode": true,
+      "has_fat_remaining_after_converting": "UNKNOWN",
+      "has_new_oil_processed": true,
+      "pistol_owned": false,
+      "bullets_crafted_this_episode": false
+    },
+    "horse": {
+      "character_id": "CHAR-008",
+      "tamed": true,
+      "alive_at_last_observation": true,
+      "near_base": true,
+      "exact_holding_location": "UNKNOWN",
+      "stable_constructed": false,
+      "detailed_health": "UNKNOWN"
+    },
+    "base": {
+      "location_id": "LOC-009",
+      "footprint": "2x2",
+      "main_structure": "STONE",
+      "workbench": true,
+      "bed": true,
+      "small_storage": true,
+      "upper_firing_platform": true,
+      "new_full_second_floor": false,
+      "alert_wall_explosion_during_scene": "SC-034",
+      "visible_breach_found_in_scene": "SC-036",
+      "entrance_repaired_scene": "SC-037",
+      "has_furnace": true,
+      "possible_items_taken_by_raiders": "UNKNOWN",
+      "future_safety": "UNKNOWN"
+    },
+    "raiders": {
+      "ids": [
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "identified_by_protagonist_from_EP002": true,
+      "observed_breaching_door_area": true,
+      "hero_attacked_them": false,
+      "they_left_before_hero_returned": true,
+      "stolen_inventory_quantity": "UNKNOWN",
+      "identical_to_ep003_pistol_enemy": false
+    },
+    "production": {
+      "oil_from_fat_created": true,
+      "furnace_built": true,
+      "iron_ore_entered_processing": true,
+      "wood_sulfur_processing_for_gunpowder_started": true,
+      "finished_iron_ready": false,
+      "finished_wood_intermediate_ready": false,
+      "finished_gunpowder_ready": false,
+      "new_ammunition_ready": false,
+      "recipe_counts": "UNKNOWN",
+      "processing_end_time": "UNKNOWN"
+    },
+    "wildlife": {
+      "prey": [
+        "ไก่",
+        "กระต่าย",
+        "กวาง"
+      ],
+      "count_killed": "UNKNOWN",
+      "predators_avoided": [
+        "หมาป่า",
+        "หมี"
+      ],
+      "horse_caught": 1,
+      "journey_requires_spaced_search": true
+    }
+  },
+  "editorial_constraints": [
+    "Two returned raiders in EP004 are the EP002 4×4-area pair CHAR-004 and CHAR-005, not the EP001 bat ambusher CHAR-002 or EP003 pistol foe CHAR-006.",
+    "The exact time spent, count of animals/loot, real game species spawn/drop amounts and furnace rules are unverified.",
+    "Gunpowder is a fictional game menu pathway, not a real-world chemical production procedure.",
+    "Do not create finished iron, gunpowder or bullets before the processing completes in a later authorized scene.",
+    "Do not assume raiders looted nothing or everything; total house-store loss is UNKNOWN.",
+    "Base remains 2×2 after entrance repair and furnace placement; horse has no constructed stable.",
+    "This draft snapshot never changes official data/story_state.json or approved ledger automatically."
+  ]
+}

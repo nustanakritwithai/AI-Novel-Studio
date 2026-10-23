@@ -65,6 +65,60 @@
       "source_artifact": "editorial/AUTHOR_APPROVAL_2026-10-23.json",
       "approved_head_commit": "3d0b3117b2a4a4029fe815899e5c7a28e69eb56f",
       "merge_commit": "5d32a9ff95b3b64953a792be3bd7fef078343a1f"
+    },
+    {
+      "id": "DEC-005",
+      "summary": "ผู้เขียนกำหนดบท 3: พักโลกจริง → กลับหาน้ำมันบนถนน → ดวลธนูเกือบชนะ → ถูกปืนพก 6 นัดยิงตาย → เกิดใหม่สูญเสียของ → วางแผนล่าสัตว์หาไขมันเพื่อทำน้ำมันในบท 4",
+      "status": "USER_PLOT_DIRECTIVE",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-023",
+        "FACT-024",
+        "FACT-025",
+        "FACT-026",
+        "FACT-027",
+        "FACT-028",
+        "FACT-029"
+      ],
+      "date": "2026-10-23",
+      "notes": "Plot is user-directed. Prose wording and extra scene detail are DRAFT, not approved. Do not claim gameplay formulas verified."
+    },
+    {
+      "id": "DEC-006",
+      "summary": "ผู้เขียนสั่งให้นำบทที่ 3 ขึ้น Story Engine ก่อน โดยไม่สั่งรับรองถ้อยคำหรือเลื่อนเป็น approved canon",
+      "status": "DRAFT_INGEST_REQUEST",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-023",
+        "FACT-024",
+        "FACT-025",
+        "FACT-026",
+        "FACT-027",
+        "FACT-028",
+        "FACT-029"
+      ],
+      "date": "2026-10-23",
+      "notes": "Store full draft and eight scene files in active story without editing episodes 1–2 or ledger."
+    },
+    {
+      "id": "DEC-007",
+      "summary": "ผู้เขียนกำหนดบท 4: ฟาร์มสัตว์ในป่าที่อยู่กระจัดกระจาย เดินทาง/ล่าทีละตัว (ไก่ กระต่าย กวาง ม้า; หมาป่า หมีเป็นภัย) สะสมไขมันและหนังพอทำถุงมือจับม้า ทำม้าอ่อนแรงจับได้ พักกองไฟทำอาหาร แจ้งเตือนบ้านถูกระเบิด ขี่ม้ากลับซ่อนหลังเนินเห็นคู่ปรับเดิมสองคนระเบิดทางเข้า เลือกไม่สู้เพราะของที่ฟาร์มมีค่ากว่า รอจนกลับไป ซ่อมบ้าน แล้วสร้างเตาเผาเริ่มงานเหล็กและไม้+กำมะถันสายดินปืนซึ่งต้องใช้เวลารอ",
+      "status": "USER_PLOT_DIRECTIVE",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-031",
+        "FACT-032",
+        "FACT-033",
+        "FACT-034",
+        "FACT-035",
+        "FACT-036",
+        "FACT-037",
+        "FACT-038",
+        "FACT-039",
+        "FACT-040"
+      ],
+      "date": "2026-10-23",
+      "notes": "ล็อกเฉพาะเหตุการณ์หลักตามคำสั่งผู้เขียน ถ้อยคำฉบับเต็มและรายละเอียดสูตรเกม/จำนวนยัง DRAFT/UNVERIFIED"
     }
   ]
 }
