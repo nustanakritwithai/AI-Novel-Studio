@@ -9,9 +9,10 @@ The human author explicitly said **“อนุมัติ”** in ChatGPT afte
 | EP-001 | บ้านหลังแรก | 8 | APPROVED IN CHAT | PENDING GITHUB REVIEW PROVENANCE |
 | EP-002 | ธนูแรกและกำแพงหิน | 10 | APPROVED IN CHAT | PENDING GITHUB REVIEW PROVENANCE |
 | EP-003 | หกนัดบนถนน | 8 | PLOT LOCKED, PROSE DRAFT | NOT IN APPROVED LEDGER |
+| EP-004 | วันยาวนานของพรานมือใหม่ | 12 | PLOT LOCKED, PROSE DRAFT | NOT IN APPROVED LEDGER |
 
 - The original `stories/last-island/` E1 historical example remains unchanged.
-- The active dataset is `stories/last-island-active/`: 26 scene drafts and 26 event records over EP-001, EP-002 and EP-003 (18 older plus 8 new DRAFT).
+- The active dataset is `stories/last-island-active/`: 38 scene drafts and 38 event records across EP-001–EP-004 (18 older scenes plus 20 new DRAFT).
 - The author accepted the basic enclosed 2×2 wooden shelter at the end of chapter 1, which enables the chapter 2 opening inside the house; the chapter 2 candidate concludes with a stone base, a second-level firing platform, and the protagonist logging off.
 - See `editorial/AUTHOR_APPROVAL_2026-10-23.json` and `data/decisions.json` (DEC-004) for exact source hashes and decision source.
 
@@ -49,3 +50,11 @@ This is **direct author consent in ChatGPT**, not an independently submitted Git
 - Six pistol rounds fired by CHAR-006 are recorded as 6 spent in `INV-029` for SC-024; bullet impact positions are prose-specific details, not author-locked game rules. Protagonist never owns/produces a firearm or bullets in this chapter.
 - Before starting EP-004 read `bible/BASE_TIMELINE.md`, `drafts/EP-003/EP-003-CONTINUITY-AUDIT.md` and `plot/episodes/EP-004-HANDOFF-PROPOSED.md`.
 - EP-003 game-mechanics gaps documented without false source verification in `research/EP003_GAMEPLAY_GAPS.md`.
+
+## EP-004 candidate checkpoint — DRAFT ONLY (2026-10-23)
+
+- 12 new DRAFT scenes SC-027–SC-038, adding to 38 scenes/events across 4 episodes. Manuscript: `drafts/EP-004/CH-04-FULL-DRAFT.md`.
+- Author plot DEC-007: hours of walking/searching widely spaced chicken, rabbit, deer; wolf and bear dangerous but avoided; fat and hide sufficient; horse CHAR-008 tamed by hide glove; campfire and meal; wall-blast alert; horseback return; hide and observe raiders CHAR-004/005 from EP-002; wait instead of PvP; repair entrance; furnace built and timed processing started.
+- Candidate end state: player alive in stone 2×2 base; horse nearby without stable; wall breach repaired; oil produced from hunted fat, furnace present, **iron/gunpowder/bullets processing output NOT ready**; unknown stolen supplies and exact quantities.
+- EP-004 DRAFT does NOT alter `data/story_state.json` approved marker or `ledger/index.json`, and is absent from author-accepted memory.
+- Exact source-bound proposal `data/draft_continuity_ep004.json`; wildlife `data/wildlife_ep004.json`; real-game rules UNVERIFIED.
