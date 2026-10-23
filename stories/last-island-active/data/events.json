@@ -656,6 +656,176 @@
         "ep004_crafted_bullets_ready": false
       },
       "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-039",
+      "scene_id": "SC-039",
+      "episode_id": "EP-005",
+      "order": 1,
+      "status": "DRAFT",
+      "what_changed": "ได้ตำแหน่งซุ่มยิงเหนือศัตรูสองคน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_raiders_battering_door": true,
+        "ep005_hero_upper_ambush_ready": true
+      },
+      "source_prose": "drafts/EP-005/SC-039.md"
+    },
+    {
+      "id": "EV-040",
+      "scene_id": "SC-040",
+      "episode_id": "EP-005",
+      "order": 2,
+      "status": "DRAFT",
+      "what_changed": "คู่ปรับคนแรกเสียชีวิต ส่วนพระเอกอยู่หลังกำแพงเตี้ย",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_first_raider_defeated": true,
+        "ep005_second_pistol_suppressing": true
+      },
+      "source_prose": "drafts/EP-005/SC-040.md"
+    },
+    {
+      "id": "EV-041",
+      "scene_id": "SC-041",
+      "episode_id": "EP-005",
+      "order": 3,
+      "status": "DRAFT",
+      "what_changed": "พระเอกหาวิธีลงไปโดยยังรักษาแต้มต่อ",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_second_raider_arrow_hit": true,
+        "ep005_second_raider_challenge": true
+      },
+      "source_prose": "drafts/EP-005/SC-041.md"
+    },
+    {
+      "id": "EV-042",
+      "scene_id": "SC-042",
+      "episode_id": "EP-005",
+      "order": 4,
+      "status": "DRAFT",
+      "what_changed": "พระเอกซ่อนการมีปืนพกและเตรียมดักสวน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-015",
+      "effects_flags": {
+        "ep005_first_pistol_acquired": true,
+        "ep005_bow_bait_worked": true
+      },
+      "source_prose": "drafts/EP-005/SC-042.md"
+    },
+    {
+      "id": "EV-043",
+      "scene_id": "SC-043",
+      "episode_id": "EP-005",
+      "order": 5,
+      "status": "DRAFT",
+      "what_changed": "คู่ปรับสองคนตายจากการปะทะ พระเอกได้ปืนสองกระบอกและกระสุน 100 นัด",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-015",
+      "effects_flags": {
+        "ep005_second_raider_defeated": true,
+        "ep005_two_pistols_acquired": true,
+        "ep005_100_rounds_looted": true,
+        "ep005_leather_looted": true
+      },
+      "source_prose": "drafts/EP-005/SC-043.md"
+    },
+    {
+      "id": "EV-044",
+      "scene_id": "SC-044",
+      "episode_id": "EP-005",
+      "order": 6,
+      "status": "DRAFT",
+      "what_changed": "ตรวจพบคู่ปรับกลับมาก่อนถึงประตู",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_upper_watch_started": true,
+        "ep005_raiders_returned": true
+      },
+      "source_prose": "drafts/EP-005/SC-044.md"
+    },
+    {
+      "id": "EV-045",
+      "scene_id": "SC-045",
+      "episode_id": "EP-005",
+      "order": 7,
+      "status": "DRAFT",
+      "what_changed": "ยังไม่มีศัตรูตายเพิ่ม แต่ทั้งสองหยุดการเข้าประชิด",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_warning_round_fired": true,
+        "ep005_raiders_stopped": true
+      },
+      "source_prose": "drafts/EP-005/SC-045.md"
+    },
+    {
+      "id": "EV-046",
+      "scene_id": "SC-046",
+      "episode_id": "EP-005",
+      "order": 8,
+      "status": "DRAFT",
+      "what_changed": "คู่ปรับล่าถอยจากบ้านโดยไม่มีการยิงเพิ่ม",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_raiders_retreated": true,
+        "ep005_additional_kills": false
+      },
+      "source_prose": "drafts/EP-005/SC-046.md"
+    },
+    {
+      "id": "EV-047",
+      "scene_id": "SC-047",
+      "episode_id": "EP-005",
+      "order": 9,
+      "status": "DRAFT",
+      "what_changed": "จบบทพร้อมปมเสริมกำแพง/ป้องกันฐาน ยังไม่สร้างสิ่งใหม่",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_base_defense_motivation": true,
+        "ep005_furnace_still_running": true,
+        "ep005_new_fortification_built": false
+      },
+      "source_prose": "drafts/EP-005/SC-047.md"
     }
   ]
 }
