@@ -6,7 +6,7 @@
 
 ## Phase 1 memory workflow
 
-Run `python scripts/storyctl.py --story last-island-active memory` before planning future episodes. This reads the author-accepted **source-bound summaries** of EP-001 and EP-002. For a scene or episode context, use `pack EP-002`, which includes only previously accepted episodes; `memory --before EP-002` intentionally excludes EP-002.
+Run `python scripts/storyctl.py --story last-island-active memory` before planning future episodes. This reads the author-accepted **source-bound summaries** of EP-001 and EP-002. For EP-003 continuation context use `pack EP-003`, which includes earlier accepted-source EP-001 and EP-002 recaps but not new EP-003 accepted memory; `memory --before EP-002` intentionally excludes EP-002.
 
 The trusted source is still the source manuscript pinned in `editorial/AUTHOR_APPROVAL_2026-10-23.json` and `author_memory/index.json`. These summaries are locally derived, not independently human-reviewed. They do **not** fill the GitHub-review-approved `ledger/index.json` and do not reconstruct approved `story_state`. Read `docs/AUTHOR_ACCEPTED_MEMORY_TH.md` for these two separate trust levels.
 
@@ -31,7 +31,7 @@ The trusted source is still the source manuscript pinned in `editorial/AUTHOR_AP
 
 ```bash
 python scripts/storyctl.py --story last-island-active check
-python scripts/storyctl.py --story last-island-active pack EP-002
+python scripts/storyctl.py --story last-island-active pack EP-003
 python -m unittest discover -s tests -v
 ```
 
@@ -45,3 +45,12 @@ PR #11 and #12 were closed as superseded; main contains the selected two-chapter
 - Never claim oil, furnace, iron, ammo, meat, hide or fat was gained in EP-003. A dark road crate's contents are UNKNOWN.
 - EP-004 begins before the first animal hunt; species/quantity, exact hunting tactics and item yield require author direction. Keep accepted-source memory EP-001/002 untouched.
 - `data/story_state.json.approved_through_scene` remains null and `ledger/index.json` remains empty.
+
+## REQUIRED source-bound EP-003 continuity for all future writers
+
+1. Read `drafts/EP-003/CH-03-FULL-DRAFT.md`, then `drafts/EP-003/EP-003-CONTINUITY-AUDIT.md`.
+2. Read `data/draft_continuity_ep003.json`: **DRAFT only** source blob sha pinned; it is not a certified state replay.
+3. Read `bible/BASE_TIMELINE.md` to avoid silently expanding 2×2 stone base into a full second floor or adding a furnace.
+4. Read `research/EP003_GAMEPLAY_GAPS.md` before alleging any external game mechanic is verified.
+5. Start with `plot/episodes/EP-004-HANDOFF-PROPOSED.md`; there are **no** EP-004 scenes in registry yet.
+6. The enemy fired exactly six pistol rounds in this scene; all 6 are recorded as `INV-029` owned by CHAR-006. Do not transfer a pistol or ammo to protagonist or claim other ammo caches are known.
