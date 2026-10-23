@@ -210,6 +210,76 @@
       "quantity": null,
       "status": "PLANNED",
       "notes": "อัปเกรดกำแพงบ้านเป็นหิน"
+    },
+    {
+      "id": "INV-022",
+      "scene_id": "SC-021",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-004",
+      "operation": "FIND",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เศษวัสดุจากการตีกล่องทั่วไปบนถนน จำนวนไม่ระบุ; ไม่รวมน้ำมัน"
+    },
+    {
+      "id": "INV-023",
+      "scene_id": "SC-024",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-010",
+      "operation": "LOSE",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ธนูที่ถือไปถูกทิ้ง ณ จุดตาย จำนวนไม่ระบุ"
+    },
+    {
+      "id": "INV-024",
+      "scene_id": "SC-024",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-011",
+      "operation": "LOSE",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ลูกธนูที่เหลือทิ้ง ณ จุดตาย จำนวนไม่ระบุ"
+    },
+    {
+      "id": "INV-025",
+      "scene_id": "SC-024",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-004",
+      "operation": "LOSE",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เศษวัสดุที่พกไปจากถนนตกพร้อมตัวละคร จำนวนไม่ระบุ"
+    },
+    {
+      "id": "INV-026",
+      "scene_id": "SC-024",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-023",
+      "operation": "LOSE",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เครื่องมือทุบกล่องที่พกไปหล่นเมื่อเสียชีวิต จำนวนไม่ระบุ"
+    },
+    {
+      "id": "INV-027",
+      "scene_id": "SC-026",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-010",
+      "operation": "CRAFT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เตรียมธนูใหม่สำหรับล่าสัตว์จากวัสดุสำรอง; ไม่ระบุจำนวน"
+    },
+    {
+      "id": "INV-028",
+      "scene_id": "SC-026",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-011",
+      "operation": "CRAFT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เตรียมลูกธนูใหม่จากวัสดุสำรอง; ไม่ระบุจำนวน"
     }
   ]
 }
