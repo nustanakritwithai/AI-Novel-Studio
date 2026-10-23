@@ -1,0 +1,843 @@
+{
+  "schema_version": 1,
+  "story_slug": "last-island-active",
+  "baseline": null,
+  "observations": [
+    {
+      "id": "OBS-001",
+      "anchor": {
+        "scene_id": "SC-001",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-001/SC-001.md",
+        "sha256": "33aa5907c52c15a41a78b616cfceadd4a8aa426964e1d81f5ab72a074980b994"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-002"
+          }
+        }
+      ],
+      "holdings": []
+    },
+    {
+      "id": "OBS-002",
+      "anchor": {
+        "scene_id": "SC-002",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-001/SC-002.md",
+        "sha256": "9c67748dc123db01c4ed8e07ee9ebe8a19de9288dd60eb331563b1931f659fea"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-002"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-001",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": null
+        }
+      ]
+    },
+    {
+      "id": "OBS-003",
+      "anchor": {
+        "scene_id": "SC-003",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-001/SC-003.md",
+        "sha256": "b0b1c6645c5b08259198e7fb4c3b46c6c45854842d29d458e115c6b1de5b28bb"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-003"
+          }
+        }
+      ],
+      "holdings": []
+    },
+    {
+      "id": "OBS-004",
+      "anchor": {
+        "scene_id": "SC-004",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-001/SC-004.md",
+        "sha256": "dbd3c5ca7a1cdff511d0d18dbd6f703b00b0163a9b10c58030bdd6bbc82e27d9"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-003"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-002",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "OBS-005",
+      "anchor": {
+        "scene_id": "SC-005",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-001/SC-005.md",
+        "sha256": "56db57359f87104ade448b5078ed5866d26ea8e437bcb6a05fef7aab20b073d1"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-004"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-004",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": null
+        },
+        {
+          "item_id": "ITEM-002",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "OBS-006",
+      "anchor": {
+        "scene_id": "SC-006",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-001/SC-006.md",
+        "sha256": "2ca8f8e2bc60affe7625a71118a07d314b6d043718a52c23b7062b2a5eee1ef3"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-004"
+          }
+        },
+        {
+          "character_id": "CHAR-002",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-004"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-002",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "OBS-007",
+      "anchor": {
+        "scene_id": "SC-007",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-001/SC-007.md",
+        "sha256": "0f8e7db28d848ae5353771017e023368e6fc2f95374d4d38ef430529b9517930"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-004"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-005",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": null
+        },
+        {
+          "item_id": "ITEM-004",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": null
+        },
+        {
+          "item_id": "ITEM-002",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "OBS-008",
+      "anchor": {
+        "scene_id": "SC-008",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-001/SC-008.md",
+        "sha256": "92d452a2df11eb1c3c3aaaf6fe1250b5adcbc726673bb1603d214364f8abf319"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-006"
+          }
+        }
+      ],
+      "holdings": []
+    },
+    {
+      "id": "OBS-009",
+      "anchor": {
+        "scene_id": "SC-009",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-002/SC-009.md",
+        "sha256": "f382352ab6bfd8da38ef21a6ef24c21687c575831b6df035819e0cf0232487dd"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-006"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-007",
+          "holder": {
+            "kind": "LOCATION",
+            "location_id": "LOC-006"
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "OBS-010",
+      "anchor": {
+        "scene_id": "SC-010",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-002/SC-010.md",
+        "sha256": "bb06ab0b56ffffeede3ddd20bee01636181eb3effa5e1829c0d2fc4ce79ba517"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "UNKNOWN"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-007",
+          "holder": {
+            "kind": "LOCATION",
+            "location_id": "LOC-006"
+          },
+          "quantity": 1
+        },
+        {
+          "item_id": "ITEM-008",
+          "holder": {
+            "kind": "LOCATION",
+            "location_id": "LOC-006"
+          },
+          "quantity": 1
+        },
+        {
+          "item_id": "ITEM-006",
+          "holder": {
+            "kind": "LOCATION",
+            "location_id": "LOC-006"
+          },
+          "quantity": 1
+        },
+        {
+          "item_id": "ITEM-009",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "OBS-011",
+      "anchor": {
+        "scene_id": "SC-011",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-002/SC-011.md",
+        "sha256": "8931ead3eb41fbd5b86c33b1038b50da222107051a374112499ff6c478fcede2"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "UNKNOWN"
+          }
+        }
+      ],
+      "holdings": []
+    },
+    {
+      "id": "OBS-012",
+      "anchor": {
+        "scene_id": "SC-012",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-002/SC-012.md",
+        "sha256": "02a9977c9c72bc21a52afad1ab63a7398568fddeb7c5af3a6b44ac4adf57c2a6"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-006"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-006",
+          "holder": {
+            "kind": "LOCATION",
+            "location_id": "LOC-006"
+          },
+          "quantity": 1
+        },
+        {
+          "item_id": "ITEM-007",
+          "holder": {
+            "kind": "LOCATION",
+            "location_id": "LOC-006"
+          },
+          "quantity": 1
+        },
+        {
+          "item_id": "ITEM-008",
+          "holder": {
+            "kind": "LOCATION",
+            "location_id": "LOC-006"
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "OBS-013",
+      "anchor": {
+        "scene_id": "SC-013",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-002/SC-013.md",
+        "sha256": "13597daefe96f8fe1f8f6dae6837f62edcccbc2abfff03c76a14713f03aafdc0"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "UNKNOWN"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-010",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": 1
+        },
+        {
+          "item_id": "ITEM-011",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": null
+        }
+      ]
+    },
+    {
+      "id": "OBS-014",
+      "anchor": {
+        "scene_id": "SC-014",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-002/SC-014.md",
+        "sha256": "af039b4daa294c1894c453b25b8de1b4dc23811544020ff043bda0a4e25972a9"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-008"
+          }
+        },
+        {
+          "character_id": "CHAR-004",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-008"
+          }
+        },
+        {
+          "character_id": "CHAR-005",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-008"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-010",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "OBS-015",
+      "anchor": {
+        "scene_id": "SC-015",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-002/SC-015.md",
+        "sha256": "010235c34c51de410ff6f905e71931b2116153de606d2467206b8a28b35d7fc8"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-008"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-010",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": 1
+        },
+        {
+          "item_id": "ITEM-011",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": null
+        }
+      ]
+    },
+    {
+      "id": "OBS-016",
+      "anchor": {
+        "scene_id": "SC-016",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-002/SC-016.md",
+        "sha256": "d2fa2654472a9aa07fa3babcd989f93b148528d92ea2ae6fa4686b3cd66a5dc2"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-006"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-005",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": null
+        },
+        {
+          "item_id": "ITEM-004",
+          "holder": {
+            "kind": "CHARACTER",
+            "character_id": "CHAR-001"
+          },
+          "quantity": null
+        }
+      ]
+    },
+    {
+      "id": "OBS-017",
+      "anchor": {
+        "scene_id": "SC-017",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-002/SC-017.md",
+        "sha256": "68a6c1841919700de612c2fd305bee1abd5e0862183ad763ae93535212647e06"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-009"
+          }
+        }
+      ],
+      "holdings": []
+    },
+    {
+      "id": "OBS-018",
+      "anchor": {
+        "scene_id": "SC-018",
+        "narration_suborder": 0,
+        "boundary": "AFTER",
+        "world_time": {
+          "status": "UNKNOWN"
+        }
+      },
+      "source": {
+        "path": "drafts/EP-002/SC-018.md",
+        "sha256": "0b77a20921b753bc2fa7a3f30d2df3790940ea08e81e7431339812e32fb3c0ce"
+      },
+      "local_status": "PROPOSED",
+      "positions": [
+        {
+          "character_id": "CHAR-001",
+          "location": {
+            "status": "KNOWN",
+            "location_id": "LOC-001"
+          }
+        }
+      ],
+      "holdings": [
+        {
+          "item_id": "ITEM-006",
+          "holder": {
+            "kind": "LOCATION",
+            "location_id": "LOC-006"
+          },
+          "quantity": 1
+        },
+        {
+          "item_id": "ITEM-007",
+          "holder": {
+            "kind": "LOCATION",
+            "location_id": "LOC-006"
+          },
+          "quantity": 1
+        },
+        {
+          "item_id": "ITEM-008",
+          "holder": {
+            "kind": "LOCATION",
+            "location_id": "LOC-006"
+          },
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "item_policies": [
+    {
+      "item_id": "ITEM-001",
+      "tracking": "STACK",
+      "important": false
+    },
+    {
+      "item_id": "ITEM-002",
+      "tracking": "UNIQUE",
+      "important": true
+    },
+    {
+      "item_id": "ITEM-004",
+      "tracking": "STACK",
+      "important": true
+    },
+    {
+      "item_id": "ITEM-005",
+      "tracking": "STACK",
+      "important": true
+    },
+    {
+      "item_id": "ITEM-006",
+      "tracking": "UNIQUE",
+      "important": true
+    },
+    {
+      "item_id": "ITEM-007",
+      "tracking": "UNIQUE",
+      "important": true
+    },
+    {
+      "item_id": "ITEM-008",
+      "tracking": "UNIQUE",
+      "important": true
+    },
+    {
+      "item_id": "ITEM-009",
+      "tracking": "UNIQUE",
+      "important": false
+    },
+    {
+      "item_id": "ITEM-010",
+      "tracking": "UNIQUE",
+      "important": true
+    },
+    {
+      "item_id": "ITEM-011",
+      "tracking": "STACK",
+      "important": true
+    }
+  ],
+  "hierarchy": [
+    {
+      "location_id": "LOC-001",
+      "parent": {
+        "kind": "ROOT"
+      },
+      "level": "ROOM"
+    },
+    {
+      "location_id": "LOC-002",
+      "parent": {
+        "kind": "ROOT"
+      },
+      "level": "SITE"
+    },
+    {
+      "location_id": "LOC-003",
+      "parent": {
+        "kind": "ROOT"
+      },
+      "level": "SITE"
+    },
+    {
+      "location_id": "LOC-004",
+      "parent": {
+        "kind": "ROOT"
+      },
+      "level": "SITE"
+    },
+    {
+      "location_id": "LOC-005",
+      "parent": {
+        "kind": "ROOT"
+      },
+      "level": "SITE"
+    },
+    {
+      "location_id": "LOC-006",
+      "parent": {
+        "kind": "LOCATION",
+        "location_id": "LOC-005"
+      },
+      "level": "ROOM"
+    },
+    {
+      "location_id": "LOC-007",
+      "parent": {
+        "kind": "ROOT"
+      },
+      "level": "SITE"
+    },
+    {
+      "location_id": "LOC-008",
+      "parent": {
+        "kind": "ROOT"
+      },
+      "level": "SITE"
+    },
+    {
+      "location_id": "LOC-009",
+      "parent": {
+        "kind": "LOCATION",
+        "location_id": "LOC-005"
+      },
+      "level": "BUILDING"
+    }
+  ],
+  "metadata": {
+    "source": "EP-001 + EP-002 author-accepted prose; local source-bound observations",
+    "author_decision": "DEC-004",
+    "source_pr": 13,
+    "github_review": "NOT_OBSERVED",
+    "ep_count": 2,
+    "scene_count": 18,
+    "s1_local_status": "PROPOSED",
+    "note": "Independent after-scene observations only, no reducer/replay or inferred movement. World-time UNKNOWN; missing holder/quantity does not imply zero."
+  }
+}
