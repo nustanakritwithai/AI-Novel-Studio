@@ -13,10 +13,11 @@ import sys
 from pathlib import Path
 
 try:
-    from scripts import novelctl, author_memory
+    from scripts import novelctl, author_memory, house_cards
 except ImportError:  # called as `python scripts/story_engine.py`
     import novelctl
     import author_memory
+    import house_cards
 
 ROOT = Path(__file__).resolve().parent.parent
 SHA40 = re.compile(r"^[0-9a-fA-F]{40}$")
@@ -161,6 +162,7 @@ def validate(root: Path) -> tuple[list[str], list[str]]:
     if not approved_ids and db["story_state"].get("approved_through_scene"):
         warnings.append("An approved scene exists, but no fully approved episode ledger yet")
     errors.extend(author_memory.validate(root, db))
+    errors.extend(house_cards.validate(root, db))
     return errors, warnings
 
 

@@ -1,0 +1,1500 @@
+{
+  "schema_version": 1,
+  "story_slug": "last-island-active",
+  "enabled": true,
+  "status": "CURATED_REFERENCE_NOT_CANON",
+  "fields": [
+    "owner_character_ref",
+    "owner_group_ref",
+    "location_refs",
+    "footprint",
+    "main_material",
+    "construction",
+    "rooms",
+    "interior_fixtures",
+    "roof_cover",
+    "floors",
+    "stairs",
+    "doors_routes",
+    "main_pillar",
+    "visible_condition",
+    "construction_summary",
+    "reported_damage",
+    "damage",
+    "repair",
+    "furnace",
+    "defensive_extensions",
+    "world_time",
+    "quantities",
+    "door_strength",
+    "roof_layers"
+  ],
+  "sources": [
+    {
+      "id": "SRC-TIMELINE",
+      "path": "bible/BASE_TIMELINE.md",
+      "git_blob_sha": "084989e5a195fbc9efcfe7317ca20a8d62d6e43d",
+      "status": "LOCAL_REFERENCE",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-EP1",
+      "path": "drafts/EP-001/CH-01-FULL-DRAFT.md",
+      "git_blob_sha": "6ea5c611d2224479a02fb491cb0503240e9387af",
+      "status": "AUTHOR_ACCEPTED_SOURCE_NOT_GITHUB_APPROVED",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-EP2",
+      "path": "drafts/EP-002/CH-02-FULL-DRAFT.md",
+      "git_blob_sha": "973c2385644832640e2cae213b12852942c20912",
+      "status": "AUTHOR_ACCEPTED_SOURCE_NOT_GITHUB_APPROVED",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-EP3",
+      "path": "drafts/EP-003/CH-03-FULL-DRAFT.md",
+      "git_blob_sha": "b2a7fce4e9113a74c6fe8a3d54ce9f2d624bb452",
+      "status": "DRAFT_SOURCE",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-EP4",
+      "path": "drafts/EP-004/CH-04-FULL-DRAFT.md",
+      "git_blob_sha": "5851481c2b29bda87f52ee41fe0ce307b07d3169",
+      "status": "DRAFT_SOURCE",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-EP5",
+      "path": "drafts/EP-005/CH-05-FULL-DRAFT.md",
+      "git_blob_sha": "5dce7134bc2a4982f301d7d0a71635d1631f7d3a",
+      "status": "AUTHOR_CHAT_ACCEPTED_WORKING_DRAFT",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-END3",
+      "path": "data/draft_continuity_ep003.json",
+      "git_blob_sha": "028ce50542ac02c3c7381558db8070ff886c2308",
+      "status": "DRAFT_SOURCE",
+      "supporting_sources": [
+        "SRC-EP3"
+      ]
+    },
+    {
+      "id": "SRC-END5",
+      "path": "data/draft_continuity_ep005.json",
+      "git_blob_sha": "91891dd39dfe728d04084863a4c13f4525da16d7",
+      "status": "AUTHOR_CHAT_ACCEPTED_WORKING_DRAFT",
+      "supporting_sources": [
+        "SRC-EP5"
+      ]
+    },
+    {
+      "id": "SRC-SC20",
+      "path": "drafts/EP-003/SC-020.md",
+      "git_blob_sha": "6c9bb3b5c957fa0e988020b6c899d1e804134dd8",
+      "status": "DRAFT_SOURCE",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-SC34",
+      "path": "drafts/EP-004/SC-034.md",
+      "git_blob_sha": "067efce20b5c2b7bffdacd05bb4517e45fde1306",
+      "status": "DRAFT_SOURCE",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-SC35",
+      "path": "drafts/EP-004/SC-035.md",
+      "git_blob_sha": "0a095972989720028f42ffb4d9cea66de64ed28e",
+      "status": "DRAFT_SOURCE",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-SC36",
+      "path": "drafts/EP-004/SC-036.md",
+      "git_blob_sha": "fe5a14120b1c015253bb54174c1639a9eafbaf08",
+      "status": "DRAFT_SOURCE",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-SC37",
+      "path": "drafts/EP-004/SC-037.md",
+      "git_blob_sha": "375ab86e70b302d46f175f5bc618f6926f273693",
+      "status": "DRAFT_SOURCE",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-SC38",
+      "path": "drafts/EP-004/SC-038.md",
+      "git_blob_sha": "bd5475778623ff572891545dc925300fe767ec1d",
+      "status": "DRAFT_SOURCE",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-SC39",
+      "path": "drafts/EP-005/SC-039.md",
+      "git_blob_sha": "ff2278819a6cdcab96792d33c6e23a859c09f0ad",
+      "status": "AUTHOR_CHAT_ACCEPTED_WORKING_DRAFT",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-SC43",
+      "path": "drafts/EP-005/SC-043.md",
+      "git_blob_sha": "2180bf1aeee53fe9713d4a9d5b7b843ebf8d08cb",
+      "status": "AUTHOR_CHAT_ACCEPTED_WORKING_DRAFT",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-SC47",
+      "path": "drafts/EP-005/SC-047.md",
+      "git_blob_sha": "b6c9150eeabd4f9eec4d55bbb23b046e5c0d8551",
+      "status": "AUTHOR_CHAT_ACCEPTED_WORKING_DRAFT",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-CHARACTERS",
+      "path": "data/characters.json",
+      "git_blob_sha": "d3babb7c542502e69d1a48183d47f985137dca46",
+      "status": "LOCAL_REFERENCE",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-LOCATIONS",
+      "path": "data/locations.json",
+      "git_blob_sha": "c12e9c4760530c183ec00ae4817cc10c1670d8ac",
+      "status": "LOCAL_REFERENCE",
+      "supporting_sources": []
+    },
+    {
+      "id": "SRC-SCENES",
+      "path": "data/scenes.json",
+      "git_blob_sha": "78c7aab051c9874c43218ae2810e48f4cd231341",
+      "status": "LOCAL_REFERENCE",
+      "supporting_sources": []
+    }
+  ],
+  "houses": [
+    {
+      "id": "LOC-009",
+      "label": "บ้าน 2×2 เดิมของพระเอก — lookup alias ข้ามระยะไม้/หิน ไม่ใช่แบบใหม่",
+      "design_target_ref": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "F-OWNER",
+      "house_id": "LOC-009",
+      "field": "owner_character_ref",
+      "value": "CHAR-001",
+      "observed_after_scene": "SC-008",
+      "evidence": [
+        {
+          "source_id": "SRC-EP1",
+          "locator": "L296-L348"
+        },
+        {
+          "source_id": "SRC-CHARACTERS",
+          "locator": "/characters/0/id"
+        },
+        {
+          "source_id": "SRC-SCENES",
+          "locator": "/scenes/7/pov"
+        }
+      ],
+      "qualification": "Narrative association: protagonist builds/uses this home; not legal ownership, a new group, or an adopted archetype."
+    },
+    {
+      "id": "F-FOOTPRINT",
+      "house_id": "LOC-009",
+      "field": "footprint",
+      "value": "2x2",
+      "observed_after_scene": "SC-008",
+      "evidence": [
+        {
+          "source_id": "SRC-EP1",
+          "locator": "L294-L332"
+        }
+      ],
+      "qualification": "Described in the author-accepted manuscript, but its editor note labels initial completion a Bridge proposal. Not locked plot or authenticated approved canon."
+    },
+    {
+      "id": "F-SITE",
+      "house_id": "LOC-009",
+      "field": "location_refs",
+      "value": [
+        "LOC-005"
+      ],
+      "observed_after_scene": "SC-008",
+      "evidence": [
+        {
+          "source_id": "SRC-TIMELINE",
+          "locator": "L8-L9"
+        },
+        {
+          "source_id": "SRC-LOCATIONS",
+          "locator": "/locations/4/id"
+        },
+        {
+          "source_id": "SRC-SCENES",
+          "locator": "/scenes/7/location_id"
+        }
+      ],
+      "qualification": "Existing construction-site reference, not proof of an interior coordinate or later stone state."
+    },
+    {
+      "id": "F-LOC-WOOD",
+      "house_id": "LOC-009",
+      "field": "location_refs",
+      "value": [
+        "LOC-006"
+      ],
+      "observed_after_scene": "SC-010",
+      "evidence": [
+        {
+          "source_id": "SRC-TIMELINE",
+          "locator": "L10"
+        },
+        {
+          "source_id": "SRC-EP2",
+          "locator": "L1-L25"
+        },
+        {
+          "source_id": "SRC-LOCATIONS",
+          "locator": "/locations/5/id"
+        },
+        {
+          "source_id": "SRC-SCENES",
+          "locator": "/scenes/9/location_id"
+        }
+      ]
+    },
+    {
+      "id": "F-LOC-STONE",
+      "house_id": "LOC-009",
+      "field": "location_refs",
+      "value": [
+        "LOC-009"
+      ],
+      "observed_after_scene": "SC-017",
+      "evidence": [
+        {
+          "source_id": "SRC-EP2",
+          "locator": "L500-L524"
+        },
+        {
+          "source_id": "SRC-LOCATIONS",
+          "locator": "/locations/8/id"
+        },
+        {
+          "source_id": "SRC-SCENES",
+          "locator": "/scenes/16/location_id"
+        }
+      ],
+      "qualification": "Same original home. LOC-009 is also the stable lookup alias for earlier views; that alias does not make earlier material stone."
+    },
+    {
+      "id": "F-WOOD",
+      "house_id": "LOC-009",
+      "field": "main_material",
+      "value": "WOOD",
+      "observed_after_scene": "SC-008",
+      "evidence": [
+        {
+          "source_id": "SRC-EP1",
+          "locator": "L296-L332"
+        }
+      ],
+      "qualification": "Described in the author-accepted manuscript, but its editor note labels initial completion a Bridge proposal. Not locked plot or authenticated approved canon."
+    },
+    {
+      "id": "F-SHELL",
+      "house_id": "LOC-009",
+      "field": "construction",
+      "value": {
+        "source_described": "BASIC_SHELL_COMPLETE",
+        "usable_evidence": "entered interior and closed wooden door"
+      },
+      "observed_after_scene": "SC-008",
+      "evidence": [
+        {
+          "source_id": "SRC-EP1",
+          "locator": "L296-L332"
+        }
+      ],
+      "qualification": "Described in the author-accepted manuscript, but its editor note labels initial completion a Bridge proposal. Not locked plot or authenticated approved canon."
+    },
+    {
+      "id": "F-LOWER",
+      "house_id": "LOC-009",
+      "field": "rooms",
+      "value": {
+        "source_area": "ground interior of four-cell footprint",
+        "room_partitions": null,
+        "exact_room_ids": null
+      },
+      "observed_after_scene": "SC-008",
+      "evidence": [
+        {
+          "source_id": "SRC-EP1",
+          "locator": "L294-L332"
+        }
+      ],
+      "qualification": "Described in the author-accepted manuscript, but its editor note labels initial completion a Bridge proposal. Not locked plot or authenticated approved canon. Four footprint cells are not four distinct rooms. No invented internal partitions or doors."
+    },
+    {
+      "id": "F-ROOF",
+      "house_id": "LOC-009",
+      "field": "roof_cover",
+      "value": {
+        "source_described": "basic top closure",
+        "exact_geometry": null,
+        "protective_layer_count": null
+      },
+      "observed_after_scene": "SC-008",
+      "evidence": [
+        {
+          "source_id": "SRC-EP1",
+          "locator": "L300-L348"
+        }
+      ],
+      "qualification": "Described in the author-accepted manuscript, but its editor note labels initial completion a Bridge proposal. Not locked plot or authenticated approved canon."
+    },
+    {
+      "id": "F-FIXTURES",
+      "house_id": "LOC-009",
+      "field": "interior_fixtures",
+      "value": [
+        "crafting table",
+        "small storage",
+        "bed/respawn point"
+      ],
+      "observed_after_scene": "SC-010",
+      "evidence": [
+        {
+          "source_id": "SRC-TIMELINE",
+          "locator": "L10"
+        }
+      ],
+      "qualification": "Source-described fixtures; positions, counts of stored goods and recipes remain UNKNOWN."
+    },
+    {
+      "id": "F-STONE",
+      "house_id": "LOC-009",
+      "field": "main_material",
+      "value": "STONE_MAIN_STRUCTURE",
+      "observed_after_scene": "SC-017",
+      "evidence": [
+        {
+          "source_id": "SRC-EP2",
+          "locator": "L500-L524"
+        }
+      ],
+      "qualification": "Material of every door/roof/stair component and symbolic durability are not specified."
+    },
+    {
+      "id": "F-STONE-BUILT",
+      "house_id": "LOC-009",
+      "field": "construction",
+      "value": {
+        "source_described": "same footprint main structure upgraded to stone",
+        "enlargement": "not described in upgrade"
+      },
+      "observed_after_scene": "SC-017",
+      "evidence": [
+        {
+          "source_id": "SRC-EP2",
+          "locator": "L500-L524"
+        }
+      ]
+    },
+    {
+      "id": "F-UPPER",
+      "house_id": "LOC-009",
+      "field": "floors",
+      "value": {
+        "lower": "source-described ground interior",
+        "upper": "open firing position with low wall",
+        "enclosed_upper_room": "NOT_ESTABLISHED",
+        "height": null
+      },
+      "observed_after_scene": "SC-018",
+      "evidence": [
+        {
+          "source_id": "SRC-EP2",
+          "locator": "L536-L566"
+        }
+      ],
+      "qualification": "Source labels lower/upper are ordinal narrative references, not metric elevations or an adopted House Atlas design."
+    },
+    {
+      "id": "F-STAIRS",
+      "house_id": "LOC-009",
+      "field": "stairs",
+      "value": {
+        "presence": "DESCRIBED",
+        "from": "ground interior",
+        "to": "open upper firing position",
+        "exact_position": null,
+        "dimensions": null
+      },
+      "observed_after_scene": "SC-018",
+      "evidence": [
+        {
+          "source_id": "SRC-EP2",
+          "locator": "L540-L554"
+        }
+      ]
+    },
+    {
+      "id": "F-ROUTE",
+      "house_id": "LOC-009",
+      "field": "doors_routes",
+      "value": {
+        "known_sequence": [
+          "ground interior",
+          "stairs",
+          "open upper firing position"
+        ],
+        "internal_door_ids": null,
+        "complete_route_map": null
+      },
+      "observed_after_scene": "SC-018",
+      "evidence": [
+        {
+          "source_id": "SRC-EP2",
+          "locator": "L540-L560"
+        }
+      ],
+      "qualification": "Only this coarse connection is sourced. Do not invent door counts, orientation, intermediate rooms or a complete navigation graph."
+    },
+    {
+      "id": "F-OBS20",
+      "house_id": "LOC-009",
+      "field": "visible_condition",
+      "value": {
+        "observed_by": "CHAR-001",
+        "description": "apparently intact on return",
+        "offscreen_intrusion": null
+      },
+      "observed_after_scene": "SC-020",
+      "evidence": [
+        {
+          "source_id": "SRC-TIMELINE",
+          "locator": "L13"
+        },
+        {
+          "source_id": "SRC-SC20",
+          "locator": "L1-L30"
+        }
+      ],
+      "qualification": "Only visible condition is reported; no claim that nobody visited or that hidden damage is absent."
+    },
+    {
+      "id": "F-END3",
+      "house_id": "LOC-009",
+      "field": "construction_summary",
+      "value": {
+        "footprint": "2x2",
+        "new_extensions_in_EP003": false,
+        "furnace_built_in_EP003": false
+      },
+      "observed_after_scene": "SC-026",
+      "evidence": [
+        {
+          "source_id": "SRC-END3",
+          "locator": "/after_sc026/base"
+        }
+      ],
+      "qualification": "Episode-end DRAFT snapshot; never use this later aggregate for an earlier scene. It does not prove a general absence of unknown connections."
+    },
+    {
+      "id": "F-ALERT",
+      "house_id": "LOC-009",
+      "field": "reported_damage",
+      "value": {
+        "notification": "wall explosion reported",
+        "exact_alert_onset_scene": null,
+        "conflicting_existing_markers": [
+          "SC-034",
+          "SC-035"
+        ],
+        "visible_breach": null
+      },
+      "observed_after_scene": "SC-035",
+      "evidence": [
+        {
+          "source_id": "SRC-SC34",
+          "locator": "L81-L89"
+        },
+        {
+          "source_id": "SRC-SC35",
+          "locator": "L1-L13"
+        },
+        {
+          "source_id": "SRC-TIMELINE",
+          "locator": "L25-L35"
+        }
+      ],
+      "qualification": "The alert appears in both existing SC-034 and SC-035 text. Its exact onset stays unresolved; this is not an observed breach or a source correction. No later episode-end snapshot is used here."
+    },
+    {
+      "id": "F-BREACH",
+      "house_id": "LOC-009",
+      "field": "damage",
+      "value": {
+        "observed_area": "wall and door/entrance boundary",
+        "condition": "visible breach/open gap",
+        "other_parts_damage": null,
+        "loot_loss": null
+      },
+      "observed_after_scene": "SC-036",
+      "evidence": [
+        {
+          "source_id": "SRC-SC36",
+          "locator": "L7-L33"
+        }
+      ],
+      "qualification": "Localized source observation; do not remove all nested barriers, infer all house damage or invent lost quantities."
+    },
+    {
+      "id": "F-REPAIR",
+      "house_id": "LOC-009",
+      "field": "repair",
+      "value": {
+        "area": "entrance/wall opening",
+        "source_described": "closed again after raiders departed",
+        "scene": "SC-037",
+        "materials_quantity": null
+      },
+      "observed_after_scene": "SC-037",
+      "evidence": [
+        {
+          "source_id": "SRC-TIMELINE",
+          "locator": "L28-L30"
+        },
+        {
+          "source_id": "SRC-SC37",
+          "locator": "L55-L95"
+        }
+      ],
+      "qualification": "Repair is disclosed only after SC-037; no retroactive closure in SC-036."
+    },
+    {
+      "id": "F-CLOSED37",
+      "house_id": "LOC-009",
+      "field": "damage",
+      "value": {
+        "entrance": "source describes repaired closure",
+        "whole_house_damage": null,
+        "future_safety": null
+      },
+      "observed_after_scene": "SC-037",
+      "evidence": [
+        {
+          "source_id": "SRC-TIMELINE",
+          "locator": "L29"
+        },
+        {
+          "source_id": "SRC-SC37",
+          "locator": "L55-L95"
+        }
+      ]
+    },
+    {
+      "id": "F-FURNACE",
+      "house_id": "LOC-009",
+      "field": "furnace",
+      "value": {
+        "present_in_source": true,
+        "processing": "started, outputs not yet collected",
+        "footprint_expansion": false
+      },
+      "observed_after_scene": "SC-038",
+      "evidence": [
+        {
+          "source_id": "SRC-SC38",
+          "locator": "L23-L63"
+        }
+      ],
+      "qualification": "A recipe is not a built furnace. Do not add it to earlier cards or infer a completed iron/gunpowder/ammunition output."
+    },
+    {
+      "id": "F-HAMMER",
+      "house_id": "LOC-009",
+      "field": "damage",
+      "value": {
+        "observed": "door hammering and shots near entrance",
+        "door_breach": null,
+        "durability_hp": null,
+        "last_confirmed_repair_scene": "SC-037"
+      },
+      "observed_after_scene": "SC-039",
+      "evidence": [
+        {
+          "source_id": "SRC-SC39",
+          "locator": "L9-L47"
+        }
+      ],
+      "qualification": "Attack sounds are not proof the door breaks; previous repair does not prove zero new damage."
+    },
+    {
+      "id": "F-DOOR43",
+      "house_id": "LOC-009",
+      "field": "doors_routes",
+      "value": {
+        "observed": "protagonist carries loot inside then closes door",
+        "exact_door_id": null,
+        "door_strength": null,
+        "complete_route_map": null
+      },
+      "observed_after_scene": "SC-043",
+      "evidence": [
+        {
+          "source_id": "SRC-SC43",
+          "locator": "L35-L47"
+        }
+      ],
+      "qualification": "Door closure does not establish the condition of all walls/roof layers; upper route remains separately source-described."
+    },
+    {
+      "id": "F-FORT47",
+      "house_id": "LOC-009",
+      "field": "defensive_extensions",
+      "value": {
+        "built_in_EP005": false,
+        "improvement": "CONSIDERED_NOT_BUILT",
+        "layer_count": null,
+        "symbolic_strength": null
+      },
+      "observed_after_scene": "SC-047",
+      "evidence": [
+        {
+          "source_id": "SRC-END5",
+          "locator": "/end_state/defensive_extensions_built"
+        },
+        {
+          "source_id": "SRC-END5",
+          "locator": "/end_state/fortification_improvement"
+        }
+      ],
+      "qualification": "Author-chat-accepted working draft for ingest, not approved ledger. No mapping to the eight proposed archetypes or automatic strength stacking."
+    },
+    {
+      "id": "F-FURNACE47",
+      "house_id": "LOC-009",
+      "field": "furnace",
+      "value": {
+        "present_in_source": true,
+        "processing": "RUNNING_NOT_HARVESTED",
+        "completed_outputs": null
+      },
+      "observed_after_scene": "SC-047",
+      "evidence": [
+        {
+          "source_id": "SRC-END5",
+          "locator": "/end_state/furnace_present"
+        },
+        {
+          "source_id": "SRC-END5",
+          "locator": "/end_state/furnace_processing_status"
+        },
+        {
+          "source_id": "SRC-SC47",
+          "locator": "L29-L35"
+        }
+      ]
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "K-OWNER",
+      "house_id": "LOC-009",
+      "field": "owner_character_ref",
+      "value": "CHAR-001",
+      "observed_after_scene": "SC-008",
+      "evidence": [
+        {
+          "source_id": "SRC-EP1",
+          "locator": "L296-L348"
+        },
+        {
+          "source_id": "SRC-CHARACTERS",
+          "locator": "/characters/0/id"
+        },
+        {
+          "source_id": "SRC-SCENES",
+          "locator": "/scenes/7/pov"
+        }
+      ],
+      "qualification": "Narrative association: protagonist builds/uses this home; not legal ownership, a new group, or an adopted archetype.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-SHELL",
+      "house_id": "LOC-009",
+      "field": "construction",
+      "value": {
+        "source_described": "BASIC_SHELL_COMPLETE",
+        "usable_evidence": "entered interior and closed wooden door"
+      },
+      "observed_after_scene": "SC-008",
+      "evidence": [
+        {
+          "source_id": "SRC-EP1",
+          "locator": "L296-L332"
+        }
+      ],
+      "qualification": "Described in the author-accepted manuscript, but its editor note labels initial completion a Bridge proposal. Not locked plot or authenticated approved canon.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-FIXTURES",
+      "house_id": "LOC-009",
+      "field": "interior_fixtures",
+      "value": [
+        "crafting table",
+        "small storage",
+        "bed/respawn point"
+      ],
+      "observed_after_scene": "SC-010",
+      "evidence": [
+        {
+          "source_id": "SRC-TIMELINE",
+          "locator": "L10"
+        }
+      ],
+      "qualification": "Source-described fixtures; positions, counts of stored goods and recipes remain UNKNOWN.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-STONE",
+      "house_id": "LOC-009",
+      "field": "main_material",
+      "value": "STONE_MAIN_STRUCTURE",
+      "observed_after_scene": "SC-017",
+      "evidence": [
+        {
+          "source_id": "SRC-EP2",
+          "locator": "L500-L524"
+        }
+      ],
+      "qualification": "Material of every door/roof/stair component and symbolic durability are not specified.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-UPPER",
+      "house_id": "LOC-009",
+      "field": "floors",
+      "value": {
+        "lower": "source-described ground interior",
+        "upper": "open firing position with low wall",
+        "enclosed_upper_room": "NOT_ESTABLISHED",
+        "height": null
+      },
+      "observed_after_scene": "SC-018",
+      "evidence": [
+        {
+          "source_id": "SRC-EP2",
+          "locator": "L536-L566"
+        }
+      ],
+      "qualification": "Source labels lower/upper are ordinal narrative references, not metric elevations or an adopted House Atlas design.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-STAIRS",
+      "house_id": "LOC-009",
+      "field": "stairs",
+      "value": {
+        "presence": "DESCRIBED",
+        "from": "ground interior",
+        "to": "open upper firing position",
+        "exact_position": null,
+        "dimensions": null
+      },
+      "observed_after_scene": "SC-018",
+      "evidence": [
+        {
+          "source_id": "SRC-EP2",
+          "locator": "L540-L554"
+        }
+      ],
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-OBS20",
+      "house_id": "LOC-009",
+      "field": "visible_condition",
+      "value": {
+        "observed_by": "CHAR-001",
+        "description": "apparently intact on return",
+        "offscreen_intrusion": null
+      },
+      "observed_after_scene": "SC-020",
+      "evidence": [
+        {
+          "source_id": "SRC-TIMELINE",
+          "locator": "L13"
+        },
+        {
+          "source_id": "SRC-SC20",
+          "locator": "L1-L30"
+        }
+      ],
+      "qualification": "Only visible condition is reported; no claim that nobody visited or that hidden damage is absent.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-ALERT",
+      "house_id": "LOC-009",
+      "field": "reported_damage",
+      "value": {
+        "notification": "wall explosion reported",
+        "exact_alert_onset_scene": null,
+        "conflicting_existing_markers": [
+          "SC-034",
+          "SC-035"
+        ],
+        "visible_breach": null
+      },
+      "observed_after_scene": "SC-035",
+      "evidence": [
+        {
+          "source_id": "SRC-SC34",
+          "locator": "L81-L89"
+        },
+        {
+          "source_id": "SRC-SC35",
+          "locator": "L1-L13"
+        },
+        {
+          "source_id": "SRC-TIMELINE",
+          "locator": "L25-L35"
+        }
+      ],
+      "qualification": "The alert appears in both existing SC-034 and SC-035 text. Its exact onset stays unresolved; this is not an observed breach or a source correction. No later episode-end snapshot is used here.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-BREACH",
+      "house_id": "LOC-009",
+      "field": "damage",
+      "value": {
+        "observed_area": "wall and door/entrance boundary",
+        "condition": "visible breach/open gap",
+        "other_parts_damage": null,
+        "loot_loss": null
+      },
+      "observed_after_scene": "SC-036",
+      "evidence": [
+        {
+          "source_id": "SRC-SC36",
+          "locator": "L7-L33"
+        }
+      ],
+      "qualification": "Localized source observation; do not remove all nested barriers, infer all house damage or invent lost quantities.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-REPAIR",
+      "house_id": "LOC-009",
+      "field": "repair",
+      "value": {
+        "area": "entrance/wall opening",
+        "source_described": "closed again after raiders departed",
+        "scene": "SC-037",
+        "materials_quantity": null
+      },
+      "observed_after_scene": "SC-037",
+      "evidence": [
+        {
+          "source_id": "SRC-TIMELINE",
+          "locator": "L28-L30"
+        },
+        {
+          "source_id": "SRC-SC37",
+          "locator": "L55-L95"
+        }
+      ],
+      "qualification": "Repair is disclosed only after SC-037; no retroactive closure in SC-036.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-FURNACE",
+      "house_id": "LOC-009",
+      "field": "furnace",
+      "value": {
+        "present_in_source": true,
+        "processing": "started, outputs not yet collected",
+        "footprint_expansion": false
+      },
+      "observed_after_scene": "SC-038",
+      "evidence": [
+        {
+          "source_id": "SRC-SC38",
+          "locator": "L23-L63"
+        }
+      ],
+      "qualification": "A recipe is not a built furnace. Do not add it to earlier cards or infer a completed iron/gunpowder/ammunition output.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-HAMMER",
+      "house_id": "LOC-009",
+      "field": "damage",
+      "value": {
+        "observed": "door hammering and shots near entrance",
+        "door_breach": null,
+        "durability_hp": null,
+        "last_confirmed_repair_scene": "SC-037"
+      },
+      "observed_after_scene": "SC-039",
+      "evidence": [
+        {
+          "source_id": "SRC-SC39",
+          "locator": "L9-L47"
+        }
+      ],
+      "qualification": "Attack sounds are not proof the door breaks; previous repair does not prove zero new damage.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-DOOR43",
+      "house_id": "LOC-009",
+      "field": "doors_routes",
+      "value": {
+        "observed": "protagonist carries loot inside then closes door",
+        "exact_door_id": null,
+        "door_strength": null,
+        "complete_route_map": null
+      },
+      "observed_after_scene": "SC-043",
+      "evidence": [
+        {
+          "source_id": "SRC-SC43",
+          "locator": "L35-L47"
+        }
+      ],
+      "qualification": "Door closure does not establish the condition of all walls/roof layers; upper route remains separately source-described.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-FORT47",
+      "house_id": "LOC-009",
+      "field": "defensive_extensions",
+      "value": {
+        "built_in_EP005": false,
+        "improvement": "CONSIDERED_NOT_BUILT",
+        "layer_count": null,
+        "symbolic_strength": null
+      },
+      "observed_after_scene": "SC-047",
+      "evidence": [
+        {
+          "source_id": "SRC-END5",
+          "locator": "/end_state/defensive_extensions_built"
+        },
+        {
+          "source_id": "SRC-END5",
+          "locator": "/end_state/fortification_improvement"
+        }
+      ],
+      "qualification": "Author-chat-accepted working draft for ingest, not approved ledger. No mapping to the eight proposed archetypes or automatic strength stacking.",
+      "character_ref": "CHAR-001"
+    },
+    {
+      "id": "K-FURNACE47",
+      "house_id": "LOC-009",
+      "field": "furnace",
+      "value": {
+        "present_in_source": true,
+        "processing": "RUNNING_NOT_HARVESTED",
+        "completed_outputs": null
+      },
+      "observed_after_scene": "SC-047",
+      "evidence": [
+        {
+          "source_id": "SRC-END5",
+          "locator": "/end_state/furnace_present"
+        },
+        {
+          "source_id": "SRC-END5",
+          "locator": "/end_state/furnace_processing_status"
+        },
+        {
+          "source_id": "SRC-SC47",
+          "locator": "L29-L35"
+        }
+      ],
+      "character_ref": "CHAR-001"
+    }
+  ],
+  "views": [
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-008",
+      "boundary": "AFTER",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-SITE",
+        "F-WOOD",
+        "F-SHELL",
+        "F-LOWER",
+        "F-ROOF"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-SHELL"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-009",
+      "boundary": "BEFORE",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-SITE",
+        "F-WOOD",
+        "F-SHELL",
+        "F-LOWER",
+        "F-ROOF"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-SHELL"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-010",
+      "boundary": "AFTER",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-WOOD",
+        "F-WOOD",
+        "F-SHELL",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-SHELL",
+        "K-FIXTURES"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-017",
+      "boundary": "BEFORE",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-WOOD",
+        "F-WOOD",
+        "F-SHELL",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-SHELL",
+        "K-FIXTURES"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-017",
+      "boundary": "AFTER",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-018",
+      "boundary": "BEFORE",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-018",
+      "boundary": "AFTER",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES",
+        "F-UPPER",
+        "F-STAIRS",
+        "F-ROUTE"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES",
+        "K-UPPER",
+        "K-STAIRS"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-020",
+      "boundary": "AFTER",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES",
+        "F-UPPER",
+        "F-STAIRS",
+        "F-ROUTE",
+        "F-OBS20"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES",
+        "K-UPPER",
+        "K-STAIRS",
+        "K-OBS20"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-026",
+      "boundary": "AFTER",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES",
+        "F-UPPER",
+        "F-STAIRS",
+        "F-ROUTE",
+        "F-END3"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES",
+        "K-UPPER",
+        "K-STAIRS"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-036",
+      "boundary": "BEFORE",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES",
+        "F-UPPER",
+        "F-STAIRS",
+        "F-ROUTE",
+        "F-ALERT"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES",
+        "K-UPPER",
+        "K-STAIRS",
+        "K-ALERT"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-036",
+      "boundary": "AFTER",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES",
+        "F-UPPER",
+        "F-STAIRS",
+        "F-ROUTE",
+        "F-ALERT",
+        "F-BREACH"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES",
+        "K-UPPER",
+        "K-STAIRS",
+        "K-ALERT",
+        "K-BREACH"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-037",
+      "boundary": "BEFORE",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES",
+        "F-UPPER",
+        "F-STAIRS",
+        "F-ROUTE",
+        "F-ALERT",
+        "F-BREACH"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES",
+        "K-UPPER",
+        "K-STAIRS",
+        "K-ALERT",
+        "K-BREACH"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-037",
+      "boundary": "AFTER",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES",
+        "F-UPPER",
+        "F-STAIRS",
+        "F-ROUTE",
+        "F-REPAIR",
+        "F-CLOSED37"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES",
+        "K-UPPER",
+        "K-STAIRS",
+        "K-REPAIR"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-038",
+      "boundary": "AFTER",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES",
+        "F-UPPER",
+        "F-STAIRS",
+        "F-ROUTE",
+        "F-REPAIR",
+        "F-CLOSED37",
+        "F-FURNACE"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES",
+        "K-UPPER",
+        "K-STAIRS",
+        "K-REPAIR",
+        "K-FURNACE"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-039",
+      "boundary": "BEFORE",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES",
+        "F-UPPER",
+        "F-STAIRS",
+        "F-ROUTE",
+        "F-REPAIR",
+        "F-CLOSED37",
+        "F-FURNACE"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES",
+        "K-UPPER",
+        "K-STAIRS",
+        "K-REPAIR",
+        "K-FURNACE"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-039",
+      "boundary": "AFTER",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES",
+        "F-UPPER",
+        "F-STAIRS",
+        "F-ROUTE",
+        "F-REPAIR",
+        "F-HAMMER",
+        "F-FURNACE"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES",
+        "K-UPPER",
+        "K-STAIRS",
+        "K-REPAIR",
+        "K-HAMMER",
+        "K-FURNACE"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-043",
+      "boundary": "AFTER",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES",
+        "F-UPPER",
+        "F-STAIRS",
+        "F-DOOR43",
+        "F-REPAIR",
+        "F-HAMMER",
+        "F-FURNACE"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES",
+        "K-UPPER",
+        "K-STAIRS",
+        "K-DOOR43",
+        "K-REPAIR",
+        "K-HAMMER",
+        "K-FURNACE"
+      ]
+    },
+    {
+      "house_id": "LOC-009",
+      "scene_id": "SC-047",
+      "boundary": "AFTER",
+      "fact_ids": [
+        "F-OWNER",
+        "F-FOOTPRINT",
+        "F-LOC-STONE",
+        "F-STONE",
+        "F-STONE-BUILT",
+        "F-LOWER",
+        "F-ROOF",
+        "F-FIXTURES",
+        "F-UPPER",
+        "F-STAIRS",
+        "F-DOOR43",
+        "F-REPAIR",
+        "F-HAMMER",
+        "F-FURNACE47",
+        "F-FORT47"
+      ],
+      "knowledge_ids": [
+        "K-OWNER",
+        "K-STONE",
+        "K-FIXTURES",
+        "K-UPPER",
+        "K-STAIRS",
+        "K-DOOR43",
+        "K-REPAIR",
+        "K-HAMMER",
+        "K-FURNACE47",
+        "K-FORT47"
+      ]
+    }
+  ]
+}

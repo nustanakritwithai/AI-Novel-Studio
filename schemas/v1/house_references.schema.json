@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/house_references.schema.json",
+  "title": "House reference cards",
+  "description": "Curated, source-bound scene references; not canon or world-state replay.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "story_slug", "enabled", "status", "fields", "sources", "houses", "facts", "knowledge", "views"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "story_slug": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$", "maxLength": 63},
+    "enabled": {"type": "boolean"},
+    "status": {"const": "CURATED_REFERENCE_NOT_CANON"},
+    "fields": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/field"}},
+    "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}},
+    "houses": {"type": "array", "items": {"$ref": "#/$defs/house"}},
+    "facts": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "knowledge": {"type": "array", "items": {"$ref": "#/$defs/knowledge"}},
+    "views": {"type": "array", "items": {"$ref": "#/$defs/view"}}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"},
+    "field": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_id", "locator"],
+      "properties": {"source_id": {"$ref": "#/$defs/id"}, "locator": {"type": "string", "minLength": 1}}
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "path", "git_blob_sha", "status"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "path": {"type": "string", "minLength": 1},
+        "git_blob_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "status": {"enum": ["AUTHOR_ACCEPTED_SOURCE_NOT_GITHUB_APPROVED", "DRAFT_SOURCE", "AUTHOR_CHAT_ACCEPTED_WORKING_DRAFT", "LOCAL_REFERENCE"]},
+        "supporting_sources": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+      }
+    },
+    "house": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "label", "design_target_ref"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "label": {"type": "string", "minLength": 1}, "design_target_ref": {"type": ["string", "null"]}}
+    },
+    "claim": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "house_id", "field", "value", "observed_after_scene", "evidence"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "house_id": {"$ref": "#/$defs/id"}, "field": {"$ref": "#/$defs/field"},
+        "value": {}, "observed_after_scene": {"$ref": "#/$defs/id"},
+        "qualification": {"type": "string", "minLength": 1},
+        "evidence": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/evidence"}}
+      }
+    },
+    "knowledge": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "house_id", "character_ref", "field", "value", "observed_after_scene", "evidence"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "house_id": {"$ref": "#/$defs/id"}, "character_ref": {"$ref": "#/$defs/id"},
+        "field": {"$ref": "#/$defs/field"}, "value": {}, "observed_after_scene": {"$ref": "#/$defs/id"},
+        "qualification": {"type": "string", "minLength": 1},
+        "evidence": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/evidence"}}
+      }
+    },
+    "view": {
+      "type": "object", "additionalProperties": false,
+      "required": ["house_id", "scene_id", "boundary", "fact_ids", "knowledge_ids"],
+      "properties": {
+        "house_id": {"$ref": "#/$defs/id"}, "scene_id": {"$ref": "#/$defs/id"},
+        "boundary": {"enum": ["BEFORE", "AFTER"]},
+        "fact_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "knowledge_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+      }
+    }
+  }
+}
