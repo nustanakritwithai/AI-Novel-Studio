@@ -1,6 +1,6 @@
 # Season 01 — foundation (provisional)
 
-**Author plot directives cover EP-001, EP-002 and EP-003.** EP-001/002 manuscript source was accepted by the author; EP-003 prose is still DRAFT. จำนวนตอนในซีซันและการแข่งขันระดับโลกยังไม่กำหนดครบ.
+**Author plot directives cover EP-001, EP-002, EP-003 and EP-004.** EP-001/002 manuscript source was accepted by the author; EP-003/004 prose is still DRAFT. จำนวนตอนในซีซันและการแข่งขันระดับโลกยังไม่กำหนดครบ.
 
 EP-001: บ้านหลังแรก — บทเริ่มจากเกมส่วนตัว ระบบเรียนรู้ เก็บไม้ เห็นบ้านมือใหม่ ย้ายทำเล คราฟต์ไม้เบสบอล เก็บกล่องเศษวัสดุ ถูกซุ่มโจมตี ชนะเฉียดฉิว เก็บหิน/เศษวัสดุ กลับสร้างบ้าน
 
