@@ -22,7 +22,19 @@
         "สูตรคราฟต์ไม้เบสบอลตรงกับเกมเวอร์ชัน/โหมดที่เลือกหรือไม่?",
         "เตียงและบ้านเสร็จภายในตอนแรกหรือไม่?"
       ],
-      "approved_final_draft": null
+      "approved_final_draft": null,
+      "author_decision": {
+        "status": "AUTHOR_ACCEPTED_IN_CHAT",
+        "decision_id": "DEC-004",
+        "source_path": "drafts/EP-001/CH-01-FULL-DRAFT.md",
+        "source_blob_sha": "6ea5c611d2224479a02fb491cb0503240e9387af",
+        "source_pr": 13,
+        "source_pr_head": "3d0b3117b2a4a4029fe815899e5c7a28e69eb56f",
+        "merge_commit": "5d32a9ff95b3b64953a792be3bd7fef078343a1f",
+        "github_pr_reviewer_provenance": "NOT_OBSERVED",
+        "engine_approval_state": "PENDING_GITHUB_REVIEW",
+        "note": "Editorial author accepted this exact prose in chat. Keep operational episode status DRAFT until the approval ledger's real GitHub reviewer provenance requirement is fulfilled."
+      }
     },
     {
       "id": "EP-002",
@@ -47,7 +59,19 @@
         "จำนวนไอเทมยัง UNKNOWN",
         "การคงอยู่ของร่างเมื่อออฟไลน์ยังไม่กำหนด"
       ],
-      "approved_final_draft": null
+      "approved_final_draft": null,
+      "author_decision": {
+        "status": "AUTHOR_ACCEPTED_IN_CHAT",
+        "decision_id": "DEC-004",
+        "source_path": "drafts/EP-002/CH-02-FULL-DRAFT.md",
+        "source_blob_sha": "973c2385644832640e2cae213b12852942c20912",
+        "source_pr": 13,
+        "source_pr_head": "3d0b3117b2a4a4029fe815899e5c7a28e69eb56f",
+        "merge_commit": "5d32a9ff95b3b64953a792be3bd7fef078343a1f",
+        "github_pr_reviewer_provenance": "NOT_OBSERVED",
+        "engine_approval_state": "PENDING_GITHUB_REVIEW",
+        "note": "Editorial author accepted this exact prose in chat. Keep operational episode status DRAFT until the approval ledger's real GitHub reviewer provenance requirement is fulfilled."
+      }
     }
   ]
 }

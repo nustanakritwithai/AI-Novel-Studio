@@ -2,7 +2,7 @@
   "schema_version": 1,
   "approved_through_scene": null,
   "active_episode": "EP-001",
-  "phase": "DRAFT_UNAPPROVED",
+  "phase": "AUTHOR_ACCEPTED_PENDING_GITHUB_REVIEW",
   "real_world": {
     "player_at_home": true,
     "world_championship_started": false
@@ -16,10 +16,23 @@
   },
   "flags": {},
   "pending_review": [
-    "Two full manuscripts and scene drafts are DRAFT; no prose approved",
-    "Review CH-01 wood-shell handoff into CH-02",
-    "Actual game mechanics and quantities UNVERIFIED",
-    "PR 11 and 12 are old alternative scene drafts"
+    "Author approved both manuscripts in ChatGPT on 2026-10-23 (DEC-004); see editorial/AUTHOR_APPROVAL_2026-10-23.json",
+    "Dedicated GitHub APPROVE review provenance was not observed for PR #13; do not invent approved_by",
+    "Exact gameplay recipes, drop-on-death rules, bed respawn mechanics and item quantities remain UNVERIFIED",
+    "The identity of the archer remains limited to protagonist POV; no conclusive account identity evidence",
+    "Approved-only ledger and approved_through_scene are unchanged pending repository's formal provenance workflow"
   ],
-  "last_commit_handoff": "HANDOFF.md"
+  "last_commit_handoff": "HANDOFF.md",
+  "author_approval": {
+    "decision_id": "DEC-004",
+    "scope": [
+      "EP-001",
+      "EP-002"
+    ],
+    "pr_number": 13,
+    "merge_commit": "5d32a9ff95b3b64953a792be3bd7fef078343a1f",
+    "source_head": "3d0b3117b2a4a4029fe815899e5c7a28e69eb56f",
+    "status": "AUTHOR_ACCEPTED_IN_CHAT",
+    "requires_authenticated_github_pr_review_for_approved_ledger": true
+  }
 }
