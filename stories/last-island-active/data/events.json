@@ -294,6 +294,140 @@
         "upper_firing_platform_ready": true,
         "logged_out": true
       }
+    },
+    {
+      "id": "EV-019",
+      "scene_id": "SC-019",
+      "episode_id": "EP-003",
+      "order": 1,
+      "status": "DRAFT",
+      "what_changed": "พักในโลกจริง วางความคิดเรื่องการหาน้ำมัน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-007"
+      ],
+      "location_id": "LOC-001",
+      "effects_flags": {
+        "ep003_reallife_rest_completed": true
+      }
+    },
+    {
+      "id": "EV-020",
+      "scene_id": "SC-020",
+      "episode_id": "EP-003",
+      "order": 2,
+      "status": "DRAFT",
+      "what_changed": "พระเอกออกบ้านมุ่งหน้าสู่ถนน",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep003_logged_in": true,
+        "ep003_road_trip_started": true
+      }
+    },
+    {
+      "id": "EV-021",
+      "scene_id": "SC-021",
+      "episode_id": "EP-003",
+      "order": 3,
+      "status": "DRAFT",
+      "what_changed": "ไม่ได้รับน้ำมันและต้องตั้งรับการโจมตี",
+      "actors": [
+        "CHAR-001",
+        "CHAR-006"
+      ],
+      "location_id": "LOC-010",
+      "effects_flags": {
+        "ep003_road_loot_found": true,
+        "ep003_duel_started": true,
+        "ep003_oil_found": false
+      }
+    },
+    {
+      "id": "EV-022",
+      "scene_id": "SC-022",
+      "episode_id": "EP-003",
+      "order": 4,
+      "status": "DRAFT",
+      "what_changed": "พระเอกเริ่มทำให้คู่ต่อสู้บาดเจ็บ",
+      "actors": [
+        "CHAR-001",
+        "CHAR-006"
+      ],
+      "location_id": "LOC-010",
+      "effects_flags": {
+        "ep003_enemy_arm_hit": true
+      }
+    },
+    {
+      "id": "EV-023",
+      "scene_id": "SC-023",
+      "episode_id": "EP-003",
+      "order": 5,
+      "status": "DRAFT",
+      "what_changed": "พระเอกเกือบชนะ แต่เผชิญปืนพก",
+      "actors": [
+        "CHAR-001",
+        "CHAR-006"
+      ],
+      "location_id": "LOC-010",
+      "effects_flags": {
+        "ep003_enemy_leg_hit": true,
+        "ep003_pistol_revealed": true
+      }
+    },
+    {
+      "id": "EV-024",
+      "scene_id": "SC-024",
+      "episode_id": "EP-003",
+      "order": 6,
+      "status": "DRAFT",
+      "what_changed": "พระเอกตาย ไม่มีชัยชนะจากการดวลธนู",
+      "actors": [
+        "CHAR-001",
+        "CHAR-006"
+      ],
+      "location_id": "LOC-010",
+      "effects_flags": {
+        "ep003_killed_by_pistol": true
+      }
+    },
+    {
+      "id": "EV-025",
+      "scene_id": "SC-025",
+      "episode_id": "EP-003",
+      "order": 7,
+      "status": "DRAFT",
+      "what_changed": "ยกเลิกแผนเก็บน้ำมันริมถนน",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep003_respawned": true,
+        "ep003_road_plan_abandoned": true,
+        "ep003_carried_loot_lost": true
+      }
+    },
+    {
+      "id": "EV-026",
+      "scene_id": "SC-026",
+      "episode_id": "EP-003",
+      "order": 8,
+      "status": "DRAFT",
+      "what_changed": "ภารกิจต่อไปคือออกล่าสัตว์เพื่อไขมัน",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep003_hunt_plan_ready": true,
+        "ep003_hunting_started": false,
+        "ep003_furnace_built": false,
+        "ep003_oil_obtained": false
+      }
     }
   ]
 }
