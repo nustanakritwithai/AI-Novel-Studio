@@ -99,7 +99,8 @@
       "approved_final_draft": null,
       "working_draft_path": "drafts/EP-003/CH-03-FULL-DRAFT.md",
       "author_plot_directive": "DEC-005",
-      "prose_approval": "NOT_YET_APPROVED"
+      "prose_approval": "NOT_YET_APPROVED",
+      "draft_state_path": "data/draft_continuity_ep003.json"
     }
   ]
 }
