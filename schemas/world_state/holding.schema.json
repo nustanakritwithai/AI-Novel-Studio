@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/world_state/holding.schema.json",
+  "title": "World state holding v1",
+  "$comment": "A holding links a catalog item to a character, location, or explicitly unknown holder. Quantity is a known non-negative balance or null for UNKNOWN. Tracking-policy constraints are checked by the world-state model validator.",
+  "type": "object",
+  "required": [
+    "item_id",
+    "holder",
+    "quantity"
+  ],
+  "properties": {
+    "item_id": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "holder": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind"
+          ],
+          "properties": {
+            "kind": {
+              "const": "UNKNOWN"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "character_id"
+          ],
+          "properties": {
+            "kind": {
+              "const": "CHARACTER"
+            },
+            "character_id": {
+              "$ref": "common.schema.json#/$defs/id"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "location_id"
+          ],
+          "properties": {
+            "kind": {
+              "const": "LOCATION"
+            },
+            "location_id": {
+              "$ref": "common.schema.json#/$defs/id"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "quantity": {
+      "$ref": "common.schema.json#/$defs/quantity"
+    }
+  },
+  "additionalProperties": false
+}

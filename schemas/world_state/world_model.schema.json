@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/world_state/world_model.schema.json",
+  "title": "S1 world model v1: declarations, not a replay projection",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "story_slug", "baseline", "observations", "item_policies"],
+  "properties": {
+    "schema_version": {"const": 1, "type": "integer"},
+    "story_slug": {"type": "string", "maxLength": 63, "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$", "not": {"pattern": "[^a-z0-9-]"}},
+    "baseline": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/record"}]},
+    "observations": {"type": "array", "items": {"$ref": "#/$defs/record"}},
+    "item_policies": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false, "required": ["item_id", "tracking", "important"],
+      "properties": {"item_id": {"$ref": "common.schema.json#/$defs/id"},
+                     "tracking": {"enum": ["UNIQUE", "STACK"]}, "important": {"type": "boolean"}}
+    }},
+    "hierarchy": {"type": "array", "items": {"$ref": "hierarchy.schema.json"}},
+    "metadata": {"type": "object", "description": "Opaque editorial metadata; never used to establish world facts or approval."}
+  },
+  "$defs": {
+    "record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "anchor", "source", "local_status", "positions", "holdings"],
+      "properties": {"id": {"$ref": "common.schema.json#/$defs/id"},
+                     "anchor": {"$ref": "common.schema.json#/$defs/anchor"},
+                     "source": {"$ref": "common.schema.json#/$defs/source"},
+                     "local_status": {"enum": ["PROPOSED", "APPROVED"]},
+                     "positions": {"type": "array", "items": {"$ref": "position.schema.json"}},
+                     "holdings": {"type": "array", "items": {"$ref": "holding.schema.json"}}}
+    }
+  }
+}

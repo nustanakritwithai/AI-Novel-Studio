@@ -9,11 +9,12 @@ import sys
 from pathlib import Path
 from collections import Counter
 try:
-    from scripts import story_config, registry_schema, state_replay
+    from scripts import story_config, registry_schema, state_replay, world_state_model
 except ImportError:
     import story_config
     import registry_schema
     import state_replay
+    import world_state_model
 
 DEFAULT_ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_DATA = ("canon", "characters", "locations", "items", "sources", "mechanics", "scenes", "episodes", "events", "inventory_ledger", "threads", "relationships", "decisions", "story_state")
@@ -253,6 +254,7 @@ def validate(root: Path):
         if src.get('access_level') not in ('TRANSCRIPT_ONLY','VIDEO_REVIEWED','TITLE_AND_METADATA','TITLE_AND_DESCRIPTION'):
             errors.append(f"{src['id']}: invalid source access_level")
     errors.extend(state_replay.validate(root, db))
+    errors.extend(world_state_model.validate(root, db))
     return errors, warnings
 
 

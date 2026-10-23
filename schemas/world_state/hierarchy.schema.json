@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/world_state/hierarchy.schema.json",
+  "title": "World state hierarchy node v1",
+  "$comment": "Containment only. Catalog references, duplicate nodes, self-parenting, and cycles are checked by the world-state model validator.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "location_id",
+    "parent"
+  ],
+  "properties": {
+    "location_id": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "parent": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind"
+          ],
+          "properties": {
+            "kind": {
+              "const": "ROOT"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind"
+          ],
+          "properties": {
+            "kind": {
+              "const": "UNKNOWN"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "location_id"
+          ],
+          "properties": {
+            "kind": {
+              "const": "LOCATION"
+            },
+            "location_id": {
+              "$ref": "common.schema.json#/$defs/id"
+            }
+          }
+        }
+      ]
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "WORLD",
+        "REGION",
+        "SITE",
+        "BUILDING",
+        "ROOM",
+        "OTHER"
+      ]
+    }
+  }
+}

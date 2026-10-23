@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/world_state/position.schema.json",
+  "title": "World state character position v1",
+  "$comment": "One position assertion for an existing character. IDs are checked structurally here; selected-catalog reference checks are performed by the world-state model validator. UNKNOWN intentionally carries no location value.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "character_id",
+    "location"
+  ],
+  "properties": {
+    "character_id": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "location": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "const": "UNKNOWN"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "location_id"
+          ],
+          "properties": {
+            "status": {
+              "const": "KNOWN"
+            },
+            "location_id": {
+              "$ref": "common.schema.json#/$defs/id"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
