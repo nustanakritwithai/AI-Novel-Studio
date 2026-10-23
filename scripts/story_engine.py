@@ -226,7 +226,7 @@ def pack(root: Path, target: str, keep: int = 7, max_chars: int = 25000) -> str:
         "GitHub main and human approval have not been authenticated. Drafts and proposals do not establish canon.\n"
         "Do not use information from future episodes. Do not silently update canon.\n\n"
         + "## REQUIRED WRITING STYLE\n" + style + "\n\n"
-        + recent + "\n\n" + author_accepted + "\n\n" + approved_scene_tail(root, target) + "\n\n" + base
+        + recent + "\n\n" + (author_accepted + "\n\n" if author_accepted else "") + approved_scene_tail(root, target) + "\n\n" + base
     )
     if len(content) > max_chars:
         raise ValueError(f"Context size {len(content)} chars exceeds cap {max_chars}. Narrow target/keep; never silently truncate LOCKED canon.")
