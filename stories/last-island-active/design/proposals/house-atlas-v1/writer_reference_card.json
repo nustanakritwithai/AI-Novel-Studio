@@ -1,6 +1,11 @@
 {
   "document_kind": "FICTION_WRITER_REFERENCE_CARD",
   "schema_version": 1,
+  "optional_writer_reference_documents": {
+    "protective_envelope": "./defensive_envelope_reference.json",
+    "protective_envelope_guide": "./DEFENSIVE_ENVELOPE_WRITER_TH.md",
+    "runtime_loaded": false
+  },
   "status": "PROPOSED",
   "purpose": "Ready-to-use proposed reference card template and worked synthetic retrieval; not an adopted house record or canon.",
   "current_package_adoption_check": {

@@ -4,6 +4,8 @@
 
 [สภาพก่อสร้างสี่ช่วง](./construction_stages.json) แยก target blueprint จาก as-built และ usability: โครงเริ่มต้น → ผนัง/หลังคาบางส่วน → ชั้นล่างใช้งาน → เปิดบันได/ชั้นบน ทั้งหมดเป็น fixture สังเคราะห์ที่เขียนด้วยมือ ไม่ใช่ผล replay หรือลำดับเหตุการณ์จริง ภาพ pilot แสดงแบบเป้าหมาย ต้องอ่าน snapshot ของฉากก่อนใช้อ้างอิง
 
+[คู่มือชั้นป้องกันและประตูต่อเนื่อง](./DEFENSIVE_ENVELOPE_WRITER_TH.md) กับ [บัตรชั้นป้องกัน](./defensive_envelope_reference.json) แยกบ้านที่ใช้อยู่ออกจากสิ่งหุ้มแต่ละด้าน/ด้านบน และบันทึกความเสียหายเป็นรายชิ้นตามฉาก เป็นเครื่องช่วยตรวจคำบรรยายในเกมสมมุติ ไม่คำนวณการต้านแรงระเบิดหรือเส้นทางเจาะที่เหมาะที่สุด ระดับความแข็งแกร่งเชิงเกม วัสดุ ความหนาทางเรขาคณิต และจำนวนชั้นเป็นคนละข้อมูล ไม่บวกความแข็งแกร่งโดยปริยาย
+
 **Status: PROPOSED / UNVERIFIED.** This package contains design concepts and research notes. It is not an engine-supported schema or input format, does not establish story facts, and does not authorize canon or ledger changes.
 
 All eight archetypes are unplaced schematic programs; none claims geometry validity. The separate workshop pilot is the only placed example intended for bounded static proposal QA, under its declared diagram convention. That QA cannot establish in-game buildability, movement, structural safety, support, or performance.
