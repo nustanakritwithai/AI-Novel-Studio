@@ -391,8 +391,12 @@
       ],
       "location_id": "LOC-010",
       "effects_flags": {
-        "ep003_killed_by_pistol": true
-      }
+        "ep003_killed_by_pistol": true,
+        "ep003_six_pistol_shots_fired": true
+      },
+      "shots_fired": 6,
+      "shooter_character_id": "CHAR-006",
+      "shot_detail_source": "drafts/EP-003/SC-024.md"
     },
     {
       "id": "EV-025",
@@ -408,7 +412,9 @@
       "effects_flags": {
         "ep003_respawned": true,
         "ep003_road_plan_abandoned": true,
-        "ep003_carried_loot_lost": true
+        "ep003_carried_loot_lost": true,
+        "ep003_storage_safe": true,
+        "ep003_loot_recovered": false
       }
     },
     {
@@ -426,7 +432,13 @@
         "ep003_hunt_plan_ready": true,
         "ep003_hunting_started": false,
         "ep003_furnace_built": false,
-        "ep003_oil_obtained": false
+        "ep003_oil_obtained": false,
+        "ep003_animals_hunted": false,
+        "ep003_animal_fat_obtained": false,
+        "ep003_meat_obtained": false,
+        "ep003_hide_obtained": false,
+        "ep003_iron_produced": false,
+        "ep003_ammo_crafted": false
       }
     }
   ]
