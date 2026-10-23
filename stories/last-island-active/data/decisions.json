@@ -186,6 +186,48 @@
       ],
       "date": "2026-10-23",
       "notes": "Target blueprint only, not a completed EP007/EP006 scene. See bible/BASE_EXPANSION_4X4_TARGET.md and data/base_expansion_4x4_target.json; do not change official story_state or approved-only ledger."
+    },
+    {
+      "id": "DEC-012",
+      "summary": "ผู้เขียนกำหนดบทที่ 7 หลังกลับจากโรงกลั่น: ต้องการปืนกลเบา อัปเกรด/เรียนรู้สูตรจากวัสดุเดิม พบสปริงที่มีอยู่แล้วหนึ่งชิ้นจากที่ต้องใช้สอง ก่อนออกตามหาชิ้นที่ขาดจึงวางแผนและขยายฐานจากบ้านหิน 2×2 เข้าสู่กรอบ 4×4 สองชั้นตามแบบเป้าหมาย โดยชั้นล่างวงทางเดินต้องเดินวนได้ครบ ไม่มีผนังกั้น",
+      "status": "USER_PLOT_AND_DESIGN_DIRECTIVE",
+      "authority": "USER",
+      "date": "2026-10-24",
+      "canon_refs": [
+        "FACT-069",
+        "FACT-070",
+        "FACT-071",
+        "FACT-072",
+        "FACT-076"
+      ],
+      "notes": "EP007 author-directed arc and blueprint DEC011. The precise construction progress beyond design follows author-accepted chat manuscript DEC013."
+    },
+    {
+      "id": "DEC-013",
+      "summary": "หลังเขียนเนื้อเรื่องบทที่ 7 กำแพงชั้นใหม่ครบสิบฉาก SC-059–SC-068 ผู้เขียนสั่ง 'บันทึกลง engine เลย' อนุมัติการนำต้นฉบับที่เขียนไว้เข้า working story; พื้นวงทางเดิน 12 ช่องสร้างครบ กำแพงนอกบางส่วน ชั้นยิงนอกยังไม่สร้าง และยังขาดสปริงอีก 1 ชิ้น",
+      "status": "AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST",
+      "authority": "USER",
+      "date": "2026-10-24",
+      "canon_refs": [
+        "FACT-068",
+        "FACT-069",
+        "FACT-070",
+        "FACT-071",
+        "FACT-072",
+        "FACT-073",
+        "FACT-074",
+        "FACT-075",
+        "FACT-076",
+        "FACT-077",
+        "FACT-078",
+        "FACT-079",
+        "FACT-080",
+        "FACT-081"
+      ],
+      "notes": "Full manuscript Git blob source is pinned; consent in conversation to ingest, not independent GitHub PR APPROVE review.",
+      "source_channel": "ChatGPT",
+      "source_path": "drafts/EP-007/CH-07-FULL-DRAFT.md",
+      "source_blob_sha": "3b28e35531e7d239ee86966ef02af6b84a009e73"
     }
   ]
 }
