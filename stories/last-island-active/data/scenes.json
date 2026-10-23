@@ -778,9 +778,7 @@
         "สนใจเตาเผา เหล็ก กระสุน และน้ำมันก่อนเข้านอน"
       ],
       "outcome": "พักในโลกจริง วางความคิดเรื่องการหาน้ำมัน",
-      "requires_flags": [
-        "logged_out"
-      ],
+      "requires_flags": [],
       "effects_flags": {
         "ep003_reallife_rest_completed": true
       },
