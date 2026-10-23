@@ -37,6 +37,8 @@ scaffold ว่างผ่าน check แต่ยังไม่มี SC-001
 
 ## อ่าน bundle อย่างถูกต้อง
 
+ท้าย `pack` แสดงหลักฐานเฉพาะ source ที่ใช้ประกอบ context (`CONTEXT_READS_NOT_VALIDATION_AUDIT`) จึงไม่เพิ่มข้อมูล world history เข้า v1 pack เมื่อเปิดส่วนเสริม การตรวจความถูกต้องยังอ่านและตรวจ hash ของหลักฐานทั้งหมด รวมถึงตรวจการเปลี่ยนระหว่างรัน รายงาน `check` และ `prepare-scene.source_evidence` เก็บหลักฐานทั้งหมดแยกจาก context
+
 1. ตรวจ story/scene/POV และ `scene_cursor` ซึ่งเป็น `BEFORE` เท่านั้นในรุ่นนี้
 2. `author_planning_context` มีเป้าหมาย/beat ของฉากที่ได้รับมอบหมายและ user directives เพื่อช่วยเขียน ไม่ใช่เหตุการณ์ที่เกิดแล้วหรือความรู้ตัวละคร โหมดนี้ไม่ดึงฉากข้างเคียง ไม่แสดงคำถามระดับ episode ที่ไม่มีเวลาระบุ และไม่แสดง target inventory operations เป็นของตั้งต้น `pack` เดิมยังคงขอบเขตเดิมเพื่อความเข้ากันได้
 3. `pov_knowledge` ใช้เฉพาะรายการที่มี scene ก่อนหน้าและ local APPROVED/CANON พร้อม source ที่อ่านได้ Untimed traits และ unapproved knowledge ถูกกันไว้ Local label/hash ไม่พิสูจน์ human approval บน GitHub

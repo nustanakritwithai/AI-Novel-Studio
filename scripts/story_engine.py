@@ -229,6 +229,7 @@ def pack(root: Path, target: str, keep: int = 7, max_chars: int = 25000, *,
     errors, _ = validate(root, source_reader=source_reader)
     if errors:
         raise ValueError("Story Engine validation failed: " + "; ".join(errors[:5]))
+    context_checkpoint = source_reader.checkpoint() if source_reader is not None else None
     root = novelctl.story_config.resolve_root(root)
     base = novelctl.build_brief(root, target, scene_only=scene_only, source_reader=source_reader, pov_id=pov_id)
     style = _source_text(root, root / "bible/STYLE_GUIDE.md", source_reader)
@@ -245,7 +246,7 @@ def pack(root: Path, target: str, keep: int = 7, max_chars: int = 25000, *,
     )
     if source_reader is not None:
         content += '\n## EXACT SOURCE EVIDENCE (metadata remains working-tree)\n' + json.dumps(
-            source_reader.evidence(), ensure_ascii=False, sort_keys=True) + '\n'
+            source_reader.evidence_since(context_checkpoint), ensure_ascii=False, sort_keys=True) + '\n'
     if len(content) > max_chars:
         raise ValueError(f"Context size {len(content)} chars exceeds cap {max_chars}. Narrow target/keep; never silently truncate LOCKED canon.")
     return content

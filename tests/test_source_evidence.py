@@ -63,6 +63,28 @@ class SourceReaderTests(unittest.TestCase):
             b"blob " + str(len(content)).encode("ascii") + b"\0" + content).hexdigest())
         self.assertNotIn("content", str(evidence))
 
+    def test_context_evidence_excludes_validation_only_reads_but_checks_all_sources(self):
+        validation = self._write('reference/validation.md', b'VALIDATION_ONLY\n')
+        self._write('reference/context.md', b'CONTEXT_INPUT\n')
+        reader = source_evidence.SourceReader(self.root)
+        reader.read('reference/validation.md')
+        reader.read('reference/context.md')
+        start = reader.checkpoint()
+        reader.read('reference/context.md')
+        scoped = reader.evidence_since(start)
+        self.assertEqual(list(scoped['sources']), ['reference/context.md'])
+        self.assertEqual(len(reader.evidence()['sources']), 2)
+        self.assertEqual(scoped['scope'], 'CONTEXT_READS_NOT_VALIDATION_AUDIT')
+        validation.write_bytes(b'CHANGED_VALIDATION_SOURCE\n')
+        with self.assertRaisesRegex(ValueError, 'changed'):
+            reader.evidence_since(start)
+
+    def test_invalid_evidence_checkpoints_fail_closed(self):
+        reader = source_evidence.SourceReader(self.root)
+        for value in (-1, 1, True, None):
+            with self.subTest(checkpoint=value), self.assertRaises(ValueError):
+                reader.evidence_since(value)
+
     def test_committed_mode_uses_exact_blob_and_reports_crlf_raw_difference(self):
         committed = b"Synthetic metadata; LF line.\n"
         path = self._commit_file("reference/notes.md", committed)

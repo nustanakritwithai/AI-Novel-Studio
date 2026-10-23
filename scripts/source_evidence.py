@@ -85,6 +85,7 @@ class SourceReader:
             raise ValueError("committed source mode requires a local Git repository")
         self.source_mode = self.mode
         self._records: dict[str, dict] = {}
+        self._reads: list[str] = []
 
     @staticmethod
     def _normalize(relative: str) -> str:
@@ -186,7 +187,27 @@ class SourceReader:
                     raise ValueError("source changed during repeated reads")
         else:
             self._records[normalized] = record
+        self._reads.append(normalized)
         return selected
+
+    def checkpoint(self) -> int:
+        """Mark a read boundary, including subsequent reads of known sources."""
+        return len(self._reads)
+
+    def evidence_since(self, checkpoint: int) -> dict:
+        """Describe context reads while still checking every observed source.
+
+        Validation-only sources are not context inputs. They remain part of
+        ``evidence()`` and are checked for races even in this scoped view.
+        """
+        if type(checkpoint) is not int or not 0 <= checkpoint <= len(self._reads):
+            raise ValueError('invalid source evidence checkpoint')
+        report = self.evidence()
+        selected = set(self._reads[checkpoint:])
+        report['sources'] = {path: value for path, value in report['sources'].items()
+                             if path in selected}
+        report['scope'] = 'CONTEXT_READS_NOT_VALIDATION_AUDIT'
+        return report
 
     def text(self, relative: str, max_bytes: int = MAX_SOURCE_BYTES) -> str:
         """Read strict UTF-8 text without newline normalization."""
