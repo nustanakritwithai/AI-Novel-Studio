@@ -6,7 +6,7 @@
 
 ## Phase 1 memory workflow
 
-Run `python scripts/storyctl.py --story last-island-active memory` before planning future episodes. This reads the author-accepted **source-bound summaries** of EP-001 and EP-002. For EP-004 continuation context use `pack EP-004`, which includes only author-accepted source memory for EP-001 and EP-002; EP-003/004 remain DRAFT and are not in the accepted memory index; `memory --before EP-002` intentionally excludes EP-002.
+Run `python scripts/storyctl.py --story last-island-active memory` before planning future episodes. This reads the author-accepted **source-bound summaries** of EP-001 and EP-002. For EP-005 continuation context use `pack EP-005`, which includes only author-accepted source memory for EP-001 and EP-002; EP-003/004 remain DRAFT and are not in the accepted memory index; `memory --before EP-002` intentionally excludes EP-002.
 
 The trusted source is still the source manuscript pinned in `editorial/AUTHOR_APPROVAL_2026-10-23.json` and `author_memory/index.json`. These summaries are locally derived, not independently human-reviewed. They do **not** fill the GitHub-review-approved `ledger/index.json` and do not reconstruct approved `story_state`. Read `docs/AUTHOR_ACCEPTED_MEMORY_TH.md` for these two separate trust levels.
 
@@ -31,7 +31,7 @@ The trusted source is still the source manuscript pinned in `editorial/AUTHOR_AP
 
 ```bash
 python scripts/storyctl.py --story last-island-active check
-python scripts/storyctl.py --story last-island-active pack EP-004
+python scripts/storyctl.py --story last-island-active pack EP-005
 python -m unittest discover -s tests -v
 ```
 
@@ -71,4 +71,14 @@ PR #11 and #12 were closed as superseded; main contains the selected two-chapter
 - Raiding duo are CHAR-004 and CHAR-005 (EP-002), not the separate pistol foe CHAR-006 (EP-003). No PvP kill in EP-004.
 - Blast during active hunting, hero hides behind hill until they leave and repairs the 2×2 stone base entrance. Loot possibly stolen is UNKNOWN.
 - End: fat-derived oil produced and furnace built; iron and gunpowder precursor processing has started but finished iron, gunpowder and bullets are NOT ready.
-- For future scenes, read `data/draft_continuity_ep004.json`, `bible/BASE_TIMELINE.md`, `plot/episodes/EP-004.md` and `research/EP004_GAMEPLAY_GAPS.md`. Do not invent EP-005 events.
+- For future scenes, read `data/draft_continuity_ep004.json`, `bible/BASE_TIMELINE.md`, `plot/episodes/EP-004.md` and `research/EP004_GAMEPLAY_GAPS.md`. EP-005 events now exist in the author-accepted-for-ingest working manuscript; refer to the newer EP-005 handoff below.
+
+## CURRENT handoff — EP-005 → potential EP-006 (accepted for ingest in chat)
+
+- Start with `drafts/EP-005/CH-05-FULL-DRAFT.md`, `data/draft_continuity_ep005.json`, `plot/episodes/EP-005.md`, scene cards SC-039–047 and `data/decisions.json` DEC-008/009.
+- CHAR-004/005 returned after EP004, clashed near stone house. Two opponents defeated once, then both returned to the forest edge and withdrew following exactly ONE warning round from the upper platform; no additional fatal encounter during the second visit.
+- First pistol is recovered mid-scene from the first defeated rival, second pistol is recovered after the second is defeated: **two pistols in total**. He observed **100 ammunition rounds on looting** and spent one more warning round; the final balance must remain UNKNOWN because loaded/loose ammunition is not specified.
+- A basic leather set was looted but the quantity of pieces isn't defined. Neither raider's hammer/pistol role is individually assigned to CHAR-004 vs CHAR-005; their motive is only protagonist suspicion.
+- End: hero alive at the existing 2×2 stone base's open upper firing platform, furnace still running and no completed iron/gunpowder/bullets collected; horse's condition not shown. No fortified layers or stable have been built.
+- The thought of hardening the base is a **future motivation**, not an already completed construction step. EP-006 not written or approved.
+- DEC-009 records the author's chat acceptance and explicit request to ingest. It is **not** a substitute for authenticated GitHub `APPROVE` reviewer evidence, so do not edit the approved ledger, replay state or source memory index without their separate gates.
