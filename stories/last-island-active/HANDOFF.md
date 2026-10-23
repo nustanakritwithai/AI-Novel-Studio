@@ -6,7 +6,7 @@
 
 ## Phase 1 memory workflow
 
-Run `python scripts/storyctl.py --story last-island-active memory` before planning future episodes. This reads the author-accepted **source-bound summaries** of EP-001 and EP-002. For EP-005 continuation context use `pack EP-005`, which includes only author-accepted source memory for EP-001 and EP-002; EP-003/004 remain DRAFT and are not in the accepted memory index; `memory --before EP-002` intentionally excludes EP-002.
+Run `python scripts/storyctl.py --story last-island-active memory` before planning future episodes. This reads the author-accepted **source-bound summaries** of EP-001 and EP-002. For EP-006 continuation context use `pack EP-006`, which includes only author-accepted source memory for EP-001 and EP-002; EP-003/004 remain DRAFT and are not in the accepted memory index; `memory --before EP-002` intentionally excludes EP-002.
 
 The trusted source is still the source manuscript pinned in `editorial/AUTHOR_APPROVAL_2026-10-23.json` and `author_memory/index.json`. These summaries are locally derived, not independently human-reviewed. They do **not** fill the GitHub-review-approved `ledger/index.json` and do not reconstruct approved `story_state`. Read `docs/AUTHOR_ACCEPTED_MEMORY_TH.md` for these two separate trust levels.
 
@@ -31,7 +31,7 @@ The trusted source is still the source manuscript pinned in `editorial/AUTHOR_AP
 
 ```bash
 python scripts/storyctl.py --story last-island-active check
-python scripts/storyctl.py --story last-island-active pack EP-005
+python scripts/storyctl.py --story last-island-active pack EP-006
 python -m unittest discover -s tests -v
 ```
 
@@ -80,5 +80,15 @@ PR #11 and #12 were closed as superseded; main contains the selected two-chapter
 - First pistol is recovered mid-scene from the first defeated rival, second pistol is recovered after the second is defeated: **two pistols in total**. He observed **100 ammunition rounds on looting** and spent one more warning round; the final balance must remain UNKNOWN because loaded/loose ammunition is not specified.
 - A basic leather set was looted but the quantity of pieces isn't defined. Neither raider's hammer/pistol role is individually assigned to CHAR-004 vs CHAR-005; their motive is only protagonist suspicion.
 - End: hero alive at the existing 2×2 stone base's open upper firing platform, furnace still running and no completed iron/gunpowder/bullets collected; horse's condition not shown. No fortified layers or stable have been built.
-- The thought of hardening the base is a **future motivation**, not an already completed construction step. EP-006 not written or approved.
+- The thought of hardening the base is a **future motivation**, not an already completed construction step. The next EP-006 plot has now been drafted separately; see the newer handoff below.
 - DEC-009 records the author's chat acceptance and explicit request to ingest. It is **not** a substitute for authenticated GitHub `APPROVE` reviewer evidence, so do not edit the approved ledger, replay state or source memory index without their separate gates.
+
+## CURRENT handoff — EP-006 → future episode (DRAFT)
+
+- EP-006 has user-directed plot DEC-010 and assistant-written complete DRAFT `drafts/EP-006/CH-06-FULL-DRAFT.md`. Consult `data/draft_continuity_ep006.json`, `plot/episodes/EP-006.md` and `research/EP006_GAMEPLAY_GAPS.md` before writing anything later.
+- Horse CHAR-008 was alive again and ridden at SC-048; subsequently **killed in SC-055** by one of the new armed motorcycle riders. Do not resurrect it or provide replacement silently.
+- CHAR-009 is the bat ambusher on EP-006 road; matching with EP-001 ambusher CHAR-002 is UNKNOWN. At the refinery, CHAR-010/011/012 are three NEW unidentified armed riders with **three motorcycles and light machine guns**; they are not proven to be the earlier two-person rivals from EP-002/005.
+- Hero looted one green keycard ITEM-034 (UNUSED), some ready oil ITEM-014 (exact amount UNKNOWN), a crude barrel ITEM-035. Crude barrel was inserted into the refinery ITEM-036 and processing **STARTED but hero withdrew without finished output**. Other group is *heard saying* they will collect oil; whether they did remains UNKNOWN.
+- Zombies CHAR-013 are aggregated NPC population, number and respawn unverified. Hero cleared observed area but did not prove entire region permanently safe. Ammo spent on zombies and bat ambush UNKNOWN; pistols from EP-005 still two, no extra pistol, automatic weapon or motorcycle gained.
+- Hero retreated outside refinery and reached original 2×2 stone house **ON FOOT**. His suspicion that the crew controls the refinery or has a large fuel supply is **INFERENCE**, not established ownership.
+- No current proof of furnace finished iron/gunpowder or completed newer base upgrades; no EP-007 plot is yet written/approved. Author-directed plot is not equivalent to author-approved prose or GitHub reviewer-approved Canon.
