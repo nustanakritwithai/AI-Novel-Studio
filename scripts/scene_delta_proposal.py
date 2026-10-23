@@ -338,6 +338,17 @@ def _source_key(root: Path, relative: str) -> str:
     return os.path.normcase(os.path.abspath(str(path)))
 
 
+def _reject_aggregate_alias(reader: SourceReader, root: Path, selected_key: str,
+                            value: object) -> None:
+    """Reject a scene draft also registered as a larger manuscript/source."""
+    try:
+        relative = reader._normalize(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("registered aggregate source path is unsafe") from exc
+    if _source_key(root, relative) == selected_key:
+        raise ValueError("selected scene draft aliases a registered aggregate source")
+
+
 def build(root: Path | str, scene_id: str, claims: dict, *, source_mode: str = "working-tree",
           previous: dict | None = None) -> dict:
     """Return a deterministic, private proposal from one exact scene draft.
@@ -382,16 +393,21 @@ def build(root: Path | str, scene_id: str, claims: dict, *, source_mode: str = "
     if sum(_source_key(selected_root, path) == target_source_key for path in normalized_scene_paths) != 1:
         raise ValueError("shared scene draft source is ambiguous; explicit source spans are required")
 
-    # A scene draft cannot alias a shared episode/chapter/book summary source.
+    # A scene draft cannot alias a registered aggregate manuscript or recap.
     index = story_engine.load_index(selected_root)
     for layer in ("episodes", "chapters", "books"):
         for row in index.get(layer, []):
-            try:
-                summary_path = reader._normalize(row.get("summary_path"))
-            except (TypeError, ValueError):
-                continue
-            if _source_key(selected_root, summary_path) == target_source_key:
-                raise ValueError("selected scene draft aliases a shared summary source")
+            for field in ("summary_path", "source_path"):
+                if field in row and row[field] is not None:
+                    _reject_aggregate_alias(reader, selected_root, target_source_key, row[field])
+
+    # Episode decisions can register the full manuscript separately from the
+    # ledger summaries. Treat that explicit source path as an aggregate too.
+    for episode in _rows(db["episodes"], "episodes"):
+        decision = episode.get("author_decision")
+        if isinstance(decision, dict) and "source_path" in decision:
+            _reject_aggregate_alias(reader, selected_root, target_source_key,
+                                    decision["source_path"])
 
     catalogs = _catalogs(selected_root)
     selected_text = reader.text(registered_path)

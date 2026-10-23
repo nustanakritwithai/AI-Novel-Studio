@@ -152,6 +152,54 @@ class SceneDeltaAdversarialTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.build()
 
+    def test_episode_manuscript_alias_is_rejected_but_distinct_scene_source_is_allowed(self):
+        episodes = self.read_json(self.alpha / "data/episodes.json")
+        episodes["episodes"][0]["author_decision"] = {
+            "status": "AUTHOR_ACCEPTED_IN_CHAT",
+            "source_path": "drafts/EP-001/CH-01-FULL-DRAFT.md",
+        }
+        self.write_json(self.alpha / "data/episodes.json", episodes)
+        aggregate = "drafts/EP-001/CH-01-FULL-DRAFT.md"
+        aggregate_path = self.alpha / aggregate
+        aggregate_path.parent.mkdir(parents=True, exist_ok=True)
+        aggregate_path.write_bytes(b"SYNTHETIC_AGGREGATE_MANUSCRIPT\n")
+
+        # The extension registration is an aggregate episode manuscript, not
+        # a scene-specific source. A distinct scene path remains valid.
+        self.assertEqual(self.build()["target"]["draft_path"], self.draft_path)
+
+        aggregate_path.write_bytes(SOURCE)
+        scenes = self.read_json(self.alpha / "data/scenes.json")
+        scenes["scenes"][0]["draft_path"] = aggregate
+        self.write_json(self.alpha / "data/scenes.json", scenes)
+
+        with self.assertRaisesRegex(ValueError, "aggregate source"):
+            self.build(self.claims(path=aggregate))
+
+    def test_ledger_summary_and_source_paths_are_checked_for_every_aggregate_layer(self):
+        original = self.read_json(self.alpha / "ledger/index.json")
+        rows = {
+            "episodes": {"id": "EP-001", "scene_ids": ["SC-001"],
+                         "summary_path": "ledger/episodes/EP-001.md"},
+            "chapters": {"id": "CH-001", "episode_ids": ["EP-001"],
+                         "summary_path": "ledger/chapters/CH-001.md"},
+            "books": {"id": "BOOK-001", "episode_ids": ["EP-001"],
+                      "summary_path": "ledger/books/BOOK-001.md"},
+        }
+        for layer, field in ((layer, field) for layer in rows
+                             for field in ("summary_path", "source_path")):
+            with self.subTest(layer=layer, field=field):
+                index = copy.deepcopy(original)
+                for key in rows:
+                    index[key] = []
+                row = copy.deepcopy(rows[layer])
+                row[field] = self.draft_path
+                index[layer] = [row]
+                self.write_json(self.alpha / "ledger/index.json", index)
+
+                with self.assertRaisesRegex(ValueError, "aggregate source"):
+                    self.build()
+
     def test_claim_path_escape_and_registered_path_escape_are_rejected(self):
         escape = "../../beta/drafts/EP-001/SC-001.md"
         packet = self.claims(raw=self.beta_draft.read_bytes(), path=escape)
