@@ -96,7 +96,8 @@
     "#/author_directives/1",
     "#/author_directives/2",
     "#/author_directives/3",
-    "#/author_directives/4"
+    "#/author_directives/4",
+    "#/ground_floor_ring_clarification"
   ],
   "diagram_refs": [],
   "approval_evidence_ref": null,
@@ -158,7 +159,8 @@
         "floor_index": 0,
         "label_th": "ชั้น 1",
         "interior_room_layout": null,
-        "height": null
+        "height": null,
+        "ring_use": "OPEN_CONTINUOUS_FOUR_SIDE_CORRIDOR_AROUND_CORE"
       },
       {
         "floor_index": 1,
@@ -178,7 +180,25 @@
     "construction_completion": null,
     "construction_scene_refs": [],
     "actual_built_version": null,
-    "target_usability_in_story": "UNKNOWN"
+    "target_usability_in_story": "UNKNOWN",
+    "ground_floor_ring": {
+      "floor_index": 0,
+      "role": "CORRIDOR_RING_BETWEEN_RETAINED_CORE_AND_OUTER_WALL",
+      "connected_sides": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "continuous_walkable_loop": true,
+      "blocking_internal_partition_walls": false,
+      "outer_4x4_perimeter_wall_present": true,
+      "design_basis": "AUTHOR_CONFIRMED_TARGET_NOT_BUILT_SCENE",
+      "exact_width": null,
+      "door_locations": null,
+      "stair_locations": null,
+      "world_completion_time": null
+    }
   },
   "author_directives": [
     {
@@ -210,10 +230,21 @@
   },
   "unknowns": [
     "World construction/reveal time and applicable scene",
-    "Stairs, doors, routes, door count and occupied-room plan",
+    "Exact door/stair routes, locations and counts; inner-room layout. The ground-floor ring loop is a confirmed target.",
     "Metric dimensions, precise frame/core placement, floor/roof cross-section and support",
     "Materials, strength tiers, damage, costs, durations and game feasibility",
     "Actual pillar placement, centrality metric, extent and relocation",
     "POV knowledge of the future target and any expansion completion"
-  ]
+  ],
+  "ground_floor_ring_clarification": {
+    "prompt_source_ref": "Sentinel_87c0887b7c2c819186c291f88467e19c",
+    "prompt_role": "ASSISTANT_CLARIFICATION_ACCEPTED_BY_OWNER",
+    "prompt_excerpt_th": "ภาพนี้กำหนดเพิ่มชัดเจนว่า พื้นที่ชั้นล่างรอบห้องเดิม 2×2 เป็นทางเดินโล่งเชื่อมครบทั้งสี่ด้าน เดินวนได้ตลอดวง โดยยังมีกำแพงขอบนอก 4×4 ครับ",
+    "owner_confirmation": {
+      "source_ref": "Sentinel_6c7cd67ade348191bbf8a9bae503e288",
+      "quote_th": "ใช่ครับอัพเดทด้วย"
+    },
+    "scope": "TARGET_CIRCULATION_ONLY_NOT_CONSTRUCTION_OR_POV_EVIDENCE",
+    "screenshot_copied": false
+  }
 }
