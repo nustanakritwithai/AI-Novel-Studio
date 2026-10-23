@@ -166,12 +166,14 @@ def main(argv: list[str] | None = None) -> int:
     new = commands.add_parser("new", help="Create empty metadata; never write a story")
     new.add_argument("slug")
     new.add_argument("--title")
-    commands.add_parser("check")
+    check = commands.add_parser("check")
+    check.add_argument('--source-mode', choices=('working-tree', 'committed'), default='working-tree')
     commands.add_parser("status")
     memory = commands.add_parser("memory", help="Read-only, source-pinned author-accepted recaps; not a GitHub PR approval")
     memory.add_argument("--before", help="Show only accepted episodes strictly before this episode or scene")
     memory.add_argument("--recent", type=int, default=7)
     memory.add_argument("--out", type=Path)
+    memory.add_argument('--source-mode', choices=('working-tree', 'committed'), default='working-tree')
     diagnose = commands.add_parser('doctor', help='Read-only local diagnostics; GitHub settings remain UNKNOWN')
     diagnose.add_argument('--target', help='Optional scene/episode for state availability')
     diagnose.add_argument('--out', type=Path)
@@ -216,11 +218,24 @@ def main(argv: list[str] | None = None) -> int:
     house.add_argument('--source-mode', choices=('working-tree', 'committed'), default='working-tree',
                        help='Exact raw source bytes, or explicit local HEAD Git blobs; never normalize narrative bytes')
     house.add_argument('--out', type=Path)
+    prepare = commands.add_parser('prepare-scene', help='Private scene-start context, exact sources and optional house/world proposal; never canon')
+    prepare.add_argument('scene')
+    prepare.add_argument('--house', dest='house_id', help='Explicit house ID; no ownership inferred')
+    prepare.add_argument('--pov')
+    prepare.add_argument('--source-mode', choices=('working-tree', 'committed'), default='working-tree')
+    prepare.add_argument('--world-clock')
+    prepare.add_argument('--world-tick', type=int)
+    prepare.add_argument('--world-suborder', type=int)
+    prepare.add_argument('--world-boundary', choices=('BEFORE', 'AFTER'))
+    prepare.add_argument('--recent', type=int, default=7)
+    prepare.add_argument('--max-chars', type=int, default=25000)
+    prepare.add_argument('--out', type=Path)
     pack = commands.add_parser("pack")
     pack.add_argument("target")
     pack.add_argument("--recent", type=int, default=7)
     pack.add_argument("--max-chars", type=int, default=25000)
     pack.add_argument("--out", type=Path)
+    pack.add_argument('--source-mode', choices=('working-tree', 'committed'), default='working-tree')
     brief = commands.add_parser("brief")
     brief.add_argument("target")
     brief.add_argument("--out", type=Path)
@@ -257,6 +272,27 @@ def main(argv: list[str] | None = None) -> int:
             _emit_private_artifact(args.workspace, args.out, output)
             return 1 if report['errors'] else 0
         root = story_config.resolve_root(args.workspace, args.story)
+        if args.command == 'prepare-scene':
+            try:
+                from scripts import scene_prepare
+            except ImportError:
+                import scene_prepare
+            values = (args.world_clock, args.world_tick, args.world_suborder, args.world_boundary)
+            if any(value is not None for value in values) and not all(value is not None for value in values):
+                raise ValueError('Supply all four --world-clock/--world-tick/--world-suborder/--world-boundary options together')
+            cursor = None if all(value is None for value in values) else dict(
+                zip(('clock_id', 'tick', 'suborder', 'boundary'), values))
+            report = scene_prepare.build(root, args.scene, house_id=args.house_id, pov=args.pov,
+                source_mode=args.source_mode, world_cursor=cursor, recent=args.recent, max_chars=args.max_chars)
+            _emit_private_artifact(args.workspace, args.out, json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+            return 0
+        source_reader = None
+        if args.command in ('check', 'memory', 'pack') and args.source_mode == 'committed':
+            try:
+                from scripts.source_evidence import SourceReader
+            except ImportError:
+                from source_evidence import SourceReader
+            source_reader = SourceReader(root, 'committed')
         if args.command == 'lintstate':
             cutoff = {'clock_id': args.clock, 'tick': args.tick,
                       'suborder': args.suborder, 'boundary': args.boundary}
@@ -284,11 +320,13 @@ def main(argv: list[str] | None = None) -> int:
             _emit_private_artifact(args.workspace, args.out, output)
             return 0
         if args.command == "check":
-            errors, warnings = story_engine.validate(root)
+            errors, warnings = story_engine.validate(root, source_reader=source_reader)
             for warning in warnings:
                 print("WARN:", warning)
             for error in errors:
                 print("ERROR:", error)
+            if source_reader is not None:
+                print('SOURCE EVIDENCE:', json.dumps(source_reader.evidence(), ensure_ascii=False, sort_keys=True))
             print(f"{'PASS' if not errors else 'FAIL'} | {len(errors)} errors; {len(warnings)} warnings")
             return 1 if errors else 0
         if args.command == "status":
@@ -297,18 +335,20 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "memory":
             if not 0 <= args.recent <= 20:
                 raise ValueError("--recent must be 0..20")
-            errors, _ = story_engine.validate(root)
+            errors, _ = story_engine.validate(root, source_reader=source_reader)
             if errors:
                 raise ValueError("Story validation failed: " + "; ".join(errors[:5]))
-            output = story_engine.author_memory.render(root, before=args.before, recent=args.recent)
+            output = story_engine.author_memory.render(root, before=args.before, recent=args.recent, source_reader=source_reader)
             if not output:
                 output = "No author-accepted memory is configured for this story.\n"
+            if source_reader is not None:
+                output += '\nSOURCE EVIDENCE: ' + json.dumps(source_reader.evidence(), ensure_ascii=False, sort_keys=True) + '\n'
             _emit_private_artifact(args.workspace, args.out, output)
             return 0
         if args.command == "pack":
             if not 0 <= args.recent <= 20 or args.max_chars < 1000:
                 raise ValueError("--recent must be 0..20 and --max-chars >=1000")
-            output = story_engine.pack(root, args.target, args.recent, args.max_chars)
+            output = story_engine.pack(root, args.target, args.recent, args.max_chars, source_reader=source_reader)
         elif args.command == "brief":
             output = novelctl.build_brief(root, args.target)
         elif args.command == "replay":

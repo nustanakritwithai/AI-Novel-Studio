@@ -13,9 +13,10 @@ import re
 from pathlib import Path
 
 try:
-    from scripts import novelctl, story_config
+    from scripts import novelctl, source_evidence, story_config
 except ImportError:  # invoked through scripts/story_engine.py as a CLI
     import novelctl
+    import source_evidence
     import story_config
 
 INDEX = "author_memory/index.json"
@@ -69,7 +70,8 @@ def _json(path: Path, cap: int) -> dict:
     return value
 
 
-def _safe_path(root: Path, relative: str, prefix: str, suffix: str) -> Path:
+def _safe_path(root: Path, relative: str, prefix: str, suffix: str,
+               require_file: bool = True) -> Path:
     _require(isinstance(relative, str) and bool(relative), "missing path")
     _require("\\" not in relative and not Path(relative).is_absolute(), "absolute or Windows-style path")
     components = relative.split("/")
@@ -78,7 +80,8 @@ def _safe_path(root: Path, relative: str, prefix: str, suffix: str) -> Path:
     target = (root / relative).resolve()
     folder = (root / prefix).resolve()
     _require(folder.is_relative_to(root) and target.is_relative_to(folder), "path escaped story root")
-    _require(target.suffix == suffix and target.is_file(), "missing file or wrong suffix")
+    _require(target.suffix == suffix and (target.is_file() or not require_file),
+             "missing file or wrong suffix")
     return target
 
 
@@ -91,11 +94,25 @@ def _sha(value) -> bool:
     return isinstance(value, str) and SHA40.fullmatch(value) is not None
 
 
-def _read_records(root: Path, db: dict | None = None):
+def _reader_for(root: Path, source_reader=None):
+    reader = source_reader or source_evidence.SourceReader(root, mode="working-tree")
+    if Path(reader.root) != Path(root):
+        raise ValueError("Author memory: source reader belongs to a different story")
+    return reader
+
+
+def _selected_blob_id(reader, relative: str) -> str | None:
+    return reader.identity(relative).get("git_blob_id")
+
+
+def _read_records(root: Path, db: dict | None = None, source_reader=None):
     root = story_config.resolve_root(root)
+    if source_reader is not None and Path(source_reader.root) != Path(root):
+        raise ValueError("Author memory: source reader belongs to a different story")
     index_path = root / INDEX
     if not index_path.exists() and not index_path.is_symlink():
         return [], None
+    reader = _reader_for(root, source_reader)
     _require(index_path.is_file() and not index_path.is_symlink(), "index must be a regular file")
     index = _json(index_path, MAX_INDEX)
     _require(
@@ -205,14 +222,17 @@ def _read_records(root: Path, db: dict | None = None):
                  "manuscript belongs to another episode")
         _require(_sha(entry["source_blob_sha"]) and _sha(entry["summary_blob_sha"]),
                  "invalid Git blob SHA")
-        manuscript_path = _safe_path(root, entry["source_path"], "drafts", ".md")
-        _require(git_blob_sha(_read(manuscript_path, MAX_MANUSCRIPT)) == entry["source_blob_sha"],
+        _safe_path(root, entry["source_path"], "drafts", ".md",
+                   require_file=reader.mode == "working-tree")
+        reader.text(entry["source_path"], max_bytes=MAX_MANUSCRIPT)
+        _require(_selected_blob_id(reader, entry["source_path"]) == entry["source_blob_sha"],
                  "accepted manuscript bytes have changed")
-        summary_path = _safe_path(root, entry["summary_path"], "author_memory/episodes", ".md")
+        _safe_path(root, entry["summary_path"], "author_memory/episodes", ".md",
+                   require_file=reader.mode == "working-tree")
         _require(entry["summary_path"] == "author_memory/episodes/" + eid + ".md",
                  "summary path does not match episode")
-        summary_data = _read(summary_path, MAX_SUMMARY)
-        _require(git_blob_sha(summary_data) == entry["summary_blob_sha"],
+        summary_data = reader.read(entry["summary_path"], max_bytes=MAX_SUMMARY)
+        _require(_selected_blob_id(reader, entry["summary_path"]) == entry["summary_blob_sha"],
                  "episode summary bytes have changed")
         try:
             summary = summary_data.decode("utf-8")
@@ -225,19 +245,20 @@ def _read_records(root: Path, db: dict | None = None):
         checked.append((eid, entry, summary))
 
     _require(set(source_by_episode) == ids_seen, "approval contains unindexed manuscript sources")
+    reader.evidence()
     return checked, index
 
 
-def validate(root: Path, db: dict | None = None) -> list[str]:
+def validate(root: Path, db: dict | None = None, source_reader=None) -> list[str]:
     """Validate only opt-in author memory; unconfigured stories are unchanged."""
     try:
-        _read_records(root, db)
+        _read_records(root, db, source_reader)
         return []
     except (ValueError, TypeError, KeyError, OSError, IndexError, RecursionError) as exc:
         return [str(exc)[:350]]
 
 
-def render(root: Path, before: str | None = None, recent: int = 7) -> str:
+def render(root: Path, before: str | None = None, recent: int = 7, source_reader=None) -> str:
     """Render locally attested accepted recaps, optionally STRICTLY before a target.
 
     Without a target, the command returns all currently accepted history for
@@ -245,7 +266,7 @@ def render(root: Path, before: str | None = None, recent: int = 7) -> str:
     """
     _require(type(recent) is int and 0 <= recent <= 20, "recent must be 0..20")
     root = story_config.resolve_root(root)
-    checked, index = _read_records(root)
+    checked, index = _read_records(root, source_reader=source_reader)
     if index is None:
         return ""
     db = novelctl.load(root)

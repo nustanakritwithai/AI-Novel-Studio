@@ -17,6 +17,7 @@ except ImportError:  # direct legacy CLI imports
 APPROVED_SCENES = {"APPROVED", "CANON"}
 APPROVAL_BASIS = "LOCAL_RECORDS_NOT_GITHUB_AUTHENTICATED"
 HISTORY_PATH = "data/state_history.json"
+MAX_EVIDENCE_BYTES = 1024 * 1024
 
 
 def _load(root: Path) -> tuple[Path, dict | None]:
@@ -73,7 +74,8 @@ def _structure(history: dict, db: dict) -> tuple[list[dict], dict[str, int], lis
     return scenes, positions, errors
 
 
-def _read_evidence(root: Path, relative: str, context: str, drafts_only: bool = False) -> None:
+def _read_evidence(root: Path, relative: str, context: str, drafts_only: bool = False,
+                   source_reader=None) -> None:
     try:
         path = story_config.story_path(root, relative)
         if path == story_config.story_path(root, HISTORY_PATH):
@@ -82,13 +84,20 @@ def _read_evidence(root: Path, relative: str, context: str, drafts_only: bool = 
             drafts = story_config.story_path(root, "drafts")
             if not path.is_relative_to(drafts) or path.suffix != ".md":
                 raise ValueError("approved scene evidence must be Markdown inside this story's drafts/")
-        if not path.read_text(encoding="utf-8").strip():
+        if source_reader is None:
+            text = path.read_text(encoding="utf-8")
+        else:
+            reader_root = getattr(source_reader, "root", None)
+            if reader_root is not None and Path(reader_root).resolve() != root.resolve():
+                raise ValueError("source reader does not match the selected story")
+            text = source_reader.text(relative, max_bytes=MAX_EVIDENCE_BYTES)
+        if not text.strip():
             raise ValueError("evidence is blank")
     except (OSError, ValueError, TypeError) as exc:
         raise ValueError(f"{HISTORY_PATH}: {context}: unreadable source evidence ({exc})") from exc
 
 
-def _read_baseline_evidence(root: Path, baseline: dict, db: dict) -> None:
+def _read_baseline_evidence(root: Path, baseline: dict, db: dict, source_reader=None) -> None:
     """A declared initial state needs independent evidence, never scene prose."""
     path = story_config.story_path(root, baseline["evidence_path"])
     operational = [story_config.story_path(root, directory)
@@ -98,10 +107,10 @@ def _read_baseline_evidence(root: Path, baseline: dict, db: dict) -> None:
             for scene in db["scenes"]["scenes"]):
         raise ValueError(f"{HISTORY_PATH}: baseline requires independent state evidence outside live registries, cards, drafts and ledgers; "
                          "scene evidence must use chronological deltas")
-    _read_evidence(root, baseline["evidence_path"], "baseline")
+    _read_evidence(root, baseline["evidence_path"], "baseline", source_reader=source_reader)
 
 
-def validate(root: Path, db: dict) -> list[str]:
+def validate(root: Path, db: dict, *, source_reader=None) -> list[str]:
     """Check schema, chronological pointers and readable eligible source files.
 
     Value preconditions are target-specific and checked by replay_before. A
@@ -116,14 +125,15 @@ def validate(root: Path, db: dict) -> list[str]:
         baseline = history["baseline"]
         if baseline is not None and baseline["status"] == "APPROVED":
             try:
-                _read_baseline_evidence(root, baseline, db)
+                _read_baseline_evidence(root, baseline, db, source_reader=source_reader)
             except ValueError as exc:
                 errors.append(str(exc))
         for delta in history["deltas"]:
             scene = by_scene.get(delta["scene_id"])
             if delta["status"] == "APPROVED" and scene and scene["status"] in APPROVED_SCENES:
                 try:
-                    _read_evidence(root, scene.get("draft_path"), delta["id"], drafts_only=True)
+                    _read_evidence(root, scene.get("draft_path"), delta["id"],
+                                   drafts_only=True, source_reader=source_reader)
                 except ValueError as exc:
                     errors.append(str(exc))
         return errors
@@ -163,7 +173,7 @@ def _apply(state: dict, change: dict, delta_id: str) -> None:
         parent[leaf] = copy.deepcopy(change["value"])
 
 
-def replay_before(root: Path, target: str, db: dict) -> dict | None:
+def replay_before(root: Path, target: str, db: dict, *, source_reader=None) -> dict | None:
     """Return strict scene-start state, UNKNOWN, or None for legacy fallback.
 
     Each scene in the requested interval needs one locally approved delta and
@@ -191,7 +201,7 @@ def replay_before(root: Path, target: str, db: dict) -> dict | None:
     start = positions[baseline["before_scene"]]
     if cutoff < start:
         return _unknown(target, "The explicit baseline is later than the requested scene.")
-    _read_baseline_evidence(root, baseline, db)
+    _read_baseline_evidence(root, baseline, db, source_reader=source_reader)
     state = copy.deepcopy(baseline["state"])
     deltas = {delta["scene_id"]: delta for delta in history["deltas"]}
     applied, last = [], None
@@ -200,7 +210,8 @@ def replay_before(root: Path, target: str, db: dict) -> dict | None:
         delta = deltas.get(sid)
         if scene["status"] not in APPROVED_SCENES or delta is None or delta["status"] != "APPROVED":
             return _unknown(target, f"No eligible approved state delta/source for preceding scene {sid}.")
-        _read_evidence(root, scene.get("draft_path"), delta["id"], drafts_only=True)
+        _read_evidence(root, scene.get("draft_path"), delta["id"],
+                       drafts_only=True, source_reader=source_reader)
         for change in delta["changes"]:
             _apply(state, change, delta["id"])
         applied.append(delta["id"])
