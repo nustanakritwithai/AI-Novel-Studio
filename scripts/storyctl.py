@@ -241,6 +241,25 @@ def main(argv: list[str] | None = None) -> int:
     delta.add_argument('--previous', type=Path, help='Prior immutable proposal revision JSON, not approval')
     delta.add_argument('--source-mode', choices=('working-tree', 'committed'), default='working-tree')
     delta.add_argument('--out', type=Path, help='New private .local path; an existing file is never replaced')
+    packet = commands.add_parser('review-packet', help='Freeze exact raw draft plus scene-only context for a native reviewer')
+    packet.add_argument('scene')
+    packet.add_argument('--house', dest='house_id')
+    packet.add_argument('--source-mode', choices=('working-tree', 'committed'), default='working-tree')
+    packet.add_argument('--world-clock')
+    packet.add_argument('--world-tick', type=int)
+    packet.add_argument('--world-suborder', type=int)
+    packet.add_argument('--world-boundary', choices=('BEFORE', 'AFTER'))
+    packet.add_argument('--out', type=Path)
+    report_check = commands.add_parser('review-check', help='Bind reviewer quotes to current frozen inputs; never a semantic PASS')
+    report_check.add_argument('--packet', type=Path, required=True)
+    report_check.add_argument('--report', type=Path, required=True)
+    report_check.add_argument('--out', type=Path)
+    flow = commands.add_parser('scene-flow', help='Record supervised native-agent handoffs; owner signoff remains unverified')
+    flow.add_argument('stage', choices=('PLANNER', 'WRITER', 'REVIEWER', 'REVISION', 'OWNER_CHECKPOINT', 'VERIFY'))
+    flow.add_argument('--packet', type=Path)
+    flow.add_argument('--artifact', type=Path)
+    flow.add_argument('--previous', type=Path)
+    flow.add_argument('--out', type=Path)
     pack = commands.add_parser("pack")
     pack.add_argument("target")
     pack.add_argument("--recent", type=int, default=7)
@@ -283,6 +302,67 @@ def main(argv: list[str] | None = None) -> int:
             _emit_private_artifact(args.workspace, args.out, output)
             return 1 if report['errors'] else 0
         root = story_config.resolve_root(args.workspace, args.story)
+        if args.command == 'review-packet':
+            try:
+                from scripts import grounded_review
+            except ImportError:
+                import grounded_review
+            values = (args.world_clock, args.world_tick, args.world_suborder, args.world_boundary)
+            if any(v is not None for v in values) and not all(v is not None for v in values):
+                raise ValueError('Supply all four world cursor values together')
+            cursor = None if all(v is None for v in values) else dict(zip(
+                ('clock_id', 'tick', 'suborder', 'boundary'), values))
+            result = grounded_review.build_packet(root, args.scene, source_mode=args.source_mode,
+                house_id=args.house_id, world_cursor=cursor)
+            output = json.dumps(result, ensure_ascii=False, indent=2) + '\n'
+            if len(output.encode('utf-8')) > 8 * 1024 * 1024:
+                raise ValueError('Review packet exceeds the 8 MiB round-trip limit')
+            _emit_private_artifact(args.workspace, args.out, output, exclusive=True)
+            return 0
+        if args.command in ('review-check', 'scene-flow'):
+            try:
+                from scripts import grounded_review, scene_workflow
+            except ImportError:
+                import grounded_review, scene_workflow
+            paths = [args.packet] if args.packet is not None else []
+            if args.command == 'review-check':
+                paths.append(args.report)
+            else:
+                if args.stage == 'VERIFY':
+                    if args.previous is None or args.artifact is not None:
+                        raise ValueError('VERIFY needs --previous and no --artifact')
+                elif args.packet is None or args.artifact is None:
+                    raise ValueError('Workflow stage needs --packet and --artifact')
+                paths.extend(p for p in (args.artifact, args.previous) if p is not None)
+            captured = {}
+            for path in paths:
+                review_bundle._reject_links(path.absolute())
+                captured[path] = _offline_evidence(path, max_bytes=8 * 1024 * 1024)
+            packet_value = captured[args.packet][0] if args.packet is not None else None
+            if args.command == 'review-check':
+                scene_workflow.assert_current(root, packet_value)
+                result = grounded_review.validate_report(packet_value, captured[args.report][0])
+            elif args.stage == 'VERIFY':
+                old = captured[args.previous][0]
+                if old.get('story_slug') != story_config.load_config(root)['slug']:
+                    raise ValueError('Workflow belongs to another story')
+                result = scene_workflow.verify(old)
+                if packet_value is not None:
+                    scene_workflow.assert_current(root, packet_value)
+                    if old['target'] != packet_value['target'] or old['records'][-1]['packet_id'] != packet_value['packet_id']:
+                        raise ValueError('Workflow final packet does not match current inputs')
+            else:
+                result = scene_workflow.advance(root, packet_value, args.stage, captured[args.artifact][0],
+                    previous=captured[args.previous][0] if args.previous is not None else None)
+            for path, (_, fingerprint) in captured.items():
+                review_bundle._reject_links(path.absolute())
+                if _offline_evidence(path, max_bytes=8 * 1024 * 1024)[1] != fingerprint:
+                    raise ValueError('Workflow input changed during processing')
+            output = json.dumps(result, ensure_ascii=False, indent=2) + '\n'
+            if len(output.encode('utf-8')) > 8 * 1024 * 1024:
+                raise ValueError('Workflow artifact exceeds the 8 MiB round-trip limit')
+            _emit_private_artifact(args.workspace, args.out, output, exclusive=True)
+            return 0
         if args.command == 'propose-deltas':
             try:
                 from scripts import scene_delta_proposal
@@ -293,13 +373,15 @@ def main(argv: list[str] | None = None) -> int:
                 if path is None:
                     continue
                 review_bundle._reject_links(path.absolute())
-                value, fingerprint = _offline_evidence(path, max_bytes=1024 * 1024)
+                limit = 1024 * 1024 if path == args.claims else 8 * 1024 * 1024
+                value, fingerprint = _offline_evidence(path, max_bytes=limit)
                 inputs.append((path, value, fingerprint))
             report = scene_delta_proposal.build(root, args.scene, inputs[0][1], source_mode=args.source_mode,
                 previous=inputs[1][1] if args.previous is not None else None)
             for path, _, fingerprint in inputs:
                 review_bundle._reject_links(path.absolute())
-                if _offline_evidence(path, max_bytes=1024 * 1024)[1] != fingerprint:
+                limit = 1024 * 1024 if path == args.claims else 8 * 1024 * 1024
+                if _offline_evidence(path, max_bytes=limit)[1] != fingerprint:
                     raise ValueError('Proposal input changed during assembly')
             _emit_private_artifact(args.workspace, args.out,
                 json.dumps(report, ensure_ascii=False, indent=2) + '\n', exclusive=True)

@@ -58,8 +58,10 @@ python scripts/storyctl.py --story my-story prepare-scene SC-002 --world-clock C
 
 ## ขอบเขตที่ยังเหลือ
 
+เมื่อส่ง world cursor ที่ยังไม่มี mapping ตรวจได้กับ scene/POV รุ่น workflow จะกัน temporal context ที่เดิมกรองด้วย narrative order ออก ได้แก่ prior prose/recaps, replay state, POV knowledge, inventory, threads และ house facts คงเฉพาะ style/selected plan ที่ระบุว่าเป็น author input พร้อม world preview แยกต่างหาก ส่วนที่กันไว้เป็น UNKNOWN จึงไม่อ้างว่า flashback ได้ย้อนประวัติความรู้ครบแล้ว ดู [คู่มือ workflow](SUPERVISED_SCENE_WORKFLOW_TH.md)
+
 - ไม่มี per-scene delta extraction หรือ automatic construction/damage/repair events
-- ไม่มี semantic reviewer, writer execution, revision loop หรือ owner-signoff automation
+- CLI ไม่เรียกโมเดลเขียน/รีวิวเอง มี grounded packet/report และบันทึก native-agent revision handoffs แยกต่างหาก แต่ไม่มี owner-signoff automation
 - ไม่มีการ apply ledger/canon หรือรับรองบัญชีผู้อนุมัติ
 - World chronology ต้องระบุเอง; ไม่ได้สร้าง mapping จาก narration order
 - การตรวจ source hash/โครงสร้างไม่ใช่การเข้าใจความหมาย prose และไม่ยืนยัน gameplay/โครงสร้างอาคารจริง

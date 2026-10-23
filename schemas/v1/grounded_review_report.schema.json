@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/grounded_review_report.schema.json",
+  "title": "Source-bound grounded review report v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "kind", "packet_id", "draft_sha256", "findings", "coverage",
+    "limitations", "semantic_assessment"
+  ],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "kind": {"type": "string", "const": "GROUNDED_REVIEW_REPORT"},
+    "packet_id": {"$ref": "#/$defs/sha256"},
+    "draft_sha256": {"$ref": "#/$defs/sha256"},
+    "findings": {"type": "array", "maxItems": 200, "items": {"$ref": "#/$defs/finding"}},
+    "coverage": {"type": "string", "minLength": 1, "maxLength": 4000, "pattern": "\\S"},
+    "limitations": {
+      "type": "array", "minItems": 1, "maxItems": 100,
+      "items": {"type": "string", "minLength": 1, "maxLength": 1000, "pattern": "\\S"}
+    },
+    "semantic_assessment": {"type": "string", "const": "MODEL_DEPENDENT_NOT_AUTHENTICATED"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "minLength": 64, "maxLength": 64,
+                "pattern": "^[0-9a-f]{64}$", "not": {"pattern": "[^0-9a-f]"}},
+    "finding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "classification", "explanation", "severity", "draft_locator", "context_locator"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "\\S"},
+        "classification": {"enum": ["CONTRADICTION", "UNKNOWN"]},
+        "explanation": {"type": "string", "minLength": 1, "maxLength": 4000, "pattern": "\\S"},
+        "severity": {"enum": ["CRITICAL", "WARNING"]},
+        "draft_locator": {
+          "type": "object", "additionalProperties": false,
+          "required": ["start_line", "end_line", "quote"],
+          "properties": {
+            "start_line": {"type": "integer", "minimum": 1},
+            "end_line": {"type": "integer", "minimum": 1},
+            "quote": {"type": "string", "minLength": 1, "maxLength": 4000, "pattern": "\\S"}
+          }
+        },
+        "context_locator": {
+          "type": "object", "additionalProperties": false,
+          "required": ["pointer", "quote"],
+          "properties": {
+            "pointer": {"type": "string", "minLength": 1, "maxLength": 1024, "pattern": "^/"},
+            "quote": {"type": "string", "minLength": 1, "maxLength": 4000, "pattern": "\\S"}
+          }
+        }
+      }
+    }
+  }
+}
