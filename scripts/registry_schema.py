@@ -19,7 +19,8 @@ REGISTRY_KINDS = (
     'relationships', 'decisions', 'story_state',
 )
 SCHEMA_KINDS = (*REGISTRY_KINDS, 'ledger', 'state_history', 'house_references',
-                'scene_delta_claims', 'scene_delta_proposal')
+                'scene_delta_claims', 'scene_delta_proposal',
+                'grounded_review_packet', 'grounded_review_report')
 
 
 def _dependencies():
