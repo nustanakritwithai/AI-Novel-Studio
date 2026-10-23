@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "story_slug": "last-island-active",
+  "episode_id": "EP-003",
+  "status": "DRAFT_PROPOSED_NOT_CANON",
+  "approval": {
+    "author_plot_directive_id": "DEC-005",
+    "ingest_permission_id": "DEC-006",
+    "prose_author_accepted": false,
+    "github_reviewer_approved": false,
+    "may_apply_to_approved_ledger": false
+  },
+  "source": {
+    "path": "drafts/EP-003/CH-03-FULL-DRAFT.md",
+    "git_blob_sha": "b2a7fce4e9113a74c6fe8a3d54ce9f2d624bb452",
+    "scene_start": "SC-019",
+    "scene_end": "SC-026"
+  },
+  "clock": {
+    "real_world_exact_datetime": "UNKNOWN",
+    "game_world_exact_datetime": "UNKNOWN",
+    "sequence": [
+      {
+        "scene_id": "SC-018",
+        "realm": "VR_TO_REAL",
+        "relation": "EP-002 logout; already in author-accepted source"
+      },
+      {
+        "scene_id": "SC-019",
+        "realm": "REAL",
+        "relation": "immediately after EP-002 logout; dinner, gamer chat, video, sleep"
+      },
+      {
+        "scene_id": "SC-020",
+        "realm": "REAL_TO_VR",
+        "relation": "next day, new VR session"
+      },
+      {
+        "scene_id": "SC-021",
+        "realm": "VR",
+        "relation": "same second VR session, road scavenging"
+      },
+      {
+        "scene_id": "SC-022",
+        "realm": "VR",
+        "relation": "bow duel phase 1"
+      },
+      {
+        "scene_id": "SC-023",
+        "realm": "VR",
+        "relation": "bow duel phase 2, pistol revealed"
+      },
+      {
+        "scene_id": "SC-024",
+        "realm": "VR",
+        "relation": "six pistol shots, player dies"
+      },
+      {
+        "scene_id": "SC-025",
+        "realm": "VR",
+        "relation": "bed respawn at base"
+      },
+      {
+        "scene_id": "SC-026",
+        "realm": "VR",
+        "relation": "still in base, preparations and planning; no hunt yet"
+      }
+    ]
+  },
+  "shots": {
+    "opponent_character_id": "CHAR-006",
+    "pistol_item_id": "ITEM-017",
+    "ammo_item_id": "ITEM-022",
+    "scene_id": "SC-024",
+    "rounds_available_for_this_fight": 6,
+    "rounds_fired": 6,
+    "rounds_after_six_shots_in_this_fight": 0,
+    "other_ammunition_or_weapon": "UNKNOWN",
+    "hero_heard_click_after_sixth": true,
+    "hero_infers_gun_empty": true,
+    "shot_details_provenance": "AI_DRAFT_NOT_USER_LOCKED",
+    "sequence": [
+      {
+        "shot": 1,
+        "draft_effect": "hits concrete cover",
+        "target_character_id": null
+      },
+      {
+        "shot": 2,
+        "draft_effect": "hits old vehicle",
+        "target_character_id": null
+      },
+      {
+        "shot": 3,
+        "draft_effect": "hits protagonist's arm",
+        "target_character_id": "CHAR-001"
+      },
+      {
+        "shot": 4,
+        "draft_effect": "hits ground near protagonist",
+        "target_character_id": null
+      },
+      {
+        "shot": 5,
+        "draft_effect": "hits protagonist's torso",
+        "target_character_id": "CHAR-001"
+      },
+      {
+        "shot": 6,
+        "draft_effect": "kills protagonist",
+        "target_character_id": "CHAR-001"
+      }
+    ]
+  },
+  "after_sc026": {
+    "avatar": {
+      "character_id": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "alive_after_respawn": true,
+      "health_value": null,
+      "not_logged_out_after_return": true,
+      "active_objective": "PLAN_FIRST_HUNT",
+      "hunting_started": false
+    },
+    "base": {
+      "location_id": "LOC-009",
+      "footprint": "2x2",
+      "construction": "STONE_MAIN_SHELL",
+      "interior": "CRAFT_TABLE_SMALL_STORAGE_BED",
+      "stairs": true,
+      "upper_firing_platform": true,
+      "full_second_story_room": "NOT_ESTABLISHED",
+      "observed_intact_in_scene": "SC-020",
+      "unobserved_offline_activity": "UNKNOWN",
+      "new_extensions_ep003": false
+    },
+    "inventory": {
+      "material_count_in_storage": null,
+      "supplies_in_storage_remain": true,
+      "road_scrap_found_then_dropped": true,
+      "carried_bow_arrow_tool_dropped": true,
+      "returned_to_retrieve_road_loot": false,
+      "new_hunting_equipment_prepared": true,
+      "exact_new_craft_counts": null,
+      "protagonist_has_pistol": false,
+      "protagonist_acquired_gun_ammo": false
+    },
+    "resources_and_production": {
+      "oil_acquired_during_ep003": false,
+      "dark_crate_confirmed_oil": false,
+      "oil_crate_dark_box_identity": "UNKNOWN",
+      "furnace_built": false,
+      "iron_produced": false,
+      "bullets_crafted": false,
+      "animals_hunted": 0,
+      "meat_acquired_during_ep003": false,
+      "hide_acquired_during_ep003": false,
+      "animal_fat_acquired_during_ep003": false,
+      "oil_from_fat_produced": false
+    },
+    "rival": {
+      "character_id": "CHAR-006",
+      "same_as_old_opponents": "UNKNOWN",
+      "real_identity": "UNKNOWN",
+      "motivation": "UNKNOWN",
+      "health_after_duel": "UNKNOWN",
+      "further_ammo": "UNKNOWN"
+    },
+    "next_episode": {
+      "episode_id": "EP-004",
+      "status": "PROPOSED_NOT_DRAFTED",
+      "first_goal": "ออกล่าสัตว์ครั้งแรกเพื่อหาไขมันสัตว์เป็นทางเลือกผลิตน้ำมัน",
+      "start_location_id": "LOC-009",
+      "planned_area_id": "LOC-011",
+      "game_specific_fat_yield": "UNVERIFIED"
+    }
+  },
+  "editorial_checks": [
+    "Treat manuscript shot hit placement as proposed detail, but six fired rounds as locked user plot.",
+    "Do not infer total bag quantities from a null inventory ledger.",
+    "Do not treat unseen oil crate contents as oil.",
+    "Do not infer that observed intact base proves no one visited offline.",
+    "Never apply this snapshot to data/story_state.json or ledger/index.json automatically."
+  ]
+}
