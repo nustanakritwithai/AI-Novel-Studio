@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "project": "LAST ISLAND: WORLD CHAMPIONSHIP",
+  "character_id": "CHAR-001",
+  "revision": "CHAR-001-VISUAL-P01",
+  "design_approval": "PROPOSED",
+  "nationality": {
+    "value": "Thai",
+    "authority": "USER_DIRECTIVE",
+    "canon_fact": "FACT-017"
+  },
+  "permanent_identity": {
+    "proper_name": null,
+    "exact_age": null,
+    "occupation": null,
+    "city": null,
+    "dominant_hand": null
+  },
+  "visual_dna_proposed": {
+    "presentation": "young Thai male",
+    "apparent_age": "around 22, not actual age",
+    "height_cm": "around 174, unapproved",
+    "build": "lean with medium shoulders",
+    "skin_tone": "warm medium tan",
+    "face": "slightly elongated oval with softly defined jaw",
+    "eyes": "dark brown almond",
+    "hair": "short tousled black hair",
+    "mark": "one tiny mole below outer corner of character left eye",
+    "facial_hair": "none",
+    "tattoos": "none"
+  },
+  "behavior_proposed": {
+    "traits": "observant, practical, resource-conscious",
+    "blind_spot": "sometimes focuses on loot and underestimates ambush risk",
+    "dialogue": "short situational Thai conversational self-talk"
+  },
+  "mutable_state": [
+    "equipment",
+    "clothing",
+    "wounds",
+    "health",
+    "inventory",
+    "location",
+    "emotion",
+    "knowledge"
+  ],
+  "images": {
+    "git_thumbnail": "assets/CHAR-001_PORTRAIT_THUMB.webp",
+    "thumbnail_sha256": "80f13a614e0891a5346d5f146a7b8a8b7e51228a50cb0cab75524f980bbbcc97",
+    "thumbnail_kind": "low-resolution derivative of master sheet",
+    "full_reference_sha256": "13c27d082492c2babdcbf613e128df3c53f6e88e796a74b0e2c474d67a85d5d0",
+    "full_reference_committed": false
+  },
+  "rules": [
+    "Visual proposals are not permanent story facts until the author expressly locks them.",
+    "Do not infer actual age, city, occupation or in-story current weapon from promotional reference art.",
+    "Character face and facial mark should remain consistent in new art; costume and equipment vary by scene.",
+    "Shonen comic should be paged vertically as separate pages with editable Thai speech bubbles."
+  ]
+}

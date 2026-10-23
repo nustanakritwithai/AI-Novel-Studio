@@ -1,5 +1,7 @@
 # AI Novel Studio — reusable continuity engine
 
+**Active default story:** `last-island-active` — see [Last Island S1 + author-accepted chapter memory](docs/LAST_ISLAND_S1_MEMORY_TH.md). The original `last-island` dataset remains frozen as an E1 test example; chat author consent is kept distinct from authenticated GitHub reviewer approval.
+
 A continuity engine with isolated story datasets and explicit read-only GitHub provenance checks. E1 separates story roots, E2 adds versioned schemas/state replay, E3/E4 adds local review evidence and generic workflow contracts, and bounded E5 adds merged metadata/source verification plus deterministic rollup proposals. Start with the [Thai E7 onboarding guide](ENGINE_E7.md) and [fillable story input template](templates/STORY_INPUT_TH.md). The [E0–E7 readiness report](docs/ENGINE_READINESS.md) separates implemented capabilities from unmet gates, including authenticated human editorial approval and actual postmerge rollout. The [artifact-only postmerge workflow](docs/POSTMERGE_PROPOSALS.md) keeps its live trigger NOT_RUN until owner-authorized deployment. The engine does not generate prose or approve canon.
 
 Use Python 3.11+ and install the pinned validation dependencies from official PyPI:

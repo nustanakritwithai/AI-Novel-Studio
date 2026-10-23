@@ -11,5 +11,9 @@
     "Game mechanics marked UNVERIFIED are worldbuilding, not game-wide confirmed facts.",
     "The protagonist is Thai. Do not assign an unapproved age, real name, city, or precise year.",
     "Use approved history only as Canon, never infer approval from GitHub CI or draft status."
-  ]
+  ],
+  "world_state": {
+    "schema_version": 1,
+    "enabled": true
+  }
 }

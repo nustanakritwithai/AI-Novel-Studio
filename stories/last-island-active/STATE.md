@@ -25,3 +25,12 @@ This is **direct author consent in ChatGPT**, not an independently submitted Git
 - The chapter-two archer's identity is limited to the hero's inference; there is no verified identity outside that POV.
 - The world championship remains in a future story arc, never the opening episode.
 - Alternative earlier scene drafts in PR #11 and #12 were closed as superseded but preserved in GitHub history.
+
+## Current S1 + memory integration
+
+- Active studio default: last-island-active. Historical last-island remains byte-pinned and unchanged.
+- S1 enabled: 18 source-SHA256-pinned AFTER-scene observations with unknown real world times. The model does not replay or balance inventory.
+- Authored chapter memory: editorial/author_accepted_index.json and editorial/accepted/EP-001.md, EP-002.md; source bound to author decision DEC-004.
+- Chat-accepted prior-episode recaps can appear in context packs but are not the authenticated GitHub-review approved ledger; approved_through_scene remains null.
+- Low-resolution CHAR-001 portrait and proposed visual lock were versioned in the active story. Full-resolution reference remains outside GitHub.
+- Chapter 3 has no writer-supplied plot.

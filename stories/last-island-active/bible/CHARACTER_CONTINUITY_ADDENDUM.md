@@ -14,4 +14,4 @@
 - SC-014: learns two visible players share the area near the 4×4 base.
 - SC-018: believes stone + upper firing platform is safer than his initial wooden home, not an indestructible fort.
 
-Character appearance should be stabilized using the user's previously generated Thai hero image as an editorial reference; the image is not included in this repo as of this checkpoint, and no resemblance accuracy is claimed without its committed master.
+The derived low-resolution portrait is now in assets/CHAR-001_PORTRAIT_THUMB.webp; proposed visual details are in bible/CHAR-001_VISUAL_REFERENCE.md. The full-resolution master sheet remains outside GitHub, so it cannot yet be claimed as fully versioned.

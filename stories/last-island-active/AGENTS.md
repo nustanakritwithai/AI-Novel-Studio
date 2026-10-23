@@ -30,3 +30,13 @@ python scripts/storyctl.py --story last-island-active replay SC-018
 - 100-player global tournament belongs in a later arc; no early competitive opening.
 - SC-001/SC-002 alternative prose remains in PR #11/#12; this dataset adopts the two full chapter drafts in PR #13 as the **candidate literary edition**, not approved.
 - No silent edits to \`data/story_state.json\`, \`ledger/index.json\` or human-approved canon. A CI pass is not editorial approval.
+
+## Current Engine: S1 + author-accepted history
+
+- Default studio story is last-island-active; use --story last-island for the frozen E1 sample.
+- Read data/world_model.json for S1 source-anchored positions and item holders. S1 is PROPOSED observational data, not replay or certified truth.
+- Read editorial/author_accepted_index.json and editorial/accepted/EP-001.md and EP-002.md; their source Git hashes are bound to author receipt DEC-004.
+- Story Engine pack EP-002 includes the prior author-accepted EP-001 summary, labelled CHAT ACCEPTANCE, NOT NATIVE GITHUB REVIEW.
+- The user already accepted the exact chapter text in chat. Do not request duplicate consent or invent GitHub reviewer APPROVE; the approved-only ledger remains separate.
+- The portrait thumbnail and proposed visual values are in bible/CHAR-001_VISUAL_REFERENCE.md; only Thai nationality is currently locked.
+- See docs/LAST_ISLAND_S1_MEMORY_TH.md in the repository root.
