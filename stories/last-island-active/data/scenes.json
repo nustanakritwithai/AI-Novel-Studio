@@ -1664,6 +1664,423 @@
       ],
       "draft_path": "drafts/EP-004/SC-038.md",
       "prose_source": "CH-04-FULL-DRAFT.md — awaiting literary approval"
+    },
+    {
+      "id": "SC-039",
+      "episode_id": "EP-005",
+      "order": 1,
+      "title": "ค้อนที่หน้าประตู",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "item_ids": [
+        "ITEM-033",
+        "ITEM-017",
+        "ITEM-010",
+        "ITEM-011",
+        "ITEM-016"
+      ],
+      "canon_refs": [
+        "FACT-042",
+        "FACT-051"
+      ],
+      "mechanic_refs": [
+        "MECH-022"
+      ],
+      "source_refs": [],
+      "goal": "หลบจากประตูที่ถูกโจมตีแล้วขึ้นจุดยิง",
+      "conflict": "คู่ปรับสองคนใช้ค้อนและปืนยิงขู่ขณะพระเอกรอเตาเผา",
+      "beats": [
+        "ได้ยินเสียงค้อนและคำขู่พร้อมปืนพก",
+        "ย่องโดยไม่ส่งเสียงเท้าไปยังชั้นยิงเดิม",
+        "เห็นหนึ่งคนใช้ค้อนทุบประตูและอีกคนถือปืน"
+      ],
+      "outcome": "ได้ตำแหน่งซุ่มยิงเหนือศัตรูสองคน",
+      "requires_flags": [],
+      "effects_flags": {
+        "ep005_raiders_battering_door": true,
+        "ep005_hero_upper_ambush_ready": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-005/SC-039.md",
+      "prose_source": "EP-005/CH-05-FULL-DRAFT.md — AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST, separate GitHub review pending"
+    },
+    {
+      "id": "SC-040",
+      "episode_id": "EP-005",
+      "order": 2,
+      "title": "ธนูจากชั้นสอง",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "item_ids": [
+        "ITEM-010",
+        "ITEM-011",
+        "ITEM-017"
+      ],
+      "canon_refs": [
+        "FACT-043",
+        "FACT-044"
+      ],
+      "mechanic_refs": [
+        "MECH-023",
+        "MECH-024"
+      ],
+      "source_refs": [],
+      "goal": "หยุดผู้โจมตีคนแรกก่อนประตูถูกทำลาย",
+      "conflict": "คู่ต่อสู้อีกคนชักปืนพกขึ้นยิงสวน",
+      "beats": [
+        "เล็งศีรษะคนถือค้อนแล้วปล่อยลูกธนู",
+        "ยิงซ้ำทันทีจนคู่ปรับคนแรกตายหน้าประตู",
+        "ปืนพกของอีกคนยิงรัว พระเอกหลบหลังขอบหิน",
+        "อีกฝ่ายต้องเปลี่ยนกระสุนหลังยิงรัว"
+      ],
+      "outcome": "คู่ปรับคนแรกเสียชีวิต ส่วนพระเอกอยู่หลังกำแพงเตี้ย",
+      "requires_flags": [
+        "ep005_hero_upper_ambush_ready"
+      ],
+      "effects_flags": {
+        "ep005_first_raider_defeated": true,
+        "ep005_second_pistol_suppressing": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-005/SC-040.md",
+      "prose_source": "EP-005/CH-05-FULL-DRAFT.md — AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST, separate GitHub review pending"
+    },
+    {
+      "id": "SC-041",
+      "episode_id": "EP-005",
+      "order": 3,
+      "title": "จังหวะเปลี่ยนกระสุน",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "item_ids": [
+        "ITEM-011",
+        "ITEM-017"
+      ],
+      "canon_refs": [
+        "FACT-044"
+      ],
+      "mechanic_refs": [
+        "MECH-024"
+      ],
+      "source_refs": [],
+      "goal": "ตอบโต้คู่ต่อสู้อีกคนเมื่อปืนหยุดยิง",
+      "conflict": "ฝ่ายนั้นยังไม่ตายและหามุมหลบจากแนวยิงด้านบน",
+      "beats": [
+        "รอเสียงปืนเงียบลงขณะรีโหลด",
+        "ยิงธนูหนึ่งดอกถูกคนที่สองแต่ยังไม่ตาย",
+        "ฝ่ายนั้นวิ่งประชิดกำแพงและท้าให้พระเอกลงมาสู้"
+      ],
+      "outcome": "พระเอกหาวิธีลงไปโดยยังรักษาแต้มต่อ",
+      "requires_flags": [
+        "ep005_first_raider_defeated"
+      ],
+      "effects_flags": {
+        "ep005_second_raider_arrow_hit": true,
+        "ep005_second_raider_challenge": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-005/SC-041.md",
+      "prose_source": "EP-005/CH-05-FULL-DRAFT.md — AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST, separate GitHub review pending"
+    },
+    {
+      "id": "SC-042",
+      "episode_id": "EP-005",
+      "order": 4,
+      "title": "รับคำท้า",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-015",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "item_ids": [
+        "ITEM-010",
+        "ITEM-011",
+        "ITEM-017"
+      ],
+      "canon_refs": [
+        "FACT-045"
+      ],
+      "mechanic_refs": [
+        "MECH-024"
+      ],
+      "source_refs": [],
+      "goal": "ใช้ศพคนแรกให้ได้อาวุธใหม่โดยอีกฝ่ายไม่รู้",
+      "conflict": "ศัตรูคนที่สองมีปืนและคาดว่าตนเหนือกว่าธนู",
+      "beats": [
+        "กระโดดลงหน้าบ้านใกล้ศพแรก",
+        "หยิบปืนพกจากศพคนแรก",
+        "แกล้งยิงธนูหลายดอกให้คิดว่าตนยังไม่มีปืน",
+        "ฝ่ายตรงข้ามออกจากแนวกำแพงหามุมยิงโดยไม่ระวังที่กำบัง"
+      ],
+      "outcome": "พระเอกซ่อนการมีปืนพกและเตรียมดักสวน",
+      "requires_flags": [
+        "ep005_second_raider_challenge"
+      ],
+      "effects_flags": {
+        "ep005_first_pistol_acquired": true,
+        "ep005_bow_bait_worked": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-005/SC-042.md",
+      "prose_source": "EP-005/CH-05-FULL-DRAFT.md — AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST, separate GitHub review pending"
+    },
+    {
+      "id": "SC-043",
+      "episode_id": "EP-005",
+      "order": 5,
+      "title": "ปืนที่ไม่คิดว่าจะมี",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-015",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "item_ids": [
+        "ITEM-017",
+        "ITEM-022",
+        "ITEM-032"
+      ],
+      "canon_refs": [
+        "FACT-046",
+        "FACT-047"
+      ],
+      "mechanic_refs": [
+        "MECH-024"
+      ],
+      "source_refs": [],
+      "goal": "จัดการคู่ปรับคนที่สองและเก็บของกลับบ้าน",
+      "conflict": "ต้องยิงแลกกับปืนของอีกฝ่ายซึ่งกำลังออกจากที่กำบัง",
+      "beats": [
+        "ทั้งสองคนยิงสวนพร้อมกัน",
+        "พระเอกยังยืนได้และยิงซ้ำจนศัตรูตาย",
+        "ตรวจของจากสองศพ ได้ปืนพก 2 กระบอกโดยรวม และกระสุน 100 นัด พร้อมชุดหนังพื้นฐาน",
+        "นำของทั้งหมดกลับเข้าบ้านและปิดประตู"
+      ],
+      "outcome": "คู่ปรับสองคนตายจากการปะทะ พระเอกได้ปืนสองกระบอกและกระสุน 100 นัด",
+      "requires_flags": [
+        "ep005_first_pistol_acquired"
+      ],
+      "effects_flags": {
+        "ep005_second_raider_defeated": true,
+        "ep005_two_pistols_acquired": true,
+        "ep005_100_rounds_looted": true,
+        "ep005_leather_looted": true
+      },
+      "open_questions": [
+        "จำนวนกระสุนที่ใช้ในไฟต์และกระสุนในแม็กกาซีนยังไม่ทราบ"
+      ],
+      "draft_path": "drafts/EP-005/SC-043.md",
+      "prose_source": "EP-005/CH-05-FULL-DRAFT.md — AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST, separate GitHub review pending"
+    },
+    {
+      "id": "SC-044",
+      "episode_id": "EP-005",
+      "order": 6,
+      "title": "ไม่ไว้ใจความเงียบ",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-017",
+        "ITEM-022",
+        "ITEM-008"
+      ],
+      "canon_refs": [
+        "FACT-047",
+        "FACT-048",
+        "FACT-051"
+      ],
+      "mechanic_refs": [
+        "MECH-025"
+      ],
+      "source_refs": [],
+      "goal": "ระวังการกลับมาของคู่ปรับหลังชนะ",
+      "conflict": "คู่ปรับสามารถเกิดใหม่และบ้านยังเป็นเป้าหมาย",
+      "beats": [
+        "วางปืนสองกระบอก ตรวจของที่ได้",
+        "เก็บสัมภาระไม่จำเป็นลงกล่อง เหลือหนึ่งปืนไว้กับตัวและอีกกระบอกสำรอง",
+        "กลับขึ้นจุดยิงและเฝ้าดูแนวป่า",
+        "เห็นเงาคนสองคนเดินกลับมาหาบ้าน"
+      ],
+      "outcome": "ตรวจพบคู่ปรับกลับมาก่อนถึงประตู",
+      "requires_flags": [
+        "ep005_two_pistols_acquired"
+      ],
+      "effects_flags": {
+        "ep005_upper_watch_started": true,
+        "ep005_raiders_returned": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-005/SC-044.md",
+      "prose_source": "EP-005/CH-05-FULL-DRAFT.md — AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST, separate GitHub review pending"
+    },
+    {
+      "id": "SC-045",
+      "episode_id": "EP-005",
+      "order": 7,
+      "title": "พวกมันยังไม่ยอมจบ",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "item_ids": [
+        "ITEM-017",
+        "ITEM-022"
+      ],
+      "canon_refs": [
+        "FACT-048",
+        "FACT-049"
+      ],
+      "mechanic_refs": [
+        "MECH-025",
+        "MECH-026"
+      ],
+      "source_refs": [],
+      "goal": "หยุดผู้เล่นสองคนก่อนเข้ามาถึงประตูอีกครั้ง",
+      "conflict": "ฝ่ายตรงข้ามเริ่มเคลื่อนเข้ามาและยังอาจอาฆาต",
+      "beats": [
+        "ทั้งสองขยับเข้าหาบ้านอย่างระวังมากขึ้น",
+        "พระเอกยิงปืนขู่หนึ่งนัดจากชั้นยิงไปยังพื้นที่ว่างด้านหน้า",
+        "คู่ปรับมองขึ้นมาแล้วหยุดอยู่ห่างออกไป"
+      ],
+      "outcome": "ยังไม่มีศัตรูตายเพิ่ม แต่ทั้งสองหยุดการเข้าประชิด",
+      "requires_flags": [
+        "ep005_raiders_returned"
+      ],
+      "effects_flags": {
+        "ep005_warning_round_fired": true,
+        "ep005_raiders_stopped": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-005/SC-045.md",
+      "prose_source": "EP-005/CH-05-FULL-DRAFT.md — AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST, separate GitHub review pending"
+    },
+    {
+      "id": "SC-046",
+      "episode_id": "EP-005",
+      "order": 8,
+      "title": "ระยะที่ไม่มีใครยอมเข้าใกล้",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "item_ids": [
+        "ITEM-017"
+      ],
+      "canon_refs": [
+        "FACT-049"
+      ],
+      "mechanic_refs": [
+        "MECH-026"
+      ],
+      "source_refs": [],
+      "goal": "รักษาความได้เปรียบโดยไม่ต้องยิงสังหารเพิ่ม",
+      "conflict": "ทั้งสองฝ่ายจับตากันและไม่รู้เจตนาคู่ต่อสู้",
+      "beats": [
+        "ศัตรูทั้งสองหยุดอยู่ไกลและมองบ้านพักหนึ่ง",
+        "พระเอกไม่ยิงซ้ำ ไม่ออกจากที่กำบัง",
+        "อีกฝ่ายค่อย ๆ หันหลังกลับเข้าแนวต้นไม้"
+      ],
+      "outcome": "คู่ปรับล่าถอยจากบ้านโดยไม่มีการยิงเพิ่ม",
+      "requires_flags": [
+        "ep005_raiders_stopped"
+      ],
+      "effects_flags": {
+        "ep005_raiders_retreated": true,
+        "ep005_additional_kills": false
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-005/SC-046.md",
+      "prose_source": "EP-005/CH-05-FULL-DRAFT.md — AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST, separate GitHub review pending"
+    },
+    {
+      "id": "SC-047",
+      "episode_id": "EP-005",
+      "order": 9,
+      "title": "คราวหน้าคงไม่ง่ายแบบนี้",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-017",
+        "ITEM-016"
+      ],
+      "canon_refs": [
+        "FACT-050",
+        "FACT-051"
+      ],
+      "mechanic_refs": [
+        "MECH-025"
+      ],
+      "source_refs": [],
+      "goal": "สรุปบทเรียนจากชัยชนะและวางทิศทางระวังอนาคต",
+      "conflict": "พระเอกรู้ว่าผู้เล่นที่กลับมาอาจฉลาดและอันตรายกว่าเดิม",
+      "beats": [
+        "ทบทวนจังหวะค้อน เสียงรีโหลด และการออกจากที่กำบังของศัตรู",
+        "รู้ว่าได้เปรียบอาวุธและพื้นที่ ไม่ใช่ว่าเก่งจนใครสู้ไม่ได้",
+        "คิดว่าต้องพัฒนาบ้านและการป้องกันมากกว่าเดิม แต่ยังไม่ได้เริ่มสร้าง",
+        "เตาเผายังทำงานระหว่างที่เฝ้าจุดยิง"
+      ],
+      "outcome": "จบบทพร้อมปมเสริมกำแพง/ป้องกันฐาน ยังไม่สร้างสิ่งใหม่",
+      "requires_flags": [
+        "ep005_raiders_retreated"
+      ],
+      "effects_flags": {
+        "ep005_base_defense_motivation": true,
+        "ep005_furnace_still_running": true,
+        "ep005_new_fortification_built": false
+      },
+      "open_questions": [
+        "สถานะม้าและเวลาเตาเผาเสร็จยัง UNKNOWN"
+      ],
+      "draft_path": "drafts/EP-005/SC-047.md",
+      "prose_source": "EP-005/CH-05-FULL-DRAFT.md — AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST, separate GitHub review pending"
     }
   ]
 }
