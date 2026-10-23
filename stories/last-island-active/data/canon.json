@@ -677,6 +677,156 @@
       "scope": "FUTURE_BASE_4X4_TARGET_NOT_BUILT",
       "source_id": null,
       "notes": "DEC-011; see BASE_EXPANSION_4X4_TARGET.md. Locked DESIGN does not mean the house is built, ring walkable already, or any construction materials were acquired."
+    },
+    {
+      "id": "FACT-068",
+      "category": "episode",
+      "statement": "พระเอกเริ่มบทที่ 7 หลังกลับจากโรงกลั่นถึงฐานหิน 2×2 โดยเดินเท้า ไม่มีม้าตัวแรกอีกแล้ว และยังมีปืนพกสองกระบอก ชุดหนัง บัตรสีเขียว น้ำมันบางส่วนและของจากการเก็บตามถนน",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-069",
+      "category": "episode",
+      "statement": "พระเอกใช้วัสดุที่สะสมไว้จากการฟาร์มก่อนหน้าอัปเกรดระบบเรียนรู้สูตรที่โต๊ะคราฟต์และเรียนรู้สูตรปืนกลเบาได้จริงในบทที่ 7 แต่ยังไม่ได้สร้างปืนกลเบา",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-070",
+      "category": "episode",
+      "statement": "ในสูตรปืนกลเบาตามนิยายต้องใช้สปริง 2 ชิ้น พระเอกตรวจพบว่ามีสปริงที่สะสมไว้ในกล่องแล้ว 1 ชิ้น จึงยังขาด 1 ชิ้น ไม่มีการพบสปริงเพิ่มหรือใช้สปริงไปในบทที่ 7",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-071",
+      "category": "episode",
+      "statement": "พระเอกตัดสินใจว่าก่อนออกไปหาสปริงอีกชิ้น ต้องเริ่มขยายและเพิ่มการป้องกันบ้านที่เคยถูกบุก",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-072",
+      "category": "episode",
+      "statement": "พระเอกวางผังฐานเป้าหมาย 4×4 หน่วยพื้น โดยรักษาบ้านเดิม 2×2 เป็นแกนกลาง 4 ช่องและพื้นที่รอบนอก 12 ช่องเป็นทางเดินชั้นล่างหนึ่งหน่วยพื้นกว้าง ไม่กั้นทางเดิน มีผนังด้านข้างสองแนวตามแบบ DEC-011",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-073",
+      "category": "episode",
+      "statement": "ก่อนเริ่มก่อสร้างพบว่าวัสดุที่มีไม่พอสร้างบ้านเป้าหมายทั้งหมดพร้อมกัน และแยกของสำคัญอย่างสปริงและบัตรเขียวไม่ให้ถูกใช้กับการก่อสร้าง",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-074",
+      "category": "episode",
+      "statement": "ใน SC-064 เริ่มวางพื้นทางเดินรอบบ้านเดิมเพียงบางช่องและทดลองเดิน แต่ยังวนรอบไม่ได้ ไม่ได้สร้างกำแพงนอกเต็มวง",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-075",
+      "category": "episode",
+      "statement": "ใน SC-065 ต่อพื้นเป็นช่วง ๆ เก็บทรัพยากรก่อสร้างเพิ่มจากบริเวณใกล้ฐานและเดินทางไปกลับหลายเที่ยว โดยยังมีช่วงทางเดินขาดอยู่และไม่ได้ออกหาสปริง",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-076",
+      "category": "episode",
+      "statement": "ใน SC-066 สร้างพื้นทางเดินวงรอบชั้นล่างครบทั้ง 12 ช่อง เชื่อมถึงกันโดยไม่มีผนังกั้น และพระเอกเดินทดสอบวนรอบแกนเดิม 2×2 ได้จริงครบทุกด้าน",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-077",
+      "category": "episode",
+      "statement": "ใน SC-067 เริ่มสร้างกำแพงขอบนอก 4×4 เพียงบางช่วง โดยยังไม่ปิดครบรอบ ไม่ได้กำหนดตำแหน่งประตูและทางขึ้นชั้นใหม่ และยังรักษาวงทางเดินชั้นล่างให้เดินครบได้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-078",
+      "category": "episode",
+      "statement": "เมื่อจบบทที่ 7 ฐานยังไม่เป็นบ้าน 4×4 สูงสองชั้นที่เสร็จสมบูรณ์ ชั้นยิงขอบนอกชั้นสองยังไม่สร้าง ชั้นยิงที่พระเอกขึ้นไปเฝ้าคือชั้นยิงเดิมเหนือแกน 2×2",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-079",
+      "category": "episode",
+      "statement": "เสาหลักกลางบ้านหนึ่งต้นยังเป็นเป้าหมายการออกแบบ ไม่ได้ยืนยันว่ามีการติดตั้งแล้ว; วัสดุกำแพงนอก จำนวน/ตำแหน่งประตู บันไดใหม่ หลังคาและการป้องกันเหนือห้องในยังไม่กำหนดครบ",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-080",
+      "category": "episode",
+      "statement": "ในบทที่ 7 ของใช้เดิมในบ้าน ได้แก่เตียง กล่องเก็บของ โต๊ะคราฟต์และเตาเผา ยังอยู่ภายในแกนบ้านเดิม ไม่มีฉากย้ายไปวงทางเดินหรือรับเหล็ก/ดินปืนจากเตาเผา",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-081",
+      "category": "episode",
+      "statement": "สิ้นบทที่ 7 พระเอกยังขาดสปริงหนึ่งชิ้น ไม่มีปืนกลเบาของตัวเอง งานพื้นทางเดิน 12 ช่องเสร็จแล้ว แต่กำแพงนอกยังสร้างเพียงบางส่วนและชั้นยิงกรอบนอกยังไม่เริ่ม",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-007_WORKING_STORY",
+      "source_id": null,
+      "notes": "Source plot and author-chat approved prose for ingest; no GitHub reviewer-approved ledger or real-game verification."
+    },
+    {
+      "id": "FACT-082",
+      "category": "editorial",
+      "statement": "ระยะเวลาและจำนวนวัสดุที่ใช้ก่อสร้าง ตำแหน่งกระเบื้องพื้นลำดับแรก ชนิดวัสดุกำแพงนอก และวิธีเรียนรู้สูตรตามเกมจริงยังไม่กำหนดแน่ชัด",
+      "status": "PROPOSED",
+      "origin": "ASSISTANT_DRAFT",
+      "scope": "EP-007",
+      "source_id": null,
+      "notes": "Keep quantities UNKNOWN except floor ring 12, core 4, 2 springs needed and 1 in storage."
     }
   ]
 }
