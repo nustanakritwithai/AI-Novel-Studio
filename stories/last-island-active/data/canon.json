@@ -667,6 +667,16 @@
       "scope": "EP-006",
       "source_id": null,
       "notes": "Never claim user locked exact timings, zombie kills, oil quantities or motorcycle identities."
+    },
+    {
+      "id": "FACT-067",
+      "category": "future_construction_design",
+      "statement": "แบบเป้าหมายการขยายฐานเป็น 4×4 ชั้นล่างมีแกนบ้านเดิม 2×2 กลางผังและแนวทางเดินโล่งรอบนอก 12 ช่องต่อกันครบวงกว้างหนึ่งหน่วยพื้น สามารถเดินวนทั้งสี่ด้านได้โดยไม่มีผนังกั้นวงทางเดิน; ยังไม่ได้สร้างในเนื้อเรื่องถึงจบบทที่ 6",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "FUTURE_BASE_4X4_TARGET_NOT_BUILT",
+      "source_id": null,
+      "notes": "DEC-011; see BASE_EXPANSION_4X4_TARGET.md. Locked DESIGN does not mean the house is built, ring walkable already, or any construction materials were acquired."
     }
   ]
 }

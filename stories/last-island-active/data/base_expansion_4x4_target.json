@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "story_slug": "last-island-active",
+  "blueprint_id": "BASE-TARGET-4X4-001",
+  "title": "ฐาน 4×4 ครอบบ้านเดิม 2×2, ทางเดินโล่งชั้นล่างต่อเนื่องรอบวง",
+  "approval_kind": "AUTHOR_DIRECTIVE_FOR_FUTURE_CONSTRUCTION",
+  "design_decision_id": "DEC-011",
+  "canon_reference_id": "FACT-067",
+  "operational_status": "PLANNED_NOT_BUILT",
+  "existing_state_at_scene": "SC-058",
+  "existing_structure": {
+    "footprint": [
+      2,
+      2
+    ],
+    "main_wall": "STONE",
+    "existing_upper_firing_platform": true,
+    "outer_4x4_ring_built": false
+  },
+  "ground_floor": {
+    "footprint": [
+      4,
+      4
+    ],
+    "cell_units": "FLOOR_TILE_NOT_METERS",
+    "rows": 4,
+    "columns": 4,
+    "plan": [
+      [
+        "P",
+        "P",
+        "P",
+        "P"
+      ],
+      [
+        "P",
+        "C",
+        "C",
+        "P"
+      ],
+      [
+        "P",
+        "C",
+        "C",
+        "P"
+      ],
+      [
+        "P",
+        "P",
+        "P",
+        "P"
+      ]
+    ],
+    "core_marker": "C",
+    "corridor_marker": "P",
+    "core_cells": 4,
+    "corridor_cells": 12,
+    "corridor_width_floor_units": 1,
+    "corridor_layout": "OPEN_SINGLE_CONTINUOUS_LOOP",
+    "corridor_can_circulate_all_four_sides": true,
+    "corridor_no_internal_partition_walls": true,
+    "all_corners_connected": true,
+    "internal_roof_status": "TBD_NOT_INFERRED",
+    "inner_original_2x2_walls_remain": true
+  },
+  "defensive_walls": {
+    "side_wall_lines": 2,
+    "outer_wall": "4X4_PERIMETER",
+    "inner_wall": "ORIGINAL_2X2_PERIMETER",
+    "sequence_from_outside": [
+      "OUTER_WALL_4X4",
+      "GROUND_FLOOR_RING_CORRIDOR",
+      "INNER_WALL_2X2",
+      "INTERIOR_CORE"
+    ],
+    "not_a_fixed_explosive_charge_count": true
+  },
+  "upper_floor": {
+    "planned_total_stories": 2,
+    "outer_perimeter_firing_area": true,
+    "perimeter_parapet": true,
+    "parapet_is_third_defense_wall": false,
+    "central_floor_distribution": "TBD",
+    "stairs_position": "TBD",
+    "connection_routes": "TBD",
+    "over_inner_core_layered_protection_goal": true,
+    "ceiling_and_roof_cross_section": "TBD",
+    "third_habitable_story": false
+  },
+  "main_support_column": {
+    "target_count": 1,
+    "position": "GEOMETRIC_CENTER",
+    "additional_columns_specified": false
+  },
+  "design_not_fixed": [
+    "wall materials for additions",
+    "doors count",
+    "outer-door coordinates",
+    "core-door coordinates",
+    "stairs location",
+    "access route onto upper firing area",
+    "room partitions other than ground open loop",
+    "roof geometry and covering",
+    "construction order and time",
+    "triangle extensions not part of current target"
+  ],
+  "construction_story_requirements": {
+    "must_have_scene_events_before_becomes_built": true,
+    "ring_ready_only_when_all_twelve_corridor_cells_are_contiguous": true,
+    "never_project_target_into_current_scene_state": true,
+    "existing_items_remain_where_story_put_them_until_new_scene_says_otherwise": true
+  },
+  "do_not_modify": [
+    "data/story_state.json",
+    "ledger/index.json",
+    "author_memory/index.json"
+  ],
+  "notes": "4x4/2x2 are floor units. Open means no circulation partitions, not necessarily uncovered. This file is an author-directed blueprint only."
+}

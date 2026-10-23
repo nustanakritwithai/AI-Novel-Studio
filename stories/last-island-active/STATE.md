@@ -77,3 +77,11 @@ This is **direct author consent in ChatGPT**, not an independently submitted Git
 - Refinery machine starts a timed run; **NO refined oil collected by the hero**. 3 motorcyclists with light machine guns arrive and one kills first horse CHAR-008; the hero deliberately retreats rather than fighting three armed players and walks home.
 - At end hero has no mount, still owns card and oil already collected, original stone 2×2 base intact; refinery controller/processed-oil outcome UNVERIFIED, ammo and quantities UNKNOWN.
 - Proposed snapshot `data/draft_continuity_ep006.json` is not the same as approved `data/story_state.json` and does not update formal ledger or source-bound author memory.
+
+## Author-directed future base blueprint update — DEC-011 (NOT BUILT)
+
+- Target **4×4 footprint** encloses original stone **2×2** core. Ground-floor area of 12 surrounding tiles is one OPEN LOOP corridor, one floor tile wide, continuous around all four sides and corners; walkability of ring is mandatory when the target is completed.
+- Two lateral walls: 4×4 outer perimeter and 2×2 inner original. Planned story-2 upper firing perimeter has a low parapet; one central support pillar only.
+- No new opening/door/stair/roof/material or third story details have been author-specified. An open corridor does not conclusively mean roofless.
+- Current scene at end EP-006 SC-058: original stone **2×2** remains, 4×4 target **not constructed**. No new scene, inventory or world-state changes arise from the blueprint update.
+- Durable spec: `bible/BASE_EXPANSION_4X4_TARGET.md`, structured target: `data/base_expansion_4x4_target.json`, editorial source DEC-011 and FACT-067. Formal approved ledger remains separate.

@@ -80,3 +80,11 @@ python scripts/storyctl.py --story last-island-active replay SC-018
 - The motorcyclists' refinery control or later receipt of the processed oil is UNKNOWN, not a verified fact. The bat-wielding opponent's connection to CHAR-002 is UNKNOWN.
 - End EP-006: hero alive at original stone 2×2, on foot, first horse dead, green card retained. Precise HP, gun ammunition, zombie body count, refinery results and quantities UNKNOWN. Distinguish fiction rules from real game evidence (UNKNOWN ≠ PASS).
 - EP-006 prose still DRAFT; authenticated GitHub approved ledger, `data/story_state.json` and EP-001/002 accepted prose remain guarded.
+
+## AUTHOR DESIGN DIRECTIVE DEC-011 — Walkable 4×4 ground ring (future only)
+
+- Required floor target: 4×4 footprint / 2×2 original core / **12 open ground-level corridor cells forming a fully connected walkable loop** 1 floor tile wide. The continuous ring must allow walking around all sides and corners without partitions.
+- Defensive outer 4×4 wall and existing inner 2×2 wall give two lateral barriers separated by the walkable corridor (not a fixed number of raid hits).
+- Keep one central pillar only. Outer upper level is a low-parapet firing perimeter; don't invent enclosed rooms, extra pillars, triangle additions, detailed roof, extra stair positions or new doors.
+- DESIGN ≠ CONSTRUCTED: current last manuscript SC-058 still has only the original stone 2×2 with previous upper firing position. No ring/4×4 external wall has been built in the story yet.
+- Always read `bible/BASE_EXPANSION_4X4_TARGET.md` and `data/base_expansion_4x4_target.json` before drafting later base-construction scenes; track when each tile, wall and circulation connection actually becomes available.
