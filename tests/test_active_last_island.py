@@ -57,6 +57,64 @@ class ActiveLastIslandAcceptance(unittest.TestCase):
         self.assertIn("FACT-029", content)
         self.assertIn("DRAFT", content)
 
+    def test_ep003_source_bound_proposed_world_state_is_not_canon(self):
+        import hashlib, json
+        draft = json.loads((ROOT/"data"/"draft_continuity_ep003.json").read_text(encoding="utf-8"))
+        manuscript = (ROOT/draft["source"]["path"]).read_bytes()
+        sha = hashlib.sha1(f"blob {len(manuscript)}".encode("ascii")+b"\\x00"+manuscript).hexdigest()
+        self.assertEqual(draft["source"]["git_blob_sha"], sha)
+        self.assertEqual(draft["status"], "DRAFT_PROPOSED_NOT_CANON")
+        self.assertIs(draft["approval"]["prose_author_accepted"], False)
+        self.assertIs(draft["approval"]["may_apply_to_approved_ledger"], False)
+        self.assertEqual(draft["after_sc026"]["base"]["footprint"], "2x2")
+        self.assertTrue(draft["after_sc026"]["base"]["upper_firing_platform"])
+        self.assertFalse(draft["after_sc026"]["base"]["new_extensions_ep003"])
+        self.assertEqual(draft["clock"]["sequence"][1]["realm"], "REAL")
+        self.assertEqual(draft["clock"]["sequence"][2]["realm"], "REAL_TO_VR")
+        self.assertEqual(draft["after_sc026"]["avatar"]["location_id"], "LOC-009")
+        self.assertFalse(draft["after_sc026"]["resources_and_production"]["furnace_built"])
+        self.assertFalse(draft["after_sc026"]["resources_and_production"]["oil_acquired_during_ep003"])
+        self.assertEqual(draft["after_sc026"]["resources_and_production"]["animals_hunted"], 0)
+        self.assertTrue(draft["after_sc026"]["inventory"]["supplies_in_storage_remain"])
+        self.assertFalse(draft["after_sc026"]["inventory"]["returned_to_retrieve_road_loot"])
+
+    def test_ep003_six_shots_and_draft_item_integrity(self):
+        import json
+        db=novelctl.load(ROOT)
+        entries=db["inventory_ledger"]["entries"]
+        pistol=[x for x in entries if x["id"]=="INV-029"]
+        self.assertEqual(len(pistol), 1)
+        self.assertEqual(pistol[0]["owner_id"],"CHAR-006")
+        self.assertEqual(pistol[0]["item_id"],"ITEM-022")
+        self.assertEqual(pistol[0]["operation"],"SPEND")
+        self.assertEqual(pistol[0]["quantity"],6)
+        draft=json.loads((ROOT/"data"/"draft_continuity_ep003.json").read_text(encoding="utf-8"))
+        self.assertEqual(draft["shots"]["rounds_fired"],6)
+        self.assertEqual(len(draft["shots"]["sequence"]),6)
+        self.assertEqual([x["shot"] for x in draft["shots"]["sequence"]],list(range(1,7)))
+        manuscript=(ROOT/"drafts"/"EP-003"/"SC-024.md").read_text(encoding="utf-8")
+        self.assertEqual(manuscript.count("**ปัง!**"),6)
+        scene=next(s for s in db["scenes"]["scenes"] if s["id"]=="SC-024")
+        self.assertTrue(scene["effects_flags"]["ep003_six_pistol_shots_fired"])
+        self.assertEqual(scene["rounds_used_in_encounter"],6)
+        self.assertNotIn("CHAR-001",[x["owner_id"] for x in pistol])
+        self.assertEqual(json.loads((ROOT/"ledger/index.json").read_text(encoding="utf-8"))["episodes"],[])
+        self.assertIsNone(db["story_state"]["approved_through_scene"])
+
+    def test_ep003_dashboard_and_ep004_handoff_are_not_stale(self):
+        ui=(ROOT/"index.html").read_text(encoding="utf-8")
+        self.assertNotIn("Story Spine · ตอนที่ 1",ui)
+        self.assertIn("data.episodes.episodes.length",ui)
+        self.assertIn("s.episode_id",ui)
+        self.assertIn("EP-003-CONTINUITY-AUDIT.md",ui)
+        self.assertIn("EP-003",ui)
+        for path in ["bible/BASE_TIMELINE.md",
+                     "research/EP003_GAMEPLAY_GAPS.md",
+                     "drafts/READING_ORDER_CH-01_03.md",
+                     "drafts/EP-003/EP-003-CONTINUITY-AUDIT.md",
+                     "plot/episodes/EP-004-HANDOFF-PROPOSED.md"]:
+            self.assertTrue((ROOT/path).is_file(),path)
+
     def test_historical_example_not_default_modified(self):
         self.assertTrue((ROOT.parent/"last-island"/"data"/"canon.json").is_file())
         self.assertEqual((ROOT/"story.json").exists(),True)
