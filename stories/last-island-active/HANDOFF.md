@@ -92,3 +92,11 @@ PR #11 and #12 were closed as superseded; main contains the selected two-chapter
 - Zombies CHAR-013 are aggregated NPC population, number and respawn unverified. Hero cleared observed area but did not prove entire region permanently safe. Ammo spent on zombies and bat ambush UNKNOWN; pistols from EP-005 still two, no extra pistol, automatic weapon or motorcycle gained.
 - Hero retreated outside refinery and reached original 2×2 stone house **ON FOOT**. His suspicion that the crew controls the refinery or has a large fuel supply is **INFERENCE**, not established ownership.
 - No current proof of furnace finished iron/gunpowder or completed newer base upgrades; no EP-007 plot is yet written/approved. Author-directed plot is not equivalent to author-approved prose or GitHub reviewer-approved Canon.
+
+## Latest author floor-plan directive — 4×4 GROUND FLOOR OPEN LOOP (NOT BUILT)
+
+- The author specified the **future 4×4** encasing the original 2×2. All **12 perimeter floor cells** on **ground floor** form one **open, connected, continuous corridor** one floor unit wide. It MUST be possible to walk a complete loop around the 2×2 core, including corners, with no cross-corridor partition blocking the ring.
+- This does NOT add a third wall line: side defenses are outer 4×4 wall / ring corridor / original 2×2 wall / inner room. Door connections from outside and from corridor to the core are still TBD.
+- Upper perimeter of story 2 is intended as a firing walk with low parapet; one central support pillar; no triangle extensions; roof and internal stairs details remain unspecified.
+- The target **has not been constructed** anywhere up to SC-058. Future scenes must record precise construction steps and keep partial progress partial.
+- Source-of-truth plan: `bible/BASE_EXPANSION_4X4_TARGET.md`; machine-readable grid: `data/base_expansion_4x4_target.json`; author decision DEC-011 / design fact FACT-067. Story-approved state remains unchanged.

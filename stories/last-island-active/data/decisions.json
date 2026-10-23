@@ -175,6 +175,17 @@
         "FACT-065"
       ],
       "notes": "Exact prose not approved, species/drops/game refinery rules UNVERIFIED. Do not claim the motorcycle group is confirmed owner of the refinery."
+    },
+    {
+      "id": "DEC-011",
+      "summary": "ผู้เขียนกำหนดแบบเป้าหมายชั้นล่างของบ้านหุ้ม 4×4: แกนบ้านเดิม 2×2 อยู่ตรงกลาง พื้นที่ขอบรอบนอก 12 ช่อง (หนา 1 หน่วยพื้น) เป็นทางเดินโล่งเชื่อมกันครบทั้ง 4 ด้าน เดินวนรอบแกนกลางได้โดยไม่มีผนังแบ่งตัดทาง; ยังคงกำแพงสองแนวและเป็นแบบอนาคตที่ยังไม่ได้สร้าง",
+      "status": "USER_DESIGN_DIRECTIVE",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-067"
+      ],
+      "date": "2026-10-23",
+      "notes": "Target blueprint only, not a completed EP007/EP006 scene. See bible/BASE_EXPANSION_4X4_TARGET.md and data/base_expansion_4x4_target.json; do not change official story_state or approved-only ledger."
     }
   ]
 }

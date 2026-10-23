@@ -103,7 +103,7 @@
   "approval_evidence_ref": null,
   "template_source": "../house-atlas-v1/house_template_proposed.json",
   "design_basis": "AUTHOR_CHAT_DIRECTIVE_NOT_CONSTRUCTION_EVIDENCE",
-  "reference_baseline_commit": "6e1d8bdaff6747bce390a71c6640956380cf92e1",
+  "reference_baseline_commit": "1e2640d81da59ad89ab60716c927b8fcb5bab083",
   "runtime_loaded": false,
   "construction_event_created": false,
   "target_blueprint": {
@@ -198,7 +198,9 @@
       "door_locations": null,
       "stair_locations": null,
       "world_completion_time": null
-    }
+    },
+    "frame_width_representation": "NOT_DUPLICATED_HERE_SEE_MERGED_AUTHOR_DESIGN_RECORD",
+    "inner_core_placement_representation": "UNPLACED_IN_THIS_PROPOSAL;SEE_MERGED_DESIGN_GRID"
   },
   "author_directives": [
     {
@@ -231,7 +233,7 @@
   "unknowns": [
     "World construction/reveal time and applicable scene",
     "Exact door/stair routes, locations and counts; inner-room layout. The ground-floor ring loop is a confirmed target.",
-    "Metric dimensions, precise frame/core placement, floor/roof cross-section and support",
+    "Metric dimensions and floor/roof cross-section/support remain unknown. Grid counts, width and core layout are not duplicated here; see the merged author-design record.",
     "Materials, strength tiers, damage, costs, durations and game feasibility",
     "Actual pillar placement, centrality metric, extent and relocation",
     "POV knowledge of the future target and any expansion completion"
@@ -246,5 +248,16 @@
     },
     "scope": "TARGET_CIRCULATION_ONLY_NOT_CONSTRUCTION_OR_POV_EVIDENCE",
     "screenshot_copied": false
+  },
+  "merged_author_design_record": {
+    "source_pr": 28,
+    "merge_commit": "1e2640d81da59ad89ab60716c927b8fcb5bab083",
+    "target_ref": "../../../data/base_expansion_4x4_target.json",
+    "guide_ref": "../../../bible/BASE_EXPANSION_4X4_TARGET.md",
+    "decision_ref": "DEC-011",
+    "design_fact_ref": "FACT-067",
+    "scope": "FUTURE_BASE_4X4_TARGET_NOT_BUILT",
+    "detail_precedence": "MERGED_STORY_DESIGN_RECORD_FOR_GRID_DETAIL;_THIS_CARD_IS_COARSE_REFERENCE_ONLY",
+    "does_not_establish_construction_or_human_editorial_approval": true
   }
 }

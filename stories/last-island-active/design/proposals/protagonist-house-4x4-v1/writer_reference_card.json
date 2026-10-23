@@ -59,7 +59,8 @@
       "door_locations": null,
       "stair_locations": null,
       "world_completion_time": null
-    }
+    },
+    "merged_author_design_record_ref": "../../../data/base_expansion_4x4_target.json"
   },
   "as_built_snapshot": {
     "world_construction_time": "UNKNOWN",
@@ -89,13 +90,15 @@
   "source_refs": [
     "./target_v01.json#/author_directives",
     "../../../data/house_references.json",
-    "./target_v01.json#/ground_floor_ring_clarification"
+    "./target_v01.json#/ground_floor_ring_clarification",
+    "../../../data/base_expansion_4x4_target.json",
+    "../../../bible/BASE_EXPANSION_4X4_TARGET.md"
   ],
   "diagram_refs": [],
   "unknowns": [
     "World construction/reveal time and applicable scene",
     "Exact door/stair routes, locations and counts; inner-room layout. The ground-floor ring loop is a confirmed target.",
-    "Metric dimensions, precise frame/core placement, floor/roof cross-section and support",
+    "Metric dimensions and floor/roof cross-section/support remain unknown. Grid counts, width and core layout are not duplicated here; see the merged author-design record.",
     "Materials, strength tiers, damage, costs, durations and game feasibility",
     "Actual pillar placement, centrality metric, extent and relocation",
     "POV knowledge of the future target and any expansion completion"
