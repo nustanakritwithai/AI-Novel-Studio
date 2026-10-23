@@ -104,6 +104,14 @@ class Ep004DraftContinuityTests(unittest.TestCase):
                              and x["operation"] in {"CRAFT","GAIN","FIND","LOOT"} for x in ep4))
         self.assertTrue(all(x["quantity"] is None or x["quantity"] >= 1 for x in ep4))
 
+    def test_root_dashboard_points_to_active_story_without_changing_cli_default(self):
+        workspace = ROOT.parents[1]
+        homepage = (workspace / "index.html").read_text(encoding="utf-8")
+        self.assertIn("stories/last-island-active/index.html", homepage)
+        self.assertIn("stories/last-island/index.html", homepage)
+        studio = json.loads((workspace / "studio.json").read_text(encoding="utf-8"))
+        self.assertEqual(studio["default_story"], "last-island")
+
     def test_pack_and_dashboard_can_continue_ep004(self):
         errors, _ = story_engine.validate(ROOT)
         self.assertEqual(errors, [])
