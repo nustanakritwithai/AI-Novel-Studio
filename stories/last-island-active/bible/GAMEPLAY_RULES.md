@@ -32,3 +32,17 @@
 | Meat, hide and fat from animals / fat→oil (`MECH-016`) | UNVERIFIED | USER_PLOT_DIRECTIVE | First actual hunt begins only after EP-003; yield and recipe quantity UNKNOWN |
 
 All new mechanics have `source_ids: []` because no selected-mode evidence was verified. The narrator may use author-specified fictional rules while claims about actual Last Island remain unverified.
+
+## EP-005 — two return encounters (all real-game mechanics UNVERIFIED)
+
+| In-story rule | Reference | Editorial constraint |
+|---|---|---|
+| Hammer and handgun at 2×2 stone base entrance | MECH-022 | Threatened/battered doorway but no quantified destruction in EP005 |
+| Bow fight using preexisting upper cover | MECH-023 | Two opponents defeated across the first clash, then both return alive for a later warning |
+| Pistol reload window and bow/pistol tactical contrast | MECH-024 | Exact pistol fight cartridge expenditure UNKNOWN |
+| Respawning opponents returning after defeat | MECH-025 | No fixed time-to-respawn or arsenal inferred |
+| One warning shot causes a standoff and retreat | MECH-026 | Character choice, not a universal fear mechanic |
+
+User-accepted story loot: **two pistols total and 100 rounds observed on looting**. A later one-round warning is separate; final ammunition stock remains UNKNOWN because earlier use and loaded magazines are unspecified.
+
+No new layered fortifications, completed furnace iron/gunpowder, or permanent horse stable appear in EP005. Story scene acceptance in chat is distinct from authenticated GitHub reviewer approval and independent gameplay verification.
