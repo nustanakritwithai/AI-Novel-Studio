@@ -987,7 +987,8 @@
       ],
       "item_ids": [
         "ITEM-017",
-        "ITEM-010"
+        "ITEM-010",
+        "ITEM-022"
       ],
       "canon_refs": [
         "FACT-026"
@@ -1011,11 +1012,14 @@
         "ep003_pistol_revealed"
       ],
       "effects_flags": {
-        "ep003_killed_by_pistol": true
+        "ep003_killed_by_pistol": true,
+        "ep003_six_pistol_shots_fired": true
       },
       "open_questions": [],
       "draft_path": "drafts/EP-003/SC-024.md",
-      "prose_source": "CH-03-FULL-DRAFT.md — drafted not author accepted"
+      "prose_source": "CH-03-FULL-DRAFT.md — drafted not author accepted",
+      "rounds_used_in_encounter": 6,
+      "source_detail_status": "SHOT_COUNT_LOCKED; HIT_LOCATIONS_DRAFT"
     },
     {
       "id": "SC-025",
@@ -1060,7 +1064,9 @@
       "effects_flags": {
         "ep003_respawned": true,
         "ep003_road_plan_abandoned": true,
-        "ep003_carried_loot_lost": true
+        "ep003_carried_loot_lost": true,
+        "ep003_storage_safe": true,
+        "ep003_loot_recovered": false
       },
       "open_questions": [],
       "draft_path": "drafts/EP-003/SC-025.md",
@@ -1113,7 +1119,13 @@
         "ep003_hunt_plan_ready": true,
         "ep003_hunting_started": false,
         "ep003_furnace_built": false,
-        "ep003_oil_obtained": false
+        "ep003_oil_obtained": false,
+        "ep003_animals_hunted": false,
+        "ep003_animal_fat_obtained": false,
+        "ep003_meat_obtained": false,
+        "ep003_hide_obtained": false,
+        "ep003_iron_produced": false,
+        "ep003_ammo_crafted": false
       },
       "open_questions": [
         "ชนิดสัตว์/จำนวนไขมัน/สูตรจริง UNKNOWN; ยังไม่ได้ล่าสัตว์"
