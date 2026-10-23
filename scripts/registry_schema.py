@@ -18,7 +18,7 @@ REGISTRY_KINDS = (
     'scenes', 'episodes', 'events', 'inventory_ledger', 'threads',
     'relationships', 'decisions', 'story_state',
 )
-SCHEMA_KINDS = (*REGISTRY_KINDS, 'ledger', 'state_history')
+SCHEMA_KINDS = (*REGISTRY_KINDS, 'ledger', 'state_history', 'house_references')
 
 
 def _dependencies():
