@@ -61,7 +61,7 @@ class ActiveLastIslandAcceptance(unittest.TestCase):
         import hashlib, json
         draft = json.loads((ROOT/"data"/"draft_continuity_ep003.json").read_text(encoding="utf-8"))
         manuscript = (ROOT/draft["source"]["path"]).read_bytes()
-        sha = hashlib.sha1(f"blob {len(manuscript)}".encode("ascii")+b"\\x00"+manuscript).hexdigest()
+        sha = hashlib.sha1(f"blob {len(manuscript)}".encode("ascii")+b"\x00"+manuscript).hexdigest()
         self.assertEqual(draft["source"]["git_blob_sha"], sha)
         self.assertEqual(draft["status"], "DRAFT_PROPOSED_NOT_CANON")
         self.assertIs(draft["approval"]["prose_author_accepted"], False)
