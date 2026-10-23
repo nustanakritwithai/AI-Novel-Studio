@@ -25,3 +25,10 @@ This is **direct author consent in ChatGPT**, not an independently submitted Git
 - The chapter-two archer's identity is limited to the hero's inference; there is no verified identity outside that POV.
 - The world championship remains in a future story arc, never the opening episode.
 - Alternative earlier scene drafts in PR #11 and #12 were closed as superseded but preserved in GitHub history.
+
+## Phase 1 — source-bound author memory (2026-10-23)
+
+- `author_memory/index.json` binds two derived recaps to the exact author-accepted Git blobs of EP-001 and EP-002 and decision DEC-004.
+- `storyctl.py --story last-island-active memory` can show both recaps for continuing the story; `pack EP-002` includes only the older EP-001 recap.
+- The source manuscripts are accepted in ChatGPT, but each summary is **DERIVED / NOT_SEPARATELY_REVIEWED** and does not represent a GitHub `APPROVE` review.
+- Separate verified `ledger/index.json` remains empty, and `approved_through_scene` remains null. S1 World State and default-story changes belong to later phases.

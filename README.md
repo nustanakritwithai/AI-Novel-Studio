@@ -2,6 +2,8 @@
 
 A continuity engine with isolated story datasets and explicit read-only GitHub provenance checks. E1 separates story roots, E2 adds versioned schemas/state replay, E3/E4 adds local review evidence and generic workflow contracts, and bounded E5 adds merged metadata/source verification plus deterministic rollup proposals. Start with the [Thai E7 onboarding guide](ENGINE_E7.md) and [fillable story input template](templates/STORY_INPUT_TH.md). The [E0–E7 readiness report](docs/ENGINE_READINESS.md) separates implemented capabilities from unmet gates, including authenticated human editorial approval and actual postmerge rollout. The [artifact-only postmerge workflow](docs/POSTMERGE_PROPOSALS.md) keeps its live trigger NOT_RUN until owner-authorized deployment. The engine does not generate prose or approve canon.
 
+**Phase 1 author-accepted memory (opt-in):** [Thai guide](docs/AUTHOR_ACCEPTED_MEMORY_TH.md). Source-blob-pinned recaps from author-accepted manuscripts can appear as a clearly separate section in scoped packs, with their local ChatGPT attestation label; they are NOT authenticated GitHub-review-approved ledger records. Use `python scripts/storyctl.py --story last-island-active memory` to review the two accepted-source recaps, or `... memory --before EP-002` to avoid future episode leakage. No behavior changes for unconfigured stories.
+
 Use Python 3.11+ and install the pinned validation dependencies from official PyPI:
 
 ```bash
@@ -15,6 +17,8 @@ python scripts/storyctl.py --story my-story doctor --out .local/doctor.json
 `new` creates empty metadata registries, an empty approved ledger, and generic guidance. It writes no novel content and never overwrites an existing story. An empty scaffold has no target scenes: humans must supply the required story/scene metadata before target-specific commands can succeed. `story.json` uses versioned JSON. Gameplay mechanics/sources are an optional extension.
 
 The optional [S1 world model](docs/WORLD_STATE_S1_TH.md) adds source-bound declarations of character positions, item holders, room containment and explicit world-time coordinates. Enable `world_state: {"schema_version": 1, "enabled": true}` in `story.json` and supply `data/world_model.json`; the existing `check` command validates it. This model does not replay events, answer world-state queries, change v1 knowledge/context, or establish human approval. Existing stories remain unchanged when the option is absent or disabled.
+
+The [S2 world preview](docs/WORLD_STATE_S2_TH.md) optionally adds `data/world_history.json` with explicit baseline binding, coverage and movement/custody deltas. `storyctl --story my-story world-preview --clock CLOCK-MAIN --tick 2 --boundary AFTER` produces a read-only PROPOSED result at an explicit world cursor. UNKNOWN facts and failed preconditions remain unresolved; no partial result or canon update is emitted. Local APPROVED declarations and matching evidence hashes do not authenticate human approval. The preview is separate from v1 replay and context packs; broad queries/maps, genre invariants and extraction remain deferred.
 
 After the selected story has valid human-authored metadata and a readable target draft:
 

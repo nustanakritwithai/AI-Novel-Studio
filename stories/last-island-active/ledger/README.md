@@ -34,3 +34,9 @@ python scripts/story_engine.py proposal EP-001 --out /tmp/EP-001-proposal.md
 ```
 
 No database, API key or external service required. Draft proposals belong in a PR, not in this approved-only index.
+
+## Source-bound author-accepted memory (separate approval lane)
+
+`author_memory/index.json` is an **independent local declaration index** for manuscripts the author accepted in ChatGPT. Each recap is derived from a Git-blob-pinned source and verified at read time, but its local evidence is not an authenticated GitHub PR `APPROVE` review. The `ledger/index.json` standard above remains unchanged: no record may be inserted there unless its real GitHub reviewer provenance exists.
+
+Use `python scripts/storyctl.py --story last-island-active memory` or `pack EP-002` and see `docs/AUTHOR_ACCEPTED_MEMORY_TH.md`.

@@ -4,6 +4,12 @@
 **Latest author decision:** DEC-004 — "อนุมัติ" in ChatGPT, 2026-10-23.
 **Source of accepted text:** merged [PR #13](https://github.com/nustanakritwithai/AI-Novel-Studio/pull/13), source head `3d0b3117b2a4a4029fe815899e5c7a28e69eb56f`, merge commit `5d32a9ff95b3b64953a792be3bd7fef078343a1f`.
 
+## Phase 1 memory workflow
+
+Run `python scripts/storyctl.py --story last-island-active memory` before planning future episodes. This reads the author-accepted **source-bound summaries** of EP-001 and EP-002. For a scene or episode context, use `pack EP-002`, which includes only previously accepted episodes; `memory --before EP-002` intentionally excludes EP-002.
+
+The trusted source is still the source manuscript pinned in `editorial/AUTHOR_APPROVAL_2026-10-23.json` and `author_memory/index.json`. These summaries are locally derived, not independently human-reviewed. They do **not** fill the GitHub-review-approved `ledger/index.json` and do not reconstruct approved `story_state`. Read `docs/AUTHOR_ACCEPTED_MEMORY_TH.md` for these two separate trust levels.
+
 ## Read first
 
 1. `AGENTS.md`, `story.json`, `data/canon.json` and `data/characters.json`.
