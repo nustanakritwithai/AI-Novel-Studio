@@ -172,6 +172,46 @@
       "story_requirement": "LOCKED",
       "source_ids": [],
       "notes": "Fictional system menus; no exact ingredients, quantities, physical formulas or timers validated. Outputs queued but NOT ready."
+    },
+    {
+      "id": "MECH-022",
+      "title": "ผู้เล่นใช้ค้อนทุบประตูบ้านหินและปืนพกยิงกดดันชั้นยิง",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "User fiction scene; door HP, actual raid vulnerability and hammer damage UNVERIFIED"
+    },
+    {
+      "id": "MECH-023",
+      "title": "ธนูระยะสูงยิงศีรษะและยิงซ้ำในการต่อสู้ PvP",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Outcome directed by author; actual headshot multiplier and bow PvP damage UNVERIFIED"
+    },
+    {
+      "id": "MECH-024",
+      "title": "ปืนพกยิงเร็วแต่มีจังหวะเปลี่ยนกระสุน และที่กำบังลดความเสี่ยง",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Timing and reload rule user fictional; number of bullets in first duel UNKNOWN"
+    },
+    {
+      "id": "MECH-025",
+      "title": "ผู้เล่นถูกกำจัดแล้วเกิดใหม่และสามารถกลับมาหาฐานได้",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "User-directed repeat rival event; respawn timer/return-distance/external gameplay version UNVERIFIED"
+    },
+    {
+      "id": "MECH-026",
+      "title": "ยิงปืนขู่ออกจากที่กำบังชั้นสองแล้วคู่ต่อสู้หยุดและถอย",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Observed response is narrative choice, not a game-wide fear mechanic. One warning shot in scene."
     }
   ]
 }

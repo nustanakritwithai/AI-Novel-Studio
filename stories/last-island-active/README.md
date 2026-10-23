@@ -8,6 +8,7 @@ Thai survival fiction manuscripts and their scene/continuity data: chapters 1–
 | EP-002 | ธนูแรกและกำแพงหิน | 10 | Author accepted | DRAFT pending distinct GitHub-review provenance |
 | EP-003 | หกนัดบนถนน | 8 | User-directed plot; prose approval pending | DRAFT, not approved |
 | EP-004 | วันยาวนานของพรานมือใหม่ | 12 | User-directed plot; prose approval pending | DRAFT, not approved |
+| EP-005 | ค้อนที่หน้าประตู | 9 | Revised ending accepted for ingest in chat | DRAFT; GitHub-reviewed Canon pending |
 
 ## Phase 1 — author-accepted source memory
 
@@ -22,13 +23,13 @@ The approved ledger is intentionally empty because PR #13 has no independently s
 ## Quick verification
 ```bash
 python scripts/storyctl.py --story last-island-active check
-python scripts/storyctl.py --story last-island-active pack EP-004
+python scripts/storyctl.py --story last-island-active pack EP-005
 python -m unittest discover -s tests -v
 ```
 
-For continued writing follow `HANDOFF.md`, `data/draft_continuity_ep003.json` and `bible/BASE_TIMELINE.md`. The active dashboard at `index.html` lists all four episode manuscripts instead of showing only the opening.
+For continued writing follow `HANDOFF.md`, `data/draft_continuity_ep003.json` and `bible/BASE_TIMELINE.md`. The active dashboard at `index.html` lists all five episode manuscripts instead of showing only the opening.
 
-For direct chapter reading use [reading order chapters 1–4](drafts/READING_ORDER_CH-01_04.md) and [EP-003 continuity audit](drafts/EP-003/EP-003-CONTINUITY-AUDIT.md). Game mechanics are fiction directives unless verified against actual selected-server gameplay; item counts remain UNKNOWN.
+For direct chapter reading use [reading order chapters 1–5](drafts/READING_ORDER_CH-01_05.md) and [EP-003 continuity audit](drafts/EP-003/EP-003-CONTINUITY-AUDIT.md). Game mechanics are fiction directives unless verified against actual selected-server gameplay; item counts remain UNKNOWN.
 
 ## EP-004 source-bound draft
 
@@ -38,3 +39,12 @@ For direct chapter reading use [reading order chapters 1–4](drafts/READING_ORD
 - 12 scenes SC-027–038; 38 scenes/events in all four registered episodes
 - At end: base 2×2 repaired and furnace built; animal-fat oil prepared; iron/gunpowder material processing **IN PROGRESS**, no finished bullets or gunpowder, horse captured but no stable built
 - `data/story_state.json`, `ledger/index.json` and accepted-source `author_memory/index.json` remain unchanged
+
+## EP-005 latest — accepted for ingest, not approved-only ledger
+
+- Full joined manuscript: `drafts/EP-005/CH-05-FULL-DRAFT.md`, 9 scenes SC-039–SC-047.
+- User accepted the revised ending in chat and asked to add it; the formal engine registry remains DRAFT while GitHub reviewer provenance is separate.
+- Draft source-bound snapshot: `data/draft_continuity_ep005.json` and [plot/handoff](plot/episodes/EP-005.md).
+- Two known recurring opponents CHAR-004/005 are defeated, then return again but withdraw following one warning round. New loot: two pistols in total, basic leather gear, 100 observed rounds; exact ammunition left at chapter end UNKNOWN.
+- House remains 2×2 stone with open upper firing platform and working furnace. Finished iron/gunpowder ammunition is not acquired in EP-005; fortification upgrades are only a thought.
+- Engine approved-only ledger and official story_state are unchanged. Existing accepted-source memory is still EP-001/002 only.

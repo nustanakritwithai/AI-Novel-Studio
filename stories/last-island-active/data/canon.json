@@ -417,6 +417,116 @@
       "scope": "EP-004",
       "source_id": null,
       "notes": "Not a permanent user-locked fact; do not infer game-wide rules."
+    },
+    {
+      "id": "FACT-042",
+      "category": "episode",
+      "statement": "ขณะที่พระเอกยังรอเตาเผาทำงานในฐานหิน 2×2 คู่ปรับสองคนจากบทที่ 2 และ 4 กลับมาทุบประตูด้วยค้อน ยิงปืนขู่ และตะโกนข่มขู่ว่าพระเอกไม่รอด",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-005",
+      "source_id": null,
+      "notes": "User-directed events and accepted chat narrative for EP005. Not a claim of external game verification or GitHub-reviewed Canon."
+    },
+    {
+      "id": "FACT-043",
+      "category": "episode",
+      "statement": "พระเอกย่องเงียบขึ้นจุดยิงชั้นสองขณะคนสองคนสนใจประตู แล้วยิงธนูเล็งศีรษะศัตรูคนแรกและยิงซ้ำจนเสียชีวิตหน้าบ้าน",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-005",
+      "source_id": null,
+      "notes": "User-directed events and accepted chat narrative for EP005. Not a claim of external game verification or GitHub-reviewed Canon."
+    },
+    {
+      "id": "FACT-044",
+      "category": "episode",
+      "statement": "ศัตรูคนที่สองใช้ปืนพกยิงรัวกดดันชั้นสอง พระเอกหลบหลังที่กำบัง รอช่วงเปลี่ยนกระสุนจึงยิงธนูสวนหนึ่งดอกถูกคู่ต่อสู้แต่ไม่ตาย; คู่ต่อสู้ถอยประชิดกำแพงบ้านแล้วท้าให้ลงไปสู้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-005",
+      "source_id": null,
+      "notes": "User-directed events and accepted chat narrative for EP005. Not a claim of external game verification or GitHub-reviewed Canon."
+    },
+    {
+      "id": "FACT-045",
+      "category": "episode",
+      "statement": "พระเอกกระโดดลงมาบริเวณศพแรกและหยิบปืนพกจากศพ แล้วแกล้งใช้ธนูยิงหลอกหลายดอก ทำให้ศัตรูมั่นใจอาวุธตนได้เปรียบและวิ่งออกหามุมยิงโดยละเลยที่กำบัง",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-005",
+      "source_id": null,
+      "notes": "User-directed events and accepted chat narrative for EP005. Not a claim of external game verification or GitHub-reviewed Canon."
+    },
+    {
+      "id": "FACT-046",
+      "category": "episode",
+      "statement": "เมื่อคู่ต่อสู้ออกมาเห็นพระเอกถือปืนพก ทั้งคู่ยิงสวนกัน พระเอกยังมีพลังมากกว่าและยิงจนศัตรูคนที่สองเสียชีวิต",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-005",
+      "source_id": null,
+      "notes": "User-directed events and accepted chat narrative for EP005. Not a claim of external game verification or GitHub-reviewed Canon."
+    },
+    {
+      "id": "FACT-047",
+      "category": "episode",
+      "statement": "หลังจัดการศัตรูสองคนได้ พระเอกค้นของ ได้ชุดหนังพื้นฐาน ปืนพกทั้งหมด 2 กระบอก และกระสุนปืน 100 นัดในขณะเก็บของ แล้วยกของเข้าบ้าน",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-005",
+      "source_id": null,
+      "notes": "User-directed events and accepted chat narrative for EP005. Not a claim of external game verification or GitHub-reviewed Canon."
+    },
+    {
+      "id": "FACT-048",
+      "category": "episode",
+      "statement": "ช่วงจบบทพระเอกไม่ไว้ใจความเงียบจึงกลับขึ้นไปเฝ้าที่กำบังชั้นสอง พบคู่ปรับสองคนกลับมาอีกครั้งและกำลังเดินเข้าหาฐาน",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-005",
+      "source_id": null,
+      "notes": "User-directed events and accepted chat narrative for EP005. Not a claim of external game verification or GitHub-reviewed Canon."
+    },
+    {
+      "id": "FACT-049",
+      "category": "episode",
+      "statement": "พระเอกยิงปืนขู่หนึ่งนัดจากชั้นสอง ฝ่ายตรงข้ามเห็นว่ามีอาวุธและตำแหน่งได้เปรียบจึงหยุดอยู่ห่างออกไป เฝ้ามองพักหนึ่งก่อนถอยกลับ โดยไม่มีการต่อสู้อีก",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-005",
+      "source_id": null,
+      "notes": "User-directed events and accepted chat narrative for EP005. Not a claim of external game verification or GitHub-reviewed Canon."
+    },
+    {
+      "id": "FACT-050",
+      "category": "episode",
+      "statement": "ท้ายบทพระเอกตระหนักว่ารอดเพราะอาวุธและพื้นที่ได้เปรียบ; หากคู่ปรับเก่งขึ้นครั้งต่อไปอาจไม่รอด จึงเริ่มคิดถึงการเสริมการป้องกันฐานในอนาคต",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-005",
+      "source_id": null,
+      "notes": "User-directed events and accepted chat narrative for EP005. Not a claim of external game verification or GitHub-reviewed Canon."
+    },
+    {
+      "id": "FACT-051",
+      "category": "episode",
+      "statement": "ช่วงเหตุการณ์บทที่ 5 เตาเผายังทำงานอยู่ ไม่ยืนยันว่าได้เหล็ก ดินปืน หรือกระสุนจากคิวแปรรูปที่เริ่มในบทที่ 4 ระหว่างฉากที่เล่านี้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-005",
+      "source_id": null,
+      "notes": "User-directed events and accepted chat narrative for EP005. Not a claim of external game verification or GitHub-reviewed Canon."
+    },
+    {
+      "id": "FACT-052",
+      "category": "editorial",
+      "statement": "รายละเอียดยิงสองครั้งบริเวณจุดยิง แรงกระสุน ขอบหิน ปืนพกของใครในแต่ละจังหวะ รวมทั้งระยะเวลาการกลับมาเป็นการจัดฉากตามร่างนิยาย ต้องไม่อนุมานตัวเลขอื่นเกินหลักฐาน",
+      "status": "PROPOSED",
+      "origin": "ASSISTANT_DRAFT",
+      "scope": "EP-005",
+      "source_id": null,
+      "notes": "Keep first/second raider specific account mapping UNKNOWN. Exact pistol duel ammo expend unknown."
     }
   ]
 }

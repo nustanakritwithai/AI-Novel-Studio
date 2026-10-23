@@ -10,9 +10,10 @@ The human author explicitly said **“อนุมัติ”** in ChatGPT afte
 | EP-002 | ธนูแรกและกำแพงหิน | 10 | APPROVED IN CHAT | PENDING GITHUB REVIEW PROVENANCE |
 | EP-003 | หกนัดบนถนน | 8 | PLOT LOCKED, PROSE DRAFT | NOT IN APPROVED LEDGER |
 | EP-004 | วันยาวนานของพรานมือใหม่ | 12 | PLOT LOCKED, PROSE DRAFT | NOT IN APPROVED LEDGER |
+| EP-005 | ค้อนที่หน้าประตู | 9 | AUTHOR CHAT ACCEPTED FOR INGEST | DRAFT / GITHUB REVIEW PENDING |
 
 - The original `stories/last-island/` E1 historical example remains unchanged.
-- The active dataset is `stories/last-island-active/`: 38 scene drafts and 38 event records across EP-001–EP-004 (18 older scenes plus 20 new DRAFT).
+- The active dataset is `stories/last-island-active/`: 47 scene drafts and 47 event records across EP-001–EP-005 (18 older scenes plus 20 new DRAFT).
 - The author accepted the basic enclosed 2×2 wooden shelter at the end of chapter 1, which enables the chapter 2 opening inside the house; the chapter 2 candidate concludes with a stone base, a second-level firing platform, and the protagonist logging off.
 - See `editorial/AUTHOR_APPROVAL_2026-10-23.json` and `data/decisions.json` (DEC-004) for exact source hashes and decision source.
 
@@ -58,3 +59,12 @@ This is **direct author consent in ChatGPT**, not an independently submitted Git
 - Candidate end state: player alive in stone 2×2 base; horse nearby without stable; wall breach repaired; oil produced from hunted fat, furnace present, **iron/gunpowder/bullets processing output NOT ready**; unknown stolen supplies and exact quantities.
 - EP-004 DRAFT does NOT alter `data/story_state.json` approved marker or `ledger/index.json`, and is absent from author-accepted memory.
 - Exact source-bound proposal `data/draft_continuity_ep004.json`; wildlife `data/wildlife_ep004.json`; real-game rules UNVERIFIED.
+
+## EP-005 source-bound working story state — 2026-10-23
+
+- Source: `drafts/EP-005/CH-05-FULL-DRAFT.md` assembled from 9 scenes SC-039–047, with revised final guard scene accepted via user's “ok ครับเอาเนื้อเรื่องขึ้น engine เลย” (DEC-009).
+- First renewed siege of base: two known rivals CHAR-004/005 return, are both defeated after bow/pistol confrontation; hero now has two recovered pistols, basic leather gear and 100 observed rounds from loot.
+- Later both return once more; hero posts watch on upper platform and fires **one warning shot**. Opponents retreat without more defeats. Hero becomes worried that next time they will be more skilled and considers base fortification.
+- Base is still original **2×2 stone** with open upper platform, bed, storage, crafting table and operating furnace; no new defensive layers or stable built. Ready iron/gunpowder/furnace-made bullets are not shown collected.
+- Unknowns remain: which account held hammer/pistol, remaining ammunition after duel and warning, horse's location at this time, furnace finish time, precise door damage.
+- Full manuscript has author CHAT acceptance for integrating as working story. It is **not** independently GitHub-reviewed formal approval; official `data/story_state.json.approved_through_scene`, `ledger/index.json`, `author_memory/index.json` are left unchanged.

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "story_slug": "last-island-active",
+  "episode_id": "EP-005",
+  "status": "AUTHOR_CHAT_ACCEPTED_WORKING_DRAFT_NOT_APPROVED_LEDGER",
+  "source": {
+    "path": "drafts/EP-005/CH-05-FULL-DRAFT.md",
+    "git_blob_sha": "5dce7134bc2a4982f301d7d0a71635d1631f7d3a",
+    "predecessor": "EP-004"
+  },
+  "editorial": {
+    "author_accepted_for_ingest": true,
+    "decision_id": "DEC-009",
+    "github_review_approval_verified": false,
+    "official_story_state_not_updated": true
+  },
+  "scenes": [
+    "SC-039",
+    "SC-040",
+    "SC-041",
+    "SC-042",
+    "SC-043",
+    "SC-044",
+    "SC-045",
+    "SC-046",
+    "SC-047"
+  ],
+  "end_state": {
+    "protagonist_id": "CHAR-001",
+    "protagonist_alive": true,
+    "location_id": "LOC-009",
+    "game_session": "VR",
+    "house_footprint": "2x2",
+    "house_material": "STONE",
+    "upper_firing_platform": true,
+    "defensive_extensions_built": false,
+    "furnace_present": true,
+    "furnace_processing_status": "RUNNING_NOT_HARVESTED",
+    "rivals": [
+      "CHAR-004",
+      "CHAR-005"
+    ],
+    "first_encounter_rivals_defeated": 2,
+    "second_arrival_rivals_retreated": 2,
+    "additional_defeats_after_return": 0,
+    "protagonist_has_pistols": 2,
+    "observed_ammunition_loot_rounds": 100,
+    "warning_rounds_after_loot": 1,
+    "remaining_ammunition": "UNKNOWN",
+    "leather_gear_acquired": true,
+    "gear_quantity": "UNKNOWN",
+    "horse_status": "NOT_OBSERVED_IN_EP005",
+    "fortification_improvement": "CONSIDERED_NOT_BUILT"
+  },
+  "unknowns": [
+    "Raider identities cannot be mapped to individual hammer/pistol roles.",
+    "Other pistol ammunition spent during encounter unknown.",
+    "Magazine vs loose ammunition and final amount unknown.",
+    "Real-world gameplay formulas unverified.",
+    "Exact timing/ready status of smelter goods unknown; no output withdrawn.",
+    "Other horse details after preceding episode not observed."
+  ],
+  "next_episode_seed": "Hero considers stronger home fortification, not yet built.",
+  "provenance_note": "User accepted revised ending and requested engine ingest in chat; not a submitted GitHub APPROVE review or official Canon."
+}
