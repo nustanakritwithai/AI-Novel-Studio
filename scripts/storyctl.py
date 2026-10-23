@@ -103,7 +103,7 @@ def new_story(workspace: Path, slug: str, title: str | None = None) -> Path:
             shutil.rmtree(staging)
 
 
-def _emit_private_artifact(workspace: Path, out: Path | None, output: str) -> None:
+def _emit_private_artifact(workspace: Path, out: Path | None, output: str, *, exclusive: bool = False) -> None:
     """Keep new review/diagnostic artifacts separate from all story sources."""
     if out is None:
         print(output)
@@ -123,19 +123,24 @@ def _emit_private_artifact(workspace: Path, out: Path | None, output: str) -> No
             handle.write(output.encode('utf-8'))
         # Replacing the directory entry also preserves any source file that an
         # existing artifact happened to hardlink, unlike truncating that inode.
-        os.replace(temporary, destination)
+        if exclusive:
+            # Atomic no-replace admission: revision artifacts never overwrite
+            # either their predecessor or a different candidate at this path.
+            os.link(temporary, destination)
+        else:
+            os.replace(temporary, destination)
     finally:
         if temporary is not None and temporary.exists():
             temporary.unlink()
     print('Wrote private local artifact:', out)
 
 
-def _offline_evidence(path: Path) -> tuple[dict, dict]:
+def _offline_evidence(path: Path, max_bytes: int = 8 * 1024 * 1024) -> tuple[dict, dict]:
     """Load bounded untrusted evidence; its digest never authenticates it."""
     with path.open('rb') as handle:
-        raw = handle.read(8 * 1024 * 1024 + 1)
-    if len(raw) > 8 * 1024 * 1024:
-        raise ValueError('Offline evidence exceeds the 8 MiB limit')
+        raw = handle.read(max_bytes + 1)
+    if len(raw) > max_bytes:
+        raise ValueError('Offline evidence exceeds its byte limit')
 
     def object_pairs(pairs):
         result = {}
@@ -230,6 +235,12 @@ def main(argv: list[str] | None = None) -> int:
     prepare.add_argument('--recent', type=int, default=7)
     prepare.add_argument('--max-chars', type=int, default=25000)
     prepare.add_argument('--out', type=Path)
+    delta = commands.add_parser('propose-deltas', help='Private exact-source candidate observations; locator checks are not semantic review or approval')
+    delta.add_argument('scene')
+    delta.add_argument('--claims', type=Path, required=True, help='Bounded explicit candidate JSON, never inferred from a plan')
+    delta.add_argument('--previous', type=Path, help='Prior immutable proposal revision JSON, not approval')
+    delta.add_argument('--source-mode', choices=('working-tree', 'committed'), default='working-tree')
+    delta.add_argument('--out', type=Path, help='New private .local path; an existing file is never replaced')
     pack = commands.add_parser("pack")
     pack.add_argument("target")
     pack.add_argument("--recent", type=int, default=7)
@@ -272,6 +283,27 @@ def main(argv: list[str] | None = None) -> int:
             _emit_private_artifact(args.workspace, args.out, output)
             return 1 if report['errors'] else 0
         root = story_config.resolve_root(args.workspace, args.story)
+        if args.command == 'propose-deltas':
+            try:
+                from scripts import scene_delta_proposal
+            except ImportError:
+                import scene_delta_proposal
+            inputs = []
+            for path in (args.claims, args.previous):
+                if path is None:
+                    continue
+                review_bundle._reject_links(path.absolute())
+                value, fingerprint = _offline_evidence(path, max_bytes=1024 * 1024)
+                inputs.append((path, value, fingerprint))
+            report = scene_delta_proposal.build(root, args.scene, inputs[0][1], source_mode=args.source_mode,
+                previous=inputs[1][1] if args.previous is not None else None)
+            for path, _, fingerprint in inputs:
+                review_bundle._reject_links(path.absolute())
+                if _offline_evidence(path, max_bytes=1024 * 1024)[1] != fingerprint:
+                    raise ValueError('Proposal input changed during assembly')
+            _emit_private_artifact(args.workspace, args.out,
+                json.dumps(report, ensure_ascii=False, indent=2) + '\n', exclusive=True)
+            return 0
         if args.command == 'prepare-scene':
             try:
                 from scripts import scene_prepare

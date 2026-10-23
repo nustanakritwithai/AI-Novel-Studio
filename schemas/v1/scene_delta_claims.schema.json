@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/v1/scene_delta_claims.schema.json",
+  "title": "Per-scene source-bound delta claims v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scene_id", "draft_path", "source_sha256", "observations"],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "scene_id": {"$ref": "common.schema.json#/$defs/id"},
+    "draft_path": {"type": "string", "minLength": 1, "maxLength": 1024, "pattern": "\\S"},
+    "source_sha256": {"$ref": "#/$defs/sha256"},
+    "observations": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {"$ref": "#/$defs/observation"}
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "minLength": 64, "maxLength": 64,
+                "pattern": "^[0-9a-f]{64}$", "not": {"pattern": "[^0-9a-f]"}},
+    "unknownableId": {
+      "anyOf": [
+        {"$ref": "common.schema.json#/$defs/id"},
+        {"type": "string", "const": "UNKNOWN"}
+      ]
+    },
+    "worldTime": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["status"],
+         "properties": {"status": {"const": "UNKNOWN"}}},
+        {"type": "object", "additionalProperties": false,
+         "required": ["status", "clock_id", "tick", "suborder", "boundary"],
+         "properties": {"status": {"const": "KNOWN"},
+                        "clock_id": {"$ref": "common.schema.json#/$defs/id"},
+                        "tick": {"type": "integer"},
+                        "suborder": {"type": "integer", "minimum": 0},
+                        "boundary": {"enum": ["BEFORE", "AFTER"]}}}
+      ]
+    },
+    "holder": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["kind", "id"],
+         "properties": {"kind": {"const": "CHARACTER"}, "id": {"$ref": "common.schema.json#/$defs/id"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "id"],
+         "properties": {"kind": {"const": "LOCATION"}, "id": {"$ref": "common.schema.json#/$defs/id"}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "id"],
+         "properties": {"kind": {"const": "UNKNOWN"}, "id": {"const": "UNKNOWN"}}}
+      ]
+    },
+    "subject": {
+      "type": "object", "additionalProperties": false, "required": ["kind", "id"],
+      "properties": {"kind": {"enum": ["CHARACTER", "LOCATION", "ITEM", "UNKNOWN"]},
+                     "id": {"$ref": "#/$defs/unknownableId"}},
+      "allOf": [
+        {"if": {"properties": {"kind": {"const": "UNKNOWN"}}, "required": ["kind"]},
+         "then": {"properties": {"id": {"const": "UNKNOWN"}}}},
+        {"if": {"properties": {"kind": {"enum": ["CHARACTER", "LOCATION", "ITEM"]}}, "required": ["kind"]},
+         "then": {"properties": {"id": {"$ref": "common.schema.json#/$defs/id"}}}}
+      ]
+    },
+    "moveCandidate": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "character_id": {"$ref": "#/$defs/unknownableId"},
+        "from_location_id": {"$ref": "#/$defs/unknownableId"},
+        "to_location_id": {"$ref": "#/$defs/unknownableId"},
+        "world_time": {"$ref": "#/$defs/worldTime"}
+      }
+    },
+    "transferCandidate": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "item_id": {"$ref": "#/$defs/unknownableId"},
+        "from_holder": {"$ref": "#/$defs/holder"},
+        "to_holder": {"$ref": "#/$defs/holder"},
+        "quantity": {"oneOf": [{"type": "integer", "minimum": 1}, {"type": "string", "const": "UNKNOWN"}]},
+        "world_time": {"$ref": "#/$defs/worldTime"}
+      }
+    },
+    "physicalCandidate": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "target_kind": {"enum": ["CHARACTER", "LOCATION", "ITEM", "UNKNOWN"]},
+        "target_id": {"$ref": "#/$defs/unknownableId"},
+        "component_id": {"type": "string", "const": "UNKNOWN"},
+        "aspect": {"type": "string", "minLength": 1, "maxLength": 160, "pattern": "\\S"},
+        "world_time": {"$ref": "#/$defs/worldTime"}
+      },
+      "allOf": [
+        {"if": {"properties": {"target_kind": {"const": "UNKNOWN"}}, "required": ["target_kind"]},
+         "then": {"properties": {"target_id": {"const": "UNKNOWN"}}}},
+        {"if": {"properties": {"target_kind": {"enum": ["CHARACTER", "LOCATION", "ITEM"]}}, "required": ["target_kind"]},
+         "then": {"properties": {"target_id": {"$ref": "common.schema.json#/$defs/id"}}}}
+      ]
+    },
+    "observation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "category", "claim", "locator", "subject"],
+      "properties": {
+        "id": {"$ref": "common.schema.json#/$defs/id"},
+        "category": {"enum": ["MOVE", "TRANSFER", "CONSTRUCTION", "DAMAGE", "REPAIR"]},
+        "claim": {"type": "string", "minLength": 1, "maxLength": 2000, "pattern": "\\S"},
+        "locator": {
+          "type": "object", "additionalProperties": false,
+          "required": ["start_line", "end_line", "quote"],
+          "properties": {
+            "start_line": {"type": "integer", "minimum": 1},
+            "end_line": {"type": "integer", "minimum": 1},
+            "quote": {"type": "string", "minLength": 1, "maxLength": 2000, "pattern": "\\S"}
+          }
+        },
+        "subject": {"$ref": "#/$defs/subject"},
+        "candidate": {"type": "object"}
+      },
+      "allOf": [
+        {"if": {"properties": {"category": {"const": "MOVE"}}, "required": ["category"]},
+         "then": {"properties": {"candidate": {"$ref": "#/$defs/moveCandidate"}}}},
+        {"if": {"properties": {"category": {"const": "TRANSFER"}}, "required": ["category"]},
+         "then": {"properties": {"candidate": {"$ref": "#/$defs/transferCandidate"}}}},
+        {"if": {"properties": {"category": {"enum": ["CONSTRUCTION", "DAMAGE", "REPAIR"]}}, "required": ["category"]},
+         "then": {"properties": {"candidate": {"$ref": "#/$defs/physicalCandidate"}}}},
+        {"if": {"properties": {"category": {"const": "MOVE"}}, "required": ["category"]},
+         "then": {"properties": {"subject": {"properties": {"kind": {"enum": ["CHARACTER", "UNKNOWN"]}}}}}},
+        {"if": {"properties": {"category": {"const": "TRANSFER"}}, "required": ["category"]},
+         "then": {"properties": {"subject": {"properties": {"kind": {"enum": ["ITEM", "UNKNOWN"]}}}}}}
+      ]
+    }
+  }
+}
