@@ -75,7 +75,7 @@ class ActiveStoryLatestEngineTests(unittest.TestCase):
             target.write_text(target.read_text(encoding="utf-8") + "\nTampered", encoding="utf-8")
             errors, _ = story_engine.validate(root)
             self.assertTrue(any("SHA256 mismatch" in e for e in errors), errors)
-            with self.assertRaisesRegex(ValueError, "world model"):
+            with self.assertRaisesRegex(ValueError, "world_model.json"):
                 world_state_model.load(root)
 
     def test_accepted_manuscript_tampering_fails_closed(self):
