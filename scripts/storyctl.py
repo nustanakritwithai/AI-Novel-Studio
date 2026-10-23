@@ -12,7 +12,7 @@ import tempfile
 from pathlib import Path
 
 try:
-    from scripts import novelctl, story_config, story_engine, doctor, review_bundle, provenance, rollup, world_history
+    from scripts import novelctl, story_config, story_engine, doctor, review_bundle, provenance, rollup, world_history, world_consistency
 except ImportError:  # called as `python scripts/storyctl.py`
     import novelctl
     import story_config
@@ -22,6 +22,7 @@ except ImportError:  # called as `python scripts/storyctl.py`
     import provenance
     import rollup
     import world_history
+    import world_consistency
 
 
 def new_story(workspace: Path, slug: str, title: str | None = None) -> Path:
@@ -200,6 +201,12 @@ def main(argv: list[str] | None = None) -> int:
     world.add_argument('--suborder', type=int, default=0)
     world.add_argument('--boundary', choices=('BEFORE', 'AFTER'), default='BEFORE')
     world.add_argument('--out', type=Path)
+    lint = commands.add_parser('lintstate', help='Read-only opt-in world precondition diagnostics; UNKNOWN is not PASS')
+    lint.add_argument('--clock', required=True, help='Explicit world clock ID; no narrative-order inference')
+    lint.add_argument('--tick', type=int, required=True)
+    lint.add_argument('--suborder', type=int, default=0)
+    lint.add_argument('--boundary', choices=('BEFORE', 'AFTER'), default='BEFORE')
+    lint.add_argument('--out', type=Path)
     pack = commands.add_parser("pack")
     pack.add_argument("target")
     pack.add_argument("--recent", type=int, default=7)
@@ -241,6 +248,13 @@ def main(argv: list[str] | None = None) -> int:
             _emit_private_artifact(args.workspace, args.out, output)
             return 1 if report['errors'] else 0
         root = story_config.resolve_root(args.workspace, args.story)
+        if args.command == 'lintstate':
+            cutoff = {'clock_id': args.clock, 'tick': args.tick,
+                      'suborder': args.suborder, 'boundary': args.boundary}
+            report = world_consistency.build(root, cutoff)
+            _emit_private_artifact(args.workspace, args.out, json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+            return {'PASS': 0, 'CONTRADICTION': 1, 'INVALID': 1,
+                    'UNKNOWN': 2, 'DISABLED': 2, 'NO_CHECKS': 2}[report['status']]
         if args.command == 'world-preview':
             cutoff = {'clock_id': args.clock, 'tick': args.tick,
                       'suborder': args.suborder, 'boundary': args.boundary}

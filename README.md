@@ -20,6 +20,8 @@ The optional [S1 world model](docs/WORLD_STATE_S1_TH.md) adds source-bound decla
 
 The [S2 world preview](docs/WORLD_STATE_S2_TH.md) optionally adds `data/world_history.json` with explicit baseline binding, coverage and movement/custody deltas. `storyctl --story my-story world-preview --clock CLOCK-MAIN --tick 2 --boundary AFTER` produces a read-only PROPOSED result at an explicit world cursor. UNKNOWN facts and failed preconditions remain unresolved; no partial result or canon update is emitted. Local APPROVED declarations and matching evidence hashes do not authenticate human approval. The preview is separate from v1 replay and context packs; broad queries/maps, genre invariants and extraction remain deferred.
 
+[S3 diagnostics](docs/WORLD_STATE_S3_TH.md) add opt-in `data/world_rules.json` and `storyctl --story my-story lintstate --clock CLOCK-MAIN --tick 2 --boundary AFTER`. The same S2 execution path reports explicit movement/custody precondition contradictions separately from insufficient information, with event/scene, before/requested/after values and source references. Missing rules are DISABLED; UNKNOWN and unperformed checks never become PASS. Reports remain proposals, authorize no canon/ledger updates and add no genre-specific facts, context integration or extraction.
+
 After the selected story has valid human-authored metadata and a readable target draft:
 
 ```bash
