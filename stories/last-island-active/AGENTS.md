@@ -15,7 +15,7 @@ Story root: `stories/last-island-active`. Canonical approved history is **EMPTY*
 python scripts/storyctl.py --story last-island-active check
 python scripts/storyctl.py --story last-island-active status
 python scripts/storyctl.py --story last-island-active brief EP-002
-python scripts/storyctl.py --story last-island-active pack EP-003
+python scripts/storyctl.py --story last-island-active pack EP-004
 python scripts/storyctl.py --story last-island-active replay SC-018
 ```
 
@@ -50,5 +50,14 @@ python scripts/storyctl.py --story last-island-active replay SC-018
 
 - Before writing EP-004 load `data/draft_continuity_ep003.json` and verify its `source.git_blob_sha` against the actual EP-003 manuscript; this is DRAFT memory, never official `data/story_state.json`.
 - `bible/BASE_TIMELINE.md` records stage-by-stage house evolution: wooden 2×2 → workbench/bed/storage → same 2×2 in stone → upper open firing platform → no new EP-003 construction.
-- Read `research/EP003_GAMEPLAY_GAPS.md` for UNVERIFIED real-game crate/furnace/fat/ammo mechanics; `plot/episodes/EP-004-HANDOFF-PROPOSED.md` is an EP-004 opening objective only, not written scenes.
+- Read `research/EP003_GAMEPLAY_GAPS.md` for EP-003 rules and `research/EP004_GAMEPLAY_GAPS.md` for EP-004 wildlife, taming, raid and furnace rules. The prior EP-004 handoff was a pre-draft plan and is superseded by the 12 written scenes.
 - Inventory register has exact **6** pistol shots expended by CHAR-006 in SC-024 (INV-029); all other unspecified amounts must remain UNKNOWN. If a writer changes the EP-003 manuscript, the draft snapshot source hash must be reviewed/rebound, not silently trusted.
+
+## EP-004 (latest) locked plot / draft prose rules
+
+- Read `drafts/EP-004/CH-04-FULL-DRAFT.md`, `data/draft_continuity_ep004.json` and `data/wildlife_ep004.json` before planning further work.
+- The scattered wildlife farm took substantial travel/search/wait time. Prey: chicken, rabbit, deer; dangerous wolf/bear were avoided. Horse CHAR-008 captured with hide glove after weakening. No stable constructed.
+- At campfire hero cooks meat; wall-explosion notification makes him ride back, hide behind hill and watch CHAR-004/005 (from EP-002) raid his home. He opts not to fight, waits for their departure then repairs the entrance.
+- Oil from animal fat and furnace are obtained/built within **EP-004 DRAFT**; however iron/gunpowder/bullet outputs are NOT ready because processing requires time. Do not auto-complete these in later scenes without new instructions.
+- House footprint stays 2×2, no full second room; amount looted from house UNKNOWN. Exact counts/durations are not invented.
+- Treat EP-004 as DRAFT, not approved prose. No edits to `author_memory/index.json`, `ledger/index.json`, `data/story_state.json` without separately verified authorization.
