@@ -8,9 +8,10 @@ The human author explicitly said **“อนุมัติ”** in ChatGPT afte
 | --- | --- | ---: | --- | --- |
 | EP-001 | บ้านหลังแรก | 8 | APPROVED IN CHAT | PENDING GITHUB REVIEW PROVENANCE |
 | EP-002 | ธนูแรกและกำแพงหิน | 10 | APPROVED IN CHAT | PENDING GITHUB REVIEW PROVENANCE |
+| EP-003 | หกนัดบนถนน | 8 | PLOT LOCKED, PROSE DRAFT | NOT IN APPROVED LEDGER |
 
 - The original `stories/last-island/` E1 historical example remains unchanged.
-- The active dataset is `stories/last-island-active/`, with 18 scene drafts and 18 event records.
+- The active dataset is `stories/last-island-active/`: 26 scene drafts and 26 event records over EP-001, EP-002 and EP-003 (18 older plus 8 new DRAFT).
 - The author accepted the basic enclosed 2×2 wooden shelter at the end of chapter 1, which enables the chapter 2 opening inside the house; the chapter 2 candidate concludes with a stone base, a second-level firing platform, and the protagonist logging off.
 - See `editorial/AUTHOR_APPROVAL_2026-10-23.json` and `data/decisions.json` (DEC-004) for exact source hashes and decision source.
 
@@ -41,3 +42,10 @@ This is **direct author consent in ChatGPT**, not an independently submitted Git
 - **Candidate continuity after SC-026:** stone 2×2 base and firing platform visually intact; some stored resources remain; carried bow/arrows/tool/road scrap dropped on death; fresh hunting gear prepared; no oil, no furnace, no iron, no animal-fat, no animal hunting yet. Exact item/HP quantities UNKNOWN.
 - **Next:** EP-004 first animal hunt, not yet authored/approved.
 - **Provenance boundary:** accepted EP-001/EP-002 source and their author_memory retained; GitHub reviewer-approved ledger and approved_through_scene unchanged.
+
+## EP-003 audit addendum
+
+- Source-bound proposal snapshot: `data/draft_continuity_ep003.json` (source Git blob hash pinned); do not confuse with official `data/story_state.json` which remains approved-only and intentionally does **not** replay unapproved EP-003.
+- Six pistol rounds fired by CHAR-006 are recorded as 6 spent in `INV-029` for SC-024; bullet impact positions are prose-specific details, not author-locked game rules. Protagonist never owns/produces a firearm or bullets in this chapter.
+- Before starting EP-004 read `bible/BASE_TIMELINE.md`, `drafts/EP-003/EP-003-CONTINUITY-AUDIT.md` and `plot/episodes/EP-004-HANDOFF-PROPOSED.md`.
+- EP-003 game-mechanics gaps documented without false source verification in `research/EP003_GAMEPLAY_GAPS.md`.
