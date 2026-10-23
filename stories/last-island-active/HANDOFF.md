@@ -25,7 +25,7 @@ The trusted source is still the source manuscript pinned in `editorial/AUTHOR_AP
 - The historical engine's accepted-prose status and formally approved ledger are different things: the repository requires evidence from an actual GitHub PR `APPROVE` review before marking the ledger as authenticated. None was observed for PR #13; do not invent a review or `approved_by`.
 - Until the formal provenance workflow is completed, episode and scene registry status remains `DRAFT` and `approved_through_scene` remains null. This is a provenance limitation, **not** a denial of the author's consent.
 - Do not update chronology, NPC identities, event outcomes, health or inventory counts beyond grounded details.
-- The future episode 3 has no author-supplied plot. Wait for actual story directives instead of generating canon plot events.
+- EP-003 has author-directed plot DEC-005 and a complete DRAFT manuscript; see `plot/episodes/EP-003.md` and `drafts/EP-003/CH-03-FULL-DRAFT.md`. Do not promote its prose to Canon without editorial approval. EP-004 will begin with the first hunt; no animals or fat have been acquired yet.
 
 ## Commands
 
@@ -36,3 +36,12 @@ python -m unittest discover -s tests -v
 ```
 
 PR #11 and #12 were closed as superseded; main contains the selected two-chapter manuscripts.
+
+## Next writer handoff — EP-003 to EP-004 (draft)
+
+- EP-003: REAL rest/food/gamer clips → return to stone 2×2 base → road scrap crates/no oil → skilled bow duel → six-shot pistol death → respawn at home, road gear lost → alternative animal-fat oil plan.
+- SC-019–SC-026 are DRAFT; DEC-005 confirms author plot but not prose wording; DEC-006 authorizes saving draft to engine.
+- Do not reuse CHAR-004/005 as EP-003 foe: CHAR-006 is unverified new identity, and CHAR-007 gamer-chat friend is only PROPOSED.
+- Never claim oil, furnace, iron, ammo, meat, hide or fat was gained in EP-003. A dark road crate's contents are UNKNOWN.
+- EP-004 begins before the first animal hunt; species/quantity, exact hunting tactics and item yield require author direction. Keep accepted-source memory EP-001/002 untouched.
+- `data/story_state.json.approved_through_scene` remains null and `ledger/index.json` remains empty.
