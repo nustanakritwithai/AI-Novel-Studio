@@ -15,7 +15,7 @@ Story root: `stories/last-island-active`. Canonical approved history is **EMPTY*
 python scripts/storyctl.py --story last-island-active check
 python scripts/storyctl.py --story last-island-active status
 python scripts/storyctl.py --story last-island-active brief EP-002
-python scripts/storyctl.py --story last-island-active pack EP-004
+python scripts/storyctl.py --story last-island-active pack EP-005
 python scripts/storyctl.py --story last-island-active replay SC-018
 ```
 
@@ -61,3 +61,12 @@ python scripts/storyctl.py --story last-island-active replay SC-018
 - Oil from animal fat and furnace are obtained/built within **EP-004 DRAFT**; however iron/gunpowder/bullet outputs are NOT ready because processing requires time. Do not auto-complete these in later scenes without new instructions.
 - House footprint stays 2×2, no full second room; amount looted from house UNKNOWN. Exact counts/durations are not invented.
 - Treat EP-004 as DRAFT, not approved prose. No edits to `author_memory/index.json`, `ledger/index.json`, `data/story_state.json` without separately verified authorization.
+
+## Latest author-ingested EP-005 working manuscript
+
+- Full author-chat accepted text: `drafts/EP-005/CH-05-FULL-DRAFT.md`, with revised ending. Scenes SC-039–047 (9), decision DEC-008/009. Engine scene status stays DRAFT until formal reviewer approval.
+- Returning attackers are pair CHAR-004/005 from EP-002/004, not the earlier independent pistol archer CHAR-006. **Two defeated**, then **both return and retreat without further defeats**.
+- Pistol inventory: exactly two pistols in total, one taken earlier from first fallen rival and one from second; 100 rounds observed from collected loot, then one warning round. Final magazine and ammo balance UNKNOWN.
+- Chapter 5 begins and ends with furnace operating, but no finished iron/gunpowder/furnace ammunition is retrieved. Original 2×2 stone base, stairs and upper open firing position unchanged; no new multilayer fortification or full upper room built.
+- Horse's exact current state, rival weapon-account mapping, exact pistol duel ammo and door durability still UNKNOWN; selected-game mechanics UNVERIFIED.
+- Before EP006 consult `data/draft_continuity_ep005.json`, `plot/episodes/EP-005.md`, and `research/EP005_GAMEPLAY_GAPS.md`. Scene/story acceptance in chat is **not** authenticated GitHub PR APPROVE; keep `ledger/index.json` and official story state protected.
