@@ -18,3 +18,11 @@
 
 Scene cards are in `../../scenes/SC-019.md` through `SC-026.md`.
 Do not add EP-003 to accepted `author_memory/index.json` or GitHub reviewer-approved ledger without explicit editorial consent and actual corresponding provenance.
+
+## Continuity and research references
+
+- [EP-003 continuity audit](EP-003-CONTINUITY-AUDIT.md) — six-shot table, REAL/VR clock, lost gear and no oil/fat
+- [Source-bound DRAFT state](../../data/draft_continuity_ep003.json) — snapshot, not approved history
+- [Building timeline](../../bible/BASE_TIMELINE.md) — 2×2 base phases and intact-by-observation caveat
+- [Gameplay research gaps](../../research/EP003_GAMEPLAY_GAPS.md) — all unverified mechanics
+- [EP-004 opening handoff](../../plot/episodes/EP-004-HANDOFF-PROPOSED.md) — objective only; no scenes authorized
