@@ -440,6 +440,222 @@
         "ep003_iron_produced": false,
         "ep003_ammo_crafted": false
       }
+    },
+    {
+      "id": "EV-027",
+      "scene_id": "SC-027",
+      "episode_id": "EP-004",
+      "order": 1,
+      "status": "DRAFT",
+      "what_changed": "เริ่มสำรวจ",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-011",
+      "effects_flags": {
+        "ep004_hunt_expedition_started": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-028",
+      "scene_id": "SC-028",
+      "episode_id": "EP-004",
+      "order": 2,
+      "status": "DRAFT",
+      "what_changed": "เริ่มได้วัตถุดิบ แต่ไขมันไม่พอ",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-011",
+      "effects_flags": {
+        "ep004_chicken_hunted": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-029",
+      "scene_id": "SC-029",
+      "episode_id": "EP-004",
+      "order": 3,
+      "status": "DRAFT",
+      "what_changed": "ได้เนื้อ หนัง ไขมันบางส่วน",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-011",
+      "effects_flags": {
+        "ep004_rabbit_hunted": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-030",
+      "scene_id": "SC-030",
+      "episode_id": "EP-004",
+      "order": 4,
+      "status": "DRAFT",
+      "what_changed": "เก็บเนื้อ หนัง ไขมันและเริ่มหนักกระเป๋า",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-011",
+      "effects_flags": {
+        "ep004_deer_hunted": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-031",
+      "scene_id": "SC-031",
+      "episode_id": "EP-004",
+      "order": 5,
+      "status": "DRAFT",
+      "what_changed": "ปลอดภัยแต่ไม่ฆ่าสัตว์อันตราย",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-011",
+      "effects_flags": {
+        "ep004_predators_avoided": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-032",
+      "scene_id": "SC-032",
+      "episode_id": "EP-004",
+      "order": 6,
+      "status": "DRAFT",
+      "what_changed": "ไขมันพอทำน้ำมัน หนังพอทำถุงมือ",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-011",
+      "effects_flags": {
+        "ep004_fat_goal_reached": true,
+        "ep004_hides_for_glove_ready": true,
+        "ep004_iron_ore_sulfur_collected": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-033",
+      "scene_id": "SC-033",
+      "episode_id": "EP-004",
+      "order": 7,
+      "status": "DRAFT",
+      "what_changed": "มีม้าเป็นพาหนะ",
+      "actors": [
+        "CHAR-001",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-012",
+      "effects_flags": {
+        "ep004_horse_glove_crafted": true,
+        "ep004_horse_tamed": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-034",
+      "scene_id": "SC-034",
+      "episode_id": "EP-004",
+      "order": 8,
+      "status": "DRAFT",
+      "what_changed": "ต้องหยุดพักเพื่อกลับบ้าน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-013",
+      "effects_flags": {
+        "ep004_campfire_cooked": true,
+        "ep004_wall_explosion_alert_received": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-035",
+      "scene_id": "SC-035",
+      "episode_id": "EP-004",
+      "order": 9,
+      "status": "DRAFT",
+      "what_changed": "ถึงเนินใกล้ฐาน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-013",
+      "effects_flags": {
+        "ep004_approached_base_by_horse": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-036",
+      "scene_id": "SC-036",
+      "episode_id": "EP-004",
+      "order": 10,
+      "status": "DRAFT",
+      "what_changed": "ตัดสินใจไม่สู้",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-014",
+      "effects_flags": {
+        "ep004_two_prior_rivals_identified": true,
+        "ep004_raid_observed": true,
+        "ep004_chose_noncombat": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-037",
+      "scene_id": "SC-037",
+      "episode_id": "EP-004",
+      "order": 11,
+      "status": "DRAFT",
+      "what_changed": "ฐาน 2x2 ปิดกลับได้โดยไม่ขยาย",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep004_raiders_left": true,
+        "ep004_base_breach_repaired": true,
+        "ep004_no_pvp_kill": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-038",
+      "scene_id": "SC-038",
+      "episode_id": "EP-004",
+      "order": 12,
+      "status": "DRAFT",
+      "what_changed": "ยังไม่รับเหล็ก ดินปืนหรือกระสุนใหม่",
+      "actors": [
+        "CHAR-001",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep004_oil_prepared": true,
+        "ep004_furnace_built": true,
+        "ep004_iron_processing_started": true,
+        "ep004_gunpowder_inputs_processing_started": true,
+        "ep004_finished_iron_ready": false,
+        "ep004_finished_gunpowder_ready": false,
+        "ep004_crafted_bullets_ready": false
+      },
+      "editorial_origin": "EP004_DRAFT"
     }
   ]
 }
