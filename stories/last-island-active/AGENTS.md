@@ -38,3 +38,10 @@ python scripts/storyctl.py --story last-island-active replay SC-018
 - `pack EP-002` includes only earlier EP-001 author-accepted memory; never leak future EP-002 recap into its own context.
 - `ledger/index.json` is still **GitHub-review-approved-only** and cannot be auto-populated from a ChatGPT assertion. GitHub review/account authentication is outside the scope of these local checks.
 - The old `stories/last-island/` sample and its 54 byte-pinned files remain immutable.
+
+## EP-003 draft addition — never confuse a plotted chapter with approved prose
+
+- EP-003 (SC-019–SC-026) is a stored DRAFT; author directed real-world gamer rest, an oil-crate search on the road, tactical bow duel nearly won, a six-shot pistol reversal and respawn, then planning animal-fat hunting for EP-004.
+- The hero did NOT obtain oil, craft a furnace or iron, make ammunition, or hunt any animals in EP-003; amounts of resources carried/used/lost remain UNKNOWN.
+- CHAR-006 is the road pistol/bow rival with UNKNOWN identity; CHAR-007 is a PROPOSED chat friend, not a locked permanent character.
+- DEC-005 locks plot beats only; DEC-006 authorizes draft ingest only. EP-001/EP-002 accepted prose, author_memory and all approved-only ledgers must remain unchanged without fresh editorial direction.
