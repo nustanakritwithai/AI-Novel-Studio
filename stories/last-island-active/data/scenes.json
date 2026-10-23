@@ -745,6 +745,383 @@
         "รายละเอียดสูตร/จำนวนยังไม่ยืนยัน"
       ],
       "draft_path": "drafts/EP-002/SC-018.md"
+    },
+    {
+      "id": "SC-019",
+      "episode_id": "EP-003",
+      "order": 1,
+      "title": "โลกที่ไม่มีแถบพลังชีวิต",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "REAL",
+      "location_id": "LOC-001",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-007"
+      ],
+      "item_ids": [
+        "ITEM-016",
+        "ITEM-021",
+        "ITEM-022"
+      ],
+      "canon_refs": [
+        "FACT-023",
+        "FACT-030"
+      ],
+      "mechanic_refs": [],
+      "source_refs": [],
+      "goal": "พักสมองจากการเล่นเกมและเรียนรู้สิ่งที่ยังไม่รู้จากชุมชน",
+      "conflict": "ยังรู้สึกถึงความตึงเครียดจากการต่อสู้และไม่เข้าใจระบบขั้นสูง",
+      "beats": [
+        "กินข้าวหลังออกจาก Full-Dive VR",
+        "แชตกับเพื่อน Gamer แล้วดูคลิปเกม",
+        "สนใจเตาเผา เหล็ก กระสุน และน้ำมันก่อนเข้านอน"
+      ],
+      "outcome": "พักในโลกจริง วางความคิดเรื่องการหาน้ำมัน",
+      "requires_flags": [
+        "logged_out"
+      ],
+      "effects_flags": {
+        "ep003_reallife_rest_completed": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-003/SC-019.md",
+      "prose_source": "CH-03-FULL-DRAFT.md — drafted not author accepted"
+    },
+    {
+      "id": "SC-020",
+      "episode_id": "EP-003",
+      "order": 2,
+      "title": "เป้าหมายใหม่",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-007",
+        "ITEM-008",
+        "ITEM-010",
+        "ITEM-011",
+        "ITEM-014",
+        "ITEM-016"
+      ],
+      "canon_refs": [
+        "FACT-023",
+        "FACT-028"
+      ],
+      "mechanic_refs": [
+        "MECH-010",
+        "MECH-013",
+        "MECH-014"
+      ],
+      "source_refs": [],
+      "goal": "กลับเข้าฐานและเตรียมเดินทางหาน้ำมัน",
+      "conflict": "ยังไม่รู้ว่าจะพบกล่องน้ำมันจริงหรือไม่",
+      "beats": [
+        "วันถัดมากลับเข้าเกม",
+        "บ้านหินและชั้นยิงยังดูปลอดภัย",
+        "ตรวจสูตรเตาเผา จัดของก่อนออกเดินทาง"
+      ],
+      "outcome": "พระเอกออกบ้านมุ่งหน้าสู่ถนน",
+      "requires_flags": [
+        "ep003_reallife_rest_completed"
+      ],
+      "effects_flags": {
+        "ep003_logged_in": true,
+        "ep003_road_trip_started": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-003/SC-020.md",
+      "prose_source": "CH-03-FULL-DRAFT.md — drafted not author accepted"
+    },
+    {
+      "id": "SC-021",
+      "episode_id": "EP-003",
+      "order": 3,
+      "title": "ถนนสายเดิม",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-010",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-006"
+      ],
+      "item_ids": [
+        "ITEM-004",
+        "ITEM-014",
+        "ITEM-015",
+        "ITEM-010",
+        "ITEM-023"
+      ],
+      "canon_refs": [
+        "FACT-024"
+      ],
+      "mechanic_refs": [
+        "MECH-003",
+        "MECH-013"
+      ],
+      "source_refs": [],
+      "goal": "ตีกล่องเก็บเศษวัสดุและหวังเจอน้ำมัน",
+      "conflict": "ผู้เล่นธนูเปิดฉากโจมตีระหว่างสำรวจ",
+      "beats": [
+        "ตีกล่องทั่วไปได้เศษวัสดุไม่ทราบจำนวน",
+        "เห็นกล่องสีเข้มแต่ไม่ได้ตรวจชนิด",
+        "ถูกผู้เล่นธนูโจมตีใกล้รถเก่าและร่องระบายน้ำ"
+      ],
+      "outcome": "ไม่ได้รับน้ำมันและต้องตั้งรับการโจมตี",
+      "requires_flags": [
+        "ep003_road_trip_started"
+      ],
+      "effects_flags": {
+        "ep003_road_loot_found": true,
+        "ep003_duel_started": true,
+        "ep003_oil_found": false
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-003/SC-021.md",
+      "prose_source": "CH-03-FULL-DRAFT.md — drafted not author accepted"
+    },
+    {
+      "id": "SC-022",
+      "episode_id": "EP-003",
+      "order": 4,
+      "title": "ธนูสองคัน",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-010",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-006"
+      ],
+      "item_ids": [
+        "ITEM-010",
+        "ITEM-011"
+      ],
+      "canon_refs": [
+        "FACT-025",
+        "FACT-030"
+      ],
+      "mechanic_refs": [
+        "MECH-010"
+      ],
+      "source_refs": [],
+      "goal": "เอาตัวรอดด้วยธนูและแย่งจังหวะจากคู่ต่อสู้",
+      "conflict": "คู่ต่อสู้คุมทางขึ้นจากที่กำบัง",
+      "beats": [
+        "หลอกให้ยิงตำแหน่งเดิมและเปลี่ยนแนวผ่านร่องน้ำ",
+        "ใช้รถตู้เป็นที่กำบัง",
+        "ยิงโดนแขนคู่ต่อสู้แต่คู่ต่อสู้ยิงสวน"
+      ],
+      "outcome": "พระเอกเริ่มทำให้คู่ต่อสู้บาดเจ็บ",
+      "requires_flags": [
+        "ep003_duel_started"
+      ],
+      "effects_flags": {
+        "ep003_enemy_arm_hit": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-003/SC-022.md",
+      "prose_source": "CH-03-FULL-DRAFT.md — drafted not author accepted"
+    },
+    {
+      "id": "SC-023",
+      "episode_id": "EP-003",
+      "order": 5,
+      "title": "จังหวะที่เกือบชนะ",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-010",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-006"
+      ],
+      "item_ids": [
+        "ITEM-010",
+        "ITEM-011",
+        "ITEM-017"
+      ],
+      "canon_refs": [
+        "FACT-025",
+        "FACT-030"
+      ],
+      "mechanic_refs": [
+        "MECH-010"
+      ],
+      "source_refs": [],
+      "goal": "จบดวลธนูเมื่อได้เปรียบ",
+      "conflict": "ศัตรูพยายามเปลี่ยนมุมยิงและโต้กลับ",
+      "beats": [
+        "ยิงพลาดและเสียพลังชีวิตบางส่วน",
+        "สังเกตจังหวะการยิงและย้ายมุม",
+        "ยิงโดนขาศัตรูจนเกือบชนะ",
+        "ศัตรูเก็บธนูและชักปืนพก"
+      ],
+      "outcome": "พระเอกเกือบชนะ แต่เผชิญปืนพก",
+      "requires_flags": [
+        "ep003_enemy_arm_hit"
+      ],
+      "effects_flags": {
+        "ep003_enemy_leg_hit": true,
+        "ep003_pistol_revealed": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-003/SC-023.md",
+      "prose_source": "CH-03-FULL-DRAFT.md — drafted not author accepted"
+    },
+    {
+      "id": "SC-024",
+      "episode_id": "EP-003",
+      "order": 6,
+      "title": "หกนัด",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-010",
+      "character_ids": [
+        "CHAR-001",
+        "CHAR-006"
+      ],
+      "item_ids": [
+        "ITEM-017",
+        "ITEM-010"
+      ],
+      "canon_refs": [
+        "FACT-026"
+      ],
+      "mechanic_refs": [
+        "MECH-015",
+        "MECH-010"
+      ],
+      "source_refs": [],
+      "goal": "หนีจากปืนพกและมีชีวิตรอด",
+      "conflict": "ฝ่ายตรงข้ามยิงต่อเนื่องหกนัด มีความได้เปรียบด้านอาวุธ",
+      "beats": [
+        "กระสุน 1–2 กระแทกที่กำบัง",
+        "นัด 3 ยิงถูกแขน",
+        "นัด 4 พลาด",
+        "นัด 5 ยิงถูกลำตัว",
+        "นัด 6 ทำให้พระเอกเสียชีวิต"
+      ],
+      "outcome": "พระเอกตาย ไม่มีชัยชนะจากการดวลธนู",
+      "requires_flags": [
+        "ep003_pistol_revealed"
+      ],
+      "effects_flags": {
+        "ep003_killed_by_pistol": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-003/SC-024.md",
+      "prose_source": "CH-03-FULL-DRAFT.md — drafted not author accepted"
+    },
+    {
+      "id": "SC-025",
+      "episode_id": "EP-003",
+      "order": 7,
+      "title": "ราคาของความพ่ายแพ้",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-006",
+        "ITEM-008",
+        "ITEM-010",
+        "ITEM-011",
+        "ITEM-004",
+        "ITEM-023"
+      ],
+      "canon_refs": [
+        "FACT-027"
+      ],
+      "mechanic_refs": [
+        "MECH-009",
+        "MECH-012"
+      ],
+      "source_refs": [],
+      "goal": "ประเมินความเสียหายและเก็บทรัพยากรที่เหลือ",
+      "conflict": "สูญเสียสิ่งที่แบกไปและไม่สามารถกลับไปแย่งคืนอย่างปลอดภัย",
+      "beats": [
+        "เกิดใหม่ในบ้านหิน",
+        "ธนู ลูกธนู เครื่องมือและเศษวัสดุที่พกหล่นอยู่จุดตาย",
+        "ของสำรองในบ้านยังอยู่",
+        "ตัดสินใจไม่กลับไปถนน"
+      ],
+      "outcome": "ยกเลิกแผนเก็บน้ำมันริมถนน",
+      "requires_flags": [
+        "ep003_killed_by_pistol"
+      ],
+      "effects_flags": {
+        "ep003_respawned": true,
+        "ep003_road_plan_abandoned": true,
+        "ep003_carried_loot_lost": true
+      },
+      "open_questions": [],
+      "draft_path": "drafts/EP-003/SC-025.md",
+      "prose_source": "CH-03-FULL-DRAFT.md — drafted not author accepted"
+    },
+    {
+      "id": "SC-026",
+      "episode_id": "EP-003",
+      "order": 8,
+      "title": "ทางเลือกที่ไม่ต้องไปเสี่ยงบนถนน",
+      "status": "DRAFT",
+      "pov": "CHAR-001",
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "character_ids": [
+        "CHAR-001"
+      ],
+      "item_ids": [
+        "ITEM-014",
+        "ITEM-016",
+        "ITEM-018",
+        "ITEM-019",
+        "ITEM-020",
+        "ITEM-010",
+        "ITEM-011",
+        "ITEM-024"
+      ],
+      "canon_refs": [
+        "FACT-028",
+        "FACT-029"
+      ],
+      "mechanic_refs": [
+        "MECH-014",
+        "MECH-016"
+      ],
+      "source_refs": [],
+      "goal": "เลือกวิธีหาน้ำมันที่ลดโอกาสเจอผู้เล่น",
+      "conflict": "ต้องใช้ไขมันสัตว์มากและยังไม่รู้วิธีล่าสัตว์",
+      "beats": [
+        "พบข้อมูลว่าไขมันสัตว์ใช้ทำน้ำมันได้",
+        "สำรวจแผนที่ป่าหลังฐาน",
+        "เตรียมอาวุธและอุปกรณ์จากทรัพยากรสำรอง",
+        "วางแผนออกล่าสัตว์ในบท 4 ไม่ได้ล่าจริง"
+      ],
+      "outcome": "ภารกิจต่อไปคือออกล่าสัตว์เพื่อไขมัน",
+      "requires_flags": [
+        "ep003_respawned"
+      ],
+      "effects_flags": {
+        "ep003_hunt_plan_ready": true,
+        "ep003_hunting_started": false,
+        "ep003_furnace_built": false,
+        "ep003_oil_obtained": false
+      },
+      "open_questions": [
+        "ชนิดสัตว์/จำนวนไขมัน/สูตรจริง UNKNOWN; ยังไม่ได้ล่าสัตว์"
+      ],
+      "draft_path": "drafts/EP-003/SC-026.md",
+      "prose_source": "CH-03-FULL-DRAFT.md — drafted not author accepted"
     }
   ]
 }
