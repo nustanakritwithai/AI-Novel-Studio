@@ -132,6 +132,46 @@
       "story_requirement": "LOCKED",
       "source_ids": [],
       "notes": "User-directed fictional world rule; hunting itself starts only after EP-003"
+    },
+    {
+      "id": "MECH-017",
+      "title": "การกระจายตัวของสัตว์ป่าและการล่าเพื่อเก็บเนื้อ หนัง ไขมัน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Farming requires travel/search and per-animal action; rates and exact species drops UNVERIFIED"
+    },
+    {
+      "id": "MECH-018",
+      "title": "ถุงมือหนังสำหรับจับม้า ต้องลดกำลังม้าก่อนจึงจับได้",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "User fiction mechanic; real-game tame recipe, weapon and threshold UNVERIFIED"
+    },
+    {
+      "id": "MECH-019",
+      "title": "กองไฟแคมป์และการทำอาหารจากเนื้อสัตว์",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Actual crafting, fuel and cooking duration UNVERIFIED"
+    },
+    {
+      "id": "MECH-020",
+      "title": "แจ้งเตือนฐานถูกระเบิด การบุกฐานและการซ่อมช่องทางเข้า",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Actual game-mode alert, damage and repair rules UNVERIFIED"
+    },
+    {
+      "id": "MECH-021",
+      "title": "เตาเผาแปรรูปแร่เหล็กและผลิตผลจากไม้กับกำมะถันในสายคราฟต์ดินปืนแบบมีเวลารอ",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Fictional system menus; no exact ingredients, quantities, physical formulas or timers validated. Outputs queued but NOT ready."
     }
   ]
 }
