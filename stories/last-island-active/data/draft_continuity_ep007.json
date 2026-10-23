@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "story_slug": "last-island-active",
+  "episode_id": "EP-007",
+  "status": "DRAFT_AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST_NOT_ENGINE_CANON",
+  "source": {
+    "path": "drafts/EP-007/CH-07-FULL-DRAFT.md",
+    "git_blob_sha": "3b28e35531e7d239ee86966ef02af6b84a009e73",
+    "previous_episode": "EP-006",
+    "current_design_source": "data/base_expansion_4x4_target.json",
+    "current_design_git_blob_sha": "c013264d69fc9f3001a1985a2f1a6ba71ee8b61e"
+  },
+  "editorial": {
+    "source_decision": "DEC-013",
+    "chat_author_acceptance_for_ingest": true,
+    "formal_github_reviewer_approve_verified": false,
+    "may_apply_to_approved_ledger": false,
+    "approved_story_state_not_updated": true
+  },
+  "clock": {
+    "realm": "VR",
+    "elapsed_game_time": "UNKNOWN",
+    "scene_order": [
+      "SC-059",
+      "SC-060",
+      "SC-061",
+      "SC-062",
+      "SC-063",
+      "SC-064",
+      "SC-065",
+      "SC-066",
+      "SC-067",
+      "SC-068"
+    ]
+  },
+  "progress": [
+    {
+      "scene_id": "SC-059",
+      "base": "ORIGINAL_2X2_WITH_UPPER_FIRING",
+      "ring_tiles_built": "ZERO_BEFORE_CONSTRUCTION",
+      "outer_wall": "NONE",
+      "notes": "Returned from refinery, no first horse"
+    },
+    {
+      "scene_id": "SC-060",
+      "base": "ORIGINAL_2X2",
+      "learning": "LMG_RECIPE_LEARNED",
+      "spring_held": 1,
+      "spring_required": 2,
+      "spring_missing": 1,
+      "gun_crafted": false
+    },
+    {
+      "scene_id": "SC-061",
+      "base": "ORIGINAL_2X2",
+      "new_design": "CONSIDERED_NOT_BUILT"
+    },
+    {
+      "scene_id": "SC-062",
+      "base": "4X4_BLUEPRINT_ONLY",
+      "ring_tiles_built": 0,
+      "outer_wall": "NOT_BUILT",
+      "upper_outer_firing": "NOT_BUILT"
+    },
+    {
+      "scene_id": "SC-063",
+      "base": "ORIGINAL_2X2_WITH_BLUEPRINT",
+      "materials": "INSUFFICIENT_FOR_WHOLE_BASE",
+      "spring_reserved": 1
+    },
+    {
+      "scene_id": "SC-064",
+      "base": "INITIAL_WALKWAY_PARTIAL",
+      "ring_tiles_built": "UNKNOWN_PARTIAL",
+      "corridor_loop_complete": false
+    },
+    {
+      "scene_id": "SC-065",
+      "base": "WALKWAY_EXTENDED_WITH_GAP",
+      "ring_tiles_built": "UNKNOWN_PARTIAL",
+      "corridor_loop_complete": false,
+      "additional_local_building_resources_gathered": true
+    },
+    {
+      "scene_id": "SC-066",
+      "base": "RING_FLOOR_FULL_12_BUILT",
+      "ring_tiles_built": 12,
+      "corridor_loop_complete": true,
+      "test_walk_360": true,
+      "outer_wall_complete": false
+    },
+    {
+      "scene_id": "SC-067",
+      "base": "RING_FLOOR_12_PLUS_OUTER_WALL_PARTIAL",
+      "ring_tiles_built": 12,
+      "outer_wall": "PARTIAL_SEGMENTS_NOT_CLOSED",
+      "upper_outer_firing": "NOT_BUILT"
+    },
+    {
+      "scene_id": "SC-068",
+      "base": "RING_FLOOR_12_PLUS_OUTER_WALL_PARTIAL",
+      "ring_tiles_built": 12,
+      "outer_wall": "PARTIAL_SEGMENTS_NOT_CLOSED",
+      "upper_outer_firing": "NOT_BUILT",
+      "spring_held": 1,
+      "spring_missing": 1
+    }
+  ],
+  "end_after_sc068": {
+    "hero": {
+      "character_id": "CHAR-001",
+      "alive": true,
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "horse_alive": false,
+      "first_horse_id": "CHAR-008",
+      "pistols_owned": 2,
+      "pistol_ammunition": "UNKNOWN",
+      "green_card_owned": true,
+      "gun_lmg_owned": false
+    },
+    "gun_progress": {
+      "weapon_item_id": "ITEM-038",
+      "spring_item_id": "ITEM-039",
+      "learning_system_upgraded": true,
+      "lmg_recipe_learned": true,
+      "springs_required": 2,
+      "springs_found_in_preexisting_storage": 1,
+      "springs_newly_looted_during_ep007": 0,
+      "springs_consumed_during_ep007": 0,
+      "springs_still_held": 1,
+      "springs_missing": 1,
+      "other_recipe_costs": "UNKNOWN",
+      "ready_to_craft": false
+    },
+    "base_current": {
+      "id": "LOC-009",
+      "original_core_footprint": [
+        2,
+        2
+      ],
+      "core_material": "STONE",
+      "core_walls_present": true,
+      "base_expansion_design_footprint": [
+        4,
+        4
+      ],
+      "blueprint_entire_two_story_building_completed": false,
+      "ground_floor_ring": {
+        "total_cells": 12,
+        "built_cells": 12,
+        "unbuilt_cells": 0,
+        "continuous_orthogonal_walkable_loop": true,
+        "all_four_sides_connected": true,
+        "internal_partitions": false,
+        "width_in_floor_units": 1,
+        "walk_test_scene": "SC-066",
+        "plan": [
+          "PPPP",
+          "PCCP",
+          "PCCP",
+          "PPPP"
+        ]
+      },
+      "outer_wall": {
+        "target_encloses_4x4": true,
+        "built_state": "PARTIAL",
+        "completely_closed": false,
+        "segment_count": "UNKNOWN",
+        "coordinates": "TBD",
+        "material": "UNKNOWN",
+        "outer_door_position": "TBD"
+      },
+      "outer_upper_firing_platform": {
+        "built": false,
+        "planned_with_low_parapet": true
+      },
+      "inner_original_firing_platform": {
+        "built": true,
+        "used_in_last_scene": "SC-068"
+      },
+      "upper_protection_over_core": {
+        "built": "NOT_DEMONSTRATED",
+        "cross_section": "TBD"
+      },
+      "new_main_support_pillar": {
+        "target_count": 1,
+        "installed": "NOT_DEMONSTRATED",
+        "position": "CENTER_AS_DESIGN"
+      },
+      "stairs_to_new_outer_platform": "TBD_NOT_BUILT",
+      "door_positions": "TBD",
+      "original_fixtures": {
+        "bed": true,
+        "storage": true,
+        "workbench": true,
+        "furnace": true,
+        "moved_this_episode": false
+      },
+      "furnace_finished_iron_or_gunpowder_collected_in_ep007": false,
+      "build_material_quantities": "UNKNOWN"
+    },
+    "pending_topics": [
+      "Complete outer 4x4 perimeter wall and decide entry doors",
+      "Plan new outer upper firing perimeter and connecting stairs",
+      "Do not assume roof, upper protection or center pillar installed",
+      "Find one additional spring before making LMG",
+      "Check original home furnace output before claiming completed resources"
+    ]
+  },
+  "limits": [
+    "12 floor tiles built cumulatively by SC-066, not twelve extra tiles in that scene",
+    "Existing original BASE_TIMELINE.md is source-pinned and MUST remain unchanged",
+    "Approval to ingest chat manuscript does not meet GitHub reviewer approval",
+    "Unknown tile coordinates before final ring, wall segment count and materials cannot be invented",
+    "4x4 footprint is floor units not meters",
+    "A built ground ring does not equal a completed 4x4 fortified two-story base"
+  ]
+}
