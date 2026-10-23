@@ -1,0 +1,318 @@
+{
+  "document_kind": "FICTION_WRITER_REFERENCE_CARD",
+  "schema_version": 1,
+  "status": "PROPOSED",
+  "purpose": "Ready-to-use proposed reference card template and worked synthetic retrieval; not an adopted house record or canon.",
+  "current_package_adoption_check": {
+    "explicit_adopted_house_record_found": false,
+    "scope": "house-atlas-v1 package only",
+    "private_history_searched": false,
+    "house_reference_status": "PROPOSED_NOT_ADOPTED"
+  },
+  "pilot_house_identity": {
+    "house_id": "HOUSE-PROP-WORKSHOP-001",
+    "status": "PROPOSED",
+    "owner_player_ref": null,
+    "owner_group_ref": null,
+    "ownership_status": "UNKNOWN_UNASSIGNED",
+    "canon_location_ref": null,
+    "chapter_refs": [],
+    "human_editorial_approval": "UNVERIFIED"
+  },
+  "reusable_archetypes": {
+    "status": "PROPOSED_UNASSIGNED",
+    "owner_player_ref": null,
+    "owner_group_ref": null,
+    "ids": ["STARTER", "MAKER", "COMMUNAL", "EXCHANGE", "ARCHIVE", "REST", "GARDEN", "REUSE"]
+  },
+  "status_vocabulary": {
+    "construction_status": ["PROPOSED", "NOT_BUILT", "IN_PROGRESS", "COMPLETED", "UNKNOWN"],
+    "usability": ["AVAILABLE_IF_SCENE_EVIDENCED", "AVAILABLE_IN_SYNTHETIC_PLAN", "UNAVAILABLE", "UNKNOWN"],
+    "damage_and_repair": "Record only explicit evidence; otherwise UNKNOWN."
+  },
+  "usage_rules": [
+    "Keep stable house_id separate from version_id.",
+    "Keep target_blueprint separate from the as_built_snapshot at a scene.",
+    "Keep world construction time, narrative reveal order, and POV knowledge in separate fields.",
+    "Track construction status per part; track usability separately. A completed part is not automatically usable.",
+    "Record damage or repair only with explicit evidence; otherwise retain UNKNOWN.",
+    "Use exact IDs from the selected version for floors, rooms, tiles, doors, landings, openings, routes, stairs, and pillars.",
+    "Never infer an actual scene version from a proposal or synthetic fixture. Real-scene version, time, and POV applicability default to UNKNOWN.",
+    "Treat all eight archetypes and all pilot versions as PROPOSED and unassigned.",
+    "Version parent links describe design lineage, not in-world construction history unless separate story evidence establishes that history."
+  ],
+  "template": {
+    "namespace": "NARRATIVE_OR_SYNTHETIC-NOT-STORY",
+    "story_scene_ref": null,
+    "actual_scene_applicability": {
+      "exact_version_id": "UNKNOWN",
+      "world_construction_time": "UNKNOWN",
+      "narrative_reveal_order": "UNKNOWN"
+    },
+    "house_identity": {
+      "house_id": null,
+      "house_status": "UNKNOWN",
+      "adoption_status": "UNKNOWN",
+      "owner_player_ref": null,
+      "owner_group_ref": null,
+      "occupant_refs": [],
+      "location_ref": null
+    },
+    "target_blueprint": {
+      "version_id": null,
+      "status": "UNKNOWN",
+      "floor_room_uses": [],
+      "tile_refs": [],
+      "door_refs": [],
+      "route_refs": [],
+      "stair_refs": [],
+      "pillar_refs": []
+    },
+    "as_built_snapshot": {
+      "world_construction_time": "UNKNOWN",
+      "parts": [
+        {
+          "part_ref": null,
+          "construction_status": "UNKNOWN",
+          "usability": "UNKNOWN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN"
+        }
+      ],
+      "available_room_refs": [],
+      "available_route_refs": [],
+      "roof_cover_refs": []
+    },
+    "pov_knowledge": {
+      "character_ref": null,
+      "status": "UNKNOWN",
+      "known_room_refs": [],
+      "known_route_refs": [],
+      "evidence_refs": []
+    },
+    "change_history": [],
+    "source_refs": [],
+    "diagram_refs": [],
+    "unknowns": []
+  },
+  "pilot_blueprint_catalog": [
+    {
+      "house_id": "HOUSE-PROP-WORKSHOP-001",
+      "version_id": "V01",
+      "parent_version_id": null,
+      "lineage_kind": "DESIGN_PROPOSAL_ONLY",
+      "status": "PROPOSED",
+      "floor_room_uses": [
+        {
+          "floor_index": 0,
+          "room_id": "ROOM-CORE",
+          "use_th": "พื้นที่ใช้งานรวม พัก และเก็บของตามโปรแกรมสมมุติ",
+          "tile_refs": ["TILE-G-SW", "TILE-G-SE", "TILE-G-NW", "TILE-G-NE", "TILE-G-TRI-S", "TILE-G-TRI-E", "TILE-G-TRI-N", "TILE-G-TRI-W"]
+        }
+      ],
+      "door_refs": ["DOOR-ENTRY"],
+      "route_refs": ["DOOR-ENTRY"],
+      "stair_refs": [],
+      "pillar_refs": ["PILLAR-HOUSE-PROP-WORKSHOP-001"]
+    },
+    {
+      "house_id": "HOUSE-PROP-WORKSHOP-001",
+      "version_id": "V02",
+      "parent_version_id": "V01",
+      "lineage_kind": "DESIGN_PROPOSAL_ONLY",
+      "status": "PROPOSED",
+      "floor_room_uses": [
+        {
+          "floor_index": 0,
+          "room_id": "ROOM-ENTRY",
+          "use_th": "พื้นที่เข้าและใช้ร่วมตามข้อเสนอ",
+          "tile_refs": ["TILE-G-SE", "TILE-G-NW", "TILE-G-NE", "TILE-G-TRI-E", "TILE-G-TRI-N", "TILE-G-TRI-W"]
+        },
+        {
+          "floor_index": 0,
+          "room_id": "ROOM-WORKSHOP",
+          "use_th": "พื้นที่ทำงานสูงตามข้อเสนอ",
+          "tile_refs": ["TILE-G-SW", "TILE-G-TRI-S"]
+        },
+        {
+          "floor_index": 1,
+          "room_id": "ROOM-MEZZANINE",
+          "use_th": "ชั้นลอยเงียบและทางเดินชั้นบนตามข้อเสนอ",
+          "tile_refs": ["TILE-U-NW", "TILE-U-NE", "TILE-U-SE", "TILE-U-TRI-E"]
+        }
+      ],
+      "door_refs": ["DOOR-ENTRY", "DOOR-WORKSHOP"],
+      "route_refs": ["DOOR-ENTRY", "DOOR-WORKSHOP", "STAIR-EXT-E"],
+      "stairs": [
+        {
+          "stair_id": "STAIR-EXT-E",
+          "route_type": "TOPOLOGICAL_ONLY",
+          "from": {
+            "floor_index": 0,
+            "room_id": "ROOM-ENTRY",
+            "landing_ref": "LANDING-STAIR-F0",
+            "opening_ref": "VOID-STAIR-F0"
+          },
+          "to": {
+            "floor_index": 1,
+            "room_id": "ROOM-MEZZANINE",
+            "landing_ref": "LANDING-STAIR-F1",
+            "opening_ref": "VOID-STAIR-F1"
+          },
+          "physical_feasibility": "UNKNOWN"
+        }
+      ],
+      "pillar_refs": ["PILLAR-HOUSE-PROP-WORKSHOP-001"]
+    },
+    {
+      "house_id": "HOUSE-PROP-WORKSHOP-001",
+      "version_id": "V03",
+      "parent_version_id": "V02",
+      "lineage_kind": "DESIGN_PROPOSAL_ONLY",
+      "status": "PROPOSED",
+      "not_in_synthetic_scene_mapping": true,
+      "floor_room_ids": ["ROOM-ENTRY", "ROOM-WORKSHOP", "ROOM-ANNEX-N", "ROOM-ANNEX-S", "ROOM-GALLERY", "ROOM-TERRACE"],
+      "pillar_refs": ["PILLAR-HOUSE-PROP-WORKSHOP-001"]
+    }
+  ],
+  "worked_synthetic_retrievals": [
+    {
+      "namespace": "SYNTHETIC-NOT-STORY",
+      "synthetic_scene_id": "SYN-SC-A",
+      "story_scene_ref": null,
+      "world_construction_tick": 10,
+      "narrative_reveal_order": "UNKNOWN",
+      "target_blueprint": {
+        "house_id": "HOUSE-PROP-WORKSHOP-001",
+        "version_id": "V01",
+        "status": "PROPOSED",
+        "design_version_is_not_as_built_snapshot": true
+      },
+      "as_built_parts": [
+        {"part_id": "FRAME-GROUND", "construction_status": "COMPLETED", "usability": "UNKNOWN"},
+        {"part_id": "ENCLOSURE-GROUND", "construction_status": "IN_PROGRESS", "usability": "UNAVAILABLE"},
+        {"part_id": "ROOF-GROUND", "construction_status": "NOT_BUILT", "usability": "UNAVAILABLE"},
+        {"part_id": "ROOM-GROUND", "construction_status": "NOT_BUILT", "usability": "UNAVAILABLE"},
+        {"part_id": "STAIR-E", "construction_status": "NOT_BUILT", "usability": "UNAVAILABLE"},
+        {"part_id": "ROOM-UPPER", "construction_status": "NOT_BUILT", "usability": "UNAVAILABLE"},
+        {"part_id": "ROOF-UPPER", "construction_status": "NOT_BUILT", "usability": "UNAVAILABLE"}
+      ],
+      "available_room_refs": [],
+      "available_route_refs": [],
+      "event_refs": ["BUILD-001", "BUILD-002"],
+      "pov_knowledge": {"character_ref": null, "status": "UNKNOWN", "known_room_refs": [], "known_route_refs": []},
+      "damage_and_repair": "UNKNOWN_FOR_ALL_PARTS",
+      "actual_story_applicability": "UNKNOWN"
+    },
+    {
+      "namespace": "SYNTHETIC-NOT-STORY",
+      "synthetic_scene_id": "SYN-SC-B",
+      "story_scene_ref": null,
+      "world_construction_tick": 30,
+      "narrative_reveal_order": "UNKNOWN",
+      "target_blueprint": {
+        "house_id": "HOUSE-PROP-WORKSHOP-001",
+        "version_id": "V01",
+        "status": "PROPOSED",
+        "design_version_is_not_as_built_snapshot": true
+      },
+      "as_built_parts": [
+        {"part_id": "FRAME-GROUND", "construction_status": "COMPLETED", "usability": "AVAILABLE_IN_SYNTHETIC_PLAN"},
+        {"part_id": "ENCLOSURE-GROUND", "construction_status": "COMPLETED", "usability": "AVAILABLE_IN_SYNTHETIC_PLAN"},
+        {"part_id": "ROOF-GROUND", "construction_status": "COMPLETED", "usability": "AVAILABLE_IN_SYNTHETIC_PLAN"},
+        {"part_id": "ROOM-GROUND", "construction_status": "COMPLETED", "usability": "AVAILABLE_IN_SYNTHETIC_PLAN"},
+        {"part_id": "STAIR-E", "construction_status": "NOT_BUILT", "usability": "UNAVAILABLE"},
+        {"part_id": "ROOM-UPPER", "construction_status": "NOT_BUILT", "usability": "UNAVAILABLE"},
+        {"part_id": "ROOF-UPPER", "construction_status": "NOT_BUILT", "usability": "UNAVAILABLE"}
+      ],
+      "available_room_refs": ["ROOM-CORE"],
+      "available_route_refs": ["DOOR-ENTRY"],
+      "roof_cover_refs": ["ROOF-COVER-V01"],
+      "event_refs": ["BUILD-001", "BUILD-002", "BUILD-003", "BUILD-004", "BUILD-005", "BUILD-006"],
+      "design_room_uses": [
+        {"floor_index": 0, "room_id": "ROOM-CORE", "use_th": "พื้นที่ใช้งานรวม พัก และเก็บของตามโปรแกรมสมมุติ"}
+      ],
+      "pov_knowledge": {"character_ref": null, "status": "UNKNOWN", "known_room_refs": [], "known_route_refs": []},
+      "damage_and_repair": "UNKNOWN_FOR_ALL_PARTS",
+      "explicitly_not_available": ["STAIR-EXT-E", "ROOM-MEZZANINE", "TILE-U-NW", "TILE-U-NE", "TILE-U-SE", "TILE-U-TRI-E"],
+      "actual_story_applicability": "UNKNOWN"
+    },
+    {
+      "namespace": "SYNTHETIC-NOT-STORY",
+      "synthetic_scene_id": "SYN-SC-C",
+      "story_scene_ref": null,
+      "world_construction_tick": 50,
+      "narrative_reveal_order": "UNKNOWN",
+      "target_blueprint": {
+        "house_id": "HOUSE-PROP-WORKSHOP-001",
+        "version_id": "V02",
+        "status": "PROPOSED",
+        "design_version_is_not_as_built_snapshot": true
+      },
+      "as_built_parts": [
+        {"part_id": "FRAME-GROUND", "construction_status": "COMPLETED", "usability": "AVAILABLE_IN_SYNTHETIC_PLAN"},
+        {"part_id": "ENCLOSURE-GROUND", "construction_status": "COMPLETED", "usability": "AVAILABLE_IN_SYNTHETIC_PLAN"},
+        {"part_id": "ROOF-GROUND", "construction_status": "COMPLETED", "usability": "AVAILABLE_IN_SYNTHETIC_PLAN"},
+        {"part_id": "ROOM-GROUND", "construction_status": "COMPLETED", "usability": "AVAILABLE_IN_SYNTHETIC_PLAN"},
+        {"part_id": "STAIR-E", "construction_status": "COMPLETED", "usability": "AVAILABLE_IN_SYNTHETIC_PLAN"},
+        {"part_id": "ROOM-UPPER", "construction_status": "COMPLETED", "usability": "AVAILABLE_IN_SYNTHETIC_PLAN"},
+        {"part_id": "ROOF-UPPER", "construction_status": "COMPLETED", "usability": "AVAILABLE_IN_SYNTHETIC_PLAN"}
+      ],
+      "available_room_refs": ["ROOM-ENTRY", "ROOM-WORKSHOP", "ROOM-MEZZANINE"],
+      "available_route_refs": ["DOOR-ENTRY", "DOOR-WORKSHOP", "STAIR-EXT-E"],
+      "roof_cover_refs": ["ROOF-COVER-V02"],
+      "event_refs": ["BUILD-001", "BUILD-002", "BUILD-003", "BUILD-004", "BUILD-005", "BUILD-006", "BUILD-007", "BUILD-008", "BUILD-009", "BUILD-010", "OPEN-011"],
+      "design_room_uses": [
+        {"floor_index": 0, "room_id": "ROOM-ENTRY", "use_th": "พื้นที่เข้าและใช้ร่วมตามข้อเสนอ"},
+        {"floor_index": 0, "room_id": "ROOM-WORKSHOP", "use_th": "พื้นที่ทำงานสูงตามข้อเสนอ"},
+        {"floor_index": 1, "room_id": "ROOM-MEZZANINE", "use_th": "ชั้นลอยเงียบและทางเดินชั้นบนตามข้อเสนอ"}
+      ],
+      "pov_knowledge": {"character_ref": null, "status": "UNKNOWN", "known_room_refs": [], "known_route_refs": []},
+      "damage_and_repair": "UNKNOWN_FOR_ALL_PARTS",
+      "availability_note": "The stair and upper room become available only at OPEN-011 (world tick 50) in this synthetic fixture; physical feasibility remains UNKNOWN.",
+      "actual_story_applicability": "UNKNOWN"
+    }
+  ],
+  "declared_pilot_route_trace": {
+    "namespace": "SYNTHETIC-NOT-STORY",
+    "version_id": "V02",
+    "world_construction_tick": 50,
+    "steps": [
+      {"step": 1, "kind": "EXTERIOR_DOOR", "ref": "DOOR-ENTRY", "to_room_id": "ROOM-ENTRY", "floor_index": 0, "boundary_tile_id": "TILE-G-SE", "boundary_segment_xy": [[0, -1], [1, -1]]},
+      {"step": 2, "kind": "STAIR", "ref": "STAIR-EXT-E", "from_room_id": "ROOM-ENTRY", "from_landing_ref": "LANDING-STAIR-F0", "from_opening_ref": "VOID-STAIR-F0", "to_room_id": "ROOM-MEZZANINE", "to_landing_ref": "LANDING-STAIR-F1", "to_opening_ref": "VOID-STAIR-F1", "floor_indices": [0, 1], "route_type": "TOPOLOGICAL_ONLY"}
+    ],
+    "physical_feasibility": "UNKNOWN",
+    "available_only_after_event_ref": "OPEN-011"
+  },
+  "design_version_lineage_not_world_history": [
+    {"version_id": "V01", "parent_version_id": null, "lineage_kind": "DESIGN_PROPOSAL_ONLY"},
+    {"version_id": "V02", "parent_version_id": "V01", "lineage_kind": "DESIGN_PROPOSAL_ONLY"},
+    {"version_id": "V03", "parent_version_id": "V02", "lineage_kind": "DESIGN_PROPOSAL_ONLY"}
+  ],
+  "source_refs": [
+    {"path": "./archetype_programs.json", "scope": "EIGHT_REUSABLE_PROPOSED_UNASSIGNED_PROGRAMS"},
+    {"path": "./pilot_workshop_versions.json", "scope": "PROPOSED_BLUEPRINT_IDS_AND_LAYOUT"},
+    {"path": "./construction_stages.json", "scope": "SYNTHETIC_NOT_STORY_CONSTRUCTION_SNAPSHOTS"},
+    {"path": "./research/sources.json", "scope": "DESIGN_INSPIRATION_ONLY_NOT_SCENE_EVIDENCE"}
+  ],
+  "diagram_refs": [
+    {"path": "./diagrams/WORKSHOP-V01.svg", "scope": "V01_PROPOSED_PLAN_AND_SECTION"},
+    {"path": "./diagrams/WORKSHOP-V02.svg", "scope": "V02_PROPOSED_PLAN_AND_SECTION"},
+    {"path": "./diagrams/WORKSHOP-V03.svg", "scope": "V03_PROPOSED_PLAN_AND_SECTION"},
+    {"path": "./diagrams/MAKER.svg", "scope": "RELATED_UNPLACED_ARCHETYPE_CONCEPT_ONLY_NOT_A_PILOT_VERSION"}
+  ],
+  "whole_house_pillar_rule": {
+    "confirmed_author_direction": "EXACTLY_ONE_MAIN_PILLAR_PER_WHOLE_HOUSE",
+    "pilot_design_ref": "PILLAR-HOUSE-PROP-WORKSHOP-001",
+    "count_per_target_blueprint": 1,
+    "duplicate_per_floor": false,
+    "as_built_construction_status": "UNKNOWN_NOT_TRACKED_IN_CONSTRUCTION_FIXTURE",
+    "centrality_metric_and_game_effect": "UNKNOWN"
+  },
+  "world_time_to_narrative_or_pov_mapping": "UNKNOWN",
+  "real_story_scene_version_mapping": "UNKNOWN",
+  "physical_feasibility": "UNKNOWN",
+  "human_editorial_approval": "UNVERIFIED",
+  "canon_change_authorized": false,
+  "ledger_apply_authorized": false
+}

@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "status": "PROPOSED",
+  "checked_date": "2026-10-23",
+  "sources": [
+    {
+      "id": "RB-001",
+      "url": "https://www.rustbases.gg/videos/2Zi52gtNEj4",
+      "title": "*NEW* Method 2x1 / Rust Base Design 2025",
+      "creator": "RustEvolution",
+      "evidence_level": "DIRECT_CATALOGUE_PAGE_TITLE_CREATOR_TAG; SITE_GENERATED_OVERVIEW; NO_TRANSCRIPT",
+      "observed_facts_th": [
+        "หน้าคลังที่เปิดโดยตรงแสดงชื่อรายการ RustEvolution และแท็ก 2x1; ข้อความสรุปหน้าเว็บบรรยายแนวคิดฐานขนาดกะทัดรัด แต่เป็นข้อความสรุป ไม่ใช่การตรวจดูผังหรือวิดีโอ",
+        "หน้าแหล่งข้อมูลระบุว่าไม่มี transcript"
+      ],
+      "not_verified_th": [
+        "ไม่เห็นวิดีโอหรือผังจริง จึงไม่ยืนยันตำแหน่งห้อง จำนวนชั้น รูปร่าง tile วิธีสร้าง หรือการใช้งานใน Last Island",
+        "ไม่ใช้คำกล่าวเรื่องการป้องกัน ต้นทุน หรือกลไกจากเกมต้นทางเป็นข้อเท็จจริง"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้ได้เพียงแนวคิดเริ่มจากแกนขนาดเล็กแล้วออกแบบส่วนต่อเติมแบบใหม่ของเราเอง; ห้ามคัดลอกผังหรือยกกลไกของ Rust มาใช้"
+      ]
+    },
+    {
+      "id": "RB-002",
+      "url": "https://www.rustbases.gg/videos/L5o-ce4weOA",
+      "title": "(NEW) Perfect 2x2 Expansion / Rust Base Design 2025",
+      "creator": "RustEvolution",
+      "evidence_level": "DIRECT_CATALOGUE_PAGE_TITLE_CREATOR_TAGS; SITE_GENERATED_OVERVIEW; NO_TRANSCRIPT",
+      "observed_facts_th": [
+        "หน้าคลังแสดงชื่อรายการ ผู้สร้าง RustEvolution และแท็ก 2x2 กับ expandable",
+        "สรุปที่เว็บไซต์สร้างกล่าวถึงแกน 2x2 และการขยายระหว่างความคืบหน้าในเซิร์ฟเวอร์; เป็นเพียงคำบรรยายบนหน้า ไม่ได้ยืนยันจากวิดีโอ",
+        "หน้าแหล่งข้อมูลระบุว่าไม่มี transcript"
+      ],
+      "not_verified_th": [
+        "ไม่ยืนยันผังที่ขยายจริง ลำดับการต่อเติม ทางเดิน หรือจำนวนชั้น และไม่ถือว่าเป็นวิธีเล่นของ Last Island"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้เป็นแรงบันดาลใจเรื่องการออกแบบระยะเริ่มต้นที่เปิดทางให้ขยายภายหลัง โดยสร้างรูปทรงและรายละเอียดใหม่ทั้งหมด"
+      ]
+    },
+    {
+      "id": "RB-003",
+      "url": "https://www.rustbases.gg/videos/3FMu8V9k0_4",
+      "title": "THE LIME V2 - 5-6 mans LEMON - RUST 2026 BASE DESIGN",
+      "creator": "pepe",
+      "evidence_level": "DIRECT_CATALOGUE_PAGE_TITLE_CREATOR_TAG; SITE_GENERATED_OVERVIEW; NO_TRANSCRIPT",
+      "observed_facts_th": [
+        "หน้าคลังแสดงชื่อ THE LIME V2 ผู้สร้าง pepe และแท็ก 3x2; ชื่อรายการระบุกลุ่ม 5–6 คน",
+        "สรุปที่เว็บไซต์สร้างอธิบายว่าเป็นรุ่นปรับปรุงสำหรับกลุ่มผู้เล่น; ตัวเลขและคำอธิบายนี้เป็นการนำเสนอของหน้า ไม่ใช่การยืนยันกำลังรองรับจริง",
+        "หน้าแหล่งข้อมูลระบุว่าไม่มี transcript"
+      ],
+      "not_verified_th": [
+        "ไม่ยืนยันผังจริง จำนวนผู้ใช้ที่บ้านรองรับ การจัดสรรห้อง หรือกลไกป้องกันจากชื่อและสรุปหน้าเว็บ"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้เป็นตัวอย่างเชิงหัวข้อว่าผู้ออกแบบอาจคำนึงถึงกลุ่มขนาดใหญ่ขึ้น; โครงสร้างและโปรแกรมบ้านของเราให้เป็นต้นฉบับ"
+      ]
+    },
+    {
+      "id": "RB-004",
+      "url": "https://www.rustbases.gg/videos/dOsXe6Ec5SU",
+      "title": "The ''ULTIMATE 2x2'' Expansion - Rust Base Design 2026",
+      "creator": "Rust Tricks",
+      "evidence_level": "DIRECT_CATALOGUE_PAGE_TITLE_CREATOR_TAGS; NO_TRANSCRIPT",
+      "observed_facts_th": [
+        "หน้าคลังแสดงชื่อรายการ ผู้สร้าง Rust Tricks และแท็ก duo, trio, 2x2, expandable",
+        "หน้าแหล่งข้อมูลระบุว่าไม่มี transcript"
+      ],
+      "not_verified_th": [
+        "ยืนยันได้เพียงข้อมูลรายการและแท็ก ไม่เห็นผัง การขยายจริง หรือการจัดพื้นที่ภายใน"
+      ],
+      "permitted_inspiration_th": [
+        "อ้างอิงแนวคิดการวางแผนบ้านที่รองรับผู้ใช้งานหลายขนาดและการเติบโตเป็นช่วง ๆ โดยไม่คัดผังหรือเทคนิคใน Rust"
+      ]
+    },
+    {
+      "id": "RB-005",
+      "url": "https://www.rustbases.gg/videos/VPkRUqtSGPw",
+      "title": "The Latte - Solo/Duo - Stacked Floors - Cozy / Rust Base Design",
+      "creator": "Darvel",
+      "evidence_level": "DIRECT_CATALOGUE_PAGE_TITLE_CREATOR_TAGS; SITE_GENERATED_OVERVIEW; NO_TRANSCRIPT",
+      "observed_facts_th": [
+        "หน้าคลังแสดงชื่อ The Latte ผู้สร้าง Darvel และแท็ก solo/duo; ชื่อรายการระบุ stacked floors และ cozy",
+        "สรุปหน้าเว็บกล่าวถึงการจัดพื้นที่หลายระดับในพื้นที่ขนาดเล็กและบรรยากาศอยู่อาศัย; เป็นสรุปที่เว็บไซต์สร้าง ไม่ใช่การยืนยันจากภาพวิดีโอ",
+        "หน้าแหล่งข้อมูลระบุว่าไม่มี transcript"
+      ],
+      "not_verified_th": [
+        "ไม่ได้ยืนยันจำนวนชั้น รูปตัด ความสูง ทางขึ้น หรือคุณสมบัติด้านการอยู่อาศัยของแบบจริง"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้เป็นหัวข้ออ้างอิงสำหรับการคิดความสัมพันธ์ระหว่างพื้นที่กะทัดรัดกับพื้นที่แนวตั้ง; ออกแบบห้อง ชั้น และเส้นทางใหม่"
+      ]
+    },
+    {
+      "id": "RB-006",
+      "url": "https://www.rustbases.gg/videos/Nlzmxhm1fWk",
+      "title": "RUST PvE Base Build | The Mini Spoke",
+      "creator": "Wikky",
+      "evidence_level": "DIRECT_CATALOGUE_PAGE_TITLE_CREATOR; SITE_GENERATED_OVERVIEW; NO_TRANSCRIPT",
+      "observed_facts_th": [
+        "หน้าคลังแสดงชื่อ The Mini Spoke และผู้สร้าง Wikky",
+        "สรุปที่เว็บไซต์สร้างบรรยายรูปแบบแผ่จากจุดกลางและลานสวน รวมทั้งพื้นที่อยู่อาศัย; ข้อความนี้ไม่ใช่ผังที่ตรวจเห็นหรือ transcript",
+        "หน้าแหล่งข้อมูลระบุว่าไม่มี transcript"
+      ],
+      "not_verified_th": [
+        "ไม่ยืนยันจำนวนแขน ผังจริง ความต่อเนื่องของห้อง หรือการใช้พื้นที่ที่สรุปหน้าเว็บกล่าวถึง"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้แนวคิดจุดรวมสายตาหรือลานกลางเป็นแรงบันดาลใจนามธรรมสำหรับบ้านที่มีพื้นที่ร่วม; สร้างโมดูลและองค์ประกอบต้นฉบับ"
+      ]
+    },
+    {
+      "id": "RB-007",
+      "url": "https://www.rustbases.gg/videos/AnLkr9mwstI",
+      "title": "RUST PvE Base Build | The Patio House",
+      "creator": "Wikky",
+      "evidence_level": "DIRECT_CATALOGUE_PAGE_TITLE_CREATOR; SITE_GENERATED_OVERVIEW; NO_TRANSCRIPT",
+      "observed_facts_th": [
+        "หน้าคลังแสดงชื่อ The Patio House และผู้สร้าง Wikky",
+        "สรุปหน้าเว็บกล่าวถึงลานกลาง ห้องนั่งเล่นต่อเนื่องกับครัว พื้นที่ปลูกพืช โรงเก็บยาน และห้องพัก; ข้อมูลนี้มาจากสรุปของเว็บไซต์ ไม่ได้ตรวจจากวิดีโอ",
+        "หน้าแหล่งข้อมูลระบุว่าไม่มี transcript"
+      ],
+      "not_verified_th": [
+        "ไม่ยืนยันตำแหน่งหรือจำนวนห้อง ขนาดของลาน และรายละเอียดการเชื่อมต่อในผังจริง"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้ธีมลานกลางและการแบ่งพื้นที่ใช้ชีวิตเป็นแรงบันดาลใจสำหรับบทบาทห้อง; ไม่สร้างสำเนาผังหรือถือคำบรรยายเป็นกลไกของ Last Island"
+      ]
+    },
+    {
+      "id": "RB-008",
+      "url": "https://www.rustbases.gg/videos/hRMrjTl5EqE",
+      "title": "New META Rust Farm Base Design | CHICKEN COOPS, FLOWERPOTS, and BEEHIVES",
+      "creator": "Verox",
+      "evidence_level": "DIRECT_CATALOGUE_PAGE_TITLE_CREATOR_TAG; NO_TRANSCRIPT",
+      "observed_facts_th": [
+        "หน้าคลังแสดงชื่อรายการ ผู้สร้าง Verox และแท็ก farm; หน้าแหล่งข้อมูลระบุว่าไม่มี transcript"
+      ],
+      "not_verified_th": [
+        "ไม่ได้ยืนยันการจัดวางฟาร์ม จำนวนพื้นที่เพาะปลูก ระบบดูแล หรือรายละเอียดใดจากวิดีโอ"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้เพียงหัวข้อพื้นที่ผลิตหรือดูแลพืชผลเป็นแนวคิดสำหรับโปรแกรมบ้าน; ไม่ยกชนิดสิ่งปลูกสร้างหรือระบบฟาร์มของ Rust มาเป็นกฎในนิยาย"
+      ]
+    },
+    {
+      "id": "RB-009",
+      "url": "https://www.rustbases.gg/videos/LvSM94FdpdI",
+      "title": "MEGAS CLAN BASE | 8-10 MAN | Full Build",
+      "creator": "Memosh",
+      "evidence_level": "DIRECT_CATALOGUE_PAGE_TITLE_CREATOR_TAGS; SITE_GENERATED_OVERVIEW; NO_TRANSCRIPT",
+      "observed_facts_th": [
+        "หน้าคลังแสดงชื่อ MEGAS CLAN BASE ผู้สร้าง Memosh และแท็ก clan, open core, peek downs; ชื่อรายการระบุกลุ่ม 8–10 คน",
+        "สรุปที่เว็บไซต์สร้างระบุว่าแบบนี้เน้นกลุ่มใหญ่บนเซิร์ฟเวอร์ดัดแปลง; เป็นข้อมูลจากสรุป ไม่ใช่การดูวิดีโอหรือการยืนยันความจุ",
+        "หน้าแหล่งข้อมูลระบุว่าไม่มี transcript"
+      ],
+      "not_verified_th": [
+        "ไม่ยืนยันจำนวนผู้ใช้จริง ผัง การแบ่งห้อง หรือประสิทธิภาพของฐานจากชื่อและสรุปหน้าเว็บ"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้เพียงโจทย์การจัดบ้านสำหรับกลุ่มใหญ่และพื้นที่ส่วนกลาง; สร้างการใช้งานและรูปทรงขึ้นใหม่ โดยไม่ยกแนวคิดต่อสู้หรือป้องกันฐานมาใช้"
+      ]
+    },
+    {
+      "id": "RB-010",
+      "url": "https://www.rustbases.gg/videos/_qXyeSkjPIE",
+      "title": "RUST | Cozy Roleplay House Base Design! | RP Build",
+      "creator": "Verox",
+      "evidence_level": "DIRECT_CATALOGUE_PAGE_TITLE_CREATOR; NO_TRANSCRIPT",
+      "observed_facts_th": [
+        "หน้าคลังแสดงชื่อรายการและผู้สร้าง Verox; ในส่วนข้อมูลรายการระบุว่าไม่มี transcript"
+      ],
+      "not_verified_th": [
+        "ไม่ได้ตรวจดูวิดีโอ จึงยืนยันไม่ได้ว่าความสบายหรือบทบาทสมมติปรากฏเป็นพื้นที่แบบใด"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้เพียงแรงบันดาลใจเชิงอารมณ์ว่าบ้านอาจออกแบบเพื่อการพักอาศัยและกิจกรรมร่วม; ห้ามสมมติรูปทรงภายในจากชื่อรายการ"
+      ]
+    },
+    {
+      "id": "GUIDE-001",
+      "url": "https://guided.news/en/guides/rust-best-starter-base-2021-tips-tricks/",
+      "title": "The Best Rust Starter Base 2021: Building Instructions, Tips & Tricks",
+      "creator": "Kevin Willing",
+      "evidence_level": "DIRECT_ARTICLE_TEXT; LINKED_IMAGE_PRIOR_VISUAL_REVIEW; IMAGE_SHAPE_LIMITED",
+      "observed_facts_th": [
+        "บทความลงวันที่ 12 มกราคม 2021 และระบุแนวทางบ้านเริ่มต้นขนาด 2x2; ลิงก์ภาพผังอยู่ที่ https://guided.news/wp-content/uploads/2021/01/rust-starter-base-2021-2x2-grundriss-bauplan.jpg",
+        "ข้อสังเกตจากภาพที่ผู้ดูแลโครงการตรวจไว้: ดูเป็นแกนสี่เหลี่ยม 2x2 พร้อมแนวต่อสามเหลี่ยมและส่วนหน้าที่เป็นปลายแหลม; มุมมองภาพไม่พอยืนยันจำนวน tile หรือขอบทั้งหมด"
+      ],
+      "not_verified_th": [
+        "บทความเป็นคู่มือ Rust ปี 2021 ไม่ใช่หลักฐานกลไกของ Last Island; รูปภาพไม่เพียงพอสำหรับสร้างผังเต็มหรือยืนยันมิติทั้งหมด",
+        "ไม่ยกสูตรก่อสร้าง ราคา หรือข้ออ้างด้านการป้องกันจากบทความมาใช้"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้เป็นแนวคิดนามธรรมของการผสมโมดูลสี่เหลี่ยมกับสามเหลี่ยมและการทำปลายทางเข้าให้เด่น; สร้างตำแหน่งและผังใหม่ ไม่คัดลอกภาพ"
+      ]
+    },
+    {
+      "id": "CH-001",
+      "url": "https://www.corrosionhour.com/easiest-bunker-base/",
+      "title": "Easiest Bunker Base in RUST, 20+ Rockets to Main Loot (2018)",
+      "creator": "Vice (แบบในวิดีโอ); Digital Ghost (บทความ)",
+      "evidence_level": "DIRECT_ARTICLE_AND_TRANSCRIPT; VIDEO_NOT_OPENED",
+      "observed_facts_th": [
+        "บทความที่ Digital Ghost เผยแพร่และถอดความวิดีโอของ Vice กล่าวถึงบันไดรูปตัว L ที่ใช้ขึ้นชั้นสองและเป็นที่วางของได้; เป็นคำบรรยายของแบบ Rust เก่าจากปี 2018"
+      ],
+      "not_verified_th": [
+        "ไม่ได้ดูวิดีโอต้นฉบับ; รายละเอียดทางเข้าและการสร้างในบทความเป็นกลไกเฉพาะของ Rust รุ่นเก่าและไม่ใช่ข้อเท็จจริงใน Last Island"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้แนวคิดทั่วไปว่าพื้นที่สัญจรแนวตั้งอาจเชื่อมหน้าที่หรือระดับต่างกัน; ออกแบบบันไดและการใช้งานใหม่โดยไม่คัดเทคนิคของต้นฉบับ"
+      ]
+    },
+    {
+      "id": "CH-002",
+      "url": "https://www.corrosionhour.com/aggravator-rust-base-design-2019/",
+      "title": "Aggravator RUST Base Design (2019)",
+      "creator": "Evil Wurst (ผู้ออกแบบตามบทความ); Digital Ghost (บทความ)",
+      "evidence_level": "DIRECT_ARTICLE_AND_TRANSCRIPT; LINKED_HISTORIC_IMAGE_PRIOR_VISUAL_REVIEW; VIDEO_NOT_OPENED",
+      "observed_facts_th": [
+        "บทความและ transcript อธิบายพื้นที่ใช้ชีวิตและงานช่างแบบเปิดบนชั้นสอง พร้อมห้องใช้งานเสริมและห้องนอน; กล่าวถึงทางขึ้นสู่หลังคา",
+        "ภาพภายนอกเก่าที่ผู้ดูแลโครงการตรวจไว้ (https://www.corrosionhour.com/wp-content/uploads/2019/03/rust-aggravator-base-design-2019-735x400.jpg) แสดงมวลส่วนบนสูงเหนือแนวหลังคาหรือแท่นส่วนล่างและแผงหลังคาสามเหลี่ยม; ภาพไม่แสดงการใช้บันไดหรือระเบียงชัดเจน"
+      ],
+      "not_verified_th": [
+        "บทความและภาพมาจากปี 2019; ไม่ได้ดูวิดีโอ และรายละเอียดอาคารหรือระบบ Rust ที่ถอดความไม่ยืนยันฟิสิกส์ การรับน้ำหนัก หรือกฎความสูงของ Last Island"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้เป็นแรงบันดาลใจเรื่องการแยกกิจกรรมตามระดับและการทำมวลอาคารชั้นบนให้เห็นจากภายนอก; ไม่คัดผัง บันได เทคนิคฐาน หรือกลไกของเกม"
+      ]
+    },
+    {
+      "id": "CH-003",
+      "url": "https://www.corrosionhour.com/trio-stability-bunker-base-design-2019/",
+      "title": "Trio Stability Bunker Base Design (2019)",
+      "creator": "Everherd (ผู้ออกแบบตามบทความ); Squishface (บทความ)",
+      "evidence_level": "DIRECT_ARTICLE_AND_TRANSCRIPT; LINKED_HISTORIC_IMAGE_PRIOR_VISUAL_REVIEW; ORIGINAL_VIDEO_REMOVED",
+      "observed_facts_th": [
+        "บทความและ transcript ระบุโปรแกรมสามระดับ ได้แก่พื้นที่เก็บของชั้นล่าง ห้องอยู่อาศัยและงานช่างชั้นกลาง และชั้นบนสำหรับมองหรือยิง; เนื้อหานี้อ้างจาก transcript ไม่ใช่การตรวจวิดีโอ",
+        "ภาพภายนอกเก่าที่ผู้ดูแลโครงการตรวจไว้ (https://www.corrosionhour.com/wp-content/uploads/2019/05/rust-trio-stability-bunker-base-design-2019-735x400.jpg) แสดงมวลกลางที่สูงกว่าส่วนปีกด้านข้าง; จำนวนชั้นอ้างจากข้อความ ไม่ได้อ่านจากภาพ"
+      ],
+      "not_verified_th": [
+        "บทความแจ้งว่าวิดีโอต้นฉบับถูกนำออก; เนื้อหาถอดความและภาพปี 2019 ไม่ยืนยันรายละเอียดปัจจุบันหรือกลไกของ Last Island"
+      ],
+      "permitted_inspiration_th": [
+        "ใช้แนวคิดการวางกิจกรรมคนละระดับและเปรียบเทียบความสูงของปีกอาคารเพื่อช่วยอ่านรูปทรง; ไม่ถ่ายโอนระบบป้องกันหรือข้ออ้างด้านโครงสร้าง"
+      ]
+    }
+  ]
+}

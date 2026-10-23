@@ -1,0 +1,2059 @@
+{
+  "schema_version": 1,
+  "status": "PROPOSED",
+  "story_slug": "last-island-active",
+  "human_editorial_approval": "UNVERIFIED",
+  "canon_change_authorized": false,
+  "ledger_apply_authorized": false,
+  "geometry_convention": {
+    "convention_id": "ILLUSTRATIVE_GRID_V1",
+    "status": "PROPOSED",
+    "coordinate_system": "integer_xy",
+    "square_cell_size_u": 1,
+    "triangle_definition": "right_isosceles_half_square_45_45_90_legs_1u",
+    "length_unit": "U",
+    "vertical_unit": "H",
+    "metric_conversion": null,
+    "game_geometry_verified": false,
+    "centrality_metric": "ground_footprint_area_centroid_xy",
+    "centrality_target_xy": [
+      0,
+      0
+    ],
+    "physical_feasibility": "UNKNOWN"
+  },
+  "house": {
+    "house_id": "HOUSE-PROP-WORKSHOP-001",
+    "name_th": "บ้านช่างสังเคราะห์",
+    "status": "PROPOSED",
+    "lineage_kind": "DESIGN_PROPOSAL_ONLY",
+    "owner_player_ref": null,
+    "owner_group_ref": null,
+    "canon_location_ref": null,
+    "chapter_refs": [],
+    "versions": [
+      {
+        "version_id": "V01",
+        "parent_version_id": null,
+        "lineage_kind": "DESIGN_PROPOSAL_ONLY",
+        "status": "PROPOSED",
+        "change_summary_th": "แกนบ้านชั้นล่างแบบ 2×2 พร้อมโมดูลสามเหลี่ยมรอบแกน; เป็นแบบแนวคิดระดับเตี้ยเท่านั้น",
+        "entry_room_id": "ROOM-CORE",
+        "floors": [
+          {
+            "floor_index": 0,
+            "elevation_h": 0,
+            "tile_refs": [
+              "TILE-G-SW",
+              "TILE-G-SE",
+              "TILE-G-NW",
+              "TILE-G-NE",
+              "TILE-G-TRI-S",
+              "TILE-G-TRI-E",
+              "TILE-G-TRI-N",
+              "TILE-G-TRI-W"
+            ],
+            "room_refs": [
+              "ROOM-CORE"
+            ],
+            "voids": []
+          }
+        ],
+        "tiles": [
+          {
+            "tile_id": "TILE-G-SW",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                -1,
+                -1
+              ],
+              [
+                0,
+                -1
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                -1,
+                0
+              ]
+            ],
+            "room_ref": "ROOM-CORE",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-SE",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                -1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "room_ref": "ROOM-CORE",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-NW",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                -1,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                -1,
+                1
+              ]
+            ],
+            "room_ref": "ROOM-CORE",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-NE",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "room_ref": "ROOM-CORE",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-TRI-S",
+            "floor_index": 0,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                -1,
+                -1
+              ],
+              [
+                0,
+                -1
+              ],
+              [
+                -1,
+                -2
+              ]
+            ],
+            "room_ref": "ROOM-CORE",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-TRI-E",
+            "floor_index": 0,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                -1
+              ]
+            ],
+            "room_ref": "ROOM-CORE",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-TRI-N",
+            "floor_index": 0,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "room_ref": "ROOM-CORE",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-TRI-W",
+            "floor_index": 0,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                -1,
+                1
+              ],
+              [
+                -1,
+                0
+              ],
+              [
+                -2,
+                1
+              ]
+            ],
+            "room_ref": "ROOM-CORE",
+            "walkable": true
+          }
+        ],
+        "edge_connections": [
+          {
+            "edge_id": "EDGE-TILE-G-SW--TILE-G-SE",
+            "tile_a_id": "TILE-G-SW",
+            "tile_b_id": "TILE-G-SE",
+            "segment_xy": [
+              [
+                0,
+                -1
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NW--TILE-G-SW",
+            "tile_a_id": "TILE-G-NW",
+            "tile_b_id": "TILE-G-SW",
+            "segment_xy": [
+              [
+                -1,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NE--TILE-G-SE",
+            "tile_a_id": "TILE-G-NE",
+            "tile_b_id": "TILE-G-SE",
+            "segment_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NE--TILE-G-NW",
+            "tile_a_id": "TILE-G-NE",
+            "tile_b_id": "TILE-G-NW",
+            "segment_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-SW--TILE-G-TRI-S",
+            "tile_a_id": "TILE-G-SW",
+            "tile_b_id": "TILE-G-TRI-S",
+            "segment_xy": [
+              [
+                -1,
+                -1
+              ],
+              [
+                0,
+                -1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-SE--TILE-G-TRI-E",
+            "tile_a_id": "TILE-G-SE",
+            "tile_b_id": "TILE-G-TRI-E",
+            "segment_xy": [
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NE--TILE-G-TRI-N",
+            "tile_a_id": "TILE-G-NE",
+            "tile_b_id": "TILE-G-TRI-N",
+            "segment_xy": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NW--TILE-G-TRI-W",
+            "tile_a_id": "TILE-G-NW",
+            "tile_b_id": "TILE-G-TRI-W",
+            "segment_xy": [
+              [
+                -1,
+                0
+              ],
+              [
+                -1,
+                1
+              ]
+            ]
+          }
+        ],
+        "rooms": [
+          {
+            "room_id": "ROOM-CORE",
+            "floor_index": 0,
+            "tile_refs": [
+              "TILE-G-SW",
+              "TILE-G-SE",
+              "TILE-G-NW",
+              "TILE-G-NE",
+              "TILE-G-TRI-S",
+              "TILE-G-TRI-E",
+              "TILE-G-TRI-N",
+              "TILE-G-TRI-W"
+            ],
+            "vertical_extent_h": [
+              0,
+              2
+            ],
+            "use_th": "พื้นที่ใช้งานรวม พัก และเก็บของตามโปรแกรมสมมุติ",
+            "occupancy_ref": null,
+            "status": "PROPOSED"
+          }
+        ],
+        "doors": [
+          {
+            "door_id": "DOOR-ENTRY",
+            "floor_index": 0,
+            "from_room_id": "ROOM-CORE",
+            "to_room_id": null,
+            "exterior": true,
+            "boundary_tile_id": "TILE-G-SE",
+            "boundary_segment_xy": [
+              [
+                0,
+                -1
+              ],
+              [
+                1,
+                -1
+              ]
+            ]
+          }
+        ],
+        "landings": [],
+        "stairs": [],
+        "roofs": [
+          {
+            "roof_id": "ROOF-COVER-V01",
+            "kind": "COVERING_ROOF",
+            "floor_index": 0,
+            "elevation_h": 2,
+            "coverage_tile_refs": [
+              "TILE-G-SW",
+              "TILE-G-SE",
+              "TILE-G-NW",
+              "TILE-G-NE",
+              "TILE-G-TRI-S",
+              "TILE-G-TRI-E",
+              "TILE-G-TRI-N",
+              "TILE-G-TRI-W"
+            ],
+            "access_ref": null,
+            "status": "PROPOSED"
+          }
+        ],
+        "pillars": [
+          {
+            "pillar_id": "PILLAR-HOUSE-PROP-WORKSHOP-001",
+            "xy": [
+              0,
+              0
+            ],
+            "z_extent_h": null,
+            "centering_metric_ref": "ground_footprint_area_centroid_xy",
+            "centering_target_xy": [
+              0,
+              0
+            ],
+            "status": "PROPOSED"
+          }
+        ],
+        "physical_feasibility": "UNKNOWN"
+      },
+      {
+        "version_id": "V02",
+        "parent_version_id": "V01",
+        "lineage_kind": "DESIGN_PROPOSAL_ONLY",
+        "status": "PROPOSED",
+        "change_summary_th": "เพิ่มห้องช่างสูงและชั้นลอยบางส่วนที่เงียบกว่า พร้อม void เปิดเหนือห้องช่างและบันไดเชิง topology",
+        "entry_room_id": "ROOM-ENTRY",
+        "floors": [
+          {
+            "floor_index": 0,
+            "elevation_h": 0,
+            "tile_refs": [
+              "TILE-G-SW",
+              "TILE-G-SE",
+              "TILE-G-NW",
+              "TILE-G-NE",
+              "TILE-G-TRI-S",
+              "TILE-G-TRI-E",
+              "TILE-G-TRI-N",
+              "TILE-G-TRI-W"
+            ],
+            "room_refs": [
+              "ROOM-WORKSHOP",
+              "ROOM-ENTRY"
+            ],
+            "voids": [
+              {
+                "void_id": "VOID-STAIR-F0",
+                "polygon_xy": [
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "opens_to_floor_indices": [
+                  1
+                ],
+                "stair_opening_for": "STAIR-EXT-E"
+              }
+            ]
+          },
+          {
+            "floor_index": 1,
+            "elevation_h": 2,
+            "tile_refs": [
+              "TILE-U-NE",
+              "TILE-U-SE",
+              "TILE-U-TRI-E"
+            ],
+            "room_refs": [
+              "ROOM-MEZZANINE"
+            ],
+            "voids": [
+              {
+                "void_id": "VOID-WORKSHOP-F1",
+                "polygon_xy": [
+                  [
+                    -1,
+                    -1
+                  ],
+                  [
+                    0,
+                    -1
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    -1,
+                    0
+                  ]
+                ],
+                "opens_to_floor_indices": [
+                  0
+                ],
+                "stair_opening_for": null
+              },
+              {
+                "void_id": "VOID-STAIR-F1",
+                "polygon_xy": [
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "opens_to_floor_indices": [
+                  0
+                ],
+                "stair_opening_for": "STAIR-EXT-E"
+              }
+            ]
+          }
+        ],
+        "tiles": [
+          {
+            "tile_id": "TILE-G-SW",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                -1,
+                -1
+              ],
+              [
+                0,
+                -1
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                -1,
+                0
+              ]
+            ],
+            "room_ref": "ROOM-WORKSHOP",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-SE",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                -1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "room_ref": "ROOM-ENTRY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-NW",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                -1,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                -1,
+                1
+              ]
+            ],
+            "room_ref": "ROOM-ENTRY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-NE",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "room_ref": "ROOM-ENTRY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-TRI-S",
+            "floor_index": 0,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                -1,
+                -1
+              ],
+              [
+                0,
+                -1
+              ],
+              [
+                -1,
+                -2
+              ]
+            ],
+            "room_ref": "ROOM-WORKSHOP",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-TRI-E",
+            "floor_index": 0,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                -1
+              ]
+            ],
+            "room_ref": "ROOM-ENTRY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-TRI-N",
+            "floor_index": 0,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "room_ref": "ROOM-ENTRY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-TRI-W",
+            "floor_index": 0,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                -1,
+                1
+              ],
+              [
+                -1,
+                0
+              ],
+              [
+                -2,
+                1
+              ]
+            ],
+            "room_ref": "ROOM-ENTRY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-U-NE",
+            "floor_index": 1,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "room_ref": "ROOM-MEZZANINE",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-U-SE",
+            "floor_index": 1,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                -1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "room_ref": "ROOM-MEZZANINE",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-U-TRI-E",
+            "floor_index": 1,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                -1
+              ]
+            ],
+            "room_ref": "ROOM-MEZZANINE",
+            "walkable": true
+          }
+        ],
+        "edge_connections": [
+          {
+            "edge_id": "EDGE-TILE-G-SW--TILE-G-SE",
+            "tile_a_id": "TILE-G-SW",
+            "tile_b_id": "TILE-G-SE",
+            "segment_xy": [
+              [
+                0,
+                -1
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NW--TILE-G-SW",
+            "tile_a_id": "TILE-G-NW",
+            "tile_b_id": "TILE-G-SW",
+            "segment_xy": [
+              [
+                -1,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NE--TILE-G-SE",
+            "tile_a_id": "TILE-G-NE",
+            "tile_b_id": "TILE-G-SE",
+            "segment_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NE--TILE-G-NW",
+            "tile_a_id": "TILE-G-NE",
+            "tile_b_id": "TILE-G-NW",
+            "segment_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-SW--TILE-G-TRI-S",
+            "tile_a_id": "TILE-G-SW",
+            "tile_b_id": "TILE-G-TRI-S",
+            "segment_xy": [
+              [
+                -1,
+                -1
+              ],
+              [
+                0,
+                -1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-SE--TILE-G-TRI-E",
+            "tile_a_id": "TILE-G-SE",
+            "tile_b_id": "TILE-G-TRI-E",
+            "segment_xy": [
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NE--TILE-G-TRI-N",
+            "tile_a_id": "TILE-G-NE",
+            "tile_b_id": "TILE-G-TRI-N",
+            "segment_xy": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NW--TILE-G-TRI-W",
+            "tile_a_id": "TILE-G-NW",
+            "tile_b_id": "TILE-G-TRI-W",
+            "segment_xy": [
+              [
+                -1,
+                0
+              ],
+              [
+                -1,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-U-NE--TILE-U-SE",
+            "tile_a_id": "TILE-U-NE",
+            "tile_b_id": "TILE-U-SE",
+            "segment_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-U-SE--TILE-U-TRI-E",
+            "tile_a_id": "TILE-U-SE",
+            "tile_b_id": "TILE-U-TRI-E",
+            "segment_xy": [
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          }
+        ],
+        "rooms": [
+          {
+            "room_id": "ROOM-WORKSHOP",
+            "floor_index": 0,
+            "tile_refs": [
+              "TILE-G-SW",
+              "TILE-G-TRI-S"
+            ],
+            "vertical_extent_h": [
+              0,
+              3
+            ],
+            "use_th": "พื้นที่ทำงานสูงตามข้อเสนอ",
+            "occupancy_ref": null,
+            "status": "PROPOSED"
+          },
+          {
+            "room_id": "ROOM-ENTRY",
+            "floor_index": 0,
+            "tile_refs": [
+              "TILE-G-SE",
+              "TILE-G-NW",
+              "TILE-G-NE",
+              "TILE-G-TRI-E",
+              "TILE-G-TRI-N",
+              "TILE-G-TRI-W"
+            ],
+            "vertical_extent_h": [
+              0,
+              2
+            ],
+            "use_th": "พื้นที่เข้าและใช้ร่วมตามข้อเสนอ",
+            "occupancy_ref": null,
+            "status": "PROPOSED"
+          },
+          {
+            "room_id": "ROOM-MEZZANINE",
+            "floor_index": 1,
+            "tile_refs": [
+              "TILE-U-NE",
+              "TILE-U-SE",
+              "TILE-U-TRI-E"
+            ],
+            "vertical_extent_h": [
+              2,
+              3
+            ],
+            "use_th": "ชั้นลอยเงียบและทางเดินชั้นบนตามข้อเสนอ",
+            "occupancy_ref": null,
+            "status": "PROPOSED"
+          }
+        ],
+        "doors": [
+          {
+            "door_id": "DOOR-ENTRY",
+            "floor_index": 0,
+            "from_room_id": "ROOM-ENTRY",
+            "to_room_id": null,
+            "exterior": true,
+            "boundary_tile_id": "TILE-G-SE",
+            "boundary_segment_xy": [
+              [
+                0,
+                -1
+              ],
+              [
+                1,
+                -1
+              ]
+            ]
+          },
+          {
+            "door_id": "DOOR-WORKSHOP",
+            "floor_index": 0,
+            "from_room_id": "ROOM-ENTRY",
+            "to_room_id": "ROOM-WORKSHOP",
+            "exterior": false,
+            "edge_ref": "EDGE-TILE-G-NW--TILE-G-SW"
+          }
+        ],
+        "landings": [
+          {
+            "landing_id": "LANDING-STAIR-F0",
+            "floor_index": 0,
+            "room_id": "ROOM-ENTRY",
+            "opening_ref": "VOID-STAIR-F0"
+          },
+          {
+            "landing_id": "LANDING-STAIR-F1",
+            "floor_index": 1,
+            "room_id": "ROOM-MEZZANINE",
+            "opening_ref": "VOID-STAIR-F1"
+          }
+        ],
+        "stairs": [
+          {
+            "stair_id": "STAIR-EXT-E",
+            "route_type": "TOPOLOGICAL_ONLY",
+            "from": {
+              "floor_index": 0,
+              "room_id": "ROOM-ENTRY",
+              "landing_ref": "LANDING-STAIR-F0",
+              "opening_ref": "VOID-STAIR-F0"
+            },
+            "to": {
+              "floor_index": 1,
+              "room_id": "ROOM-MEZZANINE",
+              "landing_ref": "LANDING-STAIR-F1",
+              "opening_ref": "VOID-STAIR-F1"
+            },
+            "physical_feasibility": "UNKNOWN"
+          }
+        ],
+        "roofs": [
+          {
+            "roof_id": "ROOF-COVER-V02",
+            "kind": "COVERING_ROOF",
+            "floor_index": 0,
+            "elevation_h": 3,
+            "coverage_tile_refs": [
+              "TILE-G-SW",
+              "TILE-G-SE",
+              "TILE-G-NW",
+              "TILE-G-NE",
+              "TILE-G-TRI-S",
+              "TILE-G-TRI-E",
+              "TILE-G-TRI-N",
+              "TILE-G-TRI-W"
+            ],
+            "access_ref": null,
+            "status": "PROPOSED"
+          }
+        ],
+        "pillars": [
+          {
+            "pillar_id": "PILLAR-HOUSE-PROP-WORKSHOP-001",
+            "xy": [
+              0,
+              0
+            ],
+            "z_extent_h": null,
+            "centering_metric_ref": "ground_footprint_area_centroid_xy",
+            "centering_target_xy": [
+              0,
+              0
+            ],
+            "status": "PROPOSED"
+          }
+        ],
+        "physical_feasibility": "UNKNOWN"
+      },
+      {
+        "version_id": "V03",
+        "parent_version_id": "V02",
+        "lineage_kind": "DESIGN_PROPOSAL_ONLY",
+        "status": "PROPOSED",
+        "change_summary_th": "เพิ่มส่วนต่อด้านเหนือและใต้ที่จับคู่กัน และแกลเลอรีชั้นบนพร้อมระเบียงเปิดใช้งาน",
+        "entry_room_id": "ROOM-ENTRY",
+        "floors": [
+          {
+            "floor_index": 0,
+            "elevation_h": 0,
+            "tile_refs": [
+              "TILE-G-SW",
+              "TILE-G-SE",
+              "TILE-G-NW",
+              "TILE-G-NE",
+              "TILE-G-TRI-S",
+              "TILE-G-TRI-E",
+              "TILE-G-TRI-N",
+              "TILE-G-TRI-W",
+              "TILE-G-ANNEX-N",
+              "TILE-G-ANNEX-S"
+            ],
+            "room_refs": [
+              "ROOM-WORKSHOP",
+              "ROOM-ENTRY",
+              "ROOM-ANNEX-N",
+              "ROOM-ANNEX-S"
+            ],
+            "voids": [
+              {
+                "void_id": "VOID-STAIR-F0",
+                "polygon_xy": [
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "opens_to_floor_indices": [
+                  1
+                ],
+                "stair_opening_for": "STAIR-EXT-E"
+              }
+            ]
+          },
+          {
+            "floor_index": 1,
+            "elevation_h": 2,
+            "tile_refs": [
+              "TILE-U-NE",
+              "TILE-U-SE",
+              "TILE-U-TRI-E",
+              "TILE-U-ANNEX-N",
+              "TILE-U-ANNEX-S"
+            ],
+            "room_refs": [
+              "ROOM-GALLERY",
+              "ROOM-TERRACE"
+            ],
+            "voids": [
+              {
+                "void_id": "VOID-WORKSHOP-F1",
+                "polygon_xy": [
+                  [
+                    -1,
+                    -1
+                  ],
+                  [
+                    0,
+                    -1
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    -1,
+                    0
+                  ]
+                ],
+                "opens_to_floor_indices": [
+                  0
+                ],
+                "stair_opening_for": null
+              },
+              {
+                "void_id": "VOID-STAIR-F1",
+                "polygon_xy": [
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "opens_to_floor_indices": [
+                  0
+                ],
+                "stair_opening_for": "STAIR-EXT-E"
+              }
+            ]
+          }
+        ],
+        "tiles": [
+          {
+            "tile_id": "TILE-G-SW",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                -1,
+                -1
+              ],
+              [
+                0,
+                -1
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                -1,
+                0
+              ]
+            ],
+            "room_ref": "ROOM-WORKSHOP",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-SE",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                -1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "room_ref": "ROOM-ENTRY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-NW",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                -1,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                -1,
+                1
+              ]
+            ],
+            "room_ref": "ROOM-ENTRY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-NE",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "room_ref": "ROOM-ENTRY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-TRI-S",
+            "floor_index": 0,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                -1,
+                -1
+              ],
+              [
+                0,
+                -1
+              ],
+              [
+                -1,
+                -2
+              ]
+            ],
+            "room_ref": "ROOM-WORKSHOP",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-TRI-E",
+            "floor_index": 0,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                -1
+              ]
+            ],
+            "room_ref": "ROOM-ENTRY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-TRI-N",
+            "floor_index": 0,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "room_ref": "ROOM-ENTRY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-TRI-W",
+            "floor_index": 0,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                -1,
+                1
+              ],
+              [
+                -1,
+                0
+              ],
+              [
+                -2,
+                1
+              ]
+            ],
+            "room_ref": "ROOM-ENTRY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-ANNEX-N",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                -1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                -1,
+                2
+              ]
+            ],
+            "room_ref": "ROOM-ANNEX-N",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-G-ANNEX-S",
+            "floor_index": 0,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                -2
+              ],
+              [
+                1,
+                -2
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                0,
+                -1
+              ]
+            ],
+            "room_ref": "ROOM-ANNEX-S",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-U-NE",
+            "floor_index": 1,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "room_ref": "ROOM-GALLERY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-U-SE",
+            "floor_index": 1,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                -1
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "room_ref": "ROOM-GALLERY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-U-TRI-E",
+            "floor_index": 1,
+            "shape": "RIGHT_ISOSCELES_TRIANGLE",
+            "polygon_xy": [
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                -1
+              ]
+            ],
+            "room_ref": "ROOM-GALLERY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-U-ANNEX-N",
+            "floor_index": 1,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "room_ref": "ROOM-GALLERY",
+            "walkable": true
+          },
+          {
+            "tile_id": "TILE-U-ANNEX-S",
+            "floor_index": 1,
+            "shape": "SQUARE",
+            "polygon_xy": [
+              [
+                0,
+                -2
+              ],
+              [
+                1,
+                -2
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                0,
+                -1
+              ]
+            ],
+            "room_ref": "ROOM-TERRACE",
+            "walkable": true
+          }
+        ],
+        "edge_connections": [
+          {
+            "edge_id": "EDGE-TILE-G-SW--TILE-G-SE",
+            "tile_a_id": "TILE-G-SW",
+            "tile_b_id": "TILE-G-SE",
+            "segment_xy": [
+              [
+                0,
+                -1
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NW--TILE-G-SW",
+            "tile_a_id": "TILE-G-NW",
+            "tile_b_id": "TILE-G-SW",
+            "segment_xy": [
+              [
+                -1,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NE--TILE-G-SE",
+            "tile_a_id": "TILE-G-NE",
+            "tile_b_id": "TILE-G-SE",
+            "segment_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NE--TILE-G-NW",
+            "tile_a_id": "TILE-G-NE",
+            "tile_b_id": "TILE-G-NW",
+            "segment_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-SW--TILE-G-TRI-S",
+            "tile_a_id": "TILE-G-SW",
+            "tile_b_id": "TILE-G-TRI-S",
+            "segment_xy": [
+              [
+                -1,
+                -1
+              ],
+              [
+                0,
+                -1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-SE--TILE-G-TRI-E",
+            "tile_a_id": "TILE-G-SE",
+            "tile_b_id": "TILE-G-TRI-E",
+            "segment_xy": [
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NE--TILE-G-TRI-N",
+            "tile_a_id": "TILE-G-NE",
+            "tile_b_id": "TILE-G-TRI-N",
+            "segment_xy": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-NW--TILE-G-TRI-W",
+            "tile_a_id": "TILE-G-NW",
+            "tile_b_id": "TILE-G-TRI-W",
+            "segment_xy": [
+              [
+                -1,
+                0
+              ],
+              [
+                -1,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-ANNEX-N--TILE-G-NW",
+            "tile_a_id": "TILE-G-ANNEX-N",
+            "tile_b_id": "TILE-G-NW",
+            "segment_xy": [
+              [
+                -1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-G-ANNEX-S--TILE-G-SE",
+            "tile_a_id": "TILE-G-ANNEX-S",
+            "tile_b_id": "TILE-G-SE",
+            "segment_xy": [
+              [
+                0,
+                -1
+              ],
+              [
+                1,
+                -1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-U-NE--TILE-U-SE",
+            "tile_a_id": "TILE-U-NE",
+            "tile_b_id": "TILE-U-SE",
+            "segment_xy": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-U-SE--TILE-U-TRI-E",
+            "tile_a_id": "TILE-U-SE",
+            "tile_b_id": "TILE-U-TRI-E",
+            "segment_xy": [
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-U-ANNEX-S--TILE-U-SE",
+            "tile_a_id": "TILE-U-ANNEX-S",
+            "tile_b_id": "TILE-U-SE",
+            "segment_xy": [
+              [
+                0,
+                -1
+              ],
+              [
+                1,
+                -1
+              ]
+            ]
+          },
+          {
+            "edge_id": "EDGE-TILE-U-ANNEX-N--TILE-U-NE",
+            "tile_a_id": "TILE-U-ANNEX-N",
+            "tile_b_id": "TILE-U-NE",
+            "segment_xy": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ],
+        "rooms": [
+          {
+            "room_id": "ROOM-WORKSHOP",
+            "floor_index": 0,
+            "tile_refs": [
+              "TILE-G-SW",
+              "TILE-G-TRI-S"
+            ],
+            "vertical_extent_h": [
+              0,
+              3
+            ],
+            "use_th": "พื้นที่ทำงานสูงตามข้อเสนอ",
+            "occupancy_ref": null,
+            "status": "PROPOSED"
+          },
+          {
+            "room_id": "ROOM-ENTRY",
+            "floor_index": 0,
+            "tile_refs": [
+              "TILE-G-SE",
+              "TILE-G-NW",
+              "TILE-G-NE",
+              "TILE-G-TRI-E",
+              "TILE-G-TRI-N",
+              "TILE-G-TRI-W"
+            ],
+            "vertical_extent_h": [
+              0,
+              2
+            ],
+            "use_th": "พื้นที่เข้าและใช้ร่วมตามข้อเสนอ",
+            "occupancy_ref": null,
+            "status": "PROPOSED"
+          },
+          {
+            "room_id": "ROOM-ANNEX-N",
+            "floor_index": 0,
+            "tile_refs": [
+              "TILE-G-ANNEX-N"
+            ],
+            "vertical_extent_h": [
+              0,
+              2
+            ],
+            "use_th": "พื้นที่ต่อด้านเหนือที่เสนอ",
+            "occupancy_ref": null,
+            "status": "PROPOSED"
+          },
+          {
+            "room_id": "ROOM-ANNEX-S",
+            "floor_index": 0,
+            "tile_refs": [
+              "TILE-G-ANNEX-S"
+            ],
+            "vertical_extent_h": [
+              0,
+              2
+            ],
+            "use_th": "พื้นที่ต่อด้านใต้ที่เสนอ",
+            "occupancy_ref": null,
+            "status": "PROPOSED"
+          },
+          {
+            "room_id": "ROOM-GALLERY",
+            "floor_index": 1,
+            "tile_refs": [
+              "TILE-U-NE",
+              "TILE-U-SE",
+              "TILE-U-TRI-E",
+              "TILE-U-ANNEX-N"
+            ],
+            "vertical_extent_h": [
+              2,
+              3
+            ],
+            "use_th": "แกลเลอรีชั้นบนตามข้อเสนอ",
+            "occupancy_ref": null,
+            "status": "PROPOSED"
+          },
+          {
+            "room_id": "ROOM-TERRACE",
+            "floor_index": 1,
+            "tile_refs": [
+              "TILE-U-ANNEX-S"
+            ],
+            "vertical_extent_h": [
+              2,
+              3
+            ],
+            "use_th": "ระเบียงเปิดใช้งานตามข้อเสนอ",
+            "occupancy_ref": null,
+            "status": "PROPOSED"
+          }
+        ],
+        "doors": [
+          {
+            "door_id": "DOOR-ENTRY",
+            "floor_index": 0,
+            "from_room_id": "ROOM-ENTRY",
+            "to_room_id": null,
+            "exterior": true,
+            "boundary_tile_id": "TILE-G-TRI-E",
+            "boundary_segment_xy": [
+              [
+                1,
+                -1
+              ],
+              [
+                2,
+                -1
+              ]
+            ]
+          },
+          {
+            "door_id": "DOOR-WORKSHOP",
+            "floor_index": 0,
+            "from_room_id": "ROOM-ENTRY",
+            "to_room_id": "ROOM-WORKSHOP",
+            "exterior": false,
+            "edge_ref": "EDGE-TILE-G-NW--TILE-G-SW"
+          },
+          {
+            "door_id": "DOOR-ANNEX-N",
+            "floor_index": 0,
+            "from_room_id": "ROOM-ENTRY",
+            "to_room_id": "ROOM-ANNEX-N",
+            "exterior": false,
+            "edge_ref": "EDGE-TILE-G-ANNEX-N--TILE-G-NW"
+          },
+          {
+            "door_id": "DOOR-ANNEX-S",
+            "floor_index": 0,
+            "from_room_id": "ROOM-ENTRY",
+            "to_room_id": "ROOM-ANNEX-S",
+            "exterior": false,
+            "edge_ref": "EDGE-TILE-G-ANNEX-S--TILE-G-SE"
+          },
+          {
+            "door_id": "DOOR-TERRACE",
+            "floor_index": 1,
+            "from_room_id": "ROOM-GALLERY",
+            "to_room_id": "ROOM-TERRACE",
+            "exterior": false,
+            "edge_ref": "EDGE-TILE-U-ANNEX-S--TILE-U-SE"
+          }
+        ],
+        "landings": [
+          {
+            "landing_id": "LANDING-STAIR-F0",
+            "floor_index": 0,
+            "room_id": "ROOM-ENTRY",
+            "opening_ref": "VOID-STAIR-F0"
+          },
+          {
+            "landing_id": "LANDING-STAIR-F1",
+            "floor_index": 1,
+            "room_id": "ROOM-GALLERY",
+            "opening_ref": "VOID-STAIR-F1"
+          }
+        ],
+        "stairs": [
+          {
+            "stair_id": "STAIR-EXT-E",
+            "route_type": "TOPOLOGICAL_ONLY",
+            "from": {
+              "floor_index": 0,
+              "room_id": "ROOM-ENTRY",
+              "landing_ref": "LANDING-STAIR-F0",
+              "opening_ref": "VOID-STAIR-F0"
+            },
+            "to": {
+              "floor_index": 1,
+              "room_id": "ROOM-GALLERY",
+              "landing_ref": "LANDING-STAIR-F1",
+              "opening_ref": "VOID-STAIR-F1"
+            },
+            "physical_feasibility": "UNKNOWN"
+          }
+        ],
+        "roofs": [
+          {
+            "roof_id": "ROOF-COVER-V03",
+            "kind": "COVERING_ROOF",
+            "floor_index": 1,
+            "elevation_h": 3,
+            "coverage_tile_refs": [
+              "TILE-G-SW",
+              "TILE-G-SE",
+              "TILE-G-NW",
+              "TILE-G-NE",
+              "TILE-G-TRI-S",
+              "TILE-G-TRI-E",
+              "TILE-G-TRI-N",
+              "TILE-G-TRI-W",
+              "TILE-G-ANNEX-N"
+            ],
+            "access_ref": null,
+            "status": "PROPOSED"
+          },
+          {
+            "roof_id": "ROOF-TERRACE-V03",
+            "kind": "OCCUPIED_TERRACE",
+            "floor_index": 1,
+            "elevation_h": 2,
+            "polygon_xy": [
+              [
+                0,
+                -2
+              ],
+              [
+                1,
+                -2
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                0,
+                -1
+              ]
+            ],
+            "coverage_tile_refs": [
+              "TILE-U-ANNEX-S"
+            ],
+            "access_ref": "DOOR-TERRACE",
+            "status": "PROPOSED"
+          }
+        ],
+        "pillars": [
+          {
+            "pillar_id": "PILLAR-HOUSE-PROP-WORKSHOP-001",
+            "xy": [
+              0,
+              0
+            ],
+            "z_extent_h": null,
+            "centering_metric_ref": "ground_footprint_area_centroid_xy",
+            "centering_target_xy": [
+              0,
+              0
+            ],
+            "status": "PROPOSED"
+          }
+        ],
+        "physical_feasibility": "UNKNOWN"
+      }
+    ]
+  }
+}

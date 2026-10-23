@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="630" viewBox="0 0 1160 630">
+<title>REUSE: เรือนปรับใช้ต่อ (ประวัติสมมุติ)</title>
+<desc>Original unplaced program concept. Page pixels are not geometry. No game or structural validation.</desc>
+<rect width="1160" height="630" fill="#f7f5ee"/>
+<g font-family="Arial, sans-serif">
+<text x="34" y="38" font-size="25" fill="#1f3345" >REUSE / ORIGINAL PROPOSAL</text>
+<text x="34" y="69" font-size="19" fill="#1f3345" >Alternative stairs / reopened gallery / infilled void</text>
+<text x="34" y="98" font-size="14" fill="#a4422d" >UNPLACED CONCEPT - icons/massing are editorial sketches; module angles and dimensions UNKNOWN</text>
+<text x="34" y="142" font-size="17" fill="#1f3345" >A. MODULE / ROOM RELATIONSHIPS</text>
+<text x="570" y="142" font-size="17" fill="#1f3345" >B. SECTION / MASSING IDEA</text>
+<path d="M110,390 L110,220" stroke="#86999f" stroke-width="3" stroke-dasharray="7 6"/>
+<path d="M110,220 L320,390" stroke="#86999f" stroke-width="3" stroke-dasharray="7 6"/>
+<path d="M320,390 L320,220" stroke="#86999f" stroke-width="3" stroke-dasharray="7 6"/>
+<rect x="46" y="181" width="128" height="78" rx="3" fill="#dae6df" stroke="#35665b" stroke-width="2"/>
+<text x="110" y="225" font-size="17" fill="#1f3345" text-anchor="middle">Old use?</text>
+<rect x="256" y="181" width="128" height="78" rx="3" fill="#dae6df" stroke="#35665b" stroke-width="2"/>
+<text x="320" y="225" font-size="17" fill="#1f3345" text-anchor="middle">New use?</text>
+<rect x="256" y="351" width="128" height="78" rx="3" fill="#dae6df" stroke="#35665b" stroke-width="2"/>
+<text x="320" y="395" font-size="17" fill="#1f3345" text-anchor="middle">Gallery?</text>
+<rect x="46" y="351" width="128" height="78" rx="3" fill="#dae6df" stroke="#35665b" stroke-width="2"/>
+<text x="110" y="395" font-size="17" fill="#1f3345" text-anchor="middle">Entry?</text>
+<path d="M415,330 L475,330 L415,390 Z" fill="#efc985" stroke="#927340" stroke-width="2"/>
+<path d="M384,220 L445,330" fill="none" stroke="#86999f" stroke-dasharray="7 6"/>
+<text x="398" y="418" font-size="13" fill="#1f3345" >Triangle option</text>
+<text x="35" y="475" font-size="13" fill="#1f3345" >Symbols/links illustrate relationships, not a prescribed room graph.</text>
+<text x="35" y="497" font-size="13" fill="#1f3345" >One central whole-house pillar; metric location remains UNKNOWN.</text>
+<rect x="605" y="320" width="426" height="100" fill="#c4d8df" stroke="#365767" stroke-width="2"/>
+<rect x="605" y="220" width="142" height="100" fill="#c4d8df" stroke="#365767" stroke-width="2"/>
+<rect x="889" y="220" width="142" height="100" fill="#c4d8df" stroke="#365767" stroke-width="2"/>
+<text x="595" y="444" font-size="13" fill="#1f3345" >Ground (ordinal 0)</text>
+<text x="595" y="208" font-size="13" fill="#1f3345" >Upper / loft (proposed)</text>
+<text x="595" y="468" font-size="16" fill="#1f3345" >Alternative revisions</text>
+<text x="595" y="493" font-size="13" fill="#1f3345" >Stair route, openings and local heights require a placed version.</text>
+<text x="35" y="543" font-size="16" fill="#1f3345" >Hypothetical reuse lineage; no event or previous owner asserted</text>
+<text x="35" y="573" font-size="15" fill="#a4422d" >Height units, support, headroom, pillar influence and gameplay feasibility: UNKNOWN</text>
+<text x="35" y="602" font-size="14" fill="#1f3345" >PROPOSED | no owner / group / canon location / chapter binding | human approval UNVERIFIED</text>
+</g></svg>
