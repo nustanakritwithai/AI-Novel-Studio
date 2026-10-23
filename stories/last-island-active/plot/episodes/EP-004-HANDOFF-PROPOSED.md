@@ -1,6 +1,8 @@
+> **Historical planning note — superseded by EP-004 full draft.** The episode has now been written (SC-027–SC-038) in `drafts/EP-004/CH-04-FULL-DRAFT.md`. See `plot/episodes/EP-004.md` and `data/draft_continuity_ep004.json` for the current DRAFT record. The prior list below was an *opening* proposal, not a statement of the chapter's current status.
+
 # EP-004 — ภารกิจล่าสัตว์ครั้งแรก (handoff proposal only)
 
-**Not registered as a written episode.** No Scene IDs or outcomes have been authorized beyond the opening objective.
+**Historical state before drafting EP-004.** The later author plot DEC-007 supplies the full sequence, and the story now has registered EP-004 draft scenes SC-027–SC-038.
 
 ## Locked starting conditions from author EP-003 plot
 - The hero is alive and in the 2×2 stone base with upper firing platform, looking at the forest after a second deadly roadside encounter
