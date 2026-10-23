@@ -50,3 +50,13 @@
 - The hero later returns home on foot after his mount was killed at the oil refinery (SC-055). He has a green keycard and some ready oil but **no new motorcycle, LMG, finished refinery oil or replacement horse**.
 - No scene in EP-006 confirms whether the home furnace's pending earlier iron/gunpowder batch has become ready or was taken out; do not infer a new state merely because the hero was away for some time.
 - The refinery is a separate industrial location, not part of his house. The house footprint stays 2×2. Source-bound DRAFT: `data/draft_continuity_ep006.json`.
+
+## แบบขยาย 4×4 ในอนาคต — ยังไม่สร้าง ณ SC-058
+
+**ผู้เขียนกำหนด**: บ้านเดิม 2×2 เป็นแกนกลางของผังภายนอก 4×4 (16 ช่อง), พื้นที่รอบนอก **12 ช่อง** เป็นทางเดิน **ชั้น 1** กว้างหนึ่งหน่วยพื้น **โล่งตลอดวง เชื่อมกันทั้ง 4 ด้านและเดินวนครบรอบได้** โดยไม่มีผนังกั้นวงทางเดิน เป็นการปรับแบบเป้าหมาย ไม่ใช่การสร้างจริงแล้ว.
+
+- ตามแนวด้านข้างมีผนังป้องกันเพียง **2 แนว**: ผนังกรอบนอก 4×4 และผนังเดิมของแกน 2×2 โดยมีทางเดินคั่นระหว่างสองแนว
+- ชั้นสองเป้าหมายมีชั้นยิงขอบนอกพร้อมกำแพงเตี้ย; มีเสาหลักกลางบ้านหนึ่งต้น; รายละเอียดประตู บันได วัสดุ แผ่นหลังคาและลำดับสร้างยัง TBD
+- ทางเดินโล่งหมายถึง **เดินต่อเนื่องไม่ถูกแบ่ง** ไม่ได้แปลว่ายืนยันว่าไม่มีหลังคา; ห้ามย้ายที่นอน เตา โต๊ะคราฟต์หรือกล่องโดยไม่มีฉากรองรับ
+- Current reality ณ SC-058 ยังเป็น **บ้านหิน 2×2 เดิม**; ไม่มี `4x4 outer wall`, ไม่มีวงทางเดิน 12 ช่อง และยังไม่ได้ขยายชั้นยิง 4×4
+- ดู `bible/BASE_EXPANSION_4X4_TARGET.md` และ `data/base_expansion_4x4_target.json` (DEC-011, FACT-067); ต้องบันทึกการก่อสร้างเป็นฉากก่อนเปลี่ยนสถานะ `NOT_BUILT`
