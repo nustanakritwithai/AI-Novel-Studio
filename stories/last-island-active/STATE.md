@@ -11,9 +11,10 @@ The human author explicitly said **“อนุมัติ”** in ChatGPT afte
 | EP-003 | หกนัดบนถนน | 8 | PLOT LOCKED, PROSE DRAFT | NOT IN APPROVED LEDGER |
 | EP-004 | วันยาวนานของพรานมือใหม่ | 12 | PLOT LOCKED, PROSE DRAFT | NOT IN APPROVED LEDGER |
 | EP-005 | ค้อนที่หน้าประตู | 9 | AUTHOR CHAT ACCEPTED FOR INGEST | DRAFT / GITHUB REVIEW PENDING |
+| EP-006 | ราคาของน้ำมัน | 11 | USER PLOT DIRECTIVE; PROSE DRAFT | NOT IN APPROVED LEDGER |
 
 - The original `stories/last-island/` E1 historical example remains unchanged.
-- The active dataset is `stories/last-island-active/`: 47 scene drafts and 47 event records across EP-001–EP-005 (18 older scenes plus 20 new DRAFT).
+- The active dataset is `stories/last-island-active/`: 58 scene drafts and 58 event records across EP-001–EP-006 (18 older scenes plus 20 new DRAFT).
 - The author accepted the basic enclosed 2×2 wooden shelter at the end of chapter 1, which enables the chapter 2 opening inside the house; the chapter 2 candidate concludes with a stone base, a second-level firing platform, and the protagonist logging off.
 - See `editorial/AUTHOR_APPROVAL_2026-10-23.json` and `data/decisions.json` (DEC-004) for exact source hashes and decision source.
 
@@ -68,3 +69,11 @@ This is **direct author consent in ChatGPT**, not an independently submitted Git
 - Base is still original **2×2 stone** with open upper platform, bed, storage, crafting table and operating furnace; no new defensive layers or stable built. Ready iron/gunpowder/furnace-made bullets are not shown collected.
 - Unknowns remain: which account held hammer/pistol, remaining ammunition after duel and warning, horse's location at this time, furnace finish time, precise door damage.
 - Full manuscript has author CHAT acceptance for integrating as working story. It is **not** independently GitHub-reviewed formal approval; official `data/story_state.json.approved_through_scene`, `ledger/index.json`, `author_memory/index.json` are left unchanged.
+
+## EP-006 checkpoint (DRAFT)
+
+- Full prose `drafts/EP-006/CH-06-FULL-DRAFT.md` assembled from scenes SC-048..SC-058; author plot DEC-010, wording not yet author-approved.
+- Hero rides first horse with pistol and leather gear to farm roadside boxes, defeats bat attacker CHAR-009 (same as CHAR-002 UNKNOWN); finds abandoned refinery zombies, 1 unused green keycard, some ready oil and crude barrel.
+- Refinery machine starts a timed run; **NO refined oil collected by the hero**. 3 motorcyclists with light machine guns arrive and one kills first horse CHAR-008; the hero deliberately retreats rather than fighting three armed players and walks home.
+- At end hero has no mount, still owns card and oil already collected, original stone 2×2 base intact; refinery controller/processed-oil outcome UNVERIFIED, ammo and quantities UNKNOWN.
+- Proposed snapshot `data/draft_continuity_ep006.json` is not the same as approved `data/story_state.json` and does not update formal ledger or source-bound author memory.

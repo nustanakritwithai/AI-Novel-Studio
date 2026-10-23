@@ -152,6 +152,29 @@
       "source_channel": "ChatGPT",
       "source_path": "drafts/EP-005/CH-05-FULL-DRAFT.md",
       "source_blob_sha": "5dce7134bc2a4982f301d7d0a71635d1631f7d3a"
+    },
+    {
+      "id": "DEC-010",
+      "summary": "ผู้เขียนกำหนดบทที่ 6: พระเอกมีปืนสั้น ชุดหนัง และขี่ม้าแบบคาวบอยกลับตีกล่องฟาร์มถนน ยิงสู้ชนะผู้เล่นถือไม้เบสบอล เข้าสำรวจโรงกลั่นน้ำมันเก่าที่มีซอมบี้ระยะใกล้ ยิงเคลียร์พบบัตรเขียว น้ำมันพร้อมใช้ ถังน้ำมันดิบ ใส่เครื่องกลั่นต้องรอนาน แล้วมีสามคนขี่มอเตอร์ไซค์ 3 คันพร้อมปืนกลเบามายิงม้าตาย ค้นพื้นที่พบคิวกลั่น พระเอกไม่สู้ ถอยเดินกลับบ้านและสงสัยว่าพวกนี้คุมพื้นที่",
+      "status": "USER_PLOT_DIRECTIVE",
+      "authority": "USER",
+      "date": "2026-10-23",
+      "canon_refs": [
+        "FACT-053",
+        "FACT-054",
+        "FACT-055",
+        "FACT-056",
+        "FACT-057",
+        "FACT-058",
+        "FACT-059",
+        "FACT-060",
+        "FACT-061",
+        "FACT-062",
+        "FACT-063",
+        "FACT-064",
+        "FACT-065"
+      ],
+      "notes": "Exact prose not approved, species/drops/game refinery rules UNVERIFIED. Do not claim the motorcycle group is confirmed owner of the refinery."
     }
   ]
 }

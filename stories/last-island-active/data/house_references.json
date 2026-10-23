@@ -33,7 +33,7 @@
     {
       "id": "SRC-TIMELINE",
       "path": "bible/BASE_TIMELINE.md",
-      "git_blob_sha": "084989e5a195fbc9efcfe7317ca20a8d62d6e43d",
+      "git_blob_sha": "6ad780ff895556e0352fc53bf80dfae58078e9b7",
       "status": "LOCAL_REFERENCE",
       "supporting_sources": []
     },
@@ -156,21 +156,21 @@
     {
       "id": "SRC-CHARACTERS",
       "path": "data/characters.json",
-      "git_blob_sha": "d3babb7c542502e69d1a48183d47f985137dca46",
+      "git_blob_sha": "9d321f7898e59db31b819e69fa1cd87e4f7b755e",
       "status": "LOCAL_REFERENCE",
       "supporting_sources": []
     },
     {
       "id": "SRC-LOCATIONS",
       "path": "data/locations.json",
-      "git_blob_sha": "c12e9c4760530c183ec00ae4817cc10c1670d8ac",
+      "git_blob_sha": "1fee4a93a710944a2476ec9b585396a6bb00ebcb",
       "status": "LOCAL_REFERENCE",
       "supporting_sources": []
     },
     {
       "id": "SRC-SCENES",
       "path": "data/scenes.json",
-      "git_blob_sha": "78c7aab051c9874c43218ae2810e48f4cd231341",
+      "git_blob_sha": "63fcb7e21d69824f4235e8f042608a4b6e6cc486",
       "status": "LOCAL_REFERENCE",
       "supporting_sources": []
     }

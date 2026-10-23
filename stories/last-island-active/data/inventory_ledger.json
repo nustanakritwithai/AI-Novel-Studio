@@ -656,6 +656,86 @@
       "quantity": 1,
       "status": "PLANNED",
       "notes": "กระสุนหนึ่งนัดในการเตือนช่วงท้ายบท"
+    },
+    {
+      "id": "INV-064",
+      "scene_id": "SC-049",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-004",
+      "operation": "FIND",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "เศษวัสดุจากกล่องริมถนน เก็บทีละจุด จำนวน UNKNOWN"
+    },
+    {
+      "id": "INV-065",
+      "scene_id": "SC-050",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-022",
+      "operation": "SPEND",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ยิงสวนผู้ใช้ไม้เบสบอล จำนวนกระสุน UNKNOWN"
+    },
+    {
+      "id": "INV-066",
+      "scene_id": "SC-050",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-004",
+      "operation": "LOOT",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ได้ทรัพยากรทั่วไปจากผู้แพ้ ไม่ระบุจำนวน"
+    },
+    {
+      "id": "INV-067",
+      "scene_id": "SC-052",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-022",
+      "operation": "SPEND",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "ใช้กระสุนปืนพกยิงซอมบี้ตามโรงกลั่น จำนวน UNKNOWN"
+    },
+    {
+      "id": "INV-068",
+      "scene_id": "SC-053",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-034",
+      "operation": "LOOT",
+      "quantity": 1,
+      "status": "PLANNED",
+      "notes": "เก็บบัตรผ่านสีเขียวหนึ่งใบ ยังไม่ใช้เปิดห้อง"
+    },
+    {
+      "id": "INV-069",
+      "scene_id": "SC-053",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-014",
+      "operation": "FIND",
+      "quantity": null,
+      "status": "PLANNED",
+      "notes": "น้ำมันพร้อมใช้งานจากโรงกลั่นบางส่วน จำนวน UNKNOWN"
+    },
+    {
+      "id": "INV-070",
+      "scene_id": "SC-053",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-035",
+      "operation": "FIND",
+      "quantity": 1,
+      "status": "PLANNED",
+      "notes": "ถังน้ำมันดิบหนึ่งใบเพื่อใส่เครื่องกลั่น"
+    },
+    {
+      "id": "INV-071",
+      "scene_id": "SC-054",
+      "owner_id": "CHAR-001",
+      "item_id": "ITEM-035",
+      "operation": "SPEND",
+      "quantity": 1,
+      "status": "PLANNED",
+      "notes": "นำถังน้ำมันดิบใส่เครื่องกลั่นแล้วเริ่มคิวที่ต้องรอ ผลผลิตยังไม่พร้อม"
     }
   ]
 }

@@ -9,6 +9,7 @@ Thai survival fiction manuscripts and their scene/continuity data: chapters 1–
 | EP-003 | หกนัดบนถนน | 8 | User-directed plot; prose approval pending | DRAFT, not approved |
 | EP-004 | วันยาวนานของพรานมือใหม่ | 12 | User-directed plot; prose approval pending | DRAFT, not approved |
 | EP-005 | ค้อนที่หน้าประตู | 9 | Revised ending accepted for ingest in chat | DRAFT; GitHub-reviewed Canon pending |
+| EP-006 | ราคาของน้ำมัน | 11 | User-directed plot; generated prose pending editorial approval | DRAFT, not Canon |
 
 ## Phase 1 — author-accepted source memory
 
@@ -23,13 +24,13 @@ The approved ledger is intentionally empty because PR #13 has no independently s
 ## Quick verification
 ```bash
 python scripts/storyctl.py --story last-island-active check
-python scripts/storyctl.py --story last-island-active pack EP-005
+python scripts/storyctl.py --story last-island-active pack EP-006
 python -m unittest discover -s tests -v
 ```
 
-For continued writing follow `HANDOFF.md`, `data/draft_continuity_ep003.json` and `bible/BASE_TIMELINE.md`. The active dashboard at `index.html` lists all five episode manuscripts instead of showing only the opening.
+For continued writing follow `HANDOFF.md`, `data/draft_continuity_ep003.json` and `bible/BASE_TIMELINE.md`. The active dashboard at `index.html` lists all six episode manuscripts instead of showing only the opening.
 
-For direct chapter reading use [reading order chapters 1–5](drafts/READING_ORDER_CH-01_05.md) and [EP-003 continuity audit](drafts/EP-003/EP-003-CONTINUITY-AUDIT.md). Game mechanics are fiction directives unless verified against actual selected-server gameplay; item counts remain UNKNOWN.
+For direct chapter reading use [reading order chapters 1–6](drafts/READING_ORDER_CH-01_06.md) and [EP-003 continuity audit](drafts/EP-003/EP-003-CONTINUITY-AUDIT.md). Game mechanics are fiction directives unless verified against actual selected-server gameplay; item counts remain UNKNOWN.
 
 ## EP-004 source-bound draft
 
@@ -48,3 +49,12 @@ For direct chapter reading use [reading order chapters 1–5](drafts/READING_ORD
 - Two known recurring opponents CHAR-004/005 are defeated, then return again but withdraw following one warning round. New loot: two pistols in total, basic leather gear, 100 observed rounds; exact ammunition left at chapter end UNKNOWN.
 - House remains 2×2 stone with open upper firing platform and working furnace. Finished iron/gunpowder ammunition is not acquired in EP-005; fortification upgrades are only a thought.
 - Engine approved-only ledger and official story_state are unchanged. Existing accepted-source memory is still EP-001/002 only.
+
+## EP-006 latest draft — oil refinery and first horse loss
+
+- Manuscript: `drafts/EP-006/CH-06-FULL-DRAFT.md` (SC-048–SC-058, 11 scene prose sources and cards).
+- Source-bound DRAFT state: `data/draft_continuity_ep006.json`; plot decision DEC-010; research gaps `research/EP006_GAMEPLAY_GAPS.md`.
+- Hero rides first horse and carries pistols; wins a roadside bat ambush; clears nearby refinery zombies, finds 1 green access card, some ready oil and one crude barrel.
+- Starts time-gated oil refining and waits; **three** motorcycle riders with light machine guns arrive, kill first horse, and discover active refinery process. Hero evades them and returns **on foot** to the original stone 2×2 base with card and some oil/road scrap.
+- The crew's ownership of the refinery, and actual completion/collection of refined oil, are UNKNOWN. Green card not used; no new heavy weapons, vehicles or replacement horse acquired.
+- EP-006 wording is DRAFT. Do not update approved-only ledger, official story_state or earlier accepted prose.
