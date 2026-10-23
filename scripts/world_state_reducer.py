@@ -309,6 +309,130 @@ def _deduplicated_events(history: dict) -> list[dict]:
     return events
 
 
+def _operation_snapshot(state: dict, operation: dict, tracking: str | None) -> dict:
+    """Capture only the entity facts needed to classify one attempted operation."""
+    if operation["operation"] == "MOVE_CHARACTER":
+        position = _find_position(state, operation["character_id"])
+        before = None if position is None else copy.deepcopy(position["location"])
+        known_mismatch = (before is not None and before.get("status") == "KNOWN"
+                          and before.get("location_id") != operation["from_location_id"])
+        return {
+            "rule_id": "MOVE_ORIGIN",
+            "entity_id": operation["character_id"],
+            "before": before,
+            "expected": {"from_location_id": operation["from_location_id"],
+                         "to_location_id": operation["to_location_id"]},
+            "failure_result": "CONTRADICTION" if known_mismatch else "UNKNOWN",
+            "failure_reason": ("The known current position differs from the declared source location."
+                               if known_mismatch else "No known current position is available for the character."),
+        }
+
+    item_id = operation["item_id"]
+    source_holder = operation["from_holder"]
+    destination_holder = operation["to_holder"]
+    source = _find_holding(state, item_id, source_holder)
+    destination = _find_holding(state, item_id, destination_holder)
+    amount = operation["quantity"]
+    if tracking == "UNIQUE":
+        item_rows = [row for row in state["holdings"] if row["item_id"] == item_id]
+        before = {"holders": [{"holder": copy.deepcopy(row["holder"]),
+                                "quantity": row["quantity"]} for row in item_rows]}
+        single_holder = item_rows[0]["holder"] if len(item_rows) == 1 else None
+        holder_is_known = (isinstance(single_holder, dict)
+                           and single_holder.get("kind") in ("CHARACTER", "LOCATION"))
+        wrong_holder = (holder_is_known
+                        and not _holder_equal(single_holder, source_holder))
+        wrong_quantity = (source is not None and type(source["quantity"]) is int
+                          and source["quantity"] != 1)
+        wrong_request = type(amount) is int and amount != 1
+        known_mismatch = wrong_holder or wrong_quantity or wrong_request
+        if wrong_request:
+            reason = "The explicit UNIQUE transfer requests a quantity other than one."
+        elif wrong_holder or wrong_quantity:
+            reason = "The known UNIQUE holder or quantity does not match the transfer precondition."
+        else:
+            reason = "A known UNIQUE holder and quantity of one are not available."
+        return {
+            "rule_id": "UNIQUE_CUSTODY",
+            "entity_id": item_id,
+            "before": before,
+            "expected": {"from_holder": copy.deepcopy(source_holder),
+                         "to_holder": copy.deepcopy(destination_holder),
+                         "quantity": amount, "required_quantity": 1},
+            "failure_result": "CONTRADICTION" if known_mismatch else "UNKNOWN",
+            "failure_reason": reason,
+        }
+
+    before = {
+        "source": (None if source is None else
+                   {"holder": copy.deepcopy(source["holder"]), "quantity": source["quantity"]}),
+        "destination": (None if destination is None else
+                        {"holder": copy.deepcopy(destination["holder"]),
+                         "quantity": destination["quantity"]}),
+    }
+    short_source = (source is not None and type(source["quantity"]) is int
+                    and source["quantity"] < amount)
+    return {
+        "rule_id": "STACK_BALANCE",
+        "entity_id": item_id,
+        "before": before,
+        "expected": {"from_holder": copy.deepcopy(source_holder),
+                     "to_holder": copy.deepcopy(destination_holder), "quantity": amount},
+        "failure_result": "CONTRADICTION" if short_source else "UNKNOWN",
+        "failure_reason": ("The known source quantity is smaller than the requested transfer."
+                           if short_source else
+                           "A known source or destination quantity is not available."),
+    }
+
+
+def _operation_diagnostic(snapshot: dict, state_after: dict | None, event: dict,
+                          operation_index: int, baseline_source: dict,
+                          coverage_source: dict) -> dict:
+    """Build a closed, entity-scoped diagnostic from a captured operation."""
+    success = state_after is not None
+    if not success:
+        result = snapshot["failure_result"]
+        reason = snapshot["failure_reason"]
+        after = None
+    elif snapshot["rule_id"] == "MOVE_ORIGIN":
+        position = _find_position(state_after, snapshot["entity_id"])
+        after = copy.deepcopy(position["location"]) if position is not None else None
+        result = "PASS"
+        reason = "The explicit move source matches the known position."
+    elif snapshot["rule_id"] == "UNIQUE_CUSTODY":
+        holding = next((row for row in state_after["holdings"]
+                        if row["item_id"] == snapshot["entity_id"]), None)
+        after = (None if holding is None else
+                 {"holder": copy.deepcopy(holding["holder"]), "quantity": holding["quantity"]})
+        result = "PASS"
+        reason = "The unique item has the declared known holder and quantity one."
+    else:
+        expected = snapshot["expected"]
+        source = _find_holding(state_after, snapshot["entity_id"], expected["from_holder"])
+        destination = _find_holding(state_after, snapshot["entity_id"], expected["to_holder"])
+        after = {"source_quantity": None if source is None else source["quantity"],
+                 "destination_quantity": None if destination is None else destination["quantity"]}
+        result = "PASS"
+        reason = "The known source and destination quantities satisfy the requested transfer."
+
+    return {
+        "rule_id": snapshot["rule_id"],
+        "result": result,
+        "event_id": event["id"],
+        "scene_id": event["anchor"]["scene_id"],
+        "operation_index": operation_index,
+        "world_time": copy.deepcopy(event["anchor"]["world_time"]),
+        "entity_id": snapshot["entity_id"],
+        "before": copy.deepcopy(snapshot["before"]),
+        "expected": copy.deepcopy(snapshot["expected"]),
+        "after": copy.deepcopy(after),
+        "source": copy.deepcopy(event["source"]),
+        "baseline_source": copy.deepcopy(baseline_source),
+        "coverage_source": copy.deepcopy(coverage_source),
+        "reason": reason,
+    }
+
+
 def _check_evidence(evidence_check: Callable[[dict], object] | None, source: dict, label: str) -> None:
     if evidence_check is None:
         raise _Unavailable("No evidence checker was supplied; local evidence remains unchecked.")
@@ -318,8 +442,9 @@ def _check_evidence(evidence_check: Callable[[dict], object] | None, source: dic
         raise _Unavailable(f"{label} source evidence is missing, stale, or unreadable ({type(exc).__name__}).") from exc
 
 
-def preview(model: object, history: object, db: object, cutoff: object,
-            evidence_check: Callable[[dict], object] | None = None) -> dict:
+def _preview(model: object, history: object, db: object, cutoff: object,
+             evidence_check: Callable[[dict], object] | None = None,
+             diagnostics: list[dict] | None = None) -> dict:
     """Return an atomic, deterministic PROPOSED projection or a failed report."""
     duplicates = _duplicate_event_ids(history)
     story_slug = history.get("story_slug") if isinstance(history, dict) else None
@@ -429,11 +554,24 @@ def preview(model: object, history: object, db: object, cutoff: object,
              "holdings": copy.deepcopy(baseline["holdings"])}
     policies = {policy["item_id"]: policy["tracking"] for policy in model["item_policies"]}
     applied: list[str] = []
+    baseline_source = baseline["source"]
+    coverage_source = coverage["source"]
     try:
         for _, event in interval:
             candidate = copy.deepcopy(state)
-            for operation in event["operations"]:
-                _apply_operation(candidate, operation, policies, event["id"])
+            for operation_index, operation in enumerate(event["operations"]):
+                snapshot = (_operation_snapshot(candidate, operation, policies.get(operation.get("item_id")))
+                            if diagnostics is not None else None)
+                try:
+                    _apply_operation(candidate, operation, policies, event["id"])
+                except _Unavailable:
+                    if diagnostics is not None and snapshot is not None:
+                        diagnostics.append(_operation_diagnostic(
+                            snapshot, None, event, operation_index, baseline_source, coverage_source))
+                    raise
+                if diagnostics is not None and snapshot is not None:
+                    diagnostics.append(_operation_diagnostic(
+                        snapshot, candidate, event, operation_index, baseline_source, coverage_source))
             state = candidate
             applied.append(event["id"])
     except _Unavailable as exc:
@@ -447,3 +585,18 @@ def preview(model: object, history: object, db: object, cutoff: object,
     result["applied_event_ids"] = applied
     result["state"] = state
     return result
+
+
+def preview(model: object, history: object, db: object, cutoff: object,
+            evidence_check: Callable[[dict], object] | None = None) -> dict:
+    """Return the backward-compatible S2 preview report."""
+    return _preview(model, history, db, cutoff, evidence_check=evidence_check)
+
+
+def inspect_preview(model: object, history: object, db: object, cutoff: object,
+                    evidence_check: Callable[[dict], object] | None = None) -> dict:
+    """Run the same atomic S2 preview path and return operation diagnostics."""
+    diagnostics: list[dict] = []
+    report = _preview(model, history, db, cutoff, evidence_check=evidence_check,
+                      diagnostics=diagnostics)
+    return {"preview": report, "diagnostics": diagnostics}

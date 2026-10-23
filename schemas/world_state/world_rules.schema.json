@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-novel-studio.local/schemas/world_state/world_rules.schema.json",
+  "title": "S3 opt-in world consistency rules v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "story_slug", "enabled", "rules"],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "story_slug": {
+      "type": "string",
+      "maxLength": 63,
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "not": {"pattern": "[^a-z0-9-]"}
+    },
+    "enabled": {"type": "boolean"},
+    "rules": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"enum": ["MOVE_ORIGIN", "UNIQUE_CUSTODY", "STACK_BALANCE"]}
+    }
+  }
+}
