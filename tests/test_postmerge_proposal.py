@@ -270,6 +270,7 @@ class PostmergeProposalTests(unittest.TestCase):
 
     def test_stale_observed_base_preserves_verified_merge_first_parent(self):
         self.responses[PREFIX + 'pulls/' + str(PR_NUMBER)]['base']['sha'] = 'f' * 40
+        self.responses[PREFIX + 'commits/' + MERGE + '/pulls?per_page=100'][0]['base']['sha'] = 'f' * 40
         report = self.build()
         self.assertEqual(report['source']['base_commit'], BASE)
         self.assertEqual(report['source']['observed_pr_base_sha'], 'f' * 40)
@@ -291,6 +292,7 @@ class PostmergeProposalTests(unittest.TestCase):
     def test_single_parent_with_stale_observed_base_remains_rejected(self):
         self.responses[PREFIX + 'git/commits/' + MERGE]['parents'] = [{'sha': BASE}]
         self.responses[PREFIX + 'pulls/' + str(PR_NUMBER)]['base']['sha'] = 'f' * 40
+        self.responses[PREFIX + 'commits/' + MERGE + '/pulls?per_page=100'][0]['base']['sha'] = 'f' * 40
         self.assert_rejected()
 
     def test_missing_ambiguous_or_truncated_associations_do_not_produce_a_proposal(self):
