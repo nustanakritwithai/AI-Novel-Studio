@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "story_slug": "last-island-active",
+  "episode_id": "EP-006",
+  "status": "DRAFT_PROPOSED_NOT_CANON",
+  "source": {
+    "path": "drafts/EP-006/CH-06-FULL-DRAFT.md",
+    "git_blob_sha": "b72be0e398229702187532270821613f22383d65",
+    "previous": "drafts/EP-005/CH-05-FULL-DRAFT.md"
+  },
+  "editorial": {
+    "plot_directive_id": "DEC-010",
+    "prose_approved_in_chat": false,
+    "github_review_approved": false,
+    "apply_to_approved_ledger": false
+  },
+  "clock": {
+    "realm": "VR",
+    "real_world_exact_time": "UNKNOWN",
+    "game_exact_time": "UNKNOWN",
+    "total_elapsed_time": "UNKNOWN",
+    "duration_notes": "Horseback travel, repeated walks between road boxes, local zombie clearing, extended refinery waiting, foot retreat",
+    "scene_order": [
+      "SC-048",
+      "SC-049",
+      "SC-050",
+      "SC-051",
+      "SC-052",
+      "SC-053",
+      "SC-054",
+      "SC-055",
+      "SC-056",
+      "SC-057",
+      "SC-058"
+    ]
+  },
+  "progress": [
+    {
+      "scene": "SC-048",
+      "change": "Horse CHAR-008 alive at start; protagonist rides with pistols and leather gear from EP-005"
+    },
+    {
+      "scene": "SC-049",
+      "change": "Road boxes broken and generic supplies found, exact quantities UNKNOWN"
+    },
+    {
+      "scene": "SC-050",
+      "change": "A bat-wielding player is defeated with a pistol; account connection to past foes UNKNOWN"
+    },
+    {
+      "scene": "SC-051",
+      "change": "Old refinery discovered; first horse parked near visible entrance; dispersed melee zombies"
+    },
+    {
+      "scene": "SC-052",
+      "change": "Nearby zombies in explored area cleared with pistol; count and ammo used UNKNOWN"
+    },
+    {
+      "scene": "SC-053",
+      "change": "One green card, some ready oil, one crude barrel found; green card not used"
+    },
+    {
+      "scene": "SC-054",
+      "change": "Crude barrel inserted into refinery; time-gated output still pending"
+    },
+    {
+      "scene": "SC-055",
+      "change": "Three armed riders on three motorcycles arrive; one shoots first horse dead"
+    },
+    {
+      "scene": "SC-056",
+      "change": "Group sees active refining and intends to collect oil; hero leaves pending output unclaimed"
+    },
+    {
+      "scene": "SC-057",
+      "change": "Hero withdraws beyond compound and walks home carefully on foot, speculates territory control"
+    },
+    {
+      "scene": "SC-058",
+      "change": "Hero returns alive to original stone 2x2 with green card, some ready oil, road items; no horse"
+    }
+  ],
+  "end_after_sc058": {
+    "hero": {
+      "id": "CHAR-001",
+      "alive": true,
+      "realm": "VR",
+      "location_id": "LOC-009",
+      "pistols_from_ep005": 2,
+      "pistol_ammo_remaining": "UNKNOWN",
+      "health": "UNKNOWN",
+      "green_card_owned": true,
+      "ready_oil_from_refinery_scavenging_owned": true,
+      "ready_oil_quantity": "UNKNOWN",
+      "generic_road_scrap_retained": true,
+      "road_scrap_quantity": "UNKNOWN",
+      "motorcycle_owned": false,
+      "light_machine_gun_owned": false
+    },
+    "horse": {
+      "id": "CHAR-008",
+      "status": "DEAD_IN_SC055",
+      "cause": "Light machine gun fire by one of three unknown motorcycle riders",
+      "replacement_mount": false
+    },
+    "base": {
+      "location_id": "LOC-009",
+      "footprint": "2x2",
+      "main_material": "STONE",
+      "upper_firing_platform": true,
+      "defense_extensions_from_ep5": false,
+      "refinery_device_at_home": false,
+      "furnace_at_home": true,
+      "furnace_output_status_in_ep006": "NOT_OBSERVED"
+    },
+    "road": {
+      "bat_ambusher_id": "CHAR-009",
+      "ambusher_defeated": true,
+      "ambusher_identity_related_to_ep001": "UNKNOWN",
+      "generic_loot_gain_amount": "UNKNOWN"
+    },
+    "refinery": {
+      "location_id": "LOC-017",
+      "refining_device_location_id": "LOC-018",
+      "green_access_card_id": "ITEM-034",
+      "green_card_acquired": 1,
+      "green_card_used": false,
+      "crude_barrel_id": "ITEM-035",
+      "crude_barrels_inserted": 1,
+      "crude_processing_started": true,
+      "refined_output_collected_by_hero": false,
+      "refined_output_status_after_escape": "UNKNOWN",
+      "other_group_collected_output": "UNKNOWN",
+      "zombies_in_explored_area_cleared": true,
+      "zombie_total_count": "UNKNOWN",
+      "refinery_owner_or_controller": "UNKNOWN"
+    },
+    "new_opponents": {
+      "ids": [
+        "CHAR-010",
+        "CHAR-011",
+        "CHAR-012"
+      ],
+      "number_of_players": 3,
+      "motorcycles": 3,
+      "armed_with_light_machine_guns": true,
+      "which_player_killed_horse": "UNKNOWN",
+      "hero_fought_them": false,
+      "hero_killed_any": false,
+      "base_location": "UNKNOWN",
+      "controls_refinery": "UNVERIFIED_PROTAGONIST_INFERENCE"
+    }
+  },
+  "next_story_seeds": [
+    "Green access card remains unused",
+    "First horse lost; travel now on foot",
+    "Possible control of refinery by an armed group is not verified",
+    "Crude refining was abandoned mid-process; outcome and ownership remain unknown",
+    "Hero learns pistol superiority is relative, not universal"
+  ],
+  "unknowns": [
+    "Exact zombie count, ammunition fired and player health",
+    "Quantity of ready oil, scrap and road-box pickups",
+    "Actual refinery recipe/duration and whether other riders got output",
+    "Individual identity of horse shooter and links to earlier rivals",
+    "Whether the baseball ambusher is same person from chapter 1"
+  ],
+  "provenance_note": "Author prescribed plot but not yet accepted generated literary wording. This snapshot is a draft continuation aid, not authenticated GitHub approval or official story_state."
+}

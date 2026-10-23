@@ -72,6 +72,139 @@
         "engine_approval_state": "PENDING_GITHUB_REVIEW",
         "note": "Editorial author accepted this exact prose in chat. Keep operational episode status DRAFT until the approval ledger's real GitHub reviewer provenance requirement is fulfilled."
       }
+    },
+    {
+      "id": "EP-003",
+      "title": "หกนัดบนถนน",
+      "status": "DRAFT",
+      "position": "หลัง EP-002 ออฟไลน์พักผ่อน และก่อนการออกล่าสัตว์",
+      "logline": "พระเอกพักในโลกจริง กลับเข้าเกมเพื่อหาน้ำมันจากกล่องริมถนน ดวลธนูเกือบชนะก่อนถูกปืนพกหกนัดยิงตาย แล้วเปลี่ยนแผนไปเตรียมล่าสัตว์หาไขมัน",
+      "scene_ids": [
+        "SC-019",
+        "SC-020",
+        "SC-021",
+        "SC-022",
+        "SC-023",
+        "SC-024",
+        "SC-025",
+        "SC-026"
+      ],
+      "questions": [
+        "ยังไม่มีน้ำมันและยังไม่ได้เตาเผา",
+        "กล่องสีเข้มเป็นกล่องน้ำมันหรือไม่: UNKNOWN",
+        "รายละเอียดสูตร/ดรอปสัตว์ยังไม่ยืนยันจากเกมจริง",
+        "จำนวนทรัพยากรที่ได้หรือเสียเป็น UNKNOWN",
+        "เพื่อน Gamer ยังเป็นตัวละคร PROPOSED"
+      ],
+      "approved_final_draft": null,
+      "working_draft_path": "drafts/EP-003/CH-03-FULL-DRAFT.md",
+      "author_plot_directive": "DEC-005",
+      "prose_approval": "NOT_YET_APPROVED",
+      "draft_state_path": "data/draft_continuity_ep003.json"
+    },
+    {
+      "id": "EP-004",
+      "title": "วันยาวนานของพรานมือใหม่",
+      "status": "DRAFT",
+      "position": "ต่อจาก SC-026 ที่พระเอกยังอยู่ฐานหินและเตรียมออกล่าสัตว์",
+      "logline": "ฟาร์มสัตว์ที่กระจายอยู่ทั่วป่าจนมีไขมันและหนังมากพอ ทำถุงมือจับม้า ตั้งแคมป์ ขี่กลับหลังแจ้งเตือนฐานถูกระเบิด หลบดูคู่ปรับจากบท 2 เลือกไม่สู้ ซ่อมช่องทางเข้า แล้วสร้างเตาเผาเริ่มกระบวนการผลิตที่ต้องรอ",
+      "scene_ids": [
+        "SC-027",
+        "SC-028",
+        "SC-029",
+        "SC-030",
+        "SC-031",
+        "SC-032",
+        "SC-033",
+        "SC-034",
+        "SC-035",
+        "SC-036",
+        "SC-037",
+        "SC-038"
+      ],
+      "questions": [
+        "เวลาฟาร์มและปริมาณดรอปที่แน่นอน UNKNOWN",
+        "สูตรถุงมือจับม้าและการดรอปสัตว์ UNVERIFIED",
+        "ของในฐานที่คู่ปรับปล้นไป (ถ้ามี) UNKNOWN",
+        "เวลาสิ้นสุดคิวเผาและปริมาณผลผลิต UNKNOWN",
+        "สถานะม้าภายหลังยังไม่ล็อก"
+      ],
+      "approved_final_draft": null,
+      "working_draft_path": "drafts/EP-004/CH-04-FULL-DRAFT.md",
+      "author_plot_directive": "DEC-007",
+      "prose_approval": "NOT_YET_APPROVED",
+      "preceding_episode": "EP-003"
+    },
+    {
+      "id": "EP-005",
+      "title": "ค้อนที่หน้าประตู",
+      "status": "DRAFT",
+      "position": "ต่อทันทีหลัง SC-038 ที่เตาเผาเพิ่งเริ่มทำงาน",
+      "logline": "คู่ปรับสองคนกลับมาทุบประตู พระเอกใช้ธนูสังหารคนแรก สลับปืนของศพหลอกยิงพลิกชนะคนที่สอง ได้ปืนพกสองกระบอกและกระสุน 100 นัด แต่พอคู่ปรับกลับมาอีกครั้งจึงเฝ้าชั้นสองยิงเตือนและตระหนักว่าต้องเพิ่มการป้องกันฐาน",
+      "scene_ids": [
+        "SC-039",
+        "SC-040",
+        "SC-041",
+        "SC-042",
+        "SC-043",
+        "SC-044",
+        "SC-045",
+        "SC-046",
+        "SC-047"
+      ],
+      "questions": [
+        "ยังไม่ระบุว่า CHAR-004/005 รายใดถือค้อนหรือปืน",
+        "จำนวนลูกธนู/กระสุนใช้ในไฟต์แรกและกระสุนเหลือท้ายบท UNKNOWN",
+        "ไม่มีฉากที่ยืนยันว่าเตาเผาผลิตเหล็ก/ดินปืนเสร็จ",
+        "ม้าตัวแรกนอกฐานระหว่างเกิดเหตุมีสถานะ UNKNOWN"
+      ],
+      "approved_final_draft": null,
+      "working_draft_path": "drafts/EP-005/CH-05-FULL-DRAFT.md",
+      "author_plot_directive": "DEC-008",
+      "author_decision": {
+        "status": "AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST",
+        "decision_id": "DEC-009",
+        "source_path": "drafts/EP-005/CH-05-FULL-DRAFT.md",
+        "source_blob_sha": "5dce7134bc2a4982f301d7d0a71635d1631f7d3a",
+        "source_channel": "ChatGPT",
+        "github_pr_reviewer_provenance": "NOT_OBSERVED",
+        "engine_approval_state": "PENDING_GITHUB_REVIEW",
+        "note": "Author said OK and requested text to be put into engine. Source assembled from accepted fight and revised ending. Do not mark formal Canon or modify approved-only ledger."
+      },
+      "prose_approval": "AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST_NOT_GITHUB_REVIEWED"
+    },
+    {
+      "id": "EP-006",
+      "title": "ราคาของน้ำมัน",
+      "status": "DRAFT",
+      "position": "ต่อจาก SC-047; ม้าตัวแรกยังอยู่แต่เสียชีวิตที่โรงกลั่นในบทนี้",
+      "logline": "พระเอกขี่ม้าพกปืนฟาร์มถนน ชนะคนถือไม้ เข้าสำรวจโรงกลั่นที่มีซอมบี้ เก็บบัตรเขียวกับน้ำมัน เริ่มคิวกลั่นน้ำมันดิบ แต่ถูกสามคนขี่มอเตอร์ไซค์ถือปืนกลเบาบุกและยิงม้าตาย จึงถอยเดินเท้ากลับบ้าน",
+      "scene_ids": [
+        "SC-048",
+        "SC-049",
+        "SC-050",
+        "SC-051",
+        "SC-052",
+        "SC-053",
+        "SC-054",
+        "SC-055",
+        "SC-056",
+        "SC-057",
+        "SC-058"
+      ],
+      "questions": [
+        "ผู้เล่นถือไม้ใน EP006 คือ CHAR-002 หรือไม่ UNKNOWN",
+        "จำนวนซอมบี้/กระสุน/น้ำมันที่ได้ไม่ระบุ",
+        "บัตรเขียวยังไม่ถูกใช้เปิดห้องพิเศษ",
+        "เครื่องกลั่นยังทำงานตอนถอนตัวและไม่รู้ว่าคนใหม่เก็บผลผลิตสำเร็จหรือไม่",
+        "คนใหม่มีฐานหรือคุมโรงกลั่นจริงไหม UNKNOWN",
+        "ม้าตัวแรกตายและไม่มีม้าทดแทน"
+      ],
+      "approved_final_draft": null,
+      "working_draft_path": "drafts/EP-006/CH-06-FULL-DRAFT.md",
+      "author_plot_directive": "DEC-010",
+      "prose_approval": "NOT_YET_APPROVED",
+      "preceding_episode": "EP-005"
     }
   ]
 }

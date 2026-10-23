@@ -52,7 +52,170 @@
       "canon_refs": [
         "FACT-022"
       ],
-      "notes": "ผู้แต่งยังไม่สั่งให้ถูกบุกจริง ห้ามเล่าผลก่อนแต่งตอนต่อไป"
+      "notes": "บทที่ 4 มีการระเบิดประตู/ผนังขณะพระเอกกำลังล่าในป่าและยังออนไลน์ ไม่ใช่หลักฐานว่าใครบุกตอนออฟไลน์คืนแรก; ปมเหตุการณ์ตอนออฟไลน์ยังไม่ทราบ"
+    },
+    {
+      "id": "THREAD-005",
+      "title": "ภารกิจล่าสัตว์สะสมไขมันเพื่อทำน้ำมัน",
+      "status": "OPEN",
+      "priority": "EP-004",
+      "setup_scene_id": "SC-026",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-029"
+      ],
+      "notes": "EP-003 เพียงวางแผน; EP-004 เป็นร่างเหตุการณ์ฟาร์มสะสมไขมันพอทำน้ำมันและสร้างเตาเผา แต่ยังไม่ได้รับรองนิยายฉบับสุดท้ายหรือแปรรูปเหล็ก/ดินปืนสำเร็จ"
+    },
+    {
+      "id": "THREAD-006",
+      "title": "ผู้ใช้ปืนหกนัดบนถนนอาจกลับมาอีกหรือไม่",
+      "status": "IDEA",
+      "priority": "OPTIONAL",
+      "setup_scene_id": "SC-024",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-006",
+      "canon_refs": [
+        "FACT-026"
+      ],
+      "notes": "ศัตรูไม่ทราบชื่อ ความเกี่ยวข้องกับคู่อริในบท 1–2 และอนาคตทั้งหมด UNKNOWN"
+    },
+    {
+      "id": "THREAD-007",
+      "title": "คู่ปรับสองคนที่กลับมาระเบิดฐานจะทำอะไรต่อ",
+      "status": "OPEN",
+      "priority": "SERIES",
+      "setup_scene_id": "SC-036",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-036",
+        "FACT-037",
+        "FACT-038"
+      ],
+      "notes": "ผู้เขียนยืนยันสองคู่ปรับจากบท 2 กลับมาระเบิดทางเข้าบ้าน; พระเอกไม่สู้ในบท 4 การตามล่าและผลการปล้นยัง UNKNOWN"
+    },
+    {
+      "id": "THREAD-008",
+      "title": "ผลการเผาเหล็กกับวัตถุดิบสำหรับดินปืน",
+      "status": "OPEN",
+      "priority": "EP-005",
+      "setup_scene_id": "SC-038",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-039",
+        "FACT-040"
+      ],
+      "notes": "เตาเผาสร้างแล้ว เริ่มงานแปรรูป ต้องรอ ผลผลิตยังไม่พร้อม อัตราและเวลาจบ UNKNOWN"
+    },
+    {
+      "id": "THREAD-009",
+      "title": "ม้าตัวแรกอยู่ที่ไหนและจะดูแลอย่างไร",
+      "status": "OPEN",
+      "priority": "SERIES",
+      "setup_scene_id": "SC-033",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-034"
+      ],
+      "notes": "ม้าตัวแรก CHAR-008 ใช้ขี่กลับฐาน มีชีวิตที่สังเกตครั้งล่าสุด ไม่มีคอกถาวรหรือกฎเก็บสัตว์/ระยะหายไปที่ยืนยัน"
+    },
+    {
+      "id": "THREAD-010",
+      "title": "สองคู่ปรับที่เกิดใหม่และอาจกลับมาโจมตีฐานอีก",
+      "status": "OPEN",
+      "priority": "EP-006",
+      "setup_scene_id": "SC-045",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-048",
+        "FACT-049"
+      ],
+      "notes": "EP005 ทั้งคู่ตายและกลับมาอีกก่อนจะถอยเมื่อพระเอกยิงเตือน ไม่กำหนดว่าจะโจมตีอีกเมื่อไรหรือมีอาวุธอะไร"
+    },
+    {
+      "id": "THREAD-011",
+      "title": "พระเอกต้องพัฒนาระบบป้องกันบ้านหิน 2×2",
+      "status": "OPEN",
+      "priority": "EP-006",
+      "setup_scene_id": "SC-047",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-050"
+      ],
+      "notes": "เพิ่งคิดเสริมฐาน ยังไม่ได้ขยายพื้นที่หรือสร้างกำแพงและประตูหลายชั้นตามบทที่ 5"
+    },
+    {
+      "id": "THREAD-012",
+      "title": "เหล็กและวัตถุดิบดินปืนจากเตาเผาจะพร้อมเมื่อใด",
+      "status": "OPEN",
+      "priority": "EP-006",
+      "setup_scene_id": "SC-038",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-051"
+      ],
+      "notes": "เตากำลังทำงานตลอด EP005 แต่ในฉบับนี้ไม่ได้ยืนยันเวลาเสร็จหรือว่าพระเอกเก็บผลิตผลแล้ว"
+    },
+    {
+      "id": "THREAD-013",
+      "title": "โรงกลั่นน้ำมันเก่ากับกลุ่มติดปืนกลเบาสามคน",
+      "status": "OPEN",
+      "priority": "EP-007_OR_LATER",
+      "setup_scene_id": "SC-055",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-060",
+        "FACT-062",
+        "FACT-064"
+      ],
+      "notes": "ยังไม่ทราบเป็นเจ้าของโรงกลั่นหรือไม่และได้ผลผลิตคิวกลั่นที่พระเอกทิ้งไว้จริงหรือไม่"
+    },
+    {
+      "id": "THREAD-014",
+      "title": "บัตรผ่านสีเขียวและห้องพิเศษที่ยังไม่ได้เปิด",
+      "status": "OPEN",
+      "priority": "FUTURE",
+      "setup_scene_id": "SC-053",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-058"
+      ],
+      "notes": "บัตรเขียวหนึ่งใบจากโรงกลั่น ยังไม่มีการใช้เข้าห้องใด จำนวนครั้งที่ใช้ได้ UNKNOWN"
+    },
+    {
+      "id": "THREAD-015",
+      "title": "สูญเสียม้าตัวแรกและต้องประเมินพาหนะทดแทน",
+      "status": "OPEN",
+      "priority": "FUTURE",
+      "setup_scene_id": "SC-055",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-061"
+      ],
+      "notes": "ม้า CHAR-008 ตายด้วยปืนกลเบาของผู้เล่นใหม่หนึ่งในสามคน ไม่มีม้าตัวอื่นปรากฏในบท 6"
+    },
+    {
+      "id": "THREAD-016",
+      "title": "ความได้เปรียบปืนพกไม่ได้เท่ากับสู้ผู้เล่นมีปืนกลเบาได้",
+      "status": "OPEN",
+      "priority": "SERIES",
+      "setup_scene_id": "SC-058",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-063",
+        "FACT-064"
+      ],
+      "notes": "บทเรียนเรื่องช่องว่างอาวุธและการเดินทางผู้เล่นระดับสูง ยังไม่ตัดสินใจโจมตีกลุ่มใหม่"
     }
   ]
 }

@@ -65,6 +65,127 @@
       "source_artifact": "editorial/AUTHOR_APPROVAL_2026-10-23.json",
       "approved_head_commit": "3d0b3117b2a4a4029fe815899e5c7a28e69eb56f",
       "merge_commit": "5d32a9ff95b3b64953a792be3bd7fef078343a1f"
+    },
+    {
+      "id": "DEC-005",
+      "summary": "ผู้เขียนกำหนดบท 3: พักโลกจริง → กลับหาน้ำมันบนถนน → ดวลธนูเกือบชนะ → ถูกปืนพก 6 นัดยิงตาย → เกิดใหม่สูญเสียของ → วางแผนล่าสัตว์หาไขมันเพื่อทำน้ำมันในบท 4",
+      "status": "USER_PLOT_DIRECTIVE",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-023",
+        "FACT-024",
+        "FACT-025",
+        "FACT-026",
+        "FACT-027",
+        "FACT-028",
+        "FACT-029"
+      ],
+      "date": "2026-10-23",
+      "notes": "Plot is user-directed. Prose wording and extra scene detail are DRAFT, not approved. Do not claim gameplay formulas verified."
+    },
+    {
+      "id": "DEC-006",
+      "summary": "ผู้เขียนสั่งให้นำบทที่ 3 ขึ้น Story Engine ก่อน โดยไม่สั่งรับรองถ้อยคำหรือเลื่อนเป็น approved canon",
+      "status": "DRAFT_INGEST_REQUEST",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-023",
+        "FACT-024",
+        "FACT-025",
+        "FACT-026",
+        "FACT-027",
+        "FACT-028",
+        "FACT-029"
+      ],
+      "date": "2026-10-23",
+      "notes": "Store full draft and eight scene files in active story without editing episodes 1–2 or ledger."
+    },
+    {
+      "id": "DEC-007",
+      "summary": "ผู้เขียนกำหนดบท 4: ฟาร์มสัตว์ในป่าที่อยู่กระจัดกระจาย เดินทาง/ล่าทีละตัว (ไก่ กระต่าย กวาง ม้า; หมาป่า หมีเป็นภัย) สะสมไขมันและหนังพอทำถุงมือจับม้า ทำม้าอ่อนแรงจับได้ พักกองไฟทำอาหาร แจ้งเตือนบ้านถูกระเบิด ขี่ม้ากลับซ่อนหลังเนินเห็นคู่ปรับเดิมสองคนระเบิดทางเข้า เลือกไม่สู้เพราะของที่ฟาร์มมีค่ากว่า รอจนกลับไป ซ่อมบ้าน แล้วสร้างเตาเผาเริ่มงานเหล็กและไม้+กำมะถันสายดินปืนซึ่งต้องใช้เวลารอ",
+      "status": "USER_PLOT_DIRECTIVE",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-031",
+        "FACT-032",
+        "FACT-033",
+        "FACT-034",
+        "FACT-035",
+        "FACT-036",
+        "FACT-037",
+        "FACT-038",
+        "FACT-039",
+        "FACT-040"
+      ],
+      "date": "2026-10-23",
+      "notes": "ล็อกเฉพาะเหตุการณ์หลักตามคำสั่งผู้เขียน ถ้อยคำฉบับเต็มและรายละเอียดสูตรเกม/จำนวนยัง DRAFT/UNVERIFIED"
+    },
+    {
+      "id": "DEC-008",
+      "summary": "ผู้เขียนกำหนด EP005 ว่าคู่ปรับ 2 คนจาก EP002/004 กลับมาทุบประตูและยิงขู่ พระเอกย่องขึ้นชั้นยิง ยิงธนูสังหารคนแรก รออีกคนเปลี่ยนกระสุนจึงยิงสวนและลงมาเก็บปืนจากศพ หลอกด้วยธนูก่อนยิงปืนพกชนะคนที่สอง ได้ชุดหนัง ปืน 2 กระบอก กระสุน 100 นัด",
+      "status": "USER_PLOT_DIRECTIVE",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-042",
+        "FACT-043",
+        "FACT-044",
+        "FACT-045",
+        "FACT-046",
+        "FACT-047"
+      ],
+      "date": "2026-10-23",
+      "notes": "User-directed combat, loot and resource quantities; no game-mechanic verification."
+    },
+    {
+      "id": "DEC-009",
+      "summary": "ผู้เขียนแก้ฉากจบให้ขึ้นเฝ้าชั้นยิง คู่ปรับสองคนกลับมาอีก จึงยิงปืนขู่หนึ่งนัดจนอีกฝ่ายหยุดดูและถอย สรุปความเสี่ยงว่าหากอีกฝ่ายเก่งขึ้นคงไม่รอด แล้วกล่าว 'ok ครับเอาเนื้อเรื่องขึ้น engine เลย' ให้เก็บข้อความนี้",
+      "status": "AUTHOR_ACCEPTED_IN_CHAT_FOR_INGEST",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-048",
+        "FACT-049",
+        "FACT-050",
+        "FACT-051"
+      ],
+      "date": "2026-10-23",
+      "notes": "Source manuscript Git blob 5dce7134bc2a4982f301d7d0a71635d1631f7d3a. Chat consent for integration and revised ending; no independently authenticated GitHub PR APPROVE review.",
+      "source_channel": "ChatGPT",
+      "source_path": "drafts/EP-005/CH-05-FULL-DRAFT.md",
+      "source_blob_sha": "5dce7134bc2a4982f301d7d0a71635d1631f7d3a"
+    },
+    {
+      "id": "DEC-010",
+      "summary": "ผู้เขียนกำหนดบทที่ 6: พระเอกมีปืนสั้น ชุดหนัง และขี่ม้าแบบคาวบอยกลับตีกล่องฟาร์มถนน ยิงสู้ชนะผู้เล่นถือไม้เบสบอล เข้าสำรวจโรงกลั่นน้ำมันเก่าที่มีซอมบี้ระยะใกล้ ยิงเคลียร์พบบัตรเขียว น้ำมันพร้อมใช้ ถังน้ำมันดิบ ใส่เครื่องกลั่นต้องรอนาน แล้วมีสามคนขี่มอเตอร์ไซค์ 3 คันพร้อมปืนกลเบามายิงม้าตาย ค้นพื้นที่พบคิวกลั่น พระเอกไม่สู้ ถอยเดินกลับบ้านและสงสัยว่าพวกนี้คุมพื้นที่",
+      "status": "USER_PLOT_DIRECTIVE",
+      "authority": "USER",
+      "date": "2026-10-23",
+      "canon_refs": [
+        "FACT-053",
+        "FACT-054",
+        "FACT-055",
+        "FACT-056",
+        "FACT-057",
+        "FACT-058",
+        "FACT-059",
+        "FACT-060",
+        "FACT-061",
+        "FACT-062",
+        "FACT-063",
+        "FACT-064",
+        "FACT-065"
+      ],
+      "notes": "Exact prose not approved, species/drops/game refinery rules UNVERIFIED. Do not claim the motorcycle group is confirmed owner of the refinery."
+    },
+    {
+      "id": "DEC-011",
+      "summary": "ผู้เขียนกำหนดแบบเป้าหมายชั้นล่างของบ้านหุ้ม 4×4: แกนบ้านเดิม 2×2 อยู่ตรงกลาง พื้นที่ขอบรอบนอก 12 ช่อง (หนา 1 หน่วยพื้น) เป็นทางเดินโล่งเชื่อมกันครบทั้ง 4 ด้าน เดินวนรอบแกนกลางได้โดยไม่มีผนังแบ่งตัดทาง; ยังคงกำแพงสองแนวและเป็นแบบอนาคตที่ยังไม่ได้สร้าง",
+      "status": "USER_DESIGN_DIRECTIVE",
+      "authority": "USER",
+      "canon_refs": [
+        "FACT-067"
+      ],
+      "date": "2026-10-23",
+      "notes": "Target blueprint only, not a completed EP007/EP006 scene. See bible/BASE_EXPANSION_4X4_TARGET.md and data/base_expansion_4x4_target.json; do not change official story_state or approved-only ledger."
     }
   ]
 }

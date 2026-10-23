@@ -1,0 +1,134 @@
+{
+  "document_kind": "FICTIONAL_HOUSE_DESIGN_PROPOSAL_TEMPLATE",
+  "template_revision": 1,
+  "template_notes": [
+    "Human-editable proposal scaffold only; this is not an engine schema, runtime input, CLI format, or validator contract.",
+    "Empty IDs and names are placeholders, not assigned identities. Null coordinates and metric heights mean unknown/unplaced.",
+    "Select a profile deliberately. The generic optional module has no story-specific shape or pillar rule; the Last Island extension records the author's square/triangle and one-pillar-per-whole-house design direction only. Triangle angles and dimensions remain unknown; a right-isosceles triangle is only a declared pilot diagram convention.",
+    "Do not apply this proposal to canon or ledger. Approval remains unverified until a separate authorized human review."
+  ],
+  "status": "PROPOSED",
+  "profile": null,
+  "story_slug": null,
+  "engine_schema_supported": false,
+  "engine_input_authorized": false,
+  "human_editorial_approval": "UNVERIFIED",
+  "canon_change_authorized": false,
+  "ledger_apply_authorized": false,
+  "canon_apply": false,
+  "profiles": {
+    "generic_optional_module": {
+      "selected": false,
+      "module_system_id": "",
+      "localized_name": {
+        "th": "",
+        "en": ""
+      },
+      "module_kinds": [],
+      "shape_rule": null,
+      "pillar_rule": null,
+      "units": null,
+      "metres_per_unit": null
+    },
+    "last_island_story_extension": {
+      "selected": false,
+      "story_slug": "last-island-active",
+      "module_vocabulary": [
+        "SQUARE",
+        "TRIANGLE"
+      ],
+      "main_pillar": {
+        "count_per_whole_house": 1,
+        "pillar_id": "",
+        "applies_to_whole_house": true,
+        "design_direction": "CENTRAL_TO_WHOLE_HOUSE",
+        "centrality_metric": "UNKNOWN",
+        "center_xy": null,
+        "height_m": null,
+        "influence_extent": null,
+        "relocation_policy": "UNKNOWN",
+        "structural_effect": "UNKNOWN"
+      }
+    }
+  },
+  "house": {
+    "house_id": "",
+    "version_id": "",
+    "parent_version_id": null,
+    "localized_name": {
+      "th": "",
+      "en": ""
+    },
+    "owner_player_ref": null,
+    "owner_group_ref": null,
+    "occupant_refs": [],
+    "location_ref": null,
+    "canon_location_ref": null,
+    "chapter_refs": [],
+    "design_status": "PROPOSED"
+  },
+  "coordinate_convention": {
+    "placement_status": "UNPLACED",
+    "coordinate_system": null,
+    "length_unit": null,
+    "metres_per_unit": null,
+    "floor_index_semantics": "ORDINAL_IF_USED",
+    "symbolic_elevation_unit": null,
+    "metric_height_m": null
+  },
+  "tiles": [
+    {
+      "tile_id": "",
+      "localized_name": {
+        "th": "",
+        "en": ""
+      },
+      "module_kind": null,
+      "origin_xy": null,
+      "floor_index": null,
+      "elevation_h": null,
+      "metric_height_m": null,
+      "status": "PROPOSED"
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "",
+      "localized_name": {
+        "th": "",
+        "en": ""
+      },
+      "tile_refs": [],
+      "boundary_xy": null,
+      "floor_index": null,
+      "elevation_h": null,
+      "interior_height_h": null,
+      "metric_height_m": null,
+      "room_use_proposal": null,
+      "status": "PROPOSED"
+    }
+  ],
+  "connections": [
+    {
+      "connection_id": "",
+      "kind": null,
+      "from_ref": null,
+      "to_ref": null,
+      "opening_at_from_ref": null,
+      "opening_at_to_ref": null,
+      "status": "PROPOSED"
+    }
+  ],
+  "roof": {
+    "roof_id": "",
+    "kind": null,
+    "allowed_kinds": [
+      "COVERING_ROOF",
+      "OCCUPIED_TERRACE"
+    ],
+    "access_connection_ref": null
+  },
+  "evidence_refs": [],
+  "diagram_refs": [],
+  "approval_evidence_ref": null
+}

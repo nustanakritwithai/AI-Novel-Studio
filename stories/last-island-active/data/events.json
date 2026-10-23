@@ -294,6 +294,728 @@
         "upper_firing_platform_ready": true,
         "logged_out": true
       }
+    },
+    {
+      "id": "EV-019",
+      "scene_id": "SC-019",
+      "episode_id": "EP-003",
+      "order": 1,
+      "status": "DRAFT",
+      "what_changed": "พักในโลกจริง วางความคิดเรื่องการหาน้ำมัน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-007"
+      ],
+      "location_id": "LOC-001",
+      "effects_flags": {
+        "ep003_reallife_rest_completed": true
+      }
+    },
+    {
+      "id": "EV-020",
+      "scene_id": "SC-020",
+      "episode_id": "EP-003",
+      "order": 2,
+      "status": "DRAFT",
+      "what_changed": "พระเอกออกบ้านมุ่งหน้าสู่ถนน",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep003_logged_in": true,
+        "ep003_road_trip_started": true
+      }
+    },
+    {
+      "id": "EV-021",
+      "scene_id": "SC-021",
+      "episode_id": "EP-003",
+      "order": 3,
+      "status": "DRAFT",
+      "what_changed": "ไม่ได้รับน้ำมันและต้องตั้งรับการโจมตี",
+      "actors": [
+        "CHAR-001",
+        "CHAR-006"
+      ],
+      "location_id": "LOC-010",
+      "effects_flags": {
+        "ep003_road_loot_found": true,
+        "ep003_duel_started": true,
+        "ep003_oil_found": false
+      }
+    },
+    {
+      "id": "EV-022",
+      "scene_id": "SC-022",
+      "episode_id": "EP-003",
+      "order": 4,
+      "status": "DRAFT",
+      "what_changed": "พระเอกเริ่มทำให้คู่ต่อสู้บาดเจ็บ",
+      "actors": [
+        "CHAR-001",
+        "CHAR-006"
+      ],
+      "location_id": "LOC-010",
+      "effects_flags": {
+        "ep003_enemy_arm_hit": true
+      }
+    },
+    {
+      "id": "EV-023",
+      "scene_id": "SC-023",
+      "episode_id": "EP-003",
+      "order": 5,
+      "status": "DRAFT",
+      "what_changed": "พระเอกเกือบชนะ แต่เผชิญปืนพก",
+      "actors": [
+        "CHAR-001",
+        "CHAR-006"
+      ],
+      "location_id": "LOC-010",
+      "effects_flags": {
+        "ep003_enemy_leg_hit": true,
+        "ep003_pistol_revealed": true
+      }
+    },
+    {
+      "id": "EV-024",
+      "scene_id": "SC-024",
+      "episode_id": "EP-003",
+      "order": 6,
+      "status": "DRAFT",
+      "what_changed": "พระเอกตาย ไม่มีชัยชนะจากการดวลธนู",
+      "actors": [
+        "CHAR-001",
+        "CHAR-006"
+      ],
+      "location_id": "LOC-010",
+      "effects_flags": {
+        "ep003_killed_by_pistol": true,
+        "ep003_six_pistol_shots_fired": true
+      },
+      "shots_fired": 6,
+      "shooter_character_id": "CHAR-006",
+      "shot_detail_source": "drafts/EP-003/SC-024.md"
+    },
+    {
+      "id": "EV-025",
+      "scene_id": "SC-025",
+      "episode_id": "EP-003",
+      "order": 7,
+      "status": "DRAFT",
+      "what_changed": "ยกเลิกแผนเก็บน้ำมันริมถนน",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep003_respawned": true,
+        "ep003_road_plan_abandoned": true,
+        "ep003_carried_loot_lost": true,
+        "ep003_storage_safe": true,
+        "ep003_loot_recovered": false
+      }
+    },
+    {
+      "id": "EV-026",
+      "scene_id": "SC-026",
+      "episode_id": "EP-003",
+      "order": 8,
+      "status": "DRAFT",
+      "what_changed": "ภารกิจต่อไปคือออกล่าสัตว์เพื่อไขมัน",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep003_hunt_plan_ready": true,
+        "ep003_hunting_started": false,
+        "ep003_furnace_built": false,
+        "ep003_oil_obtained": false,
+        "ep003_animals_hunted": false,
+        "ep003_animal_fat_obtained": false,
+        "ep003_meat_obtained": false,
+        "ep003_hide_obtained": false,
+        "ep003_iron_produced": false,
+        "ep003_ammo_crafted": false
+      }
+    },
+    {
+      "id": "EV-027",
+      "scene_id": "SC-027",
+      "episode_id": "EP-004",
+      "order": 1,
+      "status": "DRAFT",
+      "what_changed": "เริ่มสำรวจ",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-011",
+      "effects_flags": {
+        "ep004_hunt_expedition_started": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-028",
+      "scene_id": "SC-028",
+      "episode_id": "EP-004",
+      "order": 2,
+      "status": "DRAFT",
+      "what_changed": "เริ่มได้วัตถุดิบ แต่ไขมันไม่พอ",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-011",
+      "effects_flags": {
+        "ep004_chicken_hunted": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-029",
+      "scene_id": "SC-029",
+      "episode_id": "EP-004",
+      "order": 3,
+      "status": "DRAFT",
+      "what_changed": "ได้เนื้อ หนัง ไขมันบางส่วน",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-011",
+      "effects_flags": {
+        "ep004_rabbit_hunted": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-030",
+      "scene_id": "SC-030",
+      "episode_id": "EP-004",
+      "order": 4,
+      "status": "DRAFT",
+      "what_changed": "เก็บเนื้อ หนัง ไขมันและเริ่มหนักกระเป๋า",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-011",
+      "effects_flags": {
+        "ep004_deer_hunted": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-031",
+      "scene_id": "SC-031",
+      "episode_id": "EP-004",
+      "order": 5,
+      "status": "DRAFT",
+      "what_changed": "ปลอดภัยแต่ไม่ฆ่าสัตว์อันตราย",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-011",
+      "effects_flags": {
+        "ep004_predators_avoided": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-032",
+      "scene_id": "SC-032",
+      "episode_id": "EP-004",
+      "order": 6,
+      "status": "DRAFT",
+      "what_changed": "ไขมันพอทำน้ำมัน หนังพอทำถุงมือ",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-011",
+      "effects_flags": {
+        "ep004_fat_goal_reached": true,
+        "ep004_hides_for_glove_ready": true,
+        "ep004_iron_ore_sulfur_collected": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-033",
+      "scene_id": "SC-033",
+      "episode_id": "EP-004",
+      "order": 7,
+      "status": "DRAFT",
+      "what_changed": "มีม้าเป็นพาหนะ",
+      "actors": [
+        "CHAR-001",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-012",
+      "effects_flags": {
+        "ep004_horse_glove_crafted": true,
+        "ep004_horse_tamed": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-034",
+      "scene_id": "SC-034",
+      "episode_id": "EP-004",
+      "order": 8,
+      "status": "DRAFT",
+      "what_changed": "ต้องหยุดพักเพื่อกลับบ้าน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-013",
+      "effects_flags": {
+        "ep004_campfire_cooked": true,
+        "ep004_wall_explosion_alert_received": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-035",
+      "scene_id": "SC-035",
+      "episode_id": "EP-004",
+      "order": 9,
+      "status": "DRAFT",
+      "what_changed": "ถึงเนินใกล้ฐาน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-013",
+      "effects_flags": {
+        "ep004_approached_base_by_horse": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-036",
+      "scene_id": "SC-036",
+      "episode_id": "EP-004",
+      "order": 10,
+      "status": "DRAFT",
+      "what_changed": "ตัดสินใจไม่สู้",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-014",
+      "effects_flags": {
+        "ep004_two_prior_rivals_identified": true,
+        "ep004_raid_observed": true,
+        "ep004_chose_noncombat": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-037",
+      "scene_id": "SC-037",
+      "episode_id": "EP-004",
+      "order": 11,
+      "status": "DRAFT",
+      "what_changed": "ฐาน 2x2 ปิดกลับได้โดยไม่ขยาย",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep004_raiders_left": true,
+        "ep004_base_breach_repaired": true,
+        "ep004_no_pvp_kill": true
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-038",
+      "scene_id": "SC-038",
+      "episode_id": "EP-004",
+      "order": 12,
+      "status": "DRAFT",
+      "what_changed": "ยังไม่รับเหล็ก ดินปืนหรือกระสุนใหม่",
+      "actors": [
+        "CHAR-001",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep004_oil_prepared": true,
+        "ep004_furnace_built": true,
+        "ep004_iron_processing_started": true,
+        "ep004_gunpowder_inputs_processing_started": true,
+        "ep004_finished_iron_ready": false,
+        "ep004_finished_gunpowder_ready": false,
+        "ep004_crafted_bullets_ready": false
+      },
+      "editorial_origin": "EP004_DRAFT"
+    },
+    {
+      "id": "EV-039",
+      "scene_id": "SC-039",
+      "episode_id": "EP-005",
+      "order": 1,
+      "status": "DRAFT",
+      "what_changed": "ได้ตำแหน่งซุ่มยิงเหนือศัตรูสองคน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_raiders_battering_door": true,
+        "ep005_hero_upper_ambush_ready": true
+      },
+      "source_prose": "drafts/EP-005/SC-039.md"
+    },
+    {
+      "id": "EV-040",
+      "scene_id": "SC-040",
+      "episode_id": "EP-005",
+      "order": 2,
+      "status": "DRAFT",
+      "what_changed": "คู่ปรับคนแรกเสียชีวิต ส่วนพระเอกอยู่หลังกำแพงเตี้ย",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_first_raider_defeated": true,
+        "ep005_second_pistol_suppressing": true
+      },
+      "source_prose": "drafts/EP-005/SC-040.md"
+    },
+    {
+      "id": "EV-041",
+      "scene_id": "SC-041",
+      "episode_id": "EP-005",
+      "order": 3,
+      "status": "DRAFT",
+      "what_changed": "พระเอกหาวิธีลงไปโดยยังรักษาแต้มต่อ",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_second_raider_arrow_hit": true,
+        "ep005_second_raider_challenge": true
+      },
+      "source_prose": "drafts/EP-005/SC-041.md"
+    },
+    {
+      "id": "EV-042",
+      "scene_id": "SC-042",
+      "episode_id": "EP-005",
+      "order": 4,
+      "status": "DRAFT",
+      "what_changed": "พระเอกซ่อนการมีปืนพกและเตรียมดักสวน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-015",
+      "effects_flags": {
+        "ep005_first_pistol_acquired": true,
+        "ep005_bow_bait_worked": true
+      },
+      "source_prose": "drafts/EP-005/SC-042.md"
+    },
+    {
+      "id": "EV-043",
+      "scene_id": "SC-043",
+      "episode_id": "EP-005",
+      "order": 5,
+      "status": "DRAFT",
+      "what_changed": "คู่ปรับสองคนตายจากการปะทะ พระเอกได้ปืนสองกระบอกและกระสุน 100 นัด",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-015",
+      "effects_flags": {
+        "ep005_second_raider_defeated": true,
+        "ep005_two_pistols_acquired": true,
+        "ep005_100_rounds_looted": true,
+        "ep005_leather_looted": true
+      },
+      "source_prose": "drafts/EP-005/SC-043.md"
+    },
+    {
+      "id": "EV-044",
+      "scene_id": "SC-044",
+      "episode_id": "EP-005",
+      "order": 6,
+      "status": "DRAFT",
+      "what_changed": "ตรวจพบคู่ปรับกลับมาก่อนถึงประตู",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_upper_watch_started": true,
+        "ep005_raiders_returned": true
+      },
+      "source_prose": "drafts/EP-005/SC-044.md"
+    },
+    {
+      "id": "EV-045",
+      "scene_id": "SC-045",
+      "episode_id": "EP-005",
+      "order": 7,
+      "status": "DRAFT",
+      "what_changed": "ยังไม่มีศัตรูตายเพิ่ม แต่ทั้งสองหยุดการเข้าประชิด",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_warning_round_fired": true,
+        "ep005_raiders_stopped": true
+      },
+      "source_prose": "drafts/EP-005/SC-045.md"
+    },
+    {
+      "id": "EV-046",
+      "scene_id": "SC-046",
+      "episode_id": "EP-005",
+      "order": 8,
+      "status": "DRAFT",
+      "what_changed": "คู่ปรับล่าถอยจากบ้านโดยไม่มีการยิงเพิ่ม",
+      "actors": [
+        "CHAR-001",
+        "CHAR-004",
+        "CHAR-005"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_raiders_retreated": true,
+        "ep005_additional_kills": false
+      },
+      "source_prose": "drafts/EP-005/SC-046.md"
+    },
+    {
+      "id": "EV-047",
+      "scene_id": "SC-047",
+      "episode_id": "EP-005",
+      "order": 9,
+      "status": "DRAFT",
+      "what_changed": "จบบทพร้อมปมเสริมกำแพง/ป้องกันฐาน ยังไม่สร้างสิ่งใหม่",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep005_base_defense_motivation": true,
+        "ep005_furnace_still_running": true,
+        "ep005_new_fortification_built": false
+      },
+      "source_prose": "drafts/EP-005/SC-047.md"
+    },
+    {
+      "id": "EV-048",
+      "scene_id": "SC-048",
+      "episode_id": "EP-006",
+      "order": 1,
+      "status": "DRAFT",
+      "what_changed": "เริ่มทริปม้า-ปืนพกไปถนน",
+      "actors": [
+        "CHAR-001",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep006_horse_departure": true
+      }
+    },
+    {
+      "id": "EV-049",
+      "scene_id": "SC-049",
+      "episode_id": "EP-006",
+      "order": 2,
+      "status": "DRAFT",
+      "what_changed": "เก็บของได้บ้างก่อนถูกโจมตี",
+      "actors": [
+        "CHAR-001",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-016",
+      "effects_flags": {
+        "ep006_road_scrap_found": true
+      }
+    },
+    {
+      "id": "EV-050",
+      "scene_id": "SC-050",
+      "episode_id": "EP-006",
+      "order": 3,
+      "status": "DRAFT",
+      "what_changed": "ปืนพกชนะผู้ถือไม้ การเดินทางต่อ",
+      "actors": [
+        "CHAR-001",
+        "CHAR-009",
+        "CHAR-008"
+      ],
+      "location_id": "LOC-016",
+      "effects_flags": {
+        "ep006_bat_ambusher_defeated": true
+      }
+    },
+    {
+      "id": "EV-051",
+      "scene_id": "SC-051",
+      "episode_id": "EP-006",
+      "order": 4,
+      "status": "DRAFT",
+      "what_changed": "ตัดสินใจเดินเข้าไปสำรวจ",
+      "actors": [
+        "CHAR-001",
+        "CHAR-008",
+        "CHAR-013"
+      ],
+      "location_id": "LOC-017",
+      "effects_flags": {
+        "ep006_refinery_discovered": true,
+        "ep006_horse_parked_at_gate": true
+      }
+    },
+    {
+      "id": "EV-052",
+      "scene_id": "SC-052",
+      "episode_id": "EP-006",
+      "order": 5,
+      "status": "DRAFT",
+      "what_changed": "พื้นที่สำรวจสงบลง เริ่มค้นไอเทม",
+      "actors": [
+        "CHAR-001",
+        "CHAR-013"
+      ],
+      "location_id": "LOC-017",
+      "effects_flags": {
+        "ep006_local_zombies_cleared": true
+      }
+    },
+    {
+      "id": "EV-053",
+      "scene_id": "SC-053",
+      "episode_id": "EP-006",
+      "order": 6,
+      "status": "DRAFT",
+      "what_changed": "ได้ไอเทมสำหรับห้องพิเศษและถังกลั่น",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-017",
+      "effects_flags": {
+        "ep006_green_card_found": true,
+        "ep006_ready_oil_found": true,
+        "ep006_crude_barrel_found": true
+      }
+    },
+    {
+      "id": "EV-054",
+      "scene_id": "SC-054",
+      "episode_id": "EP-006",
+      "order": 7,
+      "status": "DRAFT",
+      "what_changed": "คิวกลั่นกำลังทำงาน ยังไม่ได้เก็บผลผลิต",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-018",
+      "effects_flags": {
+        "ep006_refining_started": true,
+        "ep006_refined_oil_collected": false
+      }
+    },
+    {
+      "id": "EV-055",
+      "scene_id": "SC-055",
+      "episode_id": "EP-006",
+      "order": 8,
+      "status": "DRAFT",
+      "what_changed": "ม้าตัวแรกตาย พระเอกต้องหลบหนี",
+      "actors": [
+        "CHAR-001",
+        "CHAR-008",
+        "CHAR-010",
+        "CHAR-011",
+        "CHAR-012"
+      ],
+      "location_id": "LOC-017",
+      "effects_flags": {
+        "ep006_three_bikes_arrived": true,
+        "ep006_horse_killed": true,
+        "ep006_outgunned": true
+      }
+    },
+    {
+      "id": "EV-056",
+      "scene_id": "SC-056",
+      "episode_id": "EP-006",
+      "order": 9,
+      "status": "DRAFT",
+      "what_changed": "ปล่อยเครื่องกลั่นไว้ไม่ทราบผลผลิต ออกนอกเขต",
+      "actors": [
+        "CHAR-001",
+        "CHAR-010",
+        "CHAR-011",
+        "CHAR-012"
+      ],
+      "location_id": "LOC-018",
+      "effects_flags": {
+        "ep006_withdrawal_started": true,
+        "ep006_crude_output_abandoned": true,
+        "ep006_refined_oil_collected": false
+      }
+    },
+    {
+      "id": "EV-057",
+      "scene_id": "SC-057",
+      "episode_id": "EP-006",
+      "order": 10,
+      "status": "DRAFT",
+      "what_changed": "ใกล้ถึงฐาน ไม่แน่ใจเจ้าของโรงกลั่น",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-019",
+      "effects_flags": {
+        "ep006_retreat_on_foot": true
+      }
+    },
+    {
+      "id": "EV-058",
+      "scene_id": "SC-058",
+      "episode_id": "EP-006",
+      "order": 11,
+      "status": "DRAFT",
+      "what_changed": "กลับบ้านแบบไร้ม้า ไม่มีน้ำมันกลั่นสำเร็จจากเครื่องในโรงกลั่น",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep006_home_reached": true,
+        "ep006_green_card_retained": true,
+        "ep006_horse_still_alive": false,
+        "ep006_finished_refinery_output_owned": false
+      }
     }
   ]
 }

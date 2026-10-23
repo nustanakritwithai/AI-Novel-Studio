@@ -12,7 +12,7 @@ import tempfile
 from pathlib import Path
 
 try:
-    from scripts import novelctl, story_config, story_engine, doctor, review_bundle, provenance, rollup, world_history, world_consistency
+    from scripts import novelctl, story_config, story_engine, doctor, review_bundle, provenance, rollup, world_history, house_cards, world_consistency
 except ImportError:  # called as `python scripts/storyctl.py`
     import novelctl
     import story_config
@@ -22,6 +22,7 @@ except ImportError:  # called as `python scripts/storyctl.py`
     import provenance
     import rollup
     import world_history
+    import house_cards
     import world_consistency
 
 
@@ -207,6 +208,14 @@ def main(argv: list[str] | None = None) -> int:
     lint.add_argument('--suborder', type=int, default=0)
     lint.add_argument('--boundary', choices=('BEFORE', 'AFTER'), default='BEFORE')
     lint.add_argument('--out', type=Path)
+    house = commands.add_parser('house-card', help='Read-only source-bound house reference at an explicit scene boundary; never canon')
+    house.add_argument('house_id')
+    house.add_argument('--scene', required=True)
+    house.add_argument('--boundary', choices=('BEFORE', 'AFTER'), default='BEFORE')
+    house.add_argument('--pov', help='Character ID; default selected scene POV. Unknown knowledge stays unknown.')
+    house.add_argument('--source-mode', choices=('working-tree', 'committed'), default='working-tree',
+                       help='Exact raw source bytes, or explicit local HEAD Git blobs; never normalize narrative bytes')
+    house.add_argument('--out', type=Path)
     pack = commands.add_parser("pack")
     pack.add_argument("target")
     pack.add_argument("--recent", type=int, default=7)
@@ -255,6 +264,11 @@ def main(argv: list[str] | None = None) -> int:
             _emit_private_artifact(args.workspace, args.out, json.dumps(report, ensure_ascii=False, indent=2) + '\n')
             return {'PASS': 0, 'CONTRADICTION': 1, 'INVALID': 1,
                     'UNKNOWN': 2, 'DISABLED': 2, 'NO_CHECKS': 2}[report['status']]
+        if args.command == 'house-card':
+            report = house_cards.build(root, args.house_id, args.scene, boundary=args.boundary,
+                                       pov=args.pov, source_mode=args.source_mode)
+            _emit_private_artifact(args.workspace, args.out, json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+            return {'AVAILABLE': 0, 'UNKNOWN': 2, 'INVALID': 1}[report['availability']]
         if args.command == 'world-preview':
             cutoff = {'clock_id': args.clock, 'tick': args.tick,
                       'suborder': args.suborder, 'boundary': args.boundary}

@@ -100,6 +100,150 @@
       "story_requirement": "LOCKED",
       "source_ids": [],
       "notes": "User-directed fiction beat; real Last Island gameplay version/mode not established"
+    },
+    {
+      "id": "MECH-013",
+      "title": "กล่องน้ำมันมีโอกาสสุ่มเกิดระหว่างเส้นทางถนน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "User-specified story mechanic; no oil crate identified or oil acquired in EP-003"
+    },
+    {
+      "id": "MECH-014",
+      "title": "น้ำมันใช้ในสายคราฟต์เตาเผา แปรรูปเหล็ก และต่อยอดสู่อุปกรณ์ทำกระสุน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Fictional server mechanics described by author; no formula quantities or universal applicability verified"
+    },
+    {
+      "id": "MECH-015",
+      "title": "ศัตรูมีปืนพกและยิงหกนัดในการเผชิญหน้าที่ถนน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Six-shots encounter is author-directed; do not generalize pistol ammunition capacity or infer all enemy reserve ammo"
+    },
+    {
+      "id": "MECH-016",
+      "title": "สัตว์ป่าดรอปเนื้อ หนัง และไขมันสัตว์; ไขมันใช้ทำน้ำมัน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "User-directed fictional world rule; hunting itself starts only after EP-003"
+    },
+    {
+      "id": "MECH-017",
+      "title": "การกระจายตัวของสัตว์ป่าและการล่าเพื่อเก็บเนื้อ หนัง ไขมัน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Farming requires travel/search and per-animal action; rates and exact species drops UNVERIFIED"
+    },
+    {
+      "id": "MECH-018",
+      "title": "ถุงมือหนังสำหรับจับม้า ต้องลดกำลังม้าก่อนจึงจับได้",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "User fiction mechanic; real-game tame recipe, weapon and threshold UNVERIFIED"
+    },
+    {
+      "id": "MECH-019",
+      "title": "กองไฟแคมป์และการทำอาหารจากเนื้อสัตว์",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Actual crafting, fuel and cooking duration UNVERIFIED"
+    },
+    {
+      "id": "MECH-020",
+      "title": "แจ้งเตือนฐานถูกระเบิด การบุกฐานและการซ่อมช่องทางเข้า",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Actual game-mode alert, damage and repair rules UNVERIFIED"
+    },
+    {
+      "id": "MECH-021",
+      "title": "เตาเผาแปรรูปแร่เหล็กและผลิตผลจากไม้กับกำมะถันในสายคราฟต์ดินปืนแบบมีเวลารอ",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Fictional system menus; no exact ingredients, quantities, physical formulas or timers validated. Outputs queued but NOT ready."
+    },
+    {
+      "id": "MECH-022",
+      "title": "ผู้เล่นใช้ค้อนทุบประตูบ้านหินและปืนพกยิงกดดันชั้นยิง",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "User fiction scene; door HP, actual raid vulnerability and hammer damage UNVERIFIED"
+    },
+    {
+      "id": "MECH-023",
+      "title": "ธนูระยะสูงยิงศีรษะและยิงซ้ำในการต่อสู้ PvP",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Outcome directed by author; actual headshot multiplier and bow PvP damage UNVERIFIED"
+    },
+    {
+      "id": "MECH-024",
+      "title": "ปืนพกยิงเร็วแต่มีจังหวะเปลี่ยนกระสุน และที่กำบังลดความเสี่ยง",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Timing and reload rule user fictional; number of bullets in first duel UNKNOWN"
+    },
+    {
+      "id": "MECH-025",
+      "title": "ผู้เล่นถูกกำจัดแล้วเกิดใหม่และสามารถกลับมาหาฐานได้",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "User-directed repeat rival event; respawn timer/return-distance/external gameplay version UNVERIFIED"
+    },
+    {
+      "id": "MECH-026",
+      "title": "ยิงปืนขู่ออกจากที่กำบังชั้นสองแล้วคู่ต่อสู้หยุดและถอย",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Observed response is narrative choice, not a game-wide fear mechanic. One warning shot in scene."
+    },
+    {
+      "id": "MECH-027",
+      "title": "ซอมบี้โจมตีระยะใกล้และเคลื่อนตัวช้าเมื่อเทียบกับผู้เล่นมีปืน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Fictional game NPC behavior; AI speed, aggro, respawn, headshots and damage not verified"
+    },
+    {
+      "id": "MECH-028",
+      "title": "บัตรผ่านสีเขียวใช้กับห้องพิเศษประเภทที่ตรงกัน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "User-directed fictional card mechanic; room/access level/consumption rules unverified and not used in EP006"
+    },
+    {
+      "id": "MECH-029",
+      "title": "เครื่องกลั่นในโรงกลั่นเก่ารับน้ำมันดิบและต้องใช้เวลานานก่อนให้ผลิตผลน้ำมัน",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Game-world time-gated refinery; no exact steps, real-world processing details, formula or duration verified"
+    },
+    {
+      "id": "MECH-030",
+      "title": "ผู้เล่นสามคนขี่มอเตอร์ไซค์พร้อมปืนกลเบา และม้าถูกโจมตีเสียชีวิต",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Vehicle, firearm and animal damage mechanics UNVERIFIED; owner/territory is only protagonist speculation"
     }
   ]
 }

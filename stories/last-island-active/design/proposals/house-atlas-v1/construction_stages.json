@@ -1,0 +1,644 @@
+{
+  "document_kind": "SYNTHETIC_CONSTRUCTION_REFERENCE_NOT_ENGINE_INPUT",
+  "schema_version": 1,
+  "status": "PROPOSED",
+  "human_editorial_approval": "UNVERIFIED",
+  "canon_change_authorized": false,
+  "ledger_apply_authorized": false,
+  "house_id": "HOUSE-PROP-WORKSHOP-001",
+  "source": {
+    "kind": "AUTHOR_GENERATED_SYNTHETIC_FIXTURE",
+    "not_story_history": true,
+    "design_ref": "./pilot_workshop_versions.json",
+    "authenticated_human_approval": false
+  },
+  "clock": {
+    "kind": "SYNTHETIC_WORLD_TICKS",
+    "narrative_order": null,
+    "real_story_scene_bounds": null,
+    "duration_per_tick": null,
+    "game_level_mapping": null
+  },
+  "rules_notes": [
+    "Logical prerequisites are illustrative editorial choices, not game construction or structural rules.",
+    "A target version does not complete its parts. Completed construction and opened usability are separate.",
+    "All listed events/snapshots are manually specified synthetic evidence, not engine replay output.",
+    "No unspecified start/completion time, costs, materials, damage or repair history is inferred.",
+    "At tick50 V02 replaces the proposed room program; V01 snapshots remain preserved. No retroactive change.",
+    "ROOF-UPPER completion at47 does not open the stair/room. OPEN-011 at50 is required."
+  ],
+  "parts": [
+    {
+      "part_id": "FRAME-GROUND",
+      "initial_status": "NOT_BUILT",
+      "initial_usability": "UNAVAILABLE",
+      "start_world_tick": null,
+      "completion_world_tick": null
+    },
+    {
+      "part_id": "ENCLOSURE-GROUND",
+      "initial_status": "NOT_BUILT",
+      "initial_usability": "UNAVAILABLE",
+      "start_world_tick": null,
+      "completion_world_tick": null
+    },
+    {
+      "part_id": "ROOF-GROUND",
+      "initial_status": "NOT_BUILT",
+      "initial_usability": "UNAVAILABLE",
+      "start_world_tick": null,
+      "completion_world_tick": null
+    },
+    {
+      "part_id": "ROOM-GROUND",
+      "initial_status": "NOT_BUILT",
+      "initial_usability": "UNAVAILABLE",
+      "start_world_tick": null,
+      "completion_world_tick": null
+    },
+    {
+      "part_id": "STAIR-E",
+      "initial_status": "NOT_BUILT",
+      "initial_usability": "UNAVAILABLE",
+      "start_world_tick": null,
+      "completion_world_tick": null
+    },
+    {
+      "part_id": "ROOM-UPPER",
+      "initial_status": "NOT_BUILT",
+      "initial_usability": "UNAVAILABLE",
+      "start_world_tick": null,
+      "completion_world_tick": null
+    },
+    {
+      "part_id": "ROOF-UPPER",
+      "initial_status": "NOT_BUILT",
+      "initial_usability": "UNAVAILABLE",
+      "start_world_tick": null,
+      "completion_world_tick": null
+    }
+  ],
+  "events": [
+    {
+      "event_id": "BUILD-001",
+      "world_tick": 1,
+      "part_id": "FRAME-GROUND",
+      "result_status": "COMPLETED",
+      "result_usability": "UNKNOWN",
+      "requires_completed": [],
+      "available_rooms": [],
+      "available_routes": [],
+      "roof_cover": []
+    },
+    {
+      "event_id": "BUILD-002",
+      "world_tick": 10,
+      "part_id": "ENCLOSURE-GROUND",
+      "result_status": "IN_PROGRESS",
+      "result_usability": "UNAVAILABLE",
+      "requires_completed": [
+        "FRAME-GROUND"
+      ],
+      "available_rooms": [],
+      "available_routes": [],
+      "roof_cover": []
+    },
+    {
+      "event_id": "BUILD-003",
+      "world_tick": 11,
+      "part_id": "ROOF-GROUND",
+      "result_status": "IN_PROGRESS",
+      "result_usability": "UNAVAILABLE",
+      "requires_completed": [
+        "FRAME-GROUND"
+      ],
+      "available_rooms": [],
+      "available_routes": [],
+      "roof_cover": []
+    },
+    {
+      "event_id": "BUILD-004",
+      "world_tick": 20,
+      "part_id": "ENCLOSURE-GROUND",
+      "result_status": "COMPLETED",
+      "result_usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+      "requires_completed": [
+        "FRAME-GROUND"
+      ],
+      "available_rooms": [],
+      "available_routes": [],
+      "roof_cover": []
+    },
+    {
+      "event_id": "BUILD-005",
+      "world_tick": 21,
+      "part_id": "ROOF-GROUND",
+      "result_status": "COMPLETED",
+      "result_usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+      "requires_completed": [
+        "FRAME-GROUND"
+      ],
+      "available_rooms": [],
+      "available_routes": [],
+      "roof_cover": [
+        "ROOF-COVER-V01"
+      ]
+    },
+    {
+      "event_id": "BUILD-006",
+      "world_tick": 30,
+      "part_id": "ROOM-GROUND",
+      "result_status": "COMPLETED",
+      "result_usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+      "requires_completed": [
+        "FRAME-GROUND",
+        "ENCLOSURE-GROUND",
+        "ROOF-GROUND"
+      ],
+      "available_rooms": [
+        "ROOM-CORE"
+      ],
+      "available_routes": [
+        "DOOR-ENTRY"
+      ],
+      "roof_cover": [
+        "ROOF-COVER-V01"
+      ]
+    },
+    {
+      "event_id": "BUILD-007",
+      "world_tick": 40,
+      "part_id": "STAIR-E",
+      "result_status": "IN_PROGRESS",
+      "result_usability": "UNAVAILABLE",
+      "requires_completed": [
+        "ROOM-GROUND"
+      ],
+      "available_rooms": [
+        "ROOM-CORE"
+      ],
+      "available_routes": [
+        "DOOR-ENTRY"
+      ],
+      "roof_cover": [
+        "ROOF-COVER-V01"
+      ]
+    },
+    {
+      "event_id": "BUILD-008",
+      "world_tick": 47,
+      "part_id": "ROOF-UPPER",
+      "result_status": "COMPLETED",
+      "result_usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+      "requires_completed": [
+        "ROOM-GROUND"
+      ],
+      "available_rooms": [
+        "ROOM-CORE"
+      ],
+      "available_routes": [
+        "DOOR-ENTRY"
+      ],
+      "roof_cover": [
+        "ROOF-COVER-V02"
+      ]
+    },
+    {
+      "event_id": "BUILD-009",
+      "world_tick": 48,
+      "part_id": "STAIR-E",
+      "result_status": "COMPLETED",
+      "result_usability": "UNAVAILABLE",
+      "requires_completed": [
+        "ROOM-GROUND"
+      ],
+      "available_rooms": [
+        "ROOM-CORE"
+      ],
+      "available_routes": [
+        "DOOR-ENTRY"
+      ],
+      "roof_cover": [
+        "ROOF-COVER-V02"
+      ]
+    },
+    {
+      "event_id": "BUILD-010",
+      "world_tick": 49,
+      "part_id": "ROOM-UPPER",
+      "result_status": "COMPLETED",
+      "result_usability": "UNAVAILABLE",
+      "requires_completed": [
+        "ROOF-UPPER",
+        "STAIR-E"
+      ],
+      "available_rooms": [
+        "ROOM-CORE"
+      ],
+      "available_routes": [
+        "DOOR-ENTRY"
+      ],
+      "roof_cover": [
+        "ROOF-COVER-V02"
+      ]
+    },
+    {
+      "event_id": "OPEN-011",
+      "world_tick": 50,
+      "part_id": "STAIR-E",
+      "result_status": "COMPLETED",
+      "result_usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+      "requires_completed": [
+        "ROOM-UPPER",
+        "STAIR-E",
+        "ROOF-UPPER"
+      ],
+      "opens_part_ids": [
+        "ROOM-UPPER"
+      ],
+      "available_rooms": [
+        "ROOM-ENTRY",
+        "ROOM-WORKSHOP",
+        "ROOM-MEZZANINE"
+      ],
+      "available_routes": [
+        "DOOR-ENTRY",
+        "DOOR-WORKSHOP",
+        "STAIR-EXT-E"
+      ],
+      "roof_cover": [
+        "ROOF-COVER-V02"
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "synthetic_scene_id": "SYN-SC-A",
+      "world_tick": 10,
+      "target_design_version": "V01",
+      "design_version_is_not_as_built_snapshot": true,
+      "parts": [
+        {
+          "part_id": "FRAME-GROUND",
+          "construction_status": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ENCLOSURE-GROUND",
+          "construction_status": "IN_PROGRESS",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOF-GROUND",
+          "construction_status": "NOT_BUILT",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOM-GROUND",
+          "construction_status": "NOT_BUILT",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "STAIR-E",
+          "construction_status": "NOT_BUILT",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOM-UPPER",
+          "construction_status": "NOT_BUILT",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOF-UPPER",
+          "construction_status": "NOT_BUILT",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        }
+      ],
+      "available_room_refs": [],
+      "available_route_refs": [],
+      "roof_cover_refs": [],
+      "event_refs": [
+        "BUILD-001",
+        "BUILD-002"
+      ],
+      "pov_knowledge": {
+        "character_ref": null,
+        "known_room_refs": [],
+        "known_routes": [],
+        "status": "UNKNOWN"
+      }
+    },
+    {
+      "synthetic_scene_id": "SYN-SC-PARTIAL",
+      "world_tick": 11,
+      "target_design_version": "V01",
+      "design_version_is_not_as_built_snapshot": true,
+      "parts": [
+        {
+          "part_id": "FRAME-GROUND",
+          "construction_status": "COMPLETED",
+          "usability": "UNKNOWN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ENCLOSURE-GROUND",
+          "construction_status": "IN_PROGRESS",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOF-GROUND",
+          "construction_status": "IN_PROGRESS",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOM-GROUND",
+          "construction_status": "NOT_BUILT",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "STAIR-E",
+          "construction_status": "NOT_BUILT",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOM-UPPER",
+          "construction_status": "NOT_BUILT",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOF-UPPER",
+          "construction_status": "NOT_BUILT",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        }
+      ],
+      "available_room_refs": [],
+      "available_route_refs": [],
+      "roof_cover_refs": [],
+      "event_refs": [
+        "BUILD-001",
+        "BUILD-002",
+        "BUILD-003"
+      ],
+      "pov_knowledge": {
+        "character_ref": null,
+        "known_room_refs": [],
+        "known_routes": [],
+        "status": "UNKNOWN"
+      }
+    },
+    {
+      "synthetic_scene_id": "SYN-SC-B",
+      "world_tick": 30,
+      "target_design_version": "V01",
+      "design_version_is_not_as_built_snapshot": true,
+      "parts": [
+        {
+          "part_id": "FRAME-GROUND",
+          "construction_status": "COMPLETED",
+          "usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ENCLOSURE-GROUND",
+          "construction_status": "COMPLETED",
+          "usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOF-GROUND",
+          "construction_status": "COMPLETED",
+          "usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOM-GROUND",
+          "construction_status": "COMPLETED",
+          "usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "STAIR-E",
+          "construction_status": "NOT_BUILT",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOM-UPPER",
+          "construction_status": "NOT_BUILT",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOF-UPPER",
+          "construction_status": "NOT_BUILT",
+          "usability": "UNAVAILABLE",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        }
+      ],
+      "available_room_refs": [
+        "ROOM-CORE"
+      ],
+      "available_route_refs": [
+        "DOOR-ENTRY"
+      ],
+      "roof_cover_refs": [
+        "ROOF-COVER-V01"
+      ],
+      "event_refs": [
+        "BUILD-001",
+        "BUILD-002",
+        "BUILD-003",
+        "BUILD-004",
+        "BUILD-005",
+        "BUILD-006"
+      ],
+      "pov_knowledge": {
+        "character_ref": null,
+        "known_room_refs": [],
+        "known_routes": [],
+        "status": "UNKNOWN"
+      }
+    },
+    {
+      "synthetic_scene_id": "SYN-SC-C",
+      "world_tick": 50,
+      "target_design_version": "V02",
+      "design_version_is_not_as_built_snapshot": true,
+      "parts": [
+        {
+          "part_id": "FRAME-GROUND",
+          "construction_status": "COMPLETED",
+          "usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ENCLOSURE-GROUND",
+          "construction_status": "COMPLETED",
+          "usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOF-GROUND",
+          "construction_status": "COMPLETED",
+          "usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOM-GROUND",
+          "construction_status": "COMPLETED",
+          "usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "STAIR-E",
+          "construction_status": "COMPLETED",
+          "usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOM-UPPER",
+          "construction_status": "COMPLETED",
+          "usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        },
+        {
+          "part_id": "ROOF-UPPER",
+          "construction_status": "COMPLETED",
+          "usability": "AVAILABLE_IN_SYNTHETIC_PLAN",
+          "damage": "UNKNOWN",
+          "repair_status": "UNKNOWN",
+          "metric_dimensions": null,
+          "materials": null
+        }
+      ],
+      "available_room_refs": [
+        "ROOM-ENTRY",
+        "ROOM-WORKSHOP",
+        "ROOM-MEZZANINE"
+      ],
+      "available_route_refs": [
+        "DOOR-ENTRY",
+        "DOOR-WORKSHOP",
+        "STAIR-EXT-E"
+      ],
+      "roof_cover_refs": [
+        "ROOF-COVER-V02"
+      ],
+      "event_refs": [
+        "BUILD-001",
+        "BUILD-002",
+        "BUILD-003",
+        "BUILD-004",
+        "BUILD-005",
+        "BUILD-006",
+        "BUILD-007",
+        "BUILD-008",
+        "BUILD-009",
+        "BUILD-010",
+        "OPEN-011"
+      ],
+      "pov_knowledge": {
+        "character_ref": null,
+        "known_room_refs": [],
+        "known_routes": [],
+        "status": "UNKNOWN"
+      }
+    }
+  ],
+  "runtime_replay": "NOT_IMPLEMENTED",
+  "physical_feasibility": "UNKNOWN"
+}

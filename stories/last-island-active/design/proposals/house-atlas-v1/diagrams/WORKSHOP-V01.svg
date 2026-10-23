@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920">
+<title>Workshop V01: proposed floor plans and section</title>
+<desc>Illustrative geometry only. A target blueprint is not an as-built snapshot or POV knowledge.</desc>
+<rect width="1200" height="920" fill="#f6f4ed"/><g font-family="Arial, sans-serif">
+<text x="30.0" y="36.0" font-size="23" fill="#243b4a">HOUSE-PROP-WORKSHOP-001 / V01 / PROPOSED</text>
+<text x="30.0" y="64.0" font-size="16" fill="#243b4a">Blueprint only. Check construction_stages.json and writer card before describing a scene.</text>
+<text x="30.0" y="89.0" font-size="14" fill="#a34631">Illustrative unit square + 45/45/90 triangle convention; U/H have NO metre or game conversion.</text>
+<text x="30.0" y="125.0" font-size="18" fill="#243b4a">PLAN: floor 0 / elevation 0 H</text>
+<polygon points="200.0,380.0 270.0,380.0 270.0,310.0 200.0,310.0" fill="#c4ddd2" stroke="#4f6870" stroke-width="2"/>
+<text x="204.0" y="345.0" font-size="11" fill="#243b4a">G-SW</text>
+<polygon points="270.0,380.0 340.0,380.0 340.0,310.0 270.0,310.0" fill="#c4ddd2" stroke="#4f6870" stroke-width="2"/>
+<text x="274.0" y="345.0" font-size="11" fill="#243b4a">G-SE</text>
+<polygon points="200.0,310.0 270.0,310.0 270.0,240.0 200.0,240.0" fill="#c4ddd2" stroke="#4f6870" stroke-width="2"/>
+<text x="204.0" y="275.0" font-size="11" fill="#243b4a">G-NW</text>
+<polygon points="270.0,310.0 340.0,310.0 340.0,240.0 270.0,240.0" fill="#c4ddd2" stroke="#4f6870" stroke-width="2"/>
+<text x="274.0" y="275.0" font-size="11" fill="#243b4a">G-NE</text>
+<polygon points="200.0,380.0 270.0,380.0 200.0,450.0" fill="#c4ddd2" stroke="#4f6870" stroke-width="2"/>
+<text x="192.3" y="403.3" font-size="11" fill="#243b4a">G-TRI-S</text>
+<polygon points="340.0,380.0 340.0,310.0 410.0,380.0" fill="#c4ddd2" stroke="#4f6870" stroke-width="2"/>
+<text x="332.3" y="356.7" font-size="11" fill="#243b4a">G-TRI-E</text>
+<polygon points="340.0,240.0 270.0,240.0 340.0,170.0" fill="#c4ddd2" stroke="#4f6870" stroke-width="2"/>
+<text x="285.7" y="216.7" font-size="11" fill="#243b4a">G-TRI-N</text>
+<polygon points="200.0,240.0 200.0,310.0 130.0,240.0" fill="#c4ddd2" stroke="#4f6870" stroke-width="2"/>
+<text x="145.7" y="263.3" font-size="11" fill="#243b4a">G-TRI-W</text>
+<path d="M270,380 L340,380" stroke="#e28032" stroke-width="6"/>
+<circle cx="270" cy="310" r="7" fill="#233b4b"/>
+<text x="280.0" y="300.0" font-size="11" fill="#243b4a">ONE HOUSE PILLAR</text>
+<text x="30.0" y="475.0" font-size="13" fill="#243b4a">Orange: explicit doorway edge | dashed magenta: no floor</text>
+<text x="30.0" y="499.0" font-size="13" fill="#243b4a">Stair endpoints: use IDs/landings below; no physical stair plan.</text>
+<text x="630.0" y="230.0" font-size="22" fill="#243b4a">No upper floor / stair in V01</text>
+<text x="630.0" y="261.0" font-size="15" fill="#243b4a">Later expansions do not exist in this design version.</text>
+<text x="30.0" y="550.0" font-size="17" fill="#243b4a">SECTION A: y = -0.5 U (room-volume cut; gaps remain gaps)</text>
+<rect x="180.0" y="655" width="90.0" height="100" fill="#c4ddd2" stroke="#4f6870"/>
+<rect x="270.0" y="655" width="90.0" height="100" fill="#c4ddd2" stroke="#4f6870"/>
+<rect x="360.0" y="655" width="45.0" height="100" fill="#c4ddd2" stroke="#4f6870"/>
+<text x="30.0" y="780.0" font-size="14" fill="#243b4a">Section heights symbolic H; pillar vertical extent/support UNKNOWN (not drawn as a tall column).</text>
+<text x="30.0" y="851.0" font-size="13" fill="#243b4a">Roof records: COVERING_ROOF (see data for coverage/access; not all roof is walkable)</text>
+<text x="30.0" y="878.0" font-size="14" fill="#243b4a">Room uses / change history: pilot JSON and Thai writer guide. No owner/group/chapter assignment.</text>
+<text x="30.0" y="903.0" font-size="14" fill="#a34631">Game feasibility / structural safety UNKNOWN | human approval UNVERIFIED | no canon/ledger application</text>
+</g></svg>

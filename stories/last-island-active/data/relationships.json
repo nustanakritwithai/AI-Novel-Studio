@@ -1,5 +1,112 @@
 {
   "schema_version": 1,
-  "relationships": [],
+  "relationships": [
+    {
+      "id": "REL-001",
+      "from_id": "CHAR-001",
+      "to_id": "CHAR-008",
+      "after_scene": "SC-033",
+      "status": "DRAFT",
+      "type": "MOUNT_TAMED",
+      "canon_refs": [
+        "FACT-034"
+      ],
+      "notes": "พระเอกจับม้าตัวแรกด้วยถุงมือหลังทำให้อ่อนแรง; ชื่อและกฎการดูแลยัง UNKNOWN"
+    },
+    {
+      "id": "REL-002",
+      "from_id": "CHAR-001",
+      "to_id": "CHAR-004",
+      "after_scene": "SC-036",
+      "status": "DRAFT",
+      "type": "HOSTILE_REAPPEARANCE",
+      "canon_refs": [
+        "FACT-036"
+      ],
+      "notes": "เป็นคู่ปรับหนึ่งในสองคนที่พระเอกเคยยิงใกล้ฐาน 4×4 แล้วกลับมาบุกบ้านในบท 4"
+    },
+    {
+      "id": "REL-003",
+      "from_id": "CHAR-001",
+      "to_id": "CHAR-005",
+      "after_scene": "SC-036",
+      "status": "DRAFT",
+      "type": "HOSTILE_REAPPEARANCE",
+      "canon_refs": [
+        "FACT-036"
+      ],
+      "notes": "คู่ปรับอีกคนจากบท 2 กลับมาร่วมบุกบ้าน พระเอกเลือกไม่โจมตีเพราะทรัพยากรที่ถือมีค่า"
+    },
+    {
+      "id": "REL-004",
+      "from_id": "CHAR-001",
+      "to_id": "CHAR-004",
+      "after_scene": "SC-047",
+      "status": "AUTHOR_CHAT_STORY_DRAFT",
+      "type": "RECURRING_HOSTILITY",
+      "canon_refs": [
+        "FACT-042",
+        "FACT-048",
+        "FACT-049"
+      ],
+      "notes": "หนึ่งในศัตรูคู่เดิมที่ถูกกำจัดใน EP005 และกลับมาถอยหลังยิงเตือน; คนถือค้อนหรือปืนยังไม่แมป"
+    },
+    {
+      "id": "REL-005",
+      "from_id": "CHAR-001",
+      "to_id": "CHAR-005",
+      "after_scene": "SC-047",
+      "status": "AUTHOR_CHAT_STORY_DRAFT",
+      "type": "RECURRING_HOSTILITY",
+      "canon_refs": [
+        "FACT-042",
+        "FACT-048",
+        "FACT-049"
+      ],
+      "notes": "อีกคนในสองคู่ปรับจากบท 2; ถูกกำจัดและกลับมาท้าย EP005 ก่อนถอย; ยังไม่แมปอาวุธรายบุคคล"
+    },
+    {
+      "id": "REL-006",
+      "from_id": "CHAR-001",
+      "to_id": "CHAR-010",
+      "after_scene": "SC-055",
+      "status": "DRAFT_THREAT_ENCOUNTER",
+      "type": "OUTGUNNED_BY_ARMED_GROUP",
+      "canon_refs": [
+        "FACT-060",
+        "FACT-061",
+        "FACT-063"
+      ],
+      "notes": "หนึ่งในผู้เล่นกลุ่มมอเตอร์ไซค์สามคน; พระเอกถอยโดยไม่ปะทะ ไม่รู้คนยิงม้ารายตัวหรือความเป็นเจ้าของโรงกลั่น"
+    },
+    {
+      "id": "REL-007",
+      "from_id": "CHAR-001",
+      "to_id": "CHAR-011",
+      "after_scene": "SC-055",
+      "status": "DRAFT_THREAT_ENCOUNTER",
+      "type": "OUTGUNNED_BY_ARMED_GROUP",
+      "canon_refs": [
+        "FACT-060",
+        "FACT-061",
+        "FACT-063"
+      ],
+      "notes": "หนึ่งในผู้เล่นกลุ่มมอเตอร์ไซค์สามคน; พระเอกถอยโดยไม่ปะทะ ไม่รู้คนยิงม้ารายตัวหรือความเป็นเจ้าของโรงกลั่น"
+    },
+    {
+      "id": "REL-008",
+      "from_id": "CHAR-001",
+      "to_id": "CHAR-012",
+      "after_scene": "SC-055",
+      "status": "DRAFT_THREAT_ENCOUNTER",
+      "type": "OUTGUNNED_BY_ARMED_GROUP",
+      "canon_refs": [
+        "FACT-060",
+        "FACT-061",
+        "FACT-063"
+      ],
+      "notes": "หนึ่งในผู้เล่นกลุ่มมอเตอร์ไซค์สามคน; พระเอกถอยโดยไม่ปะทะ ไม่รู้คนยิงม้ารายตัวหรือความเป็นเจ้าของโรงกลั่น"
+    }
+  ],
   "note": "ห้ามเพิ่มความสัมพันธ์โดยไม่มีฉากอ้างอิง: พระเอกกับผู้โจมตียังไม่รู้จักกันในตอนต้น"
 }
