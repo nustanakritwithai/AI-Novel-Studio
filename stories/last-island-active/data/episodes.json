@@ -72,6 +72,34 @@
         "engine_approval_state": "PENDING_GITHUB_REVIEW",
         "note": "Editorial author accepted this exact prose in chat. Keep operational episode status DRAFT until the approval ledger's real GitHub reviewer provenance requirement is fulfilled."
       }
+    },
+    {
+      "id": "EP-003",
+      "title": "หกนัดบนถนน",
+      "status": "DRAFT",
+      "position": "หลัง EP-002 ออฟไลน์พักผ่อน และก่อนการออกล่าสัตว์",
+      "logline": "พระเอกพักในโลกจริง กลับเข้าเกมเพื่อหาน้ำมันจากกล่องริมถนน ดวลธนูเกือบชนะก่อนถูกปืนพกหกนัดยิงตาย แล้วเปลี่ยนแผนไปเตรียมล่าสัตว์หาไขมัน",
+      "scene_ids": [
+        "SC-019",
+        "SC-020",
+        "SC-021",
+        "SC-022",
+        "SC-023",
+        "SC-024",
+        "SC-025",
+        "SC-026"
+      ],
+      "questions": [
+        "ยังไม่มีน้ำมันและยังไม่ได้เตาเผา",
+        "กล่องสีเข้มเป็นกล่องน้ำมันหรือไม่: UNKNOWN",
+        "รายละเอียดสูตร/ดรอปสัตว์ยังไม่ยืนยันจากเกมจริง",
+        "จำนวนทรัพยากรที่ได้หรือเสียเป็น UNKNOWN",
+        "เพื่อน Gamer ยังเป็นตัวละคร PROPOSED"
+      ],
+      "approved_final_draft": null,
+      "working_draft_path": "drafts/EP-003/CH-03-FULL-DRAFT.md",
+      "author_plot_directive": "DEC-005",
+      "prose_approval": "NOT_YET_APPROVED"
     }
   ]
 }
