@@ -15,7 +15,7 @@ Story root: `stories/last-island-active`. Canonical approved history is **EMPTY*
 python scripts/storyctl.py --story last-island-active check
 python scripts/storyctl.py --story last-island-active status
 python scripts/storyctl.py --story last-island-active brief EP-002
-python scripts/storyctl.py --story last-island-active pack EP-005
+python scripts/storyctl.py --story last-island-active pack EP-006
 python scripts/storyctl.py --story last-island-active replay SC-018
 ```
 
@@ -70,3 +70,13 @@ python scripts/storyctl.py --story last-island-active replay SC-018
 - Chapter 5 begins and ends with furnace operating, but no finished iron/gunpowder/furnace ammunition is retrieved. Original 2×2 stone base, stairs and upper open firing position unchanged; no new multilayer fortification or full upper room built.
 - Horse's exact current state, rival weapon-account mapping, exact pistol duel ammo and door durability still UNKNOWN; selected-game mechanics UNVERIFIED.
 - Before EP006 consult `data/draft_continuity_ep005.json`, `plot/episodes/EP-005.md`, and `research/EP005_GAMEPLAY_GAPS.md`. Scene/story acceptance in chat is **not** authenticated GitHub PR APPROVE; keep `ledger/index.json` and official story state protected.
+
+## EP-006 continuation guardrails (DRAFT, not prose-approved)
+
+- Load `drafts/EP-006/CH-06-FULL-DRAFT.md`, `data/draft_continuity_ep006.json`, and `research/EP006_GAMEPLAY_GAPS.md` after prior source manuscript.
+- Chapter starts with hero still having two pistols, leather equipment and first horse CHAR-008 alive. He rides to road, defeats one bat ambusher (CHAR-009), and later enters an abandoned oil refinery with dispersed melee zombies.
+- 1 GREEN ACCESS CARD and some ready oil are retained; **card not used**. One crude barrel inserted into refinery process; **processed oil is not collected** when hero withdraws.
+- 3 motorcycle riders CHAR-010/011/012 arrive with light machine guns and kill first horse CHAR-008. Hero does NOT fight these three and does NOT gain motorcycle/LMG; he escapes and walks home.
+- The motorcyclists' refinery control or later receipt of the processed oil is UNKNOWN, not a verified fact. The bat-wielding opponent's connection to CHAR-002 is UNKNOWN.
+- End EP-006: hero alive at original stone 2×2, on foot, first horse dead, green card retained. Precise HP, gun ammunition, zombie body count, refinery results and quantities UNKNOWN. Distinguish fiction rules from real game evidence (UNKNOWN ≠ PASS).
+- EP-006 prose still DRAFT; authenticated GitHub approved ledger, `data/story_state.json` and EP-001/002 accepted prose remain guarded.
