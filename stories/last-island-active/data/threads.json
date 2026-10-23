@@ -53,6 +53,32 @@
         "FACT-022"
       ],
       "notes": "ผู้แต่งยังไม่สั่งให้ถูกบุกจริง ห้ามเล่าผลก่อนแต่งตอนต่อไป"
+    },
+    {
+      "id": "THREAD-005",
+      "title": "ภารกิจล่าสัตว์สะสมไขมันเพื่อทำน้ำมัน",
+      "status": "OPEN",
+      "priority": "EP-004",
+      "setup_scene_id": "SC-026",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-029"
+      ],
+      "notes": "บท 3 แค่เตรียมตัว การล่าสัตว์และจำนวนสัตว์ที่ล่าต้องเป็นเนื้อหาบท 4; ยังไม่ได้ไขมันหรือน้ำมัน"
+    },
+    {
+      "id": "THREAD-006",
+      "title": "ผู้ใช้ปืนหกนัดบนถนนอาจกลับมาอีกหรือไม่",
+      "status": "IDEA",
+      "priority": "OPTIONAL",
+      "setup_scene_id": "SC-024",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-006",
+      "canon_refs": [
+        "FACT-026"
+      ],
+      "notes": "ศัตรูไม่ทราบชื่อ ความเกี่ยวข้องกับคู่อริในบท 1–2 และอนาคตทั้งหมด UNKNOWN"
     }
   ]
 }
