@@ -8,7 +8,7 @@ import unittest
 from unittest import mock
 
 import test_story_roots as story_roots
-from scripts import grounded_review, scene_prepare
+from scripts import grounded_review, registry_schema, scene_prepare
 
 
 class GroundedReviewCoreTests(unittest.TestCase):
@@ -126,6 +126,37 @@ class GroundedReviewCoreTests(unittest.TestCase):
         scenes["scenes"][1]["draft_path"] = self.path
         self.write(scenes_path, scenes)
         with self.assertRaisesRegex(ValueError, "shared scene draft"):
+            self.build()
+
+    def test_episode_author_decision_source_alias_is_refused(self):
+        episodes_path = self.root / "data/episodes.json"
+        episodes = self.read(episodes_path)
+        episodes["episodes"][0]["author_decision"] = {"source_path": self.path}
+        self.write(episodes_path, episodes)
+        self.assertEqual(registry_schema.validate("episodes", episodes), [])
+        with self.assertRaisesRegex(ValueError, "aliases an episode manuscript source"):
+            self.build()
+
+    def test_distinct_episode_author_decision_source_is_allowed(self):
+        episodes_path = self.root / "data/episodes.json"
+        episodes = self.read(episodes_path)
+        source_path = "drafts/EP-001/FULL-DRAFT.md"
+        episodes["episodes"][0]["author_decision"] = {"source_path": source_path}
+        self.write(episodes_path, episodes)
+        source = self.root / source_path
+        source.parent.mkdir(parents=True, exist_ok=True)
+        source.write_text("SYNTHETIC WHOLE-EPISODE SOURCE FIXTURE\n", encoding="utf-8")
+        self.assertEqual(registry_schema.validate("episodes", episodes), [])
+        packet = self.build()
+        self.assertEqual(packet["target"]["draft_path"], self.path)
+
+    def test_unsafe_episode_author_decision_source_refuses_packet(self):
+        episodes_path = self.root / "data/episodes.json"
+        episodes = self.read(episodes_path)
+        episodes["episodes"][0]["author_decision"] = {"source_path": "../outside.md"}
+        self.write(episodes_path, episodes)
+        self.assertEqual(registry_schema.validate("episodes", episodes), [])
+        with self.assertRaisesRegex(ValueError, "unsafe source path"):
             self.build()
 
     def test_metadata_race_during_preparation_refuses_packet(self):
