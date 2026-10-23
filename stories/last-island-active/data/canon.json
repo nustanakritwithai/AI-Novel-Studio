@@ -307,6 +307,116 @@
       "scope": "EP-003",
       "source_id": null,
       "notes": "Never promote as author-locked history solely because it is in draft."
+    },
+    {
+      "id": "FACT-031",
+      "category": "episode",
+      "statement": "บทที่ 4 ออกจากฐานเข้าสู่ป่าเพื่อฟาร์มสัตว์ที่กระจายตัวอยู่ ต้องใช้เวลาเดินทางสืบหาและล่าสัตว์ซ้ำ ๆ ไม่ได้รวมเป็นฝูงรอให้ฆ่า",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-004",
+      "source_id": null,
+      "notes": "User-locked story direction; generated prose DRAFT, mechanics UNVERIFIED."
+    },
+    {
+      "id": "FACT-032",
+      "category": "episode",
+      "statement": "สัตว์ที่พระเอกพบระหว่างฟาร์มมีไก่ กระต่าย กวาง และม้า; หมาป่ากับหมีเป็นสัตว์ป่าอันตรายที่ต้องระวัง",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-004",
+      "source_id": null,
+      "notes": "User-locked story direction; generated prose DRAFT, mechanics UNVERIFIED."
+    },
+    {
+      "id": "FACT-033",
+      "category": "episode",
+      "statement": "หลังใช้เวลาล่าระยะหนึ่งพระเอกมีไขมันสัตว์มากพอสำหรับเป้าหมายผลิตน้ำมัน และมีหนังสัตว์เพียงพอคราฟต์ถุงมือจับม้า",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-004",
+      "source_id": null,
+      "notes": "User-locked story direction; generated prose DRAFT, mechanics UNVERIFIED."
+    },
+    {
+      "id": "FACT-034",
+      "category": "episode",
+      "statement": "พระเอกใช้ถุงมือจับม้าที่ทำจากหนังสัตว์ ต้องทำให้ม้าอ่อนแรงก่อนจับ จับม้าสำเร็จและใช้เป็นพาหนะ",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-004",
+      "source_id": null,
+      "notes": "User-locked story direction; generated prose DRAFT, mechanics UNVERIFIED."
+    },
+    {
+      "id": "FACT-035",
+      "category": "episode",
+      "statement": "พระเอกจุดไฟแคมป์พักและทำอาหารจากเนื้อสัตว์ก่อนรับแจ้งเตือนว่ากำแพงบ้านถูกระเบิด",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-004",
+      "source_id": null,
+      "notes": "User-locked story direction; generated prose DRAFT, mechanics UNVERIFIED."
+    },
+    {
+      "id": "FACT-036",
+      "category": "episode",
+      "statement": "พระเอกขี่ม้ากลับถึงใกล้บ้านแล้วแอบมองจากหลังเนิน เห็นคู่ต่อสู้ปาร์ตี้สองคนที่เคยถูกตนกำจัดในบทที่ 2 กลับมาระเบิดช่องทางเข้าบ้านเพื่อปล้น",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-004",
+      "source_id": null,
+      "notes": "User-locked story direction; generated prose DRAFT, mechanics UNVERIFIED."
+    },
+    {
+      "id": "FACT-037",
+      "category": "episode",
+      "statement": "พระเอกประเมินว่าศัตรูสองคนมีอาวุธเหนือกว่า ของที่ฟาร์มพกอยู่มีค่ากว่าสิ่งที่บ้านซึ่งยังเป็นฐานเล็ก ๆ จึงตัดสินใจซ่อนรอดู ไม่เข้าไปต่อสู้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-004",
+      "source_id": null,
+      "notes": "User-locked story direction; generated prose DRAFT, mechanics UNVERIFIED."
+    },
+    {
+      "id": "FACT-038",
+      "category": "episode",
+      "statement": "เมื่อผู้เล่นคู่ปรับทั้งสองจากไป พระเอกกลับบ้านและซ่อมปิดช่องกำแพงหรือทางเข้าที่ถูกระเบิดให้กลับปิดได้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-004",
+      "source_id": null,
+      "notes": "User-locked story direction; generated prose DRAFT, mechanics UNVERIFIED."
+    },
+    {
+      "id": "FACT-039",
+      "category": "episode",
+      "statement": "หลังซ่อมฐาน พระเอกใช้ไขมันสัตว์ทำน้ำมันในระบบเกม สร้างเตาเผา แล้วเริ่มแปรรูปแร่เหล็กและวัตถุดิบจากไม้กับกำมะถันสำหรับสายคราฟต์ดินปืน",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-004",
+      "source_id": null,
+      "notes": "User-locked story direction; generated prose DRAFT, mechanics UNVERIFIED."
+    },
+    {
+      "id": "FACT-040",
+      "category": "episode",
+      "statement": "การแปรรูปในเตาต้องใช้เวลา ตอนจบบท 4 การเผายังดำเนินอยู่ จึงยังไม่ได้เก็บเหล็ก ดินปืนหรือกระสุนสำเร็จจากรอบผลิตนี้",
+      "status": "LOCKED",
+      "origin": "USER_DIRECTIVE",
+      "scope": "EP-004",
+      "source_id": null,
+      "notes": "User-locked story direction; generated prose DRAFT, mechanics UNVERIFIED."
+    },
+    {
+      "id": "FACT-041",
+      "category": "editorial",
+      "statement": "รายละเอียดการยิงพลาด ทิศทางลมและรอยกวาง หลบหมาป่า/หมี ตำแหน่งแร่ บทพูดและรูปแบบเมนูเตาเป็นการขยายความของฉบับร่าง",
+      "status": "PROPOSED",
+      "origin": "ASSISTANT_DRAFT",
+      "scope": "EP-004",
+      "source_id": null,
+      "notes": "Not a permanent user-locked fact; do not infer game-wide rules."
     }
   ]
 }
