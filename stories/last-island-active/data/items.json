@@ -231,6 +231,41 @@
       "detail": "อาวุธ/เครื่องมือที่คู่ปรับใช้ทุบประตูบ้านใน EP005; ไม่มีหลักฐานว่าพระเอกเก็บค้อนนี้เป็นของตน",
       "quantity": "SEE_INVENTORY_LEDGER",
       "gameplay_mechanic_id": "MECH-022"
+    },
+    {
+      "id": "ITEM-034",
+      "name": "บัตรผ่านสีเขียว",
+      "detail": "บัตรหนึ่งใบได้จากโรงกลั่นใน EP006 ใช้เปิดห้องพิเศษแต่ยังไม่ใช้จริง",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-028"
+    },
+    {
+      "id": "ITEM-035",
+      "name": "น้ำมันดิบในถัง",
+      "detail": "ภาชนะบรรจุน้ำมันดิบพบที่โรงกลั่นและใส่เครื่องกลั่นแล้ว อนาคตผลผลิตไม่ทราบ",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-029"
+    },
+    {
+      "id": "ITEM-036",
+      "name": "เครื่องกลั่นน้ำมัน",
+      "detail": "สิ่งปลูกสร้างประจำจุดโรงกลั่น ไม่ใช่อุปกรณ์ที่พระเอกคราฟต์หรือถือกลับบ้าน",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-029"
+    },
+    {
+      "id": "ITEM-037",
+      "name": "มอเตอร์ไซค์",
+      "detail": "ยานพาหนะผู้เล่นอื่น 3 คันมาถึงโรงกลั่น ไม่มีหลักฐานว่าพระเอกได้ครอบครอง",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-030"
+    },
+    {
+      "id": "ITEM-038",
+      "name": "ปืนกลเบา",
+      "detail": "อาวุธของผู้เล่นใหม่สามคนที่โรงกลั่น ไม่มีการได้มาจากการปล้น",
+      "quantity": "SEE_INVENTORY_LEDGER",
+      "gameplay_mechanic_id": "MECH-030"
     }
   ]
 }
