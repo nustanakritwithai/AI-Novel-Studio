@@ -1,6 +1,6 @@
 # Season 01 — foundation (provisional)
 
-**Author plot directives cover EP-001, EP-002, EP-003, EP-004, EP-005 and EP-006.** EP-001/002 manuscript source was accepted by the author; EP-003/004 prose remains DRAFT and EP-005 revised text was accepted in chat for ingest but remains DRAFT in Engine. จำนวนตอนในซีซันและการแข่งขันระดับโลกยังไม่กำหนดครบ.
+**Author plot directives cover EP-001, EP-002, EP-003, EP-004, EP-005, EP-006 and EP-007.** EP-001/002 manuscript source was accepted by the author; EP-003/004 prose remains DRAFT and EP-005 revised text was accepted in chat for ingest but remains DRAFT in Engine. จำนวนตอนในซีซันและการแข่งขันระดับโลกยังไม่กำหนดครบ.
 
 EP-001: บ้านหลังแรก — บทเริ่มจากเกมส่วนตัว ระบบเรียนรู้ เก็บไม้ เห็นบ้านมือใหม่ ย้ายทำเล คราฟต์ไม้เบสบอล เก็บกล่องเศษวัสดุ ถูกซุ่มโจมตี ชนะเฉียดฉิว เก็บหิน/เศษวัสดุ กลับสร้างบ้าน
 
@@ -21,3 +21,7 @@ Two recurring opponents from EP-002/004 return to pound the 2×2 stone base whil
 ## EP-006 — ราคาของน้ำมัน (DRAFT)
 
 User plot DEC-010: the hero enjoys horseback cowboy confidence with two pistols, returns to road scavenging, defeats a bat ambusher, then discovers an abandoned oil refinery containing scattered melee zombies. He clears the observed area, finds a green access card, some oil and a crude oil barrel, starts time-gated refining, and hides to wait. Three armed motorcyclists on three motorcycles arrive with light machine guns, kill his first horse, and notice the processing refinery. Outgunned, he leaves uncollected refinery output, escapes on foot and returns to the same stone 2×2 base. The refinery's ownership and whether the riders collected the oil are UNKNOWN; exact game mechanics UNVERIFIED. The hero's firearm advantage is relative, not universal.
+
+## EP-007 — กำแพงชั้นใหม่ (author-chat acceptance, Engine DRAFT)
+
+After returning home on foot, hero checks existing supplies, upgrades research and learns the LMG recipe. He finds one spring already in storage (2 required), and defers looking for the missing one to fortify his original stone 2×2 base. His 4×4 target is one-unit open floor corridor around 2×2 inner core, two lateral protective wall lines and future low-parapet outer upper firing position. Over several steps he constructs the **entire 12-tile ground ring by SC066** and walks a full circuit. He builds **only some outer wall segments in SC067** and ends on the old firing platform with no LMG and no fully finished 4×4 second-floor construction. `data/draft_continuity_ep007.json` is only the source-pinned DRAFT proposed story state.

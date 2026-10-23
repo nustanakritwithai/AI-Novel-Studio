@@ -15,7 +15,7 @@ Story root: `stories/last-island-active`. Canonical approved history is **EMPTY*
 python scripts/storyctl.py --story last-island-active check
 python scripts/storyctl.py --story last-island-active status
 python scripts/storyctl.py --story last-island-active brief EP-002
-python scripts/storyctl.py --story last-island-active pack EP-006
+python scripts/storyctl.py --story last-island-active pack EP-007
 python scripts/storyctl.py --story last-island-active replay SC-018
 ```
 
@@ -88,3 +88,11 @@ python scripts/storyctl.py --story last-island-active replay SC-018
 - Keep one central pillar only. Outer upper level is a low-parapet firing perimeter; don't invent enclosed rooms, extra pillars, triangle additions, detailed roof, extra stair positions or new doors.
 - DESIGN ≠ CONSTRUCTED: current last manuscript SC-058 still has only the original stone 2×2 with previous upper firing position. No ring/4×4 external wall has been built in the story yet.
 - Always read `bible/BASE_EXPANSION_4X4_TARGET.md` and `data/base_expansion_4x4_target.json` before drafting later base-construction scenes; track when each tile, wall and circulation connection actually becomes available.
+
+## EP007 — authoritative working-story handoff after author chat acceptance
+
+- Chapter text ingested under `drafts/EP-007/CH-07-FULL-DRAFT.md` and scene cards SC059–SC068, decision DEC013. The source is **accepted in chat for storing**, but formal approved-only Canon still has a different review gate.
+- Hero researched LMG blueprint and verified in prior stored inventory **ONE spring out of TWO required**; still missing ONE. No LMG crafted and no new spring collected/spent in EP007. Exact other recipe and upgrade costs UNKNOWN/UNVERIFIED.
+- Original stone 2×2 core, furniture, original upper shooting platform remain. Ground 4×4 ring floor of **12 corridor tiles is complete and walkable after SC066**. Outer defensive wall only partially built in SC067/068; outer upper firing perimeter, roof/upper protection, outer entry door and stairs not built or defined.
+- Source-of-truth for exact building progress is `data/draft_continuity_ep007.json` and `bible/BASE_CONSTRUCTION_EP007_DRAFT.md`. Target-only blueprint remains `data/base_expansion_4x4_target.json` and must not be treated as already entirely constructed.
+- Never modify SHA-pinned historical `bible/BASE_TIMELINE.md` to append future chapter events. The original first horse stays dead; no automatic completed furnace output.

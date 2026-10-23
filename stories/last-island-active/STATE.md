@@ -12,9 +12,10 @@ The human author explicitly said **“อนุมัติ”** in ChatGPT afte
 | EP-004 | วันยาวนานของพรานมือใหม่ | 12 | PLOT LOCKED, PROSE DRAFT | NOT IN APPROVED LEDGER |
 | EP-005 | ค้อนที่หน้าประตู | 9 | AUTHOR CHAT ACCEPTED FOR INGEST | DRAFT / GITHUB REVIEW PENDING |
 | EP-006 | ราคาของน้ำมัน | 11 | USER PLOT DIRECTIVE; PROSE DRAFT | NOT IN APPROVED LEDGER |
+| EP-007 | กำแพงชั้นใหม่ | 10 | CHAT ACCEPTED FOR INGEST / SCENES DRAFT | NOT GITHUB REVIEW-APPROVED |
 
 - The original `stories/last-island/` E1 historical example remains unchanged.
-- The active dataset is `stories/last-island-active/`: 58 scene drafts and 58 event records across EP-001–EP-006 (18 older scenes plus 20 new DRAFT).
+- The active dataset is `stories/last-island-active/`: 68 scene drafts and 68 event records across EP-001–EP-007 (18 older scenes plus 20 new DRAFT).
 - The author accepted the basic enclosed 2×2 wooden shelter at the end of chapter 1, which enables the chapter 2 opening inside the house; the chapter 2 candidate concludes with a stone base, a second-level firing platform, and the protagonist logging off.
 - See `editorial/AUTHOR_APPROVAL_2026-10-23.json` and `data/decisions.json` (DEC-004) for exact source hashes and decision source.
 
@@ -85,3 +86,11 @@ This is **direct author consent in ChatGPT**, not an independently submitted Git
 - No new opening/door/stair/roof/material or third story details have been author-specified. An open corridor does not conclusively mean roofless.
 - Current scene at end EP-006 SC-058: original stone **2×2** remains, 4×4 target **not constructed**. No new scene, inventory or world-state changes arise from the blueprint update.
 - Durable spec: `bible/BASE_EXPANSION_4X4_TARGET.md`, structured target: `data/base_expansion_4x4_target.json`, editorial source DEC-011 and FACT-067. Formal approved ledger remains separate.
+
+## EP-007 candidate state (source accepted by user in chat; NOT formal Canon)
+
+- User requested Engine ingest of the completed ten-scene manuscript `drafts/EP-007/CH-07-FULL-DRAFT.md`. Decision DEC013 ties to its source SHA; Scene IDs SC059–SC068 and Event IDs EV059–EV068.
+- LMG progression: learning/research upgrade done and fictional LMG recipe learned, **2 springs required, 1 already in storage, 1 missing**. No newly gained spring in EP007 and no LMG owned at end.
+- Structure: old stone core 2×2 with original upper firing position remains. SC064–065 adds floor ring parts; SC066 **12/12 tiles complete as open continuous walkable ground-floor loop**. SC067 builds only **some** outer 4×4 wall segments, not closed all around. New outer upper firing level, core overhead layering and central pillar not demonstrated as installed; outer door/new stair locations TBD.
+- Snapshot: `data/draft_continuity_ep007.json`, building addendum `bible/BASE_CONSTRUCTION_EP007_DRAFT.md`. Do NOT overwrite SHA-pinned historical `bible/BASE_TIMELINE.md`.
+- 7 registered episodes, 68 scene/event records, 75 draft inventory ledger rows after EP007; official approval marker/null and approved-only ledgers untouched.

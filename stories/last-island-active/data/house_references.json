@@ -155,7 +155,7 @@
     },
     {
       "id": "SRC-CHARACTERS",
-      "path": "data/characters.json",
+      "path": "data/house_evidence/characters_pre_ep007.json",
       "git_blob_sha": "9d321f7898e59db31b819e69fa1cd87e4f7b755e",
       "status": "LOCAL_REFERENCE",
       "supporting_sources": []
@@ -169,7 +169,7 @@
     },
     {
       "id": "SRC-SCENES",
-      "path": "data/scenes.json",
+      "path": "data/house_evidence/scenes_pre_ep007.json",
       "git_blob_sha": "63fcb7e21d69824f4235e8f042608a4b6e6cc486",
       "status": "LOCAL_REFERENCE",
       "supporting_sources": []

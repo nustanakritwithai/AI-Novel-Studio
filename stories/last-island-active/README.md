@@ -10,6 +10,7 @@ Thai survival fiction manuscripts and their scene/continuity data: chapters 1–
 | EP-004 | วันยาวนานของพรานมือใหม่ | 12 | User-directed plot; prose approval pending | DRAFT, not approved |
 | EP-005 | ค้อนที่หน้าประตู | 9 | Revised ending accepted for ingest in chat | DRAFT; GitHub-reviewed Canon pending |
 | EP-006 | ราคาของน้ำมัน | 11 | User-directed plot; generated prose pending editorial approval | DRAFT, not Canon |
+| EP-007 | กำแพงชั้นใหม่ | 10 | Author accepted just-written prose for Engine ingest | DRAFT; formal GitHub review separate |
 
 ## Phase 1 — author-accepted source memory
 
@@ -24,13 +25,13 @@ The approved ledger is intentionally empty because PR #13 has no independently s
 ## Quick verification
 ```bash
 python scripts/storyctl.py --story last-island-active check
-python scripts/storyctl.py --story last-island-active pack EP-006
+python scripts/storyctl.py --story last-island-active pack EP-007
 python -m unittest discover -s tests -v
 ```
 
-For continued writing follow `HANDOFF.md`, `data/draft_continuity_ep003.json` and `bible/BASE_TIMELINE.md`. The active dashboard at `index.html` lists all six episode manuscripts instead of showing only the opening.
+For continued writing follow `HANDOFF.md`, `data/draft_continuity_ep003.json` and `bible/BASE_TIMELINE.md`. The active dashboard at `index.html` lists all seven episode manuscripts instead of showing only the opening.
 
-For direct chapter reading use [reading order chapters 1–6](drafts/READING_ORDER_CH-01_06.md) and [EP-003 continuity audit](drafts/EP-003/EP-003-CONTINUITY-AUDIT.md). Game mechanics are fiction directives unless verified against actual selected-server gameplay; item counts remain UNKNOWN.
+For direct chapter reading use [reading order chapters 1–7](drafts/READING_ORDER_CH-01_07.md) and [EP-003 continuity audit](drafts/EP-003/EP-003-CONTINUITY-AUDIT.md). Game mechanics are fiction directives unless verified against actual selected-server gameplay; item counts remain UNKNOWN.
 
 ## EP-004 source-bound draft
 
@@ -64,3 +65,11 @@ For direct chapter reading use [reading order chapters 1–6](drafts/READING_ORD
 ผู้เขียนกำหนดว่า **ชั้นล่าง 12 ช่องที่ล้อมแกนบ้าน 2×2 เป็นทางเดินโล่งกว้างหนึ่งช่องพื้น เชื่อมต่อกันครบทุกด้านและเดินวนได้ตลอดวง** ภายใต้กรอบเป้าหมาย 4×4 มีผนังป้องกันแนวด้านข้างสองแนว ชั้นยิงรอบนอกชั้นสองพร้อมกำแพงเตี้ย และเสาหลักกลางบ้านหนึ่งต้นเท่านั้น รายละเอียดทางเข้า/ประตู/บันได/หลังคายัง TBD.
 
 ดู [เอกสารเป้าหมายฐาน 4×4](bible/BASE_EXPANSION_4X4_TARGET.md) และ [ผังชั้นล่างแบบอ่านด้วยโปรแกรม](data/base_expansion_4x4_target.json) (DEC-011, FACT-067). **ปลายบทที่ 6 บ้านยังเป็น 2×2 หิน ไม่มีวงทางเดินหรือกำแพงใหม่สร้างเสร็จ**; ต้องเห็นเหตุการณ์ก่อสร้างก่อนบันทึกว่าสำเร็จใน Engine.
+
+## EP-007: Ground ring BUILT, outer wall PARTIAL — latest
+
+- Complete 10-scene source `drafts/EP-007/CH-07-FULL-DRAFT.md`; user agreed to ingest it in this chat. Working Engine status DRAFT, not GitHub-review Canon.
+- `data/draft_continuity_ep007.json` pins the manuscript Git blob and SC-059–068 progress. `bible/BASE_CONSTRUCTION_EP007_DRAFT.md` tracks construction separately from the untouched, older source-pinned `bible/BASE_TIMELINE.md`.
+- New ground-floor open ring around original stone 2×2 was built to **12/12 tiles** in SC-066 and walked end-to-end. Outer 4×4 wall is only **PARTIAL** in SC-067/068; new outer second-floor firing platform, support column, doors and stairs **not built/demonstrated**.
+- Hero upgraded the fictional research/learning system and learned the LMG recipe, requiring 2 springs. **One spring was already in storage**, still missing 1. No new spring was gained or consumed in EP-007, and no LMG was crafted.
+- Old core furnishings remain unchanged; horse is still dead, card unused, furnace outputs unverified. Protect approved-only ledger and older manuscripts.

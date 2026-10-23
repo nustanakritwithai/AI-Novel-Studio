@@ -74,7 +74,10 @@ class GroundRingBlueprintTests(unittest.TestCase):
         self.assertIsNone(json.loads((ROOT / "data/story_state.json").read_text(encoding="utf-8"))["approved_through_scene"])
         self.assertEqual(json.loads((ROOT / "ledger/index.json").read_text(encoding="utf-8"))["episodes"], [])
         scenes = json.loads((ROOT / "data/scenes.json").read_text(encoding="utf-8"))["scenes"]
-        self.assertEqual(scenes[-1]["id"], "SC-058")
+        self.assertEqual(scenes[57]["id"], "SC-058")
+        self.assertEqual(scenes[-1]["id"], "SC-068")
+        # The blueprint records history at SC-058; newer ring construction
+        # is recorded separately by the EP007 draft continuity snapshot.
         self.assertTrue((ROOT / "bible/BASE_EXPANSION_4X4_TARGET.md").exists())
 
 

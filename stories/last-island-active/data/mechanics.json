@@ -244,6 +244,38 @@
       "story_requirement": "LOCKED",
       "source_ids": [],
       "notes": "Vehicle, firearm and animal damage mechanics UNVERIFIED; owner/territory is only protagonist speculation"
+    },
+    {
+      "id": "MECH-031",
+      "title": "ระบบเรียนรู้และอัปเกรดสูตรปืนกลเบา ต้องใช้สปริง 2 ชิ้นตามเมนูนิยาย",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Author-directed fictional progression; external game mode, real recipe and upgrade costs UNKNOWN. Hero has 1 spring in storage, lacking 1, no LMG crafted."
+    },
+    {
+      "id": "MECH-032",
+      "title": "สร้างพื้นทางเดินตามกริด 4×4 รอบบ้านแกน 2×2 จนทั้ง 12 ช่องเชื่อมกันและเดินวนได้",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "The 12-tile continuous walkable ground-floor ring is fully built in EP007 draft SC-066. Do not equate ground ring with full 4×4 two-story building."
+    },
+    {
+      "id": "MECH-033",
+      "title": "สร้างกำแพงขอบนอกตามแนว 4×4 ทีละช่วงแต่ยังปิดรอบไม่ครบ",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Author-directed gradual construction: only some outer wall segments built SC-067; material, exact positions and number of segments UNKNOWN."
+    },
+    {
+      "id": "MECH-034",
+      "title": "เก็บทรัพยากรก่อสร้างเพิ่มใกล้บ้านและใช้วัสดุที่มีโดยไม่แตะสปริงที่สำรองไว้",
+      "game_verification": "UNVERIFIED",
+      "story_requirement": "LOCKED",
+      "source_ids": [],
+      "notes": "Generic building supply gathering in EP007; exact yields, craft rates, construction material quantities and locations UNKNOWN."
     }
   ]
 }
