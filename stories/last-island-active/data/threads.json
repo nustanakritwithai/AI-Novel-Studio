@@ -161,6 +161,61 @@
         "FACT-051"
       ],
       "notes": "เตากำลังทำงานตลอด EP005 แต่ในฉบับนี้ไม่ได้ยืนยันเวลาเสร็จหรือว่าพระเอกเก็บผลิตผลแล้ว"
+    },
+    {
+      "id": "THREAD-013",
+      "title": "โรงกลั่นน้ำมันเก่ากับกลุ่มติดปืนกลเบาสามคน",
+      "status": "OPEN",
+      "priority": "EP-007_OR_LATER",
+      "setup_scene_id": "SC-055",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-060",
+        "FACT-062",
+        "FACT-064"
+      ],
+      "notes": "ยังไม่ทราบเป็นเจ้าของโรงกลั่นหรือไม่และได้ผลผลิตคิวกลั่นที่พระเอกทิ้งไว้จริงหรือไม่"
+    },
+    {
+      "id": "THREAD-014",
+      "title": "บัตรผ่านสีเขียวและห้องพิเศษที่ยังไม่ได้เปิด",
+      "status": "OPEN",
+      "priority": "FUTURE",
+      "setup_scene_id": "SC-053",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-058"
+      ],
+      "notes": "บัตรเขียวหนึ่งใบจากโรงกลั่น ยังไม่มีการใช้เข้าห้องใด จำนวนครั้งที่ใช้ได้ UNKNOWN"
+    },
+    {
+      "id": "THREAD-015",
+      "title": "สูญเสียม้าตัวแรกและต้องประเมินพาหนะทดแทน",
+      "status": "OPEN",
+      "priority": "FUTURE",
+      "setup_scene_id": "SC-055",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-061"
+      ],
+      "notes": "ม้า CHAR-008 ตายด้วยปืนกลเบาของผู้เล่นใหม่หนึ่งในสามคน ไม่มีม้าตัวอื่นปรากฏในบท 6"
+    },
+    {
+      "id": "THREAD-016",
+      "title": "ความได้เปรียบปืนพกไม่ได้เท่ากับสู้ผู้เล่นมีปืนกลเบาได้",
+      "status": "OPEN",
+      "priority": "SERIES",
+      "setup_scene_id": "SC-058",
+      "payoff_scene_id": null,
+      "owner_character_id": "CHAR-001",
+      "canon_refs": [
+        "FACT-063",
+        "FACT-064"
+      ],
+      "notes": "บทเรียนเรื่องช่องว่างอาวุธและการเดินทางผู้เล่นระดับสูง ยังไม่ตัดสินใจโจมตีกลุ่มใหม่"
     }
   ]
 }
