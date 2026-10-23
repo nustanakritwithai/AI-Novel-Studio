@@ -1016,6 +1016,169 @@
         "ep006_horse_still_alive": false,
         "ep006_finished_refinery_output_owned": false
       }
+    },
+    {
+      "id": "EV-059",
+      "scene_id": "SC-059",
+      "episode_id": "EP-007",
+      "order": 1,
+      "status": "DRAFT",
+      "what_changed": "เริ่มมองหาทางยกระดับอาวุธและฐาน",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep007_home_inventory_checked": true
+      }
+    },
+    {
+      "id": "EV-060",
+      "scene_id": "SC-060",
+      "episode_id": "EP-007",
+      "order": 2,
+      "status": "DRAFT",
+      "what_changed": "มีสูตรปืนกลเบาแต่ยังคราฟต์ไม่ได้: ต้องใช้สปริง 2 มี 1 ขาด 1",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep007_lmg_recipe_learned": true,
+        "ep007_springs_needed_two": true,
+        "ep007_spring_one_existing": true,
+        "ep007_lmg_crafted": false
+      }
+    },
+    {
+      "id": "EV-061",
+      "scene_id": "SC-061",
+      "episode_id": "EP-007",
+      "order": 3,
+      "status": "DRAFT",
+      "what_changed": "เป้าหมายการก่อสร้างถูกเลือก แต่ยังไม่ได้เริ่มลงมือ",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep007_expand_base_decided": true
+      }
+    },
+    {
+      "id": "EV-062",
+      "scene_id": "SC-062",
+      "episode_id": "EP-007",
+      "order": 4,
+      "status": "DRAFT",
+      "what_changed": "บันทึกแบบเป้าหมาย 4×4 โดยยังไม่มีส่วนต่อเติมจริง",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep007_4x4_blueprint_selected": true,
+        "ep007_expansion_built_yet": false
+      }
+    },
+    {
+      "id": "EV-063",
+      "scene_id": "SC-063",
+      "episode_id": "EP-007",
+      "order": 5,
+      "status": "DRAFT",
+      "what_changed": "วางลำดับลงมือและเลือกวัสดุสำหรับพื้นช่วงแรก",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep007_material_shortfall_known": true,
+        "ep007_spring_reserved": true
+      }
+    },
+    {
+      "id": "EV-064",
+      "scene_id": "SC-064",
+      "episode_id": "EP-007",
+      "order": 6,
+      "status": "DRAFT",
+      "what_changed": "เริ่มสร้างพื้นวงนอกบางส่วน ทางเดินยังไม่ครบ",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep007_ground_ring_started": true,
+        "ep007_ground_ring_complete": false
+      }
+    },
+    {
+      "id": "EV-065",
+      "scene_id": "SC-065",
+      "episode_id": "EP-007",
+      "order": 7,
+      "status": "DRAFT",
+      "what_changed": "พื้นมีความคืบหน้าแต่ยังไม่ครบวง",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep007_materials_locally_gathered": true,
+        "ep007_ground_ring_gap_remaining": true
+      }
+    },
+    {
+      "id": "EV-066",
+      "scene_id": "SC-066",
+      "episode_id": "EP-007",
+      "order": 8,
+      "status": "DRAFT",
+      "what_changed": "วงทางเดินพื้นชั้นล่าง 12 ช่องเสร็จสมบูรณ์ เดินวนได้ครบ",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep007_ground_ring_complete": true,
+        "ep007_walkable_ring_all12": true
+      }
+    },
+    {
+      "id": "EV-067",
+      "scene_id": "SC-067",
+      "episode_id": "EP-007",
+      "order": 9,
+      "status": "DRAFT",
+      "what_changed": "กำแพงนอกบางส่วนสร้างแล้ว แต่ยังไม่ครบรอบ",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep007_outer_wall_partial": true,
+        "ep007_outer_wall_complete": false,
+        "ep007_upper_outer_firing_built": false
+      }
+    },
+    {
+      "id": "EV-068",
+      "scene_id": "SC-068",
+      "episode_id": "EP-007",
+      "order": 10,
+      "status": "DRAFT",
+      "what_changed": "จบบทพร้อมพื้นวงรอบเสร็จ กำแพงนอกบางส่วน และความตั้งใจพัฒนาต่อ",
+      "actors": [
+        "CHAR-001"
+      ],
+      "location_id": "LOC-009",
+      "effects_flags": {
+        "ep007_final_ring_complete": true,
+        "ep007_final_outer_wall_partial": true,
+        "ep007_lmg_still_unbuilt": true,
+        "ep007_upper_outer_firing_still_unbuilt": true
+      }
     }
   ]
 }
